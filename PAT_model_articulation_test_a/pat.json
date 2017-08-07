@@ -2172,7 +2172,7 @@
           "model_dependent": false,
           "default_value": true,
           "$$hashKey": "uiGrid-04D5",
-          "option_1": true,
+          "option_1": false,
           "variable": false
         }
       ],
@@ -2258,7 +2258,7 @@
             },
             {
               "name": "remove_objects",
-              "value": true
+              "value": false
             }
           ],
           "name": "Create Typical Building",
