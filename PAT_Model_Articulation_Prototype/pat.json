@@ -1,0 +1,3909 @@
+{
+  "projectName": "PAT_Model_Articulation_Prototype",
+  "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype",
+  "seed": "seed_empty.osm",
+  "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+  "analysis_type": "Manual",
+  "remoteSettings": {
+    "open": true,
+    "remoteType": "Existing Remote Server",
+    "remoteServerURL": "http://bball-130590.nrel.gov:8080/",
+    "aws": {},
+    "credentials": {
+      "yamlFilename": null,
+      "accessKey": null,
+      "region": "us-east-1"
+    }
+  },
+  "samplingMethod": {
+    "id": "baseline_perturbation",
+    "name": "analysis.type.baselinePerturbation",
+    "link": null
+  },
+  "algorithmSettings": [
+    {
+      "name": "in_measure_combinations",
+      "displayName": "In Measure Combinations",
+      "description": "Options: 'true' or 'false'",
+      "defaultValue": "true",
+      "type": "string",
+      "value": "true"
+    },
+    {
+      "name": "include_baseline_in_combinations",
+      "displayName": "Include Baseline in Combinations?",
+      "description": "Options: 'true' or 'false'",
+      "defaultValue": "true",
+      "type": "string",
+      "value": "true"
+    }
+  ],
+  "rubyMD5": "",
+  "mongoMD5": "",
+  "openstudioServerMD5": "",
+  "openstudioCLIMD5": "",
+  "openstudioMD5": "",
+  "measures": [
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_DOE_prototype_building",
+      "name": "create_doe_prototype_building",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_DOE_prototype_building",
+      "uid": "be90fd0b-a651-467a-bc8d-29d310b0f937",
+      "uuid": "{be90fd0b-a651-467a-bc8d-29d310b0f937}",
+      "version_id": "fbfc6a44-e36a-4300-af48-31019fc6eda4",
+      "version_uuid": "{fbfc6a44-e36a-4300-af48-31019fc6eda4}",
+      "version_modified": "20170316T164857Z",
+      "xml_checksum": "057E8D9D",
+      "display_name": "Create DOE Prototype Building",
+      "class_name": "CreateDOEPrototypeBuilding",
+      "description": "Creates the DOE Reference Building Models as starting points for other analyses.",
+      "modeler_description": "",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-00V2",
+          "option_3": "option_3",
+          "option_4": "option_4"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-00V4",
+          "option_3": "Large Hotel",
+          "option_4": "Medium Office"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-00V6",
+          "option_3": "Option 3 Description: Creates the DOE Reference Building Models as starting points for other analyses.",
+          "option_4": "Option 4 Description: Creates the DOE Reference Building Models as starting points for other analyses."
+        },
+        {
+          "name": "building_type",
+          "display_name": "Building Type.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient"
+          ],
+          "$$hashKey": "uiGrid-00V8",
+          "variable": true,
+          "option_3": "SmallOffice",
+          "units": "",
+          "minimum": "SmallOffice",
+          "maximum": "SmallOffice",
+          "mode": null,
+          "option_4": "MediumOffice"
+        },
+        {
+          "name": "template",
+          "display_name": "Template.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2010",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NECB 2011"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NECB 2011"
+          ],
+          "$$hashKey": "uiGrid-00VA",
+          "variable": false,
+          "option_3": "90.1-2010"
+        },
+        {
+          "name": "climate_zone",
+          "display_name": "Climate Zone.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "ASHRAE 169-2006-2A",
+          "choice_values": [
+            "ASHRAE 169-2006-1A",
+            "ASHRAE 169-2006-2A",
+            "ASHRAE 169-2006-2B",
+            "ASHRAE 169-2006-3A",
+            "ASHRAE 169-2006-3B",
+            "ASHRAE 169-2006-3C",
+            "ASHRAE 169-2006-4A",
+            "ASHRAE 169-2006-4B",
+            "ASHRAE 169-2006-4C",
+            "ASHRAE 169-2006-5A",
+            "ASHRAE 169-2006-5B",
+            "ASHRAE 169-2006-6A",
+            "ASHRAE 169-2006-6B",
+            "ASHRAE 169-2006-7A",
+            "ASHRAE 169-2006-8A",
+            "NECB HDD Method"
+          ],
+          "choice_display_names": [
+            "ASHRAE 169-2006-1A",
+            "ASHRAE 169-2006-2A",
+            "ASHRAE 169-2006-2B",
+            "ASHRAE 169-2006-3A",
+            "ASHRAE 169-2006-3B",
+            "ASHRAE 169-2006-3C",
+            "ASHRAE 169-2006-4A",
+            "ASHRAE 169-2006-4B",
+            "ASHRAE 169-2006-4C",
+            "ASHRAE 169-2006-5A",
+            "ASHRAE 169-2006-5B",
+            "ASHRAE 169-2006-6A",
+            "ASHRAE 169-2006-6B",
+            "ASHRAE 169-2006-7A",
+            "ASHRAE 169-2006-8A",
+            "NECB HDD Method"
+          ],
+          "$$hashKey": "uiGrid-00VC",
+          "variable": false,
+          "option_3": "ASHRAE 169-2006-5B",
+          "option_4": "ASHRAE 169-2006-5B"
+        },
+        {
+          "name": "epw_file",
+          "display_name": "Climate File (NECB only)",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Not Applicable",
+          "choice_values": [
+            "Not Applicable",
+            "CAN_BC_Abbotsford.711080_CWEC.epw",
+            "CAN_PQ_Bagotville.717270_CWEC.epw",
+            "CAN_PQ_Baie.Comeau.711870_CWEC.epw",
+            "CAN_NF_Battle.Harbour.718170_CWEC.epw",
+            "CAN_MB_Brandon.711400_CWEC.epw",
+            "CAN_AB_Calgary.718770_CWEC.epw",
+            "CAN_PE_Charlottetown.717060_CWEC.epw",
+            "CAN_MB_Churchill.719130_CWEC.epw",
+            "CAN_BC_Comox.718930_CWEC.epw",
+            "CAN_BC_Cranbrook.718800_CWEC.epw",
+            "CAN_AB_Edmonton.711230_CWEC.epw",
+            "CAN_SK_Estevan.718620_CWEC.epw",
+            "CAN_AB_Fort.McMurray.719320_CWEC.epw",
+            "CAN_BC_Fort.St.John.719430_CWEC.epw",
+            "CAN_NB_Fredericton.717000_CWEC.epw",
+            "CAN_NF_Gander.718030_CWEC.epw",
+            "CAN_NF_Goose.718160_CWEC.epw",
+            "CAN_AB_Grande.Prairie.719400_CWEC.epw",
+            "CAN_NS_Greenwood.713970_CWEC.epw",
+            "CAN_PQ_Grindstone.Island_CWEC.epw",
+            "CAN_NT_Inuvik.719570_CWEC.epw",
+            "CAN_BC_Kamloops.718870_CWEC.epw",
+            "CAN_ON_Kingston.716200_CWEC.epw",
+            "CAN_PQ_Kuujjuarapik.719050_CWEC.epw",
+            "CAN_PQ_Kuujuaq.719060_CWEC.epw",
+            "CAN_PQ_La.Grande.Riviere.718270_CWEC.epw",
+            "CAN_PQ_Lake.Eon.714210_CWEC.epw",
+            "CAN_AB_Lethbridge.712430_CWEC.epw",
+            "CAN_ON_London.716230_CWEC.epw",
+            "CAN_AB_Medicine.Hat.718720_CWEC.epw",
+            "CAN_NB_Miramichi.717440_CWEC.epw",
+            "CAN_PQ_Mont.Joli.717180_CWEC.epw",
+            "CAN_PQ_Montreal.Intl.AP.716270_CWEC.epw",
+            "CAN_PQ_Montreal.Jean.Brebeuf.716278_CWEC.epw",
+            "CAN_PQ_Montreal.Mirabel.716278_CWEC.epw",
+            "CAN_ON_Mount.Forest.716310_CWEC.epw",
+            "CAN_ON_Muskoka.716300_CWEC.epw",
+            "CAN_PQ_Nitchequon.CAN270_CWEC.epw",
+            "CAN_SK_North.Battleford.718760_CWEC.epw",
+            "CAN_ON_North.Bay.717310_CWEC.epw",
+            "CAN_ON_Ottawa.716280_CWEC.epw",
+            "CAN_BC_Port.Hardy.711090_CWEC.epw",
+            "CAN_BC_Prince.George.718960_CWEC.epw",
+            "CAN_BC_Prince.Rupert.718980_CWEC.epw",
+            "CAN_PQ_Quebec.717140_CWEC.epw",
+            "CAN_SK_Regina.718630_CWEC.epw",
+            "CAN_NU_Resolute.719240_CWEC.epw",
+            "CAN_PQ_Riviere.du.Loup.717150_CWEC.epw",
+            "CAN_PQ_Roberval.717280_CWEC.epw",
+            "CAN_NS_Sable.Island.716000_CWEC.epw",
+            "CAN_NB_Saint.John.716090_CWEC.epw",
+            "CAN_BC_Sandspit.711010_CWEC.epw",
+            "CAN_SK_Saskatoon.718660_CWEC.epw",
+            "CAN_ON_Sault.Ste.Marie.712600_CWEC.epw",
+            "CAN_PQ_Schefferville.718280_CWEC.epw",
+            "CAN_PQ_Sept-Iles.718110_CWEC.epw",
+            "CAN_NS_Shearwater.716010_CWEC.epw",
+            "CAN_PQ_Sherbrooke.716100_CWEC.epw",
+            "CAN_ON_Simcoe.715270_CWEC.epw",
+            "CAN_BC_Smithers.719500_CWEC.epw",
+            "CAN_PQ_St.Hubert.713710_CWEC.epw",
+            "CAN_NF_St.Johns.718010_CWEC.epw",
+            "CAN_PQ_Ste.Agathe.des.Monts.717200_CWEC.epw",
+            "CAN_NF_Stephenville.718150_CWEC.epw",
+            "CAN_BC_Summerland.717680_CWEC.epw",
+            "CAN_SK_Swift.Current.718700_CWEC.epw",
+            "CAN_NS_Sydney.717070_CWEC.epw",
+            "CAN_MB_The.Pas.718670_CWEC.epw",
+            "CAN_ON_Thunder.Bay.717490_CWEC.epw",
+            "CAN_ON_Timmins.717390_CWEC.epw",
+            "CAN_ON_Toronto.716240_CWEC.epw",
+            "CAN_ON_Trenton.716210_CWEC.epw",
+            "CAN_NS_Truro.713980_CWEC.epw",
+            "CAN_PQ_Val.d.Or.717250_CWEC.epw",
+            "CAN_BC_Vancouver.718920_CWEC.epw",
+            "CAN_BC_Victoria.717990_CWEC.epw",
+            "CAN_YT_Whitehorse.719640_CWEC.epw",
+            "CAN_ON_Windsor.715380_CWEC.epw",
+            "CAN_MB_Winnipeg.718520_CWEC.epw"
+          ],
+          "choice_display_names": [
+            "Not Applicable",
+            "CAN_BC_Abbotsford.711080_CWEC.epw",
+            "CAN_PQ_Bagotville.717270_CWEC.epw",
+            "CAN_PQ_Baie.Comeau.711870_CWEC.epw",
+            "CAN_NF_Battle.Harbour.718170_CWEC.epw",
+            "CAN_MB_Brandon.711400_CWEC.epw",
+            "CAN_AB_Calgary.718770_CWEC.epw",
+            "CAN_PE_Charlottetown.717060_CWEC.epw",
+            "CAN_MB_Churchill.719130_CWEC.epw",
+            "CAN_BC_Comox.718930_CWEC.epw",
+            "CAN_BC_Cranbrook.718800_CWEC.epw",
+            "CAN_AB_Edmonton.711230_CWEC.epw",
+            "CAN_SK_Estevan.718620_CWEC.epw",
+            "CAN_AB_Fort.McMurray.719320_CWEC.epw",
+            "CAN_BC_Fort.St.John.719430_CWEC.epw",
+            "CAN_NB_Fredericton.717000_CWEC.epw",
+            "CAN_NF_Gander.718030_CWEC.epw",
+            "CAN_NF_Goose.718160_CWEC.epw",
+            "CAN_AB_Grande.Prairie.719400_CWEC.epw",
+            "CAN_NS_Greenwood.713970_CWEC.epw",
+            "CAN_PQ_Grindstone.Island_CWEC.epw",
+            "CAN_NT_Inuvik.719570_CWEC.epw",
+            "CAN_BC_Kamloops.718870_CWEC.epw",
+            "CAN_ON_Kingston.716200_CWEC.epw",
+            "CAN_PQ_Kuujjuarapik.719050_CWEC.epw",
+            "CAN_PQ_Kuujuaq.719060_CWEC.epw",
+            "CAN_PQ_La.Grande.Riviere.718270_CWEC.epw",
+            "CAN_PQ_Lake.Eon.714210_CWEC.epw",
+            "CAN_AB_Lethbridge.712430_CWEC.epw",
+            "CAN_ON_London.716230_CWEC.epw",
+            "CAN_AB_Medicine.Hat.718720_CWEC.epw",
+            "CAN_NB_Miramichi.717440_CWEC.epw",
+            "CAN_PQ_Mont.Joli.717180_CWEC.epw",
+            "CAN_PQ_Montreal.Intl.AP.716270_CWEC.epw",
+            "CAN_PQ_Montreal.Jean.Brebeuf.716278_CWEC.epw",
+            "CAN_PQ_Montreal.Mirabel.716278_CWEC.epw",
+            "CAN_ON_Mount.Forest.716310_CWEC.epw",
+            "CAN_ON_Muskoka.716300_CWEC.epw",
+            "CAN_PQ_Nitchequon.CAN270_CWEC.epw",
+            "CAN_SK_North.Battleford.718760_CWEC.epw",
+            "CAN_ON_North.Bay.717310_CWEC.epw",
+            "CAN_ON_Ottawa.716280_CWEC.epw",
+            "CAN_BC_Port.Hardy.711090_CWEC.epw",
+            "CAN_BC_Prince.George.718960_CWEC.epw",
+            "CAN_BC_Prince.Rupert.718980_CWEC.epw",
+            "CAN_PQ_Quebec.717140_CWEC.epw",
+            "CAN_SK_Regina.718630_CWEC.epw",
+            "CAN_NU_Resolute.719240_CWEC.epw",
+            "CAN_PQ_Riviere.du.Loup.717150_CWEC.epw",
+            "CAN_PQ_Roberval.717280_CWEC.epw",
+            "CAN_NS_Sable.Island.716000_CWEC.epw",
+            "CAN_NB_Saint.John.716090_CWEC.epw",
+            "CAN_BC_Sandspit.711010_CWEC.epw",
+            "CAN_SK_Saskatoon.718660_CWEC.epw",
+            "CAN_ON_Sault.Ste.Marie.712600_CWEC.epw",
+            "CAN_PQ_Schefferville.718280_CWEC.epw",
+            "CAN_PQ_Sept-Iles.718110_CWEC.epw",
+            "CAN_NS_Shearwater.716010_CWEC.epw",
+            "CAN_PQ_Sherbrooke.716100_CWEC.epw",
+            "CAN_ON_Simcoe.715270_CWEC.epw",
+            "CAN_BC_Smithers.719500_CWEC.epw",
+            "CAN_PQ_St.Hubert.713710_CWEC.epw",
+            "CAN_NF_St.Johns.718010_CWEC.epw",
+            "CAN_PQ_Ste.Agathe.des.Monts.717200_CWEC.epw",
+            "CAN_NF_Stephenville.718150_CWEC.epw",
+            "CAN_BC_Summerland.717680_CWEC.epw",
+            "CAN_SK_Swift.Current.718700_CWEC.epw",
+            "CAN_NS_Sydney.717070_CWEC.epw",
+            "CAN_MB_The.Pas.718670_CWEC.epw",
+            "CAN_ON_Thunder.Bay.717490_CWEC.epw",
+            "CAN_ON_Timmins.717390_CWEC.epw",
+            "CAN_ON_Toronto.716240_CWEC.epw",
+            "CAN_ON_Trenton.716210_CWEC.epw",
+            "CAN_NS_Truro.713980_CWEC.epw",
+            "CAN_PQ_Val.d.Or.717250_CWEC.epw",
+            "CAN_BC_Vancouver.718920_CWEC.epw",
+            "CAN_BC_Victoria.717990_CWEC.epw",
+            "CAN_YT_Whitehorse.719640_CWEC.epw",
+            "CAN_ON_Windsor.715380_CWEC.epw",
+            "CAN_MB_Winnipeg.718520_CWEC.epw"
+          ],
+          "$$hashKey": "uiGrid-00VE",
+          "variable": false,
+          "option_3": "Not Applicable"
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 0,
+      "options": [
+        {
+          "id": "option_3",
+          "arguments": [
+            {
+              "name": "building_type",
+              "value": "SmallOffice"
+            },
+            {
+              "name": "template",
+              "value": "90.1-2010"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-5B"
+            },
+            {
+              "name": "epw_file",
+              "value": "Not Applicable"
+            }
+          ],
+          "name": "Large Hotel",
+          "description": "Option 3 Description: Creates the DOE Reference Building Models as starting points for other analyses."
+        },
+        {
+          "id": "option_4",
+          "arguments": [
+            {
+              "name": "building_type",
+              "value": "MediumOffice"
+            },
+            {
+              "name": "template"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-5B"
+            },
+            {
+              "name": "epw_file"
+            }
+          ],
+          "name": "Medium Office",
+          "description": "Option 4 Description: Creates the DOE Reference Building Models as starting points for other analyses."
+        }
+      ],
+      "instanceId": 0.4664883384286729,
+      "numberOfOptions": 2,
+      "$$hashKey": "object:1421",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_building_type_ratios",
+      "name": "create_bar_from_building_type_ratios",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_bar_from_building_type_ratios",
+      "uid": "6e3a14f8-c3c7-4e03-bc51-bef8a52e1a05",
+      "uuid": "{6e3a14f8-c3c7-4e03-bc51-bef8a52e1a05}",
+      "version_id": "470981c6-43a4-4668-a6d5-ebfbf6ca445c",
+      "version_uuid": "{470981c6-43a4-4668-a6d5-ebfbf6ca445c}",
+      "version_modified": "20170829T184522Z",
+      "xml_checksum": "2AF3A68E",
+      "display_name": "Create Bar From Building Type Ratios",
+      "class_name": "CreateBarFromBuildingTypeRatios",
+      "description": "Create a core and perimeter bar sliced by space type.",
+      "modeler_description": "Space Type collections are made from one or more building types passed in with user arguments.",
+      "tags": "Envelope.Form",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-022I"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-022K"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-022M"
+        },
+        {
+          "name": "bldg_type_a",
+          "display_name": "Primary Building Type",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "$$hashKey": "uiGrid-022O"
+        },
+        {
+          "name": "bldg_type_a_num_units",
+          "display_name": "Primary Building Type Number of Units",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-022Q"
+        },
+        {
+          "name": "bldg_type_b",
+          "display_name": "Building Type B",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "$$hashKey": "uiGrid-022S"
+        },
+        {
+          "name": "bldg_type_b_fract_bldg_area",
+          "display_name": "Building Type B Fraction of Building Floor Area",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-022U"
+        },
+        {
+          "name": "bldg_type_b_num_units",
+          "display_name": "Building Type B Number of Units",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-022W"
+        },
+        {
+          "name": "bldg_type_c",
+          "display_name": "Building Type C",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "$$hashKey": "uiGrid-022Y"
+        },
+        {
+          "name": "bldg_type_c_fract_bldg_area",
+          "display_name": "Building Type C Fraction of Building Floor Area",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0230"
+        },
+        {
+          "name": "bldg_type_c_num_units",
+          "display_name": "Building Type C Number of Units",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-0232"
+        },
+        {
+          "name": "bldg_type_d",
+          "display_name": "Building Type D",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "$$hashKey": "uiGrid-0234"
+        },
+        {
+          "name": "bldg_type_d_fract_bldg_area",
+          "display_name": "Building Type D Fraction of Building Floor Area",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0236"
+        },
+        {
+          "name": "bldg_type_d_num_units",
+          "display_name": "Building Type D Number of Units",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-0238"
+        },
+        {
+          "name": "single_floor_area",
+          "display_name": "Single Floor Area",
+          "description": "Non-zero value will fix the single floor area, overriding a user entry for Total Building Floor Area",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "ft^2",
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023A"
+        },
+        {
+          "name": "total_bldg_floor_area",
+          "display_name": "Total Building Floor Area",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "ft^2",
+          "default_value": 10000,
+          "$$hashKey": "uiGrid-023C"
+        },
+        {
+          "name": "floor_height",
+          "display_name": "Typical Floor to FLoor Height",
+          "description": "Selecting a typical floor height of 0 will trigger a smart building type default.",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "ft",
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023E"
+        },
+        {
+          "name": "num_stories_above_grade",
+          "display_name": "Number of Stories Above Grade",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-023G"
+        },
+        {
+          "name": "num_stories_below_grade",
+          "display_name": "Number of Stories Below Grade",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023I"
+        },
+        {
+          "name": "building_rotation",
+          "display_name": "Building Rotation",
+          "description": "Set Building Rotation off of North (positive value is clockwise).",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "Degrees",
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023K"
+        },
+        {
+          "name": "template",
+          "display_name": "Target Standard",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2004",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "$$hashKey": "uiGrid-023M"
+        },
+        {
+          "name": "ns_to_ew_ratio",
+          "display_name": "Ratio of North/South Facade Length Relative to East/West Facade Length.",
+          "description": "Selecting an aspect ratio of 0 will trigger a smart building type default. Aspect ratios less than one are not recommended for sliced bar geometry, instead rotate building and use a greater than 1 aspect ratio",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023O"
+        },
+        {
+          "name": "wwr",
+          "display_name": "Window to Wall Ratio.",
+          "description": "Selecting a window to wall ratio of 0 will trigger a smart building type default.",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023Q"
+        },
+        {
+          "name": "party_wall_fraction",
+          "display_name": "Fraction of Exterior Wall Area with Adjacent Structure",
+          "description": "This will impact how many above grade exterior walls are modeled with adiabatic boundary condition.",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023S"
+        },
+        {
+          "name": "party_wall_stories_north",
+          "display_name": "Number of North facing stories with party wall",
+          "description": "This will impact how many above grade exterior north walls are modeled with adiabatic boundary condition. If this is less than the number of above grade stoes, upper flor will reamin exterior",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023U"
+        },
+        {
+          "name": "party_wall_stories_south",
+          "display_name": "Number of South facing stories with party wall",
+          "description": "This will impact how many above grade exterior south walls are modeled with adiabatic boundary condition. If this is less than the number of above grade stoes, upper flor will reamin exterior",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023W"
+        },
+        {
+          "name": "party_wall_stories_east",
+          "display_name": "Number of East facing stories with party wall",
+          "description": "This will impact how many above grade exterior east walls are modeled with adiabatic boundary condition. If this is less than the number of above grade stoes, upper flor will reamin exterior",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-023Y"
+        },
+        {
+          "name": "party_wall_stories_west",
+          "display_name": "Number of West facing stories with party wall",
+          "description": "This will impact how many above grade exterior west walls are modeled with adiabatic boundary condition. If this is less than the number of above grade stoes, upper flor will reamin exterior",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0240"
+        },
+        {
+          "name": "bottom_story_ground_exposed_floor",
+          "display_name": "Is the Bottom Story Exposed to Ground?",
+          "description": "This should be true unless you are modeling a partial building which doesn't include the lowest story. The bottom story floor will have an adiabatic boundary condition when false.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-0242"
+        },
+        {
+          "name": "top_story_exterior_exposed_roof",
+          "display_name": "Is the Top Story an Exterior Roof?",
+          "description": "This should be true unless you are modeling a partial building which doesn't include the highest story. The top story ceiling will have an adiabatic boundary condition when false.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-0244"
+        },
+        {
+          "name": "story_multiplier",
+          "display_name": "Calculation Method for Story Multiplier",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Basements Ground Mid Top",
+          "choice_values": [
+            "None",
+            "Basements Ground Mid Top"
+          ],
+          "choice_display_names": [
+            "None",
+            "Basements Ground Mid Top"
+          ],
+          "$$hashKey": "uiGrid-0246"
+        },
+        {
+          "name": "bar_division_method",
+          "display_name": "Division Method for Bar Space Types.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Multiple Space Types - Individual Stories Sliced",
+          "choice_values": [
+            "Multiple Space Types - Simple Sliced",
+            "Multiple Space Types - Individual Stories Sliced",
+            "Single Space Type - Core and Perimeter"
+          ],
+          "choice_display_names": [
+            "Multiple Space Types - Simple Sliced",
+            "Multiple Space Types - Individual Stories Sliced",
+            "Single Space Type - Core and Perimeter"
+          ],
+          "$$hashKey": "uiGrid-0248"
+        },
+        {
+          "name": "make_mid_story_surfaces_adiabatic",
+          "display_name": "Make Mid Story Floor Surfaces Adibatic",
+          "description": "If set to true, this will skip surface intersection and make mid story floors and celings adiabiatc, not just at multiplied gaps.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "$$hashKey": "uiGrid-024A"
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "8/29/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 1,
+      "options": [],
+      "instanceId": 0.632362358111177,
+      "numberOfOptions": 0,
+      "$$hashKey": "object:12949"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_model",
+      "name": "create_bar_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_bar_from_model",
+      "uid": "87fb0783-7a38-4900-8969-40e744c67814",
+      "uuid": "{87fb0783-7a38-4900-8969-40e744c67814}",
+      "version_id": "33a7ff7c-606a-43f4-9b24-fa5614f7a092",
+      "version_uuid": "{33a7ff7c-606a-43f4-9b24-fa5614f7a092}",
+      "version_modified": "20170829T184522Z",
+      "xml_checksum": "2AF3A68E",
+      "display_name": "Create Bar From Model",
+      "class_name": "CreateBarFromModel",
+      "description": "Create a core and perimeter bar envelope based on analysis of initial model geometry.",
+      "modeler_description": "Gather orientation and story specific construction, fenestration (including overhang) specific information",
+      "tags": "Envelope.Form",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-06LZ",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-06M1",
+          "option_1": "Create Bar from Model Indiv Sliced"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-06M3",
+          "option_1": "Option 1 Description: Create a core and perimeter bar envelope based on analysis of initial model geometry."
+        },
+        {
+          "name": "bar_calc_method",
+          "display_name": "Calculation Method to determine Bar Length and Width.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Bar - Reduced Bounding Box",
+          "choice_values": [
+            "Bar - Reduced Bounding Box",
+            "Bar - Reduced Width",
+            "Bar - Stretched"
+          ],
+          "choice_display_names": [
+            "Bar - Reduced Bounding Box",
+            "Bar - Reduced Width",
+            "Bar - Stretched"
+          ],
+          "$$hashKey": "uiGrid-06M5",
+          "variable": false,
+          "option_1": "Bar - Stretched"
+        },
+        {
+          "name": "bar_division_method",
+          "display_name": "Division Method for Bar Spaces.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Single Space Type - Core and Perimeter",
+          "choice_values": [
+            "Single Space Type - Core and Perimeter",
+            "Multiple Space Types - Simple Sliced",
+            "Multiple Space Types - Individual Stories Sliced"
+          ],
+          "choice_display_names": [
+            "Single Space Type - Core and Perimeter",
+            "Multiple Space Types - Simple Sliced",
+            "Multiple Space Types - Individual Stories Sliced"
+          ],
+          "$$hashKey": "uiGrid-06M7",
+          "option_1": "Multiple Space Types - Individual Stories Sliced",
+          "variable": true
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "8/29/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 2,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "bar_calc_method",
+              "value": "Bar - Stretched"
+            },
+            {
+              "name": "bar_division_method",
+              "value": "Multiple Space Types - Individual Stories Sliced"
+            }
+          ],
+          "name": "Create Bar from Model Indiv Sliced",
+          "description": "Option 1 Description: Create a core and perimeter bar envelope based on analysis of initial model geometry."
+        }
+      ],
+      "instanceId": 0.7082529593911515,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:23278"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_typical_building_from_model",
+      "name": "create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_typical_building_from_model",
+      "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
+      "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
+      "version_id": "62df7769-4b2c-4864-9c76-6e5d8a7e6b95",
+      "version_uuid": "{62df7769-4b2c-4864-9c76-6e5d8a7e6b95}",
+      "version_modified": "20170829T184522Z",
+      "xml_checksum": "EE13F09F",
+      "display_name": "Create Typical Building from Model",
+      "class_name": "CreateTypicalBuildingFromModel",
+      "description": "Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems.",
+      "modeler_description": "Initially this was intended for stub space types, but it is possible that it will be run on models tha talready have internal loads, schedules, or constructions that should be preserved. Set it up to support addition at later date of bool args to skip specific types of model elements.",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Model Articulation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03D2",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03D4",
+          "option_1": "Create Typical Building from Model Loads Const"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03D6",
+          "option_1": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
+        },
+        {
+          "name": "template",
+          "display_name": "Target Standard",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2010",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "$$hashKey": "uiGrid-03D8",
+          "option_1": "90.1-2010",
+          "variable": false
+        },
+        {
+          "name": "system_type",
+          "display_name": "HVAC System Type",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Inferred",
+          "choice_values": [
+            "Inferred",
+            "Ideal Air Loads",
+            "PTAC with hot water heat",
+            "PTAC with gas coil heat",
+            "PTAC with electric baseboard heat",
+            "PTAC with no heat",
+            "PTAC with district hot water heat",
+            "PTHP",
+            "PSZ-AC with gas coil heat",
+            "PSZ-AC with electric baseboard heat",
+            "PSZ-AC with no heat",
+            "PSZ-AC with district hot water heat",
+            "PSZ-HP",
+            "Fan coil district chilled water with no heat",
+            "Fan coil district chilled water and boiler",
+            "Fan coil district chilled water unit heaters",
+            "Fan coil district chilled water electric baseboard heat",
+            "Fan coil district hot and chilled water",
+            "Fan coil district hot water and chiller",
+            "Fan coil chiller with no heat",
+            "Baseboard district hot water heat",
+            "Baseboard district hot water heat with direct evap coolers",
+            "Baseboard electric heat",
+            "Baseboard electric heat with direct evap coolers",
+            "Baseboard hot water heat",
+            "Baseboard hot water heat with direct evap coolers",
+            "Window AC with no heat",
+            "Window AC with forced air furnace",
+            "Window AC with district hot water baseboard heat",
+            "Window AC with hot water baseboard heat",
+            "Window AC with electric baseboard heat",
+            "Window AC with unit heaters",
+            "Direct evap coolers",
+            "Direct evap coolers with unit heaters",
+            "Unit heaters",
+            "Heat pump heat with no cooling",
+            "Heat pump heat with direct evap cooler",
+            "VAV with reheat",
+            "VAV with PFP boxes",
+            "VAV with gas reheat",
+            "VAV with zone unit heaters",
+            "VAV with electric baseboard heat",
+            "VAV cool with zone heat pump heat",
+            "PVAV with reheat",
+            "PVAV with PFP boxes",
+            "Residential forced air",
+            "Residential forced air cooling hot water baseboard heat",
+            "Residential forced air with district hot water",
+            "Residential heat pump",
+            "Forced air furnace",
+            "Forced air furnace district chilled water fan coil",
+            "Forced air furnace direct evap cooler",
+            "Residential AC with no heat",
+            "Residential AC with electric baseboard heat"
+          ],
+          "choice_display_names": [
+            "Inferred",
+            "Ideal Air Loads",
+            "PTAC with hot water heat",
+            "PTAC with gas coil heat",
+            "PTAC with electric baseboard heat",
+            "PTAC with no heat",
+            "PTAC with district hot water heat",
+            "PTHP",
+            "PSZ-AC with gas coil heat",
+            "PSZ-AC with electric baseboard heat",
+            "PSZ-AC with no heat",
+            "PSZ-AC with district hot water heat",
+            "PSZ-HP",
+            "Fan coil district chilled water with no heat",
+            "Fan coil district chilled water and boiler",
+            "Fan coil district chilled water unit heaters",
+            "Fan coil district chilled water electric baseboard heat",
+            "Fan coil district hot and chilled water",
+            "Fan coil district hot water and chiller",
+            "Fan coil chiller with no heat",
+            "Baseboard district hot water heat",
+            "Baseboard district hot water heat with direct evap coolers",
+            "Baseboard electric heat",
+            "Baseboard electric heat with direct evap coolers",
+            "Baseboard hot water heat",
+            "Baseboard hot water heat with direct evap coolers",
+            "Window AC with no heat",
+            "Window AC with forced air furnace",
+            "Window AC with district hot water baseboard heat",
+            "Window AC with hot water baseboard heat",
+            "Window AC with electric baseboard heat",
+            "Window AC with unit heaters",
+            "Direct evap coolers",
+            "Direct evap coolers with unit heaters",
+            "Unit heaters",
+            "Heat pump heat with no cooling",
+            "Heat pump heat with direct evap cooler",
+            "VAV with reheat",
+            "VAV with PFP boxes",
+            "VAV with gas reheat",
+            "VAV with zone unit heaters",
+            "VAV with electric baseboard heat",
+            "VAV cool with zone heat pump heat",
+            "PVAV with reheat",
+            "PVAV with PFP boxes",
+            "Residential forced air",
+            "Residential forced air cooling hot water baseboard heat",
+            "Residential forced air with district hot water",
+            "Residential heat pump",
+            "Forced air furnace",
+            "Forced air furnace district chilled water fan coil",
+            "Forced air furnace direct evap cooler",
+            "Residential AC with no heat",
+            "Residential AC with electric baseboard heat"
+          ],
+          "$$hashKey": "uiGrid-03DA",
+          "option_1": "Inferred",
+          "variable": false
+        },
+        {
+          "name": "hvac_delivery_type",
+          "display_name": "HVAC System Delivery Type",
+          "description": "How the HVAC system delivers heating or cooling to the zone.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Forced Air",
+          "choice_values": [
+            "Forced Air",
+            "Hydronic"
+          ],
+          "choice_display_names": [
+            "Forced Air",
+            "Hydronic"
+          ],
+          "$$hashKey": "uiGrid-03DC",
+          "option_1": "Forced Air",
+          "variable": false
+        },
+        {
+          "name": "htg_src",
+          "display_name": "HVAC Heating Source",
+          "description": "The primary source of heating used by HVAC systems in the model.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "NaturalGas",
+          "choice_values": [
+            "Electricity",
+            "NaturalGas",
+            "DistrictHeating",
+            "DistrictAmbient"
+          ],
+          "choice_display_names": [
+            "Electricity",
+            "NaturalGas",
+            "DistrictHeating",
+            "DistrictAmbient"
+          ],
+          "$$hashKey": "uiGrid-03DE",
+          "option_1": "NaturalGas",
+          "variable": false
+        },
+        {
+          "name": "clg_src",
+          "display_name": "HVAC Cooling Source",
+          "description": "The primary source of cooling used by HVAC systems in the model.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Electricity",
+          "choice_values": [
+            "Electricity",
+            "DistrictCooling",
+            "DistrictAmbient"
+          ],
+          "choice_display_names": [
+            "Electricity",
+            "DistrictCooling",
+            "DistrictAmbient"
+          ],
+          "$$hashKey": "uiGrid-03DG",
+          "option_1": "Electricity",
+          "variable": false
+        },
+        {
+          "name": "kitchen_makeup",
+          "display_name": "Kitchen Exhaust MakeUp Air Calculation Method",
+          "description": "Determine logic to identify dining or cafe zones to provide makeup air to kitchen exhaust.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Adjacent",
+          "choice_values": [
+            "None",
+            "Largest Zone",
+            "Adjacent"
+          ],
+          "choice_display_names": [
+            "None",
+            "Largest Zone",
+            "Adjacent"
+          ],
+          "$$hashKey": "uiGrid-03DI",
+          "option_1": "Adjacent",
+          "variable": false
+        },
+        {
+          "name": "exterior_lighting_zone",
+          "display_name": "Exterior Lighting Zone",
+          "description": "Identify the Exterior Lighitng Zone for the Building Site.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "3 - All Other Areas",
+          "choice_values": [
+            "0 - Undeveloped Areas Parks",
+            "1 - Developed Areas Parks",
+            "2 - Neighborhood",
+            "3 - All Other Areas",
+            "4 - High Activity"
+          ],
+          "choice_display_names": [
+            "0 - Undeveloped Areas Parks",
+            "1 - Developed Areas Parks",
+            "2 - Neighborhood",
+            "3 - All Other Areas",
+            "4 - High Activity"
+          ],
+          "$$hashKey": "uiGrid-03DK",
+          "option_1": "3 - All Other Areas",
+          "variable": false
+        },
+        {
+          "name": "add_constructions",
+          "display_name": "Add Constructions to Model",
+          "description": "Construction Set will be appied to entire building",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03DM",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_space_type_loads",
+          "display_name": "Add Space Type Loads to Model",
+          "description": "Populate existing space types in model with internal loads.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03DO",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_elevators",
+          "display_name": "Add Elevators to Model",
+          "description": "Elevators will be add directly to space in model vs. being applied to a space type.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03DQ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_exterior_lights",
+          "display_name": "Add Exterior Lights to Model",
+          "description": "Multiple exterior lights objects will be added for different classes of lighting such as parking and facade.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03DS",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "onsite_parking_fraction",
+          "display_name": "Onsite Parking Fraction",
+          "description": "If set to 0 no exterior lighting for parking will be added",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-03DU",
+          "option_1": 1,
+          "variable": false
+        },
+        {
+          "name": "add_exhaust",
+          "display_name": "Add Exhaust Fans to Model",
+          "description": "Depending upon building type exhaust fans can be in kitchens, restrooms or other space types",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03DW",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_swh",
+          "display_name": "Add Service Water Heating to Model",
+          "description": "This will add both the supply and demand side of service water heating.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03DY",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_thermostat",
+          "display_name": "Add Thermostats",
+          "description": "Add Thermost to model based on Space Type Standards information of spaces assigned to thermal zones.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03E0",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_hvac",
+          "display_name": "Add HVAC System to Model",
+          "description": "Add HVAC System and thermostats to model",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03E2",
+          "option_1": false,
+          "variable": false
+        },
+        {
+          "name": "remove_objects",
+          "display_name": "Clean Model of non-gemoetry objects",
+          "description": "Only removes objects of type that are selected to be added.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03E4",
+          "option_1": false,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "8/29/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 3,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "template",
+              "value": "90.1-2010"
+            },
+            {
+              "name": "system_type",
+              "value": "Inferred"
+            },
+            {
+              "name": "hvac_delivery_type",
+              "value": "Forced Air"
+            },
+            {
+              "name": "htg_src",
+              "value": "NaturalGas"
+            },
+            {
+              "name": "clg_src",
+              "value": "Electricity"
+            },
+            {
+              "name": "kitchen_makeup",
+              "value": "Adjacent"
+            },
+            {
+              "name": "exterior_lighting_zone",
+              "value": "3 - All Other Areas"
+            },
+            {
+              "name": "add_constructions",
+              "value": true
+            },
+            {
+              "name": "add_space_type_loads",
+              "value": true
+            },
+            {
+              "name": "add_elevators",
+              "value": true
+            },
+            {
+              "name": "add_exterior_lights",
+              "value": true
+            },
+            {
+              "name": "onsite_parking_fraction",
+              "value": 1
+            },
+            {
+              "name": "add_exhaust",
+              "value": true
+            },
+            {
+              "name": "add_swh",
+              "value": true
+            },
+            {
+              "name": "add_thermostat",
+              "value": true
+            },
+            {
+              "name": "add_hvac",
+              "value": false
+            },
+            {
+              "name": "remove_objects",
+              "value": false
+            }
+          ],
+          "name": "Create Typical Building from Model Loads Const",
+          "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
+        }
+      ],
+      "instanceId": 0.1805254181424023,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:15462"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/blended_space_type_from_model",
+      "name": "blended_space_type_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/blended_space_type_from_model",
+      "uid": "667c2f1f-0927-4dbd-a7be-1087b5c15181",
+      "uuid": "{667c2f1f-0927-4dbd-a7be-1087b5c15181}",
+      "version_id": "c6a8ba99-6d80-4e00-afe3-8f24f8e32641",
+      "version_uuid": "{c6a8ba99-6d80-4e00-afe3-8f24f8e32641}",
+      "version_modified": "20170510T162533Z",
+      "xml_checksum": "28AD5222",
+      "display_name": "Blended Space Type from Model",
+      "class_name": "BlendedSpaceTypeFromModel",
+      "description": "This measure will remove all space type assignemnts and hard assigned internal loads from spaces that are included in the building floor area. Spaces such as plenums and attics will be left alone. A blended space type will be created from the original internal loads and assigned at the building level. Thermostats, Service Water Heating, and HVAC systems will not be altered. Any constructions associated with space types will be hard assigned prior to the space type assignemnt being removed.",
+      "modeler_description": "The goal of this measure is to create a single space type that represents the loads and schedules of a collection of space types in a model. When possible the measure will create mulitple load instances of a specific type in the resulting blended space type. This allows the original schedules to be used, and can allow for down stream EE measures on specific internal loads. Design Ventilation Outdoor Air objects will have to be merged into a single object. Will try to maintain the load design type (power, per area, per person) when possible. Need to account for zone multipliers when createding blended internal loads. Also address what happens to daylighting control objets. Original space types will be left in the model, some may still be assigned to spaces not included in the building area.",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Model Articulation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-04VG",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-04VI",
+          "option_1": "Blend Space Types from Model"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-04VK",
+          "option_1": "Option 1 Description: This measure will remove all space type assignemnts and hard assigned internal loads from spaces that are included in the building floor area. Spaces such as plenums and attics will be left alone. A blended space type will be created from the original internal loads and assigned at the building level. Thermostats, Service Water Heating, and HVAC systems will not be altered. Any constructions associated with space types will be hard assigned prior to the space type assignemnt being removed."
+        },
+        {
+          "name": "blend_method",
+          "display_name": "Blend Space Types that are part of the same",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Building",
+          "choice_values": [
+            "Building Type",
+            "Building Story",
+            "Building"
+          ],
+          "choice_display_names": [
+            "Building Type",
+            "Building Story",
+            "Building"
+          ],
+          "$$hashKey": "uiGrid-04VM",
+          "option_1": "Building",
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/10/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 4,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "blend_method",
+              "value": "Building"
+            }
+          ],
+          "name": "Blend Space Types from Model",
+          "description": "Option 1 Description: This measure will remove all space type assignemnts and hard assigned internal loads from spaces that are included in the building floor area. Spaces such as plenums and attics will be left alone. A blended space type will be created from the original internal loads and assigned at the building level. Thermostats, Service Water Heating, and HVAC systems will not be altered. Any constructions associated with space types will be hard assigned prior to the space type assignemnt being removed."
+        }
+      ],
+      "instanceId": 0.47210311874858135,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:18628"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_model",
+      "name": "create_bar_from_model_2",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_bar_from_model",
+      "uid": "87fb0783-7a38-4900-8969-40e744c67814",
+      "uuid": "{87fb0783-7a38-4900-8969-40e744c67814}",
+      "version_id": "33a7ff7c-606a-43f4-9b24-fa5614f7a092",
+      "version_uuid": "{33a7ff7c-606a-43f4-9b24-fa5614f7a092}",
+      "version_modified": "20170829T184522Z",
+      "xml_checksum": "2AF3A68E",
+      "display_name": "Create Bar From Model 2",
+      "class_name": "CreateBarFromModel",
+      "description": "Create a core and perimeter bar envelope based on analysis of initial model geometry.",
+      "modeler_description": "Gather orientation and story specific construction, fenestration (including overhang) specific information",
+      "tags": "Envelope.Form",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-074P",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-074R",
+          "option_1": "Create Bar from Model Core Perim"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-074T",
+          "option_1": "Option 1 Description: Create a core and perimeter bar envelope based on analysis of initial model geometry."
+        },
+        {
+          "name": "bar_calc_method",
+          "display_name": "Calculation Method to determine Bar Length and Width.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Bar - Reduced Bounding Box",
+          "choice_values": [
+            "Bar - Reduced Bounding Box",
+            "Bar - Reduced Width",
+            "Bar - Stretched"
+          ],
+          "choice_display_names": [
+            "Bar - Reduced Bounding Box",
+            "Bar - Reduced Width",
+            "Bar - Stretched"
+          ],
+          "$$hashKey": "uiGrid-074V",
+          "option_1": "Bar - Stretched",
+          "variable": false
+        },
+        {
+          "name": "bar_division_method",
+          "display_name": "Division Method for Bar Spaces.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Single Space Type - Core and Perimeter",
+          "choice_values": [
+            "Single Space Type - Core and Perimeter",
+            "Multiple Space Types - Simple Sliced",
+            "Multiple Space Types - Individual Stories Sliced"
+          ],
+          "choice_display_names": [
+            "Single Space Type - Core and Perimeter",
+            "Multiple Space Types - Simple Sliced",
+            "Multiple Space Types - Individual Stories Sliced"
+          ],
+          "$$hashKey": "uiGrid-074X",
+          "option_1": "Single Space Type - Core and Perimeter",
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "8/29/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 5,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "bar_calc_method",
+              "value": "Bar - Stretched"
+            },
+            {
+              "name": "bar_division_method",
+              "value": "Single Space Type - Core and Perimeter"
+            }
+          ],
+          "name": "Create Bar from Model Core Perim",
+          "description": "Option 1 Description: Create a core and perimeter bar envelope based on analysis of initial model geometry."
+        }
+      ],
+      "instanceId": 0.5689797743452731,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:25061"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_typical_building_from_model",
+      "name": "create_typical_building_from_model_2",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_typical_building_from_model",
+      "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
+      "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
+      "version_id": "62df7769-4b2c-4864-9c76-6e5d8a7e6b95",
+      "version_uuid": "{62df7769-4b2c-4864-9c76-6e5d8a7e6b95}",
+      "version_modified": "20170829T184522Z",
+      "xml_checksum": "EE13F09F",
+      "display_name": "Create Typical Building from Model 2",
+      "class_name": "CreateTypicalBuildingFromModel",
+      "description": "Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems.",
+      "modeler_description": "Initially this was intended for stub space types, but it is possible that it will be run on models tha talready have internal loads, schedules, or constructions that should be preserved. Set it up to support addition at later date of bool args to skip specific types of model elements.",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Model Articulation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03PD",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03PF",
+          "option_1": "Create Typical Building from Model HVAC"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03PH",
+          "option_1": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
+        },
+        {
+          "name": "template",
+          "display_name": "Target Standard",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2010",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "$$hashKey": "uiGrid-03PJ",
+          "option_1": "90.1-2010",
+          "variable": false
+        },
+        {
+          "name": "system_type",
+          "display_name": "HVAC System Type",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Inferred",
+          "choice_values": [
+            "Inferred",
+            "Ideal Air Loads",
+            "PTAC with hot water heat",
+            "PTAC with gas coil heat",
+            "PTAC with electric baseboard heat",
+            "PTAC with no heat",
+            "PTAC with district hot water heat",
+            "PTHP",
+            "PSZ-AC with gas coil heat",
+            "PSZ-AC with electric baseboard heat",
+            "PSZ-AC with no heat",
+            "PSZ-AC with district hot water heat",
+            "PSZ-HP",
+            "Fan coil district chilled water with no heat",
+            "Fan coil district chilled water and boiler",
+            "Fan coil district chilled water unit heaters",
+            "Fan coil district chilled water electric baseboard heat",
+            "Fan coil district hot and chilled water",
+            "Fan coil district hot water and chiller",
+            "Fan coil chiller with no heat",
+            "Baseboard district hot water heat",
+            "Baseboard district hot water heat with direct evap coolers",
+            "Baseboard electric heat",
+            "Baseboard electric heat with direct evap coolers",
+            "Baseboard hot water heat",
+            "Baseboard hot water heat with direct evap coolers",
+            "Window AC with no heat",
+            "Window AC with forced air furnace",
+            "Window AC with district hot water baseboard heat",
+            "Window AC with hot water baseboard heat",
+            "Window AC with electric baseboard heat",
+            "Window AC with unit heaters",
+            "Direct evap coolers",
+            "Direct evap coolers with unit heaters",
+            "Unit heaters",
+            "Heat pump heat with no cooling",
+            "Heat pump heat with direct evap cooler",
+            "VAV with reheat",
+            "VAV with PFP boxes",
+            "VAV with gas reheat",
+            "VAV with zone unit heaters",
+            "VAV with electric baseboard heat",
+            "VAV cool with zone heat pump heat",
+            "PVAV with reheat",
+            "PVAV with PFP boxes",
+            "Residential forced air",
+            "Residential forced air cooling hot water baseboard heat",
+            "Residential forced air with district hot water",
+            "Residential heat pump",
+            "Forced air furnace",
+            "Forced air furnace district chilled water fan coil",
+            "Forced air furnace direct evap cooler",
+            "Residential AC with no heat",
+            "Residential AC with electric baseboard heat"
+          ],
+          "choice_display_names": [
+            "Inferred",
+            "Ideal Air Loads",
+            "PTAC with hot water heat",
+            "PTAC with gas coil heat",
+            "PTAC with electric baseboard heat",
+            "PTAC with no heat",
+            "PTAC with district hot water heat",
+            "PTHP",
+            "PSZ-AC with gas coil heat",
+            "PSZ-AC with electric baseboard heat",
+            "PSZ-AC with no heat",
+            "PSZ-AC with district hot water heat",
+            "PSZ-HP",
+            "Fan coil district chilled water with no heat",
+            "Fan coil district chilled water and boiler",
+            "Fan coil district chilled water unit heaters",
+            "Fan coil district chilled water electric baseboard heat",
+            "Fan coil district hot and chilled water",
+            "Fan coil district hot water and chiller",
+            "Fan coil chiller with no heat",
+            "Baseboard district hot water heat",
+            "Baseboard district hot water heat with direct evap coolers",
+            "Baseboard electric heat",
+            "Baseboard electric heat with direct evap coolers",
+            "Baseboard hot water heat",
+            "Baseboard hot water heat with direct evap coolers",
+            "Window AC with no heat",
+            "Window AC with forced air furnace",
+            "Window AC with district hot water baseboard heat",
+            "Window AC with hot water baseboard heat",
+            "Window AC with electric baseboard heat",
+            "Window AC with unit heaters",
+            "Direct evap coolers",
+            "Direct evap coolers with unit heaters",
+            "Unit heaters",
+            "Heat pump heat with no cooling",
+            "Heat pump heat with direct evap cooler",
+            "VAV with reheat",
+            "VAV with PFP boxes",
+            "VAV with gas reheat",
+            "VAV with zone unit heaters",
+            "VAV with electric baseboard heat",
+            "VAV cool with zone heat pump heat",
+            "PVAV with reheat",
+            "PVAV with PFP boxes",
+            "Residential forced air",
+            "Residential forced air cooling hot water baseboard heat",
+            "Residential forced air with district hot water",
+            "Residential heat pump",
+            "Forced air furnace",
+            "Forced air furnace district chilled water fan coil",
+            "Forced air furnace direct evap cooler",
+            "Residential AC with no heat",
+            "Residential AC with electric baseboard heat"
+          ],
+          "$$hashKey": "uiGrid-03PL",
+          "option_1": "Inferred",
+          "variable": false
+        },
+        {
+          "name": "hvac_delivery_type",
+          "display_name": "HVAC System Delivery Type",
+          "description": "How the HVAC system delivers heating or cooling to the zone.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Forced Air",
+          "choice_values": [
+            "Forced Air",
+            "Hydronic"
+          ],
+          "choice_display_names": [
+            "Forced Air",
+            "Hydronic"
+          ],
+          "$$hashKey": "uiGrid-03PN",
+          "option_1": "Forced Air",
+          "variable": false
+        },
+        {
+          "name": "htg_src",
+          "display_name": "HVAC Heating Source",
+          "description": "The primary source of heating used by HVAC systems in the model.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "NaturalGas",
+          "choice_values": [
+            "Electricity",
+            "NaturalGas",
+            "DistrictHeating",
+            "DistrictAmbient"
+          ],
+          "choice_display_names": [
+            "Electricity",
+            "NaturalGas",
+            "DistrictHeating",
+            "DistrictAmbient"
+          ],
+          "$$hashKey": "uiGrid-03PP",
+          "option_1": "NaturalGas",
+          "variable": false
+        },
+        {
+          "name": "clg_src",
+          "display_name": "HVAC Cooling Source",
+          "description": "The primary source of cooling used by HVAC systems in the model.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Electricity",
+          "choice_values": [
+            "Electricity",
+            "DistrictCooling",
+            "DistrictAmbient"
+          ],
+          "choice_display_names": [
+            "Electricity",
+            "DistrictCooling",
+            "DistrictAmbient"
+          ],
+          "$$hashKey": "uiGrid-03PR",
+          "option_1": "Electricity",
+          "variable": false
+        },
+        {
+          "name": "kitchen_makeup",
+          "display_name": "Kitchen Exhaust MakeUp Air Calculation Method",
+          "description": "Determine logic to identify dining or cafe zones to provide makeup air to kitchen exhaust.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Adjacent",
+          "choice_values": [
+            "None",
+            "Largest Zone",
+            "Adjacent"
+          ],
+          "choice_display_names": [
+            "None",
+            "Largest Zone",
+            "Adjacent"
+          ],
+          "$$hashKey": "uiGrid-03PT",
+          "option_1": "Adjacent",
+          "variable": false
+        },
+        {
+          "name": "exterior_lighting_zone",
+          "display_name": "Exterior Lighting Zone",
+          "description": "Identify the Exterior Lighitng Zone for the Building Site.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "3 - All Other Areas",
+          "choice_values": [
+            "0 - Undeveloped Areas Parks",
+            "1 - Developed Areas Parks",
+            "2 - Neighborhood",
+            "3 - All Other Areas",
+            "4 - High Activity"
+          ],
+          "choice_display_names": [
+            "0 - Undeveloped Areas Parks",
+            "1 - Developed Areas Parks",
+            "2 - Neighborhood",
+            "3 - All Other Areas",
+            "4 - High Activity"
+          ],
+          "$$hashKey": "uiGrid-03PV",
+          "option_1": "3 - All Other Areas",
+          "variable": false
+        },
+        {
+          "name": "add_constructions",
+          "display_name": "Add Constructions to Model",
+          "description": "Construction Set will be appied to entire building",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03PX",
+          "option_1": false,
+          "variable": false
+        },
+        {
+          "name": "add_space_type_loads",
+          "display_name": "Add Space Type Loads to Model",
+          "description": "Populate existing space types in model with internal loads.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03PZ",
+          "option_1": false,
+          "variable": false
+        },
+        {
+          "name": "add_elevators",
+          "display_name": "Add Elevators to Model",
+          "description": "Elevators will be add directly to space in model vs. being applied to a space type.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03Q1",
+          "option_1": false,
+          "variable": false
+        },
+        {
+          "name": "add_exterior_lights",
+          "display_name": "Add Exterior Lights to Model",
+          "description": "Multiple exterior lights objects will be added for different classes of lighting such as parking and facade.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03Q3",
+          "option_1": false,
+          "variable": false
+        },
+        {
+          "name": "onsite_parking_fraction",
+          "display_name": "Onsite Parking Fraction",
+          "description": "If set to 0 no exterior lighting for parking will be added",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-03Q5",
+          "option_1": 1,
+          "variable": false
+        },
+        {
+          "name": "add_exhaust",
+          "display_name": "Add Exhaust Fans to Model",
+          "description": "Depending upon building type exhaust fans can be in kitchens, restrooms or other space types",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03Q7",
+          "option_1": false,
+          "variable": false
+        },
+        {
+          "name": "add_swh",
+          "display_name": "Add Service Water Heating to Model",
+          "description": "This will add both the supply and demand side of service water heating.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03Q9",
+          "option_1": false,
+          "variable": false
+        },
+        {
+          "name": "add_thermostat",
+          "display_name": "Add Thermostats",
+          "description": "Add Thermost to model based on Space Type Standards information of spaces assigned to thermal zones.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03QB",
+          "option_1": false,
+          "variable": false
+        },
+        {
+          "name": "add_hvac",
+          "display_name": "Add HVAC System to Model",
+          "description": "Add HVAC System and thermostats to model",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03QD",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "remove_objects",
+          "display_name": "Clean Model of non-gemoetry objects",
+          "description": "Only removes objects of type that are selected to be added.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03QF",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "8/29/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 6,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "template",
+              "value": "90.1-2010"
+            },
+            {
+              "name": "system_type",
+              "value": "Inferred"
+            },
+            {
+              "name": "hvac_delivery_type",
+              "value": "Forced Air"
+            },
+            {
+              "name": "htg_src",
+              "value": "NaturalGas"
+            },
+            {
+              "name": "clg_src",
+              "value": "Electricity"
+            },
+            {
+              "name": "kitchen_makeup",
+              "value": "Adjacent"
+            },
+            {
+              "name": "exterior_lighting_zone",
+              "value": "3 - All Other Areas"
+            },
+            {
+              "name": "add_constructions",
+              "value": false
+            },
+            {
+              "name": "add_space_type_loads",
+              "value": false
+            },
+            {
+              "name": "add_elevators",
+              "value": false
+            },
+            {
+              "name": "add_exterior_lights",
+              "value": false
+            },
+            {
+              "name": "onsite_parking_fraction",
+              "value": 1
+            },
+            {
+              "name": "add_exhaust",
+              "value": false
+            },
+            {
+              "name": "add_swh",
+              "value": false
+            },
+            {
+              "name": "add_thermostat",
+              "value": false
+            },
+            {
+              "name": "add_hvac",
+              "value": true
+            },
+            {
+              "name": "remove_objects",
+              "value": true
+            }
+          ],
+          "name": "Create Typical Building from Model HVAC",
+          "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
+        }
+      ],
+      "instanceId": 0.9294596057485176,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:16271"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/openstudio_results",
+      "name": "openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/openstudio_results",
+      "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+      "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
+      "version_id": "05ad855b-6ae3-431e-991b-80e5133a56f2",
+      "version_uuid": "{05ad855b-6ae3-431e-991b-80e5133a56f2}",
+      "version_modified": "20170622T203955Z",
+      "xml_checksum": "557BF06F",
+      "display_name": "OpenStudio Results",
+      "class_name": "OpenStudioResults",
+      "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+      "modeler_description": "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+      "tags": "Reporting.QAQC",
+      "outputs": [
+        {
+          "name": "electricity_ip",
+          "display_name": "electricity_ip",
+          "short_name": "electricity_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "natural_gas_ip",
+          "display_name": "natural_gas_ip",
+          "short_name": "natural_gas_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "additional_fuel_ip",
+          "display_name": "additional_fuel_ip",
+          "short_name": "additional_fuel_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_heating_ip",
+          "display_name": "district_heating_ip",
+          "short_name": "district_heating_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_cooling_ip",
+          "display_name": "district_cooling_ip",
+          "short_name": "district_cooling_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_site_eui",
+          "display_name": "total_site_eui",
+          "short_name": "total_site_eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "eui",
+          "display_name": "eui",
+          "short_name": "eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "net_site_energy",
+          "display_name": "net_site_energy",
+          "short_name": "net_site_energy",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_peak_electric_demand",
+          "display_name": "annual_peak_electric_demand",
+          "short_name": "annual_peak_electric_demand",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_cooling",
+          "display_name": "unmet_hours_during_occupied_cooling",
+          "short_name": "unmet_hours_during_occupied_cooling",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_heating",
+          "display_name": "unmet_hours_during_occupied_heating",
+          "short_name": "unmet_hours_during_occupied_heating",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "first_year_capital_cost",
+          "display_name": "first_year_capital_cost",
+          "short_name": "first_year_capital_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_utility_cost",
+          "display_name": "annual_utility_cost",
+          "short_name": "annual_utility_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_lifecycle_cost",
+          "display_name": "total_lifecycle_cost",
+          "short_name": "total_lifecycle_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-00VG",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-00VI",
+          "option_1": "OpenStudio Results"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-00VK",
+          "option_1": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        },
+        {
+          "name": "building_summary_section",
+          "display_name": "Model Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00VM",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "annual_overview_section",
+          "display_name": "Annual Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00VO",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "monthly_overview_section",
+          "display_name": "Monthly Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00VQ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "utility_bills_rates_section",
+          "display_name": "Utility Bills/Rates",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00VS",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "envelope_section_section",
+          "display_name": "Envelope",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00VU",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "space_type_breakdown_section",
+          "display_name": "Space Type Breakdown",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00VW",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "space_type_details_section",
+          "display_name": "Space Type Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00VY",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "interior_lighting_section",
+          "display_name": "Interior Lighting Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00W0",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "plug_loads_section",
+          "display_name": "Plug Loads Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00W2",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "exterior_light_section",
+          "display_name": "Exterior Lighting",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00W4",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "water_use_section",
+          "display_name": "Water Use Equipment",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00W6",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "hvac_load_profile",
+          "display_name": "HVAC Load Profiles",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00W8",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_condition_section",
+          "display_name": "Zone Conditions",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WA",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_summary_section",
+          "display_name": "Zone Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WC",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_equipment_detail_section",
+          "display_name": "Zone Equipment Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WE",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "air_loops_detail_section",
+          "display_name": "Air Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WG",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "plant_loops_detail_section",
+          "display_name": "Plant Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WI",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "outdoor_air_section",
+          "display_name": "Outdoor Air",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WK",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "cost_summary_section",
+          "display_name": "Cash Flow",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WM",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "source_energy_section",
+          "display_name": "Site and Source Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WO",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "schedules_overview_section",
+          "display_name": "Schedule Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00WQ",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "6/22/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 7,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "building_summary_section",
+              "value": true
+            },
+            {
+              "name": "annual_overview_section",
+              "value": true
+            },
+            {
+              "name": "monthly_overview_section",
+              "value": true
+            },
+            {
+              "name": "utility_bills_rates_section",
+              "value": true
+            },
+            {
+              "name": "envelope_section_section",
+              "value": true
+            },
+            {
+              "name": "space_type_breakdown_section",
+              "value": true
+            },
+            {
+              "name": "space_type_details_section",
+              "value": true
+            },
+            {
+              "name": "interior_lighting_section",
+              "value": true
+            },
+            {
+              "name": "plug_loads_section",
+              "value": true
+            },
+            {
+              "name": "exterior_light_section",
+              "value": true
+            },
+            {
+              "name": "water_use_section",
+              "value": true
+            },
+            {
+              "name": "hvac_load_profile",
+              "value": true
+            },
+            {
+              "name": "zone_condition_section",
+              "value": true
+            },
+            {
+              "name": "zone_summary_section",
+              "value": true
+            },
+            {
+              "name": "zone_equipment_detail_section",
+              "value": true
+            },
+            {
+              "name": "air_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "plant_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "outdoor_air_section",
+              "value": true
+            },
+            {
+              "name": "cost_summary_section",
+              "value": true
+            },
+            {
+              "name": "source_energy_section",
+              "value": true
+            },
+            {
+              "name": "schedules_overview_section",
+              "value": true
+            }
+          ],
+          "name": "OpenStudio Results",
+          "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        }
+      ],
+      "instanceId": 0.91238397866817,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:1428",
+      "outputMeasure": true,
+      "userDefinedOutputs": [],
+      "analysisOutputs": []
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/envelope_and_internal_load_breakdown",
+      "name": "envelope_and_internal_load_breakdown",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/envelope_and_internal_load_breakdown",
+      "uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
+      "uuid": "{8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02}",
+      "version_id": "3b47c516-1234-40af-9238-d469696c7390",
+      "version_uuid": "{3b47c516-1234-40af-9238-d469696c7390}",
+      "version_modified": "20170803T155041Z",
+      "xml_checksum": "69BA4D91",
+      "display_name": "Envelope and Internal Load Breakdown",
+      "class_name": "EnvelopeAndInternalLoadBreakdown",
+      "description": "Report provides annual and monthly views into heat gains and losses for envelope and internal loads.",
+      "modeler_description": "It uses the following variables: Electric Equipment Total Heating Energy, Zone Lights Total Heating Energy, Zone, People Sensible Heating Energy, Surface Average Face Conduction Heat Transfer Energy, Surface Window Heat Gain Energy, Surface Window Heat Loss Energy, Zone Infiltration Sensible Heat Gain Energy, Zone Infiltration Sensible Heat Loss Energy. For Surface Average Face Conduction Heat Transfer Energy bin positive values as heat gain and negative values as heat loss.\n",
+      "tags": "Reporting.QAQC",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-05L8",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-05LA",
+          "option_1": "Envelope and Internal Load Breakdown"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-05LC",
+          "option_1": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "8/3/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 8,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [],
+          "name": "Envelope and Internal Load Breakdown",
+          "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
+        }
+      ],
+      "instanceId": 0.19314155248057885,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:20733"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/generic_qaqc",
+      "name": "generic_qaqc",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/generic_qaqc",
+      "uid": "d58d6b29-69ba-4915-b907-3c2c37ddb7c7",
+      "uuid": "{d58d6b29-69ba-4915-b907-3c2c37ddb7c7}",
+      "version_id": "c3a65f4b-fe7d-4349-960d-bb4b1fe3e0d1",
+      "version_uuid": "{c3a65f4b-fe7d-4349-960d-bb4b1fe3e0d1}",
+      "version_modified": "20170510T043335Z",
+      "xml_checksum": "0A3BF61C",
+      "display_name": "Generic QAQC",
+      "class_name": "GenericQAQC",
+      "description": "This measure extracts key simulation results and performs basic model QAQC checks. Each category of checks provides a description of the source of the check. In some cases the target standards and tollerances are adjustable.",
+      "modeler_description": "Reads the model and sql file to pull out the necessary information and run the model checks.  The check results show up as warning messages in the measure's output on the PAT run tab.",
+      "tags": "Reporting.QAQC",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-05LE",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-05LG",
+          "option_1": "Generic QAQC"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-05LI",
+          "option_1": "Option 1 Description: This measure extracts key simulation results and performs basic model QAQC checks. Each category of checks provides a description of the source of the check. In some cases the target standards and tollerances are adjustable."
+        },
+        {
+          "name": "template",
+          "display_name": "Target ASHRAE Standard",
+          "description": "This used to set the target standard for most checks.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2013",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013"
+          ],
+          "$$hashKey": "uiGrid-05LK",
+          "option_1": "90.1-2010",
+          "variable": false
+        },
+        {
+          "name": "check_eui_reasonableness",
+          "display_name": "EUI Reasonableness (General)",
+          "description": "Check EUI for model against selected ASHRAE standard DOE prototype buildings.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05LM",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_eui_reasonableness_tol",
+          "display_name": "EUI Reasonableness Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.1,
+          "$$hashKey": "uiGrid-05LO",
+          "option_1": 0.1,
+          "variable": false
+        },
+        {
+          "name": "check_eui_by_end_use",
+          "display_name": "End Use by Category (General)",
+          "description": "Check end use by category against selected ASHRAE standard DOE prototype buildings.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05LQ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_eui_by_end_use_tol",
+          "display_name": "End Use by Category Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.25,
+          "$$hashKey": "uiGrid-05LS",
+          "option_1": 0.25,
+          "variable": false
+        },
+        {
+          "name": "check_mech_sys_part_load_eff",
+          "display_name": "Mechanical System Part Load Efficiency (General)",
+          "description": "Check 40% and 80% part load efficency against selected ASHRAE standard for the following compenent types: ChillerElectricEIR, CoilCoolingDXSingleSpeed, CoilCoolingDXTwoSpeed, CoilHeatingDXSingleSpeed. Checking EIR Function of Part Load Ratio curve for chiller and EIR Function of Flow Fraction for DX coils.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05LU",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_mech_sys_part_load_eff_tol",
+          "display_name": "Mechanical System Part Load Efficiency Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.05,
+          "$$hashKey": "uiGrid-05LW",
+          "option_1": 0.05,
+          "variable": false
+        },
+        {
+          "name": "check_mech_sys_capacity",
+          "display_name": "Mechanical System Capacity (General)",
+          "description": "Check HVAC capacity against ASHRAE rules of thumb for chiller max flow rate, air loop max flow rate, air loop cooling capciaty, and zone heating capcaity. Zone heating check will skip thermal zones without any exterior exposure, and thermal zones that are not conditioned.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05LY",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_simultaneous_heating_and_cooling",
+          "display_name": "Simultaneous Heating and Cooling (General)",
+          "description": "Check for simultaneous heating and cooling by looping through all Single Duct VAV Reheat Air Terminals and analyzing hourly data when there is a cooling load. ",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05M0",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_simultaneous_heating_and_cooling_max_tol",
+          "display_name": "Simultaneous Heating and Cooling Max Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.05,
+          "$$hashKey": "uiGrid-05M2",
+          "option_1": 0.05,
+          "variable": false
+        },
+        {
+          "name": "check_internal_loads",
+          "display_name": "Internal Loads (Baseline)",
+          "description": "Check LPD, ventilation rates, occupant density, plug loads, and equipment loads against selected ASHRAE standard and DOE Prototype buildings.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05M4",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_internal_loads_tol",
+          "display_name": "Internal Loads Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.1,
+          "$$hashKey": "uiGrid-05M6",
+          "option_1": 0.1,
+          "variable": false
+        },
+        {
+          "name": "check_schedules",
+          "display_name": "Schedules (Baseline)",
+          "description": "Check schedules for lighting, ventilation, occupant density, plug loads, and equipment based on DOE reference building schedules in terms of full load hours per year.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05M8",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_schedules_tol",
+          "display_name": "Schedules Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.05,
+          "$$hashKey": "uiGrid-05MA",
+          "option_1": 0.05,
+          "variable": false
+        },
+        {
+          "name": "check_envelope_conductance",
+          "display_name": "Envelope R-Value (Baseline)",
+          "description": "Check envelope against selected ASHRAE standard. Roof reflectance of 55%, wall relfectance of 30%.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05MC",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_envelope_conductance_tol",
+          "display_name": "Envelope R-Value Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.1,
+          "$$hashKey": "uiGrid-05ME",
+          "option_1": 0.1,
+          "variable": false
+        },
+        {
+          "name": "check_domestic_hot_water",
+          "display_name": "Domestic Hot Water (Baseline)",
+          "description": "Check against the 2011 ASHRAE Handbook - HVAC Applications, Table 7 section 60.13.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05MG",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_domestic_hot_water_tol",
+          "display_name": "Domestic Hot Water Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.25,
+          "$$hashKey": "uiGrid-05MI",
+          "option_1": 0.25,
+          "variable": false
+        },
+        {
+          "name": "check_mech_sys_efficiency",
+          "display_name": "Mechanical System Efficiency (Baseline)",
+          "description": "Check against selected ASHRAE standard for the following component types: ChillerElectricEIR, CoilCoolingDXSingleSpeed, CoilCoolingDXTwoSpeed, CoilHeatingDXSingleSpeed, BoilerHotWater, FanConstantVolume, FanVariableVolume, PumpConstantSpeed, PumpVariableSpeed.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05MK",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_mech_sys_efficiency_tol",
+          "display_name": "Mechanical System Efficiency Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.1,
+          "$$hashKey": "uiGrid-05MM",
+          "option_1": 0.1,
+          "variable": false
+        },
+        {
+          "name": "check_mech_sys_type",
+          "display_name": "Mechanical System Type (Baseline)",
+          "description": "Check against ASHRAE 90.1. Infers the baseline system type based on the equipment serving the zone and their heating/cooling fuels. Only does a high-level inference; does not look for the presence/absence of required controls, etc.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05MO",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_supply_air_and_thermostat_temp_difference",
+          "display_name": "Supply and Zone Air Temperature (Baseline)",
+          "description": "Check if fans modeled to ASHRAE 90.1 2013 Section G3.1.2.9 requirements. Compare the supply air temperature for each thermal zone against the thermostat setpoints. Throw flag if temperature difference excedes threshold of 20.0F plus the selected tolerance.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-05MQ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "check_supply_air_and_thermostat_temp_difference_tol",
+          "display_name": "Supply and Zone Air Temperature Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "F",
+          "default_value": 0.5,
+          "$$hashKey": "uiGrid-05MS",
+          "option_1": 0.5,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/9/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 9,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "template",
+              "value": "90.1-2010"
+            },
+            {
+              "name": "check_eui_reasonableness",
+              "value": true
+            },
+            {
+              "name": "check_eui_reasonableness_tol",
+              "value": 0.1
+            },
+            {
+              "name": "check_eui_by_end_use",
+              "value": true
+            },
+            {
+              "name": "check_eui_by_end_use_tol",
+              "value": 0.25
+            },
+            {
+              "name": "check_mech_sys_part_load_eff",
+              "value": true
+            },
+            {
+              "name": "check_mech_sys_part_load_eff_tol",
+              "value": 0.05
+            },
+            {
+              "name": "check_mech_sys_capacity",
+              "value": true
+            },
+            {
+              "name": "check_simultaneous_heating_and_cooling",
+              "value": true
+            },
+            {
+              "name": "check_simultaneous_heating_and_cooling_max_tol",
+              "value": 0.05
+            },
+            {
+              "name": "check_internal_loads",
+              "value": true
+            },
+            {
+              "name": "check_internal_loads_tol",
+              "value": 0.1
+            },
+            {
+              "name": "check_schedules",
+              "value": true
+            },
+            {
+              "name": "check_schedules_tol",
+              "value": 0.05
+            },
+            {
+              "name": "check_envelope_conductance",
+              "value": true
+            },
+            {
+              "name": "check_envelope_conductance_tol",
+              "value": 0.1
+            },
+            {
+              "name": "check_domestic_hot_water",
+              "value": true
+            },
+            {
+              "name": "check_domestic_hot_water_tol",
+              "value": 0.25
+            },
+            {
+              "name": "check_mech_sys_efficiency",
+              "value": true
+            },
+            {
+              "name": "check_mech_sys_efficiency_tol",
+              "value": 0.1
+            },
+            {
+              "name": "check_mech_sys_type",
+              "value": true
+            },
+            {
+              "name": "check_supply_air_and_thermostat_temp_difference",
+              "value": true
+            },
+            {
+              "name": "check_supply_air_and_thermostat_temp_difference_tol",
+              "value": 0.5
+            }
+          ],
+          "name": "Generic QAQC",
+          "description": "Option 1 Description: This measure extracts key simulation results and performs basic model QAQC checks. Each category of checks provides a description of the source of the check. In some cases the target standards and tollerances are adjustable."
+        }
+      ],
+      "instanceId": 0.8035454215312985,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:20734"
+    }
+  ],
+  "filesToInclude": [],
+  "serverScripts": {
+    "server_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "server_finalization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_finalization": {
+      "file": null,
+      "arguments": []
+    }
+  },
+  "designAlternatives": [
+    {
+      "name": "Large Hotel 0 - Prototype",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Large Hotel",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "None",
+      "create_typical_building_from_model": "None",
+      "blended_space_type_from_model": "None",
+      "create_bar_from_model_2": "None",
+      "create_typical_building_from_model_2": "None",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-09UX"
+    },
+    {
+      "name": "Large Hotel 1 - new HVAC",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Large Hotel",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "None",
+      "create_typical_building_from_model": "None",
+      "blended_space_type_from_model": "None",
+      "create_bar_from_model_2": "None",
+      "create_typical_building_from_model_2": "Create Typical Building from Model HVAC",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-09WE"
+    },
+    {
+      "name": "Large Hotel 2 - new Load and Const",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Large Hotel",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "None",
+      "create_typical_building_from_model": "Create Typical Building from Model Loads Const",
+      "blended_space_type_from_model": "None",
+      "create_bar_from_model_2": "None",
+      "create_typical_building_from_model_2": "Create Typical Building from Model HVAC",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-09XV"
+    },
+    {
+      "name": "Large Hotel 3 - Sliced Bar",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Large Hotel",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "Create Bar from Model Indiv Sliced",
+      "create_typical_building_from_model": "Create Typical Building from Model Loads Const",
+      "blended_space_type_from_model": "None",
+      "create_bar_from_model_2": "None",
+      "create_typical_building_from_model_2": "Create Typical Building from Model HVAC",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-09ZC"
+    },
+    {
+      "name": "Large Hotel 4 - Blended Bar",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Large Hotel",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "Create Bar from Model Indiv Sliced",
+      "create_typical_building_from_model": "Create Typical Building from Model Loads Const",
+      "blended_space_type_from_model": "Blend Space Types from Model",
+      "create_bar_from_model_2": "Create Bar from Model Core Perim",
+      "create_typical_building_from_model_2": "Create Typical Building from Model HVAC",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-0C52"
+    },
+    {
+      "name": "Medium Officel 0 - Prototype",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Medium Office",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "None",
+      "create_typical_building_from_model": "None",
+      "blended_space_type_from_model": "None",
+      "create_bar_from_model_2": "None",
+      "create_typical_building_from_model_2": "None",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-0C6J"
+    },
+    {
+      "name": "Medium Office 1 - new HVAC",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Medium Office",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "None",
+      "create_typical_building_from_model": "None",
+      "blended_space_type_from_model": "None",
+      "create_bar_from_model_2": "None",
+      "create_typical_building_from_model_2": "Create Typical Building from Model HVAC",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-0C80"
+    },
+    {
+      "name": "Medium Office - new Load and Const",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Medium Office",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "None",
+      "create_typical_building_from_model": "Create Typical Building from Model Loads Const",
+      "blended_space_type_from_model": "None",
+      "create_bar_from_model_2": "None",
+      "create_typical_building_from_model_2": "Create Typical Building from Model HVAC",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-0C9H"
+    },
+    {
+      "name": "Medium Office - Sliced Bar",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Medium Office",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "Create Bar from Model Indiv Sliced",
+      "create_typical_building_from_model": "Create Typical Building from Model Loads Const",
+      "blended_space_type_from_model": "None",
+      "create_bar_from_model_2": "None",
+      "create_typical_building_from_model_2": "Create Typical Building from Model HVAC",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-0CAY"
+    },
+    {
+      "name": "Medium Office - Blended Bar",
+      "seedModel": "seed_empty.osm",
+      "weatherFile": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+      "create_doe_prototype_building": "Medium Office",
+      "create_bar_from_building_type_ratios": "None",
+      "create_bar_from_model": "Create Bar from Model Indiv Sliced",
+      "create_typical_building_from_model": "Create Typical Building from Model Loads Const",
+      "blended_space_type_from_model": "Blend Space Types from Model",
+      "create_bar_from_model_2": "Create Bar from Model Core Perim",
+      "create_typical_building_from_model_2": "Create Typical Building from Model HVAC",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "generic_qaqc": "Generic QAQC",
+      "$$hashKey": "uiGrid-0CCF"
+    }
+  ],
+  "analysisID": "2319bfd7-6f16-4e81-ba0e-826084ebadf9",
+  "datapoints": [
+    {
+      "name": "Large Hotel 0 - Prototype",
+      "id": "Large Hotel 0 - Prototype",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Large Hotel 1 - new HVAC",
+      "id": "Large Hotel 1 - new HVAC",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Large Hotel 2 - new Load and Const",
+      "id": "Large Hotel 2 - new Load and Const",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Large Hotel 3 - Sliced Bar",
+      "id": "Large Hotel 3 - Sliced Bar",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Large Hotel 4 - Blended Bar",
+      "id": "Large Hotel 4 - Blended Bar",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Medium Officel 0 - Prototype",
+      "id": "Medium Officel 0 - Prototype",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Medium Office 1 - new HVAC",
+      "id": "Medium Office 1 - new HVAC",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Medium Office - new Load and Const",
+      "id": "Medium Office - new Load and Const",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Medium Office - Sliced Bar",
+      "id": "Medium Office - Sliced Bar",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Medium Office - Blended Bar",
+      "id": "Medium Office - Blended Bar",
+      "run": false,
+      "modified": false,
+      "selected": false
+    }
+  ]
+}
