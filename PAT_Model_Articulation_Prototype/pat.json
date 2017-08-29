@@ -141,7 +141,7 @@
           "variable": true,
           "option_3": "SmallOffice",
           "units": "",
-          "minimum": "SmallOffice",
+          "minimum": "MediumOffice",
           "maximum": "SmallOffice",
           "mode": null,
           "option_4": "MediumOffice"
@@ -446,21 +446,15 @@
               "value": "MediumOffice"
             },
             {
-              "name": "template"
-            },
-            {
               "name": "climate_zone",
               "value": "ASHRAE 169-2006-5B"
-            },
-            {
-              "name": "epw_file"
             }
           ],
           "name": "Medium Office",
           "description": "Option 4 Description: Creates the DOE Reference Building Models as starting points for other analyses."
         }
       ],
-      "instanceId": 0.4664883384286729,
+      "instanceId": 0.39187310197289316,
       "numberOfOptions": 2,
       "$$hashKey": "object:1421",
       "outputMeasure": false
@@ -468,7 +462,7 @@
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_building_type_ratios",
       "name": "create_bar_from_building_type_ratios",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_bar_from_building_type_ratios",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_building_type_ratios",
       "uid": "6e3a14f8-c3c7-4e03-bc51-bef8a52e1a05",
       "uuid": "{6e3a14f8-c3c7-4e03-bc51-bef8a52e1a05}",
       "version_id": "470981c6-43a4-4668-a6d5-ebfbf6ca445c",
@@ -1024,14 +1018,15 @@
       "seed": "seed_empty.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.632362358111177,
+      "instanceId": 0.0529136076850798,
       "numberOfOptions": 0,
-      "$$hashKey": "object:12949"
+      "$$hashKey": "object:12949",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_model",
       "name": "create_bar_from_model",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_bar_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_model",
       "uid": "87fb0783-7a38-4900-8969-40e744c67814",
       "uuid": "{87fb0783-7a38-4900-8969-40e744c67814}",
       "version_id": "33a7ff7c-606a-43f4-9b24-fa5614f7a092",
@@ -1126,7 +1121,11 @@
           ],
           "$$hashKey": "uiGrid-06M7",
           "option_1": "Multiple Space Types - Individual Stories Sliced",
-          "variable": true
+          "variable": true,
+          "units": "",
+          "minimum": "Multiple Space Types - Individual Stories Sliced",
+          "maximum": "Multiple Space Types - Individual Stories Sliced",
+          "mode": null
         }
       ],
       "edit": "",
@@ -1158,14 +1157,15 @@
           "description": "Option 1 Description: Create a core and perimeter bar envelope based on analysis of initial model geometry."
         }
       ],
-      "instanceId": 0.7082529593911515,
+      "instanceId": 0.4823799209825974,
       "numberOfOptions": 1,
-      "$$hashKey": "object:23278"
+      "$$hashKey": "object:23278",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_typical_building_from_model",
       "name": "create_typical_building_from_model",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_typical_building_from_model",
       "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
       "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
       "version_id": "62df7769-4b2c-4864-9c76-6e5d8a7e6b95",
@@ -1701,14 +1701,15 @@
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.1805254181424023,
+      "instanceId": 0.9837369183201123,
       "numberOfOptions": 1,
-      "$$hashKey": "object:15462"
+      "$$hashKey": "object:15462",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/blended_space_type_from_model",
       "name": "blended_space_type_from_model",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/blended_space_type_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/blended_space_type_from_model",
       "uid": "667c2f1f-0927-4dbd-a7be-1087b5c15181",
       "uuid": "{667c2f1f-0927-4dbd-a7be-1087b5c15181}",
       "version_id": "c6a8ba99-6d80-4e00-afe3-8f24f8e32641",
@@ -1819,14 +1820,15 @@
           "description": "Option 1 Description: This measure will remove all space type assignemnts and hard assigned internal loads from spaces that are included in the building floor area. Spaces such as plenums and attics will be left alone. A blended space type will be created from the original internal loads and assigned at the building level. Thermostats, Service Water Heating, and HVAC systems will not be altered. Any constructions associated with space types will be hard assigned prior to the space type assignemnt being removed."
         }
       ],
-      "instanceId": 0.47210311874858135,
+      "instanceId": 0.1721045091627722,
       "numberOfOptions": 1,
-      "$$hashKey": "object:18628"
+      "$$hashKey": "object:18628",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_model",
       "name": "create_bar_from_model_2",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_bar_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_bar_from_model",
       "uid": "87fb0783-7a38-4900-8969-40e744c67814",
       "uuid": "{87fb0783-7a38-4900-8969-40e744c67814}",
       "version_id": "33a7ff7c-606a-43f4-9b24-fa5614f7a092",
@@ -1929,7 +1931,7 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": true,
+      "open": false,
       "addedToProject": true,
       "date": "8/29/2017",
       "author": "",
@@ -1953,14 +1955,15 @@
           "description": "Option 1 Description: Create a core and perimeter bar envelope based on analysis of initial model geometry."
         }
       ],
-      "instanceId": 0.5689797743452731,
+      "instanceId": 0.32340271785439545,
       "numberOfOptions": 1,
-      "$$hashKey": "object:25061"
+      "$$hashKey": "object:25061",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_typical_building_from_model",
       "name": "create_typical_building_from_model_2",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/create_typical_building_from_model",
       "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
       "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
       "version_id": "62df7769-4b2c-4864-9c76-6e5d8a7e6b95",
@@ -2496,9 +2499,82 @@
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.9294596057485176,
+      "instanceId": 0.7592216027067984,
       "numberOfOptions": 1,
-      "$$hashKey": "object:16271"
+      "$$hashKey": "object:16271",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/78db3ab6-ad89-4d66-9140-e6f1c1a2a5d0",
+      "name": "view_model",
+      "directory": "/Users/dgoldwas/BCL/f4669f10-fda5-489d-8e1c-7ca3c2d40378/78db3ab6-ad89-4d66-9140-e6f1c1a2a5d0",
+      "uid": "f4669f10-fda5-489d-8e1c-7ca3c2d40378",
+      "uuid": "{f4669f10-fda5-489d-8e1c-7ca3c2d40378}",
+      "version_id": "464c947a-3789-4984-bf52-0f5aaf8e6f1f",
+      "version_uuid": "{464c947a-3789-4984-bf52-0f5aaf8e6f1f}",
+      "version_modified": "20170721T163646Z",
+      "xml_checksum": "1E1F8B97",
+      "display_name": "ViewModel",
+      "class_name": "ViewModel",
+      "description": "Visualize an OpenStudio model in a web based viewer",
+      "modeler_description": "Converts the OpenStudio model to vA3C JSON format and renders using Three.js",
+      "tags": "Reporting.QAQC",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-02PG",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-02PI",
+          "option_1": "View Model"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-02PK",
+          "option_1": "Option 1 Description: Visualize an OpenStudio model in a web based viewer"
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "local",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "7/21/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "seed_empty.osm",
+      "workflow_index": 7,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [],
+          "name": "View Model",
+          "description": "Option 1 Description: Visualize an OpenStudio model in a web based viewer"
+        }
+      ],
+      "instanceId": 0.791577596278866,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6535",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/openstudio_results",
@@ -2937,13 +3013,13 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": false,
+      "open": true,
       "addedToProject": true,
       "date": "6/22/2017",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "seed_empty.osm",
-      "workflow_index": 7,
+      "workflow_index": 8,
       "options": [
         {
           "id": "option_1",
@@ -3037,7 +3113,7 @@
           "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         }
       ],
-      "instanceId": 0.91238397866817,
+      "instanceId": 0.8081372685396702,
       "numberOfOptions": 1,
       "$$hashKey": "object:1428",
       "outputMeasure": true,
@@ -3047,7 +3123,7 @@
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/envelope_and_internal_load_breakdown",
       "name": "envelope_and_internal_load_breakdown",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/envelope_and_internal_load_breakdown",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/envelope_and_internal_load_breakdown",
       "uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
       "uuid": "{8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02}",
       "version_id": "3b47c516-1234-40af-9238-d469696c7390",
@@ -3142,7 +3218,7 @@
       "author": "",
       "type": "ReportingMeasure",
       "seed": "seed_empty.osm",
-      "workflow_index": 8,
+      "workflow_index": 9,
       "options": [
         {
           "id": "option_1",
@@ -3151,14 +3227,15 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.19314155248057885,
+      "instanceId": 0.6542447370537186,
       "numberOfOptions": 1,
-      "$$hashKey": "object:20733"
+      "$$hashKey": "object:20733",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/generic_qaqc",
       "name": "generic_qaqc",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/generic_qaqc",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Model_Articulation_Prototype/measures/generic_qaqc",
       "uid": "d58d6b29-69ba-4915-b907-3c2c37ddb7c7",
       "uuid": "{d58d6b29-69ba-4915-b907-3c2c37ddb7c7}",
       "version_id": "c3a65f4b-fe7d-4349-960d-bb4b1fe3e0d1",
@@ -3545,7 +3622,7 @@
       "author": "",
       "type": "ReportingMeasure",
       "seed": "seed_empty.osm",
-      "workflow_index": 9,
+      "workflow_index": 10,
       "options": [
         {
           "id": "option_1",
@@ -3647,9 +3724,10 @@
           "description": "Option 1 Description: This measure extracts key simulation results and performs basic model QAQC checks. Each category of checks provides a description of the source of the check. In some cases the target standards and tollerances are adjustable."
         }
       ],
-      "instanceId": 0.8035454215312985,
+      "instanceId": 0.5022310446514546,
       "numberOfOptions": 1,
-      "$$hashKey": "object:20734"
+      "$$hashKey": "object:20734",
+      "outputMeasure": false
     }
   ],
   "filesToInclude": [],
@@ -3686,7 +3764,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-09UX"
+      "$$hashKey": "uiGrid-09UX",
+      "view_model": "View Model"
     },
     {
       "name": "Large Hotel 1 - new HVAC",
@@ -3702,7 +3781,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-09WE"
+      "$$hashKey": "uiGrid-09WE",
+      "view_model": "View Model"
     },
     {
       "name": "Large Hotel 2 - new Load and Const",
@@ -3718,7 +3798,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-09XV"
+      "$$hashKey": "uiGrid-09XV",
+      "view_model": "View Model"
     },
     {
       "name": "Large Hotel 3 - Sliced Bar",
@@ -3734,7 +3815,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-09ZC"
+      "$$hashKey": "uiGrid-09ZC",
+      "view_model": "View Model"
     },
     {
       "name": "Large Hotel 4 - Blended Bar",
@@ -3750,7 +3832,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-0C52"
+      "$$hashKey": "uiGrid-0C52",
+      "view_model": "View Model"
     },
     {
       "name": "Medium Officel 0 - Prototype",
@@ -3766,7 +3849,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-0C6J"
+      "$$hashKey": "uiGrid-0C6J",
+      "view_model": "View Model"
     },
     {
       "name": "Medium Office 1 - new HVAC",
@@ -3782,7 +3866,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-0C80"
+      "$$hashKey": "uiGrid-0C80",
+      "view_model": "View Model"
     },
     {
       "name": "Medium Office - new Load and Const",
@@ -3798,7 +3883,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-0C9H"
+      "$$hashKey": "uiGrid-0C9H",
+      "view_model": "View Model"
     },
     {
       "name": "Medium Office - Sliced Bar",
@@ -3814,7 +3900,8 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-0CAY"
+      "$$hashKey": "uiGrid-0CAY",
+      "view_model": "View Model"
     },
     {
       "name": "Medium Office - Blended Bar",
@@ -3830,10 +3917,11 @@
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "generic_qaqc": "Generic QAQC",
-      "$$hashKey": "uiGrid-0CCF"
+      "$$hashKey": "uiGrid-0CCF",
+      "view_model": "View Model"
     }
   ],
-  "analysisID": "2319bfd7-6f16-4e81-ba0e-826084ebadf9",
+  "analysisID": null,
   "datapoints": [
     {
       "name": "Large Hotel 0 - Prototype",
