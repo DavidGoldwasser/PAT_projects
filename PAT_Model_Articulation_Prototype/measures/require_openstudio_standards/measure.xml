@@ -1,0 +1,64 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>require_openstudio_standards</name>
+  <uid>3f9f1a2f-0e8a-4c88-b817-10494fc3e73a</uid>
+  <version_id>65815316-c5e0-4141-8595-cb41f9917a5a</version_id>
+  <xml_checksum>D8922A73</xml_checksum>
+  <class_name>RequireOpenstudioStandards</class_name>
+  <display_name>Require openstudio-standards</display_name>
+  <description></description>
+  <modeler_description></modeler_description>
+  <arguments/>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Whole Building.Space Types</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>require_openstudio_standards_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>898B6B9A</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>C4F35230</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.9.5</identifier>
+        <min_compatible>1.9.5</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>AC96CF29</checksum>
+    </file>
+  </files>
+</measure>
