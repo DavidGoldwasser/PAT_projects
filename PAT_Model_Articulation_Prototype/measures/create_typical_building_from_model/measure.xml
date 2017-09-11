@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>create_typical_building_from_model</name>
   <uid>339a2e3a-273c-4494-bb50-bfe586a0647c</uid>
-  <version_id>62df7769-4b2c-4864-9c76-6e5d8a7e6b95</version_id>
-  <version_modified>20170829T184522Z</version_modified>
+  <version_id>4dfe4d0d-bb14-4161-b501-147c70852202</version_id>
+  <version_modified>20170910T202450Z</version_modified>
   <xml_checksum>EE13F09F</xml_checksum>
   <class_name>CreateTypicalBuildingFromModel</class_name>
   <display_name>Create Typical Building from Model</display_name>

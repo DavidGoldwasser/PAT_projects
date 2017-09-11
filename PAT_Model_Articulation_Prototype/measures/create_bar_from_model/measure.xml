@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>create_bar_from_model</name>
   <uid>87fb0783-7a38-4900-8969-40e744c67814</uid>
-  <version_id>33a7ff7c-606a-43f4-9b24-fa5614f7a092</version_id>
-  <version_modified>20170829T184522Z</version_modified>
+  <version_id>4a41b4b4-41b6-4950-93c9-2f081ee1c617</version_id>
+  <version_modified>20170908T193504Z</version_modified>
   <xml_checksum>2AF3A68E</xml_checksum>
   <class_name>CreateBarFromModel</class_name>
   <display_name>Create Bar From Model</display_name>

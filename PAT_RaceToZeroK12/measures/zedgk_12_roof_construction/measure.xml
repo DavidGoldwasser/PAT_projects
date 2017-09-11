@@ -1,0 +1,147 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>zedgk_12_roof_construction</name>
+  <uid>d322d264-5855-4b20-bd3e-3c5e5032bc05</uid>
+  <version_id>a3737c76-ecfc-4165-ae94-b65c84c89e24</version_id>
+  <version_modified>20170316T164931Z</version_modified>
+  <xml_checksum>5091078B</xml_checksum>
+  <class_name>ZEDGK12RoofConstruction</class_name>
+  <display_name>ZEDG K12 RoofConstruction</display_name>
+  <description>ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an "Attic' intended surface type. For attics it doesn't matter what you put for "Standards Construction Type". The measure will check attic insulation where the attic is adjacent to other not attic spaces.</description>
+  <modeler_description>Relevant construction types are identified below. 
+
+
+
+
+- Insulation entirely above deck (IEAD)
+
+
+
+
+- Attic
+
+
+
+
+- Metal building</modeler_description>
+  <arguments>
+    <argument>
+      <name>material_cost_insulation_increase_ip</name>
+      <display_name>Increase Cost per Area of Construction Where Insulation was Improved ($/ft^2).</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0</default_value>
+    </argument>
+    <argument>
+      <name>material_cost_sri_increase_ip</name>
+      <display_name>Increase Cost per Area of Construction Where Solar Reflectance Index (SRI) was Improved. ($/ft^2).</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0</default_value>
+    </argument>
+    <argument>
+      <name>target</name>
+      <display_name>AEDG vs. ZEDG performance</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>AEDG K-12 - Target</default_value>
+      <choices>
+        <choice>
+          <value>AEDG K-12 - Target</value>
+          <display_name>AEDG K-12 - Target</display_name>
+        </choice>
+        <choice>
+          <value>AEDG K-12 - ZEDG 2017</value>
+          <display_name>AEDG K-12 - ZEDG 2017</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>alter_sri</name>
+      <display_name>Alter SRI?</display_name>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Opaque</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>0129_SimpleSchool_a_123_dev.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>CCF6332C</checksum>
+    </file>
+    <file>
+      <filename>0206_SimpleSchool_b_123_dev.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>43EAE4A4</checksum>
+    </file>
+    <file>
+      <filename>OsLib_HelperMethods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>D74F36D4</checksum>
+    </file>
+    <file>
+      <filename>OsLib_Constructions.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>1DBDBCB3</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>F37142C9</checksum>
+    </file>
+    <file>
+      <filename>AedgK12RoofConstruction_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>F95AF6EE</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.3.0</identifier>
+        <min_compatible>1.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>52A46984</checksum>
+    </file>
+  </files>
+</measure>
