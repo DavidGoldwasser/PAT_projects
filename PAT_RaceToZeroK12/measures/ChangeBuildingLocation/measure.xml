@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>change_building_location</name>
   <uid>d4db4971-f5ba-11e3-a3ac-0800200c9a66</uid>
-  <version_id>ac2193d2-d6f6-4e54-addd-2f13ba3d7f67</version_id>
-  <version_modified>20170824T190526Z</version_modified>
+  <version_id>cb3dfe89-a823-408f-929b-ac88123db9e8</version_id>
+  <version_modified>20170911T163356Z</version_modified>
   <xml_checksum>057E8D9D</xml_checksum>
   <class_name>ChangeBuildingLocation</class_name>
   <display_name>ChangeBuildingLocation</display_name>
@@ -11,17 +11,9 @@
   <modeler_description>Change the building location</modeler_description>
   <arguments>
     <argument>
-      <name>weather_directory</name>
-      <display_name>Weather Directory</display_name>
-      <description>Relative directory to weather files from analysis directory. Can be left blank if OSW file contains file.</description>
-      <type>String</type>
-      <required>false</required>
-      <model_dependent>false</model_dependent>
-    </argument>
-    <argument>
       <name>weather_file_name</name>
       <display_name>Weather File Name</display_name>
-      <description>Name of the weather file to change to. This is the filename with the extension (e.g. NewWeather.epw).</description>
+      <description>Name of the weather file to change to. This is the filename with the extension (e.g. NewWeather.epw). Optionally this can inclucde the full file path, but for most use cases should just be file name.</description>
       <type>String</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
@@ -32,6 +24,7 @@
       <type>Choice</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
+      <default_value>Lookup From Stat File</default_value>
       <choices>
         <choice>
           <value>1A</value>
@@ -102,12 +95,8 @@
           <display_name>8</display_name>
         </choice>
         <choice>
-          <value>0</value>
-          <display_name>0</display_name>
-        </choice>
-        <choice>
-          <value>Lookup From Known Locations</value>
-          <display_name>Lookup From Known Locations</display_name>
+          <value>Lookup From Stat File</value>
+          <display_name>Lookup From Stat File</display_name>
         </choice>
       </choices>
     </argument>
@@ -230,7 +219,7 @@
       <filename>change_building_location_test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>D4C5E42C</checksum>
+      <checksum>41755DC7</checksum>
     </file>
     <file>
       <version>
@@ -241,7 +230,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>19465F8B</checksum>
+      <checksum>E69CBFDD</checksum>
     </file>
   </files>
 </measure>
