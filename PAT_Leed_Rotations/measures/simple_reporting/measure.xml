@@ -1,0 +1,62 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>simple_reporting</name>
+  <uid>388b6207-c3a9-456d-af51-c7db0e9d0f5a</uid>
+  <version_id>d2933df6-de44-4bf6-a381-1e03a4ef7429</version_id>
+  <version_modified>20171013T193514Z</version_modified>
+  <xml_checksum>15BF4E57</xml_checksum>
+  <class_name>SimpleReporting</class_name>
+  <display_name>Simple Reporting</display_name>
+  <description>This is templale measure, but with test updated so simulation results are saved after first test, so future test runs are quicker.</description>
+  <modeler_description>If the test model is chagned at all it is important ot throw away the results so they will be re-run</modeler_description>
+  <arguments/>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Reporting.QAQC</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ReportingMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>C75254CD</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>39B6E26C</checksum>
+    </file>
+    <file>
+      <filename>USA_CO_Golden-NREL.724666_TMY3.epw</filename>
+      <filetype>epw</filetype>
+      <usage_type>test</usage_type>
+      <checksum>BDF687C1</checksum>
+    </file>
+    <file>
+      <filename>report.html.in</filename>
+      <filetype>in</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>3F69E3FB</checksum>
+    </file>
+    <file>
+      <filename>simple_reporting_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>2F5CE006</checksum>
+    </file>
+  </files>
+</measure>

@@ -1,0 +1,1435 @@
+{
+  "projectName": "PAT_Leed_Rotations",
+  "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations",
+  "seed": "retail_standalone.osm",
+  "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+  "analysis_type": "Manual",
+  "remoteSettings": {
+    "open": true,
+    "remoteType": "Amazon Cloud",
+    "remoteServerURL": null,
+    "aws": {
+      "connected": false,
+      "cluster_name": "",
+      "server_instance_type": "",
+      "worker_instance_type": "",
+      "user_id": "",
+      "worker_node_number": 0,
+      "aws_tags": [],
+      "openstudio_server_version": ""
+    },
+    "credentials": {
+      "yamlFilename": null,
+      "accessKey": null,
+      "region": "us-east-1"
+    }
+  },
+  "samplingMethod": {
+    "id": "baseline_perturbation",
+    "name": "analysis.type.baselinePerturbation",
+    "link": null
+  },
+  "algorithmSettings": [
+    {
+      "name": "in_measure_combinations",
+      "displayName": "In Measure Combinations",
+      "description": "Options: 'true' or 'false'",
+      "defaultValue": "true",
+      "type": "string",
+      "value": "true"
+    },
+    {
+      "name": "include_baseline_in_combinations",
+      "displayName": "Include Baseline in Combinations?",
+      "description": "Options: 'true' or 'false'",
+      "defaultValue": "true",
+      "type": "string",
+      "value": "true"
+    }
+  ],
+  "rubyMD5": "",
+  "mongoMD5": "",
+  "openstudioServerMD5": "",
+  "openstudioCLIMD5": "",
+  "openstudioMD5": "",
+  "measures": [
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/46ca3be9-a702-4955-b5b9-36bd9ca703dc",
+      "name": "create_baseline_building",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/46ca3be9-a702-4955-b5b9-36bd9ca703dc",
+      "uid": "4de56e21-b6cd-45d9-8466-862507d228b2",
+      "uuid": "{4de56e21-b6cd-45d9-8466-862507d228b2}",
+      "version_id": "f9e4876d-32bb-417f-b19a-6791c8d94604",
+      "version_uuid": "{f9e4876d-32bb-417f-b19a-6791c8d94604}",
+      "version_modified": "20171013T181830Z",
+      "xml_checksum": "A514F332",
+      "display_name": "Create Baseline Building",
+      "class_name": "CreateBaselineBuilding",
+      "description": "Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+      "modeler_description": "",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-01YG",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-01YI",
+          "option_1": "Create Baseline Retail 5a 2013"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-01YK",
+          "option_1": "Option 1 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "name": "standard",
+          "display_name": "Standard",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2013",
+          "choice_values": [
+            "90.1-2007 BETA",
+            "90.1-2010 BETA",
+            "90.1-2013"
+          ],
+          "choice_display_names": [
+            "90.1-2007 BETA",
+            "90.1-2010 BETA",
+            "90.1-2013"
+          ],
+          "$$hashKey": "uiGrid-01YM",
+          "option_1": "90.1-2013",
+          "variable": false
+        },
+        {
+          "name": "building_type",
+          "display_name": "Building Type.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "MidriseApartment",
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "Hospital",
+            "Outpatient"
+          ],
+          "choice_display_names": [
+            "MidriseApartment",
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "Hospital",
+            "Outpatient"
+          ],
+          "$$hashKey": "uiGrid-01YO",
+          "option_1": "RetailStandalone",
+          "variable": false
+        },
+        {
+          "name": "climate_zone",
+          "display_name": "Climate Zone.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "ASHRAE 169-2006-2A",
+          "choice_values": [
+            "ASHRAE 169-2006-1A",
+            "ASHRAE 169-2006-2A",
+            "ASHRAE 169-2006-2B",
+            "ASHRAE 169-2006-3A",
+            "ASHRAE 169-2006-3B",
+            "ASHRAE 169-2006-3C",
+            "ASHRAE 169-2006-4A",
+            "ASHRAE 169-2006-4B",
+            "ASHRAE 169-2006-4C",
+            "ASHRAE 169-2006-5A",
+            "ASHRAE 169-2006-5B",
+            "ASHRAE 169-2006-6A",
+            "ASHRAE 169-2006-6B",
+            "ASHRAE 169-2006-7A",
+            "ASHRAE 169-2006-8A"
+          ],
+          "choice_display_names": [
+            "ASHRAE 169-2006-1A",
+            "ASHRAE 169-2006-2A",
+            "ASHRAE 169-2006-2B",
+            "ASHRAE 169-2006-3A",
+            "ASHRAE 169-2006-3B",
+            "ASHRAE 169-2006-3C",
+            "ASHRAE 169-2006-4A",
+            "ASHRAE 169-2006-4B",
+            "ASHRAE 169-2006-4C",
+            "ASHRAE 169-2006-5A",
+            "ASHRAE 169-2006-5B",
+            "ASHRAE 169-2006-6A",
+            "ASHRAE 169-2006-6B",
+            "ASHRAE 169-2006-7A",
+            "ASHRAE 169-2006-8A"
+          ],
+          "$$hashKey": "uiGrid-01YQ",
+          "option_1": "ASHRAE 169-2006-5A",
+          "variable": false
+        },
+        {
+          "name": "custom",
+          "display_name": "Customization",
+          "description": "If selected, some of the standard process will be replaced by custom logic specific to particular programs.  If these do not apply to you, select None.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*None*",
+          "choice_values": [
+            "Xcel Energy CO EDA",
+            "*None*"
+          ],
+          "choice_display_names": [
+            "Xcel Energy CO EDA",
+            "*None*"
+          ],
+          "$$hashKey": "uiGrid-01YS",
+          "option_1": "*None*",
+          "variable": false
+        },
+        {
+          "name": "debug",
+          "display_name": "Show debug messages?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "$$hashKey": "uiGrid-01YU",
+          "option_1": false,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "local",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "10/13/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "retail_standalone.osm",
+      "workflow_index": 0,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2013"
+            },
+            {
+              "name": "building_type",
+              "value": "RetailStandalone"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-5A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Create Baseline Retail 5a 2013",
+          "description": "Option 1 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        }
+      ],
+      "instanceId": 0.6819455459899932,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:2978",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/aeb20d61-b773-4d20-a2ef-fe948cdc2858",
+      "name": "rotate_building",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/aeb20d61-b773-4d20-a2ef-fe948cdc2858",
+      "uid": "a5be6c96-4ecc-47fa-8d32-f4216ebc2e7d",
+      "uuid": "{a5be6c96-4ecc-47fa-8d32-f4216ebc2e7d}",
+      "version_id": "e7d205d8-d28b-493b-8ed4-fb08cd3b96bb",
+      "version_uuid": "{e7d205d8-d28b-493b-8ed4-fb08cd3b96bb}",
+      "version_modified": "20171013T181901Z",
+      "xml_checksum": "49BEF039",
+      "display_name": "Rotate Building",
+      "class_name": "RotateBuilding",
+      "description": "Rotate your building relative to its current orientation. This will not rotate site shading objects.",
+      "modeler_description": "Get the North Axis field for the  OS:Building object and adjusted it based on the user specified value. If the starting value is 20 degrees and the user value is 5 degrees, then the resulting value is 25 degrees.",
+      "tags": "Envelope.Form",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-01YW",
+          "option_1": "option_1",
+          "option_2": "option_2",
+          "option_3": "option_3",
+          "option_4": "option_4"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-01YY",
+          "option_1": "No Rotation",
+          "option_2": "Rotate 90",
+          "option_3": "Rotate 180",
+          "option_4": "Rotate 270"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-01Z0",
+          "option_1": "Don't really need this option, can skip the measure in the workflow instead of running this",
+          "option_2": "Option 2 Description: Rotate your building relative to its current orientation. This will not rotate site shading objects.",
+          "option_3": "Option 3 Description: Rotate your building relative to its current orientation. This will not rotate site shading objects.",
+          "option_4": "Option 4 Description: Rotate your building relative to its current orientation. This will not rotate site shading objects."
+        },
+        {
+          "name": "relative_building_rotation",
+          "display_name": "Number of Degrees to Rotate Building (positive value is clockwise).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 90,
+          "$$hashKey": "uiGrid-01Z2",
+          "option_1": 0,
+          "variable": true,
+          "option_2": 90,
+          "option_3": 180,
+          "option_4": 270,
+          "units": "",
+          "minimum": 0,
+          "maximum": 270,
+          "mode": 0
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "local",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "10/13/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "retail_standalone.osm",
+      "workflow_index": 1,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "relative_building_rotation",
+              "value": 0
+            }
+          ],
+          "name": "No Rotation",
+          "description": "Don't really need this option, can skip the measure in the workflow instead of running this"
+        },
+        {
+          "id": "option_2",
+          "arguments": [
+            {
+              "name": "relative_building_rotation",
+              "value": 90
+            }
+          ],
+          "name": "Rotate 90",
+          "description": "Option 2 Description: Rotate your building relative to its current orientation. This will not rotate site shading objects."
+        },
+        {
+          "id": "option_3",
+          "arguments": [
+            {
+              "name": "relative_building_rotation",
+              "value": 180
+            }
+          ],
+          "name": "Rotate 180",
+          "description": "Option 3 Description: Rotate your building relative to its current orientation. This will not rotate site shading objects."
+        },
+        {
+          "id": "option_4",
+          "arguments": [
+            {
+              "name": "relative_building_rotation",
+              "value": 270
+            }
+          ],
+          "name": "Rotate 270",
+          "description": "Option 4 Description: Rotate your building relative to its current orientation. This will not rotate site shading objects."
+        }
+      ],
+      "instanceId": 0.3856343343629278,
+      "numberOfOptions": 4,
+      "$$hashKey": "object:2979",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/73be33ff-1982-4e10-8831-56e418073a29",
+      "name": "tariff_selection_flat",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/73be33ff-1982-4e10-8831-56e418073a29",
+      "uid": "539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55",
+      "uuid": "{539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55}",
+      "version_id": "7ff3818f-5c79-4c89-809c-1c861ca7f64f",
+      "version_uuid": "{7ff3818f-5c79-4c89-809c-1c861ca7f64f}",
+      "version_modified": "20171013T181949Z",
+      "xml_checksum": "FBDC6D11",
+      "display_name": "Tariff Selection-Flat",
+      "class_name": "TariffSelectionFlat",
+      "description": "This measure sets flat rates for electricity, gas, water, district heating, and district cooling.",
+      "modeler_description": "Will add the necessary UtilityCost objects into the model.",
+      "tags": "Economics.Life Cycle Cost Analysis",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Sensitivity Analysis"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Retrofit EE"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Sensitivity Analysis"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Retrofit EE"
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "EnergyPlusMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Sensitivity Analysis"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Retrofit EE"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-01Z4",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-01Z6",
+          "option_1": "Tariff"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-01Z8",
+          "option_1": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
+        },
+        {
+          "name": "demand_window_length",
+          "display_name": "Demand Window Length.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "QuarterHour",
+          "choice_values": [
+            "QuarterHour",
+            "HalfHour",
+            "FullHour"
+          ],
+          "choice_display_names": [
+            "QuarterHour",
+            "HalfHour",
+            "FullHour"
+          ],
+          "$$hashKey": "uiGrid-01ZA",
+          "option_1": "QuarterHour",
+          "variable": false
+        },
+        {
+          "name": "elec_rate",
+          "display_name": "Electric Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/kWh",
+          "default_value": 0.12,
+          "$$hashKey": "uiGrid-01ZC",
+          "option_1": 0.12,
+          "variable": false
+        },
+        {
+          "name": "gas_rate",
+          "display_name": "Gas Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/therm",
+          "default_value": 0.5,
+          "$$hashKey": "uiGrid-01ZE",
+          "option_1": 0.5,
+          "variable": false
+        },
+        {
+          "name": "water_rate",
+          "display_name": "Water Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/gal",
+          "default_value": 0.005,
+          "$$hashKey": "uiGrid-01ZG",
+          "option_1": 0.005,
+          "variable": false
+        },
+        {
+          "name": "disthtg_rate",
+          "display_name": "District Heating Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/therm",
+          "default_value": 0.2,
+          "$$hashKey": "uiGrid-01ZI",
+          "option_1": 0.2,
+          "variable": false
+        },
+        {
+          "name": "distclg_rate",
+          "display_name": "District Cooling Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/therm",
+          "default_value": 0.2,
+          "$$hashKey": "uiGrid-01ZK",
+          "option_1": 0.2,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "local",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "10/13/2017",
+      "author": "",
+      "type": "EnergyPlusMeasure",
+      "seed": "retail_standalone.osm",
+      "workflow_index": 2,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "demand_window_length",
+              "value": "QuarterHour"
+            },
+            {
+              "name": "elec_rate",
+              "value": 0.12
+            },
+            {
+              "name": "gas_rate",
+              "value": 0.5
+            },
+            {
+              "name": "water_rate",
+              "value": 0.005
+            },
+            {
+              "name": "disthtg_rate",
+              "value": 0.2
+            },
+            {
+              "name": "distclg_rate",
+              "value": 0.2
+            }
+          ],
+          "name": "Tariff",
+          "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
+        }
+      ],
+      "instanceId": 0.6300837778222441,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:2988",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/861c42ba-2105-49e6-b727-9fc3567f4834",
+      "name": "openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/861c42ba-2105-49e6-b727-9fc3567f4834",
+      "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+      "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
+      "version_id": "250fb3c2-1746-4b61-917e-ce121b423591",
+      "version_uuid": "{250fb3c2-1746-4b61-917e-ce121b423591}",
+      "version_modified": "20171005T211050Z",
+      "xml_checksum": "557BF06F",
+      "display_name": "OpenStudio Results",
+      "class_name": "OpenStudioResults",
+      "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+      "modeler_description": "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+      "tags": "Reporting.QAQC",
+      "outputs": [
+        {
+          "name": "electricity_ip",
+          "display_name": "electricity_ip",
+          "short_name": "electricity_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "natural_gas_ip",
+          "display_name": "natural_gas_ip",
+          "short_name": "natural_gas_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "additional_fuel_ip",
+          "display_name": "additional_fuel_ip",
+          "short_name": "additional_fuel_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_heating_ip",
+          "display_name": "district_heating_ip",
+          "short_name": "district_heating_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_cooling_ip",
+          "display_name": "district_cooling_ip",
+          "short_name": "district_cooling_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "eui",
+          "display_name": "eui",
+          "short_name": "eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "net_site_energy",
+          "display_name": "net_site_energy",
+          "short_name": "net_site_energy",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_peak_electric_demand",
+          "display_name": "annual_peak_electric_demand",
+          "short_name": "annual_peak_electric_demand",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_cooling",
+          "display_name": "unmet_hours_during_occupied_cooling",
+          "short_name": "unmet_hours_during_occupied_cooling",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_heating",
+          "display_name": "unmet_hours_during_occupied_heating",
+          "short_name": "unmet_hours_during_occupied_heating",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "first_year_capital_cost",
+          "display_name": "first_year_capital_cost",
+          "short_name": "first_year_capital_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_utility_cost",
+          "display_name": "annual_utility_cost",
+          "short_name": "annual_utility_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_lifecycle_cost",
+          "display_name": "total_lifecycle_cost",
+          "short_name": "total_lifecycle_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-01ZM",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-01ZO",
+          "option_1": "Standard OpenStudio Results"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-01ZQ",
+          "option_1": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        },
+        {
+          "name": "building_summary_section",
+          "display_name": "Model Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01ZS",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "annual_overview_section",
+          "display_name": "Annual Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01ZU",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "monthly_overview_section",
+          "display_name": "Monthly Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01ZW",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "utility_bills_rates_section",
+          "display_name": "Utility Bills/Rates",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01ZY",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "envelope_section_section",
+          "display_name": "Envelope",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-0200",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "space_type_breakdown_section",
+          "display_name": "Space Type Breakdown",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-0202",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "space_type_details_section",
+          "display_name": "Space Type Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-0204",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "interior_lighting_section",
+          "display_name": "Interior Lighting Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-0206",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "plug_loads_section",
+          "display_name": "Plug Loads Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-0208",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "exterior_light_section",
+          "display_name": "Exterior Lighting",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020A",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "water_use_section",
+          "display_name": "Water Use Equipment",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020C",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "hvac_load_profile",
+          "display_name": "HVAC Load Profiles",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020E",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_condition_section",
+          "display_name": "Zone Conditions",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020G",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_summary_section",
+          "display_name": "Zone Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020I",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_equipment_detail_section",
+          "display_name": "Zone Equipment Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020K",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "air_loops_detail_section",
+          "display_name": "Air Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020M",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "plant_loops_detail_section",
+          "display_name": "Plant Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020O",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "outdoor_air_section",
+          "display_name": "Outdoor Air",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020Q",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "cost_summary_section",
+          "display_name": "Cash Flow",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020S",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "source_energy_section",
+          "display_name": "Site and Source Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020U",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "schedules_overview_section",
+          "display_name": "Schedule Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-020W",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "local",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "10/5/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "retail_standalone.osm",
+      "workflow_index": 3,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "building_summary_section",
+              "value": true
+            },
+            {
+              "name": "annual_overview_section",
+              "value": true
+            },
+            {
+              "name": "monthly_overview_section",
+              "value": true
+            },
+            {
+              "name": "utility_bills_rates_section",
+              "value": true
+            },
+            {
+              "name": "envelope_section_section",
+              "value": true
+            },
+            {
+              "name": "space_type_breakdown_section",
+              "value": true
+            },
+            {
+              "name": "space_type_details_section",
+              "value": true
+            },
+            {
+              "name": "interior_lighting_section",
+              "value": true
+            },
+            {
+              "name": "plug_loads_section",
+              "value": true
+            },
+            {
+              "name": "exterior_light_section",
+              "value": true
+            },
+            {
+              "name": "water_use_section",
+              "value": true
+            },
+            {
+              "name": "hvac_load_profile",
+              "value": true
+            },
+            {
+              "name": "zone_condition_section",
+              "value": true
+            },
+            {
+              "name": "zone_summary_section",
+              "value": true
+            },
+            {
+              "name": "zone_equipment_detail_section",
+              "value": true
+            },
+            {
+              "name": "air_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "plant_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "outdoor_air_section",
+              "value": true
+            },
+            {
+              "name": "cost_summary_section",
+              "value": true
+            },
+            {
+              "name": "source_energy_section",
+              "value": true
+            },
+            {
+              "name": "schedules_overview_section",
+              "value": true
+            }
+          ],
+          "name": "Standard OpenStudio Results",
+          "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        }
+      ],
+      "instanceId": 0.6253688767295749,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:2995",
+      "outputMeasure": true,
+      "userDefinedOutputs": [],
+      "analysisOutputs": []
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/simple_reporting",
+      "name": "simple_reporting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Leed_Rotations/measures/simple_reporting",
+      "uid": "388b6207-c3a9-456d-af51-c7db0e9d0f5a",
+      "uuid": "{388b6207-c3a9-456d-af51-c7db0e9d0f5a}",
+      "version_id": "d2933df6-de44-4bf6-a381-1e03a4ef7429",
+      "version_uuid": "{d2933df6-de44-4bf6-a381-1e03a4ef7429}",
+      "version_modified": "20171013T193514Z",
+      "xml_checksum": "15BF4E57",
+      "display_name": "Simple Reporting",
+      "class_name": "SimpleReporting",
+      "description": "This is templale measure, but with test updated so simulation results are saved after first test, so future test runs are quicker.",
+      "modeler_description": "If the test model is chagned at all it is important ot throw away the results so they will be re-run",
+      "tags": "Reporting.QAQC",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-02J1",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-02J3",
+          "option_1": "Simple Report"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-02J5",
+          "option_1": "Option 1 Description: This is templale measure, but with test updated so simulation results are saved after first test, so future test runs are quicker."
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "10/13/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "retail_standalone.osm",
+      "workflow_index": 4,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [],
+          "name": "Simple Report",
+          "description": "Option 1 Description: This is templale measure, but with test updated so simulation results are saved after first test, so future test runs are quicker."
+        }
+      ],
+      "instanceId": 0.379406378710226,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:5057",
+      "outputMeasure": false
+    }
+  ],
+  "filesToInclude": [],
+  "serverScripts": {
+    "server_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "server_finalization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_finalization": {
+      "file": null,
+      "arguments": []
+    }
+  },
+  "designAlternatives": [
+    {
+      "name": "Proposed",
+      "seedModel": "retail_standalone.osm",
+      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "create_baseline_building": "None",
+      "rotate_building": "None",
+      "tariff_selection_flat": "Tariff",
+      "openstudio_results": "Standard OpenStudio Results",
+      "simple_reporting": "Simple Report",
+      "$$hashKey": "uiGrid-03G1",
+      "description": "This is really a pre 1980 building"
+    },
+    {
+      "name": "Baseline Rotate 0",
+      "seedModel": "retail_standalone.osm",
+      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "create_baseline_building": "Create Baseline Retail 5a 2013",
+      "rotate_building": "No Rotation",
+      "tariff_selection_flat": "Tariff",
+      "openstudio_results": "Standard OpenStudio Results",
+      "simple_reporting": "Simple Report",
+      "$$hashKey": "uiGrid-03H3",
+      "description": "Could skip No Rotation or run it"
+    },
+    {
+      "name": "Baseline Rotate 90",
+      "seedModel": "retail_standalone.osm",
+      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "create_baseline_building": "Create Baseline Retail 5a 2013",
+      "rotate_building": "Rotate 90",
+      "tariff_selection_flat": "Tariff",
+      "openstudio_results": "Standard OpenStudio Results",
+      "simple_reporting": "Simple Report",
+      "description": "Could skip No Rotation or run it",
+      "$$hashKey": "uiGrid-05VB"
+    },
+    {
+      "name": "Baseline Rotate 180",
+      "seedModel": "retail_standalone.osm",
+      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "create_baseline_building": "Create Baseline Retail 5a 2013",
+      "rotate_building": "Rotate 180",
+      "tariff_selection_flat": "Tariff",
+      "openstudio_results": "Standard OpenStudio Results",
+      "simple_reporting": "Simple Report",
+      "description": "Could skip No Rotation or run it",
+      "$$hashKey": "uiGrid-05WD"
+    },
+    {
+      "name": "Baseline Rotate 270",
+      "seedModel": "retail_standalone.osm",
+      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "create_baseline_building": "Create Baseline Retail 5a 2013",
+      "rotate_building": "Rotate 270",
+      "tariff_selection_flat": "Tariff",
+      "openstudio_results": "Standard OpenStudio Results",
+      "simple_reporting": "Simple Report",
+      "description": "Could skip No Rotation or run it",
+      "$$hashKey": "uiGrid-05XF"
+    }
+  ],
+  "analysisID": null,
+  "datapoints": [
+    {
+      "name": "Proposed",
+      "id": "Proposed",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Baseline Rotate 0",
+      "id": "Baseline Rotate 0",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Baseline Rotate 90",
+      "id": "Baseline Rotate 90",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Baseline Rotate 180",
+      "id": "Baseline Rotate 180",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Baseline Rotate 270",
+      "id": "Baseline Rotate 270",
+      "run": false,
+      "modified": false,
+      "selected": false
+    }
+  ]
+}
