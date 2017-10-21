@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_hvac</name>
   <uid>59793426-1d07-41d2-9478-d7abf1410764</uid>
-  <version_id>84c6a9d3-6a69-4746-9d94-c55c8566d37c</version_id>
-  <version_modified>20171021T182513Z</version_modified>
+  <version_id>0a73fd2c-89e5-4306-a147-3098b2040a21</version_id>
+  <version_modified>20171021T182509Z</version_modified>
   <xml_checksum>87BA8B1E</xml_checksum>
   <class_name>ZEDGK12HVAC</class_name>
   <display_name>ZEDG K12 HVAC GSHP with DOAS</display_name>
