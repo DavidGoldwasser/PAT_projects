@@ -9,7 +9,7 @@
 
 #load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
-require "#{File.dirname(__FILE__)}/resources/OsLib_Constructions"
+require "#{File.dirname(__FILE__)}/resources/os_lib_constructions"
 
 #start the measure
 class ZEDGK12ExteriorWallConstruction < OpenStudio::Ruleset::ModelUserScript
@@ -31,17 +31,6 @@ class ZEDGK12ExteriorWallConstruction < OpenStudio::Ruleset::ModelUserScript
     material_cost_insulation_increase_ip.setDefaultValue(0.0)
     args << material_cost_insulation_increase_ip
 
-    # todo - this is just for internal use, don't merge to develop
-
-    #make choice argument for target performance
-    choices = OpenStudio::StringVector.new
-    choices << "AEDG K-12 - Target"
-    choices << "AEDG K-12 - ZEDG 2017"
-    target = OpenStudio::Ruleset::OSArgument::makeChoiceArgument("target", choices)
-    target.setDisplayName("AEDG vs. ZEDG performance")
-    target.setDefaultValue("AEDG K-12 - Target")
-    args << target
-
     return args
   end #end the arguments method
 
@@ -56,7 +45,6 @@ class ZEDGK12ExteriorWallConstruction < OpenStudio::Ruleset::ModelUserScript
 
     # assign the user inputs to variables
     material_cost_insulation_increase_ip = runner.getDoubleArgumentValue("material_cost_insulation_increase_ip",user_arguments)
-    target = runner.getStringArgumentValue("target",user_arguments)
 
     # no validation needed for cost inputs, negative values are fine, however negative would be odd choice since this measure only improves vs. decreases insulation and SRI performance
 
@@ -67,63 +55,20 @@ class ZEDGK12ExteriorWallConstruction < OpenStudio::Ruleset::ModelUserScript
     running_cost_insulation = 0
 
     #prepare rule hash
-    rules = [] #climate zone, roof type, thermal transmittance (Btu/h·ft2·°F), SRI
+    rules = [] #climate zone, wall type, thermal transmittance (Btu/h·ft2·°F)
 
-    # Mass (HC > 7 Btu/ft^2)
-    # notes: Insulation may be placed on either the inside or the outside of the masonry wall. The greatest advantages of mass walls can be obtained when insulation is placed on its exterior.
-    rules << ["1","Mass",0.151] # R-5.7 c.i.
-    rules << ["2","Mass",0.123] # R-7.6 c.i..
-    rules << ["3","Mass",0.090] # R-11.4 c.i.
-    rules << ["4","Mass",0.080] # R-13.3 c.i.
-    rules << ["5","Mass",0.080] # R-13.3 c.i.
-    rules << ["6","Mass",0.062] # R-19.5 c.i.
-    rules << ["7","Mass",0.062] # R-19.5 c.i.
-    rules << ["8","Mass",0.062] # R-19.5 c.i.
+    # zedg doesn't have wall type lookup like aedg, altert user of this
+    runner.registerInfo("Wall insulation values based on Steel Framed walls.")
 
-    # SteelFramed
-    # notes:  Adding exterior foam sheathing as c.i. is the preferred method to upgrade the wall thermal performance because it will increase the overall wall thermal performance and tends to minimize the impact of the thermal bridging.
-    if target == "AEDG K-12 - ZEDG 2017"
-      rules << ["0","SteelFramed",0.124] # # measure setup to use only for this target and wall type
-      rules << ["1","SteelFramed",0.077] # higher conductance than 50% AEDG
-      rules << ["2","SteelFramed",0.077] # higher conductance than 50% AEDG
-      rules << ["3","SteelFramed",0.064] # nc
-      rules << ["4","SteelFramed",0.061]
-      rules << ["5","SteelFramed",0.052] # higher conductance than 50% AEDG
-      rules << ["6","SteelFramed",0.047] # higher conductance than 50% AEDG
-      rules << ["7","SteelFramed",0.047] # higher conductance than 50% AEDG
-      rules << ["8","SteelFramed",0.035]
-    else
-      rules << ["1","SteelFramed",0.064] # R-13.0 + R-7.5 c.i.
-      rules << ["2","SteelFramed",0.064] # R-13.0 + R-7.5 c.i.
-      rules << ["3","SteelFramed",0.064] # R-13.0 + R-7.5 c.i.
-      rules << ["4","SteelFramed",0.064] # R-13.0 + R-7.5 c.i.
-      rules << ["5","SteelFramed",0.042] # R-13.0 + R-15.6 c.i.
-      rules << ["6","SteelFramed",0.037] # R-13.0 + R-18.8 c.i.
-      rules << ["7","SteelFramed",0.037] # R-13.0 + R-18.8 c.i.
-      rules << ["8","SteelFramed",0.037] # R-13.0 + R-18.8 c.i.
-    end
-
-    # WoodFramed
-    # notes: similar to steel. Fot framed walls (wood or steel) I will leave composite layer alone, and add c.i.
-    rules << ["1","WoodFramed",0.089] # R-13.0
-    rules << ["2","WoodFramed",0.064] # R-13.0 + R-3.8 c.i.
-    rules << ["3","WoodFramed",0.064] # R-13.0 + R-3.8 c.i.
-    rules << ["4","WoodFramed",0.051] # R-13.0 + R-7.5 c.i.
-    rules << ["5","WoodFramed",0.045] # R-13.0 + R-10.0 c.i.
-    rules << ["6","WoodFramed",0.040] # R-13.0 + R-12.5 c.i.
-    rules << ["7","WoodFramed",0.037] # R-13.0 + R-15.0 c.i.
-    rules << ["8","WoodFramed",0.032] # R-13.0 + R-18.8 c.i.
-
-    # Metal
-    # notes: insulation should be where exist, or one layer under exterior exposed, if there isn't any insulation in existing wall
-    rules << ["1","Metal",0.094] # R-0.0 + R-9.8 c.i.
-    rules << ["2","Metal",0.094] # R-0.0 + R-9.8 c.i.
-    rules << ["3","Metal",0.072] # R-0.0 + R-13.0 c.i.
-    rules << ["4","Metal",0.050] # R-0.0 + R-19.0 c.i.
-    rules << ["5","Metal",0.050] # R-0.0 + R-19.0 c.i.
-    rules << ["6","Metal",0.050] # R-0.0 + R-19.0 c.i.
-    rules << ["7","Metal",0.044] # R-0.0 + R-22.1 c.i.
-    rules << ["8","Metal",0.039] # R-0.0 + R-25.0 c.i.
+    rules << ["0","SteelFramed",0.124] # # measure setup to use only for this target and wall type
+    rules << ["1","SteelFramed",0.077] # higher conductance than 50% AEDG
+    rules << ["2","SteelFramed",0.077] # higher conductance than 50% AEDG
+    rules << ["3","SteelFramed",0.064] # nc
+    rules << ["4","SteelFramed",0.061]
+    rules << ["5","SteelFramed",0.052] # higher conductance than 50% AEDG
+    rules << ["6","SteelFramed",0.047] # higher conductance than 50% AEDG
+    rules << ["7","SteelFramed",0.047] # higher conductance than 50% AEDG
+    rules << ["8","SteelFramed",0.035]
 
     #make rule hash for cleaner code
     rulesHash = {}
@@ -143,7 +88,7 @@ class ZEDGK12ExteriorWallConstruction < OpenStudio::Ruleset::ModelUserScript
     # get starting r-value
     startingRvaluesExtWall = []
 
-    # flag for roof surface type for tips
+    # flag for wall surface type for tips
     massFlag = false
     steelFramedFlag = false
     woodFramedFlag = false
@@ -176,7 +121,10 @@ class ZEDGK12ExteriorWallConstruction < OpenStudio::Ruleset::ModelUserScript
 
       # get intended surface and standards construction type
       intendedSurfaceType = constructionStandard.intendedSurfaceType
-      constructionType = constructionStandard.standardsConstructionType
+
+      # because it is assumed to be SteelFramed, hard code vs. inspecting construction
+      # constructionType = constructionStandard.standardsConstructionType
+      constructionType = "SteelFramed"
 
       # get conductivity
       conductivity_si = construction.thermalConductance.get
@@ -358,34 +306,6 @@ class ZEDGK12ExteriorWallConstruction < OpenStudio::Ruleset::ModelUserScript
 
     end #end of constructionsToChange.each do
 
-    # populate AEDG tip keys
-    aedgTips = []
-
-    if massFlag
-      aedgTips.push("EN05","EN17","EN19","EN21")
-    end
-    if steelFramedFlag
-      aedgTips.push("EN06","EN17","EN19","EN21")
-    end
-    if woodFramedFlag
-      aedgTips.push("EN07","EN17","EN19","EN21")
-    end
-    if metalFlag
-      aedgTips.push("EN08","EN17","EN19","EN21")
-    end
-
-    # create not applicable of no constructions were tagged to change
-    if aedgTips.size == 0
-      runner.registerAsNotApplicable("No surfaces use constructions tagged as an exterior wall type recognized by this measure. No exterior walls were altered.")
-      return true
-    end
-
-    # populate how to tip messages
-    aedgTipsLong = OsLib_AedgMeasures.getLongHowToTips("K12",aedgTips.uniq.sort,runner)
-    if not aedgTipsLong
-      return false # this should only happen if measure writer passes bad values to getLongHowToTips
-    end
-
     #reporting initial condition of model
     startingRvalue = startingRvaluesExtWall
 
@@ -393,7 +313,7 @@ class ZEDGK12ExteriorWallConstruction < OpenStudio::Ruleset::ModelUserScript
 
     #reporting final condition of model
     insulation_affected_area_ip = OpenStudio::convert(insulation_affected_area,"m^2","ft^2").get
-    runner.registerFinalCondition("#{OpenStudio::toNeatString(insulation_affected_area_ip,0,true)}(ft^2) of constructions intended for exterior wall surfaces had insulation enhanced at a cost of $#{OpenStudio::toNeatString(running_cost_insulation,0,true)}. #{aedgTipsLong}")
+    runner.registerFinalCondition("#{OpenStudio::toNeatString(insulation_affected_area_ip,0,true)}(ft^2) of constructions intended for exterior wall surfaces had insulation enhanced at a cost of $#{OpenStudio::toNeatString(running_cost_insulation,0,true)}.")
 
     return true
 

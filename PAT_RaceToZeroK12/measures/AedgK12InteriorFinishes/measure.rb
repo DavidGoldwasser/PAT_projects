@@ -9,8 +9,8 @@
 
 #load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
-require "#{File.dirname(__FILE__)}/resources/OsLib_Constructions"
-require "#{File.dirname(__FILE__)}/resources/OsLib_HelperMethods"
+require "#{File.dirname(__FILE__)}/resources/os_lib_constructions"
+require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
 
 #start the measure
 class AedgK12InteriorFinishes < OpenStudio::Ruleset::ModelUserScript

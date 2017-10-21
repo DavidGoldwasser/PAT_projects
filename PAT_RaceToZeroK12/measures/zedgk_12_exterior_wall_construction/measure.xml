@@ -2,68 +2,14 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_exterior_wall_construction</name>
   <uid>39d1c328-0bbb-40ee-a18c-ba977b462a11</uid>
-  <version_id>296c6d75-3885-442e-acfd-cb860867e7ba</version_id>
-  <version_modified>20170316T164931Z</version_modified>
+  <version_id>ad55068c-3b1b-479e-8625-6cef78fd3e79</version_id>
+  <version_modified>20171020T205858Z</version_modified>
   <xml_checksum>5091078B</xml_checksum>
   <class_name>ZEDGK12ExteriorWallConstruction</class_name>
   <display_name>ZEDG K12 ExteriorWallConstruction</display_name>
-  <description>ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. </description>
-  <modeler_description>Relevant construction types:
-
-
-
-
-
-
-
-
-
-
-- Mass
-
-
-
-
-
-
-
-
-
-
-- Steel framed
-
-
-
-
-
-
-
-
-
-
-- Wood framed
-
-
-
-
-
-
-
-
-
-
-- Metal building
-
-
-
-
-
-
-
-
-
-
-- Attic surfaces should have an Attic intended use type</modeler_description>
+  <description>This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The climate zone should be set in the model prior to using this measure. For steel and wood framed walls, insulation will be added to the exterior of the construction. </description>
+  <modeler_description>Insulation recomendations are based on steel framed exterior walls.
+  </modeler_description>
   <arguments>
     <argument>
       <name>material_cost_insulation_increase_ip</name>
@@ -72,24 +18,6 @@
       <required>true</required>
       <model_dependent>false</model_dependent>
       <default_value>0</default_value>
-    </argument>
-    <argument>
-      <name>target</name>
-      <display_name>AEDG vs. ZEDG performance</display_name>
-      <type>Choice</type>
-      <required>true</required>
-      <model_dependent>false</model_dependent>
-      <default_value>AEDG K-12 - Target</default_value>
-      <choices>
-        <choice>
-          <value>AEDG K-12 - Target</value>
-          <display_name>AEDG K-12 - Target</display_name>
-        </choice>
-        <choice>
-          <value>AEDG K-12 - ZEDG 2017</value>
-          <display_name>AEDG K-12 - ZEDG 2017</display_name>
-        </choice>
-      </choices>
     </argument>
   </arguments>
   <outputs/>
@@ -117,18 +45,6 @@
       <checksum>05CB14A3</checksum>
     </file>
     <file>
-      <filename>OsLib_HelperMethods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>D74F36D4</checksum>
-    </file>
-    <file>
-      <filename>OsLib_Constructions.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>1DBDBCB3</checksum>
-    </file>
-    <file>
       <filename>secondary_school_space_attributes.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
@@ -153,6 +69,12 @@
       <checksum>0CD86924</checksum>
     </file>
     <file>
+      <filename>measure_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>4F689BF6</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>1.3.0</identifier>
@@ -161,13 +83,19 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>1B3F8EB7</checksum>
+      <checksum>E24C7859</checksum>
     </file>
     <file>
-      <filename>AedgK12ExteriorWallConstruction_Test.rb</filename>
+      <filename>os_lib_constructions.rb</filename>
       <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>349453B5</checksum>
+      <usage_type>resource</usage_type>
+      <checksum>11B983A5</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>02263B97</checksum>
     </file>
   </files>
 </measure>

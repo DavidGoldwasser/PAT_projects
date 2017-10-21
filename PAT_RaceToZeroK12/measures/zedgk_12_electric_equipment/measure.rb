@@ -9,9 +9,9 @@
 
 #load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
-require "#{File.dirname(__FILE__)}/resources/OsLib_HelperMethods"
-require "#{File.dirname(__FILE__)}/resources/OsLib_LightingAndEquipment"
-require "#{File.dirname(__FILE__)}/resources/OsLib_Schedules"
+require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
+require "#{File.dirname(__FILE__)}/resources/os_lib_lighting_and_equipment"
+require "#{File.dirname(__FILE__)}/resources/os_lib_schedules"
 
 #start the measure
 class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
@@ -50,10 +50,10 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
     rules = [] #target, space type, EPD_ip
 
     # currently only target is lower energy, but setup hash this way so could add baseline in future
-    # climate zone doesn't impact values for EPD in AEDG
+    # climate zone doesn't impact values for EPD in ZEDG
 
     # populate rules hash
-    rules << ["LowEnergy","PrimarySchool","Auditorium",0.2] # while now primary recomendation in TSD, if primary has one then follow secondary recomendations
+    rules << ["LowEnergy","PrimarySchool","Auditorium",0.2] # while now primary recommendation in TSD, if primary has one then follow secondary recommendations
     rules << ["LowEnergy","PrimarySchool","Cafeteria",0.3]
     rules << ["LowEnergy","PrimarySchool","Classroom",0.84]
     rules << ["LowEnergy","PrimarySchool","Corridor",0.04] # for zedg change from 0.0 to  0.04
@@ -106,10 +106,10 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
       # confirm recognized spaceType standards information
       standardsInfo = OsLib_HelperMethods.getSpaceTypeStandardsInformation([spaceType])
       if rulesHash["LowEnergy #{standardsInfo[spaceType][0]} #{standardsInfo[spaceType][1]}"].nil?
-        runner.registerInfo("Couldn't map #{spaceType.name} to a recognized space type used in the AEDG. Electric equipment levels for this SpaceType will not be altered.")
+        runner.registerInfo("Couldn't map #{spaceType.name} to a recognized space type used in the ZEDG. Electric equipment levels for this SpaceType will not be altered.")
         next
       elsif standardsInfo[spaceType][1] == "Kitchen"
-        runner.registerInfo("#{spaceType.name} equipment won't be altered by this measure. Run the AEDG K12 Kitchen measure to apply kitchen recommendations.")
+        runner.registerInfo("#{spaceType.name} equipment won't be altered by this measure. Run the ZEDG K12 Kitchen measure to apply kitchen recommendations.")
         next
       end
 
@@ -152,7 +152,7 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
       spaceType.setElectricEquipmentPowerPerFloorArea(targetEPD) # not sure if this is instance or def?
       newElecEquip = spaceType.electricEquipment[0]
       newElecEquipDef = newElecEquip.electricEquipmentDefinition
-      newElecEquipDef.setName("AEDG K12 - #{standardsInfo[spaceType][1]} equipment")
+      newElecEquipDef.setName("ZEDG K12 - #{standardsInfo[spaceType][1]} equipment")
 
       # add cost to equipment
       lcc_equipment = OpenStudio::Model::LifeCycleCost.createLifeCycleCost("lcc_#{newElecEquipDef.name}", newElecEquipDef, material_cost_ip, "CostPerArea", "Construction", expected_life, years_until_costs_start)
@@ -188,16 +188,6 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
       runner.registerWarning("#{space.name} doesn't have a space type. Couldn't identify target EPD without a space type. EPD was not altered.")
     end
 
-    # populate AEDG tip keys
-    aedgTips = []
-    aedgTips.push("PL01","PL02","PL04","PL05")
-
-    # populate how to tip messages
-    aedgTipsLong = OsLib_AedgMeasures.getLongHowToTips("K12",aedgTips.uniq.sort,runner)
-    if not aedgTipsLong
-      return false # this should only happen if measure writer passes bad values to getLongHowToTips
-    end
-
     # calculate final building EPD
     building = model.getBuilding
     finalEpdDisplay = OsLib_HelperMethods.neatConvertWithUnitDisplay(building.electricEquipmentPowerPerFloorArea,"W/m^2","W/ft^2",1) # can add choices for unit display
@@ -212,9 +202,9 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
 
     #reporting final condition of model
     if costRelatedToMeasure > 0
-      runner.registerFinalCondition("The resulting building has an EPD #{finalEpdDisplay}. Initial capital cost related to this measure is #{costRelatedToMeasureDisplay}. #{aedgTipsLong}")
+      runner.registerFinalCondition("The resulting building has an EPD #{finalEpdDisplay}. Initial capital cost related to this measure is #{costRelatedToMeasureDisplay}.")
     else
-      runner.registerFinalCondition("The resulting building has an EPD #{finalEpdDisplay}. #{aedgTipsLong}")
+      runner.registerFinalCondition("The resulting building has an EPD #{finalEpdDisplay}.")
     end
 
     return true

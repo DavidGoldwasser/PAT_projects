@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>aedg_k_12_exterior_lighting</name>
   <uid>04fd62eb-3e9f-4bfc-98d8-7827b47e034a</uid>
-  <version_id>6ed584bf-5d1e-441d-b233-88a3d9ccdefa</version_id>
-  <version_modified>20170316T164849Z</version_modified>
+  <version_id>c78e2faf-5bfc-4be5-91cc-ad7b1e1df5a1</version_id>
+  <version_modified>20171020T205853Z</version_modified>
   <xml_checksum>2DDDDD82</xml_checksum>
   <class_name>AedgK12ExteriorLighting</class_name>
   <display_name>AedgK12ExteriorLighting</display_name>
@@ -125,22 +125,10 @@ Lighting Zones:&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
       <checksum>852D9F96</checksum>
     </file>
     <file>
-      <filename>OsLib_LightingAndEquipment.rb</filename>
+      <filename>AedgK12ExteriorLighting_Test.rb</filename>
       <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E76DE29C</checksum>
-    </file>
-    <file>
-      <filename>OsLib_Schedules.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>C9D79C7A</checksum>
-    </file>
-    <file>
-      <filename>OsLib_HelperMethods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>D74F36D4</checksum>
+      <usage_type>test</usage_type>
+      <checksum>7FCA1FBC</checksum>
     </file>
     <file>
       <version>
@@ -151,13 +139,25 @@ Lighting Zones:&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>FAEB391C</checksum>
+      <checksum>405EF63A</checksum>
     </file>
     <file>
-      <filename>AedgK12ExteriorLighting_Test.rb</filename>
+      <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>7FCA1FBC</checksum>
+      <usage_type>resource</usage_type>
+      <checksum>02263B97</checksum>
+    </file>
+    <file>
+      <filename>os_lib_lighting_and_equipment.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>7C1F9E8C</checksum>
+    </file>
+    <file>
+      <filename>os_lib_schedules.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>C4185CAA</checksum>
     </file>
   </files>
 </measure>

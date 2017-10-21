@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>aedg_k_12_interior_finishes</name>
   <uid>9165a1f8-9cd1-4492-b20b-5257c05fc5d9</uid>
-  <version_id>de914aee-de68-43a2-8c77-3611cfd030dc</version_id>
-  <version_modified>20170316T164850Z</version_modified>
+  <version_id>a23f990c-4d5d-426b-a17f-fbf8a497ae7f</version_id>
+  <version_modified>20171020T205853Z</version_modified>
   <xml_checksum>1E963D9C</xml_checksum>
   <class_name>AedgK12InteriorFinishes</class_name>
   <display_name>AedgK12InteriorFinishes</display_name>
@@ -19,7 +19,7 @@
       <default_value>*All Interior Partition Surfaces*</default_value>
       <choices>
         <choice>
-          <value>{9d8a6820-612f-4247-929f-0016627a6dd8}</value>
+          <value>{a76ec9dd-9164-4500-8593-b735e64cb21b}</value>
           <display_name>*All Interior Partition Surfaces*</display_name>
         </choice>
       </choices>
@@ -50,16 +50,16 @@
       <checksum>400D07BE</checksum>
     </file>
     <file>
-      <filename>OsLib_Constructions.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>1DBDBCB3</checksum>
-    </file>
-    <file>
       <filename>0211_SimpleSchool_e_124_dev.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
       <checksum>B1595983</checksum>
+    </file>
+    <file>
+      <filename>AedgK12InteriorFinishes_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>CAC24690</checksum>
     </file>
     <file>
       <version>
@@ -70,19 +70,19 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>DE138C3F</checksum>
+      <checksum>8246B039</checksum>
     </file>
     <file>
-      <filename>OsLib_HelperMethods.rb</filename>
+      <filename>os_lib_constructions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>709EA7D2</checksum>
+      <checksum>11B983A5</checksum>
     </file>
     <file>
-      <filename>AedgK12InteriorFinishes_Test.rb</filename>
+      <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>CAC24690</checksum>
+      <usage_type>resource</usage_type>
+      <checksum>02263B97</checksum>
     </file>
   </files>
 </measure>

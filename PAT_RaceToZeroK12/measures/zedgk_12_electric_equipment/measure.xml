@@ -2,12 +2,12 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_electric_equipment</name>
   <uid>d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268</uid>
-  <version_id>4f5bd5ae-885e-49b2-a117-c96f715d7b3e</version_id>
-  <version_modified>20170322T203846Z</version_modified>
+  <version_id>a899014f-03cd-4e9a-97c3-5d2923c6611f</version_id>
+  <version_modified>20171020T205858Z</version_modified>
   <xml_checksum>8C4D4034</xml_checksum>
   <class_name>ZEDGK12ElectricEquipment</class_name>
   <display_name>ZEDG K12 ElectricEquipment</display_name>
-  <description>Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains "Elev" or "elev" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen.</description>
+  <description>This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space where the load definition contains "Elev" or "elev" will be left alone. New electric equipment will be added based on the K12 ZEDG recommendations. Kitchen equipment won't be altered by this measure. There is a stand alone ZEDG measure specifically for the kitchen.</description>
   <modeler_description>Equipment in un-recognized spaces will be left alone. This measure will attempt to retain schedules from the initial model. If the initial model contained multiple electric equipment objects associated with multiple schedules, then one of those schedules will be picked for the new electric equipment.</modeler_description>
   <arguments>
     <argument>
@@ -38,24 +38,6 @@
   </attributes>
   <files>
     <file>
-      <filename>OsLib_HelperMethods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>1FC7DE81</checksum>
-    </file>
-    <file>
-      <filename>OsLib_Schedules.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>A59F2148</checksum>
-    </file>
-    <file>
-      <filename>OsLib_LightingAndEquipment.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E1C8FE10</checksum>
-    </file>
-    <file>
       <filename>SecondarySchoolCustomRef_01_0228.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
@@ -68,7 +50,7 @@
       <checksum>B29F6C1C</checksum>
     </file>
     <file>
-      <filename>AedgK12ElectricEquipment_Test.rb</filename>
+      <filename>measure_Test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
       <checksum>55C91E4C</checksum>
@@ -82,7 +64,25 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>B615CA00</checksum>
+      <checksum>6249160B</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>02263B97</checksum>
+    </file>
+    <file>
+      <filename>os_lib_lighting_and_equipment.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>7C1F9E8C</checksum>
+    </file>
+    <file>
+      <filename>os_lib_schedules.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>C4185CAA</checksum>
     </file>
   </files>
 </measure>

@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_roof_construction</name>
   <uid>d322d264-5855-4b20-bd3e-3c5e5032bc05</uid>
-  <version_id>a3737c76-ecfc-4165-ae94-b65c84c89e24</version_id>
-  <version_modified>20170316T164931Z</version_modified>
+  <version_id>cc3665ad-edad-4c99-be1b-6f90ce455c23</version_id>
+  <version_modified>20171020T205859Z</version_modified>
   <xml_checksum>5091078B</xml_checksum>
   <class_name>ZEDGK12RoofConstruction</class_name>
   <display_name>ZEDG K12 RoofConstruction</display_name>
@@ -40,24 +40,6 @@
       <required>true</required>
       <model_dependent>false</model_dependent>
       <default_value>0</default_value>
-    </argument>
-    <argument>
-      <name>target</name>
-      <display_name>AEDG vs. ZEDG performance</display_name>
-      <type>Choice</type>
-      <required>true</required>
-      <model_dependent>false</model_dependent>
-      <default_value>AEDG K-12 - Target</default_value>
-      <choices>
-        <choice>
-          <value>AEDG K-12 - Target</value>
-          <display_name>AEDG K-12 - Target</display_name>
-        </choice>
-        <choice>
-          <value>AEDG K-12 - ZEDG 2017</value>
-          <display_name>AEDG K-12 - ZEDG 2017</display_name>
-        </choice>
-      </choices>
     </argument>
     <argument>
       <name>alter_sri</name>
@@ -109,28 +91,16 @@
       <checksum>43EAE4A4</checksum>
     </file>
     <file>
-      <filename>OsLib_HelperMethods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>D74F36D4</checksum>
-    </file>
-    <file>
-      <filename>OsLib_Constructions.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>1DBDBCB3</checksum>
-    </file>
-    <file>
       <filename>OsLib_AedgMeasures.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
       <checksum>F37142C9</checksum>
     </file>
     <file>
-      <filename>AedgK12RoofConstruction_Test.rb</filename>
+      <filename>measure_Test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>F95AF6EE</checksum>
+      <checksum>8A4B75F9</checksum>
     </file>
     <file>
       <version>
@@ -141,7 +111,19 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>52A46984</checksum>
+      <checksum>9048F4A3</checksum>
+    </file>
+    <file>
+      <filename>os_lib_constructions.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>11B983A5</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>02263B97</checksum>
     </file>
   </files>
 </measure>

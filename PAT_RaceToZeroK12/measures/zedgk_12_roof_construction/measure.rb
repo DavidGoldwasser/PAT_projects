@@ -9,7 +9,7 @@
 
 #load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
-require "#{File.dirname(__FILE__)}/resources/OsLib_Constructions"
+require "#{File.dirname(__FILE__)}/resources/os_lib_constructions"
 
 #start the measure
 class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
@@ -37,17 +37,6 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
     material_cost_sri_increase_ip.setDefaultValue(0.0)
     args << material_cost_sri_increase_ip
 
-    # todo - this is just for internal use, don't merge to develop
-
-    #make choice argument for target performance
-    choices = OpenStudio::StringVector.new
-    choices << "AEDG K-12 - Target"
-    choices << "AEDG K-12 - ZEDG 2017"
-    target = OpenStudio::Ruleset::OSArgument::makeChoiceArgument("target", choices)
-    target.setDisplayName("AEDG vs. ZEDG performance")
-    target.setDefaultValue("AEDG K-12 - Target")
-    args << target
-
     #make an argument to alter_sri
     alter_sri = OpenStudio::Ruleset::OSArgument::makeBoolArgument("alter_sri",true)
     alter_sri.setDisplayName("Alter SRI?")
@@ -69,7 +58,6 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
     # assign the user inputs to variables
     material_cost_insulation_increase_ip = runner.getDoubleArgumentValue("material_cost_insulation_increase_ip",user_arguments)
     material_cost_sri_increase_ip = runner.getDoubleArgumentValue("material_cost_sri_increase_ip",user_arguments)
-    target = runner.getStringArgumentValue("target",user_arguments)
     alter_sri = runner.getBoolArgumentValue("alter_sri",user_arguments)
 
     # no validation needed for cost inputs, negative values are fine, however negative would be odd choice since this measure only improves vs. decreases insulation and SRI performance
@@ -85,47 +73,20 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
     #prepare rule hash
     rules = [] #climate zone, roof type, thermal transmittance (Btu/h·ft2·°F), SRI
 
-    # IEAD
-    if target == "AEDG K-12 - ZEDG 2017"
-      rules << ["0","IEAD",0.039,78.0] # measure setup to use only for this target and roof type
-      rules << ["1","IEAD",0.048,78.0]
-      rules << ["2","IEAD",0.039,78.0]
-      rules << ["3","IEAD",0.039,78.0]
-      rules << ["4","IEAD",0.030,0]
-      rules << ["5","IEAD",0.030,0]
-      rules << ["6","IEAD",0.030,0]
-      rules << ["7","IEAD",0.027,0]
-      rules << ["8","IEAD",0.027,0]
-    else
-      rules << ["1","IEAD",0.048,78.0] # R-20.0 ci.
-      rules << ["2","IEAD",0.039,78.0] # R-25.0 ci.
-      rules << ["3","IEAD",0.039,78.0] # R-25.0 ci.
-      rules << ["4","IEAD",0.032,0] # R-30.0 ci., SRI Comply with Standard 90.1
-      rules << ["5","IEAD",0.032,0] # R-30.0 ci., SRI Comply with Standard 90.1
-      rules << ["6","IEAD",0.032,0] # R-30.0 ci., SRI Comply with Standard 90.1
-      rules << ["7","IEAD",0.028,0] # R-35.0 ci., SRI Comply with Standard 90.1
-      rules << ["8","IEAD",0.028,0] # R-35.0 ci., SRI Comply with Standard 90.1
-    end
+    # zedg doesn't have wall type lookup like aedg, altert user of this
+    runner.registerInfo("Roof insulation values based on IEAD roof.")
 
-    # Attic
-    rules << ["1","Attic",0.027,78.0] # R-38.0
-    rules << ["2","Attic",0.027,78.0] # R-38.0
-    rules << ["3","Attic",0.027,78.0] # R-38.0
-    rules << ["4","Attic",0.021,0] # R-49.0, SRI Comply with Standard 90.1
-    rules << ["5","Attic",0.021,0] # R-49.0, SRI Comply with Standard 90.1
-    rules << ["6","Attic",0.021,0] # R-49.0, SRI Comply with Standard 90.1
-    rules << ["7","Attic",0.017,0] # R-60.0, SRI Comply with Standard 90.1
-    rules << ["8","Attic",0.017,0] # R-60.0, SRI Comply with Standard 90.1
+    rules << ["0","IEAD",0.039,78.0] # measure setup to use only for this target and roof type
+    rules << ["1","IEAD",0.048,78.0]
+    rules << ["2","IEAD",0.039,78.0]
+    rules << ["3","IEAD",0.039,78.0]
+    rules << ["4","IEAD",0.030,0]
+    rules << ["5","IEAD",0.030,0]
+    rules << ["6","IEAD",0.030,0]
+    rules << ["7","IEAD",0.027,0]
+    rules << ["8","IEAD",0.027,0]
 
-    # Metal
-    rules << ["1","Metal",0.041,78.0] # R-19.0 + R-10.0 FC (updated values per email)
-    rules << ["2","Metal",0.041,78.0] # R-19.0 + R-10.0 FC (updated values per email)
-    rules << ["3","Metal",0.041,78.0] # R-19.0 + R-10.0 FC (updated values per email)
-    rules << ["4","Metal",0.035,0] # R-19.0 + R-11 Ls, SRI Comply with Standard 90.1
-    rules << ["5","Metal",0.031,0] # R-25.0 + R-11 Ls, SRI Comply with Standard 90.1
-    rules << ["6","Metal",0.031,0] # R-25.0 + R-11 Ls, SRI Comply with Standard 90.1
-    rules << ["7","Metal",0.029,0] # R-30.0 + R-11 Ls, SRI Comply with Standard 90.1
-    rules << ["8","Metal",0.026,0] # R-25.0 + R-11 + R-11 Ls, SRI Comply with Standard 90.1
+
 
     #make rule hash for cleaner code
     rulesHash = {}
@@ -184,7 +145,10 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
 
       # get roof type
       intendedSurfaceType = constructionStandard.intendedSurfaceType
-      constructionType = constructionStandard.standardsConstructionType
+
+      # because it is assumed to be IEAD, hard code vs. inspecting construction
+      # constructionType = constructionStandard.standardsConstructionType
+      constructionType = "IEAD"
 
       # get conductivity
       conductivity_si = construction.thermalConductance.get
@@ -406,81 +370,7 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
 
     end # end of atticSpaces.each do
 
-    # hash to look for classification conflicts in attic constructions
-    atticConstructionLog = {}
-
-    # test attic constructions and identify conflicts
-    # conflict resolution order (insulation,sri,nothing-for demising)
-    atticSurfacesInterior.each do |surface,construction|
-
-      next if atticConstructionLog[construction] == "atticSurfacesInterior"
-      conductivity_ip = atticConstructions[construction]["conductivity_ip"]
-
-      # test construction against rules
-      ruleSet = rulesHash["#{climateZoneNumber} Attic"]
-      if conductivity_ip > ruleSet["conductivity_ip"]
-        atticConstructions[construction] = {"conductivity_ip" => conductivity_ip,"sri" => "NA","transmittance_ip_rule" => ruleSet["conductivity_ip"],"sri_rule" => "NA","classification" => "atticSurfacesInterior"}
-      else
-        # delete const from main hash
-        atticConstructions.delete(construction)
-      end
-      atticConstructionLog[construction] = "atticSurfacesInterior" #pass in construction object and the type of rule it was tested against
-
-    end
-
-    atticSurfacesExteriorExposed.each do |surface,construction|
-
-      next if atticConstructionLog[construction] == "atticSurfacesExteriorExposed"
-      sri = atticConstructions[construction]["sri"]
-
-      # warn user if construction used on attic interior surface
-      if atticConstructionLog[construction] == "atticSurfacesInterior"
-        runner.registerWarning("#{surface.name} appears to be an exterior surface but uses a construction #{construction.name} that is also used on interior attic surfaces. The construction was classified and tested as an insulated interior attic construction. You may see unexpected results.")
-        next
-      end
-
-      # test construction against rules
-      ruleSet = rulesHash["#{climateZoneNumber} Attic"]
-      if sri < ruleSet["sri"]
-        atticConstructions[construction] = {"conductivity_ip" => "NA","sri" => sri,"transmittance_ip_rule" => "NA","sri_rule" => ruleSet["sri"],"classification" => "atticSurfacesExteriorExposed"}
-      else
-        # delete const from main hash
-        atticConstructions.delete(construction)
-      end
-      atticConstructionLog[construction] = "atticSurfacesExteriorExposed" #pass in construction object and the type of rule it was tested against
-
-    end
-
-    atticSurfacesOtherAtticDemising.each do |k,construction|
-
-      next if atticConstructionLog[construction] == "atticSurfacesOtherAtticDemising"
-      sri = atticConstructions[construction]["sri"]
-
-      # warn user if construction used on attic interior surface
-      if atticConstructionLog[construction] == "atticSurfacesInterior"
-        runner.registerWarning("#{surface.name} appears to be an exterior surface but uses a construction #{construction.name} that is also used on interior attic surfaces. The construction was classified and tested as an insulated interior attic construction. You may see unexpected results.")
-        next
-      elsif atticConstructionLog[construction] == "atticSurfacesExteriorExposed"
-        runner.registerWarning("#{surface.name} appears to be an surface between two attic spaces uses a construction #{construction.name} that is also used on exterior attic surfaces. The construction was classified and tested as an insulated interior attic construction. You may see unexpected results.")
-        next
-      end
-
-      # delete const from main hash.
-      atticConstructions.delete(construction)
-
-      # No rule test needed for demising.
-      atticConstructionLog[construction] = "atticSurfacesOtherAtticDemising" #pass in construction object and the type of rule it was tested against
-
-    end
-
-    # delete constructions from hash that are non used on roof attic surfaces, but are exterior exposed
-     atticSurfacesExteriorExposedNonRoof.each do |surface,construction|
-       if atticSurfacesExteriorExposed.has_value? construction #make sure I'm checking for value not key
-         runner.registerWarning("#{surface.name} is a non-roof surface but uses a construction that the measure is treating as an exterior attic roof. Having this associated with a non-roof surface may increase affected area of SRI improvements.")
-       else
-         atticConstructions.delete(construction)
-       end
-     end
+    # removed aedg code that looks for classification conflicts in attic constructions
 
     # alter constructions and add lcc
     constructionsToChange = ieadConstructions.sort + metalConstructions.sort + atticConstructions.sort
@@ -591,32 +481,6 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
 
     end
 
-    # populate AEDG tip keys
-    aedgTips = []
-
-    if ieadFlag
-      aedgTips.push("EN01","EN02","EN17","EN19","EN21","EN22")
-    end
-    if atticFlag
-      aedgTips.push("EN01","EN03","EN17","EN19","EN20","EN21")
-    end
-    if metalFlag
-      aedgTips.push("EN01","EN04","EN17","EN19","EN21","EN22")
-    end
-
-    # create not applicable of no constructions were tagged to change
-    # if someone had a model with only attic floors and no attic ceilings current logic would flag as not applicable, but a warning would be issued alerting them of the issue (attic surface being used outside of attic space)
-    if aedgTips.size == 0
-      runner.registerAsNotApplicable("No surfaces use constructions tagged as a roof type recognized by this measure. No roofs were altered.")
-      return true
-    end
-
-    # populate how to tip messages
-    aedgTipsLong = OsLib_AedgMeasures.getLongHowToTips("K12",aedgTips.uniq.sort,runner)
-    if not aedgTipsLong
-      return false # this should only happen if measure writer passes bad values to getLongHowToTips
-    end
-
     #reporting initial condition of model
     startingRvalue = startingRvaluesExtRoof + startingRvaluesAtticInterior #adding non attic and attic values together
 
@@ -625,7 +489,7 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
     #reporting final condition of model
     insulation_affected_area_ip = OpenStudio::convert(insulation_affected_area,"m^2","ft^2").get
     sri_affected_area_ip = OpenStudio::convert(sri_affected_area,"m^2","ft^2").get
-    runner.registerFinalCondition("#{OpenStudio::toNeatString(insulation_affected_area_ip,0,true)}(ft^2) of constructions intended for roof surfaces had insulation enhanced at a cost of $#{OpenStudio::toNeatString(running_cost_insulation,0,true)}. #{OpenStudio::toNeatString(sri_affected_area_ip,0,true)}(ft^2) of constructions intended for roof surfaces had the Solar Reflectance Index (SRI) enhanced at a cost of $#{OpenStudio::toNeatString(running_cost_sri,0,true)}. #{aedgTipsLong}")
+    runner.registerFinalCondition("#{OpenStudio::toNeatString(insulation_affected_area_ip,0,true)}(ft^2) of constructions intended for roof surfaces had insulation enhanced at a cost of $#{OpenStudio::toNeatString(running_cost_insulation,0,true)}. #{OpenStudio::toNeatString(sri_affected_area_ip,0,true)}(ft^2) of constructions intended for roof surfaces had the Solar Reflectance Index (SRI) enhanced at a cost of $#{OpenStudio::toNeatString(running_cost_sri,0,true)}.")
     
     return true
  

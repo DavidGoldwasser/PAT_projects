@@ -9,9 +9,9 @@
 
 #load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
-require "#{File.dirname(__FILE__)}/resources/OsLib_HelperMethods"
-require "#{File.dirname(__FILE__)}/resources/OsLib_LightingAndEquipment"
-require "#{File.dirname(__FILE__)}/resources/OsLib_Schedules"
+require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
+require "#{File.dirname(__FILE__)}/resources/os_lib_lighting_and_equipment"
+require "#{File.dirname(__FILE__)}/resources/os_lib_schedules"
 
 #start the measure
 class AedgK12ElectricEquipmentControls < OpenStudio::Ruleset::ModelUserScript
@@ -47,15 +47,9 @@ class AedgK12ElectricEquipmentControls < OpenStudio::Ruleset::ModelUserScript
     #assign the user inputs to variables
     costTotal = runner.getDoubleArgumentValue("costTotal",user_arguments)
 
-    # make hash of argument display name and value  #todo - would be better to get these directly from the display name
-    argumentHash = {
-        "Total cost for all Equipment Controls in the Building" => costTotal
-    }
-    #check arguments for reasonableness (runner, min, max, argumentArray)
-    checkDoubleArguments = OsLib_HelperMethods.checkDoubleArguments(runner,0,nil,argumentHash)
-    if not checkDoubleArguments
-      return false
-    end
+    non_neg_args = ['costTotal']
+    non_neg = OsLib_HelperMethods.checkDoubleAndIntegerArguments(runner, user_arguments,{"min"=>0.0,"max"=>nil,"min_eq_bool"=>true,"max_eq_bool"=>false,"arg_array" =>non_neg_args})
+    if !non_neg then return false end
 
     # create not applicable flag if building doesn't have any equipments.
     if model.getBuilding.electricEquipmentPower == 0

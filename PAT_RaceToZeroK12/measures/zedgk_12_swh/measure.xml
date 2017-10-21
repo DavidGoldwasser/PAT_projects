@@ -1,0 +1,133 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>zedgk_12_swh</name>
+  <uid>d765082f-34fb-4b03-bd4e-e8e4a418ba2a</uid>
+  <version_id>f28b281f-57e4-43c0-b486-140b496f3b56</version_id>
+  <version_modified>20171021T081702Z</version_modified>
+  <xml_checksum>2B3D3EB4</xml_checksum>
+  <class_name>ZEDGK12SWH</class_name>
+  <display_name>ZEDG K12 SWH</display_name>
+  <description>Use 90% efficient natural gas-fired storage tank water heater. Water use demand is caluclated per student.</description>
+  <modeler_description>Measure is applied to restroom and kitchen space types for both primary and secondary schools, and to gyms for secondary schools.  All existing swh systems are deleted.  The largest kitchen and gym spaces are selected as representative spaces, to which the corresponding ZEDG recommended swh loads are applied.  For restrooms, the total SWH load is divided evenly among the restroom spaces in the model.  Loads are applied on a per student basis.  The user can input number of students manually.  Otherwise, the measure will calculate the number of students from the classroom floor area.  If there is no classroom floor area, the user wil be required to specify a number of students.</modeler_description>
+  <arguments>
+    <argument>
+      <name>costTotalSwhSystem</name>
+      <display_name>Total Cost for Kitchen System ($).</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0</default_value>
+    </argument>
+    <argument>
+      <name>numberOfStudents</name>
+      <display_name>Total Number of Students.</display_name>
+      <type>Integer</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Service Water Heating.Water Heating</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Analysis Spreadsheet</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>400D07BE</checksum>
+    </file>
+    <file>
+      <filename>AEDG_HVAC_GenericTestModel_0225_a.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>9C01866C</checksum>
+    </file>
+    <file>
+      <filename>measure_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>EB514EDF</checksum>
+    </file>
+    <file>
+      <filename>OsLib_HVAC.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>3EB923D3</checksum>
+    </file>
+    <file>
+      <filename>os_lib_constructions.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>11B983A5</checksum>
+    </file>
+    <file>
+      <filename>os_lib_geometry.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>ABF2B8A1</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>02263B97</checksum>
+    </file>
+    <file>
+      <filename>os_lib_lighting_and_equipment.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>7C1F9E8C</checksum>
+    </file>
+    <file>
+      <filename>os_lib_schedules.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>C4185CAA</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.3.0</identifier>
+        <min_compatible>1.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>44A16E04</checksum>
+    </file>
+  </files>
+</measure>

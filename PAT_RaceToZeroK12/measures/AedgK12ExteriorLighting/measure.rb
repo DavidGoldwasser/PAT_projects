@@ -9,8 +9,8 @@
 
 #load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
-require "#{File.dirname(__FILE__)}/resources/OsLib_HelperMethods"
-require "#{File.dirname(__FILE__)}/resources/OsLib_LightingAndEquipment"
+require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
+require "#{File.dirname(__FILE__)}/resources/os_lib_lighting_and_equipment"
 
 #start the measure
 class AedgK12ExteriorLighting < OpenStudio::Ruleset::ModelUserScript
@@ -96,18 +96,9 @@ class AedgK12ExteriorLighting < OpenStudio::Ruleset::ModelUserScript
     walkwayPlazaSpecialLighting = runner.getDoubleArgumentValue("walkwayPlazaSpecialLighting",user_arguments)
     costTotalExteriorLights = runner.getDoubleArgumentValue("costTotalExteriorLights",user_arguments)
 
-    # make hash of argument display name and value  #todo - would be better to get these directly from the display name
-    argumentHash = {
-    "facade and landscape lighting" => facadeLandscapeLighting,
-    "parking and drives lighting" => parkingDrivesLighting,
-    "walkway plaza and special lighting" => walkwayPlazaSpecialLighting,
-    "total cost for exterior lights" => costTotalExteriorLights
-    }
-    #check arguments for reasonableness (runner, min, max, argumentArray)
-    checkDoubleArguments = OsLib_HelperMethods.checkDoubleArguments(runner,0,nil,argumentHash)
-    if not checkDoubleArguments
-      return false
-    end
+    non_neg_args = ['facadeLandscapeLighting','parkingDrivesLighting','walkwayPlazaSpecialLighting','costTotalExteriorLights']
+    non_neg = OsLib_HelperMethods.checkDoubleAndIntegerArguments(runner, user_arguments,{"min"=>0.0,"max"=>nil,"min_eq_bool"=>true,"max_eq_bool"=>false,"arg_array" =>non_neg_args})
+    if !non_neg then return false end
 
     #prepare rule hash
     rules = [] #exterior lighting zone, lighting type, LPD W/ft^2, setback fraction
@@ -181,7 +172,7 @@ class AedgK12ExteriorLighting < OpenStudio::Ruleset::ModelUserScript
     getExteriorLightsValue = OsLib_LightingAndEquipment.getExteriorLightsValue(model)
 
     #reporting initial condition of model
-    runner.registerInitialCondition("The initial model had #{getExteriorLightsValue["exteriorLights"].size} exterior lights with a total power of #{getExteriorLightsValue["exteriorLightingPower"]} Watts.")
+    runner.registerInitialCondition("The initial model had #{getExteriorLightsValue["exterior_lights"].size} exterior lights with a total power of #{getExteriorLightsValue["exteriorLightingPower"]} Watts.")
 
     #remove exterior lights
     lightsRemoved = OsLib_LightingAndEquipment.removeAllExteriorLights(model,runner)
@@ -274,7 +265,7 @@ class AedgK12ExteriorLighting < OpenStudio::Ruleset::ModelUserScript
 
     #reporting final condition of model
     # todo - add cost to final condition
-    runner.registerFinalCondition("The final model had #{getExteriorLightsValue["exteriorLights"].size} exterior lights with a total power of #{getExteriorLightsValue["exteriorLightingPower"]} Watts. Cost of exterior lights are $#{OpenStudio::toNeatString(lcc_mat_TotalCost,0,true)}. #{aedgTipsLong}")
+    runner.registerFinalCondition("The final model had #{getExteriorLightsValue["exterior_lights"].size} exterior lights with a total power of #{getExteriorLightsValue["exteriorLightingPower"]} Watts. Cost of exterior lights are $#{OpenStudio::toNeatString(lcc_mat_TotalCost,0,true)}. #{aedgTipsLong}")
 
     return true
  

@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>add_rooftop_pv</name>
   <uid>34550614-0c87-44db-9252-0ca0915b1e64</uid>
-  <version_id>0fa6fce7-e820-4dad-aeaa-efa88bb7ba34</version_id>
-  <version_modified>20170316T164846Z</version_modified>
+  <version_id>7c0fcc3b-8a72-455d-9f3e-6369088ede31</version_id>
+  <version_modified>20171021T075339Z</version_modified>
   <xml_checksum>178163B6</xml_checksum>
   <class_name>AddRooftopPV</class_name>
   <display_name>Add Rooftop PV</display_name>
