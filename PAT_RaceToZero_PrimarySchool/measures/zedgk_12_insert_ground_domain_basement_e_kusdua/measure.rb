@@ -6,7 +6,7 @@ class ZEDGK12InsertGroundDomainBasementEKusdua < OpenStudio::Ruleset::WorkspaceU
 
   # human readable name
   def name
-    return "Insert Ground Domain Basement E+ Kusdua"
+    return "ZEDG K12 Insert Ground Domain Basement E+ Kusdua"
   end
 
   # human readable description

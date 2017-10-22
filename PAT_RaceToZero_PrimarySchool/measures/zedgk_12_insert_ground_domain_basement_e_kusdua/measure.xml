@@ -2,11 +2,11 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_insert_ground_domain_basement_e_kusdua</name>
   <uid>aa8123f0-4d04-4141-8a00-8a2bccf30315</uid>
-  <version_id>ee8e3ede-dd2f-498f-959c-cc3ac0cc1fdd</version_id>
-  <version_modified>20171022T023411Z</version_modified>
+  <version_id>639739b4-1cd0-4893-814d-6100de9c6d68</version_id>
+  <version_modified>20171022T150722Z</version_modified>
   <xml_checksum>80A956BE</xml_checksum>
   <class_name>ZEDGK12InsertGroundDomainBasementEKusdua</class_name>
-  <display_name>Insert Ground Domain Basement E+ Kusdua</display_name>
+  <display_name>ZEDG K12 Insert Ground Domain Basement E+ Kusdua</display_name>
   <description>Measure to insert the EnergyPlus Site:GroundDomain:Slab object into the model and, when recommended, horizontal and vertical insulation.</description>
   <modeler_description>This will add code to lookup pre-calculated inputs for specific cities</modeler_description>
   <arguments>
@@ -110,7 +110,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>E1EFB89D</checksum>
+      <checksum>EEF00987</checksum>
     </file>
   </files>
 </measure>
