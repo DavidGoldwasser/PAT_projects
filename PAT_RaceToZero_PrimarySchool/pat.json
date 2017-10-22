@@ -2,7 +2,7 @@
   "projectName": "PAT_RaceToZero_PrimarySchool",
   "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool",
   "seed": "ZEDG K12 Primary TSD seed.osm",
-  "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+  "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
   "analysis_type": "Manual",
   "remoteSettings": {
     "open": true,
@@ -187,7 +187,7 @@
           "option_3": "Honolulu",
           "option_4": "New Delhi",
           "option_5": "MacDill FL",
-          "option_6": "David-Monthan AZ",
+          "option_6": "Davis-Monthan AZ",
           "option_7": "Atlanta",
           "option_8": "El Paso",
           "option_9": "Chula Vista CA",
@@ -460,7 +460,7 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": false,
+      "open": true,
       "addedToProject": true,
       "date": "9/11/2017",
       "author": "",
@@ -525,7 +525,7 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "David-Monthan AZ",
+          "name": "Davis-Monthan AZ",
           "description": "Option 6 Description: Change the building location"
         },
         {
@@ -698,7 +698,7 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6225602866238868,
+      "instanceId": 0.6464159380935299,
       "showWarningText": false
     },
     {
@@ -842,7 +842,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.2364987619635679,
+      "instanceId": 0.2909401831040326,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1012,7 +1012,7 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.06370813578574364,
+      "instanceId": 0.3528761516016099,
       "showWarningText": false
     },
     {
@@ -1177,7 +1177,7 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.10236854726566591,
+      "instanceId": 0.8736497980744518,
       "showWarningText": false
     },
     {
@@ -1342,7 +1342,7 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.628141937568117,
+      "instanceId": 0.10718317662321342,
       "showWarningText": false
     },
     {
@@ -1486,7 +1486,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.824396395407053,
+      "instanceId": 0.2290472977260205,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -1696,7 +1696,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.12416838406237196,
+      "instanceId": 0.24360714630459834,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -1878,7 +1878,7 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.07786026171562965,
+      "instanceId": 0.1413689690538833,
       "showWarningText": false
     },
     {
@@ -2217,7 +2217,7 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.5786399416812389,
+      "instanceId": 0.128279417272394,
       "showWarningText": false
     },
     {
@@ -2287,7 +2287,7 @@
       "seed": "ZEDG K12 Primary TSD seed.osm",
       "workflow_index": 9,
       "options": [],
-      "instanceId": 0.4703892500825615,
+      "instanceId": 0.3095357358509958,
       "numberOfOptions": 0,
       "$$hashKey": "object:56484"
     },
@@ -2453,7 +2453,7 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.12056801596774736,
+      "instanceId": 0.8724715365632549,
       "showWarningText": false
     },
     {
@@ -2652,7 +2652,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.1540330032776438,
+      "instanceId": 0.7547722258127731,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -2855,7 +2855,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.11640978904614285,
+      "instanceId": 0.6225396093185824,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -3314,7 +3314,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.17586234750234686,
+      "instanceId": 0.9119084982181962,
       "showWarningText": false
     },
     {
@@ -3591,7 +3591,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.8373449710111227,
+      "instanceId": 0.9751936426353258,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805"
     },
@@ -3869,7 +3869,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.8658657292606646,
+      "instanceId": 0.5524601369315534,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880"
     },
@@ -4164,7 +4164,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7651865179631505,
+      "instanceId": 0.8823144245275061,
       "showWarningText": false
     },
     {
@@ -4425,7 +4425,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.6693341422141079,
+      "instanceId": 0.22538019662827535,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289"
     },
@@ -4687,7 +4687,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.08764900668477194,
+      "instanceId": 0.5505956845571487,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361"
     },
@@ -4832,7 +4832,7 @@
           "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
         }
       ],
-      "instanceId": 0.47671903102658586,
+      "instanceId": 0.0015935585640489691,
       "numberOfOptions": 1,
       "$$hashKey": "object:7459",
       "outputMeasure": false
@@ -4978,7 +4978,7 @@
           "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
         }
       ],
-      "instanceId": 0.9806766027843836,
+      "instanceId": 0.36723865444761583,
       "numberOfOptions": 1,
       "$$hashKey": "object:7458",
       "outputMeasure": false
@@ -5124,15 +5124,15 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
         }
       ],
-      "instanceId": 0.39681352684948745,
+      "instanceId": 0.1341588230699311,
       "numberOfOptions": 1,
       "$$hashKey": "object:7460",
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/zedgk_12_insert_ground_domain_basement_e_kusdua",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_insert_ground_domain_basement_e_kusdua",
       "name": "insert_ground_domain_basement_e_kusdua",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/zedgk_12_insert_ground_domain_basement_e_kusdua",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_insert_ground_domain_basement_e_kusdua",
       "uid": "aa8123f0-4d04-4141-8a00-8a2bccf30315",
       "uuid": "{aa8123f0-4d04-4141-8a00-8a2bccf30315}",
       "version_id": "ee8e3ede-dd2f-498f-959c-cc3ac0cc1fdd",
@@ -5304,7 +5304,7 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.8957878967139428,
+      "instanceId": 0.9278110364005563,
       "showWarningText": false
     },
     {
@@ -5571,7 +5571,7 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.5462016828515606,
+      "instanceId": 0.02701333558859198,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866"
     },
@@ -6901,7 +6901,7 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.4592731411474311,
+      "instanceId": 0.21078310840928238,
       "showWarningText": false
     },
     {
@@ -7011,7 +7011,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.6479857179394808,
+      "instanceId": 0.7595721883128441,
       "numberOfOptions": 1,
       "$$hashKey": "object:10829",
       "outputMeasure": false
@@ -7040,7 +7040,7 @@
     {
       "name": "HVAC - VRF",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
-      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
       "change_building_location": "Aurora CO",
       "zedgk_12_electric_equipment": "ZEDG Elec Equip",
       "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
@@ -7072,7 +7072,7 @@
     {
       "name": "HVAC GSHP",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
-      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
       "change_building_location": "Aurora CO",
       "zedgk_12_electric_equipment": "ZEDG Elec Equip",
       "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
@@ -7104,7 +7104,7 @@
     {
       "name": "HVAC Fan Coil Air Cool",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
-      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
       "change_building_location": "Aurora CO",
       "zedgk_12_electric_equipment": "ZEDG Elec Equip",
       "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
@@ -7134,7 +7134,7 @@
       "add_electric_equipment_instance_to_space_2": "None"
     }
   ],
-  "analysisID": null,
+  "analysisID": "",
   "datapoints": [
     {
       "name": "HVAC - VRF",
