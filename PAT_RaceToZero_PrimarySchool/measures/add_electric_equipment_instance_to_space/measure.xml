@@ -1,0 +1,107 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>add_electric_equipment_instance_to_space</name>
+  <uid>d226e8df-700b-4c67-8816-ea0c53e7f6ab</uid>
+  <version_id>dabc8d74-d2a0-48aa-ad66-ec3dfcfc2f46</version_id>
+  <version_modified>20171021T075339Z</version_modified>
+  <xml_checksum>0EED982D</xml_checksum>
+  <class_name>AddElectricEquipmentInstanceToSpace</class_name>
+  <display_name>Add Electric Equipment Instance to Space</display_name>
+  <description>This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier</description>
+  <modeler_description>Example use case is adding special loads like an elevator to a model as part of an analysis workflow</modeler_description>
+  <arguments>
+    <argument>
+      <name>space</name>
+      <display_name>Select Space for Load Instance</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>elec_equip_def</name>
+      <display_name>Select Electric Equipment Definition</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>schedule</name>
+      <display_name>Select Fractional Schedule</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>multiplier</name>
+      <display_name>Load Instance Multiplier</display_name>
+      <description>Identify the number of these load objects to add to the space.</description>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>1</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Equipment.Electric Equipment</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Use Case</name>
+      <value>Model Articulation</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <filename>add_electric_equipment_instance_to_space_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>BD334576</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>5E09761C</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>02263B97</checksum>
+    </file>
+  </files>
+</measure>
