@@ -15597,7 +15597,9 @@ OS:ProgramControl,
   {306973f6-d17b-439d-9ead-71d26f5ffa04}; !- Handle
 
 OS:OutputControl:ReportingTolerances,
-  {e03634c3-5125-4b3b-8846-08b855e3713d}; !- Handle
+  {e03634c3-5125-4b3b-8846-08b855e3713d}, !- Handle
+  1,                                      !- Tolerance for Time Heating Setpoint Not Met {deltaC}
+  1;                                      !- Tolerance for Time Cooling Setpoint Not Met {deltaC}
 
 OS:SurfaceConvectionAlgorithm:Inside,
   {d85ab289-4e53-4ee5-bd80-cb821f62baff}, !- Handle
