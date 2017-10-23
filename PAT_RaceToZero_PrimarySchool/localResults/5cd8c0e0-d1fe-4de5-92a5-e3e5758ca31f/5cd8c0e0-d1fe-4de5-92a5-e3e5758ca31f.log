@@ -1,0 +1,32 @@
+# Logfile created on 2017-10-23 08:55:14 -0600 by logger.rb/47272
+[08:55:14.915019 INFO] Server host is http://localhost:8080
+[08:55:14.915059 INFO] Analysis directory is /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde
+[08:55:14.915089 INFO] Simulation directory is /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f
+[08:55:14.915104 INFO] Run datapoint type/file is workflow
+[08:55:14.915117 INFO] Starting initialize_worker for datapoint 5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f
+[08:55:14.915154 INFO] write_lock_file exists, checking & waiting for receipt file
+[08:55:14.915220 INFO] waiting for receipt file to appear
+[08:55:17.919886 INFO] waiting for receipt file to appear
+[08:55:20.924856 INFO] receipt_file appeared, moving on
+[08:55:20.933316 INFO] Downloading datapoint from http://localhost:8080/data_points/5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f.json
+[08:55:20.954676 INFO] Creating Workflow Manager instance
+[08:55:20.954765 INFO] Directory is /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f
+[08:55:20.954792 INFO] Opening run.log file '/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/run/run.log'
+[08:55:20.988605 INFO] Running workflow
+[09:03:19.275526 INFO] Final run state is finished
+[09:03:19.297119 INFO] Saving files/reports back to the server
+[09:03:19.298389 INFO] Saving report /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/reports/envelope_and_internal_load_breakdown_report.html to http://localhost:8080/data_points/5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/upload_file
+[09:03:19.429720 INFO] Saving report responded with {"id":"59ee04b7104ea23370770384","data_point_id":"5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f","display_name":"envelope_and_internal_load_breakdown_report","type":"Report","created_at":"2017-10-23T15:03:19.415Z","updated_at":"2017-10-23T15:03:19.415Z"}
+[09:03:19.429869 INFO] Saving report /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/reports/eplustbl.html to http://localhost:8080/data_points/5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/upload_file
+[09:03:19.532395 INFO] Saving report responded with {"id":"59ee04b7104ea23370770385","data_point_id":"5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f","display_name":"eplustbl","type":"Report","created_at":"2017-10-23T15:03:19.501Z","updated_at":"2017-10-23T15:03:19.501Z"}
+[09:03:19.532556 INFO] Saving report /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/reports/openstudio_results_report.html to http://localhost:8080/data_points/5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/upload_file
+[09:03:19.906114 INFO] Saving report responded with {"id":"59ee04b7104ea23370770386","data_point_id":"5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f","display_name":"openstudio_results_report","type":"Report","created_at":"2017-10-23T15:03:19.891Z","updated_at":"2017-10-23T15:03:19.891Z"}
+[09:03:19.906281 INFO] Saving report /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/run/objectives.json to http://localhost:8080/data_points/5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/upload_file
+[09:03:19.930321 INFO] Saving report responded with {"id":"59ee04b7104ea23370770387","data_point_id":"5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f","display_name":"objectives","type":"Report","created_at":"2017-10-23T15:03:19.920Z","updated_at":"2017-10-23T15:03:19.920Z"}
+[09:03:19.930485 INFO] Saving report /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/out.osw to http://localhost:8080/data_points/5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/upload_file
+[09:03:19.984480 INFO] Saving report responded with {"id":"59ee04b7104ea23370770388","data_point_id":"5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f","display_name":"Final OSW File","type":"Report","created_at":"2017-10-23T15:03:19.975Z","updated_at":"2017-10-23T15:03:19.975Z"}
+[09:03:19.984630 INFO] Saving report /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/in.osm to http://localhost:8080/data_points/5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/upload_file
+[09:03:20.226303 INFO] Saving report responded with {"id":"59ee04b8104ea23370770389","data_point_id":"5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f","display_name":"model","type":"OpenStudio Model","created_at":"2017-10-23T15:03:20.214Z","updated_at":"2017-10-23T15:03:20.214Z"}
+[09:03:20.226477 INFO] Saving report /Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/temp_data/analysis_fc1618ca-9b4f-4fdd-8f23-ad7e32c37bde/data_point_5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/run/data_point.zip to http://localhost:8080/data_points/5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f/upload_file
+[09:03:21.156824 INFO] Saving report responded with {"id":"59ee04b9104ea2337077038a","data_point_id":"5cd8c0e0-d1fe-4de5-92a5-e3e5758ca31f","display_name":"Zip File","type":"Data Point","created_at":"2017-10-23T15:03:21.098Z","updated_at":"2017-10-23T15:03:21.098Z"}
+[09:03:21.165908 INFO] Finished /Applications/OpenStudio-2.3.0/ParametricAnalysisTool.app/Contents/Resources/OpenStudio-server/server/app/workers/run_simulate_data_point.rb

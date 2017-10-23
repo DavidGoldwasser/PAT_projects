@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_exterior_door_construction</name>
   <uid>11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c</uid>
-  <version_id>82b86024-93e9-4ed6-bd69-a7bbcc7056c8</version_id>
-  <version_modified>20171020T205858Z</version_modified>
+  <version_id>81b5f932-2622-4a90-bb95-63aff3054ae4</version_id>
+  <version_modified>20171023T063128Z</version_modified>
   <xml_checksum>5091078B</xml_checksum>
   <class_name>ZEDGK12ExteriorDoorConstruction</class_name>
   <display_name>ZEDG K12 ExteriorDoorConstruction</display_name>
@@ -53,23 +53,6 @@
       <checksum>6BCD99F2</checksum>
     </file>
     <file>
-      <filename>measure_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>8F4F164E</checksum>
-    </file>
-    <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>1.3.0</identifier>
-        <min_compatible>1.3.0</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>6380234D</checksum>
-    </file>
-    <file>
       <filename>os_lib_constructions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -80,6 +63,29 @@
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
       <checksum>02263B97</checksum>
+    </file>
+    <file>
+      <filename>measure_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>A4D7CFBD</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>1.3.0</identifier>
+        <min_compatible>1.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>D85BC849</checksum>
+    </file>
+    <file>
+      <filename>no_doors.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>81C4639F</checksum>
     </file>
   </files>
 </measure>

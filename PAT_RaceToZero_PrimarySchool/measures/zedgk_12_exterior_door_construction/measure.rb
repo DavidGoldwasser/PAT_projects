@@ -111,7 +111,7 @@ class ZEDGK12ExteriorDoorConstruction < OpenStudio::Ruleset::ModelUserScript
     end
 
     # get starting r-value
-    startingRvaluesExtWall = []
+    startingRvaluesExtDoor = []
 
     # flag for roof surface type for tips
     doorFlag = false
@@ -119,7 +119,7 @@ class ZEDGK12ExteriorDoorConstruction < OpenStudio::Ruleset::ModelUserScript
     overheadDoorSlidingFlag = false
 
     # affected area counter
-    insulation_affected_area = 0
+    insulation_affected_area = 0.0
 
     # construction hashes  (construction is key, value is array [thermal transmittance (Btu/h·ft2·°F),rule thermal transmittance (Btu/h·ft2·°F),classification string)
     doorConstructions = {}
@@ -157,7 +157,7 @@ class ZEDGK12ExteriorDoorConstruction < OpenStudio::Ruleset::ModelUserScript
 
 
           #store starting values
-          startingRvaluesExtWall << r_value_ip
+          startingRvaluesExtDoor << r_value_ip
           overheadDoorRollUpFlag = true
 
           # test construction against rules
@@ -169,7 +169,7 @@ class ZEDGK12ExteriorDoorConstruction < OpenStudio::Ruleset::ModelUserScript
         else # don't need to test, this is a catch all constructionType.to_s == "Sliding"
 
           #store starting values
-          startingRvaluesExtWall << r_value_ip
+          startingRvaluesExtDoor << r_value_ip
           overheadDoorSlidingFlag = true
 
           # test construction against rules
@@ -185,7 +185,7 @@ class ZEDGK12ExteriorDoorConstruction < OpenStudio::Ruleset::ModelUserScript
         # don't need to check standards construction type, all non overhead doors will be treated the same.
 
         #store starting values
-        startingRvaluesExtWall << r_value_ip
+        startingRvaluesExtDoor << r_value_ip
         doorFlag = true
 
         # test construction against rules
@@ -313,11 +313,15 @@ class ZEDGK12ExteriorDoorConstruction < OpenStudio::Ruleset::ModelUserScript
     end #end of constructionsToChange.each do
 
     #reporting initial condition of model
-    startingRvalue = startingRvaluesExtWall
+    startingRvalue = startingRvaluesExtDoor
 
-    runner.registerInitialCondition("Starting R-values for constructions intended for exterior door surfaces range from #{OpenStudio::toNeatString(startingRvalue.min,2,true)} to #{OpenStudio::toNeatString(startingRvalue.max,2,true)}(ft^2*h*R/Btu).")
+    if startingRvalue.size == 0
+      runner.registerAsNotApplicable("The model has no exterior doors")
+      return true
+    else
+      runner.registerInitialCondition("Starting R-values for constructions intended for exterior door surfaces range from #{OpenStudio::toNeatString(startingRvalue.min,2,true)} to #{OpenStudio::toNeatString(startingRvalue.max,2,true)}(ft^2*h*R/Btu).")
+    end
 
-    #reporting final condition of model
     insulation_affected_area_ip = OpenStudio::convert(insulation_affected_area,"m^2","ft^2").get
     runner.registerFinalCondition("#{OpenStudio::toNeatString(insulation_affected_area_ip,0,true)}(ft^2) of constructions intended for exterior door surfaces had insulation enhanced at a cost of $#{OpenStudio::toNeatString(running_cost_insulation,0,true)}.")
 
