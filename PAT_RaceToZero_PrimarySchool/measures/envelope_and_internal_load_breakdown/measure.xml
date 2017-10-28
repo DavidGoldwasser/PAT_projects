@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>envelope_and_internal_load_breakdown</name>
   <uid>8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02</uid>
-  <version_id>a1c046b6-aae7-4440-ae24-53dc63d0b32e</version_id>
-  <version_modified>20170323T060453Z</version_modified>
+  <version_id>e4088296-c12a-4cb7-ade7-514c86852703</version_id>
+  <version_modified>20171028T175011Z</version_modified>
   <xml_checksum>69BA4D91</xml_checksum>
   <class_name>EnvelopeAndInternalLoadBreakdown</class_name>
   <display_name>Envelope and Internal Load Breakdown</display_name>
@@ -70,12 +70,6 @@
   </attributes>
   <files>
     <file>
-      <filename>os_lib_helper_methods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>A6430141</checksum>
-    </file>
-    <file>
       <filename>USA_CO_Golden-NREL.724666_TMY3.epw</filename>
       <filetype>epw</filetype>
       <usage_type>test</usage_type>
@@ -94,18 +88,6 @@
       <checksum>6AD259AE</checksum>
     </file>
     <file>
-      <filename>measure_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>70845DC4</checksum>
-    </file>
-    <file>
-      <filename>os_lib_reporting_envelope_and_internal_loads_breakdown.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>A962CDF3</checksum>
-    </file>
-    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>1.7.5</identifier>
@@ -114,7 +96,37 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>7066340C</checksum>
+      <checksum>159ABC72</checksum>
+    </file>
+    <file>
+      <filename>measure_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>493CDD1B</checksum>
+    </file>
+    <file>
+      <filename>os_lib_reporting_envelope_and_internal_loads_breakdown.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>D64CC839</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>02263B97</checksum>
+    </file>
+    <file>
+      <filename>ExampleModel_NoExtNoGround.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>07CE0378</checksum>
+    </file>
+    <file>
+      <filename>ExampleModel_NoLoads_NoOA.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>CA6A593D</checksum>
     </file>
   </files>
 </measure>

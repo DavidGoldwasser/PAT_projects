@@ -129,10 +129,10 @@ module OsLib_ReportingHeatGainLoss
     component_color['Zone People Sensible Heating Energy'] = '#FFC0CB '
     component_color['Zone Mechanical Ventilation Cooling Load Increase Energy'] = '#CA8BCC'
     component_color['Zone Infiltration Sensible Heat Gain Energy'] = '#5B9C31'
+    component_color['Ground Exposed Surfaces Heat Gain'] = '#7D8080'
     component_color['Exterior Wall Surfaces Heat Gain'] = '#CCB266' # was Surface Average Face Conduction Heat Gain
     component_color['Surface Window Heat Gain Energy'] = '#66B2CC'
     component_color['Roof Surfaces Heat Gain'] = '#994C4C'
-    component_color['Ground Exposed Surfaces Heat Gain'] = '#7D8080'
 
     # create annual table
     summary_table_01 = {}
@@ -325,10 +325,10 @@ module OsLib_ReportingHeatGainLoss
     component_color = {}
     component_color['Zone Infiltration Sensible Heat Loss Energy'] = '#5B9C31'
     component_color['Zone Mechanical Ventilation Heating Load Increase Energy'] = '#CA8BCC'
+    component_color['Ground Exposed Surfaces Heat Loss'] = '#7D8080'
     component_color['Exterior Wall Surfaces Heat Loss'] = '#CCB266'
     component_color['Surface Window Heat Loss Energy'] = '#66B2CC'
     component_color['Roof Surfaces Heat Loss'] = '#994C4C'
-    component_color['Ground Exposed Surfaces Heat Loss'] = '#7D8080'
 
     # create table
     summary_table_01 = {}
@@ -632,21 +632,18 @@ module OsLib_ReportingHeatGainLoss
               if monthly_totals[month].has_key?(:ext_wall)
                 monthly_totals[month][:ext_wall] += monthly_value_ip
               else
-                monthly_totals[month][:ext_wall] = {}
                 monthly_totals[month][:ext_wall] = monthly_value_ip
               end
             elsif surface.outsideBoundaryCondition == "Outdoors" && surface.surfaceType == "RoofCeiling"
               if monthly_totals[month].has_key?(:ext_roof)
                 monthly_totals[month][:ext_roof] += monthly_value_ip
               else
-                monthly_totals[month][:ext_roof] = {}
                 monthly_totals[month][:ext_roof] = monthly_value_ip
               end
             else # assume others are ground, could also include OtherSideConditionsModel, could be floor or walls
               if monthly_totals[month].has_key?(:ground)
                 monthly_totals[month][:ground] += monthly_value_ip
               else
-                monthly_totals[month][:ground] = {}
                 monthly_totals[month][:ground] = monthly_value_ip
               end
             end
@@ -680,6 +677,13 @@ module OsLib_ReportingHeatGainLoss
     row_data_sub_ext_roof_annual = 0.0
     row_data_sub_ground_annual = 0.0
     monthly_totals.each do |month,hash|
+
+      # add 0 value if key doesn't exist for surface type
+      if not hash.has_key?(:ext_wall) then hash[:ext_wall] = 0 end
+      if not hash.has_key?(:ext_roof) then hash[:ext_roof] = 0 end
+      if not hash.has_key?(:ground) then hash[:ground] = 0 end
+      if not hash.has_key?(:total) then hash[:total] = 0 end
+
       row_data_sub_ext_wall << OpenStudio::toNeatString(hash[:ext_wall],1,true)
       row_data_sub_ext_wall_annual += hash[:ext_wall]
       row_data_sub_ext_roof << OpenStudio::toNeatString(hash[:ext_roof],1,true)
@@ -697,10 +701,10 @@ module OsLib_ReportingHeatGainLoss
     row_data_total << OpenStudio::toNeatString(row_data_total_annual,1,true)
 
     # register values
-    runner.registerValue("monthly_ext_wall_heat_gain", row_data_sub_ext_wall.last.gsub(",","").to_f,'kBtu')
-    runner.registerValue("monthly_ext_roof_heat_gain", row_data_sub_ext_roof.last.gsub(",","").to_f,'kBtu')
-    runner.registerValue("monthly_ground_heat_gain", row_data_sub_ground.last.gsub(",","").to_f,'kBtu')
-    runner.registerValue("monthly_surface_heat_gain", row_data_total.last.gsub(",","").to_f,'kBtu')
+    runner.registerValue("ext_wall_heat_gain", row_data_sub_ext_wall.last.gsub(",","").to_f,'kBtu')
+    runner.registerValue("ext_roof_heat_gain", row_data_sub_ext_roof.last.gsub(",","").to_f,'kBtu')
+    runner.registerValue("ground_heat_gain", row_data_sub_ground.last.gsub(",","").to_f,'kBtu')
+    runner.registerValue("surface_heat_gain", row_data_total.last.gsub(",","").to_f,'kBtu')
 
     # add rows
     monthly_surface_heat_gains_table[:data] << row_data_sub_ext_wall
@@ -787,21 +791,18 @@ module OsLib_ReportingHeatGainLoss
               if monthly_totals[month].has_key?(:ext_wall)
                 monthly_totals[month][:ext_wall] += monthly_value_ip
               else
-                monthly_totals[month][:ext_wall] = {}
                 monthly_totals[month][:ext_wall] = monthly_value_ip
               end
             elsif surface.outsideBoundaryCondition == "Outdoors" && surface.surfaceType == "RoofCeiling"
               if monthly_totals[month].has_key?(:ext_roof)
                 monthly_totals[month][:ext_roof] += monthly_value_ip
               else
-                monthly_totals[month][:ext_roof] = {}
                 monthly_totals[month][:ext_roof] = monthly_value_ip
               end
             else # assume others are ground, could also include OtherSideConditionsModel, could be floor or walls
               if monthly_totals[month].has_key?(:ground)
                 monthly_totals[month][:ground] += monthly_value_ip
               else
-                monthly_totals[month][:ground] = {}
                 monthly_totals[month][:ground] = monthly_value_ip
               end
             end
@@ -835,6 +836,13 @@ module OsLib_ReportingHeatGainLoss
     row_data_sub_ext_roof_annual = 0.0
     row_data_sub_ground_annual = 0.0
     monthly_totals.each do |month,hash|
+
+      # add 0 value if key doesn't exist for surface type
+      if not hash.has_key?(:ext_wall) then hash[:ext_wall] = 0 end
+      if not hash.has_key?(:ext_roof) then hash[:ext_roof] = 0 end
+      if not hash.has_key?(:ground) then hash[:ground] = 0 end
+      if not hash.has_key?(:total) then hash[:total] = 0 end
+
       row_data_sub_ext_wall << OpenStudio::toNeatString(hash[:ext_wall],1,true)
       row_data_sub_ext_wall_annual += hash[:ext_wall]
       row_data_sub_ext_roof << OpenStudio::toNeatString(hash[:ext_roof],1,true)
@@ -852,10 +860,10 @@ module OsLib_ReportingHeatGainLoss
     row_data_total << OpenStudio::toNeatString(row_data_total_annual,1,true)
 
     # register values
-    runner.registerValue("monthly_ext_wall_heat_loss", row_data_sub_ext_wall.last.gsub(",","").to_f,'kBtu')
-    runner.registerValue("monthly_ext_roof_heat_loss", row_data_sub_ext_roof.last.gsub(",","").to_f,'kBtu')
-    runner.registerValue("monthly_ground_heat_loss", row_data_sub_ground.last.gsub(",","").to_f,'kBtu')
-    runner.registerValue("monthly_surface_heat_loss", row_data_total.last.gsub(",","").to_f,'kBtu')
+    runner.registerValue("ext_wall_heat_loss", row_data_sub_ext_wall.last.gsub(",","").to_f,'kBtu')
+    runner.registerValue("ext_roof_heat_loss", row_data_sub_ext_roof.last.gsub(",","").to_f,'kBtu')
+    runner.registerValue("ground_heat_loss", row_data_sub_ground.last.gsub(",","").to_f,'kBtu')
+    runner.registerValue("surface_heat_loss", row_data_total.last.gsub(",","").to_f,'kBtu')
 
     # add rows
     monthly_surface_heat_losses_table[:data] << row_data_sub_ext_wall

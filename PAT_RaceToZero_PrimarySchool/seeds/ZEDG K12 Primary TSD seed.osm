@@ -14411,53 +14411,6 @@ OS:ScheduleTypeLimits,
   Continuous,                             !- Numeric Type
   VolumetricFlowRate;                     !- Unit Type
 
-OS:Schedule:Ruleset,
-  {bde27284-4f09-40f6-b1a4-b221468a1923}, !- Handle
-  Art Kiln Firing Schedule,               !- Name
-  {8445170d-b009-45b0-a9d0-1dac537e9409}, !- Schedule Type Limits Name
-  {6f565b41-14e5-4cd2-b310-746ca0168a47}; !- Default Day Schedule Name
-
-OS:Schedule:Day,
-  {6f565b41-14e5-4cd2-b310-746ca0168a47}, !- Handle
-  Schedule Day 1,                         !- Name
-  {8445170d-b009-45b0-a9d0-1dac537e9409}, !- Schedule Type Limits Name
-  ,                                       !- Interpolate to Timestep
-  24,                                     !- Hour 1
-  0,                                      !- Minute 1
-  0;                                      !- Value Until Time 1
-
-OS:Schedule:Rule,
-  {8961c6dd-8c11-40d6-b8de-279c98045732}, !- Handle
-  Schedule Rule 1,                        !- Name
-  {bde27284-4f09-40f6-b1a4-b221468a1923}, !- Schedule Ruleset Name
-  1,                                      !- Rule Order
-  {d8d416e8-cf82-4ab6-82d9-45092cd501aa}, !- Day Schedule Name
-  No,                                     !- Apply Sunday
-  No,                                     !- Apply Monday
-  ,                                       !- Apply Tuesday
-  ,                                       !- Apply Wednesday
-  ,                                       !- Apply Thursday
-  Yes,                                    !- Apply Friday
-  ,                                       !- Apply Saturday
-  ,                                       !- Apply Holiday
-  DateRange,                              !- Date Specification Type
-  9,                                      !- Start Month
-  1,                                      !- Start Day
-  5,                                      !- End Month
-  31;                                     !- End Day
-
-OS:Schedule:Day,
-  {d8d416e8-cf82-4ab6-82d9-45092cd501aa}, !- Handle
-  Schedule Day 2,                         !- Name
-  {8445170d-b009-45b0-a9d0-1dac537e9409}, !- Schedule Type Limits Name
-  ,                                       !- Interpolate to Timestep
-  16,                                     !- Hour 1
-  0,                                      !- Minute 1
-  0,                                      !- Value Until Time 1
-  24,                                     !- Hour 2
-  0,                                      !- Minute 2
-  1;                                      !- Value Until Time 2
-
 OS:Schedule:Day,
   {b0d1caad-da82-4e4c-a72c-c2e8ec09be0a}, !- Handle
   Schedule Day 3,                         !- Name
@@ -14469,32 +14422,6 @@ OS:Schedule:Day,
   24,                                     !- Hour 2
   0,                                      !- Minute 2
   1;                                      !- Value Until Time 2
-
-OS:Schedule:Rule,
-  {720e649b-dcf2-4d84-b1e7-9a1f65aca373}, !- Handle
-  Schedule Rule 2,                        !- Name
-  {bde27284-4f09-40f6-b1a4-b221468a1923}, !- Schedule Ruleset Name
-  0,                                      !- Rule Order
-  {68671ab9-7b9f-41ae-8496-d26cf012ceb0}, !- Day Schedule Name
-  ,                                       !- Apply Sunday
-  ,                                       !- Apply Monday
-  ,                                       !- Apply Tuesday
-  ,                                       !- Apply Wednesday
-  ,                                       !- Apply Thursday
-  ,                                       !- Apply Friday
-  Yes;                                    !- Apply Saturday
-
-OS:Schedule:Day,
-  {68671ab9-7b9f-41ae-8496-d26cf012ceb0}, !- Handle
-  Schedule Day 4,                         !- Name
-  {8445170d-b009-45b0-a9d0-1dac537e9409}, !- Schedule Type Limits Name
-  ,                                       !- Interpolate to Timestep
-  1,                                      !- Hour 1
-  30,                                     !- Minute 1
-  1,                                      !- Value Until Time 1
-  24,                                     !- Hour 2
-  0,                                      !- Minute 2
-  0;                                      !- Value Until Time 2
 
 OS:SpaceInfiltration:DesignFlowRate,
   {fef0f01a-19a7-49e7-a700-fcba465b9800}, !- Handle

@@ -72,7 +72,7 @@ class EnvelopeAndInternalLoadBreakdown < OpenStudio::Ruleset::ReportingUserScrip
     # monthly heat loss outputs
     result << OpenStudio::IdfObject.load('Output:Variable,,Zone Infiltration Sensible Heat Loss Energy,monthly;').get
     result << OpenStudio::IdfObject.load('Output:Variable,,Surface Window Heat Loss Energy,monthly;').get
-    result << OpenStudio::IdfObject.load('Output:Variable,,Zone Mechanical Ventilation No Load Heat Removal Energy,monthly;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,Zone Mechanical Ventilation Heating Load Increase Energy,monthly;').get
 
     # hourly outputs (will bin by hour to heat loss or gain and roll up to monthly, may break out by surface type)
     result << OpenStudio::IdfObject.load('Output:Variable,,Surface Average Face Conduction Heat Transfer Energy,hourly;').get
