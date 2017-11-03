@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>surface_matching_diagnostic</name>
   <uid>ffb0d487-eb1c-4ca4-b008-4fbb7bf511b2</uid>
-  <version_id>77b0ba43-7b1a-40e5-a299-48d5e1d77297</version_id>
-  <version_modified>20171028T162613Z</version_modified>
+  <version_id>6f946959-67ee-4a30-9096-8c73bf2dd607</version_id>
+  <version_modified>20171102T185232Z</version_modified>
   <xml_checksum>4AA895E2</xml_checksum>
   <class_name>SurfaceMatchingDiagnostic</class_name>
   <display_name>Surface Matching Diagnostic</display_name>
@@ -146,7 +146,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>C4117052</checksum>
+      <checksum>87D86183</checksum>
     </file>
   </files>
 </measure>

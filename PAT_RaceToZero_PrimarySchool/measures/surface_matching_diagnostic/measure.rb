@@ -82,7 +82,9 @@ class SurfaceMatchingDiagnostic < OpenStudio::Ruleset::ModelUserScript
       model.getPlanarSurfaces.each do |surface|
         array = []
         vertices = surface.vertices
+        fixed = false
         vertices.each do |vertex|
+          next if fixed
           if array.include?(vertex)
             # create a new set of vertices
             new_vertices = OpenStudio::Point3dVector.new
@@ -94,7 +96,8 @@ class SurfaceMatchingDiagnostic < OpenStudio::Ruleset::ModelUserScript
             end
             surface.setVertices(new_vertices)
             num_removed = vertices.size - surface.vertices.size
-            runner.registerWarning("#{surface.name} has duplicate vertices. Started with #{vertices.size} verticies, removed #{num_removed}.")
+            runner.registerWarning("#{surface.name} has duplicate vertices. Started with #{vertices.size} vertices, removed #{num_removed}.")
+            fixed = true
           else
             array << vertex
           end
@@ -109,7 +112,7 @@ class SurfaceMatchingDiagnostic < OpenStudio::Ruleset::ModelUserScript
         starting_count = surface.vertices.size
         final_count = new_vertices.size
         if final_count < starting_count
-          runner.registerWarning("Removing #{starting_count - final_count} colliner vertices from #{surface.name}.")
+          runner.registerWarning("Removing #{starting_count - final_count} collinear vertices from #{surface.name}.")
           surface.setVertices(new_vertices)
         end
       end
