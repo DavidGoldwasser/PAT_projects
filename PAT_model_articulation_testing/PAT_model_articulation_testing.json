@@ -1,0 +1,801 @@
+{
+  "analysis": {
+    "display_name": "PAT_model_articulation_testing",
+    "name": "PAT_model_articulation_testing",
+    "output_variables": [],
+    "problem": {
+      "workflow": [
+        {
+          "name": "create_doe_prototype_building",
+          "display_name": "Create DOE Prototype Building",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "CreateDOEPrototypeBuilding",
+          "measure_definition_directory": "./measures/create_DOE_prototype_building",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_DOE_prototype_building",
+          "measure_definition_display_name": "Create DOE Prototype Building",
+          "measure_definition_name": "create_doe_prototype_building",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "be90fd0b-a651-467a-bc8d-29d310b0f937",
+          "measure_definition_version_uuid": "fbfc6a44-e36a-4300-af48-31019fc6eda4",
+          "uuid": "be90fd0b-a651-467a-bc8d-29d310b0f937",
+          "version_uuid": "fbfc6a44-e36a-4300-af48-31019fc6eda4",
+          "description": "Creates the DOE Reference Building Models as starting points for other analyses.",
+          "taxonomy": "Whole Building.Space Types",
+          "arguments": [
+            {
+              "display_name": "Building Type.",
+              "display_name_short": "building_type",
+              "name": "building_type",
+              "value_type": "string",
+              "default_value": "SmallOffice",
+              "value": "SmallOffice"
+            },
+            {
+              "display_name": "Template.",
+              "display_name_short": "template",
+              "name": "template",
+              "value_type": "string",
+              "default_value": "90.1-2010",
+              "value": "90.1-2010"
+            },
+            {
+              "display_name": "Climate Zone.",
+              "display_name_short": "climate_zone",
+              "name": "climate_zone",
+              "value_type": "string",
+              "default_value": "ASHRAE 169-2006-2A",
+              "value": "ASHRAE 169-2006-2A"
+            },
+            {
+              "display_name": "Climate File (NECB only)",
+              "display_name_short": "epw_file",
+              "name": "epw_file",
+              "value_type": "string",
+              "default_value": "Not Applicable",
+              "value": "Not Applicable"
+            }
+          ],
+          "variables": [],
+          "workflow_index": 0
+        },
+        {
+          "name": "create_typical_building_from_model",
+          "display_name": "Create Typical Building from Model",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "CreateTypicalBuildingFromModel",
+          "measure_definition_directory": "./measures/create_typical_building_from_model",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
+          "measure_definition_display_name": "Create Typical Building from Model",
+          "measure_definition_name": "create_typical_building_from_model",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
+          "measure_definition_version_uuid": "7f0a8d38-70b8-4947-8e47-8afa5e4a5b2e",
+          "uuid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
+          "version_uuid": "7f0a8d38-70b8-4947-8e47-8afa5e4a5b2e",
+          "description": "Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems.",
+          "taxonomy": "Whole Building.Space Types",
+          "arguments": [
+            {
+              "display_name": "Target Standard",
+              "display_name_short": "template",
+              "name": "template",
+              "value_type": "string",
+              "default_value": "90.1-2010",
+              "value": "90.1-2010"
+            },
+            {
+              "display_name": "HVAC System Type",
+              "display_name_short": "system_type",
+              "name": "system_type",
+              "value_type": "string",
+              "default_value": "Inferred",
+              "value": "Inferred"
+            },
+            {
+              "display_name": "HVAC System Delivery Type",
+              "display_name_short": "hvac_delivery_type",
+              "name": "hvac_delivery_type",
+              "value_type": "string",
+              "default_value": "Forced Air",
+              "value": "Forced Air"
+            },
+            {
+              "display_name": "HVAC Heating Source",
+              "display_name_short": "htg_src",
+              "name": "htg_src",
+              "value_type": "string",
+              "default_value": "NaturalGas",
+              "value": "NaturalGas"
+            },
+            {
+              "display_name": "HVAC Cooling Source",
+              "display_name_short": "clg_src",
+              "name": "clg_src",
+              "value_type": "string",
+              "default_value": "Electricity",
+              "value": "Electricity"
+            },
+            {
+              "display_name": "Kitchen Exhaust MakeUp Air Calculation Method",
+              "display_name_short": "kitchen_makeup",
+              "name": "kitchen_makeup",
+              "value_type": "string",
+              "default_value": "Adjacent",
+              "value": "Adjacent"
+            },
+            {
+              "display_name": "Exterior Lighting Zone",
+              "display_name_short": "exterior_lighting_zone",
+              "name": "exterior_lighting_zone",
+              "value_type": "string",
+              "default_value": "3 - All Other Areas",
+              "value": "3 - All Other Areas"
+            },
+            {
+              "display_name": "Add Constructions to Model",
+              "display_name_short": "add_constructions",
+              "name": "add_constructions",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Add Space Type Loads to Model",
+              "display_name_short": "add_space_type_loads",
+              "name": "add_space_type_loads",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Add Elevators to Model",
+              "display_name_short": "add_elevators",
+              "name": "add_elevators",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Add Exterior Lights to Model",
+              "display_name_short": "add_exterior_lights",
+              "name": "add_exterior_lights",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Onsite Parking Fraction",
+              "display_name_short": "onsite_parking_fraction",
+              "name": "onsite_parking_fraction",
+              "value_type": "double",
+              "default_value": 1,
+              "value": 1
+            },
+            {
+              "display_name": "Add Exhaust Fans to Model",
+              "display_name_short": "add_exhaust",
+              "name": "add_exhaust",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Add Service Water Heating to Model",
+              "display_name_short": "add_swh",
+              "name": "add_swh",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Add Thermostats",
+              "display_name_short": "add_thermostat",
+              "name": "add_thermostat",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Add HVAC System to Model",
+              "display_name_short": "add_hvac",
+              "name": "add_hvac",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": false
+            },
+            {
+              "display_name": "Clean Model of non-gemoetry objects",
+              "display_name_short": "remove_objects",
+              "name": "remove_objects",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": false
+            }
+          ],
+          "variables": [],
+          "workflow_index": 1
+        },
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder",
+          "display_name": "OpenStudio Model Articulation Testing Scenario Builder",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_definition_directory": "./measures/openstudio_model_articulation_testing_scenario_builder",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/openstudio_model_articulation_testing_scenario_builder",
+          "measure_definition_display_name": "OpenStudio Model Articulation Testing Scenario Builder",
+          "measure_definition_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "05852664-7db9-4b27-bfec-afa6c37ba8a3",
+          "measure_definition_version_uuid": "ebc71f36-6db4-45c0-8086-991ce893d6aa",
+          "uuid": "05852664-7db9-4b27-bfec-afa6c37ba8a3",
+          "version_uuid": "ebc71f36-6db4-45c0-8086-991ce893d6aa",
+          "description": "This should be first measure in workflow, and other OpenStudio measures should have skip set to true. This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure.",
+          "taxonomy": "Whole Building.Space Types",
+          "arguments": [],
+          "variables": [
+            {
+              "argument": {
+                "display_name": "Building Type",
+                "display_name_short": "building_type",
+                "name": "building_type",
+                "value_type": "string",
+                "default_value": "SmallOffice",
+                "value": "RetailStandalone",
+                "choice_display_names": [
+                  "SecondarySchool",
+                  "PrimarySchool",
+                  "SmallOffice",
+                  "MediumOffice",
+                  "LargeOffice",
+                  "SmallHotel",
+                  "LargeHotel",
+                  "Warehouse",
+                  "RetailStandalone",
+                  "RetailStripmall",
+                  "QuickServiceRestaurant",
+                  "FullServiceRestaurant",
+                  "MidriseApartment",
+                  "HighriseApartment",
+                  "Hospital",
+                  "Outpatient",
+                  "SuperMarket"
+                ]
+              },
+              "display_name": "Building Type",
+              "display_name_short": "Building Type",
+              "variable_type": "variable",
+              "units": "",
+              "minimum": "RetailStandalone",
+              "maximum": "SmallOffice",
+              "relation_to_output": null,
+              "static_value": "RetailStandalone",
+              "uuid": "",
+              "version_uuid": "",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "discrete",
+                "attributes": [
+                  {
+                    "name": "discrete",
+                    "values_and_weights": [
+                      {
+                        "value": "RetailStandalone",
+                        "weight": 0.5
+                      },
+                      {
+                        "value": "SmallOffice",
+                        "weight": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "name": "lower_bounds",
+                    "value": "RetailStandalone"
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": "SmallOffice"
+                  },
+                  {
+                    "name": "modes",
+                    "value": null
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": null
+                  },
+                  {
+                    "name": "stddev",
+                    "value": null
+                  }
+                ]
+              },
+              "workflow_index": 0
+            },
+            {
+              "argument": {
+                "display_name": "Target Standard",
+                "display_name_short": "template",
+                "name": "template",
+                "value_type": "string",
+                "default_value": "90.1-2004",
+                "value": "90.1-2004",
+                "choice_display_names": [
+                  "DOE Ref Pre-1980",
+                  "DOE Ref 1980-2004",
+                  "90.1-2004",
+                  "90.1-2007",
+                  "90.1-2010",
+                  "90.1-2013",
+                  "NREL ZNE Ready 2017"
+                ]
+              },
+              "display_name": "Target Standard",
+              "display_name_short": "Target Standard",
+              "variable_type": "variable",
+              "units": "",
+              "minimum": "90.1-2004",
+              "maximum": "90.1-2010",
+              "relation_to_output": null,
+              "static_value": "90.1-2004",
+              "uuid": "",
+              "version_uuid": "",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "discrete",
+                "attributes": [
+                  {
+                    "name": "discrete",
+                    "values_and_weights": [
+                      {
+                        "value": "90.1-2004",
+                        "weight": 0.5
+                      },
+                      {
+                        "value": "90.1-2010",
+                        "weight": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "name": "lower_bounds",
+                    "value": "90.1-2004"
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": "90.1-2010"
+                  },
+                  {
+                    "name": "modes",
+                    "value": null
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": null
+                  },
+                  {
+                    "name": "stddev",
+                    "value": null
+                  }
+                ]
+              },
+              "workflow_index": 1
+            },
+            {
+              "argument": {
+                "display_name": "Climate Zone.",
+                "display_name_short": "climate_zone",
+                "name": "climate_zone",
+                "value_type": "string",
+                "default_value": "ASHRAE 169-2006-2A",
+                "value": "ASHRAE 169-2006-2A",
+                "choice_display_names": [
+                  "ASHRAE 169-2006-1A",
+                  "ASHRAE 169-2006-2A",
+                  "ASHRAE 169-2006-2B",
+                  "ASHRAE 169-2006-3A",
+                  "ASHRAE 169-2006-3B",
+                  "ASHRAE 169-2006-3C",
+                  "ASHRAE 169-2006-4A",
+                  "ASHRAE 169-2006-4B",
+                  "ASHRAE 169-2006-4C",
+                  "ASHRAE 169-2006-5A",
+                  "ASHRAE 169-2006-5B",
+                  "ASHRAE 169-2006-6A",
+                  "ASHRAE 169-2006-6B",
+                  "ASHRAE 169-2006-7A",
+                  "ASHRAE 169-2006-8A"
+                ]
+              },
+              "display_name": "Climate Zone.",
+              "display_name_short": "Climate Zone.",
+              "variable_type": "variable",
+              "units": "",
+              "minimum": "ASHRAE 169-2006-2A",
+              "maximum": "ASHRAE 169-2006-2A",
+              "relation_to_output": null,
+              "static_value": "ASHRAE 169-2006-2A",
+              "uuid": "",
+              "version_uuid": "",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "discrete",
+                "attributes": [
+                  {
+                    "name": "discrete",
+                    "values_and_weights": [
+                      {
+                        "value": "ASHRAE 169-2006-2A",
+                        "weight": 0.5
+                      },
+                      {
+                        "value": "ASHRAE 169-2006-2A",
+                        "weight": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "name": "lower_bounds",
+                    "value": "ASHRAE 169-2006-2A"
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": "ASHRAE 169-2006-2A"
+                  },
+                  {
+                    "name": "modes",
+                    "value": null
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": null
+                  },
+                  {
+                    "name": "stddev",
+                    "value": null
+                  }
+                ]
+              },
+              "workflow_index": 2
+            },
+            {
+              "argument": {
+                "display_name": "Model Articulation Scenario.",
+                "display_name_short": "scenario",
+                "name": "scenario",
+                "value_type": "string",
+                "default_value": "DOE Prototype Building",
+                "value": "DOE Prototype Building",
+                "choice_display_names": [
+                  "DOE Prototype Building",
+                  "DOE Prototype Building with new constructions",
+                  "DOE Prototype Building with changes above and new loads, sch, and ext lights",
+                  "DOE Prototype Building with changes above and new swh and exhaust",
+                  "DOE Prototype Building with changes above and new thermostats",
+                  "DOE Prototype Building with changes above and new HVAC system",
+                  "Bar Sliced",
+                  "Bar Blended Core and Perimeter",
+                  "Footprint Blended Single Space per Story"
+                ]
+              },
+              "display_name": "Model Articulation Scenario.",
+              "display_name_short": "Model Articulation Scenario.",
+              "variable_type": "variable",
+              "units": "",
+              "minimum": "DOE Prototype Building",
+              "maximum": "DOE Prototype Building with changes above and new thermostats",
+              "relation_to_output": null,
+              "static_value": "DOE Prototype Building",
+              "uuid": "",
+              "version_uuid": "",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "discrete",
+                "attributes": [
+                  {
+                    "name": "discrete",
+                    "values_and_weights": [
+                      {
+                        "value": "DOE Prototype Building",
+                        "weight": 0.5
+                      },
+                      {
+                        "value": "DOE Prototype Building with changes above and new thermostats",
+                        "weight": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "name": "lower_bounds",
+                    "value": "DOE Prototype Building"
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": "DOE Prototype Building with changes above and new thermostats"
+                  },
+                  {
+                    "name": "modes",
+                    "value": null
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": null
+                  },
+                  {
+                    "name": "stddev",
+                    "value": null
+                  }
+                ]
+              },
+              "workflow_index": 3
+            }
+          ],
+          "workflow_index": 2
+        },
+        {
+          "name": "openstudio_results",
+          "display_name": "OpenStudio Results",
+          "measure_type": "ReportingMeasure",
+          "measure_definition_class_name": "OpenStudioResults",
+          "measure_definition_directory": "./measures/openstudio_results",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/openstudio_results",
+          "measure_definition_display_name": "OpenStudio Results",
+          "measure_definition_name": "openstudio_results",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+          "measure_definition_version_uuid": "05ad855b-6ae3-431e-991b-80e5133a56f2",
+          "uuid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+          "version_uuid": "05ad855b-6ae3-431e-991b-80e5133a56f2",
+          "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+          "taxonomy": "Reporting.QAQC",
+          "arguments": [
+            {
+              "display_name": "Model Summary",
+              "display_name_short": "building_summary_section",
+              "name": "building_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Annual Overview",
+              "display_name_short": "annual_overview_section",
+              "name": "annual_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Monthly Overview",
+              "display_name_short": "monthly_overview_section",
+              "name": "monthly_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Utility Bills/Rates",
+              "display_name_short": "utility_bills_rates_section",
+              "name": "utility_bills_rates_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Envelope",
+              "display_name_short": "envelope_section_section",
+              "name": "envelope_section_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Space Type Breakdown",
+              "display_name_short": "space_type_breakdown_section",
+              "name": "space_type_breakdown_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Space Type Summary",
+              "display_name_short": "space_type_details_section",
+              "name": "space_type_details_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Interior Lighting Summary",
+              "display_name_short": "interior_lighting_section",
+              "name": "interior_lighting_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Plug Loads Summary",
+              "display_name_short": "plug_loads_section",
+              "name": "plug_loads_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Exterior Lighting",
+              "display_name_short": "exterior_light_section",
+              "name": "exterior_light_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Water Use Equipment",
+              "display_name_short": "water_use_section",
+              "name": "water_use_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "HVAC Load Profiles",
+              "display_name_short": "hvac_load_profile",
+              "name": "hvac_load_profile",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Conditions",
+              "display_name_short": "zone_condition_section",
+              "name": "zone_condition_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Overview",
+              "display_name_short": "zone_summary_section",
+              "name": "zone_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Equipment Detail",
+              "display_name_short": "zone_equipment_detail_section",
+              "name": "zone_equipment_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Air Loops Detail",
+              "display_name_short": "air_loops_detail_section",
+              "name": "air_loops_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Plant Loops Detail",
+              "display_name_short": "plant_loops_detail_section",
+              "name": "plant_loops_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Outdoor Air",
+              "display_name_short": "outdoor_air_section",
+              "name": "outdoor_air_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Cash Flow",
+              "display_name_short": "cost_summary_section",
+              "name": "cost_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Site and Source Summary",
+              "display_name_short": "source_energy_section",
+              "name": "source_energy_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Schedule Overview",
+              "display_name_short": "schedules_overview_section",
+              "name": "schedules_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            }
+          ],
+          "variables": [],
+          "workflow_index": 3
+        }
+      ],
+      "algorithm": {
+        "objective_functions": []
+      },
+      "analysis_type": null,
+      "design_alternatives": [
+        {
+          "name": "Alternative 1",
+          "options": [
+            {
+              "measure_name": "create_doe_prototype_building",
+              "workflow_index": 0,
+              "name": "Create DOE Prototype Building",
+              "description": "Option 1 Description: Creates the DOE Reference Building Models as starting points for other analyses."
+            },
+            {
+              "measure_name": "create_typical_building_from_model",
+              "workflow_index": 1,
+              "name": "Create Typical Building from Model A",
+              "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
+            },
+            {
+              "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+              "workflow_index": 2,
+              "name": "Articulation prototype",
+              "description": "Option 1 Description: This should be first measure in workflow, and other OpenStudio measures should have skip set to true. This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure."
+            },
+            {
+              "measure_name": "openstudio_results",
+              "workflow_index": 3,
+              "name": "OpenStudio Results",
+              "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+            }
+          ]
+        },
+        {
+          "name": "Alternative 2",
+          "options": [
+            {
+              "measure_name": "create_doe_prototype_building",
+              "workflow_index": 0,
+              "name": "Create DOE Prototype Building",
+              "description": "Option 1 Description: Creates the DOE Reference Building Models as starting points for other analyses."
+            },
+            {
+              "measure_name": "create_typical_building_from_model",
+              "workflow_index": 1,
+              "name": "Create Typical Building from Model A",
+              "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
+            },
+            {
+              "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+              "workflow_index": 2,
+              "name": "Articulation modified prototype",
+              "description": "Option 2 Description: This should be first measure in workflow, and other OpenStudio measures should have skip set to true. This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure."
+            },
+            {
+              "measure_name": "openstudio_results",
+              "workflow_index": 3,
+              "name": "OpenStudio Results",
+              "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+            }
+          ]
+        }
+      ]
+    },
+    "seed": {
+      "file_type": "OSM",
+      "path": "./seeds/empty_seed.osm"
+    },
+    "weather_file": {
+      "file_type": "EPW",
+      "path": "./weather/USA_CO_Denver.Intl.AP.725650_TMY3.epw"
+    },
+    "file_format_version": 1,
+    "server_scripts": {}
+  }
+}

@@ -1,0 +1,39 @@
+{
+   "created_at" : "20171122T211148Z",
+   "seed_file" : "example_model.osm",
+   "steps" : [
+      {
+         "arguments" : {
+            "building_type" : "PrimarySchool",
+            "climate_zone" : "ASHRAE 169-2006-5B",
+            "template" : "90.1-2010"
+         },
+         "description" : "Creates the DOE Reference Building Models as starting points for other analyses.",
+         "measure_dir_name" : "create_DOE_prototype_building",
+         "modeler_description" : "",
+         "name" : "Create DOE Prototype Building"
+      },
+      {
+         "arguments" : {},
+         "description" : "Create a core and perimeter bar sliced by space type.",
+         "measure_dir_name" : "CreateBarFromBuildingTypeRatios",
+         "modeler_description" : "Space Type collections are made from one or more building types passed in with user arguments.",
+         "name" : "Create Bar From Building Type Ratios"
+      },
+      {
+         "arguments" : {},
+         "description" : "Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems.",
+         "measure_dir_name" : "CreateTypicalBuildingFromModel",
+         "modeler_description" : "Initially this was intended for stub space types, but it is possible that it will be run on models tha talready have internal loads, schedules, or constructions that should be preserved. Set it up to support addition at later date of bool args to skip specific types of model elements.",
+         "name" : "Create Typical Building from Model"
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+         "measure_dir_name" : "OpenStudioResults",
+         "modeler_description" : "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+         "name" : "OpenStudio Results"
+      }
+   ],
+   "updated_at" : "20171122T212823Z"
+}
