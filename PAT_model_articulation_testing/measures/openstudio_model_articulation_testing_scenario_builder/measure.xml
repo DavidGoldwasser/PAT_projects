@@ -2,12 +2,12 @@
   <schema_version>3.0</schema_version>
   <name>openstudio_model_articulation_testing_scenario_builder</name>
   <uid>05852664-7db9-4b27-bfec-afa6c37ba8a3</uid>
-  <version_id>01b56c34-50d9-481a-a5c6-1e39b9e44c4f</version_id>
-  <version_modified>20171130T030209Z</version_modified>
+  <version_id>7d140a76-9a2e-4496-9b88-af4a36df4c7f</version_id>
+  <version_modified>20171130T225632Z</version_modified>
   <xml_checksum>F075CD99</xml_checksum>
   <class_name>OpenStudioModelArticulationTestingScenarioBuilder</class_name>
   <display_name>OpenStudio Model Articulation Testing Scenario Builder</display_name>
-  <description>This should be first measure in workflow, and other OpenStudio measures should have skip set to true. This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure.</description>
+  <description>This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure. It should be the last OpenStudio measure in the workflow.</description>
   <modeler_description>Based on selected sceario this measure will set __SKIP__ to false and will change downstream measure argument values as needed. For example Building Type selected here will map to bldg_type_a, total_bldg_floor_area, num_stories_above_grade, and num_stories_below_grade in create_bar_from_building_type_ratios measure.</modeler_description>
   <arguments>
     <argument>
@@ -306,7 +306,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>75D4D8E3</checksum>
+      <checksum>DB16EF8B</checksum>
     </file>
   </files>
 </measure>

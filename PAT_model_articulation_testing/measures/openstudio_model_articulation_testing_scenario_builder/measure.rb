@@ -19,7 +19,7 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
 
   # human readable description
   def description
-    return "This should be first measure in workflow, and other OpenStudio measures should have skip set to true. This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure."
+    return "This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure. It should be the last OpenStudio measure in the workflow."
   end
 
   # human readable description of modeling approach
@@ -89,6 +89,8 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     scenario.setDefaultValue('DOE Prototype Building')
     args << scenario
 
+    # todo - add argument to use pre-saved OSW in resources directory vs. grabbing from live project
+
     return args
   end
 
@@ -105,6 +107,7 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     building_type = runner.getStringArgumentValue("building_type", user_arguments)
     template = runner.getStringArgumentValue("template", user_arguments)
     climate_zone = runner.getStringArgumentValue("climate_zone", user_arguments)
+    scenario = runner.getStringArgumentValue("scenario", user_arguments)
 
     # report initial condition of model
     runner.registerInitialCondition("The building started with #{model.getSpaces.size} spaces.")
@@ -120,39 +123,73 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
       new_osw = JSON::parse(f.read, :symbolize_names => true)
     end
 
-    # remove OpenStudioModelArticulationTestingScenarioBuilder from modified workflow
-    runner.registerInfo("step size is #{new_osw[:steps]}")
-    new_osw[:steps].pop
-    runner.registerInfo("step size is #{new_osw[:steps]}")
+    # map scenarios to integers
+    scenario_hash = {}
+    scenario_hash['DOE Prototype Building'] = 0
+    scenario_hash['DOE Prototype Building with new constructions'] = 1
+    scenario_hash['DOE Prototype Building with changes above and new loads, sch, and ext lights'] = 2
+    scenario_hash['DOE Prototype Building with changes above and new swh and exhaust'] = 3
+    scenario_hash['DOE Prototype Building with changes above and new thermostats'] = 4
+    scenario_hash['DOE Prototype Building with changes above and new HVAC system'] = 5
 
     # loop through steps
     new_osw[:steps].each do |step|
-      puts step
-      runner.registerInfo("Inspecting #{step[:name]}")
 
-      # change building type, temlpate, and climate zone
-      step[:arguments].each do |k,v|
-        if k == :building_type
-          runner.registerInfo("Changing value of #{k} to #{building_type}")
-          step[:arguments][k] = building_type
-        elsif k == :bldg_type_a
-          runner.registerInfo("Changing value of #{k} to #{building_type}")
-          step[:arguments][k] = building_type
-        elsif k == :template
-          runner.registerInfo("Changing value of #{k} to #{template}")
-          step[:arguments][k] = template
-        elsif k == :climate_zone
-          runner.registerInfo("Changing value of #{k} to #{climate_zone}")
-          step[:arguments][k] = climate_zone
+      if step[:measure_dir_name] == "openstudio_model_articulation_testing_scenario_builder"
+        step[:arguments][:__SKIP__] = true
+      else
+        runner.registerInfo("Inspecting #{step[:name]}")
+
+        # change building type, temlpate, and climate zone
+        step[:arguments].each do |k,v|
+          if k == :building_type
+            runner.registerInfo("Changing value of #{k} to #{building_type}")
+            step[:arguments][k] = building_type
+          elsif k == :bldg_type_a
+            runner.registerInfo("Changing value of #{k} to #{building_type}")
+            step[:arguments][k] = building_type
+          elsif k == :template
+            runner.registerInfo("Changing value of #{k} to #{template}")
+            step[:arguments][k] = template
+          elsif k == :climate_zone
+            runner.registerInfo("Changing value of #{k} to #{climate_zone}")
+            step[:arguments][k] = climate_zone
+          end
+
         end
-
       end
 
       # todo - add logic for which measures to skip for each scenario
-      if step[:measure_dir_name] == "openstudio_model_articulation_testing_scenario_builder"
-        step[:arguments][:__SKIP__] = true
-      elsif step[:measure_dir_name] == "create_typical_building_from_model"
-        step[:arguments][:__SKIP__] = false
+      found_typical = false
+      if step[:measure_dir_name] == "create_typical_building_from_model"
+
+        if scenario_hash[scenario] > 0
+          step[:arguments][:__SKIP__] = false
+
+          if found_typical
+            #add hvac
+            if scenario_hash[scenario] >= 5
+              step[:arguments][:add_hvac] = true
+            else
+              step[:arguments][:add_hvac] = false
+            end
+          else
+            if scenario_hash[scenario] >= 1 then step[:arguments][:add_constructions] = true else step[:arguments][:add_constructions] = false end
+            if scenario_hash[scenario] >= 2 then step[:arguments][:add_space_type_loads] = true else step[:arguments][:add_space_type_loads] = false end
+            if scenario_hash[scenario] >= 2 then step[:arguments][:add_elevators] = true else step[:arguments][:add_elevators] = false end
+            if scenario_hash[scenario] >= 2 then step[:arguments][:add_exterior_lights] = true else step[:arguments][:add_exterior_lights] = false end
+            if scenario_hash[scenario] >= 3 then step[:arguments][:add_exhaust] = true else step[:arguments][:add_exhaust] = false end
+            if scenario_hash[scenario] >= 3 then step[:arguments][:add_swh] = true else step[:arguments][:add_swh] = false end
+            if scenario_hash[scenario] >= 4 then step[:arguments][:add_thermostat] = true else step[:arguments][:add_thermostat] = false end
+            step[:arguments][:add_hvac] = false
+
+            # set flag so next instance will be flagged to set HVAC if requested
+            found_typical = true
+          end
+
+        else
+          step[:arguments][:__SKIP__] = true
+        end
       else
         # no catchall behavior
       end
@@ -174,10 +211,11 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
 
     # run updated OSW (measures only, Model measures only)
     # this will start with the seed model prior to being edited by upstream measures
+    runner.registerInfo("Runing modified OSW in OpenStudio CLI")
     cli_path = OpenStudio.getOpenStudioCLI
     cmd = "\"#{cli_path}\" run -m -w \"#{new_workflow_path}\""
-    puts cmd
     system(cmd)
+    runner.registerInfo("Finished Running OpenStudio CLI")
 
     # get the model out of the OSW
     new_model_path = 'output/run/in.osm'

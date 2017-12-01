@@ -2,7 +2,92 @@
   "analysis": {
     "display_name": "PAT_model_articulation_testing",
     "name": "PAT_model_articulation_testing",
-    "output_variables": [],
+    "output_variables": [
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "electricity_ip",
+        "display_name_short": "electricity_ip",
+        "metadata_id": null,
+        "name": "openstudio_results.electricity_ip",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "natural_gas_ip",
+        "display_name_short": "natural_gas_ip",
+        "metadata_id": null,
+        "name": "openstudio_results.natural_gas_ip",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "total_site_eui",
+        "display_name_short": "total_site_eui",
+        "metadata_id": null,
+        "name": "openstudio_results.total_site_eui",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "annual_peak_electric_demand",
+        "display_name_short": "annual_peak_electric_demand",
+        "metadata_id": null,
+        "name": "openstudio_results.annual_peak_electric_demand",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "unmet_hours_during_occupied_cooling",
+        "display_name_short": "unmet_hours_during_occupied_cooling",
+        "metadata_id": null,
+        "name": "openstudio_results.unmet_hours_during_occupied_cooling",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "unmet_hours_during_occupied_heating",
+        "display_name_short": "unmet_hours_during_occupied_heating",
+        "metadata_id": null,
+        "name": "openstudio_results.unmet_hours_during_occupied_heating",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      }
+    ],
     "problem": {
       "workflow": [
         {
@@ -121,7 +206,7 @@
               "name": "kitchen_makeup",
               "value_type": "string",
               "default_value": "Adjacent",
-              "value": "Adjacent"
+              "value": "Largest Zone"
             },
             {
               "display_name": "Exterior Lighting Zone",
@@ -226,10 +311,10 @@
           "measure_definition_name": "openstudio_model_articulation_testing_scenario_builder",
           "measure_definition_name_xml": null,
           "measure_definition_uuid": "05852664-7db9-4b27-bfec-afa6c37ba8a3",
-          "measure_definition_version_uuid": "ebc71f36-6db4-45c0-8086-991ce893d6aa",
+          "measure_definition_version_uuid": "c7842fe2-f4d2-414b-9912-95cadb9174af",
           "uuid": "05852664-7db9-4b27-bfec-afa6c37ba8a3",
-          "version_uuid": "ebc71f36-6db4-45c0-8086-991ce893d6aa",
-          "description": "This should be first measure in workflow, and other OpenStudio measures should have skip set to true. This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure.",
+          "version_uuid": "c7842fe2-f4d2-414b-9912-95cadb9174af",
+          "description": "This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure. It should be the last OpenStudio measure in the workflow.",
           "taxonomy": "Whole Building.Space Types",
           "arguments": [],
           "variables": [
@@ -240,7 +325,7 @@
                 "name": "building_type",
                 "value_type": "string",
                 "default_value": "SmallOffice",
-                "value": "RetailStandalone",
+                "value": "SmallOffice",
                 "choice_display_names": [
                   "SecondarySchool",
                   "PrimarySchool",
@@ -262,13 +347,12 @@
                 ]
               },
               "display_name": "Building Type",
-              "display_name_short": "Building Type",
+              "display_name_short": "building_type",
               "variable_type": "variable",
               "units": "",
-              "minimum": "RetailStandalone",
+              "minimum": "SmallOffice",
               "maximum": "SmallOffice",
-              "relation_to_output": null,
-              "static_value": "RetailStandalone",
+              "static_value": "SmallOffice",
               "uuid": "",
               "version_uuid": "",
               "variable": true,
@@ -279,18 +363,30 @@
                     "name": "discrete",
                     "values_and_weights": [
                       {
-                        "value": "RetailStandalone",
-                        "weight": 0.5
+                        "value": "SmallOffice",
+                        "weight": 0.2
                       },
                       {
-                        "value": "SmallOffice",
-                        "weight": 0.5
+                        "value": "PrimarySchool",
+                        "weight": 0.2
+                      },
+                      {
+                        "value": "QuickServiceRestaurant",
+                        "weight": 0.2
+                      },
+                      {
+                        "value": "LargeOffice",
+                        "weight": 0.2
+                      },
+                      {
+                        "value": "MidriseApartment",
+                        "weight": 0.2
                       }
                     ]
                   },
                   {
                     "name": "lower_bounds",
-                    "value": "RetailStandalone"
+                    "value": "SmallOffice"
                   },
                   {
                     "name": "upper_bounds",
@@ -298,15 +394,15 @@
                   },
                   {
                     "name": "modes",
-                    "value": null
+                    "value": "SmallOffice"
                   },
                   {
                     "name": "delta_x",
-                    "value": null
+                    "value": "SmallOffice"
                   },
                   {
                     "name": "stddev",
-                    "value": null
+                    "value": "SmallOffice"
                   }
                 ]
               },
@@ -331,12 +427,11 @@
                 ]
               },
               "display_name": "Target Standard",
-              "display_name_short": "Target Standard",
+              "display_name_short": "template",
               "variable_type": "variable",
               "units": "",
               "minimum": "90.1-2004",
-              "maximum": "90.1-2010",
-              "relation_to_output": null,
+              "maximum": "90.1-2004",
               "static_value": "90.1-2004",
               "uuid": "",
               "version_uuid": "",
@@ -363,19 +458,19 @@
                   },
                   {
                     "name": "upper_bounds",
-                    "value": "90.1-2010"
+                    "value": "90.1-2004"
                   },
                   {
                     "name": "modes",
-                    "value": null
+                    "value": "90.1-2004"
                   },
                   {
                     "name": "delta_x",
-                    "value": null
+                    "value": "90.1-2004"
                   },
                   {
                     "name": "stddev",
-                    "value": null
+                    "value": "90.1-2004"
                   }
                 ]
               },
@@ -388,7 +483,7 @@
                 "name": "climate_zone",
                 "value_type": "string",
                 "default_value": "ASHRAE 169-2006-2A",
-                "value": "ASHRAE 169-2006-2A",
+                "value": "ASHRAE 169-2006-5B",
                 "choice_display_names": [
                   "ASHRAE 169-2006-1A",
                   "ASHRAE 169-2006-2A",
@@ -408,13 +503,12 @@
                 ]
               },
               "display_name": "Climate Zone.",
-              "display_name_short": "Climate Zone.",
+              "display_name_short": "climate_zone",
               "variable_type": "variable",
               "units": "",
               "minimum": "ASHRAE 169-2006-2A",
               "maximum": "ASHRAE 169-2006-2A",
-              "relation_to_output": null,
-              "static_value": "ASHRAE 169-2006-2A",
+              "static_value": "ASHRAE 169-2006-5B",
               "uuid": "",
               "version_uuid": "",
               "variable": true,
@@ -429,7 +523,7 @@
                         "weight": 0.5
                       },
                       {
-                        "value": "ASHRAE 169-2006-2A",
+                        "value": "ASHRAE 169-2006-5B",
                         "weight": 0.5
                       }
                     ]
@@ -444,15 +538,15 @@
                   },
                   {
                     "name": "modes",
-                    "value": null
+                    "value": "ASHRAE 169-2006-2A"
                   },
                   {
                     "name": "delta_x",
-                    "value": null
+                    "value": "ASHRAE 169-2006-2A"
                   },
                   {
                     "name": "stddev",
-                    "value": null
+                    "value": "ASHRAE 169-2006-2A"
                   }
                 ]
               },
@@ -479,12 +573,11 @@
                 ]
               },
               "display_name": "Model Articulation Scenario.",
-              "display_name_short": "Model Articulation Scenario.",
+              "display_name_short": "scenario",
               "variable_type": "variable",
               "units": "",
               "minimum": "DOE Prototype Building",
-              "maximum": "DOE Prototype Building with changes above and new thermostats",
-              "relation_to_output": null,
+              "maximum": "DOE Prototype Building",
               "static_value": "DOE Prototype Building",
               "uuid": "",
               "version_uuid": "",
@@ -497,11 +590,23 @@
                     "values_and_weights": [
                       {
                         "value": "DOE Prototype Building",
-                        "weight": 0.5
+                        "weight": 0.2
+                      },
+                      {
+                        "value": "DOE Prototype Building with new constructions",
+                        "weight": 0.2
+                      },
+                      {
+                        "value": "DOE Prototype Building with changes above and new loads, sch, and ext lights",
+                        "weight": 0.2
+                      },
+                      {
+                        "value": "DOE Prototype Building with changes above and new swh and exhaust",
+                        "weight": 0.2
                       },
                       {
                         "value": "DOE Prototype Building with changes above and new thermostats",
-                        "weight": 0.5
+                        "weight": 0.2
                       }
                     ]
                   },
@@ -511,19 +616,19 @@
                   },
                   {
                     "name": "upper_bounds",
-                    "value": "DOE Prototype Building with changes above and new thermostats"
+                    "value": "DOE Prototype Building"
                   },
                   {
                     "name": "modes",
-                    "value": null
+                    "value": "DOE Prototype Building"
                   },
                   {
                     "name": "delta_x",
-                    "value": null
+                    "value": "DOE Prototype Building"
                   },
                   {
                     "name": "stddev",
-                    "value": null
+                    "value": "DOE Prototype Building"
                   }
                 ]
               },
@@ -723,69 +828,13 @@
         }
       ],
       "algorithm": {
+        "experiment_type": "full_factorial",
+        "number_of_samples": 200,
+        "failed_f_value": 1000000000000000000,
+        "debug_messages": 0,
         "objective_functions": []
       },
-      "analysis_type": null,
-      "design_alternatives": [
-        {
-          "name": "Alternative 1",
-          "options": [
-            {
-              "measure_name": "create_doe_prototype_building",
-              "workflow_index": 0,
-              "name": "Create DOE Prototype Building",
-              "description": "Option 1 Description: Creates the DOE Reference Building Models as starting points for other analyses."
-            },
-            {
-              "measure_name": "create_typical_building_from_model",
-              "workflow_index": 1,
-              "name": "Create Typical Building from Model A",
-              "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
-            },
-            {
-              "measure_name": "openstudio_model_articulation_testing_scenario_builder",
-              "workflow_index": 2,
-              "name": "Articulation prototype",
-              "description": "Option 1 Description: This should be first measure in workflow, and other OpenStudio measures should have skip set to true. This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure."
-            },
-            {
-              "measure_name": "openstudio_results",
-              "workflow_index": 3,
-              "name": "OpenStudio Results",
-              "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
-            }
-          ]
-        },
-        {
-          "name": "Alternative 2",
-          "options": [
-            {
-              "measure_name": "create_doe_prototype_building",
-              "workflow_index": 0,
-              "name": "Create DOE Prototype Building",
-              "description": "Option 1 Description: Creates the DOE Reference Building Models as starting points for other analyses."
-            },
-            {
-              "measure_name": "create_typical_building_from_model",
-              "workflow_index": 1,
-              "name": "Create Typical Building from Model A",
-              "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
-            },
-            {
-              "measure_name": "openstudio_model_articulation_testing_scenario_builder",
-              "workflow_index": 2,
-              "name": "Articulation modified prototype",
-              "description": "Option 2 Description: This should be first measure in workflow, and other OpenStudio measures should have skip set to true. This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure."
-            },
-            {
-              "measure_name": "openstudio_results",
-              "workflow_index": 3,
-              "name": "OpenStudio Results",
-              "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
-            }
-          ]
-        }
-      ]
+      "analysis_type": "doe"
     },
     "seed": {
       "file_type": "OSM",
