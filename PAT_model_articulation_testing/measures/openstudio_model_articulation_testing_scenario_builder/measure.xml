@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>openstudio_model_articulation_testing_scenario_builder</name>
   <uid>05852664-7db9-4b27-bfec-afa6c37ba8a3</uid>
-  <version_id>7d140a76-9a2e-4496-9b88-af4a36df4c7f</version_id>
-  <version_modified>20171130T225632Z</version_modified>
+  <version_id>d2d1845d-adb2-4563-95b0-87fd0b82a00c</version_id>
+  <version_modified>20171201T220800Z</version_modified>
   <xml_checksum>F075CD99</xml_checksum>
   <class_name>OpenStudioModelArticulationTestingScenarioBuilder</class_name>
   <display_name>OpenStudio Model Articulation Testing Scenario Builder</display_name>
@@ -203,43 +203,42 @@
       <type>Choice</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
-      <default_value>DOE Prototype Building</default_value>
       <choices>
         <choice>
-          <value>DOE Prototype Building</value>
-          <display_name>DOE Prototype Building</display_name>
+          <value>s0 Prototype</value>
+          <display_name>s0 Prototype</display_name>
         </choice>
         <choice>
-          <value>DOE Prototype Building with new constructions</value>
-          <display_name>DOE Prototype Building with new constructions</display_name>
+          <value>s1 Prototype - const</value>
+          <display_name>s1 Prototype - const</display_name>
         </choice>
         <choice>
-          <value>DOE Prototype Building with changes above and new loads, sch, and ext lights</value>
-          <display_name>DOE Prototype Building with changes above and new loads, sch, and ext lights</display_name>
+          <value>s2 Prototype - loads</value>
+          <display_name>s2 Prototype - loads</display_name>
         </choice>
         <choice>
-          <value>DOE Prototype Building with changes above and new swh and exhaust</value>
-          <display_name>DOE Prototype Building with changes above and new swh and exhaust</display_name>
+          <value>s3 Prototype - swh exhaust</value>
+          <display_name>s3 Prototype - swh exhaust</display_name>
         </choice>
         <choice>
-          <value>DOE Prototype Building with changes above and new thermostats</value>
-          <display_name>DOE Prototype Building with changes above and new thermostats</display_name>
+          <value>s4 Prototype - setpoints</value>
+          <display_name>s4 Prototype - setpoints</display_name>
         </choice>
         <choice>
-          <value>DOE Prototype Building with changes above and new HVAC system</value>
-          <display_name>DOE Prototype Building with changes above and new HVAC system</display_name>
+          <value>s5 Prototype - hvac</value>
+          <display_name>s5 Prototype - hvac</display_name>
         </choice>
         <choice>
-          <value>Bar Sliced</value>
-          <display_name>Bar Sliced</display_name>
+          <value>s6 Bar Sliced</value>
+          <display_name>s6 Bar Sliced</display_name>
         </choice>
         <choice>
-          <value>Bar Blended Core and Perimeter</value>
-          <display_name>Bar Blended Core and Perimeter</display_name>
+          <value>s7 Bar Blended Core and Perimeter</value>
+          <display_name>s7 Bar Blended Core and Perimeter</display_name>
         </choice>
         <choice>
-          <value>Footprint Blended Single Space per Story</value>
-          <display_name>Footprint Blended Single Space per Story</display_name>
+          <value>s8 Footprint Blended Single Space per Story</value>
+          <display_name>s8 Footprint Blended Single Space per Story</display_name>
         </choice>
       </choices>
     </argument>
@@ -306,7 +305,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>DB16EF8B</checksum>
+      <checksum>E698AF70</checksum>
     </file>
   </files>
 </measure>

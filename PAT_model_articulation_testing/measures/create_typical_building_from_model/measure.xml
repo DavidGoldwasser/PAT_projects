@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>create_typical_building_from_model</name>
   <uid>339a2e3a-273c-4494-bb50-bfe586a0647c</uid>
-  <version_id>7f0a8d38-70b8-4947-8e47-8afa5e4a5b2e</version_id>
-  <version_modified>20171024T143526Z</version_modified>
+  <version_id>5bd65a55-251f-40b0-aa9e-4aac5abd3cae</version_id>
+  <version_modified>20171203T181512Z</version_modified>
   <xml_checksum>EE13F09F</xml_checksum>
   <class_name>CreateTypicalBuildingFromModel</class_name>
   <display_name>Create Typical Building from Model</display_name>
@@ -684,17 +684,6 @@
       <checksum>29BB1593</checksum>
     </file>
     <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>A9F5DBE9</checksum>
-    </file>
-    <file>
       <filename>openstudio-standards-0.1.16.gem</filename>
       <filetype>gem</filetype>
       <usage_type>test</usage_type>
@@ -711,6 +700,17 @@
       <filetype>gem</filetype>
       <usage_type>test</usage_type>
       <checksum>B7E4F3BD</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>2E690FFB</checksum>
     </file>
   </files>
 </measure>

@@ -298,6 +298,7 @@ class CreateTypicalBuildingFromModel < OpenStudio::Ruleset::ModelUserScript
         model.getSpaceLoads.each do |instance|
           next if instance.name.to_s.include?('Elevator') # most prototype building types model exterior elevators with name Elevator
           next if instance.to_InternalMass.is_initialized
+          next if instance.to_WaterUseEquipment.is_initialized
           instance.remove
         end
         model.getDesignSpecificationOutdoorAirs.each { |i| i.remove }
@@ -387,6 +388,9 @@ class CreateTypicalBuildingFromModel < OpenStudio::Ruleset::ModelUserScript
       end
       
       # Modify the infiltration rates
+      if args['remove_objects']
+        model.getSpaceInfiltrationDesignFlowRates.each { |i| i.remove }
+      end
       model.apply_infiltration_standard(args['template'])
       model.modify_infiltration_coefficients(primary_bldg_type, args['template'], climate_zone)
       

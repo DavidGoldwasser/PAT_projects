@@ -72,21 +72,21 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
 
     # Make an argument for the climate zone (copied from create_doe_prototype_building iwth NECB HDD Method removed)
     scenario_chs = OpenStudio::StringVector.new
-    scenario_chs << 'DOE Prototype Building'
-    scenario_chs << 'DOE Prototype Building with new constructions'
-    scenario_chs << 'DOE Prototype Building with changes above and new loads, sch, and ext lights'
-    scenario_chs << 'DOE Prototype Building with changes above and new swh and exhaust'
-    scenario_chs << 'DOE Prototype Building with changes above and new thermostats'
-    scenario_chs << 'DOE Prototype Building with changes above and new HVAC system'
-    scenario_chs << 'Bar Sliced' # May start from prototype or empty seed model with same simulation settings
-    scenario_chs << 'Bar Blended Core and Perimeter'
-    scenario_chs << 'Footprint Blended Single Space per Story' # May be whole building blend or, blend by story
-    #scenario_chs << 'Prototype Geometry Blended' # whole building blended space type applied to prototype geometry, every thing other than geometry should be removed and rebuilt
+    scenario_chs << 's0 Prototype'
+    scenario_chs << 's1 Prototype - const'
+    scenario_chs << 's2 Prototype - loads'
+    scenario_chs << 's3 Prototype - swh exhaust'
+    scenario_chs << 's4 Prototype - setpoints'
+    scenario_chs << 's5 Prototype - hvac'
+    scenario_chs << 's6 Bar Sliced' # May start from prototype or empty seed model with same simulation settings
+    scenario_chs << 's7 Bar Blended Core and Perimeter'
+    scenario_chs << 's8 Footprint Blended Single Space per Story' # May be whole building blend or, blend by story
+    #scenario_chs << 's9 Prototype Geometry Blended' # whole building blended space type applied to prototype geometry, every thing other than geometry should be removed and rebuilt
     #scenario_chs << 'Footprint Blended Core and Perimeter'
     scenario = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('scenario', scenario_chs, true)
     scenario.setDisplayName('Model Articulation Scenario.')
     scenario.setDescription("This choice will determine which measrues will run and may also alter argument values for those measures.")
-    scenario.setDefaultValue('DOE Prototype Building')
+    scenario.setDefaultValue('Prototype')
     args << scenario
 
     # todo - add argument to use pre-saved OSW in resources directory vs. grabbing from live project
@@ -109,9 +109,6 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     climate_zone = runner.getStringArgumentValue("climate_zone", user_arguments)
     scenario = runner.getStringArgumentValue("scenario", user_arguments)
 
-    # report initial condition of model
-    runner.registerInitialCondition("The building started with #{model.getSpaces.size} spaces.")
-
     # save new osw
     new_workflow_path = 'output/new_workflow.osw'
     new_workflow_path = File.absolute_path(new_workflow_path)
@@ -125,12 +122,12 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
 
     # map scenarios to integers
     scenario_hash = {}
-    scenario_hash['DOE Prototype Building'] = 0
-    scenario_hash['DOE Prototype Building with new constructions'] = 1
-    scenario_hash['DOE Prototype Building with changes above and new loads, sch, and ext lights'] = 2
-    scenario_hash['DOE Prototype Building with changes above and new swh and exhaust'] = 3
-    scenario_hash['DOE Prototype Building with changes above and new thermostats'] = 4
-    scenario_hash['DOE Prototype Building with changes above and new HVAC system'] = 5
+    scenario_hash['s0 Prototype'] = 0
+    scenario_hash['s1 Prototype - const'] = 1
+    scenario_hash['s2 Prototype - loads'] = 2
+    scenario_hash['s3 Prototype - swh exhaust'] = 3
+    scenario_hash['s4 Prototype - setpoints'] = 4
+    scenario_hash['s5 Prototype - hvac'] = 5
 
     # loop through steps
     new_osw[:steps].each do |step|
@@ -159,7 +156,8 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
         end
       end
 
-      # todo - add logic for which measures to skip for each scenario
+      # add logic for which measures to skip for each scenario
+      # todo - update for scenarios beyond s5
       found_typical = false
       if step[:measure_dir_name] == "create_typical_building_from_model"
 
@@ -187,6 +185,12 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
             found_typical = true
           end
 
+          # summary of argument values for create_typical_building_from_model
+          runner.registerInfo("Summary of final measure argument values for #{step[[:name]]}")
+          step[:arguments].each do |arg_k,arg_v|
+            runner.registerInfo("#{arg_k} is #{arg_v}")
+          end
+
         else
           step[:arguments][:__SKIP__] = true
         end
@@ -204,6 +208,9 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     new_osw[:measure_paths] = ["../../../../measures"]
     new_osw[:file_paths] = ["../../../../seeds","../../../../weather"]
 
+    # report initial condition of model
+    runner.registerInitialCondition("Reverting back to #{new_osw[:seed_file]}.")
+
     # save the configured osws
     File.open(new_workflow_path, 'w') do |f|
       f << JSON.pretty_generate(new_osw)
@@ -215,6 +222,47 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     cli_path = OpenStudio.getOpenStudioCLI
     cmd = "\"#{cli_path}\" run -m -w \"#{new_workflow_path}\""
     system(cmd)
+
+    # todo - map info, warning, and error messages from out.osw
+
+    # open resulting osw
+    out_osw_path = 'output/out.osw'
+    out_osw_path = File.absolute_path(out_osw_path)
+    # load the new workflows
+    out_osw = nil
+    File.open(out_osw_path, 'r') do |f|
+      out_osw = JSON::parse(f.read, :symbolize_names => true)
+    end
+
+    # loop through steps
+    steps_run = 0
+    out_osw[:steps].each do |step|
+
+      next if not step.key?(:result) # this will be hit for E+ or Reporting measures in original OSW
+      next if step[:result][:step_result] == 'Skip #'
+      steps_run += 1
+
+      runner.registerInfo("***** #{step[:name]} (#{step[:result][:step_result]}) *****")
+
+      # loop through step_info (this contains initial and final condition)
+      step[:result][:step_info].each do |log|
+        runner.registerInfo(log)
+      end
+
+      # loop through step_warning
+      step[:result][:step_warnings].each do |log|
+        runner.registerWarning(log)
+      end
+
+      # loop through step_errors
+      step[:result][:step_errors].each do |log|
+        runner.registerError(log)
+        return false
+      end
+
+    end
+
+    # log that cli run is done
     runner.registerInfo("Finished Running OpenStudio CLI")
 
     # get the model out of the OSW
@@ -236,11 +284,8 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     # add new file to empty model
     model.addObjects( newModel.toIdfFile.objects )
 
-    # todo - map info, warning, and error messages from out.osw
-    # todo - when workflow fails now, PAT doesn't know things are done, I need to rescue that and have measure finish and fail
-
     # report final condition of model
-    runner.registerFinalCondition("The building finished with #{model.getSpaces.size} spaces.")
+    runner.registerFinalCondition("Workflow with #{steps_run} steps ran within this measure and replaced the model that was passed in.")
 
     return true
 

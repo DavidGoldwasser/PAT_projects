@@ -86,6 +86,202 @@
         "visualize": true,
         "export": true,
         "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_heating",
+        "display_name_short": "end_use_heating",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_heating",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_cooling",
+        "display_name_short": "end_use_cooling",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_cooling",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_interior_lighting",
+        "display_name_short": "end_use_interior_lighting",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_interior_lighting",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_exterior_lighting",
+        "display_name_short": "end_use_exterior_lighting",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_exterior_lighting",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_interior_equipment",
+        "display_name_short": "end_use_interior_equipment",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_interior_equipment",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_exterior_equipment",
+        "display_name_short": "end_use_exterior_equipment",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_exterior_equipment",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_fans",
+        "display_name_short": "end_use_fans",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_fans",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_pumps",
+        "display_name_short": "end_use_pumps",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_pumps",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_heat_rejection",
+        "display_name_short": "end_use_heat_rejection",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_heat_rejection",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_humidification",
+        "display_name_short": "end_use_humidification",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_humidification",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_heat_recovery",
+        "display_name_short": "end_use_heat_recovery",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_heat_recovery",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_water_systems",
+        "display_name_short": "end_use_water_systems",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_water_systems",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_refrigeration",
+        "display_name_short": "end_use_refrigeration",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_refrigeration",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
+      },
+      {
+        "objective_function": false,
+        "objective_function_index": null,
+        "objective_function_target": null,
+        "objective_function_group": null,
+        "scaling_factor": null,
+        "display_name": "end_use_generators",
+        "display_name_short": "end_use_generators",
+        "metadata_id": null,
+        "name": "openstudio_results.end_use_generators",
+        "visualize": true,
+        "export": true,
+        "variable_type": "double"
       }
     ],
     "problem": {
@@ -149,14 +345,14 @@
           "measure_type": "RubyMeasure",
           "measure_definition_class_name": "CreateTypicalBuildingFromModel",
           "measure_definition_directory": "./measures/create_typical_building_from_model",
-          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/create_typical_building_from_model",
           "measure_definition_display_name": "Create Typical Building from Model",
           "measure_definition_name": "create_typical_building_from_model",
           "measure_definition_name_xml": null,
           "measure_definition_uuid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
-          "measure_definition_version_uuid": "7f0a8d38-70b8-4947-8e47-8afa5e4a5b2e",
+          "measure_definition_version_uuid": "36a0147a-3bf7-4caa-b293-cacc0dd3af87",
           "uuid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
-          "version_uuid": "7f0a8d38-70b8-4947-8e47-8afa5e4a5b2e",
+          "version_uuid": "36a0147a-3bf7-4caa-b293-cacc0dd3af87",
           "description": "Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems.",
           "taxonomy": "Whole Building.Space Types",
           "arguments": [
@@ -294,7 +490,7 @@
               "name": "remove_objects",
               "value_type": "boolean",
               "default_value": true,
-              "value": false
+              "value": true
             }
           ],
           "variables": [],
@@ -311,9 +507,9 @@
           "measure_definition_name": "openstudio_model_articulation_testing_scenario_builder",
           "measure_definition_name_xml": null,
           "measure_definition_uuid": "05852664-7db9-4b27-bfec-afa6c37ba8a3",
-          "measure_definition_version_uuid": "c7842fe2-f4d2-414b-9912-95cadb9174af",
+          "measure_definition_version_uuid": "c8b03e41-bc16-4d64-bd97-36cce4423835",
           "uuid": "05852664-7db9-4b27-bfec-afa6c37ba8a3",
-          "version_uuid": "c7842fe2-f4d2-414b-9912-95cadb9174af",
+          "version_uuid": "c8b03e41-bc16-4d64-bd97-36cce4423835",
           "description": "This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure. It should be the last OpenStudio measure in the workflow.",
           "taxonomy": "Whole Building.Space Types",
           "arguments": [],
@@ -363,24 +559,68 @@
                     "name": "discrete",
                     "values_and_weights": [
                       {
-                        "value": "SmallOffice",
-                        "weight": 0.2
+                        "value": "SecondarySchool",
+                        "weight": 0.06
                       },
                       {
                         "value": "PrimarySchool",
-                        "weight": 0.2
+                        "weight": 0.06
                       },
                       {
-                        "value": "QuickServiceRestaurant",
-                        "weight": 0.2
+                        "value": "SmallOffice",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "MediumOffice",
+                        "weight": 0.06
                       },
                       {
                         "value": "LargeOffice",
-                        "weight": 0.2
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "SmallHotel",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "LargeHotel",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "Warehouse",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "RetailStandalone",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "RetailStripmall",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "QuickServiceRestaurant",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "FullServiceRestaurant",
+                        "weight": 0.06
                       },
                       {
                         "value": "MidriseApartment",
-                        "weight": 0.2
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "HighriseApartment",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "Hospital",
+                        "weight": 0.06
+                      },
+                      {
+                        "value": "Outpatient",
+                        "weight": 0.1
                       }
                     ]
                   },
@@ -558,27 +798,27 @@
                 "display_name_short": "scenario",
                 "name": "scenario",
                 "value_type": "string",
-                "default_value": "DOE Prototype Building",
-                "value": "DOE Prototype Building",
+                "default_value": "Prototype",
+                "value": "s0 Prototype",
                 "choice_display_names": [
-                  "DOE Prototype Building",
-                  "DOE Prototype Building with new constructions",
-                  "DOE Prototype Building with changes above and new loads, sch, and ext lights",
-                  "DOE Prototype Building with changes above and new swh and exhaust",
-                  "DOE Prototype Building with changes above and new thermostats",
-                  "DOE Prototype Building with changes above and new HVAC system",
-                  "Bar Sliced",
-                  "Bar Blended Core and Perimeter",
-                  "Footprint Blended Single Space per Story"
+                  "s0 Prototype",
+                  "s1 Prototype - const",
+                  "s2 Prototype - loads",
+                  "s3 Prototype - swh exhaust",
+                  "s4 Prototype - setpoints",
+                  "s5 Prototype - hvac",
+                  "s6 Bar Sliced",
+                  "s7 Bar Blended Core and Perimeter",
+                  "s8 Footprint Blended Single Space per Story"
                 ]
               },
               "display_name": "Model Articulation Scenario.",
               "display_name_short": "scenario",
               "variable_type": "variable",
               "units": "",
-              "minimum": "DOE Prototype Building",
-              "maximum": "DOE Prototype Building",
-              "static_value": "DOE Prototype Building",
+              "minimum": "Prototype",
+              "maximum": "Prototype",
+              "static_value": "s0 Prototype",
               "uuid": "",
               "version_uuid": "",
               "variable": true,
@@ -589,34 +829,34 @@
                     "name": "discrete",
                     "values_and_weights": [
                       {
-                        "value": "DOE Prototype Building",
+                        "value": "s0 Prototype",
                         "weight": 0.2
                       },
                       {
-                        "value": "DOE Prototype Building with new constructions",
+                        "value": "s1 Prototype - const",
                         "weight": 0.2
                       },
                       {
-                        "value": "DOE Prototype Building with changes above and new loads, sch, and ext lights",
+                        "value": "s2 Prototype - loads",
                         "weight": 0.2
                       },
                       {
-                        "value": "DOE Prototype Building with changes above and new swh and exhaust",
+                        "value": "s3 Prototype - swh exhaust",
                         "weight": 0.2
                       },
                       {
-                        "value": "DOE Prototype Building with changes above and new thermostats",
+                        "value": "s4 Prototype - setpoints",
                         "weight": 0.2
                       }
                     ]
                   },
                   {
                     "name": "lower_bounds",
-                    "value": "DOE Prototype Building"
+                    "value": "Prototype"
                   },
                   {
                     "name": "upper_bounds",
-                    "value": "DOE Prototype Building"
+                    "value": "Prototype"
                   },
                   {
                     "name": "modes",
