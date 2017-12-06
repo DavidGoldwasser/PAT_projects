@@ -719,7 +719,7 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.11424956257164687,
+      "instanceId": 0.3331176904646673,
       "showWarningText": false
     },
     {
@@ -838,7 +838,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.7682182732331841,
+      "instanceId": 0.6296947034282501,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false
@@ -1100,7 +1100,7 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.1837974214649991,
+      "instanceId": 0.6720223872692406,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false
@@ -1246,7 +1246,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.555483486189279,
+      "instanceId": 0.7959690977318281,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1416,7 +1416,7 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7584305256803483,
+      "instanceId": 0.8105529143146666,
       "showWarningText": false
     },
     {
@@ -1581,7 +1581,7 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.47123744640137843,
+      "instanceId": 0.1823433857506489,
       "showWarningText": false
     },
     {
@@ -1746,7 +1746,7 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.5290936009611287,
+      "instanceId": 0.7126160912228467,
       "showWarningText": false
     },
     {
@@ -1890,7 +1890,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.6945914462906477,
+      "instanceId": 0.8182545951574025,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -2100,7 +2100,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.6173676420118857,
+      "instanceId": 0.6713127560749459,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -2282,7 +2282,7 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.5990336031865495,
+      "instanceId": 0.4878137539825744,
       "showWarningText": false
     },
     {
@@ -2621,7 +2621,7 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7499961860716682,
+      "instanceId": 0.6755281782813942,
       "showWarningText": false
     },
     {
@@ -2761,7 +2761,7 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
         }
       ],
-      "instanceId": 0.7615952936984789,
+      "instanceId": 0.979758472840329,
       "numberOfOptions": 1,
       "$$hashKey": "object:56484",
       "outputMeasure": false,
@@ -2929,7 +2929,7 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.11121715479898042,
+      "instanceId": 0.7525793983815334,
       "showWarningText": false
     },
     {
@@ -3128,7 +3128,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.6422842684116199,
+      "instanceId": 0.1709680704932517,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -3331,7 +3331,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.4272193952470853,
+      "instanceId": 0.6481312188978716,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -3491,7 +3491,7 @@
           "display_name_short": "target",
           "option_2": "AEDG K-12 - Target",
           "units": "",
-          "minimum": "AEDG K-12 - Baseline",
+          "minimum": "AEDG K-12 - Target",
           "maximum": "AEDG K-12 - Target",
           "mode": null
         },
@@ -3834,7 +3834,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.83324278090332,
+      "instanceId": 0.3445946442036887,
       "showWarningText": false
     },
     {
@@ -4015,7 +4015,7 @@
             "Offices 1"
           ],
           "$$hashKey": "uiGrid-0LEA",
-          "option_1": "",
+          "option_1": "Mech 1",
           "variable": false,
           "display_name_short": "space",
           "inputs": {
@@ -4092,7 +4092,7 @@
             "Offices_PlugMisc_Equip Definition"
           ],
           "$$hashKey": "uiGrid-0LEC",
-          "option_1": "",
+          "option_1": "14610W elevator with motor efficency of 0.91",
           "variable": false,
           "display_name_short": "elec_equip_def",
           "inputs": {
@@ -4167,7 +4167,7 @@
             "secondary Elevator_Sch"
           ],
           "$$hashKey": "uiGrid-0LEE",
-          "option_1": "",
+          "option_1": "secondary Elevator_Sch",
           "variable": false,
           "display_name_short": "schedule",
           "inputs": {
@@ -4249,15 +4249,15 @@
           "arguments": [
             {
               "name": "space",
-              "value": ""
+              "value": "Mech 1"
             },
             {
               "name": "elec_equip_def",
-              "value": ""
+              "value": "14610W elevator with motor efficency of 0.91"
             },
             {
               "name": "schedule",
-              "value": ""
+              "value": "secondary Elevator_Sch"
             },
             {
               "name": "multiplier",
@@ -4268,7 +4268,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.919591488986413,
+      "instanceId": 0.23338073710809915,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -4451,7 +4451,7 @@
             "Mult_Class_2_Pod_4",
             "Offices 1"
           ],
-          "option_1": "",
+          "option_1": "Art_Class 1",
           "variable": false,
           "$$hashKey": "uiGrid-02MQ",
           "display_name_short": "space",
@@ -4528,7 +4528,7 @@
             "Media_Center_PlugMisc_Equip Definition",
             "Offices_PlugMisc_Equip Definition"
           ],
-          "option_1": "",
+          "option_1": "Art_Class_LowEnergy_Kiln_Equip Definition",
           "variable": false,
           "$$hashKey": "uiGrid-02MS",
           "display_name_short": "elec_equip_def",
@@ -4603,7 +4603,7 @@
             "secondary Elevator_Sch",
             "secondary Elevator_Sch"
           ],
-          "option_1": "",
+          "option_1": "Art Kiln Firing Schedule Primary 10x year",
           "variable": false,
           "$$hashKey": "uiGrid-02MU",
           "display_name_short": "schedule",
@@ -4686,15 +4686,15 @@
           "arguments": [
             {
               "name": "space",
-              "value": ""
+              "value": "Art_Class 1"
             },
             {
               "name": "elec_equip_def",
-              "value": ""
+              "value": "Art_Class_LowEnergy_Kiln_Equip Definition"
             },
             {
               "name": "schedule",
-              "value": ""
+              "value": "Art Kiln Firing Schedule Primary 10x year"
             },
             {
               "name": "multiplier",
@@ -4705,7 +4705,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.8600880888238716,
+      "instanceId": 0.43814032886903087,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880",
       "outputMeasure": false,
@@ -4842,7 +4842,7 @@
           "type": "Double",
           "required": true,
           "model_dependent": false,
-          "units": "fraction",
+          "units": "",
           "default_value": 0.75,
           "$$hashKey": "uiGrid-05OP",
           "option_1": 1,
@@ -5055,7 +5055,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.2296658407863601,
+      "instanceId": 0.9429078405182194,
       "showWarningText": false
     },
     {
@@ -5295,39 +5295,39 @@
           "model_dependent": false,
           "default_value": "*No Change*",
           "choice_values": [
-            "{67368307-c5c4-4963-8ec0-d9cecb2f9747}",
-            "{492734f5-f7dd-47d1-89a6-ad631a20e12c}",
-            "{02f08cc7-d2ec-43a6-bee6-4208ded9a796}",
-            "{248b64bb-0eb1-483f-87c2-45984f83102d}",
             "{d13f4ce1-be4e-4f07-8ea1-e7848e1b1c35}",
+            "{612b3779-a37f-4f16-91d3-ddd60e2b12aa}",
+            "{103290e6-2e5d-4927-b1a9-d76ca91c4e44}",
+            "{5b255650-7833-4293-9c4b-946e7f1d5765}",
+            "{00000000-0000-0000-0000-000000000000}",
             "{612b3779-a37f-4f16-91d3-ddd60e2b12aa}",
             "{103290e6-2e5d-4927-b1a9-d76ca91c4e44}",
             "{5b255650-7833-4293-9c4b-946e7f1d5765}",
             "{00000000-0000-0000-0000-000000000000}"
           ],
           "choice_display_names": [
-            "ClgSetP_Sch",
-            "Gym_ClgSetP_Sch",
-            "Gym_HtgSetP_Sch",
-            "HtgSetP_Sch",
             "primary ClgSetP_Sch",
+            "primary Gym_ClgSetP_Sch",
+            "primary Gym_HtgSetP_Sch",
+            "primary HtgSetP_Sch",
+            "*No Change*",
             "primary Gym_ClgSetP_Sch",
             "primary Gym_HtgSetP_Sch",
             "primary HtgSetP_Sch",
             "*No Change*"
           ],
           "$$hashKey": "uiGrid-08AL",
-          "option_1": "*No Change*",
+          "option_1": "primary ClgSetP_Sch",
           "variable": false,
           "display_name_short": "cooling_sch",
           "inputs": {
             "relationship": null,
             "choiceDisplayNames": [
-              "ClgSetP_Sch",
-              "Gym_ClgSetP_Sch",
-              "Gym_HtgSetP_Sch",
-              "HtgSetP_Sch",
               "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary HtgSetP_Sch",
+              "*No Change*",
               "primary Gym_ClgSetP_Sch",
               "primary Gym_HtgSetP_Sch",
               "primary HtgSetP_Sch",
@@ -5353,39 +5353,39 @@
           "model_dependent": false,
           "default_value": "*No Change*",
           "choice_values": [
-            "{67368307-c5c4-4963-8ec0-d9cecb2f9747}",
-            "{492734f5-f7dd-47d1-89a6-ad631a20e12c}",
-            "{02f08cc7-d2ec-43a6-bee6-4208ded9a796}",
-            "{248b64bb-0eb1-483f-87c2-45984f83102d}",
             "{d13f4ce1-be4e-4f07-8ea1-e7848e1b1c35}",
+            "{612b3779-a37f-4f16-91d3-ddd60e2b12aa}",
+            "{103290e6-2e5d-4927-b1a9-d76ca91c4e44}",
+            "{5b255650-7833-4293-9c4b-946e7f1d5765}",
+            "{00000000-0000-0000-0000-000000000000}",
             "{612b3779-a37f-4f16-91d3-ddd60e2b12aa}",
             "{103290e6-2e5d-4927-b1a9-d76ca91c4e44}",
             "{5b255650-7833-4293-9c4b-946e7f1d5765}",
             "{00000000-0000-0000-0000-000000000000}"
           ],
           "choice_display_names": [
-            "ClgSetP_Sch",
-            "Gym_ClgSetP_Sch",
-            "Gym_HtgSetP_Sch",
-            "HtgSetP_Sch",
             "primary ClgSetP_Sch",
+            "primary Gym_ClgSetP_Sch",
+            "primary Gym_HtgSetP_Sch",
+            "primary HtgSetP_Sch",
+            "*No Change*",
             "primary Gym_ClgSetP_Sch",
             "primary Gym_HtgSetP_Sch",
             "primary HtgSetP_Sch",
             "*No Change*"
           ],
           "$$hashKey": "uiGrid-08AN",
-          "option_1": "*No Change*",
+          "option_1": "primary HtgSetP_Sch",
           "variable": false,
           "display_name_short": "heating_sch",
           "inputs": {
             "relationship": null,
             "choiceDisplayNames": [
-              "ClgSetP_Sch",
-              "Gym_ClgSetP_Sch",
-              "Gym_HtgSetP_Sch",
-              "HtgSetP_Sch",
               "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary HtgSetP_Sch",
+              "*No Change*",
               "primary Gym_ClgSetP_Sch",
               "primary Gym_HtgSetP_Sch",
               "primary HtgSetP_Sch",
@@ -5451,11 +5451,11 @@
             },
             {
               "name": "cooling_sch",
-              "value": "*No Change*"
+              "value": "primary ClgSetP_Sch"
             },
             {
               "name": "heating_sch",
-              "value": "*No Change*"
+              "value": "primary HtgSetP_Sch"
             },
             {
               "name": "material_cost",
@@ -5466,7 +5466,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.025957453944872144,
+      "instanceId": 0.793604698826784,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
@@ -5647,7 +5647,7 @@
             "Thermal Zone: Offices",
             "*All Thermal Zones*"
           ],
-          "option_1": "*All Thermal Zones*",
+          "option_1": "Thermal Zone: Gym",
           "variable": false,
           "$$hashKey": "uiGrid-08ZI",
           "display_name_short": "zones",
@@ -5709,39 +5709,39 @@
           "model_dependent": false,
           "default_value": "*No Change*",
           "choice_values": [
-            "{67368307-c5c4-4963-8ec0-d9cecb2f9747}",
-            "{492734f5-f7dd-47d1-89a6-ad631a20e12c}",
-            "{02f08cc7-d2ec-43a6-bee6-4208ded9a796}",
-            "{248b64bb-0eb1-483f-87c2-45984f83102d}",
             "{d13f4ce1-be4e-4f07-8ea1-e7848e1b1c35}",
+            "{612b3779-a37f-4f16-91d3-ddd60e2b12aa}",
+            "{103290e6-2e5d-4927-b1a9-d76ca91c4e44}",
+            "{5b255650-7833-4293-9c4b-946e7f1d5765}",
+            "{00000000-0000-0000-0000-000000000000}",
             "{612b3779-a37f-4f16-91d3-ddd60e2b12aa}",
             "{103290e6-2e5d-4927-b1a9-d76ca91c4e44}",
             "{5b255650-7833-4293-9c4b-946e7f1d5765}",
             "{00000000-0000-0000-0000-000000000000}"
           ],
           "choice_display_names": [
-            "ClgSetP_Sch",
-            "Gym_ClgSetP_Sch",
-            "Gym_HtgSetP_Sch",
-            "HtgSetP_Sch",
             "primary ClgSetP_Sch",
+            "primary Gym_ClgSetP_Sch",
+            "primary Gym_HtgSetP_Sch",
+            "primary HtgSetP_Sch",
+            "*No Change*",
             "primary Gym_ClgSetP_Sch",
             "primary Gym_HtgSetP_Sch",
             "primary HtgSetP_Sch",
             "*No Change*"
           ],
-          "option_1": "*No Change*",
+          "option_1": "primary Gym_ClgSetP_Sch",
           "variable": false,
           "$$hashKey": "uiGrid-08ZK",
           "display_name_short": "cooling_sch",
           "inputs": {
             "relationship": null,
             "choiceDisplayNames": [
-              "ClgSetP_Sch",
-              "Gym_ClgSetP_Sch",
-              "Gym_HtgSetP_Sch",
-              "HtgSetP_Sch",
               "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary HtgSetP_Sch",
+              "*No Change*",
               "primary Gym_ClgSetP_Sch",
               "primary Gym_HtgSetP_Sch",
               "primary HtgSetP_Sch",
@@ -5767,39 +5767,39 @@
           "model_dependent": false,
           "default_value": "*No Change*",
           "choice_values": [
-            "{67368307-c5c4-4963-8ec0-d9cecb2f9747}",
-            "{492734f5-f7dd-47d1-89a6-ad631a20e12c}",
-            "{02f08cc7-d2ec-43a6-bee6-4208ded9a796}",
-            "{248b64bb-0eb1-483f-87c2-45984f83102d}",
             "{d13f4ce1-be4e-4f07-8ea1-e7848e1b1c35}",
+            "{612b3779-a37f-4f16-91d3-ddd60e2b12aa}",
+            "{103290e6-2e5d-4927-b1a9-d76ca91c4e44}",
+            "{5b255650-7833-4293-9c4b-946e7f1d5765}",
+            "{00000000-0000-0000-0000-000000000000}",
             "{612b3779-a37f-4f16-91d3-ddd60e2b12aa}",
             "{103290e6-2e5d-4927-b1a9-d76ca91c4e44}",
             "{5b255650-7833-4293-9c4b-946e7f1d5765}",
             "{00000000-0000-0000-0000-000000000000}"
           ],
           "choice_display_names": [
-            "ClgSetP_Sch",
-            "Gym_ClgSetP_Sch",
-            "Gym_HtgSetP_Sch",
-            "HtgSetP_Sch",
             "primary ClgSetP_Sch",
+            "primary Gym_ClgSetP_Sch",
+            "primary Gym_HtgSetP_Sch",
+            "primary HtgSetP_Sch",
+            "*No Change*",
             "primary Gym_ClgSetP_Sch",
             "primary Gym_HtgSetP_Sch",
             "primary HtgSetP_Sch",
             "*No Change*"
           ],
-          "option_1": "*No Change*",
+          "option_1": "primary Gym_HtgSetP_Sch",
           "variable": false,
           "$$hashKey": "uiGrid-08ZM",
           "display_name_short": "heating_sch",
           "inputs": {
             "relationship": null,
             "choiceDisplayNames": [
-              "ClgSetP_Sch",
-              "Gym_ClgSetP_Sch",
-              "Gym_HtgSetP_Sch",
-              "HtgSetP_Sch",
               "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary HtgSetP_Sch",
+              "*No Change*",
               "primary Gym_ClgSetP_Sch",
               "primary Gym_HtgSetP_Sch",
               "primary HtgSetP_Sch",
@@ -5861,15 +5861,15 @@
           "arguments": [
             {
               "name": "zones",
-              "value": "*All Thermal Zones*"
+              "value": "Thermal Zone: Gym"
             },
             {
               "name": "cooling_sch",
-              "value": "*No Change*"
+              "value": "primary Gym_ClgSetP_Sch"
             },
             {
               "name": "heating_sch",
-              "value": "*No Change*"
+              "value": "primary Gym_HtgSetP_Sch"
             },
             {
               "name": "material_cost",
@@ -5880,7 +5880,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.0225021823906284,
+      "instanceId": 0.1938064823349528,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361",
       "outputMeasure": false,
@@ -6120,7 +6120,7 @@
           "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
         }
       ],
-      "instanceId": 0.5483030025260476,
+      "instanceId": 0.6213741780409636,
       "numberOfOptions": 1,
       "$$hashKey": "object:7459",
       "outputMeasure": false,
@@ -6360,7 +6360,7 @@
           "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
         }
       ],
-      "instanceId": 0.6599009169015806,
+      "instanceId": 0.18690535463978675,
       "numberOfOptions": 1,
       "$$hashKey": "object:7458",
       "outputMeasure": false,
@@ -6600,7 +6600,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
         }
       ],
-      "instanceId": 0.9341658280849803,
+      "instanceId": 0.06369525303553747,
       "numberOfOptions": 1,
       "$$hashKey": "object:7460",
       "outputMeasure": false,
@@ -6795,7 +6795,7 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.2922889018255772,
+      "instanceId": 0.40801650004233303,
       "showWarningText": false
     },
     {
@@ -7189,7 +7189,7 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.5542650579350319,
+      "instanceId": 0.2872276096865114,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
@@ -8521,7 +8521,7 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.7892294537763775,
+      "instanceId": 0.9438497942385815,
       "showWarningText": false
     }
   ],
@@ -8648,6 +8648,28 @@
       "surface_matching_diagnostic": "Surface Matching Diagnostic"
     }
   ],
-  "analysisID": "602cccc2-6cc7-4f6f-b3bd-525281b1874c",
-  "datapoints": []
+  "analysisID": null,
+  "datapoints": [
+    {
+      "name": "HVAC - VRF",
+      "id": "HVAC - VRF",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "HVAC GSHP",
+      "id": "HVAC GSHP",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "HVAC Fan Coil Air Cool",
+      "id": "HVAC Fan Coil Air Cool",
+      "run": false,
+      "modified": false,
+      "selected": false
+    }
+  ]
 }
