@@ -150,21 +150,6 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-02K6",
-          "option_3": "option_3",
-          "option_4": "option_4",
-          "option_5": "option_5",
-          "option_6": "option_6",
-          "option_7": "option_7",
-          "option_8": "option_8",
-          "option_9": "option_9",
-          "option_10": "option_10",
-          "option_11": "option_11",
-          "option_12": "option_12",
-          "option_13": "option_13",
-          "option_14": "option_14",
-          "option_15": "option_15",
-          "option_16": "option_16",
-          "option_17": "option_17",
           "inputs": {
             "relationship": null,
             "choiceDisplayNames": [],
@@ -178,27 +163,28 @@
             "stdDev": null,
             "default_value": null,
             "showWarningIcon": false
-          }
+          },
+          "option_1": "option_1",
+          "option_2": "option_2",
+          "option_3": "option_3",
+          "option_4": "option_4",
+          "option_5": "option_5",
+          "option_6": "option_6",
+          "option_7": "option_7",
+          "option_8": "option_8",
+          "option_9": "option_9",
+          "option_10": "option_10",
+          "option_11": "option_11",
+          "option_12": "option_12",
+          "option_13": "option_13",
+          "option_14": "option_14",
+          "option_15": "option_15",
+          "option_16": "option_16"
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-02K8",
-          "option_3": "Honolulu",
-          "option_4": "New Delhi",
-          "option_5": "MacDill FL",
-          "option_6": "Davis-Monthan AZ",
-          "option_7": "Atlanta",
-          "option_8": "El Paso",
-          "option_9": "Chula Vista CA",
-          "option_10": "New York",
-          "option_11": "Albuquerque",
-          "option_12": "Aurora CO",
-          "option_13": "Port Angeles WA",
-          "option_14": "Rochester MN",
-          "option_15": "Great Falls MT",
-          "option_16": "International Falls MN",
-          "option_17": "Fairbanks",
           "inputs": {
             "relationship": null,
             "choiceDisplayNames": [],
@@ -212,12 +198,44 @@
             "stdDev": "",
             "default_value": "",
             "showWarningIcon": false
-          }
+          },
+          "option_1": "Honolulu",
+          "option_2": "Tampa",
+          "option_3": "Tucson",
+          "option_4": "Atlanta",
+          "option_5": "El Paso",
+          "option_6": "San Diego",
+          "option_7": "New York",
+          "option_8": "Albuquerque",
+          "option_9": "Seattle",
+          "option_10": "Buffalo",
+          "option_11": "Aurora",
+          "option_12": "Port Angeles",
+          "option_13": "Rochester",
+          "option_14": "Great Falls",
+          "option_15": "International Falls",
+          "option_16": "Fairbanks"
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-02KA",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          },
+          "option_1": "Option 1 Description: Change the building location",
+          "option_2": "Option 2 Description: Change the building location",
           "option_3": "Option 3 Description: Change the building location",
           "option_4": "Option 4 Description: Change the building location",
           "option_5": "Option 5 Description: Change the building location",
@@ -231,22 +249,7 @@
           "option_13": "Option 13 Description: Change the building location",
           "option_14": "Option 14 Description: Change the building location",
           "option_15": "Option 15 Description: Change the building location",
-          "option_16": "Option 16 Description: Change the building location",
-          "option_17": "Option 17 Description: Change the building location",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "",
-            "minimum": "",
-            "mean": "",
-            "deltaX": "",
-            "stdDev": "",
-            "default_value": "",
-            "showWarningIcon": false
-          }
+          "option_16": "Option 16 Description: Change the building location"
         },
         {
           "name": "weather_file_name",
@@ -258,8 +261,8 @@
           "$$hashKey": "uiGrid-02KE",
           "variable": true,
           "units": "",
-          "minimum": "IND_New.Delhi.421820_ISHRAE.epw",
-          "maximum": "USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw",
+          "minimum": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+          "maximum": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
           "mode": null,
           "inputs": {
             "relationship": "Standard",
@@ -292,22 +295,23 @@
             "choiceDisplayNames": [],
             "showWarningIcon": false
           },
-          "option_3": "USA_HI_Honolulu.Intl.AP.911820_TMY3.epw",
-          "option_4": "IND_New.Delhi.421820_ISHRAE.epw",
-          "option_5": "USA_FL_MacDill.AFB.747880_TMY3.epw",
-          "option_6": "USA_AZ_Davis-Monthan.AFB.722745_TMY3.epw",
-          "option_7": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
-          "option_8": "USA_TX_El.Paso.Intl.AP.722700_TMY3.epw",
-          "option_9": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
-          "option_10": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
-          "option_11": "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw",
-          "option_12": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-          "option_13": "USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw",
-          "option_14": "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
-          "option_15": "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw",
-          "option_16": "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw",
-          "option_17": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-          "display_name_short": "weather_file_name"
+          "display_name_short": "weather_file_name",
+          "option_1": "USA_HI_Honolulu.Intl.AP.911820_TMY3.epw",
+          "option_2": "USA_FL_MacDill.AFB.747880_TMY3.epw",
+          "option_3": "USA_AZ_Davis-Monthan.AFB.722745_TMY3.epw",
+          "option_4": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
+          "option_5": "USA_TX_El.Paso.Intl.AP.722700_TMY3.epw",
+          "option_6": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+          "option_7": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+          "option_8": "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw",
+          "option_9": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
+          "option_10": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw",
+          "option_11": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+          "option_12": "USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw",
+          "option_13": "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
+          "option_14": "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw",
+          "option_15": "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw",
+          "option_16": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw"
         },
         {
           "name": "climate_zone",
@@ -432,10 +436,15 @@
               "6B",
               "7",
               "8",
+              "Lookup From Stat File",
               "Lookup From Known Locations"
             ],
             "showWarningIcon": false
           },
+          "display_name_short": "climate_zone",
+          "default_value": "Lookup From Stat File",
+          "option_1": "Lookup From Stat File",
+          "option_2": "Lookup From Stat File",
           "option_3": "Lookup From Stat File",
           "option_4": "Lookup From Stat File",
           "option_5": "Lookup From Stat File",
@@ -449,10 +458,7 @@
           "option_13": "Lookup From Stat File",
           "option_14": "Lookup From Stat File",
           "option_15": "Lookup From Stat File",
-          "option_16": "Lookup From Stat File",
-          "option_17": "Lookup From Stat File",
-          "display_name_short": "climate_zone",
-          "default_value": "Lookup From Stat File"
+          "option_16": "Lookup From Stat File"
         }
       ],
       "edit": "",
@@ -469,7 +475,7 @@
       "workflow_index": 0,
       "options": [
         {
-          "id": "option_3",
+          "id": "option_1",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -481,25 +487,10 @@
             }
           ],
           "name": "Honolulu",
-          "description": "Option 3 Description: Change the building location"
+          "description": "Option 1 Description: Change the building location"
         },
         {
-          "id": "option_4",
-          "arguments": [
-            {
-              "name": "weather_file_name",
-              "value": "IND_New.Delhi.421820_ISHRAE.epw"
-            },
-            {
-              "name": "climate_zone",
-              "value": "Lookup From Stat File"
-            }
-          ],
-          "name": "New Delhi",
-          "description": "Option 4 Description: Change the building location"
-        },
-        {
-          "id": "option_5",
+          "id": "option_2",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -510,11 +501,11 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "MacDill FL",
-          "description": "Option 5 Description: Change the building location"
+          "name": "Tampa",
+          "description": "Option 2 Description: Change the building location"
         },
         {
-          "id": "option_6",
+          "id": "option_3",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -525,11 +516,11 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "Davis-Monthan AZ",
-          "description": "Option 6 Description: Change the building location"
+          "name": "Tucson",
+          "description": "Option 3 Description: Change the building location"
         },
         {
-          "id": "option_7",
+          "id": "option_4",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -541,10 +532,10 @@
             }
           ],
           "name": "Atlanta",
-          "description": "Option 7 Description: Change the building location"
+          "description": "Option 4 Description: Change the building location"
         },
         {
-          "id": "option_8",
+          "id": "option_5",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -556,10 +547,10 @@
             }
           ],
           "name": "El Paso",
-          "description": "Option 8 Description: Change the building location"
+          "description": "Option 5 Description: Change the building location"
         },
         {
-          "id": "option_9",
+          "id": "option_6",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -570,11 +561,11 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "Chula Vista CA",
-          "description": "Option 9 Description: Change the building location"
+          "name": "San Diego",
+          "description": "Option 6 Description: Change the building location"
         },
         {
-          "id": "option_10",
+          "id": "option_7",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -586,10 +577,10 @@
             }
           ],
           "name": "New York",
-          "description": "Option 10 Description: Change the building location"
+          "description": "Option 7 Description: Change the building location"
         },
         {
-          "id": "option_11",
+          "id": "option_8",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -601,10 +592,40 @@
             }
           ],
           "name": "Albuquerque",
-          "description": "Option 11 Description: Change the building location"
+          "description": "Option 8 Description: Change the building location"
         },
         {
-          "id": "option_12",
+          "id": "option_9",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Seattle",
+          "description": "Option 9 Description: Change the building location"
+        },
+        {
+          "id": "option_10",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Buffalo",
+          "description": "Option 10 Description: Change the building location"
+        },
+        {
+          "id": "option_11",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -615,11 +636,11 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "Aurora CO",
-          "description": "Option 12 Description: Change the building location"
+          "name": "Aurora",
+          "description": "Option 11 Description: Change the building location"
         },
         {
-          "id": "option_13",
+          "id": "option_12",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -630,11 +651,11 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "Port Angeles WA",
-          "description": "Option 13 Description: Change the building location"
+          "name": "Port Angeles",
+          "description": "Option 12 Description: Change the building location"
         },
         {
-          "id": "option_14",
+          "id": "option_13",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -645,11 +666,11 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "Rochester MN",
-          "description": "Option 14 Description: Change the building location"
+          "name": "Rochester",
+          "description": "Option 13 Description: Change the building location"
         },
         {
-          "id": "option_15",
+          "id": "option_14",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -660,11 +681,11 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "Great Falls MT",
-          "description": "Option 15 Description: Change the building location"
+          "name": "Great Falls",
+          "description": "Option 14 Description: Change the building location"
         },
         {
-          "id": "option_16",
+          "id": "option_15",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -675,11 +696,11 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "International Falls MN",
-          "description": "Option 16 Description: Change the building location"
+          "name": "International Falls",
+          "description": "Option 15 Description: Change the building location"
         },
         {
-          "id": "option_17",
+          "id": "option_16",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -691,14 +712,14 @@
             }
           ],
           "name": "Fairbanks",
-          "description": "Option 17 Description: Change the building location"
+          "description": "Option 16 Description: Change the building location"
         }
       ],
-      "numberOfOptions": 15,
+      "numberOfOptions": 16,
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.08449817035890317,
+      "instanceId": 0.11424956257164687,
       "showWarningText": false
     },
     {
@@ -743,19 +764,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-03KI",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-03KK",
-          "option_1": "Create Zones"
+          "option_1": "Create Zones",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-03KM",
-          "option_1": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
+          "option_1": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         }
       ],
       "edit": "",
@@ -778,9 +838,10 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.3117436344886335,
+      "instanceId": 0.7682182732331841,
       "numberOfOptions": 1,
-      "$$hashKey": "object:9746"
+      "$$hashKey": "object:9746",
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/surface_matching_diagnostic",
@@ -814,19 +875,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-03KO",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-03KQ",
-          "option_1": "Surface Matching Diagnostic"
+          "option_1": "Surface Matching Diagnostic",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-03KS",
-          "option_1": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
+          "option_1": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "remove_duplicate_vertices",
@@ -838,7 +938,21 @@
           "default_value": true,
           "$$hashKey": "uiGrid-03KU",
           "option_1": true,
-          "variable": false
+          "variable": false,
+          "display_name_short": "remove_duplicate_vertices",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          }
         },
         {
           "name": "remove_collinear_vertices",
@@ -850,7 +964,21 @@
           "default_value": true,
           "$$hashKey": "uiGrid-03KW",
           "option_1": true,
-          "variable": false
+          "variable": false,
+          "display_name_short": "remove_collinear_vertices",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          }
         },
         {
           "name": "remove_duplicate_surfaces",
@@ -862,7 +990,21 @@
           "default_value": true,
           "$$hashKey": "uiGrid-03KY",
           "option_1": true,
-          "variable": false
+          "variable": false,
+          "display_name_short": "remove_duplicate_surfaces",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          }
         },
         {
           "name": "intersect_surfaces",
@@ -874,7 +1016,21 @@
           "default_value": true,
           "$$hashKey": "uiGrid-03L0",
           "option_1": true,
-          "variable": false
+          "variable": false,
+          "display_name_short": "intersect_surfaces",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          }
         },
         {
           "name": "match_surfaces",
@@ -886,7 +1042,21 @@
           "default_value": true,
           "$$hashKey": "uiGrid-03L2",
           "option_1": true,
-          "variable": false
+          "variable": false,
+          "display_name_short": "match_surfaces",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          }
         }
       ],
       "edit": "",
@@ -930,9 +1100,10 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.3161102719832949,
+      "instanceId": 0.1837974214649991,
       "numberOfOptions": 1,
-      "$$hashKey": "object:9747"
+      "$$hashKey": "object:9747",
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_electric_equipment",
@@ -1075,7 +1246,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.18117406009580517,
+      "instanceId": 0.555483486189279,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1245,7 +1416,7 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7850309131477549,
+      "instanceId": 0.7584305256803483,
       "showWarningText": false
     },
     {
@@ -1410,7 +1581,7 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.41869648530898607,
+      "instanceId": 0.47123744640137843,
       "showWarningText": false
     },
     {
@@ -1575,7 +1746,7 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9201517440081497,
+      "instanceId": 0.5290936009611287,
       "showWarningText": false
     },
     {
@@ -1719,7 +1890,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.04854983800876256,
+      "instanceId": 0.6945914462906477,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -1929,7 +2100,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.7880037334673438,
+      "instanceId": 0.6173676420118857,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -2111,7 +2282,7 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.1819785919389132,
+      "instanceId": 0.5990336031865495,
       "showWarningText": false
     },
     {
@@ -2450,7 +2621,7 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.76679651622982,
+      "instanceId": 0.7499961860716682,
       "showWarningText": false
     },
     {
@@ -2485,19 +2656,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-0IEU",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-0IEW",
-          "option_1": "ZEDG Exterior Door"
+          "option_1": "ZEDG Exterior Door",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-0IEY",
-          "option_1": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
+          "option_1": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. ",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "material_cost_insulation_increase_ip",
@@ -2509,7 +2719,21 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-0IF0",
           "option_1": 0,
-          "variable": false
+          "variable": false,
+          "display_name_short": "material_cost_insulation_increase_ip",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 0
+          }
         }
       ],
       "edit": "",
@@ -2537,10 +2761,11 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
         }
       ],
-      "instanceId": 0.5956975213750859,
+      "instanceId": 0.7615952936984789,
       "numberOfOptions": 1,
       "$$hashKey": "object:56484",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_envelope_infiltration",
@@ -2704,7 +2929,7 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.45900161333634326,
+      "instanceId": 0.11121715479898042,
       "showWarningText": false
     },
     {
@@ -2903,7 +3128,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.4510809670028395,
+      "instanceId": 0.6422842684116199,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -3106,7 +3331,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.6730829757886378,
+      "instanceId": 0.4272193952470853,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -3264,7 +3489,7 @@
             "showWarningIcon": false
           },
           "display_name_short": "target",
-          "option_2": "AEDG K-12 - Baseline",
+          "option_2": "AEDG K-12 - Target",
           "units": "",
           "minimum": "AEDG K-12 - Baseline",
           "maximum": "AEDG K-12 - Target",
@@ -3578,7 +3803,7 @@
           "arguments": [
             {
               "name": "target",
-              "value": "AEDG K-12 - Baseline"
+              "value": "AEDG K-12 - Target"
             },
             {
               "name": "lightingZone",
@@ -3609,7 +3834,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9351830115339508,
+      "instanceId": 0.83324278090332,
       "showWarningText": false
     },
     {
@@ -3659,19 +3884,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-0LE4",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-0LE6",
-          "option_1": "Elevators"
+          "option_1": "Elevators",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-0LE8",
-          "option_1": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
+          "option_1": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "space",
@@ -3751,8 +4015,56 @@
             "Offices 1"
           ],
           "$$hashKey": "uiGrid-0LEA",
-          "option_1": "Mech 1",
-          "variable": false
+          "option_1": "",
+          "variable": false,
+          "display_name_short": "space",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Art_Class 1",
+              "Bathrooms 1",
+              "Bathrooms 2",
+              "Cafeteria 2",
+              "Corner_Class_1_Pod_1",
+              "Corner_Class_1_Pod_2",
+              "Corner_Class_1_Pod_3",
+              "Corner_Class_1_Pod_4",
+              "Corner_Class_2_Pod_1",
+              "Corner_Class_2_Pod_2",
+              "Corner_Class_2_Pod_3",
+              "Corner_Class_2_Pod_4",
+              "Corridor_Pod_1",
+              "Corridor_Pod_2",
+              "Corridor_Pod_3",
+              "Corridor_Pod_4",
+              "Gym 1",
+              "Kitchen 1",
+              "Lobby 1",
+              "Lobby 2",
+              "Main_Corridor 1",
+              "Main_Corridor 2",
+              "Mech 1",
+              "Media_Center 1",
+              "Mult_Class_1_Pod_1",
+              "Mult_Class_1_Pod_2",
+              "Mult_Class_1_Pod_3",
+              "Mult_Class_1_Pod_4",
+              "Mult_Class_2_Pod_1",
+              "Mult_Class_2_Pod_2",
+              "Mult_Class_2_Pod_3",
+              "Mult_Class_2_Pod_4",
+              "Offices 1"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Art_Class 1",
+            "minimum": "Art_Class 1",
+            "mean": "Art_Class 1",
+            "deltaX": "Art_Class 1",
+            "stdDev": "Art_Class 1",
+            "default_value": "Art_Class 1"
+          }
         },
         {
           "name": "elec_equip_def",
@@ -3780,8 +4092,30 @@
             "Offices_PlugMisc_Equip Definition"
           ],
           "$$hashKey": "uiGrid-0LEC",
-          "option_1": "14610W elevator with motor efficency of 0.91",
-          "variable": false
+          "option_1": "",
+          "variable": false,
+          "display_name_short": "elec_equip_def",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "14610W elevator with motor efficency of 0.91",
+              "Art_Class_LowEnergy_Kiln_Equip Definition",
+              "Cafeteria_PlugMisc_Equip Definition",
+              "Classroom_Equip Definition",
+              "Kitchen_PlugMisc_Equip Definition",
+              "Media_Center_PlugMisc_Equip Definition",
+              "Offices_PlugMisc_Equip Definition"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "14610W elevator with motor efficency of 0.91",
+            "minimum": "14610W elevator with motor efficency of 0.91",
+            "mean": "14610W elevator with motor efficency of 0.91",
+            "deltaX": "14610W elevator with motor efficency of 0.91",
+            "stdDev": "14610W elevator with motor efficency of 0.91",
+            "default_value": "14610W elevator with motor efficency of 0.91"
+          }
         },
         {
           "name": "schedule",
@@ -3791,7 +4125,6 @@
           "required": true,
           "model_dependent": false,
           "choice_values": [
-            "{bde27284-4f09-40f6-b1a4-b221468a1923}",
             "{46a69dd4-0775-4836-be9e-a7c001d356e6}",
             "{cc3b5b1c-01c1-406f-b15b-f8328a8c2236}",
             "{a1c3ae73-70a8-457c-95d1-4afcf8e35382}",
@@ -3809,10 +4142,10 @@
             "{a517629c-2794-431d-9367-6bc26864d204}",
             "{bba82c83-5ea0-4e25-9f07-b890b5504f71}",
             "{2ab3e645-f984-4986-8107-8af374889018}",
+            "{24b26135-e99c-4778-b432-42df43ed91d1}",
             "{24b26135-e99c-4778-b432-42df43ed91d1}"
           ],
           "choice_display_names": [
-            "Art Kiln Firing Schedule",
             "Art Kiln Firing Schedule Primary 10x year",
             "primary Activity_Sch",
             "primary Bldg_Equip_Sch",
@@ -3830,11 +4163,46 @@
             "primary Kit_Gas_Equip_Sch",
             "primary Lib_Occ_Sch",
             "primary Off_Occ_Sch",
+            "secondary Elevator_Sch",
             "secondary Elevator_Sch"
           ],
           "$$hashKey": "uiGrid-0LEE",
-          "option_1": "secondary Elevator_Sch",
-          "variable": false
+          "option_1": "",
+          "variable": false,
+          "display_name_short": "schedule",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Art Kiln Firing Schedule Primary 10x year",
+              "primary Activity_Sch",
+              "primary Bldg_Equip_Sch",
+              "primary Bldg_Light_Sch",
+              "primary Bldg_Occ_Sch",
+              "primary Cafe_Occ_Sch",
+              "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary Gym_Infil_Sch",
+              "primary Gym_Occ_Sch",
+              "primary HtgSetP_Sch",
+              "primary Infil_Sch",
+              "primary Kit_Elec_Equip_Sch",
+              "primary Kit_Gas_Equip_Sch",
+              "primary Lib_Occ_Sch",
+              "primary Off_Occ_Sch",
+              "secondary Elevator_Sch",
+              "secondary Elevator_Sch"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Art Kiln Firing Schedule",
+            "minimum": "Art Kiln Firing Schedule",
+            "mean": "Art Kiln Firing Schedule",
+            "deltaX": "Art Kiln Firing Schedule",
+            "stdDev": "Art Kiln Firing Schedule",
+            "default_value": "Art Kiln Firing Schedule"
+          }
         },
         {
           "name": "multiplier",
@@ -3846,7 +4214,21 @@
           "default_value": 1,
           "$$hashKey": "uiGrid-0LEG",
           "option_1": 2,
-          "variable": false
+          "variable": false,
+          "display_name_short": "multiplier",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 1,
+            "minimum": 1,
+            "mean": 1,
+            "deltaX": 1,
+            "stdDev": 1,
+            "default_value": 1
+          }
         }
       ],
       "edit": "",
@@ -3867,15 +4249,15 @@
           "arguments": [
             {
               "name": "space",
-              "value": "Mech 1"
+              "value": ""
             },
             {
               "name": "elec_equip_def",
-              "value": "14610W elevator with motor efficency of 0.91"
+              "value": ""
             },
             {
               "name": "schedule",
-              "value": "secondary Elevator_Sch"
+              "value": ""
             },
             {
               "name": "multiplier",
@@ -3886,10 +4268,11 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.3132991546176749,
+      "instanceId": 0.919591488986413,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/add_electric_equipment_instance_to_space",
@@ -3938,19 +4321,58 @@
         {
           "specialRowId": "optionDelete",
           "option_1": "option_1",
-          "$$hashKey": "uiGrid-02MK"
+          "$$hashKey": "uiGrid-02MK",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "option_1": "Electric Kiln",
-          "$$hashKey": "uiGrid-02MM"
+          "$$hashKey": "uiGrid-02MM",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "option_1": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier",
-          "$$hashKey": "uiGrid-02MO"
+          "$$hashKey": "uiGrid-02MO",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "space",
@@ -4029,9 +4451,57 @@
             "Mult_Class_2_Pod_4",
             "Offices 1"
           ],
-          "option_1": "Art_Class 1",
+          "option_1": "",
           "variable": false,
-          "$$hashKey": "uiGrid-02MQ"
+          "$$hashKey": "uiGrid-02MQ",
+          "display_name_short": "space",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Art_Class 1",
+              "Bathrooms 1",
+              "Bathrooms 2",
+              "Cafeteria 2",
+              "Corner_Class_1_Pod_1",
+              "Corner_Class_1_Pod_2",
+              "Corner_Class_1_Pod_3",
+              "Corner_Class_1_Pod_4",
+              "Corner_Class_2_Pod_1",
+              "Corner_Class_2_Pod_2",
+              "Corner_Class_2_Pod_3",
+              "Corner_Class_2_Pod_4",
+              "Corridor_Pod_1",
+              "Corridor_Pod_2",
+              "Corridor_Pod_3",
+              "Corridor_Pod_4",
+              "Gym 1",
+              "Kitchen 1",
+              "Lobby 1",
+              "Lobby 2",
+              "Main_Corridor 1",
+              "Main_Corridor 2",
+              "Mech 1",
+              "Media_Center 1",
+              "Mult_Class_1_Pod_1",
+              "Mult_Class_1_Pod_2",
+              "Mult_Class_1_Pod_3",
+              "Mult_Class_1_Pod_4",
+              "Mult_Class_2_Pod_1",
+              "Mult_Class_2_Pod_2",
+              "Mult_Class_2_Pod_3",
+              "Mult_Class_2_Pod_4",
+              "Offices 1"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Art_Class 1",
+            "minimum": "Art_Class 1",
+            "mean": "Art_Class 1",
+            "deltaX": "Art_Class 1",
+            "stdDev": "Art_Class 1",
+            "default_value": "Art_Class 1"
+          }
         },
         {
           "name": "elec_equip_def",
@@ -4058,9 +4528,31 @@
             "Media_Center_PlugMisc_Equip Definition",
             "Offices_PlugMisc_Equip Definition"
           ],
-          "option_1": "Art_Class_LowEnergy_Kiln_Equip Definition",
+          "option_1": "",
           "variable": false,
-          "$$hashKey": "uiGrid-02MS"
+          "$$hashKey": "uiGrid-02MS",
+          "display_name_short": "elec_equip_def",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "14610W elevator with motor efficency of 0.91",
+              "Art_Class_LowEnergy_Kiln_Equip Definition",
+              "Cafeteria_PlugMisc_Equip Definition",
+              "Classroom_Equip Definition",
+              "Kitchen_PlugMisc_Equip Definition",
+              "Media_Center_PlugMisc_Equip Definition",
+              "Offices_PlugMisc_Equip Definition"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "14610W elevator with motor efficency of 0.91",
+            "minimum": "14610W elevator with motor efficency of 0.91",
+            "mean": "14610W elevator with motor efficency of 0.91",
+            "deltaX": "14610W elevator with motor efficency of 0.91",
+            "stdDev": "14610W elevator with motor efficency of 0.91",
+            "default_value": "14610W elevator with motor efficency of 0.91"
+          }
         },
         {
           "name": "schedule",
@@ -4070,7 +4562,6 @@
           "required": true,
           "model_dependent": false,
           "choice_values": [
-            "{bde27284-4f09-40f6-b1a4-b221468a1923}",
             "{46a69dd4-0775-4836-be9e-a7c001d356e6}",
             "{cc3b5b1c-01c1-406f-b15b-f8328a8c2236}",
             "{a1c3ae73-70a8-457c-95d1-4afcf8e35382}",
@@ -4088,10 +4579,10 @@
             "{a517629c-2794-431d-9367-6bc26864d204}",
             "{bba82c83-5ea0-4e25-9f07-b890b5504f71}",
             "{2ab3e645-f984-4986-8107-8af374889018}",
+            "{24b26135-e99c-4778-b432-42df43ed91d1}",
             "{24b26135-e99c-4778-b432-42df43ed91d1}"
           ],
           "choice_display_names": [
-            "Art Kiln Firing Schedule",
             "Art Kiln Firing Schedule Primary 10x year",
             "primary Activity_Sch",
             "primary Bldg_Equip_Sch",
@@ -4109,11 +4600,46 @@
             "primary Kit_Gas_Equip_Sch",
             "primary Lib_Occ_Sch",
             "primary Off_Occ_Sch",
+            "secondary Elevator_Sch",
             "secondary Elevator_Sch"
           ],
-          "option_1": "Art Kiln Firing Schedule Primary 10x year",
+          "option_1": "",
           "variable": false,
-          "$$hashKey": "uiGrid-02MU"
+          "$$hashKey": "uiGrid-02MU",
+          "display_name_short": "schedule",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Art Kiln Firing Schedule Primary 10x year",
+              "primary Activity_Sch",
+              "primary Bldg_Equip_Sch",
+              "primary Bldg_Light_Sch",
+              "primary Bldg_Occ_Sch",
+              "primary Cafe_Occ_Sch",
+              "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary Gym_Infil_Sch",
+              "primary Gym_Occ_Sch",
+              "primary HtgSetP_Sch",
+              "primary Infil_Sch",
+              "primary Kit_Elec_Equip_Sch",
+              "primary Kit_Gas_Equip_Sch",
+              "primary Lib_Occ_Sch",
+              "primary Off_Occ_Sch",
+              "secondary Elevator_Sch",
+              "secondary Elevator_Sch"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Art Kiln Firing Schedule",
+            "minimum": "Art Kiln Firing Schedule",
+            "mean": "Art Kiln Firing Schedule",
+            "deltaX": "Art Kiln Firing Schedule",
+            "stdDev": "Art Kiln Firing Schedule",
+            "default_value": "Art Kiln Firing Schedule"
+          }
         },
         {
           "name": "multiplier",
@@ -4125,7 +4651,21 @@
           "default_value": 1,
           "option_1": 1,
           "variable": false,
-          "$$hashKey": "uiGrid-02MW"
+          "$$hashKey": "uiGrid-02MW",
+          "display_name_short": "multiplier",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 1,
+            "minimum": 1,
+            "mean": 1,
+            "deltaX": 1,
+            "stdDev": 1,
+            "default_value": 1
+          }
         }
       ],
       "edit": "",
@@ -4146,15 +4686,15 @@
           "arguments": [
             {
               "name": "space",
-              "value": "Art_Class 1"
+              "value": ""
             },
             {
               "name": "elec_equip_def",
-              "value": "Art_Class_LowEnergy_Kiln_Equip Definition"
+              "value": ""
             },
             {
               "name": "schedule",
-              "value": "Art Kiln Firing Schedule Primary 10x year"
+              "value": ""
             },
             {
               "name": "multiplier",
@@ -4165,10 +4705,11 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.04760482388872367,
+      "instanceId": 0.8600880888238716,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/add_rooftop_pv",
@@ -4301,7 +4842,7 @@
           "type": "Double",
           "required": true,
           "model_dependent": false,
-          "units": "",
+          "units": "fraction",
           "default_value": 0.75,
           "$$hashKey": "uiGrid-05OP",
           "option_1": 1,
@@ -4514,7 +5055,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.5588305966985228,
+      "instanceId": 0.2296658407863601,
       "showWarningText": false
     },
     {
@@ -4559,19 +5100,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-08AD",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-08AF",
-          "option_1": "Thermostat Typical"
+          "option_1": "Thermostat Typical",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-08AH",
-          "option_1": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
+          "option_1": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "zones",
@@ -4655,7 +5235,56 @@
           ],
           "$$hashKey": "uiGrid-08AJ",
           "option_1": "*All Thermal Zones*",
-          "variable": false
+          "variable": false,
+          "display_name_short": "zones",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Thermal Zone: Art_Class",
+              "Thermal Zone: Bathrooms",
+              "Thermal Zone: Bathrooms 1",
+              "Thermal Zone: Cafeteria",
+              "Thermal Zone: Corner_Class_1_Pod_1",
+              "Thermal Zone: Corner_Class_1_Pod_2",
+              "Thermal Zone: Corner_Class_1_Pod_3",
+              "Thermal Zone: Corner_Class_1_Pod_4",
+              "Thermal Zone: Corner_Class_2_Pod_1",
+              "Thermal Zone: Corner_Class_2_Pod_2",
+              "Thermal Zone: Corner_Class_2_Pod_3",
+              "Thermal Zone: Corner_Class_2_Pod_4",
+              "Thermal Zone: Corridor_Pod_1",
+              "Thermal Zone: Corridor_Pod_2",
+              "Thermal Zone: Corridor_Pod_3",
+              "Thermal Zone: Corridor_Pod_4",
+              "Thermal Zone: Gym",
+              "Thermal Zone: Kitchen",
+              "Thermal Zone: Lobby",
+              "Thermal Zone: Lobby 1",
+              "Thermal Zone: Main_Corridor",
+              "Thermal Zone: Main_Corridor 1",
+              "Thermal Zone: Mech",
+              "Thermal Zone: Media_Center",
+              "Thermal Zone: Mult_Class_1_Pod_1",
+              "Thermal Zone: Mult_Class_1_Pod_2",
+              "Thermal Zone: Mult_Class_1_Pod_3",
+              "Thermal Zone: Mult_Class_1_Pod_4",
+              "Thermal Zone: Mult_Class_2_Pod_1",
+              "Thermal Zone: Mult_Class_2_Pod_2",
+              "Thermal Zone: Mult_Class_2_Pod_3",
+              "Thermal Zone: Mult_Class_2_Pod_4",
+              "Thermal Zone: Offices",
+              "*All Thermal Zones*"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "*All Thermal Zones*",
+            "minimum": "*All Thermal Zones*",
+            "mean": "*All Thermal Zones*",
+            "deltaX": "*All Thermal Zones*",
+            "stdDev": "*All Thermal Zones*",
+            "default_value": "*All Thermal Zones*"
+          }
         },
         {
           "name": "cooling_sch",
@@ -4688,8 +5317,32 @@
             "*No Change*"
           ],
           "$$hashKey": "uiGrid-08AL",
-          "option_1": "primary ClgSetP_Sch",
-          "variable": false
+          "option_1": "*No Change*",
+          "variable": false,
+          "display_name_short": "cooling_sch",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "ClgSetP_Sch",
+              "Gym_ClgSetP_Sch",
+              "Gym_HtgSetP_Sch",
+              "HtgSetP_Sch",
+              "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary HtgSetP_Sch",
+              "*No Change*"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "*No Change*",
+            "minimum": "*No Change*",
+            "mean": "*No Change*",
+            "deltaX": "*No Change*",
+            "stdDev": "*No Change*",
+            "default_value": "*No Change*"
+          }
         },
         {
           "name": "heating_sch",
@@ -4722,8 +5375,32 @@
             "*No Change*"
           ],
           "$$hashKey": "uiGrid-08AN",
-          "option_1": "primary Gym_HtgSetP_Sch",
-          "variable": false
+          "option_1": "*No Change*",
+          "variable": false,
+          "display_name_short": "heating_sch",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "ClgSetP_Sch",
+              "Gym_ClgSetP_Sch",
+              "Gym_HtgSetP_Sch",
+              "HtgSetP_Sch",
+              "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary HtgSetP_Sch",
+              "*No Change*"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "*No Change*",
+            "minimum": "*No Change*",
+            "mean": "*No Change*",
+            "deltaX": "*No Change*",
+            "stdDev": "*No Change*",
+            "default_value": "*No Change*"
+          }
         },
         {
           "name": "material_cost",
@@ -4735,7 +5412,21 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-08AP",
           "option_1": 0,
-          "variable": false
+          "variable": false,
+          "display_name_short": "material_cost",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 0
+          }
         }
       ],
       "edit": "",
@@ -4760,11 +5451,11 @@
             },
             {
               "name": "cooling_sch",
-              "value": "primary ClgSetP_Sch"
+              "value": "*No Change*"
             },
             {
               "name": "heating_sch",
-              "value": "primary Gym_HtgSetP_Sch"
+              "value": "*No Change*"
             },
             {
               "name": "material_cost",
@@ -4775,10 +5466,11 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.8402722211511799,
+      "instanceId": 0.025957453944872144,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/SetThermostatSchedules",
@@ -4822,19 +5514,58 @@
         {
           "specialRowId": "optionDelete",
           "option_1": "option_1",
-          "$$hashKey": "uiGrid-08ZC"
+          "$$hashKey": "uiGrid-08ZC",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "option_1": "Thermostat Gym",
-          "$$hashKey": "uiGrid-08ZE"
+          "$$hashKey": "uiGrid-08ZE",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "option_1": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one",
-          "$$hashKey": "uiGrid-08ZG"
+          "$$hashKey": "uiGrid-08ZG",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "zones",
@@ -4916,9 +5647,58 @@
             "Thermal Zone: Offices",
             "*All Thermal Zones*"
           ],
-          "option_1": "Thermal Zone: Gym",
+          "option_1": "*All Thermal Zones*",
           "variable": false,
-          "$$hashKey": "uiGrid-08ZI"
+          "$$hashKey": "uiGrid-08ZI",
+          "display_name_short": "zones",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Thermal Zone: Art_Class",
+              "Thermal Zone: Bathrooms",
+              "Thermal Zone: Bathrooms 1",
+              "Thermal Zone: Cafeteria",
+              "Thermal Zone: Corner_Class_1_Pod_1",
+              "Thermal Zone: Corner_Class_1_Pod_2",
+              "Thermal Zone: Corner_Class_1_Pod_3",
+              "Thermal Zone: Corner_Class_1_Pod_4",
+              "Thermal Zone: Corner_Class_2_Pod_1",
+              "Thermal Zone: Corner_Class_2_Pod_2",
+              "Thermal Zone: Corner_Class_2_Pod_3",
+              "Thermal Zone: Corner_Class_2_Pod_4",
+              "Thermal Zone: Corridor_Pod_1",
+              "Thermal Zone: Corridor_Pod_2",
+              "Thermal Zone: Corridor_Pod_3",
+              "Thermal Zone: Corridor_Pod_4",
+              "Thermal Zone: Gym",
+              "Thermal Zone: Kitchen",
+              "Thermal Zone: Lobby",
+              "Thermal Zone: Lobby 1",
+              "Thermal Zone: Main_Corridor",
+              "Thermal Zone: Main_Corridor 1",
+              "Thermal Zone: Mech",
+              "Thermal Zone: Media_Center",
+              "Thermal Zone: Mult_Class_1_Pod_1",
+              "Thermal Zone: Mult_Class_1_Pod_2",
+              "Thermal Zone: Mult_Class_1_Pod_3",
+              "Thermal Zone: Mult_Class_1_Pod_4",
+              "Thermal Zone: Mult_Class_2_Pod_1",
+              "Thermal Zone: Mult_Class_2_Pod_2",
+              "Thermal Zone: Mult_Class_2_Pod_3",
+              "Thermal Zone: Mult_Class_2_Pod_4",
+              "Thermal Zone: Offices",
+              "*All Thermal Zones*"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "*All Thermal Zones*",
+            "minimum": "*All Thermal Zones*",
+            "mean": "*All Thermal Zones*",
+            "deltaX": "*All Thermal Zones*",
+            "stdDev": "*All Thermal Zones*",
+            "default_value": "*All Thermal Zones*"
+          }
         },
         {
           "name": "cooling_sch",
@@ -4950,9 +5730,33 @@
             "primary HtgSetP_Sch",
             "*No Change*"
           ],
-          "option_1": "primary Gym_ClgSetP_Sch",
+          "option_1": "*No Change*",
           "variable": false,
-          "$$hashKey": "uiGrid-08ZK"
+          "$$hashKey": "uiGrid-08ZK",
+          "display_name_short": "cooling_sch",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "ClgSetP_Sch",
+              "Gym_ClgSetP_Sch",
+              "Gym_HtgSetP_Sch",
+              "HtgSetP_Sch",
+              "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary HtgSetP_Sch",
+              "*No Change*"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "*No Change*",
+            "minimum": "*No Change*",
+            "mean": "*No Change*",
+            "deltaX": "*No Change*",
+            "stdDev": "*No Change*",
+            "default_value": "*No Change*"
+          }
         },
         {
           "name": "heating_sch",
@@ -4984,9 +5788,33 @@
             "primary HtgSetP_Sch",
             "*No Change*"
           ],
-          "option_1": "primary Gym_HtgSetP_Sch",
+          "option_1": "*No Change*",
           "variable": false,
-          "$$hashKey": "uiGrid-08ZM"
+          "$$hashKey": "uiGrid-08ZM",
+          "display_name_short": "heating_sch",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "ClgSetP_Sch",
+              "Gym_ClgSetP_Sch",
+              "Gym_HtgSetP_Sch",
+              "HtgSetP_Sch",
+              "primary ClgSetP_Sch",
+              "primary Gym_ClgSetP_Sch",
+              "primary Gym_HtgSetP_Sch",
+              "primary HtgSetP_Sch",
+              "*No Change*"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "*No Change*",
+            "minimum": "*No Change*",
+            "mean": "*No Change*",
+            "deltaX": "*No Change*",
+            "stdDev": "*No Change*",
+            "default_value": "*No Change*"
+          }
         },
         {
           "name": "material_cost",
@@ -4998,7 +5826,21 @@
           "default_value": 0,
           "option_1": 0,
           "variable": false,
-          "$$hashKey": "uiGrid-08ZO"
+          "$$hashKey": "uiGrid-08ZO",
+          "display_name_short": "material_cost",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 0
+          }
         }
       ],
       "edit": "",
@@ -5019,15 +5861,15 @@
           "arguments": [
             {
               "name": "zones",
-              "value": "Thermal Zone: Gym"
+              "value": "*All Thermal Zones*"
             },
             {
               "name": "cooling_sch",
-              "value": "primary Gym_ClgSetP_Sch"
+              "value": "*No Change*"
             },
             {
               "name": "heating_sch",
-              "value": "primary Gym_HtgSetP_Sch"
+              "value": "*No Change*"
             },
             {
               "name": "material_cost",
@@ -5038,10 +5880,11 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.31122208692638087,
+      "instanceId": 0.0225021823906284,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_vrf_with_doas",
@@ -5075,19 +5918,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-02RJ",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-02RL",
-          "option_1": "VRF"
+          "option_1": "VRF",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-02RN",
-          "option_1": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
+          "option_1": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "ceilingReturnPlenumSpaceType",
@@ -5124,7 +6006,33 @@
           ],
           "$$hashKey": "uiGrid-02RP",
           "option_1": "",
-          "variable": false
+          "variable": false,
+          "display_name_short": "ceilingReturnPlenumSpaceType",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Gym",
+              "Bathrooms",
+              "Offices",
+              "Mech",
+              "Art_Class",
+              "Kitchen",
+              "Corridor",
+              "Lobby",
+              "Classroom",
+              "Media_Center",
+              "Cafeteria"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Gym",
+            "minimum": "Gym",
+            "mean": "Gym",
+            "deltaX": "Gym",
+            "stdDev": "Gym",
+            "default_value": "Gym"
+          }
         },
         {
           "name": "costTotalHVACSystem",
@@ -5136,7 +6044,21 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-02RR",
           "option_1": 0,
-          "variable": false
+          "variable": false,
+          "display_name_short": "costTotalHVACSystem",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 0
+          }
         },
         {
           "name": "remake_schedules",
@@ -5148,7 +6070,21 @@
           "default_value": true,
           "$$hashKey": "uiGrid-02RT",
           "option_1": true,
-          "variable": false
+          "variable": false,
+          "display_name_short": "remake_schedules",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          }
         }
       ],
       "edit": "",
@@ -5184,10 +6120,11 @@
           "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
         }
       ],
-      "instanceId": 0.12124920647675608,
+      "instanceId": 0.5483030025260476,
       "numberOfOptions": 1,
       "$$hashKey": "object:7459",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_gshp_doas",
@@ -5221,19 +6158,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-02R7",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-02R9",
-          "option_1": "GSHP"
+          "option_1": "GSHP",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-02RB",
-          "option_1": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
+          "option_1": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "ceilingReturnPlenumSpaceType",
@@ -5270,7 +6246,33 @@
           ],
           "$$hashKey": "uiGrid-02RD",
           "option_1": "",
-          "variable": false
+          "variable": false,
+          "display_name_short": "ceilingReturnPlenumSpaceType",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Gym",
+              "Bathrooms",
+              "Offices",
+              "Mech",
+              "Art_Class",
+              "Kitchen",
+              "Corridor",
+              "Lobby",
+              "Classroom",
+              "Media_Center",
+              "Cafeteria"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Gym",
+            "minimum": "Gym",
+            "mean": "Gym",
+            "deltaX": "Gym",
+            "stdDev": "Gym",
+            "default_value": "Gym"
+          }
         },
         {
           "name": "costTotalHVACSystem",
@@ -5282,7 +6284,21 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-02RF",
           "option_1": 0,
-          "variable": false
+          "variable": false,
+          "display_name_short": "costTotalHVACSystem",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 0
+          }
         },
         {
           "name": "remake_schedules",
@@ -5294,7 +6310,21 @@
           "default_value": true,
           "$$hashKey": "uiGrid-02RH",
           "option_1": true,
-          "variable": false
+          "variable": false,
+          "display_name_short": "remake_schedules",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          }
         }
       ],
       "edit": "",
@@ -5330,10 +6360,11 @@
           "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
         }
       ],
-      "instanceId": 0.1445187919509756,
+      "instanceId": 0.6599009169015806,
       "numberOfOptions": 1,
       "$$hashKey": "object:7458",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
@@ -5367,19 +6398,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-02RV",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-02RX",
-          "option_1": "Fan Coil DOAS Air Cooled Chiller"
+          "option_1": "Fan Coil DOAS Air Cooled Chiller",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-02RZ",
-          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
+          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  ",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "ceilingReturnPlenumSpaceType",
@@ -5416,7 +6486,33 @@
           ],
           "$$hashKey": "uiGrid-02S1",
           "option_1": "",
-          "variable": false
+          "variable": false,
+          "display_name_short": "ceilingReturnPlenumSpaceType",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Gym",
+              "Bathrooms",
+              "Offices",
+              "Mech",
+              "Art_Class",
+              "Kitchen",
+              "Corridor",
+              "Lobby",
+              "Classroom",
+              "Media_Center",
+              "Cafeteria"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Gym",
+            "minimum": "Gym",
+            "mean": "Gym",
+            "deltaX": "Gym",
+            "stdDev": "Gym",
+            "default_value": "Gym"
+          }
         },
         {
           "name": "costTotalHVACSystem",
@@ -5428,7 +6524,21 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-02S3",
           "option_1": 0,
-          "variable": false
+          "variable": false,
+          "display_name_short": "costTotalHVACSystem",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 0
+          }
         },
         {
           "name": "remake_schedules",
@@ -5440,7 +6550,21 @@
           "default_value": true,
           "$$hashKey": "uiGrid-02S5",
           "option_1": true,
-          "variable": false
+          "variable": false,
+          "display_name_short": "remake_schedules",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true
+          }
         }
       ],
       "edit": "",
@@ -5476,10 +6600,11 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
         }
       ],
-      "instanceId": 0.5411580231831521,
+      "instanceId": 0.9341658280849803,
       "numberOfOptions": 1,
       "$$hashKey": "object:7460",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_insert_ground_domain_e_kusdua",
@@ -5624,7 +6749,21 @@
           "default_value": 120,
           "$$hashKey": "uiGrid-0A0U",
           "variable": false,
-          "option_1": 365
+          "option_1": 120,
+          "display_name_short": "min_warmup_days",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 120,
+            "minimum": 120,
+            "mean": 120,
+            "deltaX": 120,
+            "stdDev": 120,
+            "default_value": 120
+          }
         }
       ],
       "edit": "",
@@ -5645,7 +6784,7 @@
           "arguments": [
             {
               "name": "min_warmup_days",
-              "value": 365
+              "value": 120
             }
           ],
           "name": "Kusuda",
@@ -5656,7 +6795,7 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.4873772800624836,
+      "instanceId": 0.2922889018255772,
       "showWarningText": false
     },
     {
@@ -5776,19 +6915,58 @@
         {
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-0LEI",
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-0LEK",
-          "option_1": "Tariff Flat"
+          "option_1": "Tariff Flat",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-0LEM",
-          "option_1": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
+          "option_1": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
         },
         {
           "name": "demand_window_length",
@@ -5810,7 +6988,25 @@
           ],
           "$$hashKey": "uiGrid-0LEO",
           "option_1": "QuarterHour",
-          "variable": false
+          "variable": false,
+          "display_name_short": "demand_window_length",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "QuarterHour",
+              "HalfHour",
+              "FullHour"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "QuarterHour",
+            "minimum": "QuarterHour",
+            "mean": "QuarterHour",
+            "deltaX": "QuarterHour",
+            "stdDev": "QuarterHour",
+            "default_value": "QuarterHour"
+          }
         },
         {
           "name": "elec_rate",
@@ -5823,7 +7019,21 @@
           "default_value": 0.12,
           "$$hashKey": "uiGrid-0LEQ",
           "option_1": 0.12,
-          "variable": false
+          "variable": false,
+          "display_name_short": "elec_rate",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.12,
+            "minimum": 0.12,
+            "mean": 0.12,
+            "deltaX": 0.12,
+            "stdDev": 0.12,
+            "default_value": 0.12
+          }
         },
         {
           "name": "gas_rate",
@@ -5836,7 +7046,21 @@
           "default_value": 0.5,
           "$$hashKey": "uiGrid-0LES",
           "option_1": 0.5,
-          "variable": false
+          "variable": false,
+          "display_name_short": "gas_rate",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.5,
+            "minimum": 0.5,
+            "mean": 0.5,
+            "deltaX": 0.5,
+            "stdDev": 0.5,
+            "default_value": 0.5
+          }
         },
         {
           "name": "water_rate",
@@ -5849,7 +7073,21 @@
           "default_value": 0.005,
           "$$hashKey": "uiGrid-0LEU",
           "option_1": 0.005,
-          "variable": false
+          "variable": false,
+          "display_name_short": "water_rate",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.005,
+            "minimum": 0.005,
+            "mean": 0.005,
+            "deltaX": 0.005,
+            "stdDev": 0.005,
+            "default_value": 0.005
+          }
         },
         {
           "name": "disthtg_rate",
@@ -5862,7 +7100,21 @@
           "default_value": 0.2,
           "$$hashKey": "uiGrid-0LEW",
           "option_1": 0.2,
-          "variable": false
+          "variable": false,
+          "display_name_short": "disthtg_rate",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.2,
+            "minimum": 0.2,
+            "mean": 0.2,
+            "deltaX": 0.2,
+            "stdDev": 0.2,
+            "default_value": 0.2
+          }
         },
         {
           "name": "distclg_rate",
@@ -5875,7 +7127,21 @@
           "default_value": 0.2,
           "$$hashKey": "uiGrid-0LEY",
           "option_1": 0.2,
-          "variable": false
+          "variable": false,
+          "display_name_short": "distclg_rate",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.2,
+            "minimum": 0.2,
+            "mean": 0.2,
+            "deltaX": 0.2,
+            "stdDev": 0.2,
+            "default_value": 0.2
+          }
         }
       ],
       "edit": "",
@@ -5923,10 +7189,11 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.5898880526872616,
+      "instanceId": 0.5542650579350319,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
-      "outputMeasure": false
+      "outputMeasure": false,
+      "skip": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/openstudio_results",
@@ -7254,7 +8521,7 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.7916154200379084,
+      "instanceId": 0.7892294537763775,
       "showWarningText": false
     }
   ],
@@ -7282,7 +8549,7 @@
       "name": "HVAC - VRF",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
       "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-      "change_building_location": "Aurora CO",
+      "change_building_location": "Aurora",
       "zedgk_12_electric_equipment": "ZEDG Elec Equip",
       "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
       "zedgk_12_interior_lighting": "ZEDG Int Lighting",
@@ -7316,7 +8583,7 @@
       "name": "HVAC GSHP",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
       "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-      "change_building_location": "Aurora CO",
+      "change_building_location": "Aurora",
       "zedgk_12_electric_equipment": "ZEDG Elec Equip",
       "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
       "zedgk_12_interior_lighting": "ZEDG Int Lighting",
@@ -7350,7 +8617,7 @@
       "name": "HVAC Fan Coil Air Cool",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
       "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-      "change_building_location": "Aurora CO",
+      "change_building_location": "Aurora",
       "zedgk_12_electric_equipment": "ZEDG Elec Equip",
       "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
       "zedgk_12_interior_lighting": "ZEDG Int Lighting",
@@ -7381,28 +8648,6 @@
       "surface_matching_diagnostic": "Surface Matching Diagnostic"
     }
   ],
-  "analysisID": null,
-  "datapoints": [
-    {
-      "name": "HVAC - VRF",
-      "id": "HVAC - VRF",
-      "run": false,
-      "modified": false,
-      "selected": true
-    },
-    {
-      "name": "HVAC GSHP",
-      "id": "HVAC GSHP",
-      "run": false,
-      "modified": false,
-      "selected": true
-    },
-    {
-      "name": "HVAC Fan Coil Air Cool",
-      "id": "HVAC Fan Coil Air Cool",
-      "run": false,
-      "modified": false,
-      "selected": true
-    }
-  ]
+  "analysisID": "602cccc2-6cc7-4f6f-b3bd-525281b1874c",
+  "datapoints": []
 }
