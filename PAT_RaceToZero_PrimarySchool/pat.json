@@ -719,7 +719,7 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.3331176904646673,
+      "instanceId": 0.22110709453205124,
       "showWarningText": false
     },
     {
@@ -838,10 +838,11 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.6296947034282501,
+      "instanceId": 0.1915043380129764,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
-      "skip": false
+      "skip": false,
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/surface_matching_diagnostic",
@@ -1100,10 +1101,11 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.6720223872692406,
+      "instanceId": 0.13433429230893656,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
-      "skip": false
+      "skip": false,
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_electric_equipment",
@@ -1246,7 +1248,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.7959690977318281,
+      "instanceId": 0.8721968326679912,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1416,7 +1418,7 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.8105529143146666,
+      "instanceId": 0.02505890472418737,
       "showWarningText": false
     },
     {
@@ -1581,7 +1583,7 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.1823433857506489,
+      "instanceId": 0.351958316266223,
       "showWarningText": false
     },
     {
@@ -1746,7 +1748,7 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7126160912228467,
+      "instanceId": 0.6975805012574139,
       "showWarningText": false
     },
     {
@@ -1890,7 +1892,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.8182545951574025,
+      "instanceId": 0.5250589012124596,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -2100,7 +2102,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.6713127560749459,
+      "instanceId": 0.0766061836632499,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -2282,7 +2284,7 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.4878137539825744,
+      "instanceId": 0.5110213795836858,
       "showWarningText": false
     },
     {
@@ -2621,7 +2623,7 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6755281782813942,
+      "instanceId": 0.656697126459379,
       "showWarningText": false
     },
     {
@@ -2761,7 +2763,7 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
         }
       ],
-      "instanceId": 0.979758472840329,
+      "instanceId": 0.11692559217549747,
       "numberOfOptions": 1,
       "$$hashKey": "object:56484",
       "outputMeasure": false,
@@ -2929,7 +2931,7 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7525793983815334,
+      "instanceId": 0.4893116896860361,
       "showWarningText": false
     },
     {
@@ -3128,7 +3130,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.1709680704932517,
+      "instanceId": 0.5704716207375711,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -3331,7 +3333,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.6481312188978716,
+      "instanceId": 0.19205127677165734,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -3834,7 +3836,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.3445946442036887,
+      "instanceId": 0.5390027691566932,
       "showWarningText": false
     },
     {
@@ -4268,7 +4270,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.23338073710809915,
+      "instanceId": 0.9176451657396703,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -4705,7 +4707,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.43814032886903087,
+      "instanceId": 0.9755215240271158,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880",
       "outputMeasure": false,
@@ -5055,7 +5057,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9429078405182194,
+      "instanceId": 0.9371357135326819,
       "showWarningText": false
     },
     {
@@ -5466,7 +5468,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.793604698826784,
+      "instanceId": 0.7162189790275983,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
@@ -5880,7 +5882,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.1938064823349528,
+      "instanceId": 0.8455536169757214,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361",
       "outputMeasure": false,
@@ -6120,7 +6122,7 @@
           "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
         }
       ],
-      "instanceId": 0.6213741780409636,
+      "instanceId": 0.5166372552998519,
       "numberOfOptions": 1,
       "$$hashKey": "object:7459",
       "outputMeasure": false,
@@ -6360,7 +6362,7 @@
           "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
         }
       ],
-      "instanceId": 0.18690535463978675,
+      "instanceId": 0.4938445322867997,
       "numberOfOptions": 1,
       "$$hashKey": "object:7458",
       "outputMeasure": false,
@@ -6600,11 +6602,744 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
         }
       ],
-      "instanceId": 0.06369525303553747,
+      "instanceId": 0.3676713232435096,
       "numberOfOptions": 1,
       "$$hashKey": "object:7460",
       "outputMeasure": false,
       "skip": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/create_baseline_building",
+      "name": "create_baseline_building",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/create_baseline_building",
+      "uid": "4de56e21-b6cd-45d9-8466-862507d228b2",
+      "uuid": "{4de56e21-b6cd-45d9-8466-862507d228b2}",
+      "version_id": "1fe5ae2a-cec5-4a9e-83eb-c4832ee9849e",
+      "version_uuid": "{1fe5ae2a-cec5-4a9e-83eb-c4832ee9849e}",
+      "version_modified": "20170726T205355Z",
+      "xml_checksum": "A514F332",
+      "display_name": "Create Baseline Building",
+      "class_name": "CreateBaselineBuilding",
+      "description": "Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+      "modeler_description": "",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-04SR",
+          "option_1": "option_1",
+          "option_2": "option_2",
+          "option_3": "option_3",
+          "option_4": "option_4",
+          "option_5": "option_5",
+          "option_6": "option_6",
+          "option_7": "option_7",
+          "option_8": "option_8",
+          "option_9": "option_9",
+          "option_10": "option_10",
+          "option_11": "option_11",
+          "option_12": "option_12",
+          "option_13": "option_13",
+          "option_14": "option_14",
+          "option_15": "option_15"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-04ST",
+          "option_1": "Baseline 1A 2007",
+          "option_2": "Baseline 2A 2007",
+          "option_3": "Baseline 2B 2007",
+          "option_4": "Baseline 3A 2007",
+          "option_5": "Baseline 3B 2007",
+          "option_6": "Baseline 3C 2007",
+          "option_7": "Baseline 4A 2007",
+          "option_8": "Baseline 4B 2007",
+          "option_9": "Baseline 4C 2007",
+          "option_10": "Baseline 5A 2007",
+          "option_11": "Baseline 5B 2007",
+          "option_12": "Baseline 6A 2007",
+          "option_13": "Baseline 6B 2007",
+          "option_14": "Baseline 7A 2007",
+          "option_15": "Baseline 8A 2007"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-04SV",
+          "option_1": "Option 1 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_2": "Option 2 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_3": "Option 3 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_4": "Option 4 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_5": "Option 5 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_6": "Option 6 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_7": "Option 7 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_8": "Option 8 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_9": "Option 9 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_10": "Option 10 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_11": "Option 11 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_12": "Option 12 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_13": "Option 13 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_14": "Option 14 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+          "option_15": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "name": "standard",
+          "display_name": "Standard",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2013",
+          "choice_values": [
+            "90.1-2007 BETA",
+            "90.1-2010 BETA",
+            "90.1-2013"
+          ],
+          "choice_display_names": [
+            "90.1-2007 BETA",
+            "90.1-2010 BETA",
+            "90.1-2013"
+          ],
+          "$$hashKey": "uiGrid-04SX",
+          "option_1": "90.1-2007 BETA",
+          "variable": false,
+          "option_2": "90.1-2007 BETA",
+          "option_3": "90.1-2007 BETA",
+          "option_4": "90.1-2007 BETA",
+          "option_5": "90.1-2007 BETA",
+          "option_6": "90.1-2007 BETA",
+          "option_7": "90.1-2007 BETA",
+          "option_8": "90.1-2007 BETA",
+          "option_9": "90.1-2007 BETA",
+          "option_10": "90.1-2007 BETA",
+          "option_11": "90.1-2007 BETA",
+          "option_12": "90.1-2007 BETA",
+          "option_13": "90.1-2007 BETA",
+          "option_14": "90.1-2007 BETA",
+          "option_15": "90.1-2007 BETA"
+        },
+        {
+          "name": "building_type",
+          "display_name": "Building Type.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "MidriseApartment",
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "Hospital",
+            "Outpatient"
+          ],
+          "choice_display_names": [
+            "MidriseApartment",
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "Hospital",
+            "Outpatient"
+          ],
+          "$$hashKey": "uiGrid-04SZ",
+          "option_1": "PrimarySchool",
+          "variable": false,
+          "option_2": "PrimarySchool",
+          "option_3": "PrimarySchool",
+          "option_4": "PrimarySchool",
+          "option_5": "PrimarySchool",
+          "option_6": "PrimarySchool",
+          "option_7": "PrimarySchool",
+          "option_8": "PrimarySchool",
+          "option_9": "PrimarySchool",
+          "option_10": "PrimarySchool",
+          "option_11": "PrimarySchool",
+          "option_12": "PrimarySchool",
+          "option_13": "PrimarySchool",
+          "option_14": "PrimarySchool",
+          "option_15": "PrimarySchool"
+        },
+        {
+          "name": "climate_zone",
+          "display_name": "Climate Zone.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "ASHRAE 169-2006-2A",
+          "choice_values": [
+            "ASHRAE 169-2006-1A",
+            "ASHRAE 169-2006-2A",
+            "ASHRAE 169-2006-2B",
+            "ASHRAE 169-2006-3A",
+            "ASHRAE 169-2006-3B",
+            "ASHRAE 169-2006-3C",
+            "ASHRAE 169-2006-4A",
+            "ASHRAE 169-2006-4B",
+            "ASHRAE 169-2006-4C",
+            "ASHRAE 169-2006-5A",
+            "ASHRAE 169-2006-5B",
+            "ASHRAE 169-2006-6A",
+            "ASHRAE 169-2006-6B",
+            "ASHRAE 169-2006-7A",
+            "ASHRAE 169-2006-8A"
+          ],
+          "choice_display_names": [
+            "ASHRAE 169-2006-1A",
+            "ASHRAE 169-2006-2A",
+            "ASHRAE 169-2006-2B",
+            "ASHRAE 169-2006-3A",
+            "ASHRAE 169-2006-3B",
+            "ASHRAE 169-2006-3C",
+            "ASHRAE 169-2006-4A",
+            "ASHRAE 169-2006-4B",
+            "ASHRAE 169-2006-4C",
+            "ASHRAE 169-2006-5A",
+            "ASHRAE 169-2006-5B",
+            "ASHRAE 169-2006-6A",
+            "ASHRAE 169-2006-6B",
+            "ASHRAE 169-2006-7A",
+            "ASHRAE 169-2006-8A"
+          ],
+          "$$hashKey": "uiGrid-04T1",
+          "option_1": "ASHRAE 169-2006-1A",
+          "variable": true,
+          "option_2": "ASHRAE 169-2006-2A",
+          "option_3": "ASHRAE 169-2006-2B",
+          "option_4": "ASHRAE 169-2006-3A",
+          "option_5": "ASHRAE 169-2006-3B",
+          "option_6": "ASHRAE 169-2006-3C",
+          "option_7": "ASHRAE 169-2006-4A",
+          "option_8": "ASHRAE 169-2006-4B",
+          "option_9": "ASHRAE 169-2006-4C",
+          "option_10": "ASHRAE 169-2006-5A",
+          "option_11": "ASHRAE 169-2006-5B",
+          "option_12": "ASHRAE 169-2006-6A",
+          "option_13": "ASHRAE 169-2006-6B",
+          "option_14": "ASHRAE 169-2006-7A",
+          "option_15": "ASHRAE 169-2006-8A",
+          "units": "",
+          "minimum": "ASHRAE 169-2006-1A",
+          "maximum": "ASHRAE 169-2006-8A",
+          "mode": null
+        },
+        {
+          "name": "custom",
+          "display_name": "Customization",
+          "description": "If selected, some of the standard process will be replaced by custom logic specific to particular programs.  If these do not apply to you, select None.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*None*",
+          "choice_values": [
+            "Xcel Energy CO EDA",
+            "*None*"
+          ],
+          "choice_display_names": [
+            "Xcel Energy CO EDA",
+            "*None*"
+          ],
+          "$$hashKey": "uiGrid-04T3",
+          "option_1": "*None*",
+          "variable": false,
+          "option_2": "*None*",
+          "option_3": "*None*",
+          "option_4": "*None*",
+          "option_5": "*None*",
+          "option_6": "*None*",
+          "option_7": "*None*",
+          "option_8": "*None*",
+          "option_9": "*None*",
+          "option_10": "*None*",
+          "option_11": "*None*",
+          "option_12": "*None*",
+          "option_13": "*None*",
+          "option_14": "*None*",
+          "option_15": "*None*"
+        },
+        {
+          "name": "debug",
+          "display_name": "Show debug messages?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "$$hashKey": "uiGrid-04T5",
+          "option_1": false,
+          "variable": false,
+          "option_2": false,
+          "option_3": false,
+          "option_4": false,
+          "option_5": false,
+          "option_6": false,
+          "option_7": false,
+          "option_8": false,
+          "option_9": false,
+          "option_10": false,
+          "option_11": false,
+          "option_12": false,
+          "option_13": false,
+          "option_14": false,
+          "option_15": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "7/26/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "ZEDG K12 Primary TSD seed.osm",
+      "workflow_index": 24,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-1A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 1A 2007",
+          "description": "Option 1 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_2",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-2A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 2A 2007",
+          "description": "Option 2 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_3",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-2B"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 2B 2007",
+          "description": "Option 3 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_4",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-3A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 3A 2007",
+          "description": "Option 4 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_5",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-3B"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 3B 2007",
+          "description": "Option 5 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_6",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-3C"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 3C 2007",
+          "description": "Option 6 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_7",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-4A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 4A 2007",
+          "description": "Option 7 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_8",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-4B"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 4B 2007",
+          "description": "Option 8 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_9",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-4C"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 4C 2007",
+          "description": "Option 9 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_10",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-5A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 5A 2007",
+          "description": "Option 10 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_11",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-5B"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 5B 2007",
+          "description": "Option 11 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_12",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-6A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 6A 2007",
+          "description": "Option 12 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_13",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-6B"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 6B 2007",
+          "description": "Option 13 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_14",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-7A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 7A 2007",
+          "description": "Option 14 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        },
+        {
+          "id": "option_15",
+          "arguments": [
+            {
+              "name": "standard",
+              "value": "90.1-2007 BETA"
+            },
+            {
+              "name": "building_type",
+              "value": "PrimarySchool"
+            },
+            {
+              "name": "climate_zone",
+              "value": "ASHRAE 169-2006-8A"
+            },
+            {
+              "name": "custom",
+              "value": "*None*"
+            },
+            {
+              "name": "debug",
+              "value": false
+            }
+          ],
+          "name": "Baseline 8A 2007",
+          "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
+        }
+      ],
+      "instanceId": 0.6130221784918166,
+      "numberOfOptions": 15,
+      "$$hashKey": "object:13368",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_insert_ground_domain_e_kusdua",
@@ -6777,7 +7512,7 @@
       "author": "",
       "type": "EnergyPlusMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 24,
+      "workflow_index": 25,
       "options": [
         {
           "id": "option_1",
@@ -6795,7 +7530,7 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.40801650004233303,
+      "instanceId": 0.18725622357356375,
       "showWarningText": false
     },
     {
@@ -7155,7 +7890,7 @@
       "author": "",
       "type": "EnergyPlusMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 25,
+      "workflow_index": 26,
       "options": [
         {
           "id": "option_1",
@@ -7189,7 +7924,7 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.2872276096865114,
+      "instanceId": 0.6017986493937595,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
@@ -8409,13 +9144,13 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": false,
+      "open": true,
       "addedToProject": true,
       "date": "6/22/2017",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 26,
+      "workflow_index": 27,
       "options": [
         {
           "id": "option_1",
@@ -8521,7 +9256,7 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.9438497942385815,
+      "instanceId": 0.8710668636282883,
       "showWarningText": false
     }
   ],
@@ -8577,10 +9312,11 @@
       "add_electric_equipment_instance_to_space_2": "Electric Kiln",
       "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
       "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
-      "surface_matching_diagnostic": "Surface Matching Diagnostic"
+      "surface_matching_diagnostic": "Surface Matching Diagnostic",
+      "create_baseline_building": "None"
     },
     {
-      "name": "HVAC GSHP",
+      "name": "HVAC - GSHP",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
       "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
       "change_building_location": "Aurora",
@@ -8611,10 +9347,11 @@
       "add_electric_equipment_instance_to_space_2": "Electric Kiln",
       "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
       "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
-      "surface_matching_diagnostic": "Surface Matching Diagnostic"
+      "surface_matching_diagnostic": "Surface Matching Diagnostic",
+      "create_baseline_building": "None"
     },
     {
-      "name": "HVAC Fan Coil Air Cool",
+      "name": "HVAC - Fan Coil Air Cooled Chiller",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
       "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
       "change_building_location": "Aurora",
@@ -8645,7 +9382,43 @@
       "add_electric_equipment_instance_to_space_2": "Electric Kiln",
       "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
       "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
-      "surface_matching_diagnostic": "Surface Matching Diagnostic"
+      "surface_matching_diagnostic": "Surface Matching Diagnostic",
+      "create_baseline_building": "None"
+    },
+    {
+      "name": "Baseline",
+      "seedModel": "ZEDG K12 Primary TSD seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "Aurora",
+      "zedgk_12_electric_equipment": "None",
+      "aedg_k_12_electric_equipment_controls": "None",
+      "zedgk_12_interior_lighting": "None",
+      "aedg_k_12_interior_lighting_controls": "None",
+      "zedgk_12_exterior_wall_construction": "None",
+      "zedgk_12_roof_construction": "None",
+      "aedg_k_12_interior_finishes": "None",
+      "zedgk_12_fenestration_and_daylighting_controls": "None",
+      "zedgk_12_swh": "ZEDG SWH Primary",
+      "zedgk_12_kitchen": "ZEDG Kitchen Primary",
+      "zedgk_12_envelope_infiltration": "None",
+      "aedg_k_12_exterior_lighting": "AEDG Ext Lighting Baseline",
+      "add_rooftop_pv": "None",
+      "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
+      "openstudio_results": "Results",
+      "zedgk_12_hvac": "None",
+      "zedgvrf_with_doas": "None",
+      "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller": "Fan Coil DOAS Air Cooled Chiller",
+      "set_thermostat_schedules": "Thermostat Typical",
+      "set_thermostat_schedules_2": "Thermostat Gym",
+      "zedgk_12_exterior_door_construction": "None",
+      "add_electric_equipment_instance_to_space": "Elevators",
+      "tariff_selection_flat": "Tariff Flat",
+      "add_electric_equipment_instance_to_space_2": "Electric Kiln",
+      "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
+      "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
+      "surface_matching_diagnostic": "Surface Matching Diagnostic",
+      "create_baseline_building": "Baseline 1A 2007",
+      "$$hashKey": "uiGrid-06B5"
     }
   ],
   "analysisID": null,
@@ -8658,15 +9431,22 @@
       "selected": false
     },
     {
-      "name": "HVAC GSHP",
-      "id": "HVAC GSHP",
+      "name": "HVAC - GSHP",
+      "id": "HVAC - GSHP",
       "run": false,
       "modified": false,
       "selected": false
     },
     {
-      "name": "HVAC Fan Coil Air Cool",
-      "id": "HVAC Fan Coil Air Cool",
+      "name": "HVAC - Fan Coil Air Cooled Chiller",
+      "id": "HVAC - Fan Coil Air Cooled Chiller",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Baseline",
+      "id": "Baseline",
       "run": false,
       "modified": false,
       "selected": false
