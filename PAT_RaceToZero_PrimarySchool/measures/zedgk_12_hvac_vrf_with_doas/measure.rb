@@ -550,11 +550,30 @@ class ZEDGVRFWithDOAS < OpenStudio::Ruleset::ModelUserScript
     base_vrf_terminalUnit.autosizeSupplyAirFlowRateDuringHeatingOperation
     base_vrf_terminalUnit.setSupplyAirFanOperatingModeSchedule(model.alwaysOffDiscreteSchedule)
     # don't set outdoor air flow rates to 0 since used in place of DOAS
-    vrf_clg_coil = base_vrf_terminalUnit.coolingCoil
+
+    # get coils
+    os_version = OpenStudio::VersionString.new(OpenStudio::openStudioVersion())
+    min_version_feature1 = OpenStudio::VersionString.new("2.3.1")
+    if os_version >= min_version_feature1
+      if base_vrf_terminalUnit.coolingCoil.is_initialized
+        vrf_clg_coil = base_vrf_terminalUnit.coolingCoil.get
+      else
+        runner.registerWarning("Didn't find expected cooling coil for #{base_vrf_terminalUnit.name}")
+      end
+      if base_vrf_terminalUnit.heatingCoil.is_initialized
+        vrf_htg_coil = base_vrf_terminalUnit.heatingCoil.get
+      else
+        runner.registerWarning("Didn't find expected heating coil for #{base_vrf_terminalUnit.name}")
+      end
+    else
+      vrf_clg_coil = base_vrf_terminalUnit.coolingCoil
+      vrf_htg_coil = base_vrf_terminalUnit.heatingCoil
+    end
+
+    # alter coils and fans
     vrf_clg_coil.autosizeRatedTotalCoolingCapacity
     vrf_clg_coil.autosizeRatedAirFlowRate
     vrf_clg_coil.autosizeRatedSensibleHeatRatio
-    vrf_htg_coil = base_vrf_terminalUnit.heatingCoil
     vrf_htg_coil.autosizeRatedTotalHeatingCapacity
     vrf_htg_coil.autosizeRatedAirFlowRate
     vrf_fan = base_vrf_terminalUnit.supplyAirFan.to_FanOnOff.get
