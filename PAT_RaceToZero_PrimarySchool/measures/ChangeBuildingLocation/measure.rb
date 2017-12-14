@@ -22,6 +22,8 @@ class ChangeBuildingLocation < OpenStudio::Ruleset::ModelUserScript
 
     #make choice argument for climate zone
     choices = OpenStudio::StringVector.new
+    choices << "0A"
+    choices << "0B"
     choices << "1A"
     choices << "1B"
     choices << "2A"

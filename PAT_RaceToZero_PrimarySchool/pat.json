@@ -119,14 +119,14 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/ChangeBuildingLocation",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/ChangeBuildingLocation",
       "name": "change_building_location",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/ChangeBuildingLocation",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/ChangeBuildingLocation",
       "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
-      "version_id": "15c2f7f3-c8a7-47c7-be07-cce43350d759",
-      "version_uuid": "{15c2f7f3-c8a7-47c7-be07-cce43350d759}",
-      "version_modified": "20170911T163341Z",
+      "version_id": "6c4db803-12ba-40e8-a2ce-5913755a4962",
+      "version_uuid": "{6c4db803-12ba-40e8-a2ce-5913755a4962}",
+      "version_modified": "20171214T165313Z",
       "xml_checksum": "057E8D9D",
       "display_name": "ChangeBuildingLocation",
       "class_name": "ChangeBuildingLocation",
@@ -179,7 +179,10 @@
           "option_13": "option_13",
           "option_14": "option_14",
           "option_15": "option_15",
-          "option_16": "option_16"
+          "option_16": "option_16",
+          "option_17": "option_17",
+          "option_18": "option_18",
+          "option_19": "option_19"
         },
         {
           "specialRowId": "optionName",
@@ -214,7 +217,10 @@
           "option_13": "Rochester",
           "option_14": "Great Falls",
           "option_15": "International Falls",
-          "option_16": "Fairbanks"
+          "option_16": "Fairbanks",
+          "option_17": "Hanoi",
+          "option_18": "Abu Dhabi",
+          "option_19": "New Delhi"
         },
         {
           "specialRowId": "optionDescription",
@@ -249,7 +255,10 @@
           "option_13": "Option 13 Description: Change the building location",
           "option_14": "Option 14 Description: Change the building location",
           "option_15": "Option 15 Description: Change the building location",
-          "option_16": "Option 16 Description: Change the building location"
+          "option_16": "Option 16 Description: Change the building location",
+          "option_17": "Option 17 Description: Change the building location",
+          "option_18": "Option 18 Description: Change the building location",
+          "option_19": "Option 19 Description: Change the building location"
         },
         {
           "name": "weather_file_name",
@@ -261,8 +270,8 @@
           "$$hashKey": "uiGrid-02KE",
           "variable": true,
           "units": "",
-          "minimum": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-          "maximum": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
+          "minimum": "ARE_Abu.Dhabi.412170_IWEC.epw",
+          "maximum": "VNM_Hanoi.488200_IWEC.epw",
           "mode": null,
           "inputs": {
             "relationship": "Standard",
@@ -311,7 +320,10 @@
           "option_13": "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
           "option_14": "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw",
           "option_15": "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw",
-          "option_16": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw"
+          "option_16": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+          "option_17": "VNM_Hanoi.488200_IWEC.epw",
+          "option_18": "ARE_Abu.Dhabi.412170_IWEC.epw",
+          "option_19": "IND_New.Delhi.421820_ISHRAE.epw"
         },
         {
           "name": "climate_zone",
@@ -321,6 +333,8 @@
           "required": true,
           "model_dependent": false,
           "choice_values": [
+            "0A",
+            "0B",
             "1A",
             "1B",
             "2A",
@@ -338,10 +352,11 @@
             "6B",
             "7",
             "8",
-            "Lookup From Stat File",
-            "Lookup From Known Locations"
+            "Lookup From Stat File"
           ],
           "choice_display_names": [
+            "0A",
+            "0B",
             "1A",
             "1B",
             "2A",
@@ -359,18 +374,19 @@
             "6B",
             "7",
             "8",
-            "Lookup From Stat File",
-            "Lookup From Known Locations"
+            "Lookup From Stat File"
           ],
           "$$hashKey": "uiGrid-02KG",
-          "variable": false,
+          "variable": true,
           "units": "",
-          "minimum": "0",
+          "minimum": "0A",
           "maximum": "Lookup From Stat File",
           "mode": null,
           "inputs": {
             "relationship": "Standard",
             "choice_display_names": [
+              "0A",
+              "0B",
               "1A",
               "1B",
               "2A",
@@ -388,7 +404,7 @@
               "6B",
               "7",
               "8",
-              "Lookup From Known Locations"
+              "Lookup From Stat File"
             ],
             "default_value": "1A",
             "deltaX": 0.001,
@@ -419,6 +435,8 @@
               "Unhandled Sampling Method"
             ],
             "choiceDisplayNames": [
+              "0A",
+              "0B",
               "1A",
               "1B",
               "2A",
@@ -436,8 +454,7 @@
               "6B",
               "7",
               "8",
-              "Lookup From Stat File",
-              "Lookup From Known Locations"
+              "Lookup From Stat File"
             ],
             "showWarningIcon": false
           },
@@ -458,7 +475,10 @@
           "option_13": "Lookup From Stat File",
           "option_14": "Lookup From Stat File",
           "option_15": "Lookup From Stat File",
-          "option_16": "Lookup From Stat File"
+          "option_16": "Lookup From Stat File",
+          "option_17": "0A",
+          "option_18": "0B",
+          "option_19": "1B"
         }
       ],
       "edit": "",
@@ -468,7 +488,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "9/11/2017",
+      "date": "12/14/2017",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -713,13 +733,58 @@
           ],
           "name": "Fairbanks",
           "description": "Option 16 Description: Change the building location"
+        },
+        {
+          "id": "option_17",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "VNM_Hanoi.488200_IWEC.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "0A"
+            }
+          ],
+          "name": "Hanoi",
+          "description": "Option 17 Description: Change the building location"
+        },
+        {
+          "id": "option_18",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "ARE_Abu.Dhabi.412170_IWEC.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "0B"
+            }
+          ],
+          "name": "Abu Dhabi",
+          "description": "Option 18 Description: Change the building location"
+        },
+        {
+          "id": "option_19",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "IND_New.Delhi.421820_ISHRAE.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "1B"
+            }
+          ],
+          "name": "New Delhi",
+          "description": "Option 19 Description: Change the building location"
         }
       ],
-      "numberOfOptions": 16,
+      "numberOfOptions": 19,
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.701939729930869,
+      "instanceId": 0.7013553912407122,
       "showWarningText": false
     },
     {
@@ -838,7 +903,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.2489237473195407,
+      "instanceId": 0.3987799355941115,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false,
@@ -1101,7 +1166,7 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.3324200764953229,
+      "instanceId": 0.5800394290104494,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false,
@@ -1248,7 +1313,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.8456901019871617,
+      "instanceId": 0.1693989021579958,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1418,7 +1483,7 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.8435011331396192,
+      "instanceId": 0.7210822906852052,
       "showWarningText": false
     },
     {
@@ -1583,7 +1648,7 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.18852461116142227,
+      "instanceId": 0.13022119628776418,
       "showWarningText": false
     },
     {
@@ -1748,7 +1813,7 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.703846798657717,
+      "instanceId": 0.8986094917994671,
       "showWarningText": false
     },
     {
@@ -1892,7 +1957,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.3246077642643945,
+      "instanceId": 0.7765797435375033,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -2102,7 +2167,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.8488823055314716,
+      "instanceId": 0.5065495838554575,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -2284,7 +2349,7 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9074568910015088,
+      "instanceId": 0.6435063001566843,
       "showWarningText": false
     },
     {
@@ -2623,18 +2688,18 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6074361124739118,
+      "instanceId": 0.45722299135192435,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_exterior_door_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/zedgk_12_exterior_door_construction",
       "name": "zedgk_12_exterior_door_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_exterior_door_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/zedgk_12_exterior_door_construction",
       "uid": "11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c",
       "uuid": "{11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c}",
-      "version_id": "81b5f932-2622-4a90-bb95-63aff3054ae4",
-      "version_uuid": "{81b5f932-2622-4a90-bb95-63aff3054ae4}",
-      "version_modified": "20171023T063128Z",
+      "version_id": "1ecee336-c85d-49d5-9a48-967226a5cf38",
+      "version_uuid": "{1ecee336-c85d-49d5-9a48-967226a5cf38}",
+      "version_modified": "20171214T170019Z",
       "xml_checksum": "5091078B",
       "display_name": "ZEDG K12 ExteriorDoorConstruction",
       "class_name": "ZEDGK12ExteriorDoorConstruction",
@@ -2745,7 +2810,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/23/2017",
+      "date": "12/14/2017",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -2763,7 +2828,7 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
         }
       ],
-      "instanceId": 0.8183969381424623,
+      "instanceId": 0.7057374901321902,
       "numberOfOptions": 1,
       "$$hashKey": "object:56484",
       "outputMeasure": false,
@@ -2931,7 +2996,7 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.042196031359493125,
+      "instanceId": 0.28775131815523625,
       "showWarningText": false
     },
     {
@@ -3130,7 +3195,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.401008986582033,
+      "instanceId": 0.5435019824732068,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -3333,7 +3398,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.11763631024994825,
+      "instanceId": 0.6575338431079771,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -3836,7 +3901,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9447794891059293,
+      "instanceId": 0.640849887944658,
       "showWarningText": false
     },
     {
@@ -4270,7 +4335,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.05576466472296593,
+      "instanceId": 0.33014409474504247,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -4707,7 +4772,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.4395714519596332,
+      "instanceId": 0.7820106770814734,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880",
       "outputMeasure": false,
@@ -5057,7 +5122,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7284835909770166,
+      "instanceId": 0.7111126465652329,
       "showWarningText": false
     },
     {
@@ -5468,7 +5533,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.2603833121849044,
+      "instanceId": 0.08331807298118932,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
@@ -5882,7 +5947,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.5154533389887934,
+      "instanceId": 0.1840017213665175,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361",
       "outputMeasure": false,
@@ -6122,7 +6187,7 @@
           "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
         }
       ],
-      "instanceId": 0.4130292909287294,
+      "instanceId": 0.6634274196943011,
       "numberOfOptions": 1,
       "$$hashKey": "object:7459",
       "outputMeasure": false,
@@ -6362,7 +6427,7 @@
           "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
         }
       ],
-      "instanceId": 0.9053635602163765,
+      "instanceId": 0.0007178222498609443,
       "numberOfOptions": 1,
       "$$hashKey": "object:7458",
       "outputMeasure": false,
@@ -6602,7 +6667,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
         }
       ],
-      "instanceId": 0.329805742608581,
+      "instanceId": 0.3902918011910832,
       "numberOfOptions": 1,
       "$$hashKey": "object:7460",
       "outputMeasure": false,
@@ -7336,7 +7401,7 @@
           "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         }
       ],
-      "instanceId": 0.09135689536928826,
+      "instanceId": 0.5499616885660146,
       "numberOfOptions": 15,
       "$$hashKey": "object:13368",
       "outputMeasure": false
@@ -7530,7 +7595,7 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.24228793083692235,
+      "instanceId": 0.16648852711190232,
       "showWarningText": false
     },
     {
@@ -7924,7 +7989,7 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.874541376150757,
+      "instanceId": 0.7019459120705929,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
@@ -9256,13 +9321,13 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.6804695359991997,
+      "instanceId": 0.5568412649934791,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/envelope_and_internal_load_breakdown",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/envelope_and_internal_load_breakdown",
       "name": "envelope_and_internal_load_breakdown",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/envelope_and_internal_load_breakdown",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/envelope_and_internal_load_breakdown",
       "uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
       "uuid": "{8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02}",
       "version_id": "d71a027d-10f1-4c1a-b9a3-86ff39ffa3b3",
@@ -9366,7 +9431,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.027427113941695946,
+      "instanceId": 0.5606426503720352,
       "numberOfOptions": 1,
       "$$hashKey": "object:57845"
     }

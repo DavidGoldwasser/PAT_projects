@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>change_building_location</name>
   <uid>d4db4971-f5ba-11e3-a3ac-0800200c9a66</uid>
-  <version_id>cb3dfe89-a823-408f-929b-ac88123db9e8</version_id>
-  <version_modified>20170911T163356Z</version_modified>
+  <version_id>6c4db803-12ba-40e8-a2ce-5913755a4962</version_id>
+  <version_modified>20171214T165313Z</version_modified>
   <xml_checksum>057E8D9D</xml_checksum>
   <class_name>ChangeBuildingLocation</class_name>
   <display_name>ChangeBuildingLocation</display_name>
@@ -26,6 +26,14 @@
       <model_dependent>false</model_dependent>
       <default_value>Lookup From Stat File</default_value>
       <choices>
+        <choice>
+          <value>0A</value>
+          <display_name>0A</display_name>
+        </choice>
+        <choice>
+          <value>0B</value>
+          <display_name>0B</display_name>
+        </choice>
         <choice>
           <value>1A</value>
           <display_name>1A</display_name>
@@ -230,7 +238,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>E69CBFDD</checksum>
+      <checksum>C755D9D4</checksum>
     </file>
   </files>
 </measure>

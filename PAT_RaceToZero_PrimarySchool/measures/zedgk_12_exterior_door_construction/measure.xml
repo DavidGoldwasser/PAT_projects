@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_exterior_door_construction</name>
   <uid>11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c</uid>
-  <version_id>81b5f932-2622-4a90-bb95-63aff3054ae4</version_id>
-  <version_modified>20171023T063128Z</version_modified>
+  <version_id>1ecee336-c85d-49d5-9a48-967226a5cf38</version_id>
+  <version_modified>20171214T170019Z</version_modified>
   <xml_checksum>5091078B</xml_checksum>
   <class_name>ZEDGK12ExteriorDoorConstruction</class_name>
   <display_name>ZEDG K12 ExteriorDoorConstruction</display_name>
@@ -40,12 +40,6 @@
     </attribute>
   </attributes>
   <files>
-    <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>400D07BE</checksum>
-    </file>
     <file>
       <filename>0218_SimpleSchool_f_123_dev.osm</filename>
       <filetype>osm</filetype>
@@ -86,6 +80,12 @@
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
       <checksum>81C4639F</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>F37142C9</checksum>
     </file>
   </files>
 </measure>
