@@ -1,8 +1,0 @@
-{
-   "created_at" : "20170310T235859Z",
-   "hash" : "BBC376DB",
-   "seed_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/envelope_and_internal_load_breakdown/tests/output/test_good_argument_values/TestOutput.osm",
-   "steps" : [],
-   "updated_at" : "20170310T235859Z",
-   "weather_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/envelope_and_internal_load_breakdown/tests/USA_CO_Golden-NREL.724666_TMY3.epw"
-}
