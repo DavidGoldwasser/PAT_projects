@@ -1,0 +1,4341 @@
+{
+  "projectName": "PAT_AEDG_50_Office",
+  "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office",
+  "seed": "multi_spacetype.osm",
+  "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+  "analysis_type": "Manual",
+  "remoteSettings": {
+    "open": true,
+    "remoteType": "Amazon Cloud",
+    "remoteServerURL": null,
+    "aws": {
+      "connected": false,
+      "cluster_name": "",
+      "server_instance_type": "",
+      "worker_instance_type": "",
+      "user_id": "",
+      "worker_node_number": 0,
+      "aws_tags": [],
+      "openstudio_server_version": ""
+    },
+    "credentials": {
+      "yamlFilename": null,
+      "accessKey": null,
+      "region": "us-east-1"
+    }
+  },
+  "samplingMethod": {
+    "id": "lhs",
+    "name": "analysis.type.lhs",
+    "link": "https://cran.r-project.org/web/packages/lhs/lhs.pdf"
+  },
+  "algorithmSettings": [
+    {
+      "name": "sample_method",
+      "displayName": "Sample Method",
+      "description": "Options: individual_variables or all_variables",
+      "defaultValue": "individual_variables",
+      "type": "string",
+      "value": "individual_variables",
+      "$$hashKey": "object:193"
+    },
+    {
+      "name": "number_of_samples",
+      "displayName": "Number of Samples",
+      "description": "Positive integer (if individual, total simulations is this times each variable)",
+      "defaultValue": 5,
+      "type": "number",
+      "value": 5,
+      "$$hashKey": "object:194"
+    },
+    {
+      "name": "failed_f_value",
+      "displayName": "Failed F Value",
+      "description": "Return Value for F(x) if F fails",
+      "defaultValue": 1000000000000000000,
+      "type": "number",
+      "value": 1000000000000000000,
+      "$$hashKey": "object:195"
+    },
+    {
+      "name": "debug_messages",
+      "displayName": "Debug Messages",
+      "description": "Options: 1 or 0 (True or False)",
+      "defaultValue": 0,
+      "type": "number",
+      "value": 0,
+      "$$hashKey": "object:196"
+    }
+  ],
+  "rubyMD5": "",
+  "mongoMD5": "",
+  "openstudioServerMD5": "",
+  "openstudioCLIMD5": "",
+  "openstudioMD5": "",
+  "measures": [
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/ChangeBuildingLocation",
+      "name": "change_building_location",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/ChangeBuildingLocation",
+      "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
+      "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
+      "version_id": "04d1e937-c0da-4e99-b815-fca47baaeac5",
+      "version_uuid": "{04d1e937-c0da-4e99-b815-fca47baaeac5}",
+      "version_modified": "20170711T201203Z",
+      "xml_checksum": "057E8D9D",
+      "display_name": "ChangeBuildingLocation",
+      "class_name": "ChangeBuildingLocation",
+      "description": "Change the building location",
+      "modeler_description": "Change the building location",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-056G",
+          "option_1": "option_1",
+          "option_2": "option_2",
+          "option_3": "option_3",
+          "option_4": "option_4"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-056I",
+          "option_1": "CA Chula Vista",
+          "option_2": "CO Aurora",
+          "option_3": "NY Buffalo",
+          "option_4": "FL MacDill"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-056K",
+          "option_1": "Option 1 Description: Change the building location",
+          "option_2": "Option 2 Description: Change the building location",
+          "option_3": "Option 3 Description: Change the building location",
+          "option_4": "Option 4 Description: Change the building location"
+        },
+        {
+          "name": "weather_file_name",
+          "display_name": "Weather File Name",
+          "description": "Name of the weather file to change to. This is the filename with the extension (e.g. NewWeather.epw). Optionally this can inclucde the full file path, but for most use cases should just be file name.",
+          "type": "String",
+          "required": true,
+          "model_dependent": false,
+          "$$hashKey": "uiGrid-056M",
+          "option_1": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+          "variable": true,
+          "option_2": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+          "option_3": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw",
+          "option_4": "USA_FL_MacDill.AFB.747880_TMY3.epw",
+          "units": "",
+          "minimum": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+          "maximum": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw",
+          "mode": null
+        },
+        {
+          "name": "climate_zone",
+          "display_name": "Climate Zone.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Lookup From Stat File",
+          "choice_values": [
+            "1A",
+            "1B",
+            "2A",
+            "2B",
+            "3A",
+            "3B",
+            "3C",
+            "4A",
+            "4B",
+            "4C",
+            "5A",
+            "5B",
+            "5C",
+            "6A",
+            "6B",
+            "7",
+            "8",
+            "Lookup From Stat File"
+          ],
+          "choice_display_names": [
+            "1A",
+            "1B",
+            "2A",
+            "2B",
+            "3A",
+            "3B",
+            "3C",
+            "4A",
+            "4B",
+            "4C",
+            "5A",
+            "5B",
+            "5C",
+            "6A",
+            "6B",
+            "7",
+            "8",
+            "Lookup From Stat File"
+          ],
+          "$$hashKey": "uiGrid-056O",
+          "option_1": "Lookup From Stat File",
+          "variable": false,
+          "option_2": "Lookup From Stat File",
+          "option_3": "Lookup From Stat File",
+          "option_4": "Lookup From Stat File"
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "7/11/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 0,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "CA Chula Vista",
+          "description": "Option 1 Description: Change the building location"
+        },
+        {
+          "id": "option_2",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "CO Aurora",
+          "description": "Option 2 Description: Change the building location"
+        },
+        {
+          "id": "option_3",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "NY Buffalo",
+          "description": "Option 3 Description: Change the building location"
+        },
+        {
+          "id": "option_4",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_FL_MacDill.AFB.747880_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "FL MacDill",
+          "description": "Option 4 Description: Change the building location"
+        }
+      ],
+      "instanceId": 0.38051353863702375,
+      "numberOfOptions": 4,
+      "$$hashKey": "object:12200"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorWallConstruction",
+      "name": "aedg_small_to_medium_office_exterior_wall_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorWallConstruction",
+      "uid": "736836f8-1a55-47a6-96b7-9fd157be6744",
+      "uuid": "{736836f8-1a55-47a6-96b7-9fd157be6744}",
+      "version_id": "64aed7b6-2d62-4042-8225-12cc71cea0bd",
+      "version_uuid": "{64aed7b6-2d62-4042-8225-12cc71cea0bd}",
+      "version_modified": "20170316T164852Z",
+      "xml_checksum": "1E963D9C",
+      "display_name": "AedgSmallToMediumOfficeExteriorWallConstruction",
+      "class_name": "AedgSmallToMediumOfficeExteriorWallConstruction",
+      "description": "This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. ",
+      "modeler_description": "Relevant construction types:\r\r\r\r\r\n- Mass\r\r\r\r\r\n- Steel framed\r\r\r\r\r\n- Wood framed and other\r\r\r\r\r\n- Metal building",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-037A",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-037C",
+          "option_1": "Exterior Wall"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-037E",
+          "option_1": "Option 1 Description: This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
+        },
+        {
+          "name": "material_cost_insulation_increase_ip",
+          "display_name": "Increase Cost per Area of Construction Where Insulation was Improved ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-037G",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 1,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "material_cost_insulation_increase_ip",
+              "value": 0
+            }
+          ],
+          "name": "Exterior Wall",
+          "description": "Option 1 Description: This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
+        }
+      ],
+      "instanceId": 0.6623145190689277,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6440"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeRoofConstruction",
+      "name": "aedg_small_to_medium_office_roof_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeRoofConstruction",
+      "uid": "f35d0cf1-40e4-47d1-84a4-91181a03085e",
+      "uuid": "{f35d0cf1-40e4-47d1-84a4-91181a03085e}",
+      "version_id": "430cc87e-157a-4226-b4ef-7aa0b549b22d",
+      "version_uuid": "{430cc87e-157a-4226-b4ef-7aa0b549b22d}",
+      "version_modified": "20170316T164853Z",
+      "xml_checksum": "1E963D9C",
+      "display_name": "AedgSmallToMediumOfficeRoofConstruction",
+      "class_name": "AedgSmallToMediumOfficeRoofConstruction",
+      "description": "This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces.",
+      "modeler_description": "Relevant construction types are identified below. \r\r\r\r\r\n- Insulation entirely above deck (IEAD)\r\r\r\r\r\n- Attic\r\r\r\r\r\n- Metal building\r\r\r\r\r\n- Attic surfaces should have an Attic intended use type",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-037I",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-037K",
+          "option_1": "Roof"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-037M",
+          "option_1": "Option 1 Description: This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
+        },
+        {
+          "name": "material_cost_insulation_increase_ip",
+          "display_name": "Increase Cost per Area of Construction Where Insulation was Improved ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-037O",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "material_cost_sri_increase_ip",
+          "display_name": "Increase Cost per Area of Construction Where Solar Reflectance Index (SRI) was Improved. ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-037Q",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 2,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "material_cost_insulation_increase_ip",
+              "value": 0
+            },
+            {
+              "name": "material_cost_sri_increase_ip",
+              "value": 0
+            }
+          ],
+          "name": "Roof",
+          "description": "Option 1 Description: This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
+        }
+      ],
+      "instanceId": 0.9558185864301747,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6441"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
+      "name": "aedg_small_to_medium_office_fenestration_and_daylighting_controls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
+      "uid": "4252d6c7-ccd5-4cae-b55e-8d7b1dfcc717",
+      "uuid": "{4252d6c7-ccd5-4cae-b55e-8d7b1dfcc717}",
+      "version_id": "66df4e11-4cd6-4f04-8ba9-8005842bfddf",
+      "version_uuid": "{66df4e11-4cd6-4f04-8ba9-8005842bfddf}",
+      "version_modified": "20170316T164853Z",
+      "xml_checksum": "6FAFA9DE",
+      "display_name": "AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
+      "class_name": "AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
+      "description": "This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Small to Medium Office AEDG recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor.",
+      "modeler_description": "This measure is intended for use in models created form space types defined in the office building types. Fenestration will be added to all spaces with exterior walls except for spaces not included in the floor area. This should include attic and plenum spaces. Daylighting will only be added to north and south facades. North and south facades can be +/- 30 degrees of north and south. East and west facades will only receive view windows. The daylight sensor's depth in from the wall will typically be the same as the height of the wall that the daylight windows is on. This depth is also what is used to calculate the daylight fraction of the space. In spaces that are non convex, such as an L shaped space, we may not be able to place a sensor, if that happens a warning will be issued.",
+      "tags": "Envelope.Fenestration",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-037S",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-037U",
+          "option_1": "Fenestration"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-037W",
+          "option_1": "Option 1 Description: This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Small to Medium Office AEDG recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor."
+        },
+        {
+          "name": "cost_daylight_glazing",
+          "display_name": "Cost per Area for Proposed Daylighting Window Constructions ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-037Y",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "cost_view_glazing",
+          "display_name": "Cost per Area for Proposed View Window Constructions ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0380",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "cost_skylight",
+          "display_name": "Cost per Area for Proposed Skylight Construction ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0382",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "cost_shading_surface",
+          "display_name": "Cost per Area for Proposed Exterior Shading Surface Construction ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0384",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "cost_light_shelf",
+          "display_name": "Cost per Area for Proposed Light Shelf Construction ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0386",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 3,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "cost_daylight_glazing",
+              "value": 0
+            },
+            {
+              "name": "cost_view_glazing",
+              "value": 0
+            },
+            {
+              "name": "cost_skylight",
+              "value": 0
+            },
+            {
+              "name": "cost_shading_surface",
+              "value": 0
+            },
+            {
+              "name": "cost_light_shelf",
+              "value": 0
+            }
+          ],
+          "name": "Fenestration",
+          "description": "Option 1 Description: This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Small to Medium Office AEDG recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor."
+        }
+      ],
+      "instanceId": 0.6172500480871776,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6442"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorDoorConstruction",
+      "name": "aedg_small_to_medium_office_exterior_door_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorDoorConstruction",
+      "uid": "d9dd27f7-d622-4d85-96e4-c09fcd15603c",
+      "uuid": "{d9dd27f7-d622-4d85-96e4-c09fcd15603c}",
+      "version_id": "fe77427d-b509-4f68-822c-1a7ed49f642e",
+      "version_uuid": "{fe77427d-b509-4f68-822c-1a7ed49f642e}",
+      "version_modified": "20170316T164852Z",
+      "xml_checksum": "1E963D9C",
+      "display_name": "AedgSmallToMediumOfficeExteriorDoorConstruction",
+      "class_name": "AedgSmallToMediumOfficeExteriorDoorConstruction",
+      "description": "This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration that includes user arguments for primary entry points. ",
+      "modeler_description": "Relevant construction types:\r\r\r\r\r\n- Door - Swinging or NonSwinging \r\r\r\r\r\n- Overhead Door - Sliding \r\r\r\r\r\n- Overhead Door - RollUp",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-0388",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-038A",
+          "option_1": "Exterior Doors"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-038C",
+          "option_1": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration that includes user arguments for primary entry points. "
+        },
+        {
+          "name": "material_cost_insulation_increase_ip",
+          "display_name": "Increase Cost per Area of Construction Where Insulation was Improved ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-038E",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 4,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "material_cost_insulation_increase_ip",
+              "value": 0
+            }
+          ],
+          "name": "Exterior Doors",
+          "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration that includes user arguments for primary entry points. "
+        }
+      ],
+      "instanceId": 0.34894565478404593,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6443"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorFloorConstruction",
+      "name": "aedg_small_to_medium_office_exterior_floor_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorFloorConstruction",
+      "uid": "6698017c-52bd-4fc9-9240-f480301f66b8",
+      "uuid": "{6698017c-52bd-4fc9-9240-f480301f66b8}",
+      "version_id": "05152bc6-4997-4f54-8223-21dfbb621e7b",
+      "version_uuid": "{05152bc6-4997-4f54-8223-21dfbb621e7b}",
+      "version_modified": "20170316T164852Z",
+      "xml_checksum": "1E963D9C",
+      "display_name": "AedgSmallToMediumOfficeExteriorFloorConstruction",
+      "class_name": "AedgSmallToMediumOfficeExteriorFloorConstruction",
+      "description": "This measure will modify existing exterior floor (air exposed) insulation levels based on construction type and climate zone. The exterior floor construction type and climate zone should be set in the model prior to using this measure. For mass floors if an existing insulation layer can be found it will be increase or added at the inside of the floor. For steel and wood framed floors, insulation will be enhanced for an existing layer, or a new exterior layer will be added.",
+      "modeler_description": "Relevant construction types:\r\r\r\r\r\n- Mass\r\r\r\r\r\n- Steel framed\r\r\r\r\r\n- Wood framed",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-038G",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-038I",
+          "option_1": "Exterior Floors"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-038K",
+          "option_1": "This is exposed ext floor, not slab. Slab measures needs to be udpated before it is added into the workflow"
+        },
+        {
+          "name": "material_cost_insulation_increase_ip",
+          "display_name": "Increase Cost per Area of Construction Where Insulation was Improved ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-038M",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 5,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "material_cost_insulation_increase_ip",
+              "value": 0
+            }
+          ],
+          "name": "Exterior Floors",
+          "description": "This is exposed ext floor, not slab. Slab measures needs to be udpated before it is added into the workflow"
+        }
+      ],
+      "instanceId": 0.2857026530910949,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6444",
+      "descOpen": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeInteriorFinishes",
+      "name": "aedg_small_to_medium_office_interior_finishes",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeInteriorFinishes",
+      "uid": "d426daf2-995d-4c76-bec4-4b34e7ae2f38",
+      "uuid": "{d426daf2-995d-4c76-bec4-4b34e7ae2f38}",
+      "version_id": "52fd11b1-073a-4e69-8457-641590b8951d",
+      "version_uuid": "{52fd11b1-073a-4e69-8457-641590b8951d}",
+      "version_modified": "20170316T164853Z",
+      "xml_checksum": "1E963D9C",
+      "display_name": "AedgSmallToMediumOfficeInteriorFinishes",
+      "class_name": "AedgSmallToMediumOfficeInteriorFinishes",
+      "description": "This measure will adjust the visible reflectance of materials used on interior building surfaces. Different target values will be set for floors, ceilings, and furniture/interior partition surfaces.",
+      "modeler_description": "While the AEDG guide recommends unique wall reflectance targets above and below 7', the measure will use the 7' target on all interior walls. Cost was not included as part of this measure as there likely isn't a significant cost impact to lighter finishes. This measure will treat interior partition surfaces as furniture. The measure will only enhance reflectance. If a material already exceeds the target it will be left alone. Optionally you can also lower selected interior partition surfaces to 36\".",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-038O",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-038Q",
+          "option_1": "Interior Finishes"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-038S",
+          "option_1": "Option 1 Description: This measure will adjust the visible reflectance of materials used on interior building surfaces. Different target values will be set for floors, ceilings, and furniture/interior partition surfaces."
+        },
+        {
+          "name": "object",
+          "display_name": "Only Check/Alter Interior Partition Surfaces To Meet Furniture Target When They Use This Construction.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*All Interior Partition Surfaces*",
+          "choice_values": [
+            "{e0ce3521-4e53-4eca-8017-2f1c8dec2b50}"
+          ],
+          "choice_display_names": [
+            "*All Interior Partition Surfaces*"
+          ],
+          "$$hashKey": "uiGrid-038U",
+          "option_1": "*All Interior Partition Surfaces*",
+          "variable": false
+        },
+        {
+          "name": "lowerPartitions",
+          "display_name": "Lower Height of Interior Partition Surfaces?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-038W",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 6,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "object",
+              "value": "*All Interior Partition Surfaces*"
+            },
+            {
+              "name": "lowerPartitions",
+              "value": true
+            }
+          ],
+          "name": "Interior Finishes",
+          "description": "Option 1 Description: This measure will adjust the visible reflectance of materials used on interior building surfaces. Different target values will be set for floors, ceilings, and furniture/interior partition surfaces."
+        }
+      ],
+      "instanceId": 0.15774254179003533,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6445"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeEnvelopeAndEntryInfiltration",
+      "name": "aedg_small_to_medium_office_envelope_and_entry_infiltration",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeEnvelopeAndEntryInfiltration",
+      "uid": "9c977bfb-d3f8-4f61-afcf-9524edf82cb8",
+      "uuid": "{9c977bfb-d3f8-4f61-afcf-9524edf82cb8}",
+      "version_id": "d2f0e65b-1986-4337-acea-22846551dbc3",
+      "version_uuid": "{d2f0e65b-1986-4337-acea-22846551dbc3}",
+      "version_modified": "20170316T164852Z",
+      "xml_checksum": "EACB548E",
+      "display_name": "AedgSmallToMediumOfficeEnvelopeAndEntryInfiltration",
+      "class_name": "AedgSmallToMediumOfficeEnvelopeAndEntryInfiltration",
+      "description": "This measure addresses two sources of air infiltration. The first is infiltration through the building envelope. The second is infiltration due to occupants entering and leaving the building. The AEDG provides recommendations and tips on how to limit infiltration in both cases. For occupant entry vestibules may be recommended at major entries depending on the size of the building and climate zone.",
+      "modeler_description": "This measure will remove all existing infiltration objects and then add two new types of objects. Every zone will get an infiltration object that adds infiltration per area of exterior envelope. Zones in a user specified floor will have an extra infiltration object specific to occupant entry and exit to and from the building. The measure allows you to pick a baseline or low energy recommendation for envelope infiltration. Additionally there is a choice argument to model the building entry with or without vestibules. The measure will pick the recommended value by looking at the model's climate zone and size, but the user can override this recommendation.",
+      "tags": "Envelope.Infiltration",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-038Y",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-0390",
+          "option_1": "Infiltration"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-0392",
+          "option_1": "Option 1 Description: This measure addresses two sources of air infiltration. The first is infiltration through the building envelope. The second is infiltration due to occupants entering and leaving the building. The AEDG provides recommendations and tips on how to limit infiltration in both cases. For occupant entry vestibules may be recommended at major entries depending on the size of the building and climate zone."
+        },
+        {
+          "name": "infiltrationEnvelope",
+          "display_name": "Envelope Infiltration Level (Not including Occupant Entry Infiltration)",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "AEDG Small To Medium Office - Target",
+          "choice_values": [
+            "AEDG Small To Medium Office - Baseline",
+            "AEDG Small To Medium Office - Target"
+          ],
+          "choice_display_names": [
+            "AEDG Small To Medium Office - Baseline",
+            "AEDG Small To Medium Office - Target"
+          ],
+          "$$hashKey": "uiGrid-0394",
+          "option_1": "AEDG Small To Medium Office - Target",
+          "variable": false
+        },
+        {
+          "name": "infiltrationOccupant",
+          "display_name": "Occupant Entry Infiltration Modeling Approach",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Model Occupant Entry With a Vestibule if Recommended by Small to Medium Office AEDG",
+          "choice_values": [
+            "Model Occupant Entry With a Vestibule if Recommended by Small to Medium Office AEDG",
+            "Don't model Occupant Entry Infiltration With a Vestibule",
+            "Model Occupant Entry With a Vestibule"
+          ],
+          "choice_display_names": [
+            "Model Occupant Entry With a Vestibule if Recommended by Small to Medium Office AEDG",
+            "Don't model Occupant Entry Infiltration With a Vestibule",
+            "Model Occupant Entry With a Vestibule"
+          ],
+          "$$hashKey": "uiGrid-0396",
+          "option_1": "Model Occupant Entry With a Vestibule if Recommended by Small to Medium Office AEDG",
+          "variable": false
+        },
+        {
+          "name": "story",
+          "display_name": "Apply Occupant Entry Infiltration to ThermalZones on this floor.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "choice_values": [
+            "{c1b51687-9ee6-4472-abab-a7a980f59cef}",
+            "{cdca4535-621a-4277-a279-e1bc8ab9f0fe}",
+            "{f779935f-b2dd-424a-955c-92494c02ca31}",
+            "{34d53770-16b4-45b2-b292-98a27eb13565}",
+            "{f779935f-b2dd-424a-955c-92494c02ca31}",
+            "{bcdcd199-28c5-4bcf-9e65-546e0e20c471}"
+          ],
+          "choice_display_names": [
+            "Building Story 1",
+            "Building Story 3",
+            "Building Story 5",
+            "Building Story 4",
+            "Building Story 5",
+            "Building Story 6"
+          ],
+          "default_value": "Building Story 1",
+          "$$hashKey": "uiGrid-0398",
+          "option_1": "Building Story 1",
+          "variable": false
+        },
+        {
+          "name": "num_entries",
+          "display_name": "Number of Primary Occupant Entry Points on Selected Floor.",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 4,
+          "$$hashKey": "uiGrid-039A",
+          "option_1": 4,
+          "variable": false
+        },
+        {
+          "name": "doorOpeningEventsPerPerson",
+          "display_name": "Number of Door Opening Events Per Person Per Day (2 is expected minimum for one entry and exit).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 3,
+          "$$hashKey": "uiGrid-039C",
+          "option_1": 3,
+          "variable": false
+        },
+        {
+          "name": "pressureDifferenceAcrossDoor_pa",
+          "display_name": "Pressure Difference Across Door At Occupant Entries (pa).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 4,
+          "$$hashKey": "uiGrid-039E",
+          "option_1": 4,
+          "variable": false
+        },
+        {
+          "name": "costTotalEnvelopeInfiltration",
+          "display_name": "Total cost for all Envelope Improvements ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-039G",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "costTotalEntryInfiltration",
+          "display_name": "Total cost for all Occupant Entry Improvements ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-039I",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 7,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "infiltrationEnvelope",
+              "value": "AEDG Small To Medium Office - Target"
+            },
+            {
+              "name": "infiltrationOccupant",
+              "value": "Model Occupant Entry With a Vestibule if Recommended by Small to Medium Office AEDG"
+            },
+            {
+              "name": "story",
+              "value": "Building Story 1"
+            },
+            {
+              "name": "num_entries",
+              "value": 4
+            },
+            {
+              "name": "doorOpeningEventsPerPerson",
+              "value": 3
+            },
+            {
+              "name": "pressureDifferenceAcrossDoor_pa",
+              "value": 4
+            },
+            {
+              "name": "costTotalEnvelopeInfiltration",
+              "value": 0
+            },
+            {
+              "name": "costTotalEntryInfiltration",
+              "value": 0
+            }
+          ],
+          "name": "Infiltration",
+          "description": "Option 1 Description: This measure addresses two sources of air infiltration. The first is infiltration through the building envelope. The second is infiltration due to occupants entering and leaving the building. The AEDG provides recommendations and tips on how to limit infiltration in both cases. For occupant entry vestibules may be recommended at major entries depending on the size of the building and climate zone."
+        }
+      ],
+      "instanceId": 0.7406158288009004,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6446"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeElectricEquipment",
+      "name": "aedg_small_to_medium_office_electric_equipment",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeElectricEquipment",
+      "uid": "2b50c112-4ee3-42b2-8c7f-d76d752cd0b4",
+      "uuid": "{2b50c112-4ee3-42b2-8c7f-d76d752cd0b4}",
+      "version_id": "3b2a5100-f16c-45fb-8765-61a8af074bab",
+      "version_uuid": "{3b2a5100-f16c-45fb-8765-61a8af074bab}",
+      "version_modified": "20170316T164852Z",
+      "xml_checksum": "126F1C43",
+      "display_name": "AedgSmallToMediumOfficeElectricEquipment",
+      "class_name": "AedgSmallToMediumOfficeElectricEquipment",
+      "description": "This measure removes all existing electric equipment from spaces recognized as office building space types. New electric objects will be added based on the 50% Small to Medium Office AEDG recommendations.",
+      "modeler_description": "Equipment in un-recognized spaces will be left alone. This measure will attempt to retain schedules from the initial model. If the initial model contained multiple electric equipment objects associated with multiple schedules, then one of those schedules will be picked for the new electric equipment.",
+      "tags": "Equipment.Electric Equipment",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-039K",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-039M",
+          "option_1": "Electric Equipment"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-039O",
+          "option_1": "Option 1 Description: This measure removes all existing electric equipment from spaces recognized as office building space types. New electric objects will be added based on the 50% Small to Medium Office AEDG recommendations."
+        },
+        {
+          "name": "material_cost_ip",
+          "display_name": "Material and Installation Costs for Electric Equipment per Floor Area ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-039Q",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 8,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "material_cost_ip",
+              "value": 0
+            }
+          ],
+          "name": "Electric Equipment",
+          "description": "Option 1 Description: This measure removes all existing electric equipment from spaces recognized as office building space types. New electric objects will be added based on the 50% Small to Medium Office AEDG recommendations."
+        }
+      ],
+      "instanceId": 0.38510449823788817,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6447"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeElectricEquipmentControls",
+      "name": "aedg_small_to_medium_office_electric_equipment_controls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeElectricEquipmentControls",
+      "uid": "b297ea8a-d21f-416b-8b41-3dfc99b430cf",
+      "uuid": "{b297ea8a-d21f-416b-8b41-3dfc99b430cf}",
+      "version_id": "bd9ccbe3-25d9-45f9-ae29-107377057b6b",
+      "version_uuid": "{bd9ccbe3-25d9-45f9-ae29-107377057b6b}",
+      "version_modified": "20170316T164852Z",
+      "xml_checksum": "1F21832E",
+      "display_name": "AedgSmallToMediumOfficeElectricEquipmentControls",
+      "class_name": "AedgSmallToMediumOfficeElectricEquipmentControls",
+      "description": "This measure reduces the values associated with electric equipment schedules to simulate reductions due to equipment controls throughout the building. This includes occupancy based outlets or adapters, as well as network or timer based controls.",
+      "modeler_description": "This measure is intended to be used on schedules that have not previously been adjusted for advanced controls. If you run this measure multiple times you will end up with more schedule reduction than is appropriate. The schedules used in the OpenStudio templates have not been adjusted for advanced controls, so it is appropriate to run them through this measure to simulation their impact on energy use. This measure applies a reduction of 0.1 to schedule values that are below 0.5 start with, and a reduction of 0.05 to values that are at or above 0.5 to start with. As a result the lower the initial fractional value the higher the percentage reduction it will receive. This results on more a higher percentage reduction in un-occupied hours vs. occupied hours. Values won't be lowered to a value below 0.1. Values already below this level will keep their original value.",
+      "tags": "Equipment.Equipment Controls",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-039S",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-039U",
+          "option_1": "Electric Equipment Controls"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-039W",
+          "option_1": "Option 1 Description: This measure reduces the values associated with electric equipment schedules to simulate reductions due to equipment controls throughout the building. This includes occupancy based outlets or adapters, as well as network or timer based controls."
+        },
+        {
+          "name": "costTotal",
+          "display_name": "Total cost for all Electric Equipment Controls in the Building ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-039Y",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 9,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "costTotal",
+              "value": 0
+            }
+          ],
+          "name": "Electric Equipment Controls",
+          "description": "Option 1 Description: This measure reduces the values associated with electric equipment schedules to simulate reductions due to equipment controls throughout the building. This includes occupancy based outlets or adapters, as well as network or timer based controls."
+        }
+      ],
+      "instanceId": 0.7629239683101472,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6448"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeInteriorLighting",
+      "name": "aedg_small_to_medium_office_interior_lighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeInteriorLighting",
+      "uid": "e1e16b8f-5cbf-447c-9f76-7fe69b3cf01e",
+      "uuid": "{e1e16b8f-5cbf-447c-9f76-7fe69b3cf01e}",
+      "version_id": "21ff1038-f193-44b7-916f-92bb68c6ab56",
+      "version_uuid": "{21ff1038-f193-44b7-916f-92bb68c6ab56}",
+      "version_modified": "20170316T164853Z",
+      "xml_checksum": "2DDDDD82",
+      "display_name": "AedgSmallToMediumOfficeInteriorLighting",
+      "class_name": "AedgSmallToMediumOfficeInteriorLighting",
+      "description": "This measure removes all existing lighting objects from spaces recognized as primary or secondary school space types. New lighting will be added based on the 50% Small to Medium Office AEDG recommendations.",
+      "modeler_description": "Lighting in un-recognized spaces will be left alone. This measure will attempt to retain schedules from the initial model. If the initial model contained multiple lights associated with multiple schedules, then one of those schedules will be picked for the new lights.",
+      "tags": "Electric Lighting.Lighting Equipment",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03A0",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03A2",
+          "option_1": "Interior Lighting"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03A4",
+          "option_1": "Option 1 Description: This measure removes all existing lighting objects from spaces recognized as primary or secondary school space types. New lighting will be added based on the 50% Small to Medium Office AEDG recommendations."
+        },
+        {
+          "name": "material_cost_ip",
+          "display_name": "Material and Installation Costs for Lights per Floor Area ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03A6",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 10,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "material_cost_ip",
+              "value": 0
+            }
+          ],
+          "name": "Interior Lighting",
+          "description": "Option 1 Description: This measure removes all existing lighting objects from spaces recognized as primary or secondary school space types. New lighting will be added based on the 50% Small to Medium Office AEDG recommendations."
+        }
+      ],
+      "instanceId": 0.7201064913021791,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6449"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeInteriorLightingControls",
+      "name": "aedg_small_to_medium_office_interior_lighting_controls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeInteriorLightingControls",
+      "uid": "57ba8820-6394-4c76-86c3-cc045a8a2b26",
+      "uuid": "{57ba8820-6394-4c76-86c3-cc045a8a2b26}",
+      "version_id": "d744ec69-969a-48dc-93fb-b6226fe6248f",
+      "version_uuid": "{d744ec69-969a-48dc-93fb-b6226fe6248f}",
+      "version_modified": "20170316T164853Z",
+      "xml_checksum": "9B7BB4D8",
+      "display_name": "AedgSmallToMediumOfficeInteriorLightingControls",
+      "class_name": "AedgSmallToMediumOfficeInteriorLightingControls",
+      "description": "This measure reduces the values associated with lighting schedules to simulate reductions due to vacancy sensors throughout the building.",
+      "modeler_description": "This measure is intended to be used on schedules that have not previously been adjusted for advanced controls. If you run this measure multiple times you will end up with more schedule reduction than is appropriate. The schedules used in the OpenStudio templates have not been adjusted for vacancy controls, so it is appropriate to run them through this measure to simulation their impact on energy use. This measure applies a percentage reduction to the schedules which varies by space types, with many common spaces types seeing no reduction and some space types seeing up to a 15% reduction.",
+      "tags": "Electric Lighting.Electric Lighting Controls",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03A8",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03AA",
+          "option_1": "Interior Lighting Controls"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03AC",
+          "option_1": "Option 1 Description: This measure reduces the values associated with lighting schedules to simulate reductions due to vacancy sensors throughout the building."
+        },
+        {
+          "name": "costTotal",
+          "display_name": "Total cost for all Lighting Controls in the Building ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03AE",
+          "option_1": 0,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 11,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "costTotal",
+              "value": 0
+            }
+          ],
+          "name": "Interior Lighting Controls",
+          "description": "Option 1 Description: This measure reduces the values associated with lighting schedules to simulate reductions due to vacancy sensors throughout the building."
+        }
+      ],
+      "instanceId": 0.07902393953332831,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6450"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorLighting",
+      "name": "aedg_small_to_medium_office_exterior_lighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorLighting",
+      "uid": "90211a9c-de3f-458d-85c1-b40666b55f06",
+      "uuid": "{90211a9c-de3f-458d-85c1-b40666b55f06}",
+      "version_id": "778ba4e8-810f-4b59-82e7-d61d7fda0708",
+      "version_uuid": "{778ba4e8-810f-4b59-82e7-d61d7fda0708}",
+      "version_modified": "20170316T164852Z",
+      "xml_checksum": "2DDDDD82",
+      "display_name": "AedgSmallToMediumOfficeExteriorLighting",
+      "class_name": "AedgSmallToMediumOfficeExteriorLighting",
+      "description": "This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. ",
+      "modeler_description": "Provide an area or dimensions as input for each of the exterior lighting categories described below. \r\r\r\r\r\r\n- Facade and landscape lighting\r\r\r\r\r\r\n- Parking lots and drives\r\r\r\r\r\r\n- Walkways, plaza, and special features areas\r\r\r\r\r\r\n- All other exterior lighting\r\r\r\r\r\r\n    \r\r\r\r\r\r\nLighting Zones:\r\r\r\r\r\r\n0 - Undeveloped areas within national parks, state parks, forest land, rural areas, and other undeveloped areas as defined by the authority having jurisdiction (no lighting recommendations)\r\r\r\r\r\r\n1 - Developed areas of national parks, state parks, forest land, and rural areas (no lighting recommendations)\r\r\r\r\r\r\n2 - Areas predominantly consisting of residential zoning, neighborhood business districts, light industrial with limited nighttime use and residential mixed use areas\r\r\r\r\r\r\n3 - All other areas\r\r\r\r\r\r\n4 - High activity commercial districts in major metropolitan areas as designated by the local jurisdiction",
+      "tags": "Electric Lighting.Lighting Equipment",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03AG",
+          "option_1": "option_1",
+          "option_2": "option_2"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03AI",
+          "option_1": "Exterior Lighting - Small Office",
+          "option_2": "Exterior Lighting - Medium Office"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03AK",
+          "option_1": "Option 1 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. ",
+          "option_2": "Option 2 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
+        },
+        {
+          "name": "target",
+          "display_name": "Exterior Lighting Target Performance",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "AEDG SmMdOff - Target",
+          "choice_values": [
+            "AEDG SmMdOff - Baseline",
+            "AEDG SmMdOff - Target"
+          ],
+          "choice_display_names": [
+            "AEDG SmMdOff - Baseline",
+            "AEDG SmMdOff - Target"
+          ],
+          "$$hashKey": "uiGrid-03AM",
+          "option_1": "AEDG SmMdOff - Target",
+          "variable": false,
+          "option_2": "AEDG SmMdOff - Target"
+        },
+        {
+          "name": "lightingZone",
+          "display_name": "Exterior Lighting Zone",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "2 - Residential, Mixed Use",
+          "choice_values": [
+            "2 - Residential, Mixed Use",
+            "3 - All Other Areas",
+            "4 - High Activity Commercial"
+          ],
+          "choice_display_names": [
+            "2 - Residential, Mixed Use",
+            "3 - All Other Areas",
+            "4 - High Activity Commercial"
+          ],
+          "$$hashKey": "uiGrid-03AO",
+          "option_1": "2 - Residential, Mixed Use",
+          "variable": false,
+          "option_2": "2 - Residential, Mixed Use"
+        },
+        {
+          "name": "facadeLandscapeLighting",
+          "display_name": "Wall Coverage Area for Decorative Facade Lighting (ft^2)",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03AQ",
+          "option_1": 10400,
+          "variable": true,
+          "option_2": 21294,
+          "units": "",
+          "minimum": 10400,
+          "maximum": 21294,
+          "mode": 10400
+        },
+        {
+          "name": "parkingDrivesLighting",
+          "display_name": "Ground Coverage Area for Parking Lots and Drives Lighting (ft^2)",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03AS",
+          "option_1": 32642,
+          "variable": true,
+          "option_2": 87480,
+          "units": "",
+          "minimum": 32642,
+          "maximum": 87480,
+          "mode": 32642
+        },
+        {
+          "name": "walkwayPlazaSpecialLighting",
+          "display_name": "Gound Coverage Area for Walkway and Plaza Lighting (ft^2)",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03AU",
+          "option_1": 1632,
+          "variable": true,
+          "option_2": 4374,
+          "units": "",
+          "minimum": 1632,
+          "maximum": 4374,
+          "mode": 1632
+        },
+        {
+          "name": "costTotalExteriorLights",
+          "display_name": "Total cost for all Exterior Lighting ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03AW",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 12,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "target",
+              "value": "AEDG SmMdOff - Target"
+            },
+            {
+              "name": "lightingZone",
+              "value": "2 - Residential, Mixed Use"
+            },
+            {
+              "name": "facadeLandscapeLighting",
+              "value": 10400
+            },
+            {
+              "name": "parkingDrivesLighting",
+              "value": 32642
+            },
+            {
+              "name": "walkwayPlazaSpecialLighting",
+              "value": 1632
+            },
+            {
+              "name": "costTotalExteriorLights",
+              "value": 0
+            }
+          ],
+          "name": "Exterior Lighting - Small Office",
+          "description": "Option 1 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
+        },
+        {
+          "id": "option_2",
+          "arguments": [
+            {
+              "name": "target",
+              "value": "AEDG SmMdOff - Target"
+            },
+            {
+              "name": "lightingZone",
+              "value": "2 - Residential, Mixed Use"
+            },
+            {
+              "name": "facadeLandscapeLighting",
+              "value": 21294
+            },
+            {
+              "name": "parkingDrivesLighting",
+              "value": 87480
+            },
+            {
+              "name": "walkwayPlazaSpecialLighting",
+              "value": 4374
+            },
+            {
+              "name": "costTotalExteriorLights",
+              "value": 0
+            }
+          ],
+          "name": "Exterior Lighting - Medium Office",
+          "description": "Option 2 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
+        }
+      ],
+      "instanceId": 0.10911622518351094,
+      "numberOfOptions": 2,
+      "$$hashKey": "object:6451"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacAshpDoas",
+      "name": "aedg_office_hvac_ashp_doas",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacAshpDoas",
+      "uid": "18c59c3c-d994-46a9-b3eb-39b983b93ef8",
+      "uuid": "{18c59c3c-d994-46a9-b3eb-39b983b93ef8}",
+      "version_id": "7a89baa8-c250-481d-8a29-e0fed2cac10a",
+      "version_uuid": "{7a89baa8-c250-481d-8a29-e0fed2cac10a}",
+      "version_modified": "20170316T164851Z",
+      "xml_checksum": "4435983D",
+      "display_name": "AedgOfficeHvacAshpDoas",
+      "class_name": "AedgOfficeHvacAshpDoas",
+      "description": "Measure replaces existing HVAC system (if any) with an Air Source Heat Pump (ASHP) with DOAS HVAC system (one DOAS per floor).  The ASHP with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG.",
+      "modeler_description": "Airloops are dedicated to ventilation (DOAS) and have constant speed fan operation, gas furnace heating, and single speed DX cooling.  Conditioning is provided at the zone level with air sourced heat pumps with cycling fans.",
+      "tags": "HVAC.Whole System",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03B8",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03BA",
+          "option_1": "ASHP DOAS"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03BC",
+          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with an Air Source Heat Pump (ASHP) with DOAS HVAC system (one DOAS per floor).  The ASHP with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        },
+        {
+          "name": "ceilingReturnPlenumSpaceType",
+          "display_name": "This space type should be part of a ceiling return air plenum.",
+          "description": "",
+          "type": "Choice",
+          "required": false,
+          "model_dependent": false,
+          "choice_values": [
+            "{8023b71b-0b59-4f01-8cee-d1818f88351c}",
+            "{6b496296-a197-4384-abc1-39e251c83f0f}",
+            "{3756b9ba-a3a0-4cd6-a252-087615a2fb88}",
+            "{c1b16e52-5a06-44ec-b925-73249f3c4995}",
+            "{ac513d4d-8801-4c4f-9cdd-b70a96059894}",
+            "{97e0e842-c70a-4628-bd6c-104c87a26564}",
+            "{c3929556-ccfc-4afe-99db-cb5a7f252dc7}",
+            "{d91c152a-8a6e-4bc5-986b-4848af322c71}",
+            "{6ba139c4-3279-4db4-9792-693415927fb6}",
+            "{444ab6c1-72c6-4538-9fad-9ed4c1ccd0f9}",
+            "{edc6cf76-7896-4a3e-af92-f1a4528d6dd4}"
+          ],
+          "choice_display_names": [
+            "DOE Ref 2004 - Office - BreakRoom",
+            "DOE Ref 2004 - Office - Conference",
+            "DOE Ref 2004 - Office - Corridor",
+            "DOE Ref 2004 - Office - Elec/MechRoom",
+            "DOE Ref 2004 - Office - OpenOffice",
+            "DOE Ref 2004 - Office - PrintRoom",
+            "DOE Ref 2004 - Office - Restroom",
+            "DOE Ref 2004 - Office - Lobby",
+            "Plenum",
+            "DOE Ref 2004 - Office - ClosedOffice",
+            "DOE Ref 2004 - Office - Lobby"
+          ],
+          "$$hashKey": "uiGrid-03BE",
+          "option_1": "",
+          "variable": false
+        },
+        {
+          "name": "costTotalHVACSystem",
+          "display_name": "Total Cost for HVAC System ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03BG",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "remake_schedules",
+          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03BI",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 13,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "ceilingReturnPlenumSpaceType",
+              "value": ""
+            },
+            {
+              "name": "costTotalHVACSystem",
+              "value": 0
+            },
+            {
+              "name": "remake_schedules",
+              "value": true
+            }
+          ],
+          "name": "ASHP DOAS",
+          "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with an Air Source Heat Pump (ASHP) with DOAS HVAC system (one DOAS per floor).  The ASHP with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        }
+      ],
+      "instanceId": 0.8013202261741605,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6453"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacFanCoilDoas",
+      "name": "aedg_office_hvac_fan_coil_doas",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacFanCoilDoas",
+      "uid": "298c5638-bd9d-4d6a-9c8a-e0514df4db4a",
+      "uuid": "{298c5638-bd9d-4d6a-9c8a-e0514df4db4a}",
+      "version_id": "84fa9568-4d68-4c22-9679-f9fc19a974ea",
+      "version_uuid": "{84fa9568-4d68-4c22-9679-f9fc19a974ea}",
+      "version_modified": "20170316T164851Z",
+      "xml_checksum": "4435983D",
+      "display_name": "AedgOfficeHvacFanCoilDoas",
+      "class_name": "AedgOfficeHvacFanCoilDoas",
+      "description": "Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC system (one DOAS per floor).  The fan coil with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG.",
+      "modeler_description": "Airloops are dedicated to ventilation (DOAS) and have constant speed fan operation and hot and chilled water coils.  Conditioning is provided at the zone level with four pipe fan coils with cycling fan operation.  Chiller for DOAS and fan coils is air-cooled.",
+      "tags": "HVAC.Whole System",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03BK",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03BM",
+          "option_1": "Fan Coil DOAS"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03BO",
+          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC system (one DOAS per floor).  The fan coil with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        },
+        {
+          "name": "ceilingReturnPlenumSpaceType",
+          "display_name": "This space type should be part of a ceiling return air plenum.",
+          "description": "",
+          "type": "Choice",
+          "required": false,
+          "model_dependent": false,
+          "choice_values": [
+            "{8023b71b-0b59-4f01-8cee-d1818f88351c}",
+            "{6b496296-a197-4384-abc1-39e251c83f0f}",
+            "{3756b9ba-a3a0-4cd6-a252-087615a2fb88}",
+            "{c1b16e52-5a06-44ec-b925-73249f3c4995}",
+            "{ac513d4d-8801-4c4f-9cdd-b70a96059894}",
+            "{97e0e842-c70a-4628-bd6c-104c87a26564}",
+            "{c3929556-ccfc-4afe-99db-cb5a7f252dc7}",
+            "{d91c152a-8a6e-4bc5-986b-4848af322c71}",
+            "{6ba139c4-3279-4db4-9792-693415927fb6}",
+            "{444ab6c1-72c6-4538-9fad-9ed4c1ccd0f9}",
+            "{edc6cf76-7896-4a3e-af92-f1a4528d6dd4}"
+          ],
+          "choice_display_names": [
+            "DOE Ref 2004 - Office - BreakRoom",
+            "DOE Ref 2004 - Office - Conference",
+            "DOE Ref 2004 - Office - Corridor",
+            "DOE Ref 2004 - Office - Elec/MechRoom",
+            "DOE Ref 2004 - Office - OpenOffice",
+            "DOE Ref 2004 - Office - PrintRoom",
+            "DOE Ref 2004 - Office - Restroom",
+            "DOE Ref 2004 - Office - Lobby",
+            "Plenum",
+            "DOE Ref 2004 - Office - ClosedOffice",
+            "DOE Ref 2004 - Office - Lobby"
+          ],
+          "$$hashKey": "uiGrid-03BQ",
+          "option_1": "",
+          "variable": false
+        },
+        {
+          "name": "costTotalHVACSystem",
+          "display_name": "Total Cost for HVAC System ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03BS",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "remake_schedules",
+          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03BU",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 14,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "ceilingReturnPlenumSpaceType",
+              "value": ""
+            },
+            {
+              "name": "costTotalHVACSystem",
+              "value": 0
+            },
+            {
+              "name": "remake_schedules",
+              "value": true
+            }
+          ],
+          "name": "Fan Coil DOAS",
+          "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC system (one DOAS per floor).  The fan coil with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        }
+      ],
+      "instanceId": 0.9415099945410244,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6454"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacRadiantDoas",
+      "name": "aedg_office_hvac_radiant_doas",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacRadiantDoas",
+      "uid": "3d7edb7b-aeff-4a59-87f2-138766b48c11",
+      "uuid": "{3d7edb7b-aeff-4a59-87f2-138766b48c11}",
+      "version_id": "05e4a7a4-a354-462c-9721-866579d75e74",
+      "version_uuid": "{05e4a7a4-a354-462c-9721-866579d75e74}",
+      "version_modified": "20170316T164851Z",
+      "xml_checksum": "4435983D",
+      "display_name": "AedgOfficeHvacRadiantDoas",
+      "class_name": "AedgOfficeHvacRadiantDoas",
+      "description": "Measure replaces existing HVAC system (if any) with a Radiant Heating and Cooling with DOAS HVAC system (one DOAS per floor).  The radiant with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG.",
+      "modeler_description": "Airloops are dedicated to ventilation (DOAS) and have constant speed fan operation, hot water coil heating, and single speed DX cooling.  Conditioning is provided at the zone level with low temperature radiant, high thermal mass floor slabs.  Chiller for DOAS and radiant cooling is air-cooled.",
+      "tags": "HVAC.Whole System",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03BW",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03BY",
+          "option_1": "Radiant DOAS"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03C0",
+          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Radiant Heating and Cooling with DOAS HVAC system (one DOAS per floor).  The radiant with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        },
+        {
+          "name": "ceilingReturnPlenumSpaceType",
+          "display_name": "This space type should be part of a ceiling return air plenum.",
+          "description": "",
+          "type": "Choice",
+          "required": false,
+          "model_dependent": false,
+          "choice_values": [
+            "{8023b71b-0b59-4f01-8cee-d1818f88351c}",
+            "{6b496296-a197-4384-abc1-39e251c83f0f}",
+            "{3756b9ba-a3a0-4cd6-a252-087615a2fb88}",
+            "{c1b16e52-5a06-44ec-b925-73249f3c4995}",
+            "{ac513d4d-8801-4c4f-9cdd-b70a96059894}",
+            "{97e0e842-c70a-4628-bd6c-104c87a26564}",
+            "{c3929556-ccfc-4afe-99db-cb5a7f252dc7}",
+            "{d91c152a-8a6e-4bc5-986b-4848af322c71}",
+            "{6ba139c4-3279-4db4-9792-693415927fb6}",
+            "{444ab6c1-72c6-4538-9fad-9ed4c1ccd0f9}",
+            "{edc6cf76-7896-4a3e-af92-f1a4528d6dd4}"
+          ],
+          "choice_display_names": [
+            "DOE Ref 2004 - Office - BreakRoom",
+            "DOE Ref 2004 - Office - Conference",
+            "DOE Ref 2004 - Office - Corridor",
+            "DOE Ref 2004 - Office - Elec/MechRoom",
+            "DOE Ref 2004 - Office - OpenOffice",
+            "DOE Ref 2004 - Office - PrintRoom",
+            "DOE Ref 2004 - Office - Restroom",
+            "DOE Ref 2004 - Office - Lobby",
+            "Plenum",
+            "DOE Ref 2004 - Office - ClosedOffice",
+            "DOE Ref 2004 - Office - Lobby"
+          ],
+          "$$hashKey": "uiGrid-03C2",
+          "option_1": "",
+          "variable": false
+        },
+        {
+          "name": "costTotalHVACSystem",
+          "display_name": "Total Cost for HVAC System ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03C4",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "remake_schedules",
+          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03C6",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 15,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "ceilingReturnPlenumSpaceType",
+              "value": ""
+            },
+            {
+              "name": "costTotalHVACSystem",
+              "value": 0
+            },
+            {
+              "name": "remake_schedules",
+              "value": true
+            }
+          ],
+          "name": "Radiant DOAS",
+          "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Radiant Heating and Cooling with DOAS HVAC system (one DOAS per floor).  The radiant with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        }
+      ],
+      "instanceId": 0.23356819755968128,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6455"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacVavChW",
+      "name": "aedg_office_hvac_vav_ch_w",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacVavChW",
+      "uid": "28e4e4fb-a10a-4f85-82f9-c4ad2dd3cf12",
+      "uuid": "{28e4e4fb-a10a-4f85-82f9-c4ad2dd3cf12}",
+      "version_id": "f249b00b-16ff-4f5b-a611-4f42f238c93f",
+      "version_uuid": "{f249b00b-16ff-4f5b-a611-4f42f238c93f}",
+      "version_modified": "20170316T164851Z",
+      "xml_checksum": "4435983D",
+      "display_name": "AedgOfficeHvacVavChW",
+      "class_name": "AedgOfficeHvacVavChW",
+      "description": "Measure replaces existing HVAC system (if any) with a high efficiency multizone variable air volume (VAV) HVAC system (one system per floor).  The multizone VAV system (centralized cooling with zone level heating) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG.",
+      "modeler_description": "Airloops are dedicated to the multizone VAV cooling system and have variable speed fan operation, hot water coil heating, and chilled water coil cooling.  The cold deck has outdoor air reset on the supply air temperature.  Heating is provided at the zone level with hot water baseboard heaters.  The chiller for the VAV is air-cooled.",
+      "tags": "HVAC.Whole System",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03C8",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03CA",
+          "option_1": "VAV Chilled Water"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03CC",
+          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with a high efficiency multizone variable air volume (VAV) HVAC system (one system per floor).  The multizone VAV system (centralized cooling with zone level heating) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        },
+        {
+          "name": "ceilingReturnPlenumSpaceType",
+          "display_name": "This space type should be part of a ceiling return air plenum.",
+          "description": "",
+          "type": "Choice",
+          "required": false,
+          "model_dependent": false,
+          "choice_values": [
+            "{8023b71b-0b59-4f01-8cee-d1818f88351c}",
+            "{6b496296-a197-4384-abc1-39e251c83f0f}",
+            "{3756b9ba-a3a0-4cd6-a252-087615a2fb88}",
+            "{c1b16e52-5a06-44ec-b925-73249f3c4995}",
+            "{ac513d4d-8801-4c4f-9cdd-b70a96059894}",
+            "{97e0e842-c70a-4628-bd6c-104c87a26564}",
+            "{c3929556-ccfc-4afe-99db-cb5a7f252dc7}",
+            "{d91c152a-8a6e-4bc5-986b-4848af322c71}",
+            "{6ba139c4-3279-4db4-9792-693415927fb6}",
+            "{444ab6c1-72c6-4538-9fad-9ed4c1ccd0f9}",
+            "{edc6cf76-7896-4a3e-af92-f1a4528d6dd4}"
+          ],
+          "choice_display_names": [
+            "DOE Ref 2004 - Office - BreakRoom",
+            "DOE Ref 2004 - Office - Conference",
+            "DOE Ref 2004 - Office - Corridor",
+            "DOE Ref 2004 - Office - Elec/MechRoom",
+            "DOE Ref 2004 - Office - OpenOffice",
+            "DOE Ref 2004 - Office - PrintRoom",
+            "DOE Ref 2004 - Office - Restroom",
+            "DOE Ref 2004 - Office - Lobby",
+            "Plenum",
+            "DOE Ref 2004 - Office - ClosedOffice",
+            "DOE Ref 2004 - Office - Lobby"
+          ],
+          "$$hashKey": "uiGrid-03CE",
+          "option_1": "",
+          "variable": false
+        },
+        {
+          "name": "costTotalHVACSystem",
+          "display_name": "Total Cost for HVAC System ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03CG",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "remake_schedules",
+          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03CI",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 16,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "ceilingReturnPlenumSpaceType",
+              "value": ""
+            },
+            {
+              "name": "costTotalHVACSystem",
+              "value": 0
+            },
+            {
+              "name": "remake_schedules",
+              "value": true
+            }
+          ],
+          "name": "VAV Chilled Water",
+          "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a high efficiency multizone variable air volume (VAV) HVAC system (one system per floor).  The multizone VAV system (centralized cooling with zone level heating) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        }
+      ],
+      "instanceId": 0.4028780368006659,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6456"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacVavDx",
+      "name": "aedg_office_hvac_vav_dx",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacVavDx",
+      "uid": "ffdf05ce-34c2-498e-9ca8-4ef8fe3a9af5",
+      "uuid": "{ffdf05ce-34c2-498e-9ca8-4ef8fe3a9af5}",
+      "version_id": "d45a8c2c-bbc7-4a5d-be57-c9b6535367d9",
+      "version_uuid": "{d45a8c2c-bbc7-4a5d-be57-c9b6535367d9}",
+      "version_modified": "20170316T164851Z",
+      "xml_checksum": "4435983D",
+      "display_name": "AedgOfficeHvacVavDx",
+      "class_name": "AedgOfficeHvacVavDx",
+      "description": "Measure replaces existing HVAC system (if any) with a high efficiency multizone variable air volume (VAV) HVAC system (one system per floor).  The multizone VAV system (centralized cooling with zone level heating) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG.",
+      "modeler_description": "Airloops are dedicated to the multizone VAV cooling system and have variable speed fan operation, hot water coil heating, and two speed DX cooling.  The cold deck has outdoor air reset on the supply air temperature.  Heating is provided at the zone level with hot water baseboard heaters.",
+      "tags": "HVAC.Whole System",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03CK",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03CM",
+          "option_1": "VAV DX"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03CO",
+          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with a high efficiency multizone variable air volume (VAV) HVAC system (one system per floor).  The multizone VAV system (centralized cooling with zone level heating) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        },
+        {
+          "name": "ceilingReturnPlenumSpaceType",
+          "display_name": "This space type should be part of a ceiling return air plenum.",
+          "description": "",
+          "type": "Choice",
+          "required": false,
+          "model_dependent": false,
+          "choice_values": [
+            "{8023b71b-0b59-4f01-8cee-d1818f88351c}",
+            "{6b496296-a197-4384-abc1-39e251c83f0f}",
+            "{3756b9ba-a3a0-4cd6-a252-087615a2fb88}",
+            "{c1b16e52-5a06-44ec-b925-73249f3c4995}",
+            "{ac513d4d-8801-4c4f-9cdd-b70a96059894}",
+            "{97e0e842-c70a-4628-bd6c-104c87a26564}",
+            "{c3929556-ccfc-4afe-99db-cb5a7f252dc7}",
+            "{d91c152a-8a6e-4bc5-986b-4848af322c71}",
+            "{6ba139c4-3279-4db4-9792-693415927fb6}",
+            "{444ab6c1-72c6-4538-9fad-9ed4c1ccd0f9}",
+            "{edc6cf76-7896-4a3e-af92-f1a4528d6dd4}"
+          ],
+          "choice_display_names": [
+            "DOE Ref 2004 - Office - BreakRoom",
+            "DOE Ref 2004 - Office - Conference",
+            "DOE Ref 2004 - Office - Corridor",
+            "DOE Ref 2004 - Office - Elec/MechRoom",
+            "DOE Ref 2004 - Office - OpenOffice",
+            "DOE Ref 2004 - Office - PrintRoom",
+            "DOE Ref 2004 - Office - Restroom",
+            "DOE Ref 2004 - Office - Lobby",
+            "Plenum",
+            "DOE Ref 2004 - Office - ClosedOffice",
+            "DOE Ref 2004 - Office - Lobby"
+          ],
+          "$$hashKey": "uiGrid-03CQ",
+          "option_1": "",
+          "variable": false
+        },
+        {
+          "name": "costTotalHVACSystem",
+          "display_name": "Total Cost for HVAC System ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03CS",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "remake_schedules",
+          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03CU",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 17,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "ceilingReturnPlenumSpaceType",
+              "value": ""
+            },
+            {
+              "name": "costTotalHVACSystem",
+              "value": 0
+            },
+            {
+              "name": "remake_schedules",
+              "value": true
+            }
+          ],
+          "name": "VAV DX",
+          "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a high efficiency multizone variable air volume (VAV) HVAC system (one system per floor).  The multizone VAV system (centralized cooling with zone level heating) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        }
+      ],
+      "instanceId": 0.7851937566600511,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6457"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacWshpDoas",
+      "name": "aedg_office_hvac_wshp_doas",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeHvacWshpDoas",
+      "uid": "aa5fbc1c-4dc2-4a51-84fa-ce5e291f77b6",
+      "uuid": "{aa5fbc1c-4dc2-4a51-84fa-ce5e291f77b6}",
+      "version_id": "d6bb5807-51fd-4371-93bd-6debb7340f78",
+      "version_uuid": "{d6bb5807-51fd-4371-93bd-6debb7340f78}",
+      "version_modified": "20170316T164851Z",
+      "xml_checksum": "4435983D",
+      "display_name": "AedgOfficeHvacWshpDoas",
+      "class_name": "AedgOfficeHvacWshpDoas",
+      "description": "Measure replaces existing HVAC system (if any) with a Water Source Heat Pump (WSHP) with DOAS HVAC system (one DOAS per floor).  The WSHP with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG.",
+      "modeler_description": "Airloops are dedicated to ventilation (DOAS) and have constant speed fan operation, gas furnace heating, and single speed DX cooling.  Conditioning is provided at the zone level with water sourced heat pumps with cycling fans.  The heat pumps are connected to a plant loop supplied by a boiler and cooling tower.  The heat pump loop floats between 20 C and 30 C.",
+      "tags": "HVAC.Whole System",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03CW",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03CY",
+          "option_1": "SWHP DOAS"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03D0",
+          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Water Source Heat Pump (WSHP) with DOAS HVAC system (one DOAS per floor).  The WSHP with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        },
+        {
+          "name": "ceilingReturnPlenumSpaceType",
+          "display_name": "This space type should be part of a ceiling return air plenum.",
+          "description": "",
+          "type": "Choice",
+          "required": false,
+          "model_dependent": false,
+          "choice_values": [
+            "{8023b71b-0b59-4f01-8cee-d1818f88351c}",
+            "{6b496296-a197-4384-abc1-39e251c83f0f}",
+            "{3756b9ba-a3a0-4cd6-a252-087615a2fb88}",
+            "{c1b16e52-5a06-44ec-b925-73249f3c4995}",
+            "{ac513d4d-8801-4c4f-9cdd-b70a96059894}",
+            "{97e0e842-c70a-4628-bd6c-104c87a26564}",
+            "{c3929556-ccfc-4afe-99db-cb5a7f252dc7}",
+            "{d91c152a-8a6e-4bc5-986b-4848af322c71}",
+            "{6ba139c4-3279-4db4-9792-693415927fb6}",
+            "{444ab6c1-72c6-4538-9fad-9ed4c1ccd0f9}",
+            "{edc6cf76-7896-4a3e-af92-f1a4528d6dd4}"
+          ],
+          "choice_display_names": [
+            "DOE Ref 2004 - Office - BreakRoom",
+            "DOE Ref 2004 - Office - Conference",
+            "DOE Ref 2004 - Office - Corridor",
+            "DOE Ref 2004 - Office - Elec/MechRoom",
+            "DOE Ref 2004 - Office - OpenOffice",
+            "DOE Ref 2004 - Office - PrintRoom",
+            "DOE Ref 2004 - Office - Restroom",
+            "DOE Ref 2004 - Office - Lobby",
+            "Plenum",
+            "DOE Ref 2004 - Office - ClosedOffice",
+            "DOE Ref 2004 - Office - Lobby"
+          ],
+          "$$hashKey": "uiGrid-03D2",
+          "option_1": "",
+          "variable": false
+        },
+        {
+          "name": "costTotalHVACSystem",
+          "display_name": "Total Cost for HVAC System ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03D4",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "remake_schedules",
+          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-03D6",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 18,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "ceilingReturnPlenumSpaceType",
+              "value": ""
+            },
+            {
+              "name": "costTotalHVACSystem",
+              "value": 0
+            },
+            {
+              "name": "remake_schedules",
+              "value": true
+            }
+          ],
+          "name": "SWHP DOAS",
+          "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Water Source Heat Pump (WSHP) with DOAS HVAC system (one DOAS per floor).  The WSHP with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
+        }
+      ],
+      "instanceId": 0.39217865884163583,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6458"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeSwh",
+      "name": "aedg_office_swh",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgOfficeSwh",
+      "uid": "42e0df75-b1b0-4f52-9c3b-3895dbe5ed0e",
+      "uuid": "{42e0df75-b1b0-4f52-9c3b-3895dbe5ed0e}",
+      "version_id": "92205abd-4313-457e-8a7e-b822a1357370",
+      "version_uuid": "{92205abd-4313-457e-8a7e-b822a1357370}",
+      "version_modified": "20170316T164852Z",
+      "xml_checksum": "9882CBDB",
+      "display_name": "AedgOfficeSwh",
+      "class_name": "AedgOfficeSwh",
+      "description": "Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% Small and Medium Office AEDG.",
+      "modeler_description": "Measure is applied to restroom space types.  All existing swh systems are deleted.  The total SWH load is divided evenly among the restroom spaces in the model.  Loads are applied on a per employee basis.  The user can input number of employees manually.  Otherwise, the measure will calculate the number of employees from the office space floor area.  If there is no office space floor area, the user wil be required to specify a number of employees.",
+      "tags": "Service Water Heating.Water Heating",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-03AY",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-03B0",
+          "option_1": "SWH"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-03B2",
+          "option_1": "Option 1 Description: Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% Small and Medium Office AEDG."
+        },
+        {
+          "name": "costTotalSwhSystem",
+          "display_name": "Total Cost for SWH System ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-03B4",
+          "option_1": 0,
+          "variable": false
+        },
+        {
+          "name": "numberOfEmployees",
+          "display_name": "Total Number of Employees.",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 170,
+          "$$hashKey": "uiGrid-03B6",
+          "option_1": 6,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/16/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 19,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "costTotalSwhSystem",
+              "value": 0
+            },
+            {
+              "name": "numberOfEmployees",
+              "value": 6
+            }
+          ],
+          "name": "SWH",
+          "description": "Option 1 Description: Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% Small and Medium Office AEDG."
+        }
+      ],
+      "instanceId": 0.7381193787195344,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:6452"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/add_rooftop_pv",
+      "name": "add_rooftop_pv",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/add_rooftop_pv",
+      "uid": "34550614-0c87-44db-9252-0ca0915b1e64",
+      "uuid": "{34550614-0c87-44db-9252-0ca0915b1e64}",
+      "version_id": "7c0fcc3b-8a72-455d-9f3e-6369088ede31",
+      "version_uuid": "{7c0fcc3b-8a72-455d-9f3e-6369088ede31}",
+      "version_modified": "20171021T075339Z",
+      "xml_checksum": "178163B6",
+      "display_name": "Add Rooftop PV",
+      "class_name": "AddRooftopPV",
+      "description": "This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV",
+      "modeler_description": "The fraction of surface containing PV will not only set the PV properties, but will also change the transmittance value for the shading surface. This allows the measure to avoid attempting to layout the panels. Simple PV will be used to model the PV.",
+      "tags": "Onsite Power Generation.Photovoltaic",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Model Articulation"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Retrofit EE"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-07XQ",
+          "option_1": "option_1",
+          "option_2": "option_2",
+          "option_3": "option_3"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-07XS",
+          "option_1": "PV 25",
+          "option_2": "PV 50",
+          "option_3": "PV 75"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-07XU",
+          "option_1": "Option 1 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV",
+          "option_2": "Option 2 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV",
+          "option_3": "Option 3 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV"
+        },
+        {
+          "name": "fraction_of_surface",
+          "display_name": "Fraction of Surface Area with Active Solar Cells",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.75,
+          "$$hashKey": "uiGrid-07XW",
+          "option_1": 0.25,
+          "variable": true,
+          "option_2": 0.5,
+          "option_3": 0.75
+        },
+        {
+          "name": "cell_efficiency",
+          "display_name": "Cell Efficiency",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.18,
+          "$$hashKey": "uiGrid-07XY",
+          "option_1": 0.18,
+          "variable": false,
+          "option_2": 0.18,
+          "option_3": 0.18
+        },
+        {
+          "name": "inverter_efficiency",
+          "display_name": "Inverter Efficiency",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.98,
+          "$$hashKey": "uiGrid-07Y0",
+          "option_1": 0.98,
+          "variable": false,
+          "option_2": 0.98,
+          "option_3": 0.98
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "10/21/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 20,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "fraction_of_surface",
+              "value": 0.25
+            },
+            {
+              "name": "cell_efficiency",
+              "value": 0.18
+            },
+            {
+              "name": "inverter_efficiency",
+              "value": 0.98
+            }
+          ],
+          "name": "PV 25",
+          "description": "Option 1 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV"
+        },
+        {
+          "id": "option_2",
+          "arguments": [
+            {
+              "name": "fraction_of_surface",
+              "value": 0.5
+            },
+            {
+              "name": "cell_efficiency",
+              "value": 0.18
+            },
+            {
+              "name": "inverter_efficiency",
+              "value": 0.98
+            }
+          ],
+          "name": "PV 50",
+          "description": "Option 2 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV"
+        },
+        {
+          "id": "option_3",
+          "arguments": [
+            {
+              "name": "fraction_of_surface",
+              "value": 0.75
+            },
+            {
+              "name": "cell_efficiency",
+              "value": 0.18
+            },
+            {
+              "name": "inverter_efficiency",
+              "value": 0.98
+            }
+          ],
+          "name": "PV 75",
+          "description": "Option 3 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV"
+        }
+      ],
+      "instanceId": 0.15818454934633386,
+      "numberOfOptions": 3,
+      "$$hashKey": "object:47192"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/tariff_selection_flat",
+      "name": "tariff_selection_flat",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/tariff_selection_flat",
+      "uid": "539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55",
+      "uuid": "{539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55}",
+      "version_id": "45348d83-53de-4c24-a72a-f8f391aa0fbd",
+      "version_uuid": "{45348d83-53de-4c24-a72a-f8f391aa0fbd}",
+      "version_modified": "20170509T164314Z",
+      "xml_checksum": "FBDC6D11",
+      "display_name": "Tariff Selection-Flat",
+      "class_name": "TariffSelectionFlat",
+      "description": "This measure sets flat rates for electricity, gas, water, district heating, and district cooling.",
+      "modeler_description": "Will add the necessary UtilityCost objects into the model.",
+      "tags": "Economics.Life Cycle Cost Analysis",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Sensitivity Analysis"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Retrofit EE"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Sensitivity Analysis"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Retrofit EE"
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "EnergyPlusMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Sensitivity Analysis"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Retrofit EE"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-00YL",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-00YN",
+          "option_1": "Tariff Flat"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-00YP",
+          "option_1": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
+        },
+        {
+          "name": "demand_window_length",
+          "display_name": "Demand Window Length.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "QuarterHour",
+          "choice_values": [
+            "QuarterHour",
+            "HalfHour",
+            "FullHour"
+          ],
+          "choice_display_names": [
+            "QuarterHour",
+            "HalfHour",
+            "FullHour"
+          ],
+          "$$hashKey": "uiGrid-00YR",
+          "option_1": "QuarterHour",
+          "variable": false
+        },
+        {
+          "name": "elec_rate",
+          "display_name": "Electric Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/kWh",
+          "default_value": 0.12,
+          "$$hashKey": "uiGrid-00YT",
+          "option_1": 0.12,
+          "variable": false
+        },
+        {
+          "name": "gas_rate",
+          "display_name": "Gas Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/therm",
+          "default_value": 0.5,
+          "$$hashKey": "uiGrid-00YV",
+          "option_1": 0.5,
+          "variable": false
+        },
+        {
+          "name": "water_rate",
+          "display_name": "Water Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/gal",
+          "default_value": 0.005,
+          "$$hashKey": "uiGrid-00YX",
+          "option_1": 0.005,
+          "variable": false
+        },
+        {
+          "name": "disthtg_rate",
+          "display_name": "District Heating Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/therm",
+          "default_value": 0.2,
+          "$$hashKey": "uiGrid-00YZ",
+          "option_1": 0.2,
+          "variable": false
+        },
+        {
+          "name": "distclg_rate",
+          "display_name": "District Cooling Rate",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "$/therm",
+          "default_value": 0.2,
+          "$$hashKey": "uiGrid-00Z1",
+          "option_1": 0.2,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/9/2017",
+      "author": "",
+      "type": "EnergyPlusMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 21,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "demand_window_length",
+              "value": "QuarterHour"
+            },
+            {
+              "name": "elec_rate",
+              "value": 0.12
+            },
+            {
+              "name": "gas_rate",
+              "value": 0.5
+            },
+            {
+              "name": "water_rate",
+              "value": 0.005
+            },
+            {
+              "name": "disthtg_rate",
+              "value": 0.2
+            },
+            {
+              "name": "distclg_rate",
+              "value": 0.2
+            }
+          ],
+          "name": "Tariff Flat",
+          "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
+        }
+      ],
+      "instanceId": 0.6169546206611289,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:3190"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/openstudio_results",
+      "name": "openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/openstudio_results",
+      "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+      "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
+      "version_id": "f538a5bb-0ea0-49c6-be0b-e206a840f207",
+      "version_uuid": "{f538a5bb-0ea0-49c6-be0b-e206a840f207}",
+      "version_modified": "20171218T173206Z",
+      "xml_checksum": "557BF06F",
+      "display_name": "OpenStudio Results",
+      "class_name": "OpenStudioResults",
+      "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+      "modeler_description": "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+      "tags": "Reporting.QAQC",
+      "outputs": [
+        {
+          "name": "electricity_ip",
+          "display_name": "electricity_ip",
+          "short_name": "electricity_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "natural_gas_ip",
+          "display_name": "natural_gas_ip",
+          "short_name": "natural_gas_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "additional_fuel_ip",
+          "display_name": "additional_fuel_ip",
+          "short_name": "additional_fuel_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_heating_ip",
+          "display_name": "district_heating_ip",
+          "short_name": "district_heating_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_cooling_ip",
+          "display_name": "district_cooling_ip",
+          "short_name": "district_cooling_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_site_eui",
+          "display_name": "total_site_eui",
+          "short_name": "total_site_eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "eui",
+          "display_name": "eui",
+          "short_name": "eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "net_site_energy",
+          "display_name": "net_site_energy",
+          "short_name": "net_site_energy",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_peak_electric_demand",
+          "display_name": "annual_peak_electric_demand",
+          "short_name": "annual_peak_electric_demand",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_cooling",
+          "display_name": "unmet_hours_during_occupied_cooling",
+          "short_name": "unmet_hours_during_occupied_cooling",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_heating",
+          "display_name": "unmet_hours_during_occupied_heating",
+          "short_name": "unmet_hours_during_occupied_heating",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "first_year_capital_cost",
+          "display_name": "first_year_capital_cost",
+          "short_name": "first_year_capital_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_utility_cost",
+          "display_name": "annual_utility_cost",
+          "short_name": "annual_utility_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_lifecycle_cost",
+          "display_name": "total_lifecycle_cost",
+          "short_name": "total_lifecycle_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-00I9",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-00IB",
+          "option_1": "OpenStudio Results"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-00ID",
+          "option_1": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        },
+        {
+          "name": "building_summary_section",
+          "display_name": "Model Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IF",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "annual_overview_section",
+          "display_name": "Annual Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IH",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "monthly_overview_section",
+          "display_name": "Monthly Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IJ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "utility_bills_rates_section",
+          "display_name": "Utility Bills/Rates",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IL",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "envelope_section_section",
+          "display_name": "Envelope",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IN",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "space_type_breakdown_section",
+          "display_name": "Space Type Breakdown",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IP",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "space_type_details_section",
+          "display_name": "Space Type Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IR",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "interior_lighting_section",
+          "display_name": "Interior Lighting Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IT",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "plug_loads_section",
+          "display_name": "Plug Loads Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IV",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "exterior_light_section",
+          "display_name": "Exterior Lighting",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IX",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "water_use_section",
+          "display_name": "Water Use Equipment",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00IZ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "hvac_load_profile",
+          "display_name": "HVAC Load Profiles",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00J1",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_condition_section",
+          "display_name": "Zone Conditions",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00J3",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_summary_section",
+          "display_name": "Zone Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00J5",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_equipment_detail_section",
+          "display_name": "Zone Equipment Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00J7",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "air_loops_detail_section",
+          "display_name": "Air Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00J9",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "plant_loops_detail_section",
+          "display_name": "Plant Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00JB",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "outdoor_air_section",
+          "display_name": "Outdoor Air",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00JD",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "cost_summary_section",
+          "display_name": "Cash Flow",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00JF",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "source_energy_section",
+          "display_name": "Site and Source Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00JH",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "schedules_overview_section",
+          "display_name": "Schedule Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00JJ",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "12/18/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 22,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "building_summary_section",
+              "value": true
+            },
+            {
+              "name": "annual_overview_section",
+              "value": true
+            },
+            {
+              "name": "monthly_overview_section",
+              "value": true
+            },
+            {
+              "name": "utility_bills_rates_section",
+              "value": true
+            },
+            {
+              "name": "envelope_section_section",
+              "value": true
+            },
+            {
+              "name": "space_type_breakdown_section",
+              "value": true
+            },
+            {
+              "name": "space_type_details_section",
+              "value": true
+            },
+            {
+              "name": "interior_lighting_section",
+              "value": true
+            },
+            {
+              "name": "plug_loads_section",
+              "value": true
+            },
+            {
+              "name": "exterior_light_section",
+              "value": true
+            },
+            {
+              "name": "water_use_section",
+              "value": true
+            },
+            {
+              "name": "hvac_load_profile",
+              "value": true
+            },
+            {
+              "name": "zone_condition_section",
+              "value": true
+            },
+            {
+              "name": "zone_summary_section",
+              "value": true
+            },
+            {
+              "name": "zone_equipment_detail_section",
+              "value": true
+            },
+            {
+              "name": "air_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "plant_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "outdoor_air_section",
+              "value": true
+            },
+            {
+              "name": "cost_summary_section",
+              "value": true
+            },
+            {
+              "name": "source_energy_section",
+              "value": true
+            },
+            {
+              "name": "schedules_overview_section",
+              "value": true
+            }
+          ],
+          "name": "OpenStudio Results",
+          "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        }
+      ],
+      "instanceId": 0.7980341191987173,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:1609"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/envelope_and_internal_load_breakdown",
+      "name": "envelope_and_internal_load_breakdown",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/envelope_and_internal_load_breakdown",
+      "uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
+      "uuid": "{8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02}",
+      "version_id": "d12947af-72a5-410f-998d-7918e147c811",
+      "version_uuid": "{d12947af-72a5-410f-998d-7918e147c811}",
+      "version_modified": "20171229T223454Z",
+      "xml_checksum": "69BA4D91",
+      "display_name": "Envelope and Internal Load Breakdown",
+      "class_name": "EnvelopeAndInternalLoadBreakdown",
+      "description": "Report provides annual and monthly views into heat gains and losses for envelope and internal loads.",
+      "modeler_description": "It uses the following variables: Electric Equipment Total Heating Energy, Zone Lights Total Heating Energy, Zone, People Sensible Heating Energy, Surface Average Face Conduction Heat Transfer Energy, Surface Window Heat Gain Energy, Surface Window Heat Loss Energy, Zone Infiltration Sensible Heat Gain Energy, Zone Infiltration Sensible Heat Loss Energy. For Surface Average Face Conduction Heat Transfer Energy bin positive values as heat gain and negative values as heat loss.\n",
+      "tags": "Reporting.QAQC",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-00JL",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-00JN",
+          "option_1": "Envelope and Internal Load Breakdown"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-00JP",
+          "option_1": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "12/29/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "multi_spacetype.osm",
+      "workflow_index": 23,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [],
+          "name": "Envelope and Internal Load Breakdown",
+          "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
+        }
+      ],
+      "instanceId": 0.030446903864072228,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:1610"
+    }
+  ],
+  "filesToInclude": [],
+  "serverScripts": {
+    "server_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "server_finalization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_finalization": {
+      "file": null,
+      "arguments": []
+    }
+  },
+  "designAlternatives": [
+    {
+      "name": "ASHP",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "CA Chula Vista",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02AW",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "Fan Coil",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "CA Chula Vista",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "Fan Coil DOAS",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02DG",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "Radiant",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "CA Chula Vista",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "Radiant DOAS",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02G0",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "VAV Chilled Water",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "CA Chula Vista",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "VAV Chilled Water",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02IK",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "VAV DX",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "CA Chula Vista",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "VAV DX",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02L4",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "GSHP",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "CA Chula Vista",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "SWHP DOAS",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02NO",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "ASHP Duplicate 1",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "NY Buffalo",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02Q8",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "Fan Coil Duplicate 1",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "NY Buffalo",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "Fan Coil DOAS",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02SS",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "Radiant Duplicate 1",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "NY Buffalo",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "Radiant DOAS",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02VC",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "VAV Chilled Water Duplicate 1",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "NY Buffalo",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "VAV Chilled Water",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-02XW",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "VAV DX Duplicate 1",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "NY Buffalo",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "VAV DX",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-030G",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "GSHP Duplicate 1",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "NY Buffalo",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "None",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "SWHP DOAS",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "$$hashKey": "uiGrid-0330",
+      "add_rooftop_pv": "None"
+    },
+    {
+      "name": "ASHP PV",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "CA Chula Vista",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "PV 75",
+      "$$hashKey": "uiGrid-0DOU"
+    }
+  ],
+  "analysisID": null,
+  "datapoints": [
+    {
+      "name": "ASHP",
+      "id": "ASHP",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Fan Coil",
+      "id": "Fan Coil",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Radiant",
+      "id": "Radiant",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "VAV Chilled Water",
+      "id": "VAV Chilled Water",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "VAV DX",
+      "id": "VAV DX",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "GSHP",
+      "id": "GSHP",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 1",
+      "id": "ASHP Duplicate 1",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Fan Coil Duplicate 1",
+      "id": "Fan Coil Duplicate 1",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Radiant Duplicate 1",
+      "id": "Radiant Duplicate 1",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "VAV Chilled Water Duplicate 1",
+      "id": "VAV Chilled Water Duplicate 1",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "VAV DX Duplicate 1",
+      "id": "VAV DX Duplicate 1",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "GSHP Duplicate 1",
+      "id": "GSHP Duplicate 1",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP PV",
+      "id": "ASHP PV",
+      "run": false,
+      "modified": false,
+      "selected": false
+    }
+  ]
+}
