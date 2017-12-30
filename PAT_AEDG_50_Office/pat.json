@@ -79,9 +79,9 @@
       "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/ChangeBuildingLocation",
       "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
-      "version_id": "04d1e937-c0da-4e99-b815-fca47baaeac5",
-      "version_uuid": "{04d1e937-c0da-4e99-b815-fca47baaeac5}",
-      "version_modified": "20170711T201203Z",
+      "version_id": "6c4db803-12ba-40e8-a2ce-5913755a4962",
+      "version_uuid": "{6c4db803-12ba-40e8-a2ce-5913755a4962}",
+      "version_modified": "20171214T165313Z",
       "xml_checksum": "057E8D9D",
       "display_name": "ChangeBuildingLocation",
       "class_name": "ChangeBuildingLocation",
@@ -104,29 +104,116 @@
       "arguments": [
         {
           "specialRowId": "optionDelete",
-          "$$hashKey": "uiGrid-056G",
+          "$$hashKey": "uiGrid-02K6",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null,
+            "showWarningIcon": false
+          },
           "option_1": "option_1",
           "option_2": "option_2",
           "option_3": "option_3",
-          "option_4": "option_4"
+          "option_4": "option_4",
+          "option_5": "option_5",
+          "option_6": "option_6",
+          "option_7": "option_7",
+          "option_8": "option_8",
+          "option_9": "option_9",
+          "option_10": "option_10",
+          "option_11": "option_11",
+          "option_12": "option_12",
+          "option_13": "option_13",
+          "option_14": "option_14",
+          "option_15": "option_15",
+          "option_16": "option_16",
+          "option_17": "option_17",
+          "option_18": "option_18",
+          "option_19": "option_19"
         },
         {
           "specialRowId": "optionName",
           "type": "String",
-          "$$hashKey": "uiGrid-056I",
-          "option_1": "CA Chula Vista",
-          "option_2": "CO Aurora",
-          "option_3": "NY Buffalo",
-          "option_4": "FL MacDill"
+          "$$hashKey": "uiGrid-02K8",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          },
+          "option_1": "Honolulu",
+          "option_2": "Tampa",
+          "option_3": "Tucson",
+          "option_4": "Atlanta",
+          "option_5": "El Paso",
+          "option_6": "San Diego",
+          "option_7": "New York",
+          "option_8": "Albuquerque",
+          "option_9": "Seattle",
+          "option_10": "Buffalo",
+          "option_11": "Aurora",
+          "option_12": "Port Angeles",
+          "option_13": "Rochester",
+          "option_14": "Great Falls",
+          "option_15": "International Falls",
+          "option_16": "Fairbanks",
+          "option_17": "Hanoi",
+          "option_18": "Abu Dhabi",
+          "option_19": "New Delhi"
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
-          "$$hashKey": "uiGrid-056K",
+          "$$hashKey": "uiGrid-02KA",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          },
           "option_1": "Option 1 Description: Change the building location",
           "option_2": "Option 2 Description: Change the building location",
           "option_3": "Option 3 Description: Change the building location",
-          "option_4": "Option 4 Description: Change the building location"
+          "option_4": "Option 4 Description: Change the building location",
+          "option_5": "Option 5 Description: Change the building location",
+          "option_6": "Option 6 Description: Change the building location",
+          "option_7": "Option 7 Description: Change the building location",
+          "option_8": "Option 8 Description: Change the building location",
+          "option_9": "Option 9 Description: Change the building location",
+          "option_10": "Option 10 Description: Change the building location",
+          "option_11": "Option 11 Description: Change the building location",
+          "option_12": "Option 12 Description: Change the building location",
+          "option_13": "Option 13 Description: Change the building location",
+          "option_14": "Option 14 Description: Change the building location",
+          "option_15": "Option 15 Description: Change the building location",
+          "option_16": "Option 16 Description: Change the building location",
+          "option_17": "Option 17 Description: Change the building location",
+          "option_18": "Option 18 Description: Change the building location",
+          "option_19": "Option 19 Description: Change the building location"
         },
         {
           "name": "weather_file_name",
@@ -135,16 +222,63 @@
           "type": "String",
           "required": true,
           "model_dependent": false,
-          "$$hashKey": "uiGrid-056M",
-          "option_1": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+          "$$hashKey": "uiGrid-02KE",
           "variable": true,
-          "option_2": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-          "option_3": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw",
-          "option_4": "USA_FL_MacDill.AFB.747880_TMY3.epw",
           "units": "",
-          "minimum": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
-          "maximum": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw",
-          "mode": null
+          "minimum": "ARE_Abu.Dhabi.412170_IWEC.epw",
+          "maximum": "VNM_Hanoi.488200_IWEC.epw",
+          "mode": null,
+          "inputs": {
+            "relationship": "Standard",
+            "choice_display_names": "",
+            "default_value": "",
+            "deltaX": 0.001,
+            "discreteMinimum": "",
+            "discreteMaximum": "",
+            "discreteVariables": [
+              {
+                "value": "",
+                "weight": "",
+                "$$hashKey": "object:15262"
+              }
+            ],
+            "display_name": "Weather File Name",
+            "distribution": "Unhandled Sampling Method",
+            "distributions": [
+              "Unhandled Sampling Method"
+            ],
+            "maximum": "",
+            "mean": "",
+            "minimum": "",
+            "name": "weather_file_name",
+            "stdDev": "",
+            "variableSetting": "Pivot",
+            "variableSettings": [
+              "Unhandled Sampling Method"
+            ],
+            "choiceDisplayNames": [],
+            "showWarningIcon": false
+          },
+          "display_name_short": "weather_file_name",
+          "option_1": "USA_HI_Honolulu.Intl.AP.911820_TMY3.epw",
+          "option_2": "USA_FL_MacDill.AFB.747880_TMY3.epw",
+          "option_3": "USA_AZ_Davis-Monthan.AFB.722745_TMY3.epw",
+          "option_4": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
+          "option_5": "USA_TX_El.Paso.Intl.AP.722700_TMY3.epw",
+          "option_6": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw",
+          "option_7": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+          "option_8": "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw",
+          "option_9": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
+          "option_10": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw",
+          "option_11": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+          "option_12": "USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw",
+          "option_13": "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
+          "option_14": "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw",
+          "option_15": "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw",
+          "option_16": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+          "option_17": "VNM_Hanoi.488200_IWEC.epw",
+          "option_18": "ARE_Abu.Dhabi.412170_IWEC.epw",
+          "option_19": "IND_New.Delhi.421820_ISHRAE.epw"
         },
         {
           "name": "climate_zone",
@@ -153,8 +287,9 @@
           "type": "Choice",
           "required": true,
           "model_dependent": false,
-          "default_value": "Lookup From Stat File",
           "choice_values": [
+            "0A",
+            "0B",
             "1A",
             "1B",
             "2A",
@@ -175,6 +310,8 @@
             "Lookup From Stat File"
           ],
           "choice_display_names": [
+            "0A",
+            "0B",
             "1A",
             "1B",
             "2A",
@@ -194,12 +331,109 @@
             "8",
             "Lookup From Stat File"
           ],
-          "$$hashKey": "uiGrid-056O",
+          "$$hashKey": "uiGrid-02KG",
+          "variable": true,
+          "units": "",
+          "minimum": "0A",
+          "maximum": "Lookup From Stat File",
+          "mode": null,
+          "inputs": {
+            "relationship": "Standard",
+            "choice_display_names": [
+              "0A",
+              "0B",
+              "1A",
+              "1B",
+              "2A",
+              "2B",
+              "3A",
+              "3B",
+              "3C",
+              "4A",
+              "4B",
+              "4C",
+              "5A",
+              "5B",
+              "5C",
+              "6A",
+              "6B",
+              "7",
+              "8",
+              "Lookup From Stat File"
+            ],
+            "default_value": "1A",
+            "deltaX": 0.001,
+            "discreteMinimum": "1A",
+            "discreteMaximum": "1A",
+            "discreteVariables": [
+              {
+                "value": "1A",
+                "weight": "",
+                "$$hashKey": "object:15334"
+              }
+            ],
+            "display_name": "Climate Zone.",
+            "distribution": "Uniform",
+            "distributions": [
+              "Uniform",
+              "Triangle",
+              "Normal",
+              "LogNormal"
+            ],
+            "maximum": "1A",
+            "mean": "1A",
+            "minimum": "1A",
+            "name": "climate_zone",
+            "stdDev": "1A",
+            "variableSetting": "Argument",
+            "variableSettings": [
+              "Unhandled Sampling Method"
+            ],
+            "choiceDisplayNames": [
+              "0A",
+              "0B",
+              "1A",
+              "1B",
+              "2A",
+              "2B",
+              "3A",
+              "3B",
+              "3C",
+              "4A",
+              "4B",
+              "4C",
+              "5A",
+              "5B",
+              "5C",
+              "6A",
+              "6B",
+              "7",
+              "8",
+              "Lookup From Stat File"
+            ],
+            "showWarningIcon": false
+          },
+          "display_name_short": "climate_zone",
+          "default_value": "Lookup From Stat File",
           "option_1": "Lookup From Stat File",
-          "variable": false,
           "option_2": "Lookup From Stat File",
           "option_3": "Lookup From Stat File",
-          "option_4": "Lookup From Stat File"
+          "option_4": "Lookup From Stat File",
+          "option_5": "Lookup From Stat File",
+          "option_6": "Lookup From Stat File",
+          "option_7": "Lookup From Stat File",
+          "option_8": "Lookup From Stat File",
+          "option_9": "Lookup From Stat File",
+          "option_10": "Lookup From Stat File",
+          "option_11": "Lookup From Stat File",
+          "option_12": "Lookup From Stat File",
+          "option_13": "Lookup From Stat File",
+          "option_14": "Lookup From Stat File",
+          "option_15": "Lookup From Stat File",
+          "option_16": "Lookup From Stat File",
+          "option_17": "0A",
+          "option_18": "0B",
+          "option_19": "1B"
         }
       ],
       "edit": "",
@@ -209,10 +443,10 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "7/11/2017",
+      "date": "12/14/2017",
       "author": "",
       "type": "ModelMeasure",
-      "seed": "multi_spacetype.osm",
+      "seed": "ZEDG K12 Primary TSD seed.osm",
       "workflow_index": 0,
       "options": [
         {
@@ -220,48 +454,18 @@
           "arguments": [
             {
               "name": "weather_file_name",
-              "value": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw"
+              "value": "USA_HI_Honolulu.Intl.AP.911820_TMY3.epw"
             },
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "CA Chula Vista",
+          "name": "Honolulu",
           "description": "Option 1 Description: Change the building location"
         },
         {
           "id": "option_2",
-          "arguments": [
-            {
-              "name": "weather_file_name",
-              "value": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw"
-            },
-            {
-              "name": "climate_zone",
-              "value": "Lookup From Stat File"
-            }
-          ],
-          "name": "CO Aurora",
-          "description": "Option 2 Description: Change the building location"
-        },
-        {
-          "id": "option_3",
-          "arguments": [
-            {
-              "name": "weather_file_name",
-              "value": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw"
-            },
-            {
-              "name": "climate_zone",
-              "value": "Lookup From Stat File"
-            }
-          ],
-          "name": "NY Buffalo",
-          "description": "Option 3 Description: Change the building location"
-        },
-        {
-          "id": "option_4",
           "arguments": [
             {
               "name": "weather_file_name",
@@ -272,13 +476,271 @@
               "value": "Lookup From Stat File"
             }
           ],
-          "name": "FL MacDill",
+          "name": "Tampa",
+          "description": "Option 2 Description: Change the building location"
+        },
+        {
+          "id": "option_3",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_AZ_Davis-Monthan.AFB.722745_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Tucson",
+          "description": "Option 3 Description: Change the building location"
+        },
+        {
+          "id": "option_4",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Atlanta",
           "description": "Option 4 Description: Change the building location"
+        },
+        {
+          "id": "option_5",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_TX_El.Paso.Intl.AP.722700_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "El Paso",
+          "description": "Option 5 Description: Change the building location"
+        },
+        {
+          "id": "option_6",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_CA_Chula.Vista-Brown.Field.Muni.AP.722904_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "San Diego",
+          "description": "Option 6 Description: Change the building location"
+        },
+        {
+          "id": "option_7",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "New York",
+          "description": "Option 7 Description: Change the building location"
+        },
+        {
+          "id": "option_8",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Albuquerque",
+          "description": "Option 8 Description: Change the building location"
+        },
+        {
+          "id": "option_9",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Seattle",
+          "description": "Option 9 Description: Change the building location"
+        },
+        {
+          "id": "option_10",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_NY_Buffalo-Greater.Buffalo.Intl.AP.725280_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Buffalo",
+          "description": "Option 10 Description: Change the building location"
+        },
+        {
+          "id": "option_11",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Aurora",
+          "description": "Option 11 Description: Change the building location"
+        },
+        {
+          "id": "option_12",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Port Angeles",
+          "description": "Option 12 Description: Change the building location"
+        },
+        {
+          "id": "option_13",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_MN_Rochester.Intl.AP.726440_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Rochester",
+          "description": "Option 13 Description: Change the building location"
+        },
+        {
+          "id": "option_14",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Great Falls",
+          "description": "Option 14 Description: Change the building location"
+        },
+        {
+          "id": "option_15",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "International Falls",
+          "description": "Option 15 Description: Change the building location"
+        },
+        {
+          "id": "option_16",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "Fairbanks",
+          "description": "Option 16 Description: Change the building location"
+        },
+        {
+          "id": "option_17",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "VNM_Hanoi.488200_IWEC.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "0A"
+            }
+          ],
+          "name": "Hanoi",
+          "description": "Option 17 Description: Change the building location"
+        },
+        {
+          "id": "option_18",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "ARE_Abu.Dhabi.412170_IWEC.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "0B"
+            }
+          ],
+          "name": "Abu Dhabi",
+          "description": "Option 18 Description: Change the building location"
+        },
+        {
+          "id": "option_19",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "IND_New.Delhi.421820_ISHRAE.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "1B"
+            }
+          ],
+          "name": "New Delhi",
+          "description": "Option 19 Description: Change the building location"
         }
       ],
-      "instanceId": 0.38051353863702375,
-      "numberOfOptions": 4,
-      "$$hashKey": "object:12200"
+      "numberOfOptions": 19,
+      "$$hashKey": "object:7130",
+      "skip": false,
+      "outputMeasure": false,
+      "instanceId": 0.4378121640057797,
+      "showWarningText": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_AEDG_50_Office/measures/AedgSmallToMediumOfficeExteriorWallConstruction",
@@ -364,7 +826,7 @@
           "description": "Option 1 Description: This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.6623145190689277,
+      "instanceId": 0.5779959135853581,
       "numberOfOptions": 1,
       "$$hashKey": "object:6440"
     },
@@ -468,7 +930,7 @@
           "description": "Option 1 Description: This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.9558185864301747,
+      "instanceId": 0.5877329610034834,
       "numberOfOptions": 1,
       "$$hashKey": "object:6441"
     },
@@ -620,7 +1082,7 @@
           "description": "Option 1 Description: This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Small to Medium Office AEDG recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor."
         }
       ],
-      "instanceId": 0.6172500480871776,
+      "instanceId": 0.257025689094561,
       "numberOfOptions": 1,
       "$$hashKey": "object:6442"
     },
@@ -708,7 +1170,7 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration that includes user arguments for primary entry points. "
         }
       ],
-      "instanceId": 0.34894565478404593,
+      "instanceId": 0.585871707826594,
       "numberOfOptions": 1,
       "$$hashKey": "object:6443"
     },
@@ -796,7 +1258,7 @@
           "description": "This is exposed ext floor, not slab. Slab measures needs to be udpated before it is added into the workflow"
         }
       ],
-      "instanceId": 0.2857026530910949,
+      "instanceId": 0.8019660204268784,
       "numberOfOptions": 1,
       "$$hashKey": "object:6444",
       "descOpen": false
@@ -907,7 +1369,7 @@
           "description": "Option 1 Description: This measure will adjust the visible reflectance of materials used on interior building surfaces. Different target values will be set for floors, ceilings, and furniture/interior partition surfaces."
         }
       ],
-      "instanceId": 0.15774254179003533,
+      "instanceId": 0.49781892495269364,
       "numberOfOptions": 1,
       "$$hashKey": "object:6445"
     },
@@ -1141,7 +1603,7 @@
           "description": "Option 1 Description: This measure addresses two sources of air infiltration. The first is infiltration through the building envelope. The second is infiltration due to occupants entering and leaving the building. The AEDG provides recommendations and tips on how to limit infiltration in both cases. For occupant entry vestibules may be recommended at major entries depending on the size of the building and climate zone."
         }
       ],
-      "instanceId": 0.7406158288009004,
+      "instanceId": 0.8585734276908943,
       "numberOfOptions": 1,
       "$$hashKey": "object:6446"
     },
@@ -1229,7 +1691,7 @@
           "description": "Option 1 Description: This measure removes all existing electric equipment from spaces recognized as office building space types. New electric objects will be added based on the 50% Small to Medium Office AEDG recommendations."
         }
       ],
-      "instanceId": 0.38510449823788817,
+      "instanceId": 0.3986726789935586,
       "numberOfOptions": 1,
       "$$hashKey": "object:6447"
     },
@@ -1317,7 +1779,7 @@
           "description": "Option 1 Description: This measure reduces the values associated with electric equipment schedules to simulate reductions due to equipment controls throughout the building. This includes occupancy based outlets or adapters, as well as network or timer based controls."
         }
       ],
-      "instanceId": 0.7629239683101472,
+      "instanceId": 0.5926263996556052,
       "numberOfOptions": 1,
       "$$hashKey": "object:6448"
     },
@@ -1405,7 +1867,7 @@
           "description": "Option 1 Description: This measure removes all existing lighting objects from spaces recognized as primary or secondary school space types. New lighting will be added based on the 50% Small to Medium Office AEDG recommendations."
         }
       ],
-      "instanceId": 0.7201064913021791,
+      "instanceId": 0.8899447589358642,
       "numberOfOptions": 1,
       "$$hashKey": "object:6449"
     },
@@ -1493,7 +1955,7 @@
           "description": "Option 1 Description: This measure reduces the values associated with lighting schedules to simulate reductions due to vacancy sensors throughout the building."
         }
       ],
-      "instanceId": 0.07902393953332831,
+      "instanceId": 0.4105220843305437,
       "numberOfOptions": 1,
       "$$hashKey": "object:6450"
     },
@@ -1731,7 +2193,7 @@
           "description": "Option 2 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
         }
       ],
-      "instanceId": 0.10911622518351094,
+      "instanceId": 0.941117336930722,
       "numberOfOptions": 2,
       "$$hashKey": "object:6451"
     },
@@ -1876,7 +2338,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with an Air Source Heat Pump (ASHP) with DOAS HVAC system (one DOAS per floor).  The ASHP with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.8013202261741605,
+      "instanceId": 0.8235421839639916,
       "numberOfOptions": 1,
       "$$hashKey": "object:6453"
     },
@@ -2021,7 +2483,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC system (one DOAS per floor).  The fan coil with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.9415099945410244,
+      "instanceId": 0.7932376740356861,
       "numberOfOptions": 1,
       "$$hashKey": "object:6454"
     },
@@ -2166,7 +2628,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Radiant Heating and Cooling with DOAS HVAC system (one DOAS per floor).  The radiant with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.23356819755968128,
+      "instanceId": 0.2817039858740529,
       "numberOfOptions": 1,
       "$$hashKey": "object:6455"
     },
@@ -2311,7 +2773,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a high efficiency multizone variable air volume (VAV) HVAC system (one system per floor).  The multizone VAV system (centralized cooling with zone level heating) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.4028780368006659,
+      "instanceId": 0.11565024996910567,
       "numberOfOptions": 1,
       "$$hashKey": "object:6456"
     },
@@ -2456,7 +2918,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a high efficiency multizone variable air volume (VAV) HVAC system (one system per floor).  The multizone VAV system (centralized cooling with zone level heating) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.7851937566600511,
+      "instanceId": 0.723796607923322,
       "numberOfOptions": 1,
       "$$hashKey": "object:6457"
     },
@@ -2601,7 +3063,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Water Source Heat Pump (WSHP) with DOAS HVAC system (one DOAS per floor).  The WSHP with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with AEDG recommendations.  The resulting HVAC system reflects the HVAC recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.39217865884163583,
+      "instanceId": 0.3778186748136054,
       "numberOfOptions": 1,
       "$$hashKey": "object:6458"
     },
@@ -2705,7 +3167,7 @@
           "description": "Option 1 Description: Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.7381193787195344,
+      "instanceId": 0.290491416750309,
       "numberOfOptions": 1,
       "$$hashKey": "object:6452"
     },
@@ -2908,7 +3370,7 @@
           "description": "Option 3 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV"
         }
       ],
-      "instanceId": 0.15818454934633386,
+      "instanceId": 0.9159197803512711,
       "numberOfOptions": 3,
       "$$hashKey": "object:47192"
     },
@@ -3176,7 +3638,7 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.6169546206611289,
+      "instanceId": 0.9362430791628638,
       "numberOfOptions": 1,
       "$$hashKey": "object:3190"
     },
@@ -3717,7 +4179,7 @@
           "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         }
       ],
-      "instanceId": 0.7980341191987173,
+      "instanceId": 0.8186921838356769,
       "numberOfOptions": 1,
       "$$hashKey": "object:1609"
     },
@@ -3828,7 +4290,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.030446903864072228,
+      "instanceId": 0.3500805333431092,
       "numberOfOptions": 1,
       "$$hashKey": "object:1610"
     }
@@ -3857,7 +4319,7 @@
       "name": "ASHP",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "CA Chula Vista",
+      "change_building_location": "San Diego",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -3887,7 +4349,7 @@
       "name": "Fan Coil",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "CA Chula Vista",
+      "change_building_location": "San Diego",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -3917,7 +4379,7 @@
       "name": "Radiant",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "CA Chula Vista",
+      "change_building_location": "San Diego",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -3947,7 +4409,7 @@
       "name": "VAV Chilled Water",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "CA Chula Vista",
+      "change_building_location": "San Diego",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -3977,7 +4439,7 @@
       "name": "VAV DX",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "CA Chula Vista",
+      "change_building_location": "San Diego",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4007,7 +4469,7 @@
       "name": "GSHP",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "CA Chula Vista",
+      "change_building_location": "San Diego",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4037,7 +4499,7 @@
       "name": "ASHP Duplicate 1",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "NY Buffalo",
+      "change_building_location": "Buffalo",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4060,14 +4522,14 @@
       "tariff_selection_flat": "Tariff Flat",
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "$$hashKey": "uiGrid-02Q8",
-      "add_rooftop_pv": "None"
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-040D"
     },
     {
       "name": "Fan Coil Duplicate 1",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "NY Buffalo",
+      "change_building_location": "Buffalo",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4090,14 +4552,14 @@
       "tariff_selection_flat": "Tariff Flat",
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "$$hashKey": "uiGrid-02SS",
-      "add_rooftop_pv": "None"
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-0426"
     },
     {
       "name": "Radiant Duplicate 1",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "NY Buffalo",
+      "change_building_location": "Buffalo",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4120,14 +4582,14 @@
       "tariff_selection_flat": "Tariff Flat",
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "$$hashKey": "uiGrid-02VC",
-      "add_rooftop_pv": "None"
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-043Z"
     },
     {
       "name": "VAV Chilled Water Duplicate 1",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "NY Buffalo",
+      "change_building_location": "Buffalo",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4150,14 +4612,14 @@
       "tariff_selection_flat": "Tariff Flat",
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "$$hashKey": "uiGrid-02XW",
-      "add_rooftop_pv": "None"
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-045S"
     },
     {
       "name": "VAV DX Duplicate 1",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "NY Buffalo",
+      "change_building_location": "Buffalo",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4180,14 +4642,14 @@
       "tariff_selection_flat": "Tariff Flat",
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "$$hashKey": "uiGrid-030G",
-      "add_rooftop_pv": "None"
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-047L"
     },
     {
       "name": "GSHP Duplicate 1",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "NY Buffalo",
+      "change_building_location": "Buffalo",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4210,14 +4672,14 @@
       "tariff_selection_flat": "Tariff Flat",
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "$$hashKey": "uiGrid-0330",
-      "add_rooftop_pv": "None"
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-049E"
     },
     {
-      "name": "ASHP PV",
+      "name": "ASHP Duplicate 2",
       "seedModel": "multi_spacetype.osm",
       "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
-      "change_building_location": "CA Chula Vista",
+      "change_building_location": "Honolulu",
       "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
@@ -4240,8 +4702,518 @@
       "tariff_selection_flat": "Tariff Flat",
       "openstudio_results": "OpenStudio Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "add_rooftop_pv": "PV 75",
-      "$$hashKey": "uiGrid-0DOU"
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04B7"
+    },
+    {
+      "name": "ASHP Duplicate 3",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Tampa",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04D0"
+    },
+    {
+      "name": "ASHP Duplicate 4",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Tucson",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04ET"
+    },
+    {
+      "name": "ASHP Duplicate 5",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Atlanta",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04GM"
+    },
+    {
+      "name": "ASHP Duplicate 6",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "El Paso",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04IF"
+    },
+    {
+      "name": "ASHP Duplicate 7",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "New York",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04K8"
+    },
+    {
+      "name": "ASHP Duplicate 8",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Albuquerque",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04M1"
+    },
+    {
+      "name": "ASHP Duplicate 9",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Seattle",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04NU"
+    },
+    {
+      "name": "ASHP Duplicate 10",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Aurora",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04PN"
+    },
+    {
+      "name": "ASHP Duplicate 11",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Port Angeles",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04RG"
+    },
+    {
+      "name": "ASHP Duplicate 12",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Rochester",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04T9"
+    },
+    {
+      "name": "ASHP Duplicate 13",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Great Falls",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04V2"
+    },
+    {
+      "name": "ASHP Duplicate 14",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "International Falls",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-04YX"
+    },
+    {
+      "name": "ASHP Duplicate 15",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Fairbanks",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-050T"
+    },
+    {
+      "name": "ASHP Duplicate 16",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Hanoi",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-052P"
+    },
+    {
+      "name": "ASHP Duplicate 17",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "Abu Dhabi",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-054L"
+    },
+    {
+      "name": "ASHP Duplicate 18",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "New Delhi",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-056H"
+    },
+    {
+      "name": "ASHP PV",
+      "seedModel": "multi_spacetype.osm",
+      "weatherFile": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "change_building_location": "San Diego",
+      "aedg_small_to_medium_office_exterior_wall_construction": "Exterior Wall",
+      "aedg_small_to_medium_office_roof_construction": "Roof",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration",
+      "aedg_small_to_medium_office_exterior_door_construction": "Exterior Doors",
+      "aedg_small_to_medium_office_exterior_floor_construction": "Exterior Floors",
+      "aedg_small_to_medium_office_interior_finishes": "Interior Finishes",
+      "aedg_small_to_medium_office_envelope_and_entry_infiltration": "Infiltration",
+      "aedg_small_to_medium_office_electric_equipment": "Electric Equipment",
+      "aedg_small_to_medium_office_electric_equipment_controls": "Electric Equipment Controls",
+      "aedg_small_to_medium_office_interior_lighting": "Interior Lighting",
+      "aedg_small_to_medium_office_interior_lighting_controls": "Interior Lighting Controls",
+      "aedg_small_to_medium_office_exterior_lighting": "Exterior Lighting - Small Office",
+      "aedg_office_swh": "SWH",
+      "aedg_office_hvac_ashp_doas": "ASHP DOAS",
+      "aedg_office_hvac_fan_coil_doas": "None",
+      "aedg_office_hvac_radiant_doas": "None",
+      "aedg_office_hvac_vav_ch_w": "None",
+      "aedg_office_hvac_vav_dx": "None",
+      "aedg_office_hvac_wshp_doas": "None",
+      "tariff_selection_flat": "Tariff Flat",
+      "openstudio_results": "OpenStudio Results",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "add_rooftop_pv": "None",
+      "$$hashKey": "uiGrid-06JC"
     }
   ],
   "analysisID": null,
@@ -4326,6 +5298,125 @@
     {
       "name": "GSHP Duplicate 1",
       "id": "GSHP Duplicate 1",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 2",
+      "id": "ASHP Duplicate 2",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 3",
+      "id": "ASHP Duplicate 3",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 4",
+      "id": "ASHP Duplicate 4",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 5",
+      "id": "ASHP Duplicate 5",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 6",
+      "id": "ASHP Duplicate 6",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 7",
+      "id": "ASHP Duplicate 7",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 8",
+      "id": "ASHP Duplicate 8",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 9",
+      "id": "ASHP Duplicate 9",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 10",
+      "id": "ASHP Duplicate 10",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 11",
+      "id": "ASHP Duplicate 11",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 12",
+      "id": "ASHP Duplicate 12",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 13",
+      "id": "ASHP Duplicate 13",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 14",
+      "id": "ASHP Duplicate 14",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 15",
+      "id": "ASHP Duplicate 15",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 16",
+      "id": "ASHP Duplicate 16",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 17",
+      "id": "ASHP Duplicate 17",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "ASHP Duplicate 18",
+      "id": "ASHP Duplicate 18",
       "run": false,
       "modified": false,
       "selected": false
