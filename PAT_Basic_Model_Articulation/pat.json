@@ -1,0 +1,61 @@
+{
+  "projectName": "PAT_Basic_Model_Articulation",
+  "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation",
+  "seed": null,
+  "weatherFile": null,
+  "analysis_type": "Manual",
+  "remoteSettings": {
+    "open": true,
+    "remoteType": "Amazon Cloud",
+    "remoteServerURL": null,
+    "aws": {
+      "connected": false,
+      "cluster_name": "",
+      "server_instance_type": "",
+      "worker_instance_type": "",
+      "user_id": "",
+      "worker_node_number": 0,
+      "aws_tags": [],
+      "openstudio_server_version": ""
+    },
+    "credentials": {
+      "yamlFilename": null,
+      "accessKey": null,
+      "region": "us-east-1"
+    }
+  },
+  "samplingMethod": {
+    "id": "baseline_perturbation",
+    "name": "analysis.type.baselinePerturbation",
+    "link": null
+  },
+  "algorithmSettings": [],
+  "rubyMD5": "",
+  "mongoMD5": "",
+  "openstudioServerMD5": "",
+  "openstudioCLIMD5": "",
+  "openstudioMD5": "",
+  "measures": [],
+  "filesToInclude": [],
+  "serverScripts": {
+    "server_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "server_finalization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_finalization": {
+      "file": null,
+      "arguments": []
+    }
+  },
+  "designAlternatives": [],
+  "analysisID": "",
+  "datapoints": []
+}
