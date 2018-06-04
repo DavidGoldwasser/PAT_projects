@@ -1,0 +1,3903 @@
+{
+  "projectName": "PAT_Basic_Model_Articulation_EE",
+  "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE",
+  "analysisName": "PAT_Basic_Model_Articulation",
+  "seed": "empty_seed.osm",
+  "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+  "analysis_type": "Manual",
+  "remoteSettings": {
+    "open": true,
+    "remoteType": "Amazon Cloud",
+    "remoteServerURL": null,
+    "aws": {
+      "connected": false,
+      "cluster_name": "",
+      "server_instance_type": "",
+      "worker_instance_type": "",
+      "user_id": "",
+      "worker_node_number": 0,
+      "aws_tags": [],
+      "openstudio_server_version": ""
+    },
+    "credentials": {
+      "yamlFilename": null,
+      "accessKey": null,
+      "region": "us-east-1"
+    }
+  },
+  "samplingMethod": {
+    "id": "baseline_perturbation",
+    "name": "analysis.type.baselinePerturbation",
+    "link": null
+  },
+  "algorithmSettings": [
+    {
+      "name": "in_measure_combinations",
+      "displayName": "In Measure Combinations",
+      "description": "Options: 'true' or 'false'",
+      "defaultValue": "true",
+      "type": "string",
+      "value": "true"
+    },
+    {
+      "name": "include_baseline_in_combinations",
+      "displayName": "Include Baseline in Combinations?",
+      "description": "Options: 'true' or 'false'",
+      "defaultValue": "true",
+      "type": "string",
+      "value": "true"
+    },
+    {
+      "name": "seed",
+      "displayName": "Seed",
+      "description": "Integer seed for random number generator",
+      "defaultValue": null,
+      "type": "number",
+      "value": null
+    }
+  ],
+  "rubyMD5": "",
+  "mongoMD5": "",
+  "openstudioServerMD5": "",
+  "openstudioCLIMD5": "",
+  "openstudioMD5": "",
+  "measures": [
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/ChangeBuildingLocation",
+      "name": "change_building_location",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/ChangeBuildingLocation",
+      "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
+      "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
+      "version_id": "2c222d7b-f13d-4635-866f-c87c8fc3ab3f",
+      "version_uuid": "{2c222d7b-f13d-4635-866f-c87c8fc3ab3f}",
+      "version_modified": "20180531T161312Z",
+      "xml_checksum": "057E8D9D",
+      "display_name": "ChangeBuildingLocation",
+      "class_name": "ChangeBuildingLocation",
+      "description": "Change the building location",
+      "modeler_description": "Change the building location",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-01VY",
+          "option_1": "option_1",
+          "option_2": "option_2"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-01W0",
+          "option_1": "ChangeBuildingLocation Atlanta",
+          "option_2": "ChangeBuildingLocation Denver"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-01W2",
+          "option_1": "Option 1 Description: Change the building location",
+          "option_2": "Option 2 Description: Change the building location"
+        },
+        {
+          "name": "weather_file_name",
+          "display_name": "Weather File Name",
+          "description": "Name of the weather file to change to. This is the filename with the extension (e.g. NewWeather.epw). Optionally this can inclucde the full file path, but for most use cases should just be file name.",
+          "type": "String",
+          "required": true,
+          "model_dependent": false,
+          "$$hashKey": "uiGrid-01W4",
+          "option_1": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
+          "variable": true,
+          "option_2": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+          "units": "",
+          "minimum": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+          "maximum": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
+          "mode": null
+        },
+        {
+          "name": "climate_zone",
+          "display_name": "Climate Zone.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Lookup From Stat File",
+          "choice_values": [
+            "1A",
+            "1B",
+            "2A",
+            "2B",
+            "3A",
+            "3B",
+            "3C",
+            "4A",
+            "4B",
+            "4C",
+            "5A",
+            "5B",
+            "5C",
+            "6A",
+            "6B",
+            "7",
+            "8",
+            "Lookup From Stat File"
+          ],
+          "choice_display_names": [
+            "1A",
+            "1B",
+            "2A",
+            "2B",
+            "3A",
+            "3B",
+            "3C",
+            "4A",
+            "4B",
+            "4C",
+            "5A",
+            "5B",
+            "5C",
+            "6A",
+            "6B",
+            "7",
+            "8",
+            "Lookup From Stat File"
+          ],
+          "$$hashKey": "uiGrid-01W6",
+          "option_1": "Lookup From Stat File",
+          "variable": false,
+          "option_2": "Lookup From Stat File"
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/31/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 0,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "ChangeBuildingLocation Atlanta",
+          "description": "Option 1 Description: Change the building location"
+        },
+        {
+          "id": "option_2",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "Lookup From Stat File"
+            }
+          ],
+          "name": "ChangeBuildingLocation Denver",
+          "description": "Option 2 Description: Change the building location"
+        }
+      ],
+      "instanceId": 0.6845296692693594,
+      "numberOfOptions": 2,
+      "$$hashKey": "object:3130",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/create_bar_from_building_type_ratios",
+      "name": "create_bar_from_building_type_ratios",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/create_bar_from_building_type_ratios",
+      "uid": "6e3a14f8-c3c7-4e03-bc51-bef8a52e1a05",
+      "uuid": "{6e3a14f8-c3c7-4e03-bc51-bef8a52e1a05}",
+      "version_id": "ca822a81-34e1-442c-8efc-5a32cb44abb3",
+      "version_uuid": "{ca822a81-34e1-442c-8efc-5a32cb44abb3}",
+      "version_modified": "20180522T170859Z",
+      "xml_checksum": "2AF3A68E",
+      "display_name": "Create Bar From Building Type Ratios",
+      "class_name": "CreateBarFromBuildingTypeRatios",
+      "description": "Create a core and perimeter bar sliced by space type.",
+      "modeler_description": "Space Type collections are made from one or more building types passed in with user arguments.",
+      "tags": "Envelope.Form",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-02VA",
+          "option_1": "option_1",
+          "option_2": "option_2"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-02VC",
+          "option_1": "CreateBar LargeHotel",
+          "option_2": "CreateBar MediumOffice"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-02VE",
+          "option_1": "Option 1 Description: Create a core and perimeter bar sliced by space type.",
+          "option_2": "Option 2 Description: Create a core and perimeter bar sliced by space type."
+        },
+        {
+          "name": "bldg_type_a",
+          "display_name": "Primary Building Type",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "Retail",
+            "StripMall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "Retail",
+            "StripMall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "$$hashKey": "uiGrid-02VG",
+          "option_1": "LargeHotel",
+          "variable": true,
+          "option_2": "MediumOffice",
+          "units": "",
+          "minimum": "LargeHotel",
+          "maximum": "MediumOffice",
+          "mode": null
+        },
+        {
+          "name": "bldg_type_a_num_units",
+          "display_name": "Primary Building Type Number of Units",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-02VI",
+          "option_1": 1,
+          "variable": false,
+          "option_2": 1
+        },
+        {
+          "name": "bldg_type_b",
+          "display_name": "Building Type B",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "Retail",
+            "StripMall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "Retail",
+            "StripMall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "$$hashKey": "uiGrid-02VK",
+          "option_1": "SmallOffice",
+          "variable": false,
+          "option_2": "SmallOffice"
+        },
+        {
+          "name": "bldg_type_b_fract_bldg_area",
+          "display_name": "Building Type B Fraction of Building Floor Area",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02VM",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "bldg_type_b_num_units",
+          "display_name": "Building Type B Number of Units",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-02VO",
+          "option_1": 1,
+          "variable": false,
+          "option_2": 1
+        },
+        {
+          "name": "bldg_type_c",
+          "display_name": "Building Type C",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "Retail",
+            "StripMall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "Retail",
+            "StripMall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "$$hashKey": "uiGrid-02VQ",
+          "option_1": "SmallOffice",
+          "variable": false,
+          "option_2": "SmallOffice"
+        },
+        {
+          "name": "bldg_type_c_fract_bldg_area",
+          "display_name": "Building Type C Fraction of Building Floor Area",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02VS",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "bldg_type_c_num_units",
+          "display_name": "Building Type C Number of Units",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-02VU",
+          "option_1": 1,
+          "variable": false,
+          "option_2": 1
+        },
+        {
+          "name": "bldg_type_d",
+          "display_name": "Building Type D",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "Retail",
+            "StripMall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "Retail",
+            "StripMall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient",
+            "SuperMarket"
+          ],
+          "$$hashKey": "uiGrid-02VW",
+          "option_1": "SmallOffice",
+          "variable": false,
+          "option_2": "SmallOffice"
+        },
+        {
+          "name": "bldg_type_d_fract_bldg_area",
+          "display_name": "Building Type D Fraction of Building Floor Area",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02VY",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "bldg_type_d_num_units",
+          "display_name": "Building Type D Number of Units",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-02W0",
+          "option_1": 1,
+          "variable": false,
+          "option_2": 1
+        },
+        {
+          "name": "single_floor_area",
+          "display_name": "Single Floor Area",
+          "description": "Non-zero value will fix the single floor area, overriding a user entry for Total Building Floor Area",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "ft^2",
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02W2",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "total_bldg_floor_area",
+          "display_name": "Total Building Floor Area",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "",
+          "default_value": 10000,
+          "$$hashKey": "uiGrid-02W4",
+          "option_1": 100000,
+          "variable": true,
+          "option_2": 20000,
+          "minimum": 20000,
+          "maximum": 100000,
+          "mode": 100000
+        },
+        {
+          "name": "floor_height",
+          "display_name": "Typical Floor to FLoor Height",
+          "description": "Selecting a typical floor height of 0 will trigger a smart building type default.",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "ft",
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02W6",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "num_stories_above_grade",
+          "display_name": "Number of Stories Above Grade",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-02W8",
+          "option_1": 10,
+          "variable": true,
+          "option_2": 3,
+          "units": "",
+          "minimum": 3,
+          "maximum": 10,
+          "mode": 10
+        },
+        {
+          "name": "num_stories_below_grade",
+          "display_name": "Number of Stories Below Grade",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WA",
+          "option_1": 1,
+          "variable": true,
+          "option_2": 0,
+          "units": "",
+          "minimum": 0,
+          "maximum": 1,
+          "mode": 1
+        },
+        {
+          "name": "building_rotation",
+          "display_name": "Building Rotation",
+          "description": "Set Building Rotation off of North (positive value is clockwise).",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "Degrees",
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WC",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "template",
+          "display_name": "Target Standard",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2004",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "$$hashKey": "uiGrid-02WE",
+          "option_1": "90.1-2004",
+          "variable": false,
+          "option_2": "90.1-2004"
+        },
+        {
+          "name": "ns_to_ew_ratio",
+          "display_name": "Ratio of North/South Facade Length Relative to East/West Facade Length.",
+          "description": "Selecting an aspect ratio of 0 will trigger a smart building type default. Aspect ratios less than one are not recommended for sliced bar geometry, instead rotate building and use a greater than 1 aspect ratio",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WG",
+          "option_1": 3,
+          "variable": true,
+          "option_2": 0,
+          "units": "",
+          "minimum": 0,
+          "maximum": 3,
+          "mode": 3
+        },
+        {
+          "name": "wwr",
+          "display_name": "Window to Wall Ratio.",
+          "description": "Selecting a window to wall ratio of 0 will trigger a smart building type default.",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WI",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "party_wall_fraction",
+          "display_name": "Fraction of Exterior Wall Area with Adjacent Structure",
+          "description": "This will impact how many above grade exterior walls are modeled with adiabatic boundary condition.",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WK",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "party_wall_stories_north",
+          "display_name": "Number of North facing stories with party wall",
+          "description": "This will impact how many above grade exterior north walls are modeled with adiabatic boundary condition. If this is less than the number of above grade stoes, upper flor will reamin exterior",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WM",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "party_wall_stories_south",
+          "display_name": "Number of South facing stories with party wall",
+          "description": "This will impact how many above grade exterior south walls are modeled with adiabatic boundary condition. If this is less than the number of above grade stoes, upper flor will reamin exterior",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WO",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "party_wall_stories_east",
+          "display_name": "Number of East facing stories with party wall",
+          "description": "This will impact how many above grade exterior east walls are modeled with adiabatic boundary condition. If this is less than the number of above grade stoes, upper flor will reamin exterior",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WQ",
+          "option_1": 4,
+          "variable": true,
+          "option_2": 0,
+          "units": "",
+          "minimum": 0,
+          "maximum": 4,
+          "mode": 4
+        },
+        {
+          "name": "party_wall_stories_west",
+          "display_name": "Number of West facing stories with party wall",
+          "description": "This will impact how many above grade exterior west walls are modeled with adiabatic boundary condition. If this is less than the number of above grade stoes, upper flor will reamin exterior",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-02WS",
+          "option_1": 0,
+          "variable": false,
+          "option_2": 0
+        },
+        {
+          "name": "bottom_story_ground_exposed_floor",
+          "display_name": "Is the Bottom Story Exposed to Ground?",
+          "description": "This should be true unless you are modeling a partial building which doesn't include the lowest story. The bottom story floor will have an adiabatic boundary condition when false.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02WU",
+          "option_1": true,
+          "variable": false,
+          "option_2": true
+        },
+        {
+          "name": "top_story_exterior_exposed_roof",
+          "display_name": "Is the Top Story an Exterior Roof?",
+          "description": "This should be true unless you are modeling a partial building which doesn't include the highest story. The top story ceiling will have an adiabatic boundary condition when false.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02WW",
+          "option_1": true,
+          "variable": false,
+          "option_2": true
+        },
+        {
+          "name": "story_multiplier",
+          "display_name": "Calculation Method for Story Multiplier",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Basements Ground Mid Top",
+          "choice_values": [
+            "None",
+            "Basements Ground Mid Top"
+          ],
+          "choice_display_names": [
+            "None",
+            "Basements Ground Mid Top"
+          ],
+          "$$hashKey": "uiGrid-02WY",
+          "option_1": "Basements Ground Mid Top",
+          "variable": false,
+          "option_2": "Basements Ground Mid Top"
+        },
+        {
+          "name": "bar_division_method",
+          "display_name": "Division Method for Bar Space Types.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Multiple Space Types - Individual Stories Sliced",
+          "choice_values": [
+            "Multiple Space Types - Simple Sliced",
+            "Multiple Space Types - Individual Stories Sliced",
+            "Single Space Type - Core and Perimeter"
+          ],
+          "choice_display_names": [
+            "Multiple Space Types - Simple Sliced",
+            "Multiple Space Types - Individual Stories Sliced",
+            "Single Space Type - Core and Perimeter"
+          ],
+          "$$hashKey": "uiGrid-02X0",
+          "option_1": "Multiple Space Types - Individual Stories Sliced",
+          "variable": false,
+          "option_2": "Multiple Space Types - Individual Stories Sliced"
+        },
+        {
+          "name": "make_mid_story_surfaces_adiabatic",
+          "display_name": "Make Mid Story Floor Surfaces Adibatic",
+          "description": "If set to true, this will skip surface intersection and make mid story floors and celings adiabiatc, not just at multiplied gaps.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "$$hashKey": "uiGrid-02X2",
+          "option_1": false,
+          "variable": false,
+          "option_2": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/22/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 1,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "bldg_type_a",
+              "value": "LargeHotel"
+            },
+            {
+              "name": "bldg_type_a_num_units",
+              "value": 1
+            },
+            {
+              "name": "bldg_type_b",
+              "value": "SmallOffice"
+            },
+            {
+              "name": "bldg_type_b_fract_bldg_area",
+              "value": 0
+            },
+            {
+              "name": "bldg_type_b_num_units",
+              "value": 1
+            },
+            {
+              "name": "bldg_type_c",
+              "value": "SmallOffice"
+            },
+            {
+              "name": "bldg_type_c_fract_bldg_area",
+              "value": 0
+            },
+            {
+              "name": "bldg_type_c_num_units",
+              "value": 1
+            },
+            {
+              "name": "bldg_type_d",
+              "value": "SmallOffice"
+            },
+            {
+              "name": "bldg_type_d_fract_bldg_area",
+              "value": 0
+            },
+            {
+              "name": "bldg_type_d_num_units",
+              "value": 1
+            },
+            {
+              "name": "single_floor_area",
+              "value": 0
+            },
+            {
+              "name": "total_bldg_floor_area",
+              "value": 100000
+            },
+            {
+              "name": "floor_height",
+              "value": 0
+            },
+            {
+              "name": "num_stories_above_grade",
+              "value": 10
+            },
+            {
+              "name": "num_stories_below_grade",
+              "value": 1
+            },
+            {
+              "name": "building_rotation",
+              "value": 0
+            },
+            {
+              "name": "template",
+              "value": "90.1-2004"
+            },
+            {
+              "name": "ns_to_ew_ratio",
+              "value": 3
+            },
+            {
+              "name": "wwr",
+              "value": 0
+            },
+            {
+              "name": "party_wall_fraction",
+              "value": 0
+            },
+            {
+              "name": "party_wall_stories_north",
+              "value": 0
+            },
+            {
+              "name": "party_wall_stories_south",
+              "value": 0
+            },
+            {
+              "name": "party_wall_stories_east",
+              "value": 4
+            },
+            {
+              "name": "party_wall_stories_west",
+              "value": 0
+            },
+            {
+              "name": "bottom_story_ground_exposed_floor",
+              "value": true
+            },
+            {
+              "name": "top_story_exterior_exposed_roof",
+              "value": true
+            },
+            {
+              "name": "story_multiplier",
+              "value": "Basements Ground Mid Top"
+            },
+            {
+              "name": "bar_division_method",
+              "value": "Multiple Space Types - Individual Stories Sliced"
+            },
+            {
+              "name": "make_mid_story_surfaces_adiabatic",
+              "value": false
+            }
+          ],
+          "name": "CreateBar LargeHotel",
+          "description": "Option 1 Description: Create a core and perimeter bar sliced by space type."
+        },
+        {
+          "id": "option_2",
+          "arguments": [
+            {
+              "name": "bldg_type_a",
+              "value": "MediumOffice"
+            },
+            {
+              "name": "bldg_type_a_num_units",
+              "value": 1
+            },
+            {
+              "name": "bldg_type_b",
+              "value": "SmallOffice"
+            },
+            {
+              "name": "bldg_type_b_fract_bldg_area",
+              "value": 0
+            },
+            {
+              "name": "bldg_type_b_num_units",
+              "value": 1
+            },
+            {
+              "name": "bldg_type_c",
+              "value": "SmallOffice"
+            },
+            {
+              "name": "bldg_type_c_fract_bldg_area",
+              "value": 0
+            },
+            {
+              "name": "bldg_type_c_num_units",
+              "value": 1
+            },
+            {
+              "name": "bldg_type_d",
+              "value": "SmallOffice"
+            },
+            {
+              "name": "bldg_type_d_fract_bldg_area",
+              "value": 0
+            },
+            {
+              "name": "bldg_type_d_num_units",
+              "value": 1
+            },
+            {
+              "name": "single_floor_area",
+              "value": 0
+            },
+            {
+              "name": "total_bldg_floor_area",
+              "value": 20000
+            },
+            {
+              "name": "floor_height",
+              "value": 0
+            },
+            {
+              "name": "num_stories_above_grade",
+              "value": 3
+            },
+            {
+              "name": "num_stories_below_grade",
+              "value": 0
+            },
+            {
+              "name": "building_rotation",
+              "value": 0
+            },
+            {
+              "name": "template",
+              "value": "90.1-2004"
+            },
+            {
+              "name": "ns_to_ew_ratio",
+              "value": 0
+            },
+            {
+              "name": "wwr",
+              "value": 0
+            },
+            {
+              "name": "party_wall_fraction",
+              "value": 0
+            },
+            {
+              "name": "party_wall_stories_north",
+              "value": 0
+            },
+            {
+              "name": "party_wall_stories_south",
+              "value": 0
+            },
+            {
+              "name": "party_wall_stories_east",
+              "value": 0
+            },
+            {
+              "name": "party_wall_stories_west",
+              "value": 0
+            },
+            {
+              "name": "bottom_story_ground_exposed_floor",
+              "value": true
+            },
+            {
+              "name": "top_story_exterior_exposed_roof",
+              "value": true
+            },
+            {
+              "name": "story_multiplier",
+              "value": "Basements Ground Mid Top"
+            },
+            {
+              "name": "bar_division_method",
+              "value": "Multiple Space Types - Individual Stories Sliced"
+            },
+            {
+              "name": "make_mid_story_surfaces_adiabatic",
+              "value": false
+            }
+          ],
+          "name": "CreateBar MediumOffice",
+          "description": "Option 2 Description: Create a core and perimeter bar sliced by space type."
+        }
+      ],
+      "instanceId": 0.44869111282462293,
+      "numberOfOptions": 2,
+      "$$hashKey": "object:5499",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/create_typical_building_from_model",
+      "name": "create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/create_typical_building_from_model",
+      "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
+      "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
+      "version_id": "b969048a-a312-419e-bf4a-524710f03aca",
+      "version_uuid": "{b969048a-a312-419e-bf4a-524710f03aca}",
+      "version_modified": "20180522T170859Z",
+      "xml_checksum": "EE13F09F",
+      "display_name": "Create Typical Building from Model",
+      "class_name": "CreateTypicalBuildingFromModel",
+      "description": "Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems.",
+      "modeler_description": "Initially this was intended for stub space types, but it is possible that it will be run on models tha talready have internal loads, schedules, or constructions that should be preserved. Set it up to support addition at later date of bool args to skip specific types of model elements.",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Model Articulation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-02U6",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-02U8",
+          "option_1": "CreateTypicalModel"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-02UA",
+          "option_1": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
+        },
+        {
+          "name": "template",
+          "display_name": "Target Standard",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2010",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NREL ZNE Ready 2017"
+          ],
+          "$$hashKey": "uiGrid-02UC",
+          "option_1": "90.1-2004",
+          "variable": false
+        },
+        {
+          "name": "system_type",
+          "display_name": "HVAC System Type",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Inferred",
+          "choice_values": [
+            "Inferred",
+            "Ideal Air Loads",
+            "PTAC with hot water heat",
+            "PTAC with gas coil heat",
+            "PTAC with electric baseboard heat",
+            "PTAC with no heat",
+            "PTAC with district hot water heat",
+            "PTHP",
+            "PSZ-AC with gas coil heat",
+            "PSZ-AC with electric baseboard heat",
+            "PSZ-AC with no heat",
+            "PSZ-AC with district hot water heat",
+            "PSZ-HP",
+            "Fan coil district chilled water with no heat",
+            "Fan coil district chilled water and boiler",
+            "Fan coil district chilled water unit heaters",
+            "Fan coil district chilled water electric baseboard heat",
+            "Fan coil district hot and chilled water",
+            "Fan coil district hot water and chiller",
+            "Fan coil chiller with no heat",
+            "Baseboard district hot water heat",
+            "Baseboard district hot water heat with direct evap coolers",
+            "Baseboard electric heat",
+            "Baseboard electric heat with direct evap coolers",
+            "Baseboard hot water heat",
+            "Baseboard hot water heat with direct evap coolers",
+            "Window AC with no heat",
+            "Window AC with forced air furnace",
+            "Window AC with district hot water baseboard heat",
+            "Window AC with hot water baseboard heat",
+            "Window AC with electric baseboard heat",
+            "Window AC with unit heaters",
+            "Direct evap coolers",
+            "Direct evap coolers with unit heaters",
+            "Unit heaters",
+            "Heat pump heat with no cooling",
+            "Heat pump heat with direct evap cooler",
+            "VAV with reheat",
+            "VAV with PFP boxes",
+            "VAV with gas reheat",
+            "VAV with zone unit heaters",
+            "VAV with electric baseboard heat",
+            "VAV cool with zone heat pump heat",
+            "PVAV with reheat",
+            "PVAV with PFP boxes",
+            "Residential forced air",
+            "Residential forced air cooling hot water baseboard heat",
+            "Residential forced air with district hot water",
+            "Residential heat pump",
+            "Forced air furnace",
+            "Forced air furnace district chilled water fan coil",
+            "Forced air furnace direct evap cooler",
+            "Residential AC with no heat",
+            "Residential AC with electric baseboard heat"
+          ],
+          "choice_display_names": [
+            "Inferred",
+            "Ideal Air Loads",
+            "PTAC with hot water heat",
+            "PTAC with gas coil heat",
+            "PTAC with electric baseboard heat",
+            "PTAC with no heat",
+            "PTAC with district hot water heat",
+            "PTHP",
+            "PSZ-AC with gas coil heat",
+            "PSZ-AC with electric baseboard heat",
+            "PSZ-AC with no heat",
+            "PSZ-AC with district hot water heat",
+            "PSZ-HP",
+            "Fan coil district chilled water with no heat",
+            "Fan coil district chilled water and boiler",
+            "Fan coil district chilled water unit heaters",
+            "Fan coil district chilled water electric baseboard heat",
+            "Fan coil district hot and chilled water",
+            "Fan coil district hot water and chiller",
+            "Fan coil chiller with no heat",
+            "Baseboard district hot water heat",
+            "Baseboard district hot water heat with direct evap coolers",
+            "Baseboard electric heat",
+            "Baseboard electric heat with direct evap coolers",
+            "Baseboard hot water heat",
+            "Baseboard hot water heat with direct evap coolers",
+            "Window AC with no heat",
+            "Window AC with forced air furnace",
+            "Window AC with district hot water baseboard heat",
+            "Window AC with hot water baseboard heat",
+            "Window AC with electric baseboard heat",
+            "Window AC with unit heaters",
+            "Direct evap coolers",
+            "Direct evap coolers with unit heaters",
+            "Unit heaters",
+            "Heat pump heat with no cooling",
+            "Heat pump heat with direct evap cooler",
+            "VAV with reheat",
+            "VAV with PFP boxes",
+            "VAV with gas reheat",
+            "VAV with zone unit heaters",
+            "VAV with electric baseboard heat",
+            "VAV cool with zone heat pump heat",
+            "PVAV with reheat",
+            "PVAV with PFP boxes",
+            "Residential forced air",
+            "Residential forced air cooling hot water baseboard heat",
+            "Residential forced air with district hot water",
+            "Residential heat pump",
+            "Forced air furnace",
+            "Forced air furnace district chilled water fan coil",
+            "Forced air furnace direct evap cooler",
+            "Residential AC with no heat",
+            "Residential AC with electric baseboard heat"
+          ],
+          "$$hashKey": "uiGrid-02UE",
+          "option_1": "Inferred",
+          "variable": false
+        },
+        {
+          "name": "hvac_delivery_type",
+          "display_name": "HVAC System Delivery Type",
+          "description": "How the HVAC system delivers heating or cooling to the zone.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Forced Air",
+          "choice_values": [
+            "Forced Air",
+            "Hydronic"
+          ],
+          "choice_display_names": [
+            "Forced Air",
+            "Hydronic"
+          ],
+          "$$hashKey": "uiGrid-02UG",
+          "option_1": "Forced Air",
+          "variable": false
+        },
+        {
+          "name": "htg_src",
+          "display_name": "HVAC Heating Source",
+          "description": "The primary source of heating used by HVAC systems in the model.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "NaturalGas",
+          "choice_values": [
+            "Electricity",
+            "NaturalGas",
+            "DistrictHeating",
+            "DistrictAmbient"
+          ],
+          "choice_display_names": [
+            "Electricity",
+            "NaturalGas",
+            "DistrictHeating",
+            "DistrictAmbient"
+          ],
+          "$$hashKey": "uiGrid-02UI",
+          "option_1": "NaturalGas",
+          "variable": false
+        },
+        {
+          "name": "clg_src",
+          "display_name": "HVAC Cooling Source",
+          "description": "The primary source of cooling used by HVAC systems in the model.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Electricity",
+          "choice_values": [
+            "Electricity",
+            "DistrictCooling",
+            "DistrictAmbient"
+          ],
+          "choice_display_names": [
+            "Electricity",
+            "DistrictCooling",
+            "DistrictAmbient"
+          ],
+          "$$hashKey": "uiGrid-02UK",
+          "option_1": "Electricity",
+          "variable": false
+        },
+        {
+          "name": "kitchen_makeup",
+          "display_name": "Kitchen Exhaust MakeUp Air Calculation Method",
+          "description": "Determine logic to identify dining or cafe zones to provide makeup air to kitchen exhaust.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Adjacent",
+          "choice_values": [
+            "None",
+            "Largest Zone",
+            "Adjacent"
+          ],
+          "choice_display_names": [
+            "None",
+            "Largest Zone",
+            "Adjacent"
+          ],
+          "$$hashKey": "uiGrid-02UM",
+          "option_1": "Adjacent",
+          "variable": false
+        },
+        {
+          "name": "exterior_lighting_zone",
+          "display_name": "Exterior Lighting Zone",
+          "description": "Identify the Exterior Lighitng Zone for the Building Site.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "3 - All Other Areas",
+          "choice_values": [
+            "0 - Undeveloped Areas Parks",
+            "1 - Developed Areas Parks",
+            "2 - Neighborhood",
+            "3 - All Other Areas",
+            "4 - High Activity"
+          ],
+          "choice_display_names": [
+            "0 - Undeveloped Areas Parks",
+            "1 - Developed Areas Parks",
+            "2 - Neighborhood",
+            "3 - All Other Areas",
+            "4 - High Activity"
+          ],
+          "$$hashKey": "uiGrid-02UO",
+          "option_1": "3 - All Other Areas",
+          "variable": false
+        },
+        {
+          "name": "add_constructions",
+          "display_name": "Add Constructions to Model",
+          "description": "Construction Set will be appied to entire building",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02UQ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_space_type_loads",
+          "display_name": "Add Space Type Loads to Model",
+          "description": "Populate existing space types in model with internal loads.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02US",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_elevators",
+          "display_name": "Add Elevators to Model",
+          "description": "Elevators will be add directly to space in model vs. being applied to a space type.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02UU",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_exterior_lights",
+          "display_name": "Add Exterior Lights to Model",
+          "description": "Multiple exterior lights objects will be added for different classes of lighting such as parking and facade.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02UW",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "onsite_parking_fraction",
+          "display_name": "Onsite Parking Fraction",
+          "description": "If set to 0 no exterior lighting for parking will be added",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-02UY",
+          "option_1": 1,
+          "variable": false
+        },
+        {
+          "name": "add_exhaust",
+          "display_name": "Add Exhaust Fans to Model",
+          "description": "Depending upon building type exhaust fans can be in kitchens, restrooms or other space types",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02V0",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_swh",
+          "display_name": "Add Service Water Heating to Model",
+          "description": "This will add both the supply and demand side of service water heating.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02V2",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_thermostat",
+          "display_name": "Add Thermostats",
+          "description": "Add Thermost to model based on Space Type Standards information of spaces assigned to thermal zones.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02V4",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "add_hvac",
+          "display_name": "Add HVAC System to Model",
+          "description": "Add HVAC System and thermostats to model",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02V6",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "remove_objects",
+          "display_name": "Clean Model of non-gemoetry objects",
+          "description": "Only removes objects of type that are selected to be added.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-02V8",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/22/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 2,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "template",
+              "value": "90.1-2004"
+            },
+            {
+              "name": "system_type",
+              "value": "Inferred"
+            },
+            {
+              "name": "hvac_delivery_type",
+              "value": "Forced Air"
+            },
+            {
+              "name": "htg_src",
+              "value": "NaturalGas"
+            },
+            {
+              "name": "clg_src",
+              "value": "Electricity"
+            },
+            {
+              "name": "kitchen_makeup",
+              "value": "Adjacent"
+            },
+            {
+              "name": "exterior_lighting_zone",
+              "value": "3 - All Other Areas"
+            },
+            {
+              "name": "add_constructions",
+              "value": true
+            },
+            {
+              "name": "add_space_type_loads",
+              "value": true
+            },
+            {
+              "name": "add_elevators",
+              "value": true
+            },
+            {
+              "name": "add_exterior_lights",
+              "value": true
+            },
+            {
+              "name": "onsite_parking_fraction",
+              "value": 1
+            },
+            {
+              "name": "add_exhaust",
+              "value": true
+            },
+            {
+              "name": "add_swh",
+              "value": true
+            },
+            {
+              "name": "add_thermostat",
+              "value": true
+            },
+            {
+              "name": "add_hvac",
+              "value": true
+            },
+            {
+              "name": "remove_objects",
+              "value": true
+            }
+          ],
+          "name": "CreateTypicalModel",
+          "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
+        }
+      ],
+      "instanceId": 0.11062650503360238,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:5498",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/78db3ab6-ad89-4d66-9140-e6f1c1a2a5d0",
+      "name": "view_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/78db3ab6-ad89-4d66-9140-e6f1c1a2a5d0",
+      "uid": "f4669f10-fda5-489d-8e1c-7ca3c2d40378",
+      "uuid": "{f4669f10-fda5-489d-8e1c-7ca3c2d40378}",
+      "version_id": "464c947a-3789-4984-bf52-0f5aaf8e6f1f",
+      "version_uuid": "{464c947a-3789-4984-bf52-0f5aaf8e6f1f}",
+      "version_modified": "20170721T163646Z",
+      "xml_checksum": "1E1F8B97",
+      "display_name": "ViewModel",
+      "class_name": "ViewModel",
+      "description": "Visualize an OpenStudio model in a web based viewer",
+      "modeler_description": "Converts the OpenStudio model to vA3C JSON format and renders using Three.js",
+      "tags": "Reporting.QAQC",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-06CU",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-06CW",
+          "option_1": "ViewModel"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-06CY",
+          "option_1": "Option 1 Description: Visualize an OpenStudio model in a web based viewer"
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "local",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "7/21/2017",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 3,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [],
+          "name": "ViewModel",
+          "description": "Option 1 Description: Visualize an OpenStudio model in a web based viewer"
+        }
+      ],
+      "instanceId": 0.06589405253597347,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:14523",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/ReduceLightingLoadsByPercentage",
+      "name": "reduce_lighting_loads_by_percentage",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceLightingLoadsByPercentage",
+      "uid": "791f3404-a28b-4a80-ba3f-e15b339e39ea",
+      "uuid": "{791f3404-a28b-4a80-ba3f-e15b339e39ea}",
+      "version_id": "a6ebe2f3-1887-41ad-9c89-b023f6a82303",
+      "version_uuid": "{a6ebe2f3-1887-41ad-9c89-b023f6a82303}",
+      "version_modified": "20180501T192515Z",
+      "xml_checksum": "293730A7",
+      "display_name": "Reduce Lighting Loads by Percentage",
+      "class_name": "ReduceLightingLoadsByPercentage",
+      "description": "The lighting system in this building uses more power per area than is required with the latest lighting technologies.  Replace the lighting system with a newer, more efficient lighting technology.  Newer technologies provide the same amount of light but use less energy in the process.",
+      "modeler_description": "This measure supports models which have a mixture of lighting assigned to spaces and space types.  The lighting may be specified as individual luminaires, lighting equipment level, lighting power per area, or lighting power per person.\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\nLoop through all lights and luminaires in the specified space type or the entire building. Clone the definition if it is shared by other lights, rename and adjust the power based on the specified percentage. Link the new definition to the existing lights or luminaire instance.  Adjust the power for lighting equipment assigned to a particular space but only if that space is part of the selected space type by  looping through the objects first in space types and then in spaces, but again only for spaces that are in the specified space type (unless the entire building has been chosen).  Material and installation cost increases will be applied to all costs related to both the definition and instance of the lighting object.  If this measure includes baseline costs, then the material and installation costs of the lighting objects in the baseline model will be summed together and added as a capital cost on the building object.",
+      "tags": "Electric Lighting.Lighting Equipment",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-06Q0",
+          "variable": false,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-06Q2",
+          "variable": false,
+          "option_1": "interior lights"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-06Q4",
+          "variable": false,
+          "option_1": "Option 1 Description: The lighting system in this building uses more power per area than is required with the latest lighting technologies.  Replace the lighting system with a newer, more efficient lighting technology.  Newer technologies provide the same amount of light but use less energy in the process."
+        },
+        {
+          "name": "space_type",
+          "display_name": "Apply the Measure to a Specific Space Type or to the Entire Model.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*Entire Building*",
+          "choice_values": [
+            "{b68c8b67-9b1d-414b-91a6-f7fc9c252d43}"
+          ],
+          "choice_display_names": [
+            "*Entire Building*"
+          ],
+          "$$hashKey": "uiGrid-06Q6",
+          "variable": false,
+          "option_1": "*Entire Building*"
+        },
+        {
+          "name": "lighting_power_reduction_percent",
+          "display_name": "Lighting Power Reduction (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 30,
+          "$$hashKey": "uiGrid-06Q8",
+          "variable": false,
+          "option_1": 30
+        },
+        {
+          "name": "material_and_installation_cost",
+          "display_name": "Increase in Material and Installation Cost for Lighting per Floor Area (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06QA",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "demolition_cost",
+          "display_name": "Increase in Demolition Costs for Lighting per Floor Area (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06QC",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "years_until_costs_start",
+          "display_name": "Years Until Costs Start (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06QE",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "demo_cost_initial_const",
+          "display_name": "Demolition Costs Occur During Initial Construction?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "$$hashKey": "uiGrid-06QG",
+          "variable": false,
+          "option_1": false
+        },
+        {
+          "name": "expected_life",
+          "display_name": "Expected Life (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 15,
+          "$$hashKey": "uiGrid-06QI",
+          "variable": false,
+          "option_1": 15
+        },
+        {
+          "name": "om_cost",
+          "display_name": "Increase O & M Costs for Lighting per Floor Area (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06QK",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "om_frequency",
+          "display_name": "O & M Frequency (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-06QM",
+          "variable": false,
+          "option_1": 1
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/1/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 4,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "space_type",
+              "value": "*Entire Building*"
+            },
+            {
+              "name": "lighting_power_reduction_percent",
+              "value": 30
+            },
+            {
+              "name": "material_and_installation_cost",
+              "value": 0
+            },
+            {
+              "name": "demolition_cost",
+              "value": 0
+            },
+            {
+              "name": "years_until_costs_start",
+              "value": 0
+            },
+            {
+              "name": "demo_cost_initial_const",
+              "value": false
+            },
+            {
+              "name": "expected_life",
+              "value": 15
+            },
+            {
+              "name": "om_cost",
+              "value": 0
+            },
+            {
+              "name": "om_frequency",
+              "value": 1
+            }
+          ],
+          "name": "interior lights",
+          "description": "Option 1 Description: The lighting system in this building uses more power per area than is required with the latest lighting technologies.  Replace the lighting system with a newer, more efficient lighting technology.  Newer technologies provide the same amount of light but use less energy in the process."
+        }
+      ],
+      "instanceId": 0.5490070137699765,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:13713"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/ReduceElectricEquipmentLoadsByPercentage",
+      "name": "reduce_electric_equipment_loads_by_percentage",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceElectricEquipmentLoadsByPercentage",
+      "uid": "0902e302-70db-4339-99b0-17f08bc93629",
+      "uuid": "{0902e302-70db-4339-99b0-17f08bc93629}",
+      "version_id": "74ee068e-10c0-4e18-bcca-4ef321230f26",
+      "version_uuid": "{74ee068e-10c0-4e18-bcca-4ef321230f26}",
+      "version_modified": "20180501T192515Z",
+      "xml_checksum": "F9A5B8F0",
+      "display_name": "Reduce Electric Equipment Loads by Percentage",
+      "class_name": "ReduceElectricEquipmentLoadsByPercentage",
+      "description": "Reduce electric equipment loads. This will affect equipment that have a, power, power per area (LPD), or power per person value. This can be applied to the entire building or a specific space type. A positive percentage represents an increase electric equipment power, while a negative percentage can be used for an increase in electric equipment power.",
+      "modeler_description": "Loop through all electric equipment objects in the specified space type or the entire building. Clone the definition if it has not already been cloned, rename and adjust the power based on the specified percentage. Link the new definition to the existing electric equipment instance. Loop through objects first in space types and then in spaces, but only for spaces that are in the specified space type, unless entire building has been chosen.",
+      "tags": "Equipment.Electric Equipment",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-06QO",
+          "variable": false,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-06QQ",
+          "variable": false,
+          "option_1": "plug loads"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-06QS",
+          "variable": false,
+          "option_1": "Option 1 Description: Reduce electric equipment loads. This will affect equipment that have a, power, power per area (LPD), or power per person value. This can be applied to the entire building or a specific space type. A positive percentage represents an increase electric equipment power, while a negative percentage can be used for an increase in electric equipment power."
+        },
+        {
+          "name": "space_type",
+          "display_name": "Apply the Measure to a Specific Space Type or to the Entire Model.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*Entire Building*",
+          "choice_values": [
+            "{b68c8b67-9b1d-414b-91a6-f7fc9c252d43}"
+          ],
+          "choice_display_names": [
+            "*Entire Building*"
+          ],
+          "$$hashKey": "uiGrid-06QU",
+          "variable": false,
+          "option_1": "*Entire Building*"
+        },
+        {
+          "name": "elecequip_power_reduction_percent",
+          "display_name": "Electric Equipment Power Reduction (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 30,
+          "$$hashKey": "uiGrid-06QW",
+          "variable": false,
+          "option_1": 30
+        },
+        {
+          "name": "material_and_installation_cost",
+          "display_name": "Increase in Material and Installation Cost for Electric Equipment per Floor Area (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06QY",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "demolition_cost",
+          "display_name": "Increase in Demolition Costs for Electric Equipment per Floor Area (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06R0",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "years_until_costs_start",
+          "display_name": "Years Until Costs Start (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06R2",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "demo_cost_initial_const",
+          "display_name": "Demolition Costs Occur During Initial Construction?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "$$hashKey": "uiGrid-06R4",
+          "variable": false,
+          "option_1": false
+        },
+        {
+          "name": "expected_life",
+          "display_name": "Expected Life (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 15,
+          "$$hashKey": "uiGrid-06R6",
+          "variable": false,
+          "option_1": 15
+        },
+        {
+          "name": "om_cost",
+          "display_name": "Increase O & M Costs for Electric Equipment per Floor Area (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06R8",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "om_frequency",
+          "display_name": "O & M Frequency (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-06RA",
+          "variable": false,
+          "option_1": 1
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/1/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 5,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "space_type",
+              "value": "*Entire Building*"
+            },
+            {
+              "name": "elecequip_power_reduction_percent",
+              "value": 30
+            },
+            {
+              "name": "material_and_installation_cost",
+              "value": 0
+            },
+            {
+              "name": "demolition_cost",
+              "value": 0
+            },
+            {
+              "name": "years_until_costs_start",
+              "value": 0
+            },
+            {
+              "name": "demo_cost_initial_const",
+              "value": false
+            },
+            {
+              "name": "expected_life",
+              "value": 15
+            },
+            {
+              "name": "om_cost",
+              "value": 0
+            },
+            {
+              "name": "om_frequency",
+              "value": 1
+            }
+          ],
+          "name": "plug loads",
+          "description": "Option 1 Description: Reduce electric equipment loads. This will affect equipment that have a, power, power per area (LPD), or power per person value. This can be applied to the entire building or a specific space type. A positive percentage represents an increase electric equipment power, while a negative percentage can be used for an increase in electric equipment power."
+        }
+      ],
+      "instanceId": 0.6226354985928757,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:13714"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceSpaceInfiltrationByPercentage",
+      "name": "reduce_space_infiltration_by_percentage",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceSpaceInfiltrationByPercentage",
+      "uid": "6e9de4b1-aa97-4010-80c8-529e53ffe943",
+      "uuid": "{6e9de4b1-aa97-4010-80c8-529e53ffe943}",
+      "version_id": "77fdf048-ad4c-4b80-a224-c974f41e5400",
+      "version_uuid": "{77fdf048-ad4c-4b80-a224-c974f41e5400}",
+      "version_modified": "20180604T173549Z",
+      "xml_checksum": "EACB548E",
+      "display_name": "ReduceSpaceInfiltrationByPercentage",
+      "class_name": "ReduceSpaceInfiltrationByPercentage",
+      "description": "This measure will reduce space infiltration rates by the requested percentage. A cost per square foot of building area can be added to the model.",
+      "modeler_description": "This can be run across a space type or the entire building. Costs will be associated with the building. If infiltration objects are removed at a later date, the costs will remain.",
+      "tags": "Envelope.Infiltration",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-06RC",
+          "variable": false,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-06RE",
+          "variable": false,
+          "option_1": "infiltration"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-06RG",
+          "variable": false,
+          "option_1": "Option 1 Description: This measure will reduce space infiltration rates by the requested percentage. A cost per square foot of building area can be added to the model."
+        },
+        {
+          "name": "space_type",
+          "display_name": "Apply the Measure to a Specific Space Type or to the Entire Model.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*Entire Building*",
+          "choice_values": [
+            "{b68c8b67-9b1d-414b-91a6-f7fc9c252d43}"
+          ],
+          "choice_display_names": [
+            "*Entire Building*"
+          ],
+          "$$hashKey": "uiGrid-06RI",
+          "variable": false,
+          "option_1": "*Entire Building*"
+        },
+        {
+          "name": "space_infiltration_reduction_percent",
+          "display_name": "Space Infiltration Power Reduction (%).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 30,
+          "$$hashKey": "uiGrid-06RK",
+          "variable": false,
+          "option_1": 30
+        },
+        {
+          "name": "constant_coefficient",
+          "display_name": "Constant Coefficient.",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-06RM",
+          "variable": false,
+          "option_1": 1
+        },
+        {
+          "name": "temperature_coefficient",
+          "display_name": "Temperature Coefficient.",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06RO",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "wind_speed_coefficient",
+          "display_name": "Wind Speed Coefficient.",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06RQ",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "wind_speed_squared_coefficient",
+          "display_name": "Wind Speed Squared Coefficient.",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06RS",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "alter_coef",
+          "display_name": "Alter constant temperature and wind speed coefficients.",
+          "description": "Setting this to false will result in infiltration objects that maintain the coefficients from the initial model. Setting this to true replaces the existing coefficients with the values entered for the coefficient arguments in this measure.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "option_1": false,
+          "variable": false,
+          "$$hashKey": "uiGrid-0PI1"
+        },
+        {
+          "name": "material_and_installation_cost",
+          "display_name": "Increase in Material and Installation Costs for Building per Affected Floor Area ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06RU",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "om_cost",
+          "display_name": "O & M Costs for Construction per Affected Floor Area ($/ft^2).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-06RW",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "om_frequency",
+          "display_name": "O & M Frequency (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-06RY",
+          "variable": false,
+          "option_1": 1
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "6/4/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 6,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "space_type",
+              "value": "*Entire Building*"
+            },
+            {
+              "name": "space_infiltration_reduction_percent",
+              "value": 30
+            },
+            {
+              "name": "constant_coefficient",
+              "value": 1
+            },
+            {
+              "name": "temperature_coefficient",
+              "value": 0
+            },
+            {
+              "name": "wind_speed_coefficient",
+              "value": 0
+            },
+            {
+              "name": "wind_speed_squared_coefficient",
+              "value": 0
+            },
+            {
+              "name": "alter_coef",
+              "value": false
+            },
+            {
+              "name": "material_and_installation_cost",
+              "value": 0
+            },
+            {
+              "name": "om_cost",
+              "value": 0
+            },
+            {
+              "name": "om_frequency",
+              "value": 1
+            }
+          ],
+          "name": "infiltration",
+          "description": "Option 1 Description: This measure will reduce space infiltration rates by the requested percentage. A cost per square foot of building area can be added to the model."
+        }
+      ],
+      "instanceId": 0.2951751124368358,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:13715"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/IncreaseInsulationRValueForExteriorWallsByPercentage",
+      "name": "increase_insulation_r_value_for_exterior_walls_by_percentage",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/IncreaseInsulationRValueForExteriorWallsByPercentage",
+      "uid": "7508c563-22bd-49f4-b646-aac69b02a82d",
+      "uuid": "{7508c563-22bd-49f4-b646-aac69b02a82d}",
+      "version_id": "4d11bfe7-e4fc-489f-8f7f-77ffbbf4b952",
+      "version_uuid": "{4d11bfe7-e4fc-489f-8f7f-77ffbbf4b952}",
+      "version_modified": "20180501T192446Z",
+      "xml_checksum": "EB1A0C08",
+      "display_name": "Increase R-value of Insulation for Exterior Walls By a Specified Percentage",
+      "class_name": "IncreaseInsulationRValueForExteriorWallsByPercentage",
+      "description": "Increase the R value of the insulation layer in wall constructinons by a percentage.",
+      "modeler_description": "Insulation later is inferred by finding the existing layer with the highest thermal resistance.",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-08YJ",
+          "variable": false,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-08YL",
+          "variable": false,
+          "option_1": "ext wall"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-08YN",
+          "variable": false,
+          "option_1": "Option 1 Description: Increase the R value of the insulation layer in wall constructinons by a percentage."
+        },
+        {
+          "name": "r_value",
+          "display_name": "Percentage Increase of R-value for Exterior Wall Insulation.",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 30,
+          "$$hashKey": "uiGrid-08YP",
+          "variable": false,
+          "option_1": 30
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/1/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 7,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "r_value",
+              "value": 30
+            }
+          ],
+          "name": "ext wall",
+          "description": "Option 1 Description: Increase the R value of the insulation layer in wall constructinons by a percentage."
+        }
+      ],
+      "instanceId": 0.3809131072595673,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:18149"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/IncreaseInsulationRValueForRoofsByPercentage",
+      "name": "increase_insulation_r_value_for_roofs_by_percentage",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/IncreaseInsulationRValueForRoofsByPercentage",
+      "uid": "807d3ebf-c89b-4b93-b400-110ca060b2bb",
+      "uuid": "{807d3ebf-c89b-4b93-b400-110ca060b2bb}",
+      "version_id": "295287c8-22aa-4fd5-81b8-6704168c2ba7",
+      "version_uuid": "{295287c8-22aa-4fd5-81b8-6704168c2ba7}",
+      "version_modified": "20180501T192446Z",
+      "xml_checksum": "EB1A0C08",
+      "display_name": "Increase R-value of Insulation for Roofs by a Specified Percentage.",
+      "class_name": "IncreaseInsulationRValueForRoofsByPercentage",
+      "description": "Increase the R value of the insulation layer in roof constructinons by a percentage.",
+      "modeler_description": "Insulation later is inferred by finding the existing layer with the highest thermal resistance.",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-08YR",
+          "variable": false,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-08YT",
+          "variable": false,
+          "option_1": "roof"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-08YV",
+          "variable": false,
+          "option_1": "Option 1 Description: Increase the R value of the insulation layer in roof constructinons by a percentage."
+        },
+        {
+          "name": "r_value",
+          "display_name": "Percentage Increase of R-value for Roof Insulation.",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 30,
+          "$$hashKey": "uiGrid-08YX",
+          "variable": false,
+          "option_1": 30
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/1/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 8,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "r_value",
+              "value": 30
+            }
+          ],
+          "name": "roof",
+          "description": "Option 1 Description: Increase the R value of the insulation layer in roof constructinons by a percentage."
+        }
+      ],
+      "instanceId": 0.927111941166975,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:18150"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/SetCOPforSingleSpeedDXCoolingUnits",
+      "name": "set_co_pfor_single_speed_dx_cooling_units",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/SetCOPforSingleSpeedDXCoolingUnits",
+      "uid": "a4a7297e-8314-4df7-86b5-bec18cdd0a3a",
+      "uuid": "{a4a7297e-8314-4df7-86b5-bec18cdd0a3a}",
+      "version_id": "1c131297-8e31-456a-9192-4665454707e4",
+      "version_uuid": "{1c131297-8e31-456a-9192-4665454707e4}",
+      "version_modified": "20180501T192516Z",
+      "xml_checksum": "9E2537CD",
+      "display_name": "Set COP for Single Speed DX Cooling Units",
+      "class_name": "SetCOPforSingleSpeedDXCoolingUnits",
+      "description": "This measure will find single speed DX cooling units in the model and will alter the Rated COP to a specified value. It can be run on a single or all air loops in the model.",
+      "modeler_description": "Loop through air loops in the building and find and change the COP of any OS:Coil:Cooling:DX:SingleSpeed objects you find. Note the pre-adjusted COP and also the name of the loop. For the starting condition note the range of COP values for the units, and for the final condition do the same, to confirm that they were all changed.",
+      "tags": "HVAC.Cooling",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-0E1L",
+          "variable": false,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-0E1N",
+          "variable": false,
+          "option_1": "COP Single Speed"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-0E1P",
+          "variable": false,
+          "option_1": "Option 1 Description: This measure will find single speed DX cooling units in the model and will alter the Rated COP to a specified value. It can be run on a single or all air loops in the model."
+        },
+        {
+          "name": "object",
+          "display_name": "Choose an Air Loop with a single speed DX Cooling Unit to Alter.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*All Air Loops*",
+          "choice_values": [
+            "{b68c8b67-9b1d-414b-91a6-f7fc9c252d43}"
+          ],
+          "choice_display_names": [
+            "*All Air Loops*"
+          ],
+          "$$hashKey": "uiGrid-0E1R",
+          "variable": false,
+          "option_1": "*All Air Loops*"
+        },
+        {
+          "name": "cop",
+          "display_name": "Rated COP",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 4,
+          "$$hashKey": "uiGrid-0E1T",
+          "variable": false,
+          "option_1": 4
+        },
+        {
+          "name": "remove_costs",
+          "display_name": "Remove Baseline Costs From Effected Cooling Coil DX Single Speed Units?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-0E1V",
+          "variable": false,
+          "option_1": true
+        },
+        {
+          "name": "material_cost",
+          "display_name": "Material and Installation Costs per Cooling Coil DX Single Speed Unit ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0E1X",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "demolition_cost",
+          "display_name": "Demolition Costs per Cooling Coil DX Single Speed Unit ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0E1Z",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "years_until_costs_start",
+          "display_name": "Years Until Costs Start (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0E21",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "demo_cost_initial_const",
+          "display_name": "Demolition Costs Occur During Initial Construction?",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "$$hashKey": "uiGrid-0E23",
+          "variable": false,
+          "option_1": false
+        },
+        {
+          "name": "expected_life",
+          "display_name": "Expected Life (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 20,
+          "$$hashKey": "uiGrid-0E25",
+          "variable": false,
+          "option_1": 20
+        },
+        {
+          "name": "om_cost",
+          "display_name": "O & M Costs per Cooling Coil DX Single Speed Unit ($).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "$$hashKey": "uiGrid-0E27",
+          "variable": false,
+          "option_1": 0
+        },
+        {
+          "name": "om_frequency",
+          "display_name": "O & M Frequency (whole years).",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "$$hashKey": "uiGrid-0E29",
+          "variable": false,
+          "option_1": 1
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/1/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 9,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "object",
+              "value": "*All Air Loops*"
+            },
+            {
+              "name": "cop",
+              "value": 4
+            },
+            {
+              "name": "remove_costs",
+              "value": true
+            },
+            {
+              "name": "material_cost",
+              "value": 0
+            },
+            {
+              "name": "demolition_cost",
+              "value": 0
+            },
+            {
+              "name": "years_until_costs_start",
+              "value": 0
+            },
+            {
+              "name": "demo_cost_initial_const",
+              "value": false
+            },
+            {
+              "name": "expected_life",
+              "value": 20
+            },
+            {
+              "name": "om_cost",
+              "value": 0
+            },
+            {
+              "name": "om_frequency",
+              "value": 1
+            }
+          ],
+          "name": "COP Single Speed",
+          "description": "Option 1 Description: This measure will find single speed DX cooling units in the model and will alter the Rated COP to a specified value. It can be run on a single or all air loops in the model."
+        }
+      ],
+      "instanceId": 0.46929500539645064,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:29248"
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/tariff_selection_generic",
+      "name": "tariff_selection_generic",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/tariff_selection_generic",
+      "uid": "d65ae535-f0ea-4745-9f5b-8d42c7070741",
+      "uuid": "{d65ae535-f0ea-4745-9f5b-8d42c7070741}",
+      "version_id": "f51def40-c03d-44d9-b7c7-fff868ebb41f",
+      "version_uuid": "{f51def40-c03d-44d9-b7c7-fff868ebb41f}",
+      "version_modified": "20170531T170029Z",
+      "xml_checksum": "43564105",
+      "display_name": " Tariff Selection-Generic",
+      "class_name": "TariffSelectionGeneric",
+      "description": "This measure creates tariff objets from pre-poulated IDF files in the measures \"resoruces\" directory.",
+      "modeler_description": "The timestep for the simulation will be changed to four timesteps per hour to me more compatable with a variety of demand window lnegths that may be in tariff objects in the resources directory.",
+      "tags": "Economics.Life Cycle Cost Analysis",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "EnergyPlusMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Retrofit EE"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-01W8",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-01WA",
+          "option_1": "Tariff"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-01WC",
+          "option_1": "Option 1 Description: This measure creates tariff objets from pre-poulated IDF files in the measures \"resoruces\" directory."
+        },
+        {
+          "name": "ElectricityPurchased:Facility",
+          "display_name": "Select a Tariff for ElectricityPurchased:Facility.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Example_A",
+          "choice_values": [
+            "Example_A",
+            "Example_B",
+            "Example_C",
+            "Example_D",
+            "Example_E",
+            "Example_F",
+            "Example_G",
+            "Example_H"
+          ],
+          "choice_display_names": [
+            "Example A FlatEnergyCharge",
+            "Example B BlockEnergyCharge",
+            "Example C BlockEnergyAndDemandCharges",
+            "Example D SeasonalEnergyCharngesWithMinimumCharge",
+            "Example E KWh per kW Energy Charges",
+            "Example F SeasonalTimeOfUseEnergy",
+            "Example G BlocksWithinBlocks",
+            "Example H RealTimePricing"
+          ],
+          "$$hashKey": "uiGrid-01WE",
+          "option_1": "Example_A",
+          "variable": false
+        },
+        {
+          "name": "Gas:Facility",
+          "display_name": "Select a Tariff for Gas:Facility.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "FlatEnergyCharge-Gas",
+          "choice_values": [
+            "FlatEnergyCharge-Gas",
+            "IN-EIAMonthlyRateGas"
+          ],
+          "choice_display_names": [
+            "FlatEnergyCharge-Gas",
+            "IN EIAMonthlyRateGas"
+          ],
+          "$$hashKey": "uiGrid-01WG",
+          "option_1": "FlatEnergyCharge-Gas",
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/31/2017",
+      "author": "",
+      "type": "EnergyPlusMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 10,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "ElectricityPurchased:Facility",
+              "value": "Example_A"
+            },
+            {
+              "name": "Gas:Facility",
+              "value": "FlatEnergyCharge-Gas"
+            }
+          ],
+          "name": "Tariff",
+          "description": "Option 1 Description: This measure creates tariff objets from pre-poulated IDF files in the measures \"resoruces\" directory."
+        }
+      ],
+      "instanceId": 0.4205883606366212,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:3137",
+      "outputMeasure": false
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/openstudio_results",
+      "name": "openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation_EE/measures/openstudio_results",
+      "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+      "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
+      "version_id": "f538a5bb-0ea0-49c6-be0b-e206a840f207",
+      "version_uuid": "{f538a5bb-0ea0-49c6-be0b-e206a840f207}",
+      "version_modified": "20171218T173206Z",
+      "xml_checksum": "557BF06F",
+      "display_name": "OpenStudio Results",
+      "class_name": "OpenStudioResults",
+      "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+      "modeler_description": "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+      "tags": "Reporting.QAQC",
+      "outputs": [
+        {
+          "name": "electricity_ip",
+          "display_name": "electricity_ip",
+          "short_name": "electricity_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "natural_gas_ip",
+          "display_name": "natural_gas_ip",
+          "short_name": "natural_gas_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "additional_fuel_ip",
+          "display_name": "additional_fuel_ip",
+          "short_name": "additional_fuel_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_heating_ip",
+          "display_name": "district_heating_ip",
+          "short_name": "district_heating_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "district_cooling_ip",
+          "display_name": "district_cooling_ip",
+          "short_name": "district_cooling_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_site_eui",
+          "display_name": "total_site_eui",
+          "short_name": "total_site_eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "eui",
+          "display_name": "eui",
+          "short_name": "eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "net_site_energy",
+          "display_name": "net_site_energy",
+          "short_name": "net_site_energy",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_peak_electric_demand",
+          "display_name": "annual_peak_electric_demand",
+          "short_name": "annual_peak_electric_demand",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_cooling",
+          "display_name": "unmet_hours_during_occupied_cooling",
+          "short_name": "unmet_hours_during_occupied_cooling",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "unmet_hours_during_occupied_heating",
+          "display_name": "unmet_hours_during_occupied_heating",
+          "short_name": "unmet_hours_during_occupied_heating",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "first_year_capital_cost",
+          "display_name": "first_year_capital_cost",
+          "short_name": "first_year_capital_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "annual_utility_cost",
+          "display_name": "annual_utility_cost",
+          "short_name": "annual_utility_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        },
+        {
+          "name": "total_lifecycle_cost",
+          "display_name": "total_lifecycle_cost",
+          "short_name": "total_lifecycle_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-01WI",
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-01WK",
+          "option_1": "OpenStudio Results"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-01WM",
+          "option_1": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        },
+        {
+          "name": "building_summary_section",
+          "display_name": "Model Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01WO",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "annual_overview_section",
+          "display_name": "Annual Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01WQ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "monthly_overview_section",
+          "display_name": "Monthly Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01WS",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "utility_bills_rates_section",
+          "display_name": "Utility Bills/Rates",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01WU",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "envelope_section_section",
+          "display_name": "Envelope",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01WW",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "space_type_breakdown_section",
+          "display_name": "Space Type Breakdown",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01WY",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "space_type_details_section",
+          "display_name": "Space Type Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01X0",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "interior_lighting_section",
+          "display_name": "Interior Lighting Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01X2",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "plug_loads_section",
+          "display_name": "Plug Loads Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01X4",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "exterior_light_section",
+          "display_name": "Exterior Lighting",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01X6",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "water_use_section",
+          "display_name": "Water Use Equipment",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01X8",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "hvac_load_profile",
+          "display_name": "HVAC Load Profiles",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XA",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_condition_section",
+          "display_name": "Zone Conditions",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XC",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_summary_section",
+          "display_name": "Zone Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XE",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "zone_equipment_detail_section",
+          "display_name": "Zone Equipment Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XG",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "air_loops_detail_section",
+          "display_name": "Air Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XI",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "plant_loops_detail_section",
+          "display_name": "Plant Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XK",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "outdoor_air_section",
+          "display_name": "Outdoor Air",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XM",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "cost_summary_section",
+          "display_name": "Cash Flow",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XO",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "source_energy_section",
+          "display_name": "Site and Source Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XQ",
+          "option_1": true,
+          "variable": false
+        },
+        {
+          "name": "schedules_overview_section",
+          "display_name": "Schedule Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-01XS",
+          "option_1": true,
+          "variable": false
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "12/18/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 11,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "building_summary_section",
+              "value": true
+            },
+            {
+              "name": "annual_overview_section",
+              "value": true
+            },
+            {
+              "name": "monthly_overview_section",
+              "value": true
+            },
+            {
+              "name": "utility_bills_rates_section",
+              "value": true
+            },
+            {
+              "name": "envelope_section_section",
+              "value": true
+            },
+            {
+              "name": "space_type_breakdown_section",
+              "value": true
+            },
+            {
+              "name": "space_type_details_section",
+              "value": true
+            },
+            {
+              "name": "interior_lighting_section",
+              "value": true
+            },
+            {
+              "name": "plug_loads_section",
+              "value": true
+            },
+            {
+              "name": "exterior_light_section",
+              "value": true
+            },
+            {
+              "name": "water_use_section",
+              "value": true
+            },
+            {
+              "name": "hvac_load_profile",
+              "value": true
+            },
+            {
+              "name": "zone_condition_section",
+              "value": true
+            },
+            {
+              "name": "zone_summary_section",
+              "value": true
+            },
+            {
+              "name": "zone_equipment_detail_section",
+              "value": true
+            },
+            {
+              "name": "air_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "plant_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "outdoor_air_section",
+              "value": true
+            },
+            {
+              "name": "cost_summary_section",
+              "value": true
+            },
+            {
+              "name": "source_energy_section",
+              "value": true
+            },
+            {
+              "name": "schedules_overview_section",
+              "value": true
+            }
+          ],
+          "name": "OpenStudio Results",
+          "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        }
+      ],
+      "instanceId": 0.9034191180647491,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:3144",
+      "outputMeasure": true,
+      "userDefinedOutputs": [],
+      "analysisOutputs": []
+    }
+  ],
+  "filesToInclude": [],
+  "serverScripts": {
+    "server_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "server_finalization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_finalization": {
+      "file": null,
+      "arguments": []
+    }
+  },
+  "designAlternatives": [
+    {
+      "name": "Hotel Large",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Atlanta",
+      "create_bar_from_building_type_ratios": "CreateBar LargeHotel",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "$$hashKey": "uiGrid-06NR",
+      "reduce_lighting_loads_by_percentage": "None",
+      "reduce_electric_equipment_loads_by_percentage": "None",
+      "reduce_space_infiltration_by_percentage": "None",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "None",
+      "increase_insulation_r_value_for_roofs_by_percentage": "None",
+      "set_co_pfor_single_speed_dx_cooling_units": "None"
+    },
+    {
+      "name": "Office Medium",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Denver",
+      "create_bar_from_building_type_ratios": "CreateBar MediumOffice",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "$$hashKey": "uiGrid-07YV",
+      "reduce_lighting_loads_by_percentage": "None",
+      "reduce_electric_equipment_loads_by_percentage": "None",
+      "reduce_space_infiltration_by_percentage": "None",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "None",
+      "increase_insulation_r_value_for_roofs_by_percentage": "None",
+      "set_co_pfor_single_speed_dx_cooling_units": "None"
+    },
+    {
+      "name": "Office Medium ee lights",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Denver",
+      "create_bar_from_building_type_ratios": "CreateBar MediumOffice",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "reduce_lighting_loads_by_percentage": "interior lights",
+      "reduce_electric_equipment_loads_by_percentage": "None",
+      "reduce_space_infiltration_by_percentage": "None",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "None",
+      "increase_insulation_r_value_for_roofs_by_percentage": "None",
+      "set_co_pfor_single_speed_dx_cooling_units": "None",
+      "$$hashKey": "uiGrid-0ES5"
+    },
+    {
+      "name": "Office Medium ee plug loads",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Denver",
+      "create_bar_from_building_type_ratios": "CreateBar MediumOffice",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "reduce_lighting_loads_by_percentage": "None",
+      "reduce_electric_equipment_loads_by_percentage": "plug loads",
+      "reduce_space_infiltration_by_percentage": "None",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "None",
+      "increase_insulation_r_value_for_roofs_by_percentage": "None",
+      "set_co_pfor_single_speed_dx_cooling_units": "None",
+      "$$hashKey": "uiGrid-0ETS"
+    },
+    {
+      "name": "Office Medium ee infiltration",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Denver",
+      "create_bar_from_building_type_ratios": "CreateBar MediumOffice",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "reduce_lighting_loads_by_percentage": "None",
+      "reduce_electric_equipment_loads_by_percentage": "None",
+      "reduce_space_infiltration_by_percentage": "infiltration",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "None",
+      "increase_insulation_r_value_for_roofs_by_percentage": "None",
+      "set_co_pfor_single_speed_dx_cooling_units": "None",
+      "$$hashKey": "uiGrid-0EVF"
+    },
+    {
+      "name": "Office Medium ee ext wall",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Denver",
+      "create_bar_from_building_type_ratios": "CreateBar MediumOffice",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "reduce_lighting_loads_by_percentage": "None",
+      "reduce_electric_equipment_loads_by_percentage": "None",
+      "reduce_space_infiltration_by_percentage": "None",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "ext wall",
+      "increase_insulation_r_value_for_roofs_by_percentage": "None",
+      "set_co_pfor_single_speed_dx_cooling_units": "None",
+      "$$hashKey": "uiGrid-0EX2"
+    },
+    {
+      "name": "Office Medium ee oof",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Denver",
+      "create_bar_from_building_type_ratios": "CreateBar MediumOffice",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "reduce_lighting_loads_by_percentage": "None",
+      "reduce_electric_equipment_loads_by_percentage": "None",
+      "reduce_space_infiltration_by_percentage": "None",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "None",
+      "increase_insulation_r_value_for_roofs_by_percentage": "roof",
+      "set_co_pfor_single_speed_dx_cooling_units": "None",
+      "$$hashKey": "uiGrid-0EYP"
+    },
+    {
+      "name": "Office Medium  ee dx single speed",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Denver",
+      "create_bar_from_building_type_ratios": "CreateBar MediumOffice",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "reduce_lighting_loads_by_percentage": "None",
+      "reduce_electric_equipment_loads_by_percentage": "None",
+      "reduce_space_infiltration_by_percentage": "None",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "None",
+      "increase_insulation_r_value_for_roofs_by_percentage": "None",
+      "set_co_pfor_single_speed_dx_cooling_units": "COP Single Speed",
+      "$$hashKey": "uiGrid-0F0C"
+    },
+    {
+      "name": "Office Medium ee all",
+      "seedModel": "empty_seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "ChangeBuildingLocation Denver",
+      "create_bar_from_building_type_ratios": "CreateBar MediumOffice",
+      "create_typical_building_from_model": "CreateTypicalModel",
+      "view_model": "ViewModel",
+      "tariff_selection_generic": "Tariff",
+      "openstudio_results": "OpenStudio Results",
+      "reduce_lighting_loads_by_percentage": "interior lights",
+      "reduce_electric_equipment_loads_by_percentage": "plug loads",
+      "reduce_space_infiltration_by_percentage": "infiltration",
+      "increase_insulation_r_value_for_exterior_walls_by_percentage": "ext wall",
+      "increase_insulation_r_value_for_roofs_by_percentage": "roof",
+      "set_co_pfor_single_speed_dx_cooling_units": "COP Single Speed",
+      "$$hashKey": "uiGrid-0F1Z"
+    }
+  ],
+  "analysisID": null,
+  "datapoints": [
+    {
+      "name": "Hotel Large",
+      "id": "Hotel Large",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Office Medium",
+      "id": "Office Medium",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Office Medium ee lights",
+      "id": "Office Medium ee lights",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Office Medium ee plug loads",
+      "id": "Office Medium ee plug loads",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Office Medium ee infiltration",
+      "id": "Office Medium ee infiltration",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Office Medium ee ext wall",
+      "id": "Office Medium ee ext wall",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Office Medium ee oof",
+      "id": "Office Medium ee oof",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Office Medium  ee dx single speed",
+      "id": "Office Medium  ee dx single speed",
+      "run": false,
+      "modified": false,
+      "selected": false
+    },
+    {
+      "name": "Office Medium ee all",
+      "id": "Office Medium ee all",
+      "run": false,
+      "modified": false,
+      "selected": false
+    }
+  ]
+}
