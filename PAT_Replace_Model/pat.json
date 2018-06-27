@@ -1,51 +1,98 @@
 {
   "projectName": "PAT_Replace_Model",
   "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Replace_Model",
-  "analysisName": "PAT_Replace_Model Manual Analysis",
+  "analysisName": "PAT_Replace_Model Algorithmic Analysis EC2",
   "seed": "seed_empty.osm",
   "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-  "analysis_type": "Manual",
+  "analysis_type": "Algorithmic",
   "remoteSettings": {
     "open": true,
     "remoteType": "Amazon Cloud",
-    "remoteServerURL": null,
+    "remoteServerURL": "http://bball-130553.nrel.gov:8080/",
     "aws": {
+      "cluster_name": "June27 test",
       "connected": false,
-      "cluster_name": "",
-      "server_instance_type": "",
-      "worker_instance_type": "",
+      "server_instance_type": {
+        "name": "m3.2xlarge",
+        "cpus": "8",
+        "memory": "30 GiB",
+        "storage": "2 x 80 GB",
+        "cost": "$0.56/hr"
+      },
+      "worker_instance_type": {
+        "name": "m3.medium",
+        "cpus": "1",
+        "memory": "3.75 GiB",
+        "storage": "1 x 4 GB",
+        "cost": "$0.07/hr"
+      },
       "user_id": "",
       "worker_node_number": 0,
       "aws_tags": [],
-      "openstudio_server_version": ""
+      "openstudio_server_version": {
+        "openstudio": {
+          "version_sha": "fcd9a4317a",
+          "version_number": "2.4.1",
+          "url_base": "https://s3.amazonaws.com/openstudio-builds/NUMBER/OpenStudio-NUMBER.SHA-Linux.deb"
+        },
+        "ami": "ami-33392149",
+        "radiance": "NREL 5.0.a",
+        "name": "2.4.1",
+        "workflow": {
+          "repo": "nrel/openstudio-workflow-gem",
+          "ref": "1.3.1"
+        },
+        "notes": "Official automated release of OpenStudio Server 2.4.1 by NREL",
+        "analysis": {
+          "repo": "nrel/openstudio-analysis-gem",
+          "ref": "1.0.0.rc18"
+        },
+        "standards": {
+          "repo": "nrel/openstudio-standards",
+          "ref": "0.1.15"
+        },
+        "R": "3.4.2",
+        "energyplus": "8.8",
+        "server": {
+          "repo": "nrel/openstudio-server",
+          "ref": "6a9d5579196d26af0f9ea9845dfdd975380007d0"
+        },
+        "recommend": ""
+      },
+      "cluster_status": "terminated",
+      "server": {
+        "dns": null
+      }
     },
     "credentials": {
-      "yamlFilename": null,
-      "accessKey": null,
+      "yamlFilename": "Temp",
+      "accessKey": "AKIA****",
       "region": "us-east-1"
     }
   },
   "samplingMethod": {
-    "id": "baseline_perturbation",
-    "name": "analysis.type.baselinePerturbation",
-    "link": null
+    "id": "doe",
+    "name": "analysis.type.doe",
+    "link": "https://cran.r-project.org/web/packages/DoE.base/DoE.base.pdf"
   },
   "algorithmSettings": [
     {
-      "name": "in_measure_combinations",
-      "displayName": "In Measure Combinations",
-      "description": "Options: 'true' or 'false'",
-      "defaultValue": "true",
+      "name": "experiment_type",
+      "displayName": "Experiment Type",
+      "description": "Options: full_factorial",
+      "defaultValue": "full_factorial",
       "type": "string",
-      "value": "true"
+      "value": "full_factorial",
+      "$$hashKey": "object:4536"
     },
     {
-      "name": "include_baseline_in_combinations",
-      "displayName": "Include Baseline in Combinations?",
-      "description": "Options: 'true' or 'false'",
-      "defaultValue": "true",
-      "type": "string",
-      "value": "true"
+      "name": "number_of_samples",
+      "displayName": "Number of Samples",
+      "description": "Positive integer (this discretizes a continous variable)",
+      "defaultValue": 2,
+      "type": "number",
+      "value": 4,
+      "$$hashKey": "object:4537"
     },
     {
       "name": "seed",
@@ -53,7 +100,26 @@
       "description": "Integer seed for random number generator",
       "defaultValue": null,
       "type": "number",
-      "value": null
+      "value": null,
+      "$$hashKey": "object:1726"
+    },
+    {
+      "name": "failed_f_value",
+      "displayName": "Failed F Value",
+      "description": "Return Value for F(x) if F fails",
+      "defaultValue": 1000000000000000000,
+      "type": "number",
+      "value": 1000000000000000000,
+      "$$hashKey": "object:4538"
+    },
+    {
+      "name": "debug_messages",
+      "displayName": "Debug Messages",
+      "description": "Options: 1 or 0 (True or False)",
+      "defaultValue": 0,
+      "type": "number",
+      "value": 0,
+      "$$hashKey": "object:4539"
     }
   ],
   "rubyMD5": "",
@@ -72,7 +138,7 @@
       "version_uuid": "{6108b658-e04c-47a5-8780-033a97cf82d3}",
       "version_modified": "20171227T164423Z",
       "xml_checksum": "057E8D9D",
-      "display_name": "Replace OpenStudio Model",
+      "display_name": "Replace OpenStudio Model Custom Name",
       "class_name": "ReplaceModel",
       "description": "",
       "modeler_description": "",
@@ -96,7 +162,21 @@
           "$$hashKey": "uiGrid-032N",
           "variable": false,
           "option_1": "option_1",
-          "option_2": "option_2"
+          "option_2": "option_2",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null,
+            "showWarningIcon": false
+          }
         },
         {
           "specialRowId": "optionName",
@@ -104,7 +184,21 @@
           "$$hashKey": "uiGrid-032P",
           "variable": false,
           "option_1": "Retail Example",
-          "option_2": "Office Exampe"
+          "option_2": "Office Exampe",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
         },
         {
           "specialRowId": "optionDescription",
@@ -112,7 +206,21 @@
           "$$hashKey": "uiGrid-032R",
           "variable": false,
           "option_1": "Option 1 Description: ",
-          "option_2": "Option 2 Description: "
+          "option_2": "Option 2 Description: ",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
         },
         {
           "name": "external_model_name",
@@ -128,7 +236,33 @@
           "units": "",
           "minimum": "retail.osm",
           "maximum": "small_office.osm",
-          "mode": null
+          "mode": null,
+          "display_name_short": "GBXML Import Model",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Discrete",
+            "distribution": "Uniform",
+            "discreteVariables": [
+              {
+                "value": "small_office.osm",
+                "weight": 0.5,
+                "$$hashKey": "object:4637"
+              },
+              {
+                "value": "retail.osm",
+                "weight": 0.5,
+                "$$hashKey": "object:4648"
+              }
+            ],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "small_office.osm",
+            "showWarningIcon": false
+          }
         }
       ],
       "edit": "",
@@ -136,7 +270,7 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": false,
+      "open": true,
       "addedToProject": true,
       "date": "12/27/2017",
       "author": "",
@@ -167,9 +301,13 @@
           "description": "Option 2 Description: "
         }
       ],
-      "instanceId": 0.17523651884507974,
+      "instanceId": 0.8834970143681349,
       "numberOfOptions": 2,
-      "$$hashKey": "object:7537"
+      "$$hashKey": "object:7537",
+      "skip": false,
+      "showWarningText": false,
+      "outputMeasure": false,
+      "unlockStatus": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Replace_Model/measures/ChangeBuildingLocation",
@@ -206,7 +344,21 @@
           "variable": false,
           "option_1": "option_1",
           "option_2": "option_2",
-          "option_3": "option_3"
+          "option_3": "option_3",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null,
+            "showWarningIcon": false
+          }
         },
         {
           "specialRowId": "optionName",
@@ -215,7 +367,21 @@
           "variable": false,
           "option_1": "Atlanta",
           "option_2": "New York",
-          "option_3": "Denver"
+          "option_3": "Denver",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
         },
         {
           "specialRowId": "optionDescription",
@@ -224,7 +390,21 @@
           "variable": false,
           "option_1": "Option 1 Description: Change the building location",
           "option_2": "Option 2 Description: Change the building location",
-          "option_3": "Option 3 Description: Change the building location"
+          "option_3": "Option 3 Description: Change the building location",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
         },
         {
           "name": "weather_file_name",
@@ -241,7 +421,38 @@
           "units": "",
           "minimum": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
           "maximum": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
-          "mode": null
+          "mode": null,
+          "display_name_short": "weather_file_name",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Discrete",
+            "distribution": "Uniform",
+            "discreteVariables": [
+              {
+                "value": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+                "weight": 0.34,
+                "$$hashKey": "object:4668"
+              },
+              {
+                "value": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
+                "weight": 0.33,
+                "$$hashKey": "object:4679"
+              },
+              {
+                "value": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+                "weight": 0.33,
+                "$$hashKey": "object:4689"
+              }
+            ],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+            "showWarningIcon": false
+          }
         },
         {
           "name": "climate_zone",
@@ -295,7 +506,41 @@
           "variable": false,
           "option_1": "Lookup From Stat File",
           "option_2": "Lookup From Stat File",
-          "option_3": "Lookup From Stat File"
+          "option_3": "Lookup From Stat File",
+          "display_name_short": "climate_zone",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "1A",
+              "1B",
+              "2A",
+              "2B",
+              "3A",
+              "3B",
+              "3C",
+              "4A",
+              "4B",
+              "4C",
+              "5A",
+              "5B",
+              "5C",
+              "6A",
+              "6B",
+              "7",
+              "8",
+              "Lookup From Stat File"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Lookup From Stat File",
+            "minimum": "Lookup From Stat File",
+            "mean": "Lookup From Stat File",
+            "deltaX": "Lookup From Stat File",
+            "stdDev": "Lookup From Stat File",
+            "default_value": "Lookup From Stat File",
+            "showWarningIcon": false
+          }
         },
         {
           "name": "use_upstream_args",
@@ -309,7 +554,22 @@
           "variable": false,
           "option_1": false,
           "option_2": false,
-          "option_3": false
+          "option_3": false,
+          "display_name_short": "use_upstream_args",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         }
       ],
       "edit": "",
@@ -317,7 +577,7 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": false,
+      "open": true,
       "addedToProject": true,
       "date": "6/27/2018",
       "author": "",
@@ -383,9 +643,14 @@
           "description": "Option 3 Description: Change the building location"
         }
       ],
-      "instanceId": 0.5741354185456828,
+      "instanceId": 0.2732297955014169,
       "numberOfOptions": 3,
-      "$$hashKey": "object:2704"
+      "$$hashKey": "object:2704",
+      "skip": false,
+      "showWarningText": false,
+      "outputMeasure": false,
+      "userDefinedOutputs": [],
+      "analysisOutputs": []
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Replace_Model/measures/SetWindowToWallRatioByFacade",
@@ -430,21 +695,63 @@
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-02DT",
           "variable": false,
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null,
+            "showWarningIcon": false
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-02DV",
           "variable": false,
-          "option_1": "wwr 40"
+          "option_1": "wwr 40",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-02DX",
           "variable": false,
-          "option_1": "Option 1 Description: This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched."
+          "option_1": "Option 1 Description: This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
         },
         {
           "name": "wwr",
@@ -456,7 +763,22 @@
           "default_value": 0.4,
           "$$hashKey": "uiGrid-02DZ",
           "variable": false,
-          "option_1": 0.4
+          "option_1": 0.4,
+          "display_name_short": "wwr",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.8,
+            "minimum": 0.2,
+            "mean": 0.4,
+            "deltaX": 0.4,
+            "stdDev": 0.4,
+            "default_value": 0.4,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "sillHeight",
@@ -468,7 +790,22 @@
           "default_value": 30,
           "$$hashKey": "uiGrid-02E1",
           "variable": false,
-          "option_1": 30
+          "option_1": 30,
+          "display_name_short": "sillHeight",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 30,
+            "minimum": 30,
+            "mean": 30,
+            "deltaX": 30,
+            "stdDev": 30,
+            "default_value": 30,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "facade",
@@ -492,7 +829,27 @@
           ],
           "$$hashKey": "uiGrid-02E3",
           "variable": false,
-          "option_1": "South"
+          "option_1": "South",
+          "display_name_short": "facade",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "North",
+              "East",
+              "South",
+              "West"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "South",
+            "minimum": "South",
+            "mean": "South",
+            "deltaX": "South",
+            "stdDev": "South",
+            "default_value": "South",
+            "showWarningIcon": false
+          }
         }
       ],
       "edit": "",
@@ -528,9 +885,12 @@
           "description": "Option 1 Description: This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched."
         }
       ],
-      "instanceId": 0.4133555910400255,
+      "instanceId": 0.25978265766577446,
       "numberOfOptions": 1,
-      "$$hashKey": "object:5826"
+      "$$hashKey": "object:5826",
+      "skip": false,
+      "showWarningText": false,
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Replace_Model/measures/openstudio_results",
@@ -554,7 +914,13 @@
           "short_name": "electricity_ip",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9759",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
         },
         {
           "name": "natural_gas_ip",
@@ -562,7 +928,13 @@
           "short_name": "natural_gas_ip",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9760",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
         },
         {
           "name": "additional_fuel_ip",
@@ -570,7 +942,8 @@
           "short_name": "additional_fuel_ip",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9761"
         },
         {
           "name": "district_heating_ip",
@@ -578,7 +951,8 @@
           "short_name": "district_heating_ip",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9762"
         },
         {
           "name": "district_cooling_ip",
@@ -586,7 +960,8 @@
           "short_name": "district_cooling_ip",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9763"
         },
         {
           "name": "total_site_eui",
@@ -594,7 +969,13 @@
           "short_name": "total_site_eui",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9764",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
         },
         {
           "name": "eui",
@@ -602,7 +983,9 @@
           "short_name": "eui",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9765",
+          "checked": false
         },
         {
           "name": "net_site_energy",
@@ -610,7 +993,8 @@
           "short_name": "net_site_energy",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9766"
         },
         {
           "name": "annual_peak_electric_demand",
@@ -618,7 +1002,8 @@
           "short_name": "annual_peak_electric_demand",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9767"
         },
         {
           "name": "unmet_hours_during_occupied_cooling",
@@ -626,7 +1011,8 @@
           "short_name": "unmet_hours_during_occupied_cooling",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9768"
         },
         {
           "name": "unmet_hours_during_occupied_heating",
@@ -634,7 +1020,8 @@
           "short_name": "unmet_hours_during_occupied_heating",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9769"
         },
         {
           "name": "first_year_capital_cost",
@@ -642,7 +1029,8 @@
           "short_name": "first_year_capital_cost",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9770"
         },
         {
           "name": "annual_utility_cost",
@@ -650,7 +1038,8 @@
           "short_name": "annual_utility_cost",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9771"
         },
         {
           "name": "total_lifecycle_cost",
@@ -658,7 +1047,8 @@
           "short_name": "total_lifecycle_cost",
           "description": "",
           "type": "Double",
-          "model_dependent": false
+          "model_dependent": false,
+          "$$hashKey": "object:9772"
         }
       ],
       "attributes": [
@@ -698,21 +1088,63 @@
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-01IP",
           "variable": false,
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null,
+            "showWarningIcon": false
+          }
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-01IR",
           "variable": false,
-          "option_1": "OpenStudio Results"
+          "option_1": "OpenStudio Results",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-01IT",
           "variable": false,
-          "option_1": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+          "option_1": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
         },
         {
           "name": "building_summary_section",
@@ -724,7 +1156,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01IV",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "building_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "annual_overview_section",
@@ -736,7 +1183,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01IX",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "annual_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "monthly_overview_section",
@@ -748,7 +1210,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01IZ",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "monthly_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "utility_bills_rates_section",
@@ -760,7 +1237,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01J1",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "utility_bills_rates_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "envelope_section_section",
@@ -772,7 +1264,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01J3",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "envelope_section_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "space_type_breakdown_section",
@@ -784,7 +1291,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01J5",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "space_type_breakdown_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "space_type_details_section",
@@ -796,7 +1318,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01J7",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "space_type_details_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "interior_lighting_section",
@@ -808,7 +1345,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01J9",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "interior_lighting_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "plug_loads_section",
@@ -820,7 +1372,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JB",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "plug_loads_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "exterior_light_section",
@@ -832,7 +1399,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JD",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "exterior_light_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "water_use_section",
@@ -844,7 +1426,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JF",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "water_use_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "hvac_load_profile",
@@ -856,7 +1453,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JH",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "hvac_load_profile",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "zone_condition_section",
@@ -868,7 +1480,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JJ",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "zone_condition_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "zone_summary_section",
@@ -880,7 +1507,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JL",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "zone_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "zone_equipment_detail_section",
@@ -892,7 +1534,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JN",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "zone_equipment_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "air_loops_detail_section",
@@ -904,7 +1561,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JP",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "air_loops_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "plant_loops_detail_section",
@@ -916,7 +1588,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JR",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "plant_loops_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "outdoor_air_section",
@@ -928,7 +1615,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JT",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "outdoor_air_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "cost_summary_section",
@@ -940,7 +1642,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JV",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "cost_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "source_energy_section",
@@ -952,7 +1669,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JX",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "source_energy_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         },
         {
           "name": "schedules_overview_section",
@@ -964,7 +1696,22 @@
           "default_value": true,
           "$$hashKey": "uiGrid-01JZ",
           "variable": false,
-          "option_1": true
+          "option_1": true,
+          "display_name_short": "schedules_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
         }
       ],
       "edit": "",
@@ -972,7 +1719,7 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": false,
+      "open": true,
       "addedToProject": true,
       "date": "6/27/2018",
       "author": "",
@@ -1072,9 +1819,57 @@
           "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         }
       ],
-      "instanceId": 0.30023604390613134,
+      "instanceId": 0.48783153158532344,
       "numberOfOptions": 1,
-      "$$hashKey": "object:3911"
+      "$$hashKey": "object:3911",
+      "skip": false,
+      "showWarningText": false,
+      "outputMeasure": true,
+      "userDefinedOutputs": [],
+      "analysisOutputs": [
+        {
+          "name": "electricity_ip",
+          "display_name": "electricity_ip",
+          "short_name": "electricity_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:9759",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "natural_gas_ip",
+          "display_name": "natural_gas_ip",
+          "short_name": "natural_gas_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:9760",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "total_site_eui",
+          "display_name": "total_site_eui",
+          "short_name": "total_site_eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:9764",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        }
+      ]
     }
   ],
   "filesToInclude": [],
@@ -1159,48 +1954,5 @@
     }
   ],
   "analysisID": null,
-  "datapoints": [
-    {
-      "name": "Atlanta Office",
-      "id": "Atlanta Office",
-      "run": false,
-      "modified": false,
-      "selected": false
-    },
-    {
-      "name": "New York Office",
-      "id": "New York Office",
-      "run": false,
-      "modified": false,
-      "selected": false
-    },
-    {
-      "name": "Denver Office",
-      "id": "Denver Office",
-      "run": false,
-      "modified": false,
-      "selected": false
-    },
-    {
-      "name": "Atlanta Retail",
-      "id": "Atlanta Retail",
-      "run": false,
-      "modified": false,
-      "selected": false
-    },
-    {
-      "name": "New York Retail",
-      "id": "New York Retail",
-      "run": false,
-      "modified": false,
-      "selected": false
-    },
-    {
-      "name": "Denver Retail",
-      "id": "Denver Retail",
-      "run": false,
-      "modified": false,
-      "selected": false
-    }
-  ]
+  "datapoints": []
 }

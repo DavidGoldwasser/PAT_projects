@@ -1,0 +1,483 @@
+{
+  "analysis": {
+    "display_name": "PAT_Replace_Model Algorithmic Analysis ExistingServer",
+    "name": "PAT_Replace_Model Algorithmic Analysis ExistingServer",
+    "output_variables": [],
+    "problem": {
+      "workflow": [
+        {
+          "name": "replace_model",
+          "display_name": "Replace OpenStudio Model",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "ReplaceModel",
+          "measure_definition_directory": "./measures/ReplaceModel",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Replace_Model/measures/ReplaceModel",
+          "measure_definition_display_name": "Replace OpenStudio Model",
+          "measure_definition_name": "replace_model",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "54f03343-5b5c-42f4-818c-5e6de6ded489",
+          "measure_definition_version_uuid": "6108b658-e04c-47a5-8780-033a97cf82d3",
+          "uuid": "54f03343-5b5c-42f4-818c-5e6de6ded489",
+          "version_uuid": "6108b658-e04c-47a5-8780-033a97cf82d3",
+          "description": "",
+          "taxonomy": "Whole Building.Space Types",
+          "arguments": [],
+          "variables": [
+            {
+              "argument": {
+                "display_name": "External OSM File Name",
+                "display_name_short": "external_model_name",
+                "name": "external_model_name",
+                "value_type": "string",
+                "default_value": "small_office.osm",
+                "value": "small_office.osm"
+              },
+              "display_name": "External OSM File Name",
+              "display_name_short": "external_model_name",
+              "variable_type": "variable",
+              "units": "",
+              "minimum": "",
+              "maximum": "",
+              "static_value": "small_office.osm",
+              "uuid": "",
+              "version_uuid": "",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "discrete",
+                "attributes": [
+                  {
+                    "name": "discrete",
+                    "values_and_weights": [
+                      {
+                        "value": "small_office.osm",
+                        "weight": 0.5
+                      },
+                      {
+                        "value": "retail.osm",
+                        "weight": 0.5
+                      }
+                    ]
+                  },
+                  {
+                    "name": "lower_bounds",
+                    "value": ""
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": ""
+                  },
+                  {
+                    "name": "modes",
+                    "value": ""
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": ""
+                  },
+                  {
+                    "name": "stddev",
+                    "value": ""
+                  }
+                ]
+              },
+              "workflow_index": 0
+            }
+          ],
+          "workflow_index": 0
+        },
+        {
+          "name": "change_building_location",
+          "display_name": "ChangeBuildingLocation",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "ChangeBuildingLocation",
+          "measure_definition_directory": "./measures/ChangeBuildingLocation",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Replace_Model/measures/ChangeBuildingLocation",
+          "measure_definition_display_name": "ChangeBuildingLocation",
+          "measure_definition_name": "change_building_location",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
+          "measure_definition_version_uuid": "a0a5c1d6-60be-4bb3-8eae-31da614a2383",
+          "uuid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
+          "version_uuid": "a0a5c1d6-60be-4bb3-8eae-31da614a2383",
+          "description": "Change the building location",
+          "taxonomy": "Whole Building.Space Types",
+          "arguments": [
+            {
+              "display_name": "Climate Zone.",
+              "display_name_short": "climate_zone",
+              "name": "climate_zone",
+              "value_type": "string",
+              "default_value": "Lookup From Stat File",
+              "value": "Lookup From Stat File"
+            },
+            {
+              "display_name": "Use Upstream Argument Values",
+              "display_name_short": "use_upstream_args",
+              "name": "use_upstream_args",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            }
+          ],
+          "variables": [
+            {
+              "argument": {
+                "display_name": "Weather File Name",
+                "display_name_short": "weather_file_name",
+                "name": "weather_file_name",
+                "value_type": "string",
+                "default_value": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+                "value": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw"
+              },
+              "display_name": "Weather File Name",
+              "display_name_short": "weather_file_name",
+              "variable_type": "variable",
+              "units": "",
+              "minimum": "",
+              "maximum": "",
+              "static_value": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+              "uuid": "",
+              "version_uuid": "",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "discrete",
+                "attributes": [
+                  {
+                    "name": "discrete",
+                    "values_and_weights": [
+                      {
+                        "value": "USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw",
+                        "weight": 0.34
+                      },
+                      {
+                        "value": "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw",
+                        "weight": 0.33
+                      },
+                      {
+                        "value": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+                        "weight": 0.33
+                      }
+                    ]
+                  },
+                  {
+                    "name": "lower_bounds",
+                    "value": ""
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": ""
+                  },
+                  {
+                    "name": "modes",
+                    "value": ""
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": ""
+                  },
+                  {
+                    "name": "stddev",
+                    "value": ""
+                  }
+                ]
+              },
+              "workflow_index": 0
+            }
+          ],
+          "workflow_index": 1
+        },
+        {
+          "name": "set_window_to_wall_ratio_by_facade",
+          "display_name": "Set Window to Wall Ratio by Facade",
+          "measure_type": "RubyMeasure",
+          "measure_definition_class_name": "SetWindowToWallRatioByFacade",
+          "measure_definition_directory": "./measures/SetWindowToWallRatioByFacade",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Replace_Model/measures/SetWindowToWallRatioByFacade",
+          "measure_definition_display_name": "Set Window to Wall Ratio by Facade",
+          "measure_definition_name": "set_window_to_wall_ratio_by_facade",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "c567a0bf-a7d9-4a06-afe9-bf7df79e6bf8",
+          "measure_definition_version_uuid": "4453dc6c-8b2a-47a7-bcf2-2865281d44ed",
+          "uuid": "c567a0bf-a7d9-4a06-afe9-bf7df79e6bf8",
+          "version_uuid": "4453dc6c-8b2a-47a7-bcf2-2865281d44ed",
+          "description": "This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+          "taxonomy": "Envelope.Fenestration",
+          "arguments": [
+            {
+              "display_name": "Sill Height (in).",
+              "display_name_short": "sillHeight",
+              "name": "sillHeight",
+              "value_type": "double",
+              "default_value": 30,
+              "value": 30
+            },
+            {
+              "display_name": "Cardinal Direction.",
+              "display_name_short": "facade",
+              "name": "facade",
+              "value_type": "string",
+              "default_value": "South",
+              "value": "South"
+            }
+          ],
+          "variables": [
+            {
+              "argument": {
+                "display_name": "Window to Wall Ratio (fraction).",
+                "display_name_short": "wwr",
+                "name": "wwr",
+                "value_type": "double",
+                "default_value": 0.4,
+                "value": 0.4
+              },
+              "display_name": "Window to Wall Ratio (fraction).",
+              "display_name_short": "wwr",
+              "variable_type": "variable",
+              "minimum": 0.2,
+              "maximum": 0.8,
+              "static_value": 0.4,
+              "uuid": "",
+              "version_uuid": "",
+              "variable": true,
+              "uncertainty_description": {
+                "type": "uniform",
+                "attributes": [
+                  {
+                    "name": "lower_bounds",
+                    "value": 0.2
+                  },
+                  {
+                    "name": "upper_bounds",
+                    "value": 0.8
+                  },
+                  {
+                    "name": "modes",
+                    "value": 0.4
+                  },
+                  {
+                    "name": "delta_x",
+                    "value": 0.4
+                  },
+                  {
+                    "name": "stddev",
+                    "value": 0.4
+                  }
+                ]
+              },
+              "workflow_index": 0
+            }
+          ],
+          "workflow_index": 2
+        },
+        {
+          "name": "openstudio_results",
+          "display_name": "OpenStudio Results",
+          "measure_type": "ReportingMeasure",
+          "measure_definition_class_name": "OpenStudioResults",
+          "measure_definition_directory": "./measures/openstudio_results",
+          "measure_definition_directory_local": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Replace_Model/measures/openstudio_results",
+          "measure_definition_display_name": "OpenStudio Results",
+          "measure_definition_name": "openstudio_results",
+          "measure_definition_name_xml": null,
+          "measure_definition_uuid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+          "measure_definition_version_uuid": "a1314c75-59e2-4404-bf7c-2a047f4bf4a5",
+          "uuid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+          "version_uuid": "a1314c75-59e2-4404-bf7c-2a047f4bf4a5",
+          "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+          "taxonomy": "Reporting.QAQC",
+          "arguments": [
+            {
+              "display_name": "Model Summary",
+              "display_name_short": "building_summary_section",
+              "name": "building_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Annual Overview",
+              "display_name_short": "annual_overview_section",
+              "name": "annual_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Monthly Overview",
+              "display_name_short": "monthly_overview_section",
+              "name": "monthly_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Utility Bills/Rates",
+              "display_name_short": "utility_bills_rates_section",
+              "name": "utility_bills_rates_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Envelope Summary",
+              "display_name_short": "envelope_section_section",
+              "name": "envelope_section_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Space Type Breakdown",
+              "display_name_short": "space_type_breakdown_section",
+              "name": "space_type_breakdown_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Space Type Summary",
+              "display_name_short": "space_type_details_section",
+              "name": "space_type_details_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Interior Lighting Summary",
+              "display_name_short": "interior_lighting_section",
+              "name": "interior_lighting_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Plug Loads Summary",
+              "display_name_short": "plug_loads_section",
+              "name": "plug_loads_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Exterior Lighting",
+              "display_name_short": "exterior_light_section",
+              "name": "exterior_light_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Water Use Equipment",
+              "display_name_short": "water_use_section",
+              "name": "water_use_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "HVAC Load Profiles",
+              "display_name_short": "hvac_load_profile",
+              "name": "hvac_load_profile",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Conditions",
+              "display_name_short": "zone_condition_section",
+              "name": "zone_condition_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Overview",
+              "display_name_short": "zone_summary_section",
+              "name": "zone_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Zone Equipment Detail",
+              "display_name_short": "zone_equipment_detail_section",
+              "name": "zone_equipment_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Air Loops Detail",
+              "display_name_short": "air_loops_detail_section",
+              "name": "air_loops_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Plant Loops Detail",
+              "display_name_short": "plant_loops_detail_section",
+              "name": "plant_loops_detail_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Outdoor Air",
+              "display_name_short": "outdoor_air_section",
+              "name": "outdoor_air_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Cash Flow",
+              "display_name_short": "cost_summary_section",
+              "name": "cost_summary_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Site and Source Summary",
+              "display_name_short": "source_energy_section",
+              "name": "source_energy_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            },
+            {
+              "display_name": "Schedule Overview",
+              "display_name_short": "schedules_overview_section",
+              "name": "schedules_overview_section",
+              "value_type": "boolean",
+              "default_value": true,
+              "value": true
+            }
+          ],
+          "variables": [],
+          "workflow_index": 3
+        }
+      ],
+      "algorithm": {
+        "experiment_type": "full_factorial",
+        "number_of_samples": 4,
+        "seed": null,
+        "failed_f_value": 1000000000000000000,
+        "debug_messages": 0,
+        "objective_functions": []
+      },
+      "analysis_type": "doe"
+    },
+    "seed": {
+      "file_type": "OSM",
+      "path": "./seeds/seed_empty.osm"
+    },
+    "weather_file": {
+      "file_type": "EPW",
+      "path": "./weather/USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw"
+    },
+    "file_format_version": 1,
+    "server_scripts": {}
+  }
+}
