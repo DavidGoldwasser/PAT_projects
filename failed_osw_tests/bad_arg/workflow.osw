@@ -1,0 +1,54 @@
+{
+   "created_at" : "20180918T202316Z",
+   "seed_file" : "../bad_arg.osm",
+   "steps" : [
+      {
+         "arguments" : {
+            "climate_zone" : "ASHRAE 169-2006-5B"
+         },
+         "description" : "Create space types and or construction sets for the requested building type, climate zone, and target.",
+         "measure_dir_name" : "SpaceTypeAndConstructionSetWizard",
+         "modeler_description" : "The data for this measure comes from the openstudio-standards Ruby Gem. They are no longer created from the same JSON file that was used to make the OpenStudio templates. Optionally this will also set the building default space type and construction set.",
+         "name" : "Space Type and Construction Set Wizard"
+      },
+      {
+         "arguments" : {
+            "total_bldg_area_ip" : -10000
+         },
+         "description" : "This measure will create a building envelope based on a target floor area, aspect ratio, and floor to floor height.",
+         "measure_dir_name" : "BarAspectRatioStudy",
+         "modeler_description" : "This is based on the SketchUp Plugin user script to create a rectangular building, but just uses different inputs. The resulting building will have a core and perimeter zoning, unless it is too small, in which case eac floor will have a single zone.",
+         "name" : "Bar Aspect Ratio Study"
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+         "measure_dir_name" : "SetWindowToWallRatioByFacade",
+         "modeler_description" : "This measure identifies exterior surfaces of the proper orientation. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results.\r\r\r\r\r\r\n\r\r\r\r\r\r\nThe measure doesn?t have any cost or lifecycle arguments, however If lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.\r\r\r\r\r\r\n  ",
+         "name" : "Set Window to Wall Ratio by Facade"
+      },
+      {
+         "arguments" : {},
+         "description" : "This will enable Ideal Air Loads for all thermal zones in the model. This will result in disconnecting any pre-existing HVAC systems from the zones.",
+         "measure_dir_name" : "EnableIdealAirLoadsForAllZones",
+         "modeler_description" : "This doesn't clean up any air or plant loops that are left. It was developed to use on models without HVAC. If you use it in another way you may have to clean up remaining objects prior to running a simulation.",
+         "name" : "EnableIdealAirLoadsForAllZones"
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure sets flat rates for electricity, gas, water, district heating, and district cooling.",
+         "measure_dir_name" : "tariff_selection_flat",
+         "modeler_description" : "Will add the necessary UtilityCost objects into the model.",
+         "name" : "Tariff Selection-Flat"
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+         "measure_dir_name" : "openstudio_results",
+         "modeler_description" : "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+         "name" : "OpenStudio Results"
+      }
+   ],
+   "updated_at" : "20180918T203219Z",
+   "weather_file" : "USA_CO_Denver.Intl.AP.725650_TMY3.epw"
+}

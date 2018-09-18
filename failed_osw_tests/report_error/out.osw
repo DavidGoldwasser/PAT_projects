@@ -1,0 +1,308 @@
+{
+   "completed_at" : "20180918T204319Z",
+   "completed_status" : "Fail",
+   "created_at" : "20180918T202316Z",
+   "current_step" : 6,
+   "eplusout_err" : "Program Version,EnergyPlus, Version 8.9.0-eba93e8e1b, YMD=2018.09.18 14:43,\n   ** Warning ** CheckEnvironmentSpecifications: SimulationControl specified doing design day simulations, but no design environments specified.\n   **   ~~~   ** ...No design environment results produced. For these results, add appropriate SizingPeriod:* objects for your simulation.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 1\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 10\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 11\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 12\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 13\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 14\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 15\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 16\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 2\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 3\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 4\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 5\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 6\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 7\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 8\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval=\"SCHEDULE DAY 9\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Constant=\"ALWAYS ON DISCRETE\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Constant=\"ALWAYS OFF DISCRETE\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** ProcessScheduleInput: Schedule:Constant=\"ALWAYS ON CONTINUOUS\", Blank Schedule Type Limits Name input -- will not be validated.\n   ** Warning ** GetHTSurfaceData: Surfaces with interface to Ground found but no \"Ground Temperatures\" were input.\n   **   ~~~   ** Found first in surface=SURFACE 25\n   **   ~~~   ** Defaults, constant throughout the year of (18.0) will be used.\n   ** Warning ** CheckUsedConstructions: There are 8 nominally unused constructions in input.\n   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;\n   ** Warning ** GetSimpleAirModelInputs: ZoneInfiltration:DesignFlowRate=\"STORY 1 CORE ZONE OFFICE SMALLOFFICE - OPENOFFICE INFILTRATION\", Design Flow Rate Calculation Method specifies Flow per Exterior Surface Area, but Exterior Surface Area = 0.  0 Infiltration will result.\n   ** Warning ** Output:Meter: invalid Key Name=\"GAS:FACILITY\" - not found.\n   ** Warning ** Output:Meter: invalid Key Name=\"DISTRICTCOOLING:FACILITY\" - not found.\n   ** Warning ** Output:Meter: invalid Key Name=\"DISTRICTHEATING:FACILITY\" - not found.\n   ** Warning ** Output:Meter:MeterFileOnly: invalid Key Name=\"GAS:FACILITY\" - not found.\n   ** Warning ** Output:Meter:MeterFileOnly requested for \"Electricity:Facility\" (TimeStep), already on \"Output:Meter\". Will report to both eplusout.eso and eplusout.mtr\n   ************* Testing Individual Branch Integrity\n   ************* All Branches passed integrity testing\n   ************* Testing Individual Supply Air Path Integrity\n   ************* All Supply Air Paths passed integrity testing\n   ************* Testing Individual Return Air Path Integrity\n   ************* All Return Air Paths passed integrity testing\n   ************* No node connection errors were found.\n   ************* Beginning Simulation\n   ** Warning ** Processing Monthly Tabular Reports: Variable names not valid for this simulation\n   **   ~~~   ** ...use Output:Diagnostics,DisplayExtraWarnings; to show more details on individual variables.\n   ** Warning ** GetInputEconomicsTariff: UtilityCost:Tariff=\"GAS TARIFF\" missing meter\n   **   ~~~   ** Meter referenced is not present due to a lack of equipment that uses that energy source/meter:\"GAS:FACILITY\".\n   ** Warning ** GetInputEconomicsTariff: UtilityCost:Tariff=\"WATER TARIFF\" missing meter\n   **   ~~~   ** Meter referenced is not present due to a lack of equipment that uses that energy source/meter:\"WATER:FACILITY\".\n   ** Warning ** GetInputEconomicsTariff: UtilityCost:Tariff=\"DISTRICTHEATING TARIFF\" missing meter\n   **   ~~~   ** Meter referenced is not present due to a lack of equipment that uses that energy source/meter:\"DISTRICTHEATING:FACILITY\".\n   ** Warning ** GetInputEconomicsTariff: UtilityCost:Tariff=\"DISTRICTCOOLING TARIFF\" missing meter\n   **   ~~~   ** Meter referenced is not present due to a lack of equipment that uses that energy source/meter:\"DISTRICTCOOLING:FACILITY\".\n   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= \"U.S. AVG  COMMERCIAL-ELECTRICITY\" has no energy cost. \n   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.\n   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= \"U.S. AVG  COMMERCIAL-DISTILLATE OIL\" has no energy cost. \n   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.\n   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= \"U.S. AVG  COMMERCIAL-RESIDUAL OIL\" has no energy cost. \n   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.\n   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= \"U.S. AVG  COMMERCIAL-NATURAL GAS\" has no energy cost. \n   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.\n   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= \"U.S. AVG  COMMERCIAL-COAL\" has no energy cost. \n   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.\n   ************* Simulation Error Summary *************\n   ************* There are 9 unused schedules in input.\n   ************* There are 9 unused week schedules in input.\n   ************* There are 36 unused day schedules in input.\n   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.\n   *************\n   ************* ===== Final Error Summary =====\n   ************* The following error categories occurred.  Consider correcting or noting.\n   ************* Nominally Unused Constructions\n   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause\n   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm\n   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).\n   *************\n   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.\n   ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.\n   ************* EnergyPlus Completed Successfully-- 38 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  5.84sec\n",
+   "hash" : "EA34A906",
+   "seed_file" : "../report_error.osm",
+   "started_at" : "20180918T204301Z",
+   "steps" : [
+      {
+         "arguments" : {
+            "climate_zone" : "ASHRAE 169-2006-5B",
+            "create_construction_set" : true,
+            "set_building_defaults" : true
+         },
+         "description" : "Create space types and or construction sets for the requested building type, climate zone, and target.",
+         "measure_dir_name" : "SpaceTypeAndConstructionSetWizard",
+         "modeler_description" : "The data for this measure comes from the openstudio-standards Ruby Gem. They are no longer created from the same JSON file that was used to make the OpenStudio templates. Optionally this will also set the building default space type and construction set.",
+         "name" : "Space Type and Construction Set Wizard",
+         "result" : {
+            "completed_at" : "20180918T204305Z",
+            "measure_class_name" : "SpaceTypeAndConstructionSetWizard",
+            "measure_display_name" : "Space Type and Construction Set Wizard",
+            "measure_name" : "space_type_and_construction_set_wizard",
+            "measure_taxonomy" : "Whole Building.Space Types",
+            "measure_type" : "ModelMeasure",
+            "measure_uid" : "7c65af63-4316-47c9-b7a5-68d7a019e533",
+            "measure_version_id" : "3eca1633-5b97-4165-8278-78745ed2bc5e",
+            "measure_version_modified" : "20180918T204226Z",
+            "measure_xml_checksum" : "057E8D9D",
+            "started_at" : "20180918T204303Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "The building finished with 13 space types and 1 construction sets.",
+            "step_info" : [
+               "Added space type named Office SmallOffice - Breakroom - 90.1-2010",
+               "Added space type named Office SmallOffice - ClosedOffice - 90.1-2010",
+               "Added space type named Office SmallOffice - Conference - 90.1-2010",
+               "Added space type named Office SmallOffice - Corridor - 90.1-2010",
+               "Added space type named Office SmallOffice - Elec/MechRoom - 90.1-2010",
+               "Added space type named Office SmallOffice - Lobby - 90.1-2010",
+               "Added space type named Office SmallOffice - OpenOffice - 90.1-2010",
+               "Added space type named Office SmallOffice - Restroom - 90.1-2010",
+               "Added space type named Office SmallOffice - Stair - 90.1-2010",
+               "Added space type named Office SmallOffice - Storage - 90.1-2010",
+               "Added space type named Office SmallOffice - Classroom - 90.1-2010",
+               "Added space type named Office SmallOffice - Dining - 90.1-2010",
+               "Added space type named Office WholeBuilding - Sm Office - 90.1-2010",
+               "Added default construction set named 90.1-2010 - Office - ASHRAE 169-2006-5B",
+               "Setting default Space Type for building to Office SmallOffice - OpenOffice - 90.1-2010",
+               "Setting default Construction Set for building to 90.1-2010 - Office - ASHRAE 169-2006-5B",
+               "Setting ASHRAE Climate Zone to 5B",
+               "Setting Standards Building Type to Office",
+               "Renaming building to Office 90.1-2010 5B"
+            ],
+            "step_initial_condition" : "The building started with 0 space types and 0 construction sets.",
+            "step_result" : "Success",
+            "step_values" : [
+               {
+                  "name" : "building_type",
+                  "value" : "SmallOffice"
+               },
+               {
+                  "name" : "template",
+                  "value" : "90.1-2010"
+               },
+               {
+                  "name" : "climate_zone",
+                  "value" : "ASHRAE 169-2006-5B"
+               },
+               {
+                  "name" : "create_space_types",
+                  "value" : true
+               },
+               {
+                  "name" : "create_construction_set",
+                  "value" : true
+               },
+               {
+                  "name" : "set_building_defaults",
+                  "value" : true
+               }
+            ],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {
+            "total_bldg_area_ip" : 10000
+         },
+         "description" : "This measure will create a building envelope based on a target floor area, aspect ratio, and floor to floor height.",
+         "measure_dir_name" : "BarAspectRatioStudy",
+         "modeler_description" : "This is based on the SketchUp Plugin user script to create a rectangular building, but just uses different inputs. The resulting building will have a core and perimeter zoning, unless it is too small, in which case eac floor will have a single zone.",
+         "name" : "Bar Aspect Ratio Study",
+         "result" : {
+            "completed_at" : "20180918T204306Z",
+            "measure_class_name" : "BarAspectRatioStudy",
+            "measure_display_name" : "Bar Aspect Ratio Study",
+            "measure_name" : "bar_aspect_ratio_study",
+            "measure_taxonomy" : "Envelope.Form",
+            "measure_type" : "ModelMeasure",
+            "measure_uid" : "3dcac94d-8a2e-43b6-8698-a3a4e8f3903f",
+            "measure_version_id" : "46c28b4e-e3a1-4ec3-834b-2314ca381fd5",
+            "measure_version_modified" : "20180918T203207Z",
+            "measure_xml_checksum" : "49BEF039",
+            "started_at" : "20180918T204305Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "The building finished with 10 spaces.",
+            "step_info" : [],
+            "step_initial_condition" : "The building started with 0 spaces.",
+            "step_result" : "Success",
+            "step_values" : [
+               {
+                  "name" : "total_bldg_area_ip",
+                  "value" : 10000
+               },
+               {
+                  "name" : "ns_to_ew_ratio",
+                  "value" : 2
+               },
+               {
+                  "name" : "num_floors",
+                  "value" : 2
+               },
+               {
+                  "name" : "floor_to_floor_height_ip",
+                  "value" : 10
+               },
+               {
+                  "name" : "surface_matching",
+                  "value" : true
+               },
+               {
+                  "name" : "make_zones",
+                  "value" : true
+               }
+            ],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+         "measure_dir_name" : "SetWindowToWallRatioByFacade",
+         "modeler_description" : "This measure identifies exterior surfaces of the proper orientation. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results.\r\r\r\r\r\r\n\r\r\r\r\r\r\nThe measure doesn?t have any cost or lifecycle arguments, however If lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.\r\r\r\r\r\r\n  ",
+         "name" : "Set Window to Wall Ratio by Facade",
+         "result" : {
+            "completed_at" : "20180918T204306Z",
+            "measure_class_name" : "SetWindowToWallRatioByFacade",
+            "measure_display_name" : "Set Window to Wall Ratio by Facade",
+            "measure_name" : "set_window_to_wall_ratio_by_facade",
+            "measure_taxonomy" : "Envelope.Fenestration",
+            "measure_type" : "ModelMeasure",
+            "measure_uid" : "c567a0bf-a7d9-4a06-afe9-bf7df79e6bf8",
+            "measure_version_id" : "bdcee197-3bc4-46d9-a97e-a528608b7324",
+            "measure_version_modified" : "20180626T202333Z",
+            "measure_xml_checksum" : "6DE831F7",
+            "started_at" : "20180918T204306Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "The model's final window to wall ratio for South facing exterior walls is 0.40. Window area increased by 800 (ft^2). The material and construction costs increased by $0.",
+            "step_info" : [],
+            "step_initial_condition" : "The model's initial window to wall ratio for South facing exterior walls was 0.00.",
+            "step_result" : "Success",
+            "step_values" : [
+               {
+                  "name" : "wwr",
+                  "value" : 0.40000000000000002
+               },
+               {
+                  "name" : "sillHeight",
+                  "value" : 30
+               },
+               {
+                  "name" : "facade",
+                  "value" : "South"
+               }
+            ],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {},
+         "description" : "This will enable Ideal Air Loads for all thermal zones in the model. This will result in disconnecting any pre-existing HVAC systems from the zones.",
+         "measure_dir_name" : "EnableIdealAirLoadsForAllZones",
+         "modeler_description" : "This doesn't clean up any air or plant loops that are left. It was developed to use on models without HVAC. If you use it in another way you may have to clean up remaining objects prior to running a simulation.",
+         "name" : "EnableIdealAirLoadsForAllZones",
+         "result" : {
+            "completed_at" : "20180918T204306Z",
+            "measure_class_name" : "EnableIdealAirLoadsForAllZones",
+            "measure_display_name" : "EnableIdealAirLoadsForAllZones",
+            "measure_name" : "enable_ideal_air_loads_for_all_zones",
+            "measure_taxonomy" : "HVAC.Whole System",
+            "measure_type" : "ModelMeasure",
+            "measure_uid" : "f70d4a3d-8b93-4fef-b679-858fe1e05acc",
+            "measure_version_id" : "371eab78-f0b6-4e24-bbce-285545ba435e",
+            "measure_version_modified" : "20180626T202322Z",
+            "measure_xml_checksum" : "4435983D",
+            "started_at" : "20180918T204306Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "In the final model 0 zones use ideal air loads.",
+            "step_info" : [],
+            "step_initial_condition" : "In the initial model 0 zones use ideal air loads.",
+            "step_result" : "Success",
+            "step_values" : [],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure sets flat rates for electricity, gas, water, district heating, and district cooling.",
+         "measure_dir_name" : "tariff_selection_flat",
+         "modeler_description" : "Will add the necessary UtilityCost objects into the model.",
+         "name" : "Tariff Selection-Flat",
+         "result" : {
+            "completed_at" : "20180918T204306Z",
+            "measure_class_name" : "TariffSelectionFlat",
+            "measure_display_name" : "Tariff Selection-Flat",
+            "measure_name" : "tariff_selection_flat",
+            "measure_taxonomy" : "Economics.Life Cycle Cost Analysis",
+            "measure_type" : "EnergyPlusMeasure",
+            "measure_uid" : "539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55",
+            "measure_version_id" : "0be9a66a-a087-4225-9570-205d0c1d30a8",
+            "measure_version_modified" : "20180710T213339Z",
+            "measure_xml_checksum" : "FBDC6D11",
+            "started_at" : "20180918T204306Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "The model finished with 5 tariff objects.",
+            "step_info" : [
+               "Updating the timesteps per hour in the model from 6 to 4 to be compatible with the demand window length of a QuarterHour"
+            ],
+            "step_initial_condition" : "The model started with 0 tariff objects.",
+            "step_result" : "Success",
+            "step_values" : [
+               {
+                  "name" : "demand_window_length",
+                  "value" : "QuarterHour"
+               },
+               {
+                  "name" : "elec_rate",
+                  "value" : 0.12
+               },
+               {
+                  "name" : "gas_rate",
+                  "value" : 0.5
+               },
+               {
+                  "name" : "water_rate",
+                  "value" : 0.0050000000000000001
+               },
+               {
+                  "name" : "disthtg_rate",
+                  "value" : 0.20000000000000001
+               },
+               {
+                  "name" : "distclg_rate",
+                  "value" : 0.20000000000000001
+               }
+            ],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+         "measure_dir_name" : "openstudio_results",
+         "modeler_description" : "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+         "name" : "OpenStudio Results",
+         "result" : {
+            "completed_at" : "20180918T204317Z",
+            "measure_class_name" : "OpenStudioResults",
+            "measure_display_name" : "OpenStudio Results",
+            "measure_name" : "openstudio_results",
+            "measure_taxonomy" : "Reporting.QAQC",
+            "measure_type" : "ReportingMeasure",
+            "measure_uid" : "a25386cd-60e4-46bc-8b11-c755f379d916",
+            "measure_version_id" : "9f2244b3-044e-42dc-a705-e72bbb7b4373",
+            "measure_version_modified" : "20180918T204213Z",
+            "measure_xml_checksum" : "557BF06F",
+            "started_at" : "20180918T204317Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [ "Test with failed reporting measure" ],
+            "step_files" : [],
+            "step_info" : [],
+            "step_result" : "Fail",
+            "step_values" : [],
+            "step_warnings" : []
+         }
+      }
+   ],
+   "updated_at" : "20180918T204319Z",
+   "weather_file" : "USA_CO_Denver.Intl.AP.725650_TMY3.epw"
+}

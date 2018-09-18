@@ -1,0 +1,109 @@
+
+OS:Version,
+  {4bf61ec5-c9cb-4138-8b73-4fe9ee87c886}, !- Handle
+  2.6.0;                                  !- Version Identifier
+
+OS:Site,
+  {feab3ed7-e34b-4ca1-99c9-a11f55079aed}, !- Handle
+  Denver Intl Ap,                         !- Name
+  39.83,                                  !- Latitude {deg}
+  -104.65,                                !- Longitude {deg}
+  -7,                                     !- Time Zone {hr}
+  1650,                                   !- Elevation {m}
+  ;                                       !- Terrain
+
+OS:YearDescription,
+  {6247e4e2-fd3f-4013-b49f-d3b08dfa28d0}, !- Handle
+  ,                                       !- Calendar Year
+  Sunday;                                 !- Day of Week for Start Day
+
+OS:ClimateZones,
+  {f1090907-fa1d-46ba-904c-b8d2388db42a}, !- Handle
+  ,                                       !- Active Institution
+  ,                                       !- Active Year
+  ,                                       !- Climate Zone Institution Name 1
+  ,                                       !- Climate Zone Document Name 1
+  ,                                       !- Climate Zone Document Year 1
+  ,                                       !- Climate Zone Value 1
+  CEC,                                    !- Climate Zone Institution Name 2
+  California Climate Zone Descriptions,   !- Climate Zone Document Name 2
+  1995,                                   !- Climate Zone Document Year 2
+  ;                                       !- Climate Zone Value 2
+
+OS:Building,
+  {c811beab-6886-4e88-829c-44bbd9ea242e}, !- Handle
+  Building 1,                             !- Name
+  ,                                       !- Building Sector Type
+  ,                                       !- North Axis {deg}
+  ,                                       !- Nominal Floor to Floor Height {m}
+  ,                                       !- Space Type Name
+  ,                                       !- Default Construction Set Name
+  ;                                       !- Default Schedule Set Name
+
+OS:Facility,
+  {ec9ff236-2382-4152-9673-6fec8b52fff5}; !- Handle
+
+OS:SimulationControl,
+  {ba9d8f26-74ae-44a0-8845-41e38bee13af}; !- Handle
+
+OS:Sizing:Parameters,
+  {012cab31-cc0d-4ba1-baa7-e5ab746551c9}, !- Handle
+  1.25,                                   !- Heating Sizing Factor
+  1.15;                                   !- Cooling Sizing Factor
+
+OS:Timestep,
+  {3d60fa5f-274b-4887-be7c-4213e7bd1427}, !- Handle
+  6;                                      !- Number of Timesteps per Hour
+
+OS:ShadowCalculation,
+  {cf89b967-50d5-4e97-a71d-367429f47112}, !- Handle
+  20,                                     !- Calculation Frequency
+  15000;                                  !- Maximum Figures in Shadow Overlap Calculations
+
+OS:HeatBalanceAlgorithm,
+  {89998cd9-40ca-49d3-8f3b-f8f5fc1bf27f}, !- Handle
+  ConductionTransferFunction,             !- Algorithm
+  200;                                    !- Surface Temperature Upper Limit {C}
+
+OS:RunPeriod,
+  {16c32ee8-2f06-4799-8ebc-5b8e586f252a}, !- Handle
+  Run Period 1,                           !- Name
+  1,                                      !- Begin Month
+  1,                                      !- Begin Day of Month
+  12,                                     !- End Month
+  31,                                     !- End Day of Month
+  ,                                       !- Use Weather File Holidays and Special Days
+  ,                                       !- Use Weather File Daylight Saving Period
+  ,                                       !- Apply Weekend Holiday Rule
+  ,                                       !- Use Weather File Rain Indicators
+  ,                                       !- Use Weather File Snow Indicators
+  ;                                       !- Number of Times Runperiod to be Repeated
+
+OS:LifeCycleCost:Parameters,
+  {e3ea046e-d0da-4b72-a1bf-82e70fd745e8}, !- Handle
+  ,                                       !- Analysis Type
+  ,                                       !- Discounting Convention
+  ,                                       !- Inflation Approach
+  ,                                       !- Real Discount Rate
+  ,                                       !- Nominal Discount Rate
+  ,                                       !- Inflation
+  ,                                       !- Base Date Month
+  ,                                       !- Base Date Year
+  ,                                       !- Service Date Month
+  ,                                       !- Service Date Year
+  ;                                       !- Length of Study Period in Years
+
+OS:WeatherFile,
+  {e89830d0-92cf-45dd-ad39-b885681d4b13}, !- Handle
+  Denver Intl Ap,                         !- City
+  CO,                                     !- State Province Region
+  USA,                                    !- Country
+  TMY3,                                   !- Data Source
+  725650,                                 !- WMO Number
+  39.83,                                  !- Latitude {deg}
+  -104.65,                                !- Longitude {deg}
+  -7,                                     !- Time Zone {hr}
+  1650,                                   !- Elevation {m}
+  file:USA_CO_Denver.Intl.AP.725650_TMY3.epw, !- Url
+  E23378AA;                               !- Checksum
+

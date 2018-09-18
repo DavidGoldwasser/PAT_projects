@@ -1,0 +1,173 @@
+{
+   "completed_at" : "20180918T203238Z",
+   "completed_status" : "Fail",
+   "created_at" : "20180918T202316Z",
+   "current_step" : 2,
+   "hash" : "B3DC138B",
+   "seed_file" : "../bad_arg.osm",
+   "started_at" : "20180918T203234Z",
+   "steps" : [
+      {
+         "arguments" : {
+            "climate_zone" : "ASHRAE 169-2006-5B"
+         },
+         "description" : "Create space types and or construction sets for the requested building type, climate zone, and target.",
+         "measure_dir_name" : "SpaceTypeAndConstructionSetWizard",
+         "modeler_description" : "The data for this measure comes from the openstudio-standards Ruby Gem. They are no longer created from the same JSON file that was used to make the OpenStudio templates. Optionally this will also set the building default space type and construction set.",
+         "name" : "Space Type and Construction Set Wizard",
+         "result" : {
+            "completed_at" : "20180918T203238Z",
+            "measure_class_name" : "SpaceTypeAndConstructionSetWizard",
+            "measure_display_name" : "Space Type and Construction Set Wizard",
+            "measure_name" : "space_type_and_construction_set_wizard",
+            "measure_taxonomy" : "Whole Building.Space Types",
+            "measure_type" : "ModelMeasure",
+            "measure_uid" : "7c65af63-4316-47c9-b7a5-68d7a019e533",
+            "measure_version_id" : "10fbc6f2-c215-4dd3-a96a-6e773b928f33",
+            "measure_version_modified" : "20180918T203220Z",
+            "measure_xml_checksum" : "057E8D9D",
+            "started_at" : "20180918T203235Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [],
+            "step_files" : [],
+            "step_final_condition" : "The building finished with 13 space types and 1 construction sets.",
+            "step_info" : [
+               "Added space type named Office SmallOffice - Breakroom - 90.1-2010",
+               "Added space type named Office SmallOffice - ClosedOffice - 90.1-2010",
+               "Added space type named Office SmallOffice - Conference - 90.1-2010",
+               "Added space type named Office SmallOffice - Corridor - 90.1-2010",
+               "Added space type named Office SmallOffice - Elec/MechRoom - 90.1-2010",
+               "Added space type named Office SmallOffice - Lobby - 90.1-2010",
+               "Added space type named Office SmallOffice - OpenOffice - 90.1-2010",
+               "Added space type named Office SmallOffice - Restroom - 90.1-2010",
+               "Added space type named Office SmallOffice - Stair - 90.1-2010",
+               "Added space type named Office SmallOffice - Storage - 90.1-2010",
+               "Added space type named Office SmallOffice - Classroom - 90.1-2010",
+               "Added space type named Office SmallOffice - Dining - 90.1-2010",
+               "Added space type named Office WholeBuilding - Sm Office - 90.1-2010",
+               "Added default construction set named 90.1-2010 - Office - ASHRAE 169-2006-5B",
+               "Setting default Space Type for building to Office SmallOffice - OpenOffice - 90.1-2010",
+               "Setting default Construction Set for building to 90.1-2010 - Office - ASHRAE 169-2006-5B",
+               "Setting ASHRAE Climate Zone to 5B",
+               "Setting Standards Building Type to Office",
+               "Renaming building to Office 90.1-2010 5B"
+            ],
+            "step_initial_condition" : "The building started with 0 space types and 0 construction sets.",
+            "step_result" : "Success",
+            "step_values" : [
+               {
+                  "name" : "building_type",
+                  "value" : "SmallOffice"
+               },
+               {
+                  "name" : "template",
+                  "value" : "90.1-2010"
+               },
+               {
+                  "name" : "climate_zone",
+                  "value" : "ASHRAE 169-2006-5B"
+               },
+               {
+                  "name" : "create_space_types",
+                  "value" : true
+               },
+               {
+                  "name" : "create_construction_set",
+                  "value" : true
+               },
+               {
+                  "name" : "set_building_defaults",
+                  "value" : true
+               }
+            ],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {
+            "total_bldg_area_ip" : -10000
+         },
+         "description" : "This measure will create a building envelope based on a target floor area, aspect ratio, and floor to floor height.",
+         "measure_dir_name" : "BarAspectRatioStudy",
+         "modeler_description" : "This is based on the SketchUp Plugin user script to create a rectangular building, but just uses different inputs. The resulting building will have a core and perimeter zoning, unless it is too small, in which case eac floor will have a single zone.",
+         "name" : "Bar Aspect Ratio Study",
+         "result" : {
+            "completed_at" : "20180918T203238Z",
+            "measure_class_name" : "BarAspectRatioStudy",
+            "measure_display_name" : "Bar Aspect Ratio Study",
+            "measure_name" : "bar_aspect_ratio_study",
+            "measure_taxonomy" : "Envelope.Form",
+            "measure_type" : "ModelMeasure",
+            "measure_uid" : "3dcac94d-8a2e-43b6-8698-a3a4e8f3903f",
+            "measure_version_id" : "46c28b4e-e3a1-4ec3-834b-2314ca381fd5",
+            "measure_version_modified" : "20180918T203207Z",
+            "measure_xml_checksum" : "49BEF039",
+            "started_at" : "20180918T203238Z",
+            "stderr" : "",
+            "stdout" : "",
+            "step_errors" : [ "Enter a total building area greater than 0." ],
+            "step_files" : [],
+            "step_info" : [],
+            "step_result" : "Fail",
+            "step_values" : [
+               {
+                  "name" : "total_bldg_area_ip",
+                  "value" : -10000
+               },
+               {
+                  "name" : "ns_to_ew_ratio",
+                  "value" : 2
+               },
+               {
+                  "name" : "num_floors",
+                  "value" : 2
+               },
+               {
+                  "name" : "floor_to_floor_height_ip",
+                  "value" : 10
+               },
+               {
+                  "name" : "surface_matching",
+                  "value" : true
+               },
+               {
+                  "name" : "make_zones",
+                  "value" : true
+               }
+            ],
+            "step_warnings" : []
+         }
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure will set the window to wall ratio for exterior surfaces with a specified orientation. If one or more windows exist on an affected wall, they will be removed and replaced with a single ribbon window. Doors will not be removed. If the requested ratio can?t be achieved then the wall will remain un-touched.",
+         "measure_dir_name" : "SetWindowToWallRatioByFacade",
+         "modeler_description" : "This measure identifies exterior surfaces of the proper orientation. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results.\r\r\r\r\r\r\n\r\r\r\r\r\r\nThe measure doesn?t have any cost or lifecycle arguments, however If lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.\r\r\r\r\r\r\n  ",
+         "name" : "Set Window to Wall Ratio by Facade"
+      },
+      {
+         "arguments" : {},
+         "description" : "This will enable Ideal Air Loads for all thermal zones in the model. This will result in disconnecting any pre-existing HVAC systems from the zones.",
+         "measure_dir_name" : "EnableIdealAirLoadsForAllZones",
+         "modeler_description" : "This doesn't clean up any air or plant loops that are left. It was developed to use on models without HVAC. If you use it in another way you may have to clean up remaining objects prior to running a simulation.",
+         "name" : "EnableIdealAirLoadsForAllZones"
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure sets flat rates for electricity, gas, water, district heating, and district cooling.",
+         "measure_dir_name" : "tariff_selection_flat",
+         "modeler_description" : "Will add the necessary UtilityCost objects into the model.",
+         "name" : "Tariff Selection-Flat"
+      },
+      {
+         "arguments" : {},
+         "description" : "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+         "measure_dir_name" : "openstudio_results",
+         "modeler_description" : "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+         "name" : "OpenStudio Results"
+      }
+   ],
+   "updated_at" : "20180918T203238Z",
+   "weather_file" : "USA_CO_Denver.Intl.AP.725650_TMY3.epw"
+}
