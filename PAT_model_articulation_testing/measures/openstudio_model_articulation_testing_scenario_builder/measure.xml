@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>openstudio_model_articulation_testing_scenario_builder</name>
   <uid>05852664-7db9-4b27-bfec-afa6c37ba8a3</uid>
-  <version_id>d2d1845d-adb2-4563-95b0-87fd0b82a00c</version_id>
-  <version_modified>20171201T220800Z</version_modified>
+  <version_id>cbfbab59-75e7-47e9-9050-428469863432</version_id>
+  <version_modified>20180730T221526Z</version_modified>
   <xml_checksum>F075CD99</xml_checksum>
   <class_name>OpenStudioModelArticulationTestingScenarioBuilder</class_name>
   <display_name>OpenStudio Model Articulation Testing Scenario Builder</display_name>
@@ -291,12 +291,6 @@
       <checksum>18AF9805</checksum>
     </file>
     <file>
-      <filename>os_lib_model_generation.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>29BB1593</checksum>
-    </file>
-    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.3.0</identifier>
@@ -306,6 +300,12 @@
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
       <checksum>E698AF70</checksum>
+    </file>
+    <file>
+      <filename>os_lib_model_generation.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>67AC7BF3</checksum>
     </file>
   </files>
 </measure>

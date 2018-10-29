@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>create_typical_building_from_model</name>
   <uid>339a2e3a-273c-4494-bb50-bfe586a0647c</uid>
-  <version_id>5bd65a55-251f-40b0-aa9e-4aac5abd3cae</version_id>
-  <version_modified>20171203T181512Z</version_modified>
+  <version_id>1082176e-fd8a-40b7-b88f-9802f25baf32</version_id>
+  <version_modified>20181022T022604Z</version_modified>
   <xml_checksum>EE13F09F</xml_checksum>
   <class_name>CreateTypicalBuildingFromModel</class_name>
   <display_name>Create Typical Building from Model</display_name>
@@ -577,6 +577,44 @@
         </choice>
       </choices>
     </argument>
+    <argument>
+      <name>use_upstream_args</name>
+      <display_name>Use Upstream Argument Values</display_name>
+      <description>When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.</description>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>enable_dst</name>
+      <display_name>Enable Daylight Savings.</display_name>
+      <description>By default this will force dayligint savsings to be enabled. Set to false if in a location where DST is not followed, or if needed for specific use case.</description>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
   </arguments>
   <outputs/>
   <provenances/>
@@ -612,94 +650,46 @@
   </attributes>
   <files>
     <file>
-      <filename>SmallOffice.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>4DE95BEF</checksum>
-    </file>
-    <file>
-      <filename>MidriseApartment.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>AFAF7439</checksum>
-    </file>
-    <file>
       <filename>test.osw</filename>
       <filetype>osw</filetype>
       <usage_type>test</usage_type>
       <checksum>6DB338FC</checksum>
     </file>
     <file>
+      <filename>SmallOffice.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>519B22EB</checksum>
+    </file>
+    <file>
+      <filename>MidriseApartment.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>EB7A2671</checksum>
+    </file>
+    <file>
       <filename>LargeOffice04.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>1F375CE5</checksum>
-    </file>
-    <file>
-      <filename>Model.hvac.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>6C20C818</checksum>
+      <checksum>5415617A</checksum>
     </file>
     <file>
       <filename>test_hvac.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>E7D4E373</checksum>
-    </file>
-    <file>
-      <filename>large_hotel_restaurant_multiplier_test_output.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>FFAEF775</checksum>
-    </file>
-    <file>
-      <filename>mixed_hotel_rest_by_story_test_output.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>B5DB5BF9</checksum>
-    </file>
-    <file>
-      <filename>openstudio-standards-0.1.16.gem</filename>
-      <filetype>gem</filetype>
-      <usage_type>test</usage_type>
-      <checksum>B7E4F3BD</checksum>
+      <checksum>3F28DB5B</checksum>
     </file>
     <file>
       <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>02263B97</checksum>
-    </file>
-    <file>
-      <filename>create_typical_building_from_model_test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>77EBCBD3</checksum>
+      <checksum>9CFC43FB</checksum>
     </file>
     <file>
       <filename>os_lib_model_generation.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>29BB1593</checksum>
-    </file>
-    <file>
-      <filename>openstudio-standards-0.1.16.gem</filename>
-      <filetype>gem</filetype>
-      <usage_type>test</usage_type>
-      <checksum>B7E4F3BD</checksum>
-    </file>
-    <file>
-      <filename>mixed_hotel_rest_by_story_test_output.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>B5DB5BF9</checksum>
-    </file>
-    <file>
-      <filename>openstudio-standards-0.1.16.gem</filename>
-      <filetype>gem</filetype>
-      <usage_type>test</usage_type>
-      <checksum>B7E4F3BD</checksum>
+      <checksum>67AC7BF3</checksum>
     </file>
     <file>
       <version>
@@ -710,7 +700,31 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>2E690FFB</checksum>
+      <checksum>9F743109</checksum>
+    </file>
+    <file>
+      <filename>Model.hvac.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>BBB04866</checksum>
+    </file>
+    <file>
+      <filename>USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.epw</filename>
+      <filetype>epw</filetype>
+      <usage_type>test</usage_type>
+      <checksum>EE565FCC</checksum>
+    </file>
+    <file>
+      <filename>GenericGbxml.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>E56FFF95</checksum>
+    </file>
+    <file>
+      <filename>create_typical_building_from_model_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>854B19B8</checksum>
     </file>
   </files>
 </measure>

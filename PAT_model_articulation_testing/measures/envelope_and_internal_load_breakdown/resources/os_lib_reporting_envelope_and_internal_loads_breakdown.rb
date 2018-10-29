@@ -599,7 +599,7 @@ module OsLib_ReportingHeatGainLoss
             monthly_totals[i+1] += value
             value_neat = OpenStudio::toNeatString(value,1,true)
             var_value_monthly << value_neat
-          end # end of for i in 0..(output_timeseries.size - 1)
+          end
 
           # fill in blank data for partial year simulations
           for i in 0..(num_blanks_end-1)
@@ -614,7 +614,7 @@ module OsLib_ReportingHeatGainLoss
 
         else
           runner.registerWarning("Didn't find data for #{var} #{key}")
-        end # end of if output_timeseries.is_initialized
+        end
 
         # add each key to data
         monthly_table_with_totals[:data] << var_value_monthly

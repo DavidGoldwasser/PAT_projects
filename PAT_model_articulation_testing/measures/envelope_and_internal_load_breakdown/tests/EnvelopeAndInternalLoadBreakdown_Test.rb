@@ -188,7 +188,7 @@ class EnvelopeAndInternalLoadBreakdown_Test < MiniTest::Unit::TestCase
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(runner, argument_map)
-    assert_equal(11, idf_output_requests.size)
+    assert_equal(9, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -259,7 +259,7 @@ class EnvelopeAndInternalLoadBreakdown_Test < MiniTest::Unit::TestCase
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(runner, argument_map)
-    assert_equal(11, idf_output_requests.size)
+    assert_equal(9, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -330,7 +330,7 @@ class EnvelopeAndInternalLoadBreakdown_Test < MiniTest::Unit::TestCase
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(runner, argument_map)
-    assert_equal(11, idf_output_requests.size)
+    assert_equal(9, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default

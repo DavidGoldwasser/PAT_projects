@@ -1,9 +1,8 @@
 
 # Start the measure
-class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
-  
+class CreateDOEPrototypeBuilding < OpenStudio::Measure::ModelMeasure
   require 'openstudio-standards'
-  
+
   # Define the name of the Measure.
   def name
     return 'Create DOE Prototype Building'
@@ -21,7 +20,7 @@ class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
 
   # Define the arguments that the user will input.
   def arguments(model)
-    args = OpenStudio::Ruleset::OSArgumentVector.new
+    args = OpenStudio::Measure::OSArgumentVector.new
 
     # Make an argument for the building type
     building_type_chs = OpenStudio::StringVector.new
@@ -41,7 +40,7 @@ class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
     building_type_chs << 'HighriseApartment'
     building_type_chs << 'Hospital'
     building_type_chs << 'Outpatient'
-    building_type = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('building_type', building_type_chs, true)
+    building_type = OpenStudio::Measure::OSArgument.makeChoiceArgument('building_type', building_type_chs, true)
     building_type.setDisplayName('Building Type.')
     building_type.setDefaultValue('SmallOffice')
     args << building_type
@@ -52,11 +51,11 @@ class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
     template_chs << 'DOE Ref 1980-2004'
     template_chs << '90.1-2004'
     template_chs << '90.1-2007'
-    #template_chs << '189.1-2009'
+    # template_chs << '189.1-2009'
     template_chs << '90.1-2010'
     template_chs << '90.1-2013'
     template_chs << 'NECB 2011'
-    template = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('template', template_chs, true)
+    template = OpenStudio::Measure::OSArgument.makeChoiceArgument('template', template_chs, true)
     template.setDisplayName('Template.')
     template.setDefaultValue('90.1-2010')
     args << template
@@ -64,7 +63,7 @@ class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
     # Make an argument for the climate zone
     climate_zone_chs = OpenStudio::StringVector.new
     climate_zone_chs << 'ASHRAE 169-2006-1A'
-    #climate_zone_chs << 'ASHRAE 169-2006-1B'
+    # climate_zone_chs << 'ASHRAE 169-2006-1B'
     climate_zone_chs << 'ASHRAE 169-2006-2A'
     climate_zone_chs << 'ASHRAE 169-2006-2B'
     climate_zone_chs << 'ASHRAE 169-2006-3A'
@@ -75,28 +74,28 @@ class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
     climate_zone_chs << 'ASHRAE 169-2006-4C'
     climate_zone_chs << 'ASHRAE 169-2006-5A'
     climate_zone_chs << 'ASHRAE 169-2006-5B'
-    #climate_zone_chs << 'ASHRAE 169-2006-5C'
+    # climate_zone_chs << 'ASHRAE 169-2006-5C'
     climate_zone_chs << 'ASHRAE 169-2006-6A'
     climate_zone_chs << 'ASHRAE 169-2006-6B'
     climate_zone_chs << 'ASHRAE 169-2006-7A'
-    #climate_zone_chs << 'ASHRAE 169-2006-7B'
+    # climate_zone_chs << 'ASHRAE 169-2006-7B'
     climate_zone_chs << 'ASHRAE 169-2006-8A'
-    #climate_zone_chs << 'ASHRAE 169-2006-8B'
+    # climate_zone_chs << 'ASHRAE 169-2006-8B'
     climate_zone_chs << 'NECB HDD Method'
-    climate_zone = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('climate_zone', climate_zone_chs, true)
+    climate_zone = OpenStudio::Measure::OSArgument.makeChoiceArgument('climate_zone', climate_zone_chs, true)
     climate_zone.setDisplayName('Climate Zone.')
     climate_zone.setDefaultValue('ASHRAE 169-2006-2A')
     args << climate_zone
 
-    #Drop down selector for Canadian weather files. 
+    # Drop down selector for Canadian weather files.
     epw_files = OpenStudio::StringVector.new
     epw_files << 'Not Applicable'
-    BTAP::Environment::get_canadian_weather_file_names().each {|file| epw_files << file }
-    epw_file = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('epw_file', epw_files, true)
+    BTAP::Environment.get_canadian_weather_file_names.each { |file| epw_files << file }
+    epw_file = OpenStudio::Measure::OSArgument.makeChoiceArgument('epw_file', epw_files, true)
     epw_file.setDisplayName('Climate File (NECB only)')
     epw_file.setDefaultValue('Not Applicable')
     args << epw_file
-   
+
     return args
   end
 
@@ -105,19 +104,19 @@ class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
     super(model, runner, user_arguments)
 
     # Use the built-in error checking
-    if not runner.validateUserArguments(arguments(model), user_arguments)
+    if !runner.validateUserArguments(arguments(model), user_arguments)
       return false
     end
 
     # Assign the user inputs to variables that can be accessed across the measure
-    building_type = runner.getStringArgumentValue('building_type',user_arguments)
-    template = runner.getStringArgumentValue('template',user_arguments)
-    climate_zone = runner.getStringArgumentValue('climate_zone',user_arguments)
-    epw_file = runner.getStringArgumentValue('epw_file',user_arguments)
+    building_type = runner.getStringArgumentValue('building_type', user_arguments)
+    template = runner.getStringArgumentValue('template', user_arguments)
+    climate_zone = runner.getStringArgumentValue('climate_zone', user_arguments)
+    epw_file = runner.getStringArgumentValue('epw_file', user_arguments)
 
     # Turn debugging output on/off
-    @debug = false    
-    
+    @debug = false
+
     # Open a channel to log info/warning/error messages
     @msg_log = OpenStudio::StringStreamLogSink.new
     if @debug
@@ -130,46 +129,56 @@ class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
 
     # Make a directory to save the resulting models for debugging
     build_dir = "#{Dir.pwd}/output"
-    if !Dir.exists?(build_dir)
+    if !Dir.exist?(build_dir)
       Dir.mkdir(build_dir)
     end
 
-    #Set OSM folder
-    osm_directory = ""
+    # Set OSM folder
+    osm_directory = ''
     if template == 'NECB 2011'
       osm_directory = "#{build_dir}/#{building_type}-#{template}-#{climate_zone}-#{epw_file}"
     else
       osm_directory = build_dir
     end
-      if !Dir.exists?(osm_directory)
-        Dir.mkdir(osm_directory)
-      end
+    if !Dir.exist?(osm_directory)
+      Dir.mkdir(osm_directory)
+    end
 
+    # Versions of OpenStudio greater than 2.4.0 use a modified version of
+    # openstudio-standards with different method calls.
+    if OpenStudio::VersionString.new(OpenStudio.openStudioVersion) < OpenStudio::VersionString.new('2.4.3')
       model.create_prototype_building(building_type,
-                    template,
-                    climate_zone,
-                    epw_file,
-                    osm_directory,
-                    @debug)
-    
-    log_msgs
-    return true
+                                      template,
+                                      climate_zone,
+                                      epw_file,
+                                      osm_directory,
+                                      @debug)
+    else
+      reset_log
+      template = 'NECB2011' if template == 'NECB 2011'
+      prototype_creator = Standard.build("#{template}_#{building_type}")
+      prototype_creator.model_create_prototype_model(climate_zone, epw_file, osm_directory, @debug, model)
+    end
 
-  end #end the run method
+    log_msgs
+    reset_log
+
+    return true
+  end # end the run method
 
   # Get all the log messages and put into output
   # for users to see.
   def log_msgs
     @msg_log.logMessages.each do |msg|
       # DLM: you can filter on log channel here for now
-      if /openstudio.*/.match(msg.logChannel) #/openstudio\.model\..*/
+      if /openstudio.*/.match(msg.logChannel) # /openstudio\.model\..*/
         # Skip certain messages that are irrelevant/misleading
-        next if msg.logMessage.include?("Skipping layer") || # Annoying/bogus "Skipping layer" warnings
-            msg.logChannel.include?("runmanager") || # RunManager messages
-            msg.logChannel.include?("setFileExtension") || # .ddy extension unexpected
-            msg.logChannel.include?("Translator") || # Forward translator and geometry translator
-            msg.logMessage.include?("UseWeatherFile") # 'UseWeatherFile' is not yet a supported option for YearDescription
-            
+        next if msg.logMessage.include?('Skipping layer') || # Annoying/bogus "Skipping layer" warnings
+                msg.logChannel.include?('runmanager') || # RunManager messages
+                msg.logChannel.include?('setFileExtension') || # .ddy extension unexpected
+                msg.logChannel.include?('Translator') || # Forward translator and geometry translator
+                msg.logMessage.include?('UseWeatherFile') # 'UseWeatherFile' is not yet a supported option for YearDescription
+
         # Report the message in the correct way
         if msg.logLevel == OpenStudio::Info
           @runner.registerInfo(msg.logMessage)
@@ -184,8 +193,7 @@ class CreateDOEPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
     end
     @runner.registerInfo("Total Time = #{(Time.new - @start_time).round}sec.")
   end
+end # end the measure
 
-end #end the measure
-
-#this allows the measure to be use by the application
+# this allows the measure to be use by the application
 CreateDOEPrototypeBuilding.new.registerWithApplication
