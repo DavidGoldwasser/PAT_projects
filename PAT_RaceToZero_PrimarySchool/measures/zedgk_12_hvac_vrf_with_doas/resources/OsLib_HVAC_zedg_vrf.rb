@@ -9,7 +9,7 @@ module OsLib_HVAC_zedg_vrf
     result = output
     return result
 
-  end # end of def
+  end
 
 
   # validate and make plenum zones
@@ -56,10 +56,10 @@ module OsLib_HVAC_zedg_vrf
                 end  
               end
             end
-          end # end of surfaces.each do
-        end # end of spaces.each do
-      end # end of zonesPlenum.each do
-    end # end of zonesPlenum == nil
+          end
+        end
+      end
+    end
 
     # report out results of zone-plenum hash
     zonePlenumHash.each do |zone,plenum|
@@ -70,7 +70,7 @@ module OsLib_HVAC_zedg_vrf
     result = zonePlenumHash
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_vrf.sortZones(model, runner, options = {})
 
@@ -131,7 +131,7 @@ module OsLib_HVAC_zedg_vrf
           if options["secondarySpaceTypeTest"].include? standardSpaceType
             zonesSecondary << zone
           end
-        end # end of spaces each do
+        end
         # if zone not assigned as secondary, assign as primary
         unless zonesSecondary.include? zone
           zonesPrimary << zone
@@ -147,7 +147,7 @@ module OsLib_HVAC_zedg_vrf
     result = zonesSorted
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_vrf.reportConditions(model, runner, condition)
 
@@ -176,7 +176,7 @@ module OsLib_HVAC_zedg_vrf
       runner.registerFinalCondition("The building finished with #{airloops.size} air loops and #{plantLoops.size} plant loops. #{zonesWithEquipCounter} zones are conditioned with zone equipment.")
     end
     
-  end # end of def
+  end
 
  def OsLib_HVAC_zedg_vrf.removeEquipment(model, runner, options)
     airloops = model.getAirLoopHVACs
@@ -230,10 +230,10 @@ module OsLib_HVAC_zedg_vrf
 				plantLoop.remove
 				runner.registerInfo("Plant Loop #{plantLoop.name} is removed")
 			end
-		end # end of plantloop components
+  end
 
       
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_vrf.assignHVACSchedules(model, runner, options = {})
    
@@ -446,7 +446,7 @@ module OsLib_HVAC_zedg_vrf
     result = schedulesHVAC
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_vrf.createHotWaterPlant(model, runner, hot_water_setpoint_schedule, loop_type, parameters)
     
@@ -501,7 +501,7 @@ module OsLib_HVAC_zedg_vrf
     result = hot_water_plant
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_vrf.createChilledWaterPlant(model, runner, chilled_water_setpoint_schedule, loop_type, chillerType)
     
@@ -630,7 +630,7 @@ module OsLib_HVAC_zedg_vrf
     result = chilled_water_plant
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_vrf.createCondenserLoop(model, runner, options, parameters)
 
@@ -801,7 +801,7 @@ module OsLib_HVAC_zedg_vrf
     result = condenserLoops
     return result
 
-  end # end of def
+  end
   def OsLib_HVAC_zedg_vrf.createPrimaryAirLoops(model, runner, options, parameters)
     primary_airloops = []
     # create primary airloop for each story
@@ -1217,7 +1217,7 @@ end
     result = primary_airloops
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_vrf.createVRFAirConditioners(model, runner, options, parameters)
 
@@ -1329,7 +1329,7 @@ end
     result = vrf_AirConditioners
     return result
 
-  end # end of def
+  end
 
    def OsLib_HVAC_zedg_vrf.createPrimaryZoneEquipment(model, runner, options, parameters)
 
@@ -1635,7 +1635,7 @@ end
       end
     end
 
-  end # end of def
+  end
   def OsLib_HVAC_zedg_vrf.addDCV(model, runner, options)
 
     unless options["primary_airloops"].nil?
@@ -1661,6 +1661,6 @@ end
         end  
       end
     end
-  end # end of def
+  end
 
 end

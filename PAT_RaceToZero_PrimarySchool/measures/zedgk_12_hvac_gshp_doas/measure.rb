@@ -58,7 +58,7 @@ class ZEDGK12HVAC < OpenStudio::Ruleset::ModelUserScript
     args << remake_schedules
 
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -341,9 +341,9 @@ class ZEDGK12HVAC < OpenStudio::Ruleset::ModelUserScript
 
     return true
 
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be used by the application
 ZEDGK12HVAC.new.registerWithApplication

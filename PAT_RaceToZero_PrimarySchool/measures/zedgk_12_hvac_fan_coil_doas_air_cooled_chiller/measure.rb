@@ -56,7 +56,7 @@ class ZedgK12HvacFanCoilDoasAirCooledChiller < OpenStudio::Ruleset::ModelUserScr
     args << remake_schedules
 
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -286,9 +286,9 @@ class ZedgK12HvacFanCoilDoasAirCooledChiller < OpenStudio::Ruleset::ModelUserScr
 
     return true
 
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be used by the application
 ZedgK12HvacFanCoilDoasAirCooledChiller.new.registerWithApplication

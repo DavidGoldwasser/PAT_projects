@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_fenestration_and_daylighting_controls</name>
   <uid>eb3bfd3d-64b6-4a9f-857d-3dd8a7becec5</uid>
-  <version_id>c1d4da88-8dcf-41cd-aaec-86ca3cf83f5e</version_id>
-  <version_modified>20171020T205858Z</version_modified>
+  <version_id>8c076613-5e5d-4c39-b1ed-669418e2fd33</version_id>
+  <version_modified>20181005T172019Z</version_modified>
   <xml_checksum>7D3EA3A9</xml_checksum>
   <class_name>ZEDGK12FenestrationAndDaylightingControls</class_name>
   <display_name>ZEDG K12 - Fenestration and Daylighting Controls</display_name>
@@ -68,63 +68,81 @@
       <checksum>3E42FA7D</checksum>
     </file>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>B29F6C1C</checksum>
-    </file>
-    <file>
       <filename>measure_Test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
       <checksum>1B88BAEE</checksum>
     </file>
     <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>810AEA77</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
-        <identifier>1.3.0</identifier>
-        <min_compatible>1.3.0</min_compatible>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>765DFCFC</checksum>
+      <checksum>EA5088EB</checksum>
     </file>
     <file>
       <filename>os_lib_constructions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>11B983A5</checksum>
+      <checksum>B24DDC22</checksum>
     </file>
     <file>
       <filename>os_lib_geometry.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>ABF2B8A1</checksum>
+      <checksum>3D17299B</checksum>
     </file>
     <file>
       <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>02263B97</checksum>
+      <checksum>9CFC43FB</checksum>
     </file>
     <file>
       <filename>os_lib_lighting_and_equipment.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>7C1F9E8C</checksum>
+      <checksum>E63C7739</checksum>
     </file>
     <file>
       <filename>os_lib_outdoorair_and_infiltration.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>61115846</checksum>
+      <checksum>EDB9B44D</checksum>
     </file>
     <file>
       <filename>os_lib_schedules.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>C4185CAA</checksum>
+      <checksum>5F1CEF3A</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>9640B6CB</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>3C648083</checksum>
     </file>
   </files>
 </measure>

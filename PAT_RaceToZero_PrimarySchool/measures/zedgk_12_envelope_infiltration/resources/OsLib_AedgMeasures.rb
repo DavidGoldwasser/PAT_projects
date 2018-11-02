@@ -33,7 +33,7 @@ module OsLib_AedgMeasures
     result = climateZoneNumber
     # don't add return false here, need to catch errors above
 
-  end  # end of def OsLib_AedgMeasures.getClimateZoneNumber(model,runner)
+  end
 
 
   def OsLib_AedgMeasures.getLongHowToTips(guide,aedgTips,runner)
@@ -69,7 +69,7 @@ module OsLib_AedgMeasures
     result = "#{hash[0]}: #{string.join(", ")}." # hash[0] bad key will return default value
     # don't add return false here, need to catch errors above
 
-  end  # end of def OsLib_AedgMeasures.getClimateZoneNumber(model,runner)
+  end
 
 
   #hash of how to tips for K-12 school AEDG
@@ -273,7 +273,7 @@ module OsLib_AedgMeasures
     result = @aedgK12HowToTipHash
     return result
 
-  end #end of OsLib_AedgMeasures.getK12Tips
+  end
 
 
   #hash of how to tips for small to medium office buildings AEDG
@@ -465,6 +465,6 @@ Gas-Fired Boiler"
     result = aedgSmMdOffHowToTipHash
     return result
 
-  end #end of OsLib_AedgMeasures.getSmMdOffTips
+  end
 
-end # end of module OsLib_AedgMeasures
+end

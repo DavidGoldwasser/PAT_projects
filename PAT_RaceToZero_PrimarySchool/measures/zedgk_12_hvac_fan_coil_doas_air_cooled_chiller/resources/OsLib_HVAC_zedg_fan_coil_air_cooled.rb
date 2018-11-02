@@ -9,7 +9,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = output
     return result
 
-  end # end of def
+  end
 
 
   # validate and make plenum zones
@@ -56,10 +56,10 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
                 end  
               end
             end
-          end # end of surfaces.each do
-        end # end of spaces.each do
-      end # end of zonesPlenum.each do
-    end # end of zonesPlenum == nil
+          end
+        end
+      end
+    end
 
     # report out results of zone-plenum hash
     zonePlenumHash.each do |zone,plenum|
@@ -70,7 +70,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = zonePlenumHash
     return result
 
-  end # end of def
+  end
     
   def OsLib_HVAC_zedg_fan_coil_air_cooled.sortZones(model, runner, options = {})
 
@@ -131,7 +131,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
           if options["secondarySpaceTypeTest"].include? standardSpaceType
             zonesSecondary << zone
           end
-        end # end of spaces each do
+        end
         # if zone not assigned as secondary, assign as primary
         unless zonesSecondary.include? zone
           zonesPrimary << zone
@@ -147,7 +147,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = zonesSorted
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.reportConditions(model, runner, condition,extra_string = '')
 
@@ -176,7 +176,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
       runner.registerFinalCondition("The building finished with #{airloops.size} air loops and #{plantLoops.size} plant loops. #{zonesWithEquipCounter} zones are conditioned with zone equipment. #{extra_string}")
     end
     
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.removeEquipment(model, runner)
 
@@ -214,9 +214,9 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
       else
         runner.registerWarning("#{plantLoop.name} is used for SHW or refrigeration heat reclaim.  Loop will not be deleted")
       end
-    end #next plantLoop
+    end
       
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.assignHVACSchedules(model, runner, options = {})
    
@@ -425,7 +425,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = schedulesHVAC
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.createHotWaterPlant(model, runner, hot_water_setpoint_schedule, loop_type)
     
@@ -481,7 +481,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = hot_water_plant
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.createChilledWaterPlant(model, runner, chilled_water_setpoint_schedule, loop_type, chillerType)
     
@@ -610,7 +610,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = chilled_water_plant
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.createCondenserLoop(model, runner, options)
 
@@ -756,7 +756,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = condenserLoops
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.createPrimaryAirLoops(model, runner, options)
     primary_airloops = []
@@ -1058,7 +1058,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = primary_airloops
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.createSecondaryAirLoops(model, runner, options)
 
@@ -1309,7 +1309,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
     result = secondary_airloops
     return result
     
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_fan_coil_air_cooled.createPrimaryZoneEquipment(model, runner, options)
 
@@ -1605,7 +1605,7 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
       end
     end
 
-  end # end of def
+  end
   
   def OsLib_HVAC_zedg_fan_coil_air_cooled.addDCV(model, runner, options)
 
@@ -1632,6 +1632,6 @@ module OsLib_HVAC_zedg_fan_coil_air_cooled
         end  
       end
     end
-  end # end of def
+  end
 
 end

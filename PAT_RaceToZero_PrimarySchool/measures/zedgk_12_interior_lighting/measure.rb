@@ -33,7 +33,7 @@ class ZEDGK12InteriorLighting < OpenStudio::Ruleset::ModelUserScript
     args << material_cost_ip
 
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -133,7 +133,7 @@ class ZEDGK12InteriorLighting < OpenStudio::Ruleset::ModelUserScript
           light.remove
           spaceLightRemoved = true
         end
-      end # end of spaces.each do
+      end
 
       # in future versions will use (lighting power)weighted average schedule merge for new schedule
       oldScheduleHash = OsLib_LightingAndEquipment.createHashOfInternalLoadWithHardAssignedSchedules(oldLights)
@@ -171,7 +171,7 @@ class ZEDGK12InteriorLighting < OpenStudio::Ruleset::ModelUserScript
         end
       end
 
-    end # end of spaceTypes each do
+    end
 
     # warn if some spaces didn't have lights altered at all (this would apply to spaces with space types not mapped)
     model.getSpaces.each do |space|
@@ -200,9 +200,9 @@ class ZEDGK12InteriorLighting < OpenStudio::Ruleset::ModelUserScript
 
     return true
  
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be use by the application
 ZEDGK12InteriorLighting.new.registerWithApplication

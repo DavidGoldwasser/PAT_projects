@@ -52,7 +52,7 @@ class EnvelopeAndInternalLoadBreakdown < OpenStudio::Ruleset::ReportingUserScrip
 =end
 
     args
-  end # end the arguments method
+  end
 
   # add any outout variable requests here
   def energyPlusOutputRequests(runner, user_arguments)
@@ -227,8 +227,8 @@ class EnvelopeAndInternalLoadBreakdown < OpenStudio::Ruleset::ReportingUserScrip
     runner.registerFinalCondition("Generated report with #{sections_made} sections to #{html_out_path}.")
 
     true
-  end # end the run method
-end # end the measure
+  end
+end
 
 # this allows the measure to be use by the application
 EnvelopeAndInternalLoadBreakdown.new.registerWithApplication

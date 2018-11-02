@@ -1,6 +1,7 @@
 {
   "projectName": "PAT_RaceToZero_PrimarySchool",
   "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool",
+  "analysisName": "PAT_RaceToZero_PrimarySchool",
   "seed": "ZEDG K12 Primary TSD seed.osm",
   "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
   "analysis_type": "Manual",
@@ -94,6 +95,14 @@
       "$$hashKey": "object:124516"
     },
     {
+      "name": "seed",
+      "displayName": "Seed",
+      "description": "Integer seed for random number generator",
+      "defaultValue": null,
+      "type": "number",
+      "value": null
+    },
+    {
       "name": "failed_f_value",
       "displayName": "Failed F Value",
       "description": "Return Value for F(x) if F fails",
@@ -119,14 +128,14 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/ChangeBuildingLocation",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation",
       "name": "change_building_location",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/ChangeBuildingLocation",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation",
       "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
-      "version_id": "6c4db803-12ba-40e8-a2ce-5913755a4962",
-      "version_uuid": "{6c4db803-12ba-40e8-a2ce-5913755a4962}",
-      "version_modified": "20171214T165313Z",
+      "version_id": "aa6af1cd-6cce-4352-bddd-e4cf47d79b35",
+      "version_uuid": "{aa6af1cd-6cce-4352-bddd-e4cf47d79b35}",
+      "version_modified": "20181101T151202Z",
       "xml_checksum": "057E8D9D",
       "display_name": "ChangeBuildingLocation",
       "class_name": "ChangeBuildingLocation",
@@ -333,8 +342,6 @@
           "required": true,
           "model_dependent": false,
           "choice_values": [
-            "0A",
-            "0B",
             "1A",
             "1B",
             "2A",
@@ -352,11 +359,11 @@
             "6B",
             "7",
             "8",
+            "Lookup From Stat File",
+            "8",
             "Lookup From Stat File"
           ],
           "choice_display_names": [
-            "0A",
-            "0B",
             "1A",
             "1B",
             "2A",
@@ -373,6 +380,8 @@
             "6A",
             "6B",
             "7",
+            "8",
+            "Lookup From Stat File",
             "8",
             "Lookup From Stat File"
           ],
@@ -479,6 +488,66 @@
           "option_17": "0A",
           "option_18": "0B",
           "option_19": "1B"
+        },
+        {
+          "name": "set_year",
+          "display_name": "Set Calendar Year",
+          "description": "This will impact the day of the week the simulation starts on. An input value of 0 will leave the year un-altered",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "option_1": 0,
+          "option_2": 0,
+          "option_3": 0,
+          "option_4": 0,
+          "option_5": 0,
+          "option_6": 0,
+          "option_7": 0,
+          "option_8": 0,
+          "option_9": 0,
+          "option_10": 0,
+          "option_11": 0,
+          "option_12": 0,
+          "option_13": 0,
+          "option_14": 0,
+          "option_15": 0,
+          "option_16": 0,
+          "option_17": 0,
+          "option_18": 0,
+          "option_19": 0,
+          "variable": false,
+          "$$hashKey": "uiGrid-04ES"
+        },
+        {
+          "name": "use_upstream_args",
+          "display_name": "Use Upstream Argument Values",
+          "description": "When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "option_1": true,
+          "option_2": true,
+          "option_3": true,
+          "option_4": true,
+          "option_5": true,
+          "option_6": true,
+          "option_7": true,
+          "option_8": true,
+          "option_9": true,
+          "option_10": true,
+          "option_11": true,
+          "option_12": true,
+          "option_13": true,
+          "option_14": true,
+          "option_15": true,
+          "option_16": true,
+          "option_17": true,
+          "option_18": true,
+          "option_19": true,
+          "variable": false,
+          "$$hashKey": "uiGrid-04EU"
         }
       ],
       "edit": "",
@@ -488,7 +557,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "12/14/2017",
+      "date": "11/1/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -504,6 +573,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Honolulu",
@@ -519,6 +596,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Tampa",
@@ -534,6 +619,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Tucson",
@@ -549,6 +642,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Atlanta",
@@ -564,6 +665,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "El Paso",
@@ -579,6 +688,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "San Diego",
@@ -594,6 +711,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "New York",
@@ -609,6 +734,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Albuquerque",
@@ -624,6 +757,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Seattle",
@@ -639,6 +780,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Buffalo",
@@ -654,6 +803,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Aurora",
@@ -669,6 +826,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Port Angeles",
@@ -684,6 +849,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Rochester",
@@ -699,6 +872,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Great Falls",
@@ -714,6 +895,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "International Falls",
@@ -729,6 +918,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Fairbanks",
@@ -744,6 +941,14 @@
             {
               "name": "climate_zone",
               "value": "0A"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Hanoi",
@@ -759,6 +964,14 @@
             {
               "name": "climate_zone",
               "value": "0B"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "Abu Dhabi",
@@ -774,6 +987,14 @@
             {
               "name": "climate_zone",
               "value": "1B"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "New Delhi",
@@ -784,7 +1005,7 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7013553912407122,
+      "instanceId": 0.37693617795862844,
       "showWarningText": false
     },
     {
@@ -903,7 +1124,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.3987799355941115,
+      "instanceId": 0.8570589973330869,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false,
@@ -1166,21 +1387,21 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.5800394290104494,
+      "instanceId": 0.19133192956150502,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_electric_equipment",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_electric_equipment",
       "name": "zedgk_12_electric_equipment",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_electric_equipment",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_electric_equipment",
       "uid": "d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268",
       "uuid": "{d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268}",
-      "version_id": "a899014f-03cd-4e9a-97c3-5d2923c6611f",
-      "version_uuid": "{a899014f-03cd-4e9a-97c3-5d2923c6611f}",
-      "version_modified": "20171020T205858Z",
+      "version_id": "b6eb83e3-0b10-480d-9283-a6609e7f91dd",
+      "version_uuid": "{b6eb83e3-0b10-480d-9283-a6609e7f91dd}",
+      "version_modified": "20181005T172018Z",
       "xml_checksum": "8C4D4034",
       "display_name": "ZEDG K12 ElectricEquipment",
       "class_name": "ZEDGK12ElectricEquipment",
@@ -1295,7 +1516,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -1313,7 +1534,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.1693989021579958,
+      "instanceId": 0.4987759201830806,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1322,14 +1543,14 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/AedgK12ElectricEquipmentControls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgK12ElectricEquipmentControls",
       "name": "aedg_k_12_electric_equipment_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/AedgK12ElectricEquipmentControls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgK12ElectricEquipmentControls",
       "uid": "285bc263-7429-4049-a0ce-f60fabf46eec",
       "uuid": "{285bc263-7429-4049-a0ce-f60fabf46eec}",
-      "version_id": "c3624203-547e-4ded-a2b3-8469ae9d4e8c",
-      "version_uuid": "{c3624203-547e-4ded-a2b3-8469ae9d4e8c}",
-      "version_modified": "20171020T205852Z",
+      "version_id": "8c099513-e0b8-428b-9e78-10fa4ff951b7",
+      "version_uuid": "{8c099513-e0b8-428b-9e78-10fa4ff951b7}",
+      "version_modified": "20180626T202312Z",
       "xml_checksum": "1F21832E",
       "display_name": "AedgK12ElectricEquipmentControls",
       "class_name": "AedgK12ElectricEquipmentControls",
@@ -1461,7 +1682,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "6/26/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -1483,18 +1704,18 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7210822906852052,
+      "instanceId": 0.760430161039882,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_interior_lighting",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_interior_lighting",
       "name": "zedgk_12_interior_lighting",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_interior_lighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_interior_lighting",
       "uid": "d3283a8e-aee1-4b9d-9217-a7a988726fb4",
       "uuid": "{d3283a8e-aee1-4b9d-9217-a7a988726fb4}",
-      "version_id": "e25d4dce-0780-4282-939f-d3131e8e7133",
-      "version_uuid": "{e25d4dce-0780-4282-939f-d3131e8e7133}",
-      "version_modified": "20171020T205859Z",
+      "version_id": "73e85ca1-84a0-4835-8228-c47879d65396",
+      "version_uuid": "{73e85ca1-84a0-4835-8228-c47879d65396}",
+      "version_modified": "20181005T172020Z",
       "xml_checksum": "4B6FFB84",
       "display_name": "ZEDG K12 Interior Lighting",
       "class_name": "ZEDGK12InteriorLighting",
@@ -1626,7 +1847,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -1648,18 +1869,18 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.13022119628776418,
+      "instanceId": 0.3369680581753529,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/AedgK12InteriorLightingControls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgK12InteriorLightingControls",
       "name": "aedg_k_12_interior_lighting_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/AedgK12InteriorLightingControls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgK12InteriorLightingControls",
       "uid": "9f395ee4-5f82-4ca6-8a50-cb854893827e",
       "uuid": "{9f395ee4-5f82-4ca6-8a50-cb854893827e}",
-      "version_id": "2583e0be-47c3-47ef-bcc2-a70c321d684b",
-      "version_uuid": "{2583e0be-47c3-47ef-bcc2-a70c321d684b}",
-      "version_modified": "20171020T205853Z",
+      "version_id": "00713f83-bb3a-4070-b6bf-33354f76f616",
+      "version_uuid": "{00713f83-bb3a-4070-b6bf-33354f76f616}",
+      "version_modified": "20180626T202313Z",
       "xml_checksum": "9B7BB4D8",
       "display_name": "AedgK12InteriorLightingControls",
       "class_name": "AedgK12InteriorLightingControls",
@@ -1791,7 +2012,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "6/26/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -1813,18 +2034,18 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.8986094917994671,
+      "instanceId": 0.6376806870780793,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_exterior_wall_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_exterior_wall_construction",
       "name": "zedgk_12_exterior_wall_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_exterior_wall_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_exterior_wall_construction",
       "uid": "39d1c328-0bbb-40ee-a18c-ba977b462a11",
       "uuid": "{39d1c328-0bbb-40ee-a18c-ba977b462a11}",
-      "version_id": "ad55068c-3b1b-479e-8625-6cef78fd3e79",
-      "version_uuid": "{ad55068c-3b1b-479e-8625-6cef78fd3e79}",
-      "version_modified": "20171020T205858Z",
+      "version_id": "c806c74a-a5b4-4ab9-b7ee-85943f1c88ad",
+      "version_uuid": "{c806c74a-a5b4-4ab9-b7ee-85943f1c88ad}",
+      "version_modified": "20181022T040538Z",
       "xml_checksum": "5091078B",
       "display_name": "ZEDG K12 ExteriorWallConstruction",
       "class_name": "ZEDGK12ExteriorWallConstruction",
@@ -1939,7 +2160,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "10/21/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -1957,7 +2178,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.7765797435375033,
+      "instanceId": 0.032381981003332116,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -1965,14 +2186,14 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_roof_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_roof_construction",
       "name": "zedgk_12_roof_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_roof_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_roof_construction",
       "uid": "d322d264-5855-4b20-bd3e-3c5e5032bc05",
       "uuid": "{d322d264-5855-4b20-bd3e-3c5e5032bc05}",
-      "version_id": "cc3665ad-edad-4c99-be1b-6f90ce455c23",
-      "version_uuid": "{cc3665ad-edad-4c99-be1b-6f90ce455c23}",
-      "version_modified": "20171020T205859Z",
+      "version_id": "71e3aafa-6959-471e-81b1-754043481d74",
+      "version_uuid": "{71e3aafa-6959-471e-81b1-754043481d74}",
+      "version_modified": "20181005T172020Z",
       "xml_checksum": "5091078B",
       "display_name": "ZEDG K12 RoofConstruction",
       "class_name": "ZEDGK12RoofConstruction",
@@ -2141,7 +2362,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -2167,7 +2388,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.5065495838554575,
+      "instanceId": 0.10441490643385487,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -2175,14 +2396,14 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/AedgK12InteriorFinishes",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgK12InteriorFinishes",
       "name": "aedg_k_12_interior_finishes",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/AedgK12InteriorFinishes",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgK12InteriorFinishes",
       "uid": "9165a1f8-9cd1-4492-b20b-5257c05fc5d9",
       "uuid": "{9165a1f8-9cd1-4492-b20b-5257c05fc5d9}",
-      "version_id": "a23f990c-4d5d-426b-a17f-fbf8a497ae7f",
-      "version_uuid": "{a23f990c-4d5d-426b-a17f-fbf8a497ae7f}",
-      "version_modified": "20171020T205853Z",
+      "version_id": "4b6ad275-804a-4c26-95ea-9fa64a58c1e7",
+      "version_uuid": "{4b6ad275-804a-4c26-95ea-9fa64a58c1e7}",
+      "version_modified": "20180626T202313Z",
       "xml_checksum": "1E963D9C",
       "display_name": "AedgK12InteriorFinishes",
       "class_name": "AedgK12InteriorFinishes",
@@ -2327,7 +2548,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "6/26/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -2349,18 +2570,18 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6435063001566843,
+      "instanceId": 0.7376310650915345,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_fenestration_and_daylighting_controls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_fenestration_and_daylighting_controls",
       "name": "zedgk_12_fenestration_and_daylighting_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_fenestration_and_daylighting_controls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_fenestration_and_daylighting_controls",
       "uid": "eb3bfd3d-64b6-4a9f-857d-3dd8a7becec5",
       "uuid": "{eb3bfd3d-64b6-4a9f-857d-3dd8a7becec5}",
-      "version_id": "c1d4da88-8dcf-41cd-aaec-86ca3cf83f5e",
-      "version_uuid": "{c1d4da88-8dcf-41cd-aaec-86ca3cf83f5e}",
-      "version_modified": "20171020T205858Z",
+      "version_id": "8c076613-5e5d-4c39-b1ed-669418e2fd33",
+      "version_uuid": "{8c076613-5e5d-4c39-b1ed-669418e2fd33}",
+      "version_modified": "20181005T172019Z",
       "xml_checksum": "7D3EA3A9",
       "display_name": "ZEDG K12 - Fenestration and Daylighting Controls",
       "class_name": "ZEDGK12FenestrationAndDaylightingControls",
@@ -2631,7 +2852,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -2688,18 +2909,18 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.45722299135192435,
+      "instanceId": 0.5082310612089314,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/zedgk_12_exterior_door_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_exterior_door_construction",
       "name": "zedgk_12_exterior_door_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/NREL working measures/zedgk_12_exterior_door_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_exterior_door_construction",
       "uid": "11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c",
       "uuid": "{11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c}",
-      "version_id": "1ecee336-c85d-49d5-9a48-967226a5cf38",
-      "version_uuid": "{1ecee336-c85d-49d5-9a48-967226a5cf38}",
-      "version_modified": "20171214T170019Z",
+      "version_id": "1df2399d-92e1-4749-9e6c-f519c19bc29f",
+      "version_uuid": "{1df2399d-92e1-4749-9e6c-f519c19bc29f}",
+      "version_modified": "20181005T172018Z",
       "xml_checksum": "5091078B",
       "display_name": "ZEDG K12 ExteriorDoorConstruction",
       "class_name": "ZEDGK12ExteriorDoorConstruction",
@@ -2810,7 +3031,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "12/14/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -2828,21 +3049,21 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
         }
       ],
-      "instanceId": 0.7057374901321902,
+      "instanceId": 0.8810763218414639,
       "numberOfOptions": 1,
       "$$hashKey": "object:56484",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_envelope_infiltration",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_envelope_infiltration",
       "name": "zedgk_12_envelope_infiltration",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_envelope_infiltration",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_envelope_infiltration",
       "uid": "e6232b68-8c72-4986-8693-84c0fe1d00ec",
       "uuid": "{e6232b68-8c72-4986-8693-84c0fe1d00ec}",
-      "version_id": "5a00c64f-687d-4042-bc39-882180c3baa5",
-      "version_uuid": "{5a00c64f-687d-4042-bc39-882180c3baa5}",
-      "version_modified": "20171020T205858Z",
+      "version_id": "6d7d0933-7354-4234-857b-6bff931d6b07",
+      "version_uuid": "{6d7d0933-7354-4234-857b-6bff931d6b07}",
+      "version_modified": "20181005T172018Z",
       "xml_checksum": "F85A5EF9",
       "display_name": "ZEDG K12 Envelope Infiltration",
       "class_name": "ZEDGK12EnvelopeInfiltration",
@@ -2974,7 +3195,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -2996,18 +3217,18 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.28775131815523625,
+      "instanceId": 0.15003090864009394,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_swh",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_swh",
       "name": "zedgk_12_swh",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_swh",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_swh",
       "uid": "d765082f-34fb-4b03-bd4e-e8e4a418ba2a",
       "uuid": "{d765082f-34fb-4b03-bd4e-e8e4a418ba2a}",
-      "version_id": "c80027f3-5614-4d31-919c-664233fff4ca",
-      "version_uuid": "{c80027f3-5614-4d31-919c-664233fff4ca}",
-      "version_modified": "20171021T081652Z",
+      "version_id": "bffbd58f-c771-4309-b9b5-c2a11af69007",
+      "version_uuid": "{bffbd58f-c771-4309-b9b5-c2a11af69007}",
+      "version_modified": "20181005T172020Z",
       "xml_checksum": "2B3D3EB4",
       "display_name": "ZEDG K12 SWH",
       "class_name": "ZEDGK12SWH",
@@ -3173,7 +3394,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/21/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -3195,7 +3416,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.5435019824732068,
+      "instanceId": 0.6797543368445695,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -3203,14 +3424,14 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_kitchen",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_kitchen",
       "name": "zedgk_12_kitchen",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_kitchen",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_kitchen",
       "uid": "6d9f212d-e859-4857-8ee7-1670de9c2bfb",
       "uuid": "{6d9f212d-e859-4857-8ee7-1670de9c2bfb}",
-      "version_id": "3a3e6003-241b-4d33-92c2-7a52a5430ee7",
-      "version_uuid": "{3a3e6003-241b-4d33-92c2-7a52a5430ee7}",
-      "version_modified": "20171021T081652Z",
+      "version_id": "9aa7e2c4-4f93-4190-81a0-2be3c38b47f8",
+      "version_uuid": "{9aa7e2c4-4f93-4190-81a0-2be3c38b47f8}",
+      "version_modified": "20181005T172020Z",
       "xml_checksum": "CE83CD3D",
       "display_name": "ZEDG K12 Kitchen",
       "class_name": "ZEDGK12Kitchen",
@@ -3376,7 +3597,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/21/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -3398,7 +3619,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.6575338431079771,
+      "instanceId": 0.9562985218327948,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -3406,14 +3627,14 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/AedgK12ExteriorLighting",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgK12ExteriorLighting",
       "name": "aedg_k_12_exterior_lighting",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/AedgK12ExteriorLighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgK12ExteriorLighting",
       "uid": "04fd62eb-3e9f-4bfc-98d8-7827b47e034a",
       "uuid": "{04fd62eb-3e9f-4bfc-98d8-7827b47e034a}",
-      "version_id": "c78e2faf-5bfc-4be5-91cc-ad7b1e1df5a1",
-      "version_uuid": "{c78e2faf-5bfc-4be5-91cc-ad7b1e1df5a1}",
-      "version_modified": "20171020T205853Z",
+      "version_id": "d0ce689c-f2cb-48f0-9962-1b1cf0d2e4d7",
+      "version_uuid": "{d0ce689c-f2cb-48f0-9962-1b1cf0d2e4d7}",
+      "version_modified": "20180702T195152Z",
       "xml_checksum": "2DDDDD82",
       "display_name": "AedgK12ExteriorLighting",
       "class_name": "AedgK12ExteriorLighting",
@@ -3828,7 +4049,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "7/2/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -3901,7 +4122,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.640849887944658,
+      "instanceId": 0.3175866316931131,
       "showWarningText": false
     },
     {
@@ -4335,7 +4556,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.33014409474504247,
+      "instanceId": 0.7327094510648384,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -4772,21 +4993,21 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.7820106770814734,
+      "instanceId": 0.831156440137101,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/add_rooftop_pv",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/add_rooftop_pv",
       "name": "add_rooftop_pv",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/add_rooftop_pv",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/add_rooftop_pv",
       "uid": "34550614-0c87-44db-9252-0ca0915b1e64",
       "uuid": "{34550614-0c87-44db-9252-0ca0915b1e64}",
-      "version_id": "7c0fcc3b-8a72-455d-9f3e-6369088ede31",
-      "version_uuid": "{7c0fcc3b-8a72-455d-9f3e-6369088ede31}",
-      "version_modified": "20171021T075339Z",
+      "version_id": "63be24bc-c80d-4ebd-87a5-7ba559aa5d81",
+      "version_uuid": "{63be24bc-c80d-4ebd-87a5-7ba559aa5d81}",
+      "version_modified": "20180710T213330Z",
       "xml_checksum": "178163B6",
       "display_name": "Add Rooftop PV",
       "class_name": "AddRooftopPV",
@@ -5054,7 +5275,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/21/2017",
+      "date": "7/10/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -5122,18 +5343,18 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7111126465652329,
+      "instanceId": 0.5630388822398429,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/SetThermostatSchedules",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/SetThermostatSchedules",
       "name": "set_thermostat_schedules",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/SetThermostatSchedules",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/SetThermostatSchedules",
       "uid": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
       "uuid": "{2978cde0-53d5-4096-bdab-11f9f6e074f1}",
-      "version_id": "b3f0cb4f-a653-4564-82a5-5db2e760c362",
-      "version_uuid": "{b3f0cb4f-a653-4564-82a5-5db2e760c362}",
-      "version_modified": "20170316T164927Z",
+      "version_id": "c6c768cd-4cbf-4a7a-93cd-23bcc0656182",
+      "version_uuid": "{c6c768cd-4cbf-4a7a-93cd-23bcc0656182}",
+      "version_modified": "20180710T213339Z",
       "xml_checksum": "F4CEA58B",
       "display_name": "Set Thermostat Schedules",
       "class_name": "SetThermostatSchedules",
@@ -5503,7 +5724,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "3/16/2017",
+      "date": "7/10/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -5533,21 +5754,21 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.08331807298118932,
+      "instanceId": 0.1503736107792546,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/SetThermostatSchedules",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/SetThermostatSchedules",
       "name": "set_thermostat_schedules_2",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/SetThermostatSchedules",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/SetThermostatSchedules",
       "uid": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
       "uuid": "{2978cde0-53d5-4096-bdab-11f9f6e074f1}",
-      "version_id": "b3f0cb4f-a653-4564-82a5-5db2e760c362",
-      "version_uuid": "{b3f0cb4f-a653-4564-82a5-5db2e760c362}",
-      "version_modified": "20170316T164927Z",
+      "version_id": "c6c768cd-4cbf-4a7a-93cd-23bcc0656182",
+      "version_uuid": "{c6c768cd-4cbf-4a7a-93cd-23bcc0656182}",
+      "version_modified": "20180710T213339Z",
       "xml_checksum": "F4CEA58B",
       "display_name": "Set Thermostat Schedules 2",
       "class_name": "SetThermostatSchedules",
@@ -5917,7 +6138,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "3/16/2017",
+      "date": "7/10/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -5947,21 +6168,21 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.1840017213665175,
+      "instanceId": 0.62700916078213,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_vrf_with_doas",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_hvac_vrf_with_doas",
       "name": "zedgvrf_with_doas",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_vrf_with_doas",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_hvac_vrf_with_doas",
       "uid": "633b8efc-7bcb-4aa0-8821-d0ee08f960db",
       "uuid": "{633b8efc-7bcb-4aa0-8821-d0ee08f960db}",
-      "version_id": "08260455-7ea5-41ef-a85f-378d5ed4017b",
-      "version_uuid": "{08260455-7ea5-41ef-a85f-378d5ed4017b}",
-      "version_modified": "20171208T170902Z",
+      "version_id": "f46d05e8-104f-4249-9ebf-9af11f910b2a",
+      "version_uuid": "{f46d05e8-104f-4249-9ebf-9af11f910b2a}",
+      "version_modified": "20181005T172019Z",
       "xml_checksum": "87BA8B1E",
       "display_name": "ZEDG VRF with DOAS",
       "class_name": "ZEDGVRFWithDOAS",
@@ -6161,7 +6382,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "12/8/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -6187,21 +6408,21 @@
           "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
         }
       ],
-      "instanceId": 0.6634274196943011,
+      "instanceId": 0.2653308760682669,
       "numberOfOptions": 1,
       "$$hashKey": "object:7459",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_gshp_doas",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_hvac_gshp_doas",
       "name": "zedgk_12_hvac",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_gshp_doas",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_hvac_gshp_doas",
       "uid": "59793426-1d07-41d2-9478-d7abf1410764",
       "uuid": "{59793426-1d07-41d2-9478-d7abf1410764}",
-      "version_id": "0a73fd2c-89e5-4306-a147-3098b2040a21",
-      "version_uuid": "{0a73fd2c-89e5-4306-a147-3098b2040a21}",
-      "version_modified": "20171021T182509Z",
+      "version_id": "8e9b6c69-9af5-4d11-b3b8-c200166ef183",
+      "version_uuid": "{8e9b6c69-9af5-4d11-b3b8-c200166ef183}",
+      "version_modified": "20181005T172019Z",
       "xml_checksum": "87BA8B1E",
       "display_name": "ZEDG K12 HVAC GSHP with DOAS",
       "class_name": "ZEDGK12HVAC",
@@ -6401,7 +6622,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/21/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -6427,21 +6648,21 @@
           "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
         }
       ],
-      "instanceId": 0.0007178222498609443,
+      "instanceId": 0.7249653264552745,
       "numberOfOptions": 1,
       "$$hashKey": "object:7458",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
       "name": "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
       "uid": "33ed4338-5e86-415f-8df0-87e32e413711",
       "uuid": "{33ed4338-5e86-415f-8df0-87e32e413711}",
-      "version_id": "50b16c0d-05d8-4c4c-860b-d3f82fe1d8d2",
-      "version_uuid": "{50b16c0d-05d8-4c4c-860b-d3f82fe1d8d2}",
-      "version_modified": "20171020T205859Z",
+      "version_id": "6b17fd40-1b4f-43df-91c3-fc00d0ef7b50",
+      "version_uuid": "{6b17fd40-1b4f-43df-91c3-fc00d0ef7b50}",
+      "version_modified": "20181005T172019Z",
       "xml_checksum": "87BA8B1E",
       "display_name": "ZEDG K12 HVAC Fan Coil DOAS Air Cooled Chiller",
       "class_name": "ZedgK12HvacFanCoilDoasAirCooledChiller",
@@ -6641,7 +6862,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/20/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -6667,21 +6888,21 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
         }
       ],
-      "instanceId": 0.3902918011910832,
+      "instanceId": 0.6348853901185323,
       "numberOfOptions": 1,
       "$$hashKey": "object:7460",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/create_baseline_building",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/create_baseline_building",
       "name": "create_baseline_building",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/create_baseline_building",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/create_baseline_building",
       "uid": "4de56e21-b6cd-45d9-8466-862507d228b2",
       "uuid": "{4de56e21-b6cd-45d9-8466-862507d228b2}",
-      "version_id": "1fe5ae2a-cec5-4a9e-83eb-c4832ee9849e",
-      "version_uuid": "{1fe5ae2a-cec5-4a9e-83eb-c4832ee9849e}",
-      "version_modified": "20170726T205355Z",
+      "version_id": "0e1b8429-e27a-42c5-aaae-da4b21026101",
+      "version_uuid": "{0e1b8429-e27a-42c5-aaae-da4b21026101}",
+      "version_modified": "20180713T170726Z",
       "xml_checksum": "A514F332",
       "display_name": "Create Baseline Building",
       "class_name": "CreateBaselineBuilding",
@@ -6989,7 +7210,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "7/26/2017",
+      "date": "7/13/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -7401,20 +7622,20 @@
           "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         }
       ],
-      "instanceId": 0.5499616885660146,
+      "instanceId": 0.21642788203910945,
       "numberOfOptions": 15,
       "$$hashKey": "object:13368",
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_insert_ground_domain_e_kusdua",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_insert_ground_domain_e_kusdua",
       "name": "zedgk_12_insert_ground_domain_basement_e_kusdua",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/zedgk_12_insert_ground_domain_e_kusdua",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/zedgk_12_insert_ground_domain_e_kusdua",
       "uid": "aa8123f0-4d04-4141-8a00-8a2bccf30315",
       "uuid": "{aa8123f0-4d04-4141-8a00-8a2bccf30315}",
-      "version_id": "e8e9a1d6-9edf-4fd8-899a-547fb946df99",
-      "version_uuid": "{e8e9a1d6-9edf-4fd8-899a-547fb946df99}",
-      "version_modified": "20171023T053928Z",
+      "version_id": "b81fef0d-dc3f-4ec8-980c-b65f7815824d",
+      "version_uuid": "{b81fef0d-dc3f-4ec8-980c-b65f7815824d}",
+      "version_modified": "20181005T172019Z",
       "xml_checksum": "80A956BE",
       "display_name": "ZEDG K12 Insert Ground Domain E+ Kusdua",
       "class_name": "ZEDGK12InsertGroundDomainEKusdua",
@@ -7573,7 +7794,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/22/2017",
+      "date": "10/5/2018",
       "author": "",
       "type": "EnergyPlusMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -7595,18 +7816,18 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.16648852711190232,
+      "instanceId": 0.8104401616135191,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/tariff_selection_flat",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/tariff_selection_flat",
       "name": "tariff_selection_flat",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/tariff_selection_flat",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/tariff_selection_flat",
       "uid": "539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55",
       "uuid": "{539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55}",
-      "version_id": "0069dc39-cb7e-4740-905a-79675c38e80a",
-      "version_uuid": "{0069dc39-cb7e-4740-905a-79675c38e80a}",
-      "version_modified": "20170316T164929Z",
+      "version_id": "0be9a66a-a087-4225-9570-205d0c1d30a8",
+      "version_uuid": "{0be9a66a-a087-4225-9570-205d0c1d30a8}",
+      "version_modified": "20180710T213339Z",
       "xml_checksum": "FBDC6D11",
       "display_name": "Tariff Selection-Flat",
       "class_name": "TariffSelectionFlat",
@@ -7951,7 +8172,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "3/16/2017",
+      "date": "7/10/2018",
       "author": "",
       "type": "EnergyPlusMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -7989,21 +8210,21 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.7019459120705929,
+      "instanceId": 0.09310453992886236,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/openstudio_results",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/openstudio_results",
       "name": "openstudio_results",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/openstudio_results",
       "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
       "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
-      "version_id": "05ad855b-6ae3-431e-991b-80e5133a56f2",
-      "version_uuid": "{05ad855b-6ae3-431e-991b-80e5133a56f2}",
-      "version_modified": "20170622T203955Z",
+      "version_id": "11202fa8-8161-4fad-b5d1-453db21abdf8",
+      "version_uuid": "{11202fa8-8161-4fad-b5d1-453db21abdf8}",
+      "version_modified": "20181101T164805Z",
       "xml_checksum": "557BF06F",
       "display_name": "OpenStudio Results",
       "class_name": "OpenStudioResults",
@@ -8406,7 +8627,7 @@
         },
         {
           "name": "envelope_section_section",
-          "display_name": "Envelope",
+          "display_name": "Envelope Summary",
           "description": "",
           "type": "Boolean",
           "required": true,
@@ -9211,7 +9432,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "6/22/2017",
+      "date": "11/1/2018",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -9321,18 +9542,18 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.5568412649934791,
+      "instanceId": 0.4143761241470385,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/envelope_and_internal_load_breakdown",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/envelope_and_internal_load_breakdown",
       "name": "envelope_and_internal_load_breakdown",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_PrimarySchool/measures/envelope_and_internal_load_breakdown",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/envelope_and_internal_load_breakdown",
       "uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
       "uuid": "{8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02}",
-      "version_id": "d71a027d-10f1-4c1a-b9a3-86ff39ffa3b3",
-      "version_uuid": "{d71a027d-10f1-4c1a-b9a3-86ff39ffa3b3}",
-      "version_modified": "20171213T071727Z",
+      "version_id": "f63919e1-a65a-4f4e-8b7d-8c14125f6f04",
+      "version_uuid": "{f63919e1-a65a-4f4e-8b7d-8c14125f6f04}",
+      "version_modified": "20181023T190020Z",
       "xml_checksum": "69BA4D91",
       "display_name": "Envelope and Internal Load Breakdown",
       "class_name": "EnvelopeAndInternalLoadBreakdown",
@@ -9416,9 +9637,9 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": true,
+      "open": false,
       "addedToProject": true,
-      "date": "12/13/2017",
+      "date": "10/23/2018",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -9431,7 +9652,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.5606426503720352,
+      "instanceId": 0.7389032941229758,
       "numberOfOptions": 1,
       "$$hashKey": "object:57845"
     }

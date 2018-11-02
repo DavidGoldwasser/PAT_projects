@@ -8,7 +8,7 @@ class ZEDGK12InsertGroundDomainBasementEKusduaTest < MiniTest::Unit::TestCase
 
   def test_good_argument_values
     # create an instance of the measure
-    measure = ZEDGK12InsertGroundDomainBasementEKusdua.new
+    measure = ZEDGK12InsertGroundDomainEKusdua.new
 
     # create an instance of a runner
     runner = OpenStudio::Ruleset::OSRunner.new

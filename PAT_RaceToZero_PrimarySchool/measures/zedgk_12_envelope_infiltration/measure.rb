@@ -39,7 +39,7 @@ class ZEDGK12EnvelopeInfiltration < OpenStudio::Ruleset::ModelUserScript
     args << costTotalEnvelopeInfiltration
 
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -112,9 +112,9 @@ class ZEDGK12EnvelopeInfiltration < OpenStudio::Ruleset::ModelUserScript
 
     return true
  
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be use by the application
 ZEDGK12EnvelopeInfiltration.new.registerWithApplication

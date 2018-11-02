@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller</name>
   <uid>33ed4338-5e86-415f-8df0-87e32e413711</uid>
-  <version_id>50b16c0d-05d8-4c4c-860b-d3f82fe1d8d2</version_id>
-  <version_modified>20171020T205859Z</version_modified>
+  <version_id>6b17fd40-1b4f-43df-91c3-fc00d0ef7b50</version_id>
+  <version_modified>20181005T172019Z</version_modified>
   <xml_checksum>87BA8B1E</xml_checksum>
   <class_name>ZedgK12HvacFanCoilDoasAirCooledChiller</class_name>
   <display_name>ZEDG K12 HVAC Fan Coil DOAS Air Cooled Chiller</display_name>
@@ -63,12 +63,6 @@
   </attributes>
   <files>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>400D07BE</checksum>
-    </file>
-    <file>
       <filename>AEDG_HVAC_GenericTestModel_0225_a.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
@@ -87,51 +81,75 @@
       <checksum>72B03852</checksum>
     </file>
     <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>9D51CDB6</checksum>
+    </file>
+    <file>
       <filename>OsLib_HVAC_zedg_fan_coil_air_cooled.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>33C0CBBF</checksum>
+      <checksum>867211BC</checksum>
     </file>
     <file>
       <version>
         <software_program>OpenStudio</software_program>
-        <identifier>1.3.0</identifier>
-        <min_compatible>1.3.0</min_compatible>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>70AB4E5D</checksum>
+      <checksum>AC1BADA1</checksum>
     </file>
     <file>
       <filename>os_lib_constructions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>11B983A5</checksum>
+      <checksum>B24DDC22</checksum>
     </file>
     <file>
       <filename>os_lib_geometry.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>ABF2B8A1</checksum>
+      <checksum>3D17299B</checksum>
     </file>
     <file>
       <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>02263B97</checksum>
+      <checksum>9CFC43FB</checksum>
     </file>
     <file>
       <filename>os_lib_lighting_and_equipment.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>7C1F9E8C</checksum>
+      <checksum>E63C7739</checksum>
     </file>
     <file>
       <filename>os_lib_schedules.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>C4185CAA</checksum>
+      <checksum>5F1CEF3A</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>9640B6CB</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>D6EA5653</checksum>
     </file>
   </files>
 </measure>

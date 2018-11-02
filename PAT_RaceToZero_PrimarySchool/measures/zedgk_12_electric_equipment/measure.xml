@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_electric_equipment</name>
   <uid>d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268</uid>
-  <version_id>a899014f-03cd-4e9a-97c3-5d2923c6611f</version_id>
-  <version_modified>20171020T205858Z</version_modified>
+  <version_id>b6eb83e3-0b10-480d-9283-a6609e7f91dd</version_id>
+  <version_modified>20181005T172018Z</version_modified>
   <xml_checksum>8C4D4034</xml_checksum>
   <class_name>ZEDGK12ElectricEquipment</class_name>
   <display_name>ZEDG K12 ElectricEquipment</display_name>
@@ -44,45 +44,63 @@
       <checksum>FF262AB2</checksum>
     </file>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>B29F6C1C</checksum>
-    </file>
-    <file>
       <filename>measure_Test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
       <checksum>55C91E4C</checksum>
     </file>
     <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>810AEA77</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
-        <identifier>1.3.0</identifier>
-        <min_compatible>1.3.0</min_compatible>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>6249160B</checksum>
+      <checksum>DDF8F076</checksum>
     </file>
     <file>
       <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>02263B97</checksum>
+      <checksum>9CFC43FB</checksum>
     </file>
     <file>
       <filename>os_lib_lighting_and_equipment.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>7C1F9E8C</checksum>
+      <checksum>E63C7739</checksum>
     </file>
     <file>
       <filename>os_lib_schedules.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>C4185CAA</checksum>
+      <checksum>5F1CEF3A</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>9640B6CB</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>2BBFB693</checksum>
     </file>
   </files>
 </measure>

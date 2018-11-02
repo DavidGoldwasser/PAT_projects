@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_hvac</name>
   <uid>59793426-1d07-41d2-9478-d7abf1410764</uid>
-  <version_id>0a73fd2c-89e5-4306-a147-3098b2040a21</version_id>
-  <version_modified>20171021T182509Z</version_modified>
+  <version_id>8e9b6c69-9af5-4d11-b3b8-c200166ef183</version_id>
+  <version_modified>20181005T172019Z</version_modified>
   <xml_checksum>87BA8B1E</xml_checksum>
   <class_name>ZEDGK12HVAC</class_name>
   <display_name>ZEDG K12 HVAC GSHP with DOAS</display_name>
@@ -63,12 +63,6 @@
   </attributes>
   <files>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>400D07BE</checksum>
-    </file>
-    <file>
       <filename>AEDG_HVAC_GenericTestModel_0225_a.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
@@ -81,63 +75,87 @@
       <checksum>7F291534</checksum>
     </file>
     <file>
-      <filename>TableLib.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>3DD75C2E</checksum>
-    </file>
-    <file>
       <filename>measure_Test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
       <checksum>1AB0BFE1</checksum>
     </file>
     <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>9D51CDB6</checksum>
+    </file>
+    <file>
+      <filename>TableLib.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>8AFBA705</checksum>
+    </file>
+    <file>
       <filename>OsLib_HVAC_zedg_gshp.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>8368B820</checksum>
+      <checksum>4D99ED1E</checksum>
     </file>
     <file>
       <filename>os_lib_constructions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>11B983A5</checksum>
+      <checksum>B24DDC22</checksum>
     </file>
     <file>
       <filename>os_lib_geometry.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>ABF2B8A1</checksum>
+      <checksum>3D17299B</checksum>
     </file>
     <file>
       <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>02263B97</checksum>
+      <checksum>9CFC43FB</checksum>
     </file>
     <file>
       <filename>os_lib_lighting_and_equipment.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>7C1F9E8C</checksum>
+      <checksum>E63C7739</checksum>
     </file>
     <file>
       <filename>os_lib_schedules.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>C4185CAA</checksum>
+      <checksum>5F1CEF3A</checksum>
     </file>
     <file>
       <version>
         <software_program>OpenStudio</software_program>
-        <identifier>1.3.0</identifier>
-        <min_compatible>1.3.0</min_compatible>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>ADA5D14D</checksum>
+      <checksum>46904F41</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>9640B6CB</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>713C6E47</checksum>
     </file>
   </files>
 </measure>

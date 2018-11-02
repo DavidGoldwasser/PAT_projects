@@ -10,7 +10,7 @@
 #load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
 require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
-require "#{File.dirname(__FILE__)}/resources/OsLib_HVAC"
+require "#{File.dirname(__FILE__)}/resources/os_lib_hvac"
 require "#{File.dirname(__FILE__)}/resources/os_lib_schedules"
 
 #start the measure
@@ -56,7 +56,7 @@ class ZEDGK12SWH < OpenStudio::Ruleset::ModelUserScript
     end  
     args << numberOfStudents
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -240,7 +240,7 @@ class ZEDGK12SWH < OpenStudio::Ruleset::ModelUserScript
         plantLoop.remove
         runner.registerWarning("#{plantLoop.name} for service water heating will be deleted so that ZEDG recommendations can be applied.")
       end
-    end #next plantLoop
+    end
     ### END DELETE EXISTING EQUIPMENT
   
     ### START APPLY SWH RECOMMENDATIONS
@@ -392,9 +392,9 @@ class ZEDGK12SWH < OpenStudio::Ruleset::ModelUserScript
 
     return true
 
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be used by the application
 ZEDGK12SWH.new.registerWithApplication

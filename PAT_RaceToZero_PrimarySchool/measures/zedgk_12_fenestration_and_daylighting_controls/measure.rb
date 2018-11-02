@@ -52,7 +52,7 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
     args << cost_light_shelf
 
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -376,7 +376,7 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
             if surfaceToCeiling then exteriorWallAreaNDaylight += surface.grossArea end
           end
 
-        end # end of initial space.surfaces.each do
+        end
 
         # get ffr and dfr values from rules
         ffrNS = viewFenestrationRulesHash["#{climateZoneNumber} #{viewWindowFramingType}"]["fFR-NS"]
@@ -534,7 +534,7 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
                   daylightNorthHash[vector.last] = vector.last.grossArea # push the daylight window to array for use later on
                 end
               end
-            end # end if northRangeEnd < absoluteAzimuth and absoluteAzimuth < southRangeStart
+            end
 
            elsif surface.surfaceType == "RoofCeiling"
 
@@ -549,9 +549,9 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
 
           else
             # no more action required for this surface
-          end # end of if surface.surfaceType
+          end
 
-        end # end of space.surfaces.each do
+        end
 
         # add skylights if required
         addSkylights = false # added this for Net Zero measure to avoid adding skylights
@@ -584,7 +584,7 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
             defaultConstructionSet.setDefaultExteriorSubSurfaceConstructions(defaultSubSurfaceConstructions)
           end
 
-        end # end of addSkylights
+        end
 
         # dont' add to hash if no daylighting in space
         next if addSkylights == false and exteriorWallAreaNDaylight == 0 and exteriorWallAreaSDaylight == 0
@@ -615,9 +615,9 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
             if exteriorWallAreaNDaylight > 0 # only add interior surfaces if the starting value is greater than 0
               exteriorWallAreaNDaylight += surface.grossArea
             end
-          end # end if northRangeEnd < absoluteAzimuth and absoluteAzimuth < southRangeStart
+          end
 
-        end # end of space.surfaces.each
+        end
 
         # populate space hash, and then
         spaceHash = {}
@@ -634,7 +634,7 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
         # add spaceHash to zoneSpacesHash with space object as key
         zoneSpacesHash[space] = spaceHash
 
-      end # end of thermalZone.getSpaces.each do
+      end
 
       zoneFloorArea = 0
       zoneDaylightWallArea = 0
@@ -746,7 +746,7 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
 
           end
 
-        end # end of if hash["skylight"]
+        end
 
         # update floor area and wall area numbers
         zoneFloorArea += hash["floorArea"]
@@ -767,7 +767,7 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
         zoneSpaceDaylightFractionHash[space] = zoneDaylightWallArea_space/hash["floorArea"]
         zoneSkylightHash[space] = hash["skylight"]
 
-      end # end of zoneSpacesHash.each do
+      end
 
       # identify which space to hook sensors to zone from
       maxLightingPower = 0
@@ -796,7 +796,7 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
         end
       end
 
-    end # end of  model.getThermalZones.each do
+    end
 
     # issue a info if cap has to be set manually above
     if wwrCapFlag > 0
@@ -829,9 +829,9 @@ class ZEDGK12FenestrationAndDaylightingControls < OpenStudio::Ruleset::ModelUser
     
     return true
  
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be use by the application
 ZEDGK12FenestrationAndDaylightingControls.new.registerWithApplication

@@ -32,7 +32,7 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
     args << material_cost_ip
 
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -142,7 +142,7 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
             spaceElecEquipRemoved = true
           end
         end
-      end # end of spaces.each do
+      end
 
       # in future versions will use (equipmenting power)weighted average schedule merge for new schedule
       oldScheduleHash = OsLib_LightingAndEquipment.createHashOfInternalLoadWithHardAssignedSchedules(oldElecEquip)
@@ -180,7 +180,7 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
         end
       end
 
-    end # end of spaceTypes each do
+    end
 
     # warn if some spaces didn't have equipment altered at all (this would apply to spaces with space types not mapped)
     model.getSpaces.each do |space|
@@ -209,9 +209,9 @@ class ZEDGK12ElectricEquipment < OpenStudio::Ruleset::ModelUserScript
 
     return true
 
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be use by the application
 ZEDGK12ElectricEquipment.new.registerWithApplication

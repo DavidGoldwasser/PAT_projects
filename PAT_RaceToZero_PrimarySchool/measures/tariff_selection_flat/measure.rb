@@ -1,114 +1,146 @@
+# *******************************************************************************
+# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# (1) Redistributions of source code must retain the above copyright notice,
+# this list of conditions and the following disclaimer.
+#
+# (2) Redistributions in binary form must reproduce the above copyright notice,
+# this list of conditions and the following disclaimer in the documentation
+# and/or other materials provided with the distribution.
+#
+# (3) Neither the name of the copyright holder nor the names of any contributors
+# may be used to endorse or promote products derived from this software without
+# specific prior written permission from the respective party.
+#
+# (4) Other than as required in clauses (1) and (2), distributions in any form
+# of modifications or other derivative works may not use the "OpenStudio"
+# trademark, "OS", "os", or any other confusingly similar designation without
+# specific prior written permission from Alliance for Sustainable Energy, LLC.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER(S) AND ANY CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER(S), ANY CONTRIBUTORS, THE
+# UNITED STATES GOVERNMENT, OR THE UNITED STATES DEPARTMENT OF ENERGY, NOR ANY OF
+# THEIR EMPLOYEES, BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+# OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# *******************************************************************************
+
 # see the URL below for information on how to write OpenStudio measures
 # http://nrel.github.io/OpenStudio-user-documentation/measures/measure_writing_guide/
 
 require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
 
 # start the measure
-class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
-
+class TariffSelectionFlat < OpenStudio::Measure::EnergyPlusMeasure
   # human readable name
   def name
-    return "Tariff Selection-Flat"
+    return 'Tariff Selection-Flat'
   end
 
   # human readable description
   def description
-    return "This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
+    return 'This measure sets flat rates for electricity, gas, water, district heating, and district cooling.'
   end
 
   # human readable description of modeling approach
   def modeler_description
-    return "Will add the necessary UtilityCost objects into the model."
+    return 'Will add the necessary UtilityCost objects into the model.'
   end
 
   # define the arguments that the user will input
   def arguments(workspace)
-    args = OpenStudio::Ruleset::OSArgumentVector.new
+    args = OpenStudio::Measure::OSArgumentVector.new
 
-    #make choice argument for facade
+    # make choice argument for facade
     choices = OpenStudio::StringVector.new
-    choices << "QuarterHour"
-    choices << "HalfHour"
-    choices << "FullHour"
+    choices << 'QuarterHour'
+    choices << 'HalfHour'
+    choices << 'FullHour'
     # don't want to offer Day or Week even though valid E+ options
     # choices << "Day"
     # choices << "Week"
-    demand_window_length = OpenStudio::Ruleset::OSArgument::makeChoiceArgument("demand_window_length", choices,true)
-    demand_window_length.setDisplayName("Demand Window Length.")
-    demand_window_length.setDefaultValue("QuarterHour")
+    demand_window_length = OpenStudio::Measure::OSArgument.makeChoiceArgument('demand_window_length', choices, true)
+    demand_window_length.setDisplayName('Demand Window Length.')
+    demand_window_length.setDefaultValue('QuarterHour')
     args << demand_window_length
 
     # adding argument for elec_rate
-    elec_rate = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("elec_rate", true)
-    elec_rate.setDisplayName("Electric Rate")
-    elec_rate.setUnits("$/kWh")
+    elec_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('elec_rate', true)
+    elec_rate.setDisplayName('Electric Rate')
+    elec_rate.setUnits('$/kWh')
     elec_rate.setDefaultValue(0.12)
     args << elec_rate
 
     # adding argument for gas_rate
-    gas_rate = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("gas_rate", true)
-    gas_rate.setDisplayName("Gas Rate")
-    gas_rate.setUnits("$/therm")
+    gas_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('gas_rate', true)
+    gas_rate.setDisplayName('Gas Rate')
+    gas_rate.setUnits('$/therm')
     gas_rate.setDefaultValue(0.5)
     args << gas_rate
 
     # adding argument for water_rate
-    water_rate = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("water_rate", true)
-    water_rate.setDisplayName("Water Rate")
-    water_rate.setUnits("$/gal")
+    water_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('water_rate', true)
+    water_rate.setDisplayName('Water Rate')
+    water_rate.setUnits('$/gal')
     water_rate.setDefaultValue(0.005)
     args << water_rate
 
     # adding argument for disthtg_rate
-    disthtg_rate = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("disthtg_rate", true)
-    disthtg_rate.setDisplayName("District Heating Rate")
-    disthtg_rate.setUnits("$/therm")
+    disthtg_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('disthtg_rate', true)
+    disthtg_rate.setDisplayName('District Heating Rate')
+    disthtg_rate.setUnits('$/therm')
     disthtg_rate.setDefaultValue(0.2)
     args << disthtg_rate
 
     # adding argument for distclg_rate
-    distclg_rate = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("distclg_rate", true)
-    distclg_rate.setDisplayName("District Cooling Rate")
-    distclg_rate.setUnits("$/therm")
+    distclg_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('distclg_rate', true)
+    distclg_rate.setDisplayName('District Cooling Rate')
+    distclg_rate.setUnits('$/therm')
     distclg_rate.setDefaultValue(0.2)
     args << distclg_rate
 
     return args
-  end 
+  end
 
   # define what happens when the measure is run
   def run(workspace, runner, user_arguments)
     super(workspace, runner, user_arguments)
 
     # assign the user inputs to variables
-    args  = OsLib_HelperMethods.createRunVariables(runner, workspace,user_arguments, arguments(workspace))
+    args = OsLib_HelperMethods.createRunVariables(runner, workspace, user_arguments, arguments(workspace))
     if !args then return false end
 
     # reporting initial condition of model
-    starting_tariffs = workspace.getObjectsByType("UtilityCost:Tariff".to_IddObjectType)
+    starting_tariffs = workspace.getObjectsByType('UtilityCost:Tariff'.to_IddObjectType)
     runner.registerInitialCondition("The model started with #{starting_tariffs.size} tariff objects.")
 
     # map demand window length to integer
     demand_window_per_hour = nil
-    if args['demand_window_length'] == "QuarterHour"
+    if args['demand_window_length'] == 'QuarterHour'
       demand_window_per_hour = 4
-    elsif args['demand_window_length'] == "HalfHour"
+    elsif args['demand_window_length'] == 'HalfHour'
       demand_window_per_hour = 2
-    elsif args['demand_window_length'] == "FullHour"
+    elsif args['demand_window_length'] == 'FullHour'
       demand_window_per_hour = 1
-    else
-      # shouldn't get here from current choice list options
     end
 
     # make sure demand window length is is divisible by timestep
-    if not workspace.getObjectsByType("Timestep".to_IddObjectType).empty?
-      initial_timestep = workspace.getObjectsByType("Timestep".to_IddObjectType)[0].getString(0).get
+    if !workspace.getObjectsByType('Timestep'.to_IddObjectType).empty?
+      initial_timestep = workspace.getObjectsByType('Timestep'.to_IddObjectType)[0].getString(0).get
 
       if initial_timestep.to_f / demand_window_per_hour.to_f == (initial_timestep.to_f / demand_window_per_hour.to_f).truncate # checks if remainder of divided numbers is > 0
         runner.registerInfo("The demand window length of a #{args['demand_window_length']} is compatible with the current setting of #{initial_timestep} timesteps per hour.")
       else
-        workspace.getObjectsByType("Timestep".to_IddObjectType)[0].setString(0,demand_window_per_hour.to_s)
-        runner.registerInfo("Updating the timesteps per hour in the model from #{initial_timestep} to #{demand_window_per_hour.to_s} to be compatible with the demand window length of a #{args['demand_window_length']}")
+        workspace.getObjectsByType('Timestep'.to_IddObjectType)[0].setString(0, demand_window_per_hour.to_s)
+        runner.registerInfo("Updating the timesteps per hour in the model from #{initial_timestep} to #{demand_window_per_hour} to be compatible with the demand window length of a #{args['demand_window_length']}")
       end
     else
 
@@ -117,11 +149,11 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
       Timestep,
         4;                                      !- Number of Timesteps per Hour
         "
-      idfObject = OpenStudio::IdfObject::load(new_object_string)
+      idfObject = OpenStudio::IdfObject.load(new_object_string)
       object = idfObject.get
       wsObject = workspace.addObject(object)
       new_object = wsObject.get
-      runner.registerInfo("No timestep object found. Added a new timestep object set to 4 timesteps per hour")
+      runner.registerInfo('No timestep object found. Added a new timestep object set to 4 timesteps per hour')
     end
 
     # elec tariff object
@@ -139,7 +171,7 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         Day,                                    !- Demand Window Length
         0.0;                                    !- Monthly Charge or Variable Name
         "
-      elec_tariff = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      elec_tariff = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
 
       # make UtilityCost:Charge:Simple objects for electricity
       new_object_string = "
@@ -151,9 +183,9 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         EnergyCharges,                          !- Category Variable Name
         #{args['elec_rate']};          !- Cost per Unit Value or Variable Name
         "
-      elec_utility_cost = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      elec_utility_cost = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
     end
-    
+
     # gas tariff object
     if args['gas_rate'] > 0
       new_object_string = "
@@ -169,7 +201,7 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         Day,                                    !- Demand Window Length
         0.0;                                    !- Monthly Charge or Variable Name
         "
-      gas_tariff = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      gas_tariff = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
 
       # make UtilityCost:Charge:Simple objects for gas
       new_object_string = "
@@ -181,12 +213,12 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         EnergyCharges,                          !- Category Variable Name
         #{args['gas_rate']};          !- Cost per Unit Value or Variable Name
         "
-      gas_utility_cost = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      gas_utility_cost = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
     end
 
     # conversion for water tariff rate
     dollars_per_gallon = args['water_rate']
-    dollars_per_meter_cubed = OpenStudio.convert(dollars_per_gallon,"1/gal","1/m^3").get
+    dollars_per_meter_cubed = OpenStudio.convert(dollars_per_gallon, '1/gal', '1/m^3').get
 
     # water tariff object
     if args['water_rate'] > 0
@@ -203,7 +235,7 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         ,                                       !- Demand Window Length
         0.0;                                    !- Monthly Charge or Variable Name
         "
-      water_tariff = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      water_tariff = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
 
       # make UtilityCost:Charge:Simple objects for water
       new_object_string = "
@@ -215,7 +247,7 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         EnergyCharges,                          !- Category Variable Name
         #{dollars_per_meter_cubed};          !- Cost per Unit Value or Variable Name
         "
-      water_utility_cost = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      water_utility_cost = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
     end
 
     # disthtg tariff object
@@ -233,7 +265,7 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         Day,                                    !- Demand Window Length
         0.0;                                    !- Monthly Charge or Variable Name
         "
-      disthtg_tariff = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      disthtg_tariff = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
 
       # make UtilityCost:Charge:Simple objects for disthtg
       new_object_string = "
@@ -245,7 +277,7 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         EnergyCharges,                          !- Category Variable Name
         #{args['disthtg_rate']};          !- Cost per Unit Value or Variable Name
         "
-      disthtg_utility_cost = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      disthtg_utility_cost = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
     end
 
     # distclg tariff object
@@ -263,7 +295,7 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         Day,                                    !- Demand Window Length
         0.0;                                    !- Monthly Charge or Variable Name
         "
-      distclg_tariff = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      distclg_tariff = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
 
       # make UtilityCost:Charge:Simple objects for distclg
       new_object_string = "
@@ -275,18 +307,16 @@ class TariffSelectionFlat < OpenStudio::Ruleset::WorkspaceUserScript
         EnergyCharges,                          !- Category Variable Name
         #{args['distclg_rate']};          !- Cost per Unit Value or Variable Name
       "
-      distclg_utility_cost = workspace.addObject(OpenStudio::IdfObject::load(new_object_string).get).get
+      distclg_utility_cost = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
     end
-    
+
     # report final condition of model
-    finishing_tariffs = workspace.getObjectsByType("UtilityCost:Tariff".to_IddObjectType)
+    finishing_tariffs = workspace.getObjectsByType('UtilityCost:Tariff'.to_IddObjectType)
     runner.registerFinalCondition("The model finished with #{finishing_tariffs.size} tariff objects.")
 
     return true
- 
   end
-
-end 
+end
 
 # register the measure to be used by the application
 TariffSelectionFlat.new.registerWithApplication

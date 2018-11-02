@@ -1,9 +1,8 @@
 require 'openstudio'
+require 'openstudio/measure/ShowRunnerOutput'
+require 'fileutils'
 
-require 'openstudio/ruleset/ShowRunnerOutput'
-
-require "#{File.dirname(__FILE__)}/../measure.rb"
-
+require_relative '../measure.rb'
 require 'minitest/autorun'
 
 class ZEDGK12SWH_Test < MiniTest::Unit::TestCase

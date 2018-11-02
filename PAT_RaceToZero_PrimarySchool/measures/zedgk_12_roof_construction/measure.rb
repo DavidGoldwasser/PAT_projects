@@ -44,7 +44,7 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
     args << alter_sri
 
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -218,9 +218,9 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
         # create warning if a construction passing through here is used on a roofCeiling surface with a boundary condition of "Outdoors"
         otherConstructions << construction
 
-      end # end of intendedSurfaceType == "ExteriorRoof"
+      end
 
-    end #end of constructions.each do
+    end
 
     # create warning if construction used on exterior roof doesn't have a surface type of "ExteriorRoof", or if constructions tagged to be used as roof, are used on other surface types
     otherConstructionsWarned = []
@@ -255,11 +255,11 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
             runner.registerWarning("#{surface.name} uses #{construction.name} as a construction that this measure expects to be used for exterior roofs. This surface has a type of #{surface.surfaceType} and a a boundary condition of #{surface.outsideBoundaryCondition}. This may result in unexpected changes to your model.")
           end
 
-        end #end of surface.outsideBoundaryCondition
+        end
 
-      end # end of if not surface.construction.empty?
+      end
 
-    end # end of surfaces.each do
+    end
 
     # hashes to hold classification of attic surfaces
     atticSurfacesInterior = {} # this will include paris of matched surfaces
@@ -350,7 +350,7 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
           runner.registerWarning("Can't infer use case for attic surface with an outside boundary condition of #{atticSurface.outsideBoundaryCondition}.")
         end
 
-      end #end of atticSurfaces.each do
+      end
 
       # warning message for each space that has mix of attic and non attic constructions
       runner.registerWarning("#{atticSpace.name} has surfaces with a mix of attic and non attic constructions which may produce unexpected results. The following surfaces use constructions not tagged as attic and will not be altered: #{surfacesWithNonAtticConstructions.sort.join(",")}.")
@@ -368,7 +368,7 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
         runner.registerWarning("#{atticSpace.name} has people. That is not typical for an attic.")
       end
 
-    end # end of atticSpaces.each do
+    end
 
     # removed aedg code that looks for classification conflicts in attic constructions
 
@@ -446,12 +446,12 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
           # report on edited material
           runner.registerInfo("The R-value of #{construction.name} has been increased from #{OpenStudio::toNeatString(r_value_ip_starting,2,true)} to #{OpenStudio::toNeatString(final_r_value_ip,2,true)}(ft^2*h*R/Btu) at a cost of $#{OpenStudio::toNeatString(lcc_mat_insulation_value,2,true)}. Increased performance was accomplished by adding a new material layer to the outside of #{construction.name}.")
 
-        end # end of if inferredInsulationLayer[4]
+        end
 
         #add to area counter
         insulation_affected_area += construction.getNetArea # OpenStudio handles matched surfaces so they are not counted twice.
 
-      end # end if not hash[transmittance_ip_rule] == "NA"
+      end
 
       #gather sri inputs
       if hash["sri_rule"] == 78.0 and hash["sri_rule"] > hash["sri"] and alter_sri
@@ -493,9 +493,9 @@ class ZEDGK12RoofConstruction < OpenStudio::Ruleset::ModelUserScript
     
     return true
  
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be use by the application
 ZEDGK12RoofConstruction.new.registerWithApplication

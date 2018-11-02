@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>zedgk_12_roof_construction</name>
   <uid>d322d264-5855-4b20-bd3e-3c5e5032bc05</uid>
-  <version_id>cc3665ad-edad-4c99-be1b-6f90ce455c23</version_id>
-  <version_modified>20171020T205859Z</version_modified>
+  <version_id>71e3aafa-6959-471e-81b1-754043481d74</version_id>
+  <version_modified>20181005T172020Z</version_modified>
   <xml_checksum>5091078B</xml_checksum>
   <class_name>ZEDGK12RoofConstruction</class_name>
   <display_name>ZEDG K12 RoofConstruction</display_name>
@@ -91,39 +91,57 @@
       <checksum>43EAE4A4</checksum>
     </file>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>F37142C9</checksum>
-    </file>
-    <file>
       <filename>measure_Test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
       <checksum>8A4B75F9</checksum>
     </file>
     <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>90468C51</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
-        <identifier>1.3.0</identifier>
-        <min_compatible>1.3.0</min_compatible>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>9048F4A3</checksum>
+      <checksum>60D22E86</checksum>
     </file>
     <file>
       <filename>os_lib_constructions.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>11B983A5</checksum>
+      <checksum>B24DDC22</checksum>
     </file>
     <file>
       <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>02263B97</checksum>
+      <checksum>9CFC43FB</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>9640B6CB</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>0EBE7325</checksum>
     </file>
   </files>
 </measure>

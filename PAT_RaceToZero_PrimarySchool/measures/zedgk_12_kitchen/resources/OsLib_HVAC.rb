@@ -9,7 +9,7 @@ module OsLib_HVAC
     result = output
     return result
 
-  end # end of def
+  end
 
 
   # validate and make plenum zones
@@ -56,10 +56,10 @@ module OsLib_HVAC
                 end  
               end
             end
-          end # end of surfaces.each do
-        end # end of spaces.each do
-      end # end of zonesPlenum.each do
-    end # end of zonesPlenum == nil
+          end
+        end
+      end
+    end
 
     # report out results of zone-plenum hash
     zonePlenumHash.each do |zone,plenum|
@@ -70,7 +70,7 @@ module OsLib_HVAC
     result = zonePlenumHash
     return result
 
-  end # end of def
+  end
     
   def OsLib_HVAC.sortZones(model, runner, options = {})
 
@@ -131,7 +131,7 @@ module OsLib_HVAC
           if options["secondarySpaceTypeTest"].include? standardSpaceType
             zonesSecondary << zone
           end
-        end # end of spaces each do
+        end
         # if zone not assigned as secondary, assign as primary
         unless zonesSecondary.include? zone
           zonesPrimary << zone
@@ -147,7 +147,7 @@ module OsLib_HVAC
     result = zonesSorted
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC.reportConditions(model, runner, condition)
 
@@ -176,7 +176,7 @@ module OsLib_HVAC
       runner.registerFinalCondition("The building finished with #{airloops.size} air loops and #{plantLoops.size} plant loops. #{zonesWithEquipCounter} zones are conditioned with zone equipment.")
     end
     
-  end # end of def
+  end
 
   def OsLib_HVAC.removeEquipment(model, runner)
 
@@ -214,9 +214,9 @@ module OsLib_HVAC
       else
         runner.registerWarning("#{plantLoop.name} is used for SHW or refrigeration heat reclaim.  Loop will not be deleted")
       end
-    end #next plantLoop
+    end
       
-  end # end of def
+  end
 
   def OsLib_HVAC.assignHVACSchedules(model, runner, options = {})
    
@@ -425,7 +425,7 @@ module OsLib_HVAC
     result = schedulesHVAC
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC.createHotWaterPlant(model, runner, hot_water_setpoint_schedule, loop_type)
     
@@ -480,7 +480,7 @@ module OsLib_HVAC
     result = hot_water_plant
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC.createChilledWaterPlant(model, runner, chilled_water_setpoint_schedule, loop_type, chillerType)
     
@@ -609,7 +609,7 @@ module OsLib_HVAC
     result = chilled_water_plant
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC.createCondenserLoop(model, runner, options)
 
@@ -755,7 +755,7 @@ module OsLib_HVAC
     result = condenserLoops
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC.createPrimaryAirLoops(model, runner, options)
     primary_airloops = []
@@ -1057,7 +1057,7 @@ module OsLib_HVAC
     result = primary_airloops
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC.createSecondaryAirLoops(model, runner, options)
 
@@ -1308,7 +1308,7 @@ module OsLib_HVAC
     result = secondary_airloops
     return result
     
-  end # end of def
+  end
 
   def OsLib_HVAC.createPrimaryZoneEquipment(model, runner, options)
 
@@ -1604,7 +1604,7 @@ module OsLib_HVAC
       end
     end
 
-  end # end of def
+  end
   
   def OsLib_HVAC.addDCV(model, runner, options)
 
@@ -1631,6 +1631,6 @@ module OsLib_HVAC
         end  
       end
     end
-  end # end of def
+  end
 
 end

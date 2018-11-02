@@ -75,7 +75,7 @@ class ZEDGK12Kitchen < OpenStudio::Ruleset::ModelUserScript
     end  
     args << numberOfStudents
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -686,9 +686,9 @@ class ZEDGK12Kitchen < OpenStudio::Ruleset::ModelUserScript
 
     return true
 
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be used by the application
 ZEDGK12Kitchen.new.registerWithApplication

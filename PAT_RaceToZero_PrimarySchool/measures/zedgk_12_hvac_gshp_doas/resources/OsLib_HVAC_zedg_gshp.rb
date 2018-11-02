@@ -9,7 +9,7 @@ module OsLib_HVAC_zedg_gshp
     result = output
     return result
 
-  end # end of def
+  end
 
 
   # validate and make plenum zones
@@ -56,10 +56,10 @@ module OsLib_HVAC_zedg_gshp
                 end  
               end
             end
-          end # end of surfaces.each do
-        end # end of spaces.each do
-      end # end of zonesPlenum.each do
-    end # end of zonesPlenum == nil
+          end
+        end
+      end
+    end
 
     # report out results of zone-plenum hash
     zonePlenumHash.each do |zone,plenum|
@@ -70,7 +70,7 @@ module OsLib_HVAC_zedg_gshp
     result = zonePlenumHash
     return result
 
-  end # end of def
+  end
     
   def OsLib_HVAC_zedg_gshp.sortZones(model, runner, options = {})
 
@@ -131,7 +131,7 @@ module OsLib_HVAC_zedg_gshp
           if options["secondarySpaceTypeTest"].include? standardSpaceType
             zonesSecondary << zone
           end
-        end # end of spaces each do
+        end
         # if zone not assigned as secondary, assign as primary
         unless zonesSecondary.include? zone
           zonesPrimary << zone
@@ -147,7 +147,7 @@ module OsLib_HVAC_zedg_gshp
     result = zonesSorted
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_gshp.reportConditions(model, runner, condition,extra_string = '')
 
@@ -176,7 +176,7 @@ module OsLib_HVAC_zedg_gshp
       runner.registerFinalCondition("The building finished with #{airloops.size} air loops and #{plantLoops.size} plant loops. #{zonesWithEquipCounter} zones are conditioned with zone equipment. #{extra_string}")
     end
     
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_gshp.removeEquipment(model, runner)
 
@@ -214,9 +214,9 @@ module OsLib_HVAC_zedg_gshp
       else
         runner.registerWarning("#{plantLoop.name} is used for SHW or refrigeration heat reclaim.  Loop will not be deleted")
       end
-    end #next plantLoop
+    end
       
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_gshp.assignHVACSchedules(model, runner, options = {})
    
@@ -425,7 +425,7 @@ module OsLib_HVAC_zedg_gshp
     result = schedulesHVAC
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_gshp.createHotWaterPlant(model, runner, hot_water_setpoint_schedule, loop_type)
     
@@ -480,7 +480,7 @@ module OsLib_HVAC_zedg_gshp
     result = hot_water_plant
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_gshp.createChilledWaterPlant(model, runner, chilled_water_setpoint_schedule, loop_type, chillerType)
     
@@ -609,7 +609,7 @@ module OsLib_HVAC_zedg_gshp
     result = chilled_water_plant
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_gshp.createCondenserLoop(model, runner, options)
 
@@ -763,7 +763,7 @@ module OsLib_HVAC_zedg_gshp
     result = condenserLoops
     return result
 
-  end # end of def
+  end
 
   # Writes a Table:TwoIndependentVariable object to the idf file based on given inputs.  Limits are assumed for now.
   # @param xyz_data [Array<Array<FixNum>>] An array of float-triplet arrays in the form [ [x1, y1, z1], [x2, y2, z2], ..., [xn, yn, zn] ]
@@ -1397,7 +1397,7 @@ module OsLib_HVAC_zedg_gshp
     result = primary_airloops
     return result
 
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_gshp.createSecondaryAirLoops(model, runner, options)
 
@@ -1662,7 +1662,7 @@ module OsLib_HVAC_zedg_gshp
     result = secondary_airloops
     return result
     
-  end # end of def
+  end
 
   def OsLib_HVAC_zedg_gshp.createPrimaryZoneEquipment(model, runner, options)
 
@@ -1944,7 +1944,7 @@ module OsLib_HVAC_zedg_gshp
       end
     end
 
-  end # end of def
+  end
   
   def OsLib_HVAC_zedg_gshp.addDCV(model, runner, options)
 
@@ -1971,6 +1971,6 @@ module OsLib_HVAC_zedg_gshp
         end  
       end
     end
-  end # end of def
+  end
 
 end

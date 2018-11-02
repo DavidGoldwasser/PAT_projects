@@ -9,7 +9,7 @@ module TableLib
     result = output
     return result
 
-  end # end of def
+  end
 
   # tables with two independent variables
 
