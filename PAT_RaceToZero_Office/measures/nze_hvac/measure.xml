@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>nze_hvac</name>
   <uid>f060dff2-b28d-4194-a6af-e66d88ddb33c</uid>
-  <version_id>56d541f9-2bd1-4dfe-87d7-837ff3b75084</version_id>
-  <version_modified>20181022T152042Z</version_modified>
+  <version_id>ce76abb5-2762-466f-8d0b-ad739b5c9540</version_id>
+  <version_modified>20181102T202249Z</version_modified>
   <xml_checksum>0E5E4776</xml_checksum>
   <class_name>NzeHvac</class_name>
   <display_name>NZEHVAC</display_name>
@@ -68,6 +68,10 @@
         <choice>
           <value>Fan Coils with DOAS with DCV</value>
           <display_name>Fan Coils with DOAS with DCV</display_name>
+        </choice>
+        <choice>
+          <value>Fan Coils with ERVs</value>
+          <display_name>Fan Coils with ERVs</display_name>
         </choice>
       </choices>
     </argument>
@@ -172,12 +176,6 @@
       <checksum>57483CB6</checksum>
     </file>
     <file>
-      <filename>office_houston.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>2E5B2DA9</checksum>
-    </file>
-    <file>
       <filename>office_retail_mix_chicago.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
@@ -208,16 +206,28 @@
       <checksum>703C9964</checksum>
     </file>
     <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>EEBB22C5</checksum>
+    </file>
+    <file>
+      <filename>office_houston.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>44192754</checksum>
+    </file>
+    <file>
       <filename>office_chicago.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>E9303593</checksum>
+      <checksum>D57BDC09</checksum>
     </file>
     <file>
       <filename>NZEHVAC_Test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>BAB98AB7</checksum>
+      <checksum>6BE12A64</checksum>
     </file>
     <file>
       <version>
@@ -228,13 +238,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>B593F4FF</checksum>
-    </file>
-    <file>
-      <filename>README.md</filename>
-      <filetype>md</filetype>
-      <usage_type>readme</usage_type>
-      <checksum>EEBB22C5</checksum>
+      <checksum>5661D2B8</checksum>
     </file>
   </files>
 </measure>

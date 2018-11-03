@@ -874,14 +874,14 @@ module OsLib_Reporting
       data_arrays << [setpoint.iddObject.name, 'Reset', desc, '', '']
 
     when 'OS:SetpointManager:Warmest'
-      setpoint = component.to_SetpointManagerWarmest
+      setpoint = component.to_SetpointManagerWarmest.get
       min_sat_f = OpenStudio.convert(setpoint.minimumSetpointTemperature, 'C', 'F').get.round(1)
       max_sat_f = OpenStudio.convert(setpoint.minimumSetpointTemperature, 'C', 'F').get.round(1)
       desc = "#{min_sat_f} F to #{max_sat_f.round} F"
       data_arrays << [setpoint.iddObject.name, 'Reset SAT per Worst Zone', desc, '', '']
 
     when 'OS:SetpointManager:WarmestTemperatureFlow'
-      setpoint = component.to_SetpointManagerWarmestTemperatureFlow
+      setpoint = component.to_SetpointManagerWarmestTemperatureFlow.get
       min_sat_f = OpenStudio.convert(setpoint.minimumSetpointTemperature, 'C', 'F').get.round(1)
       max_sat_f = OpenStudio.convert(setpoint.minimumSetpointTemperature, 'C', 'F').get.round(1)
       desc = "#{min_sat_f} F to #{max_sat_f.round} F, #{setpoint.strategy}"

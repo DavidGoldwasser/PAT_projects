@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>envelope_and_internal_load_breakdown</name>
   <uid>8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02</uid>
-  <version_id>6fb277d0-b46c-41cd-819f-a74aa6d68fed</version_id>
-  <version_modified>20181005T172017Z</version_modified>
+  <version_id>f63919e1-a65a-4f4e-8b7d-8c14125f6f04</version_id>
+  <version_modified>20181023T190020Z</version_modified>
   <xml_checksum>69BA4D91</xml_checksum>
   <class_name>EnvelopeAndInternalLoadBreakdown</class_name>
   <display_name>Envelope and Internal Load Breakdown</display_name>
@@ -123,12 +123,6 @@
       <checksum>767C180A</checksum>
     </file>
     <file>
-      <filename>measure_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>0A5F1E16</checksum>
-    </file>
-    <file>
       <filename>LICENSE.md</filename>
       <filetype>md</filetype>
       <usage_type>license</usage_type>
@@ -145,6 +139,12 @@
       <filetype>md</filetype>
       <usage_type>readme</usage_type>
       <checksum>F66552F1</checksum>
+    </file>
+    <file>
+      <filename>EnvelopeAndInternalLoadBreakdown_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>0A5F1E16</checksum>
     </file>
   </files>
 </measure>

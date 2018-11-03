@@ -357,7 +357,7 @@ class NzeHvac_Test < Minitest::Test
                               hvac_system_partition_input: "Automatic Partition")
   end
 
-  def test_humid_office_vav_reheat_auto_partitionop
+  def test_humid_office_vav_reheat_auto_partition
     # this tests adding a vav reheat system to the model with automatic partitioning
     test_name = "test_humid_office_vav_reheat_auto_partition"
     puts "\n######\nTEST:#{test_name}\n######\n"

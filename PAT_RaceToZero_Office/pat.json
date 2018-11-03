@@ -128,14 +128,14 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/ChangeBuildingLocation",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation",
       "name": "change_building_location",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/ChangeBuildingLocation",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation",
       "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
-      "version_id": "cae336a2-ee22-48ee-93ec-46a8b52d3f90",
-      "version_uuid": "{cae336a2-ee22-48ee-93ec-46a8b52d3f90}",
-      "version_modified": "20180822T002858Z",
+      "version_id": "aa6af1cd-6cce-4352-bddd-e4cf47d79b35",
+      "version_uuid": "{aa6af1cd-6cce-4352-bddd-e4cf47d79b35}",
+      "version_modified": "20181101T151202Z",
       "xml_checksum": "057E8D9D",
       "display_name": "ChangeBuildingLocation",
       "class_name": "ChangeBuildingLocation",
@@ -555,9 +555,9 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": true,
+      "open": false,
       "addedToProject": true,
-      "date": "8/21/2018",
+      "date": "11/1/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG Office seed.osm",
@@ -1005,7 +1005,7 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6666940262261165,
+      "instanceId": 0.3836978378232716,
       "showWarningText": false
     },
     {
@@ -1124,7 +1124,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.8942308252898261,
+      "instanceId": 0.42538220735047894,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false,
@@ -1387,7 +1387,7 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.10632954268180272,
+      "instanceId": 0.9145959465600058,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false,
@@ -1882,7 +1882,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.6037032394211852,
+      "instanceId": 0.5450909186426387,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -1891,7 +1891,7 @@
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/AedgSmallToMediumOfficeExteriorLighting",
       "name": "aedg_small_to_medium_office_exterior_lighting",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgSmallToMediumOfficeExteriorLighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/AedgSmallToMediumOfficeExteriorLighting",
       "uid": "90211a9c-de3f-458d-85c1-b40666b55f06",
       "uuid": "{90211a9c-de3f-458d-85c1-b40666b55f06}",
       "version_id": "6ce1e6bc-ad38-462c-b341-a5f7491f9f51",
@@ -2073,7 +2073,7 @@
           "description": "Option 1 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
         }
       ],
-      "instanceId": 0.1866970742006797,
+      "instanceId": 0.9238412194019379,
       "numberOfOptions": 1,
       "$$hashKey": "object:164367",
       "outputMeasure": false
@@ -2081,7 +2081,7 @@
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
       "name": "aedg_small_to_medium_office_fenestration_and_daylighting_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
       "uid": "4252d6c7-ccd5-4cae-b55e-8d7b1dfcc717",
       "uuid": "{4252d6c7-ccd5-4cae-b55e-8d7b1dfcc717}",
       "version_id": "dddd11fe-9013-4fa3-b542-06f674679c9c",
@@ -2229,7 +2229,7 @@
           "description": "Option 1 Description: This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Small to Medium Office AEDG recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor."
         }
       ],
-      "instanceId": 0.27171387624673193,
+      "instanceId": 0.3637056368636291,
       "numberOfOptions": 1,
       "$$hashKey": "object:164368",
       "outputMeasure": false
@@ -2578,7 +2578,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.19225595749340996,
+      "instanceId": 0.1797233548271624,
       "showWarningText": false
     },
     {
@@ -3058,21 +3058,21 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.834130253381725,
+      "instanceId": 0.994639392309133,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/nze_hvac",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac",
       "name": "nze_hvac",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/nze_hvac",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac",
       "uid": "f060dff2-b28d-4194-a6af-e66d88ddb33c",
       "uuid": "{f060dff2-b28d-4194-a6af-e66d88ddb33c}",
-      "version_id": "56d541f9-2bd1-4dfe-87d7-837ff3b75084",
-      "version_uuid": "{56d541f9-2bd1-4dfe-87d7-837ff3b75084}",
-      "version_modified": "20181022T152042Z",
+      "version_id": "ce76abb5-2762-466f-8d0b-ad739b5c9540",
+      "version_uuid": "{ce76abb5-2762-466f-8d0b-ad739b5c9540}",
+      "version_modified": "20181102T202249Z",
       "xml_checksum": "0E5E4776",
       "display_name": "NZEHVAC",
       "class_name": "NzeHvac",
@@ -3171,7 +3171,8 @@
             "Ground Source Heat Pumps with DOAS",
             "Ground Source Heat Pumps with DOAS with DCV",
             "Fan Coils with DOAS",
-            "Fan Coils with DOAS with DCV"
+            "Fan Coils with DOAS with DCV",
+            "Fan Coils with ERVs"
           ],
           "choice_display_names": [
             "VAV Reheat",
@@ -3181,7 +3182,8 @@
             "Ground Source Heat Pumps with DOAS",
             "Ground Source Heat Pumps with DOAS with DCV",
             "Fan Coils with DOAS",
-            "Fan Coils with DOAS with DCV"
+            "Fan Coils with DOAS with DCV",
+            "Fan Coils with ERVs"
           ],
           "$$hashKey": "uiGrid-2MMK",
           "variable": false,
@@ -3219,7 +3221,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/22/2018",
+      "date": "11/2/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG Office seed.osm",
@@ -3245,9 +3247,10 @@
           "description": "Option 1 Description: This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads."
         }
       ],
-      "instanceId": 0.7361380144612089,
+      "instanceId": 0.8524967382061734,
       "numberOfOptions": 1,
-      "$$hashKey": "object:285279"
+      "$$hashKey": "object:285279",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/create_baseline_building",
@@ -3563,7 +3566,7 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": true,
+      "open": false,
       "addedToProject": true,
       "date": "7/13/2018",
       "author": "",
@@ -3977,7 +3980,7 @@
           "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         }
       ],
-      "instanceId": 0.913580415515449,
+      "instanceId": 0.3204180654721045,
       "numberOfOptions": 15,
       "$$hashKey": "object:13368",
       "outputMeasure": false
@@ -4373,21 +4376,21 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.33483099477789247,
+      "instanceId": 0.8772748006827114,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/openstudio_results",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/openstudio_results",
       "name": "openstudio_results",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/openstudio_results",
       "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
       "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
-      "version_id": "6c883a56-7216-458c-8ce5-7e0b8c392d1c",
-      "version_uuid": "{6c883a56-7216-458c-8ce5-7e0b8c392d1c}",
-      "version_modified": "20180917T205056Z",
+      "version_id": "11202fa8-8161-4fad-b5d1-453db21abdf8",
+      "version_uuid": "{11202fa8-8161-4fad-b5d1-453db21abdf8}",
+      "version_modified": "20181101T164805Z",
       "xml_checksum": "557BF06F",
       "display_name": "OpenStudio Results",
       "class_name": "OpenStudioResults",
@@ -5593,9 +5596,9 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": false,
+      "open": true,
       "addedToProject": true,
-      "date": "9/17/2018",
+      "date": "11/1/2018",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "ZEDG Office seed.osm",
@@ -5705,18 +5708,18 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.6362744952235728,
+      "instanceId": 0.2840665260646902,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/envelope_and_internal_load_breakdown",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/envelope_and_internal_load_breakdown",
       "name": "envelope_and_internal_load_breakdown",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_RaceToZero_Office/measures/envelope_and_internal_load_breakdown",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/envelope_and_internal_load_breakdown",
       "uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
       "uuid": "{8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02}",
-      "version_id": "6fb277d0-b46c-41cd-819f-a74aa6d68fed",
-      "version_uuid": "{6fb277d0-b46c-41cd-819f-a74aa6d68fed}",
-      "version_modified": "20181005T172017Z",
+      "version_id": "f63919e1-a65a-4f4e-8b7d-8c14125f6f04",
+      "version_uuid": "{f63919e1-a65a-4f4e-8b7d-8c14125f6f04}",
+      "version_modified": "20181023T190020Z",
       "xml_checksum": "69BA4D91",
       "display_name": "Envelope and Internal Load Breakdown",
       "class_name": "EnvelopeAndInternalLoadBreakdown",
@@ -5802,7 +5805,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/5/2018",
+      "date": "10/23/2018",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "ZEDG Office seed.osm",
@@ -5815,7 +5818,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.14338188244295136,
+      "instanceId": 0.7252749290051528,
       "numberOfOptions": 1,
       "$$hashKey": "object:57845",
       "outputMeasure": false

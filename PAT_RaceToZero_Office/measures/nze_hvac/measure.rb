@@ -102,6 +102,9 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
     when "Fan Coils with DOAS with DCV"
       std.model_add_hvac_system(model, 'Fan Coil with DOAS with DCV', 'NaturalGas', nil, 'Electricity', zones,
                                 hot_water_loop_type: "LowTemperature")
+    when "Fan Coils with ERVs"
+      std.model_add_hvac_system(model, 'Fan Coil with ERVs', 'NaturalGas', nil, 'Electricity', zones,
+                                hot_water_loop_type: "LowTemperature")
     when "PSZ-HP"
       std.model_add_hvac_system(model, 'PSZ-HP', 'Electricity', 'Electricity', 'Electricity', zones)
     else
@@ -146,6 +149,9 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
 
     # DOAS system with DCV and zone fan coils both served by a condensing boiler and water-cooled chiller with water-side economizer
     hvac_system_type_choices << "Fan Coils with DOAS with DCV"
+
+    # Zone ERVs and zone fan coils both served by a condensing boiler and water-cooled chiller with water-side economizer
+    hvac_system_type_choices << "Fan Coils with ERVs"
 
     # FUTURE OPTIONS TO INCLUDE
     # DOAS system with zone fan coils served by a air-source heat pump

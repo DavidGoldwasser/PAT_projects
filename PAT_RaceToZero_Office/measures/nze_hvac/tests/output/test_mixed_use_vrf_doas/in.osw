@@ -1,0 +1,8 @@
+{
+   "created_at" : "20181101T173539Z",
+   "hash" : "C472AABA",
+   "seed_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_mixed_use_vrf_doas/test_mixed_use_vrf_doas.osm",
+   "steps" : [],
+   "updated_at" : "20181101T173539Z",
+   "weather_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_mixed_use_vrf_doas/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"
+}

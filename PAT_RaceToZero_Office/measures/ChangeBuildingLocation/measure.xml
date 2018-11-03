@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>change_building_location</name>
   <uid>d4db4971-f5ba-11e3-a3ac-0800200c9a66</uid>
-  <version_id>cae336a2-ee22-48ee-93ec-46a8b52d3f90</version_id>
-  <version_modified>20180822T002858Z</version_modified>
+  <version_id>aa6af1cd-6cce-4352-bddd-e4cf47d79b35</version_id>
+  <version_modified>20181101T151202Z</version_modified>
   <xml_checksum>057E8D9D</xml_checksum>
   <class_name>ChangeBuildingLocation</class_name>
   <display_name>ChangeBuildingLocation</display_name>
