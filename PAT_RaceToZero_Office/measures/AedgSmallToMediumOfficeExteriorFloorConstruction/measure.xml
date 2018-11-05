@@ -1,0 +1,103 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>aedg_small_to_medium_office_exterior_floor_construction</name>
+  <uid>6698017c-52bd-4fc9-9240-f480301f66b8</uid>
+  <version_id>9af81cd9-0880-4a39-98ea-de6a2701ccc6</version_id>
+  <version_modified>20180705T145958Z</version_modified>
+  <xml_checksum>1E963D9C</xml_checksum>
+  <class_name>AedgSmallToMediumOfficeExteriorFloorConstruction</class_name>
+  <display_name>AedgSmallToMediumOfficeExteriorFloorConstruction</display_name>
+  <description>This measure will modify existing exterior floor (air exposed) insulation levels based on construction type and climate zone. The exterior floor construction type and climate zone should be set in the model prior to using this measure. For mass floors if an existing insulation layer can be found it will be increase or added at the inside of the floor. For steel and wood framed floors, insulation will be enhanced for an existing layer, or a new exterior layer will be added.</description>
+  <modeler_description>Relevant construction types:&#xd;&#xd;&#xd;&#xd;&#xd;
+- Mass&#xd;&#xd;&#xd;&#xd;&#xd;
+- Steel framed&#xd;&#xd;&#xd;&#xd;&#xd;
+- Wood framed</modeler_description>
+  <arguments>
+    <argument>
+      <name>material_cost_insulation_increase_ip</name>
+      <display_name>Increase Cost per Area of Construction Where Insulation was Improved ($/ft^2).</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Opaque</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>0210_SimpleSchool_d_123_dev.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>852D9F96</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>E5173D1E</checksum>
+    </file>
+    <file>
+      <filename>AedgSmallToMediumOfficeExteriorFloorConstruction_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>4031E369</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>9640B6CB</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>2D2B3A05</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>E2555BFA</checksum>
+    </file>
+    <file>
+      <filename>os_lib_constructions.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>B24DDC22</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>9CFC43FB</checksum>
+    </file>
+  </files>
+</measure>
