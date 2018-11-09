@@ -1,0 +1,325 @@
+
+OS:Version,
+  {5368e308-bd73-4e6a-a7b0-05c937e8cccf}, !- Handle
+  2.7.0;                                  !- Version Identifier
+
+OS:Site,
+  {01cc3407-f93e-42b7-b65e-ad01e9e979ff}, !- Handle
+  Site 1,                                 !- Name
+  ,                                       !- Latitude {deg}
+  ,                                       !- Longitude {deg}
+  ,                                       !- Time Zone {hr}
+  ,                                       !- Elevation {m}
+  ;                                       !- Terrain
+
+OS:YearDescription,
+  {00fee1a4-be4b-4ce9-9ba5-6491f1afab4f}; !- Handle
+
+OS:ClimateZones,
+  {53508584-c8ad-4b20-9d38-c959572c9bfa}, !- Handle
+  ,                                       !- Active Institution
+  ,                                       !- Active Year
+  ,                                       !- Climate Zone Institution Name 1
+  ,                                       !- Climate Zone Document Name 1
+  ,                                       !- Climate Zone Document Year 1
+  ,                                       !- Climate Zone Value 1
+  CEC,                                    !- Climate Zone Institution Name 2
+  California Climate Zone Descriptions,   !- Climate Zone Document Name 2
+  1995,                                   !- Climate Zone Document Year 2
+  ;                                       !- Climate Zone Value 2
+
+OS:Building,
+  {b68c8b67-9b1d-414b-91a6-f7fc9c252d43}, !- Handle
+  Building 1,                             !- Name
+  ,                                       !- Building Sector Type
+  ,                                       !- North Axis {deg}
+  ,                                       !- Nominal Floor to Floor Height {m}
+  ,                                       !- Space Type Name
+  ,                                       !- Default Construction Set Name
+  ;                                       !- Default Schedule Set Name
+
+OS:Facility,
+  {00f9143e-6730-4539-913f-1e8347456ddf}; !- Handle
+
+OS:SimulationControl,
+  {241286c0-3c4f-49b4-847b-660008bb12cc}; !- Handle
+
+OS:Sizing:Parameters,
+  {fdd4e1f6-0a0f-43e8-9f10-c7e611d1dd43}, !- Handle
+  1.25,                                   !- Heating Sizing Factor
+  1.15;                                   !- Cooling Sizing Factor
+
+OS:Timestep,
+  {af6551bd-3e45-40c9-aa11-b97e2415c329}, !- Handle
+  6;                                      !- Number of Timesteps per Hour
+
+OS:ShadowCalculation,
+  {a2e2a0ce-9cc8-4d76-a861-971f26facbca}, !- Handle
+  20,                                     !- Calculation Frequency
+  15000;                                  !- Maximum Figures in Shadow Overlap Calculations
+
+OS:HeatBalanceAlgorithm,
+  {55ed9902-9d7d-4712-9fdb-fd509fbe4b3b}, !- Handle
+  ConductionTransferFunction,             !- Algorithm
+  200;                                    !- Surface Temperature Upper Limit {C}
+
+OS:RunPeriod,
+  {13faa16a-fd08-4b71-9849-41475056d961}, !- Handle
+  Run Period 1,                           !- Name
+  1,                                      !- Begin Month
+  1,                                      !- Begin Day of Month
+  12,                                     !- End Month
+  31,                                     !- End Day of Month
+  ,                                       !- Use Weather File Holidays and Special Days
+  ,                                       !- Use Weather File Daylight Saving Period
+  ,                                       !- Apply Weekend Holiday Rule
+  ,                                       !- Use Weather File Rain Indicators
+  ,                                       !- Use Weather File Snow Indicators
+  ;                                       !- Number of Times Runperiod to be Repeated
+
+OS:LifeCycleCost:Parameters,
+  {bf733bc5-1d5c-44c1-82f8-3cf94fb943d3}, !- Handle
+  ,                                       !- Analysis Type
+  ,                                       !- Discounting Convention
+  ,                                       !- Inflation Approach
+  ,                                       !- Real Discount Rate
+  ,                                       !- Nominal Discount Rate
+  ,                                       !- Inflation
+  ,                                       !- Base Date Month
+  ,                                       !- Base Date Year
+  ,                                       !- Service Date Month
+  ,                                       !- Service Date Year
+  ;                                       !- Length of Study Period in Years
+
+OS:Schedule:Ruleset,
+  {ee7c398d-7c44-4adf-a626-d2f8148176a7}, ! Handle
+  Small Office ClgSetp,                   ! Name
+  {7d302f59-26a7-410d-8566-b60b3ac2c2d0}, ! Schedule Type Limits Name
+  {45026843-d373-4da4-a09a-5bd7c1c15e4b}, ! Default Day Schedule Name
+  {ad0e108e-a571-4561-a911-b49bc7fc1559}, ! Summer Design Day Schedule Name
+  {ee74600b-4ab9-4d27-9029-ac9799c7dad8}; ! Winter Design Day Schedule Name
+
+OS:ScheduleTypeLimits,
+  {7d302f59-26a7-410d-8566-b60b3ac2c2d0}, !- Handle
+  Temperature 4,                          !- Name
+  ,                                       !- Lower Limit Value
+  ,                                       !- Upper Limit Value
+  Continuous,                             !- Numeric Type
+  Temperature;                            !- Unit Type
+
+OS:Schedule:Day,
+  {45026843-d373-4da4-a09a-5bd7c1c15e4b}, ! Handle
+  Small Office ClgSetp Default Schedule,  ! Name
+  {7d302f59-26a7-410d-8566-b60b3ac2c2d0}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  6,                                      !- Hour 1
+  0,                                      !- Minute 1
+  26.7,                                   !- Value Until Time 1
+  22,                                     !- Hour 2
+  0,                                      !- Minute 2
+  24,                                     !- Value Until Time 2
+  24,                                     !- Hour 3
+  0,                                      !- Minute 3
+  26.7;                                   !- Value Until Time 3
+
+OS:Schedule:Day,
+  {ad0e108e-a571-4561-a911-b49bc7fc1559}, ! Handle
+  Small Office ClgSetp Summer Design Day, ! Name
+  {7d302f59-26a7-410d-8566-b60b3ac2c2d0}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  6,                                      ! Hour 1
+  0,                                      ! Minute 1
+  26.699999999999999,                     ! Value Until Time 1
+  22,                                     ! Hour 2
+  0,                                      ! Minute 2
+  24,                                     ! Value Until Time 2
+  24,                                     ! Hour 3
+  0,                                      ! Minute 3
+  26.699999999999999;                     ! Value Until Time 3
+
+OS:Schedule:Day,
+  {ee74600b-4ab9-4d27-9029-ac9799c7dad8}, ! Handle
+  Small Office ClgSetp Winter Design Day, ! Name
+  {7d302f59-26a7-410d-8566-b60b3ac2c2d0}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  24,                                     ! Hour 1
+  0,                                      ! Minute 1
+  26.699999999999999;                     ! Value Until Time 1
+
+OS:Schedule:Rule,
+  {8a299f17-2285-48bc-9e70-8560ef19ec3a}, ! Handle
+  Small Office ClgSetp Rule 1,            ! Name
+  {ee7c398d-7c44-4adf-a626-d2f8148176a7}, ! Schedule Ruleset Name
+  0,                                      ! Rule Order
+  {8aaac280-f19a-4bed-8307-3092edb94d33}, ! Day Schedule Name
+  Yes,                                    ! Apply Sunday
+  No,                                     ! Apply Monday
+  No,                                     ! Apply Tuesday
+  No,                                     ! Apply Wednesday
+  No,                                     ! Apply Thursday
+  No,                                     ! Apply Friday
+  No,                                     ! Apply Saturday
+  ,                                       ! Apply Holiday
+  DateRange,                              ! Date Specification Type
+  1,                                      ! Start Month
+  1,                                      ! Start Day
+  12,                                     ! End Month
+  31;                                     ! End Day
+
+OS:Schedule:Day,
+  {8aaac280-f19a-4bed-8307-3092edb94d33}, ! Handle
+  Small Office ClgSetp Rule 1 Day Schedule, ! Name
+  {7d302f59-26a7-410d-8566-b60b3ac2c2d0}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  24,                                     ! Hour 1
+  0,                                      ! Minute 1
+  26.699999999999999;                     ! Value Until Time 1
+
+OS:Schedule:Rule,
+  {9018ec6c-e3d7-4a2e-8a08-a633232bac97}, ! Handle
+  Small Office ClgSetp Rule 2,            ! Name
+  {ee7c398d-7c44-4adf-a626-d2f8148176a7}, ! Schedule Ruleset Name
+  1,                                      ! Rule Order
+  {38efe760-fe36-43db-a93f-023a470fb5fd}, ! Day Schedule Name
+  No,                                     ! Apply Sunday
+  No,                                     ! Apply Monday
+  No,                                     ! Apply Tuesday
+  No,                                     ! Apply Wednesday
+  No,                                     ! Apply Thursday
+  No,                                     ! Apply Friday
+  Yes,                                    ! Apply Saturday
+  ,                                       ! Apply Holiday
+  DateRange,                              ! Date Specification Type
+  1,                                      ! Start Month
+  1,                                      ! Start Day
+  12,                                     ! End Month
+  31;                                     ! End Day
+
+OS:Schedule:Day,
+  {38efe760-fe36-43db-a93f-023a470fb5fd}, ! Handle
+  Small Office ClgSetp Rule 2 Day Schedule, ! Name
+  {7d302f59-26a7-410d-8566-b60b3ac2c2d0}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  6,                                      ! Hour 1
+  0,                                      ! Minute 1
+  26.699999999999999,                     ! Value Until Time 1
+  18,                                     ! Hour 2
+  0,                                      ! Minute 2
+  24,                                     ! Value Until Time 2
+  24,                                     ! Hour 3
+  0,                                      ! Minute 3
+  26.699999999999999;                     ! Value Until Time 3
+
+OS:Schedule:Ruleset,
+  {90edaf60-8bee-40f7-bb22-9eb5f4f23b65}, ! Handle
+  Small Office HtgSetp,                   ! Name
+  {e025bd4e-1a4f-4d38-939a-d0243fab2158}, ! Schedule Type Limits Name
+  {6266ce66-4e19-4812-9873-ea16e33a91d4}, ! Default Day Schedule Name
+  {0f722c43-d394-4794-adff-a00ee7285cb4}, ! Summer Design Day Schedule Name
+  {c5f4abbc-4e06-4116-93e8-cf62d550bf88}; ! Winter Design Day Schedule Name
+
+OS:ScheduleTypeLimits,
+  {e025bd4e-1a4f-4d38-939a-d0243fab2158}, !- Handle
+  Temperature 11,                         !- Name
+  ,                                       !- Lower Limit Value
+  ,                                       !- Upper Limit Value
+  Continuous,                             !- Numeric Type
+  Temperature;                            !- Unit Type
+
+OS:Schedule:Day,
+  {6266ce66-4e19-4812-9873-ea16e33a91d4}, ! Handle
+  Small Office HtgSetp Default Schedule,  ! Name
+  {e025bd4e-1a4f-4d38-939a-d0243fab2158}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  6,                                      !- Hour 1
+  0,                                      !- Minute 1
+  15.6,                                   !- Value Until Time 1
+  22,                                     !- Hour 2
+  0,                                      !- Minute 2
+  21,                                     !- Value Until Time 2
+  24,                                     !- Hour 3
+  0,                                      !- Minute 3
+  15.6;                                   !- Value Until Time 3
+
+OS:Schedule:Day,
+  {0f722c43-d394-4794-adff-a00ee7285cb4}, ! Handle
+  Small Office HtgSetp Summer Design Day, ! Name
+  {e025bd4e-1a4f-4d38-939a-d0243fab2158}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  24,                                     ! Hour 1
+  0,                                      ! Minute 1
+  15.6;                                   ! Value Until Time 1
+
+OS:Schedule:Day,
+  {c5f4abbc-4e06-4116-93e8-cf62d550bf88}, ! Handle
+  Small Office HtgSetp Winter Design Day, ! Name
+  {e025bd4e-1a4f-4d38-939a-d0243fab2158}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  24,                                     ! Hour 1
+  0,                                      ! Minute 1
+  21;                                     ! Value Until Time 1
+
+OS:Schedule:Rule,
+  {35a87f2c-730a-4d10-82fb-71579d231c69}, ! Handle
+  Small Office HtgSetp Rule 1,            ! Name
+  {90edaf60-8bee-40f7-bb22-9eb5f4f23b65}, ! Schedule Ruleset Name
+  0,                                      ! Rule Order
+  {1e2d5778-6cb9-42bd-ab0c-35ef25afa410}, ! Day Schedule Name
+  Yes,                                    ! Apply Sunday
+  No,                                     ! Apply Monday
+  No,                                     ! Apply Tuesday
+  No,                                     ! Apply Wednesday
+  No,                                     ! Apply Thursday
+  No,                                     ! Apply Friday
+  No,                                     ! Apply Saturday
+  ,                                       ! Apply Holiday
+  DateRange,                              ! Date Specification Type
+  1,                                      ! Start Month
+  1,                                      ! Start Day
+  12,                                     ! End Month
+  31;                                     ! End Day
+
+OS:Schedule:Day,
+  {1e2d5778-6cb9-42bd-ab0c-35ef25afa410}, ! Handle
+  Small Office HtgSetp Rule 1 Day Schedule, ! Name
+  {e025bd4e-1a4f-4d38-939a-d0243fab2158}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  24,                                     ! Hour 1
+  0,                                      ! Minute 1
+  15.6;                                   ! Value Until Time 1
+
+OS:Schedule:Rule,
+  {c56a8353-a2fe-4595-a89f-a915f3aa7f81}, ! Handle
+  Small Office HtgSetp Rule 2,            ! Name
+  {90edaf60-8bee-40f7-bb22-9eb5f4f23b65}, ! Schedule Ruleset Name
+  1,                                      ! Rule Order
+  {994bc1b0-e981-40c2-a44d-1a9c164690a5}, ! Day Schedule Name
+  No,                                     ! Apply Sunday
+  No,                                     ! Apply Monday
+  No,                                     ! Apply Tuesday
+  No,                                     ! Apply Wednesday
+  No,                                     ! Apply Thursday
+  No,                                     ! Apply Friday
+  Yes,                                    ! Apply Saturday
+  ,                                       ! Apply Holiday
+  DateRange,                              ! Date Specification Type
+  1,                                      ! Start Month
+  1,                                      ! Start Day
+  12,                                     ! End Month
+  31;                                     ! End Day
+
+OS:Schedule:Day,
+  {994bc1b0-e981-40c2-a44d-1a9c164690a5}, ! Handle
+  Small Office HtgSetp Rule 2 Day Schedule, ! Name
+  {e025bd4e-1a4f-4d38-939a-d0243fab2158}, ! Schedule Type Limits Name
+  ,                                       ! Interpolate to Timestep
+  6,                                      ! Hour 1
+  0,                                      ! Minute 1
+  15.6,                                   ! Value Until Time 1
+  18,                                     ! Hour 2
+  0,                                      ! Minute 2
+  21,                                     ! Value Until Time 2
+  24,                                     ! Hour 3
+  0,                                      ! Minute 3
+  15.6;                                   ! Value Until Time 3
+
