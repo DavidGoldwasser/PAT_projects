@@ -1,0 +1,106 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>zedgk_12_interior_lighting</name>
+  <uid>d3283a8e-aee1-4b9d-9217-a7a988726fb4</uid>
+  <version_id>73e85ca1-84a0-4835-8228-c47879d65396</version_id>
+  <version_modified>20181005T172020Z</version_modified>
+  <xml_checksum>4B6FFB84</xml_checksum>
+  <class_name>ZEDGK12InteriorLighting</class_name>
+  <display_name>ZEDG K12 Interior Lighting</display_name>
+  <description>This measure removes all existing electric equipment objects from spaces recognized as primary or secondary school space types, with the exception of the kitchen which has a dedicated measure that should be used. New equipment will be added based on the Net Zero K12 recommendations.</description>
+  <modeler_description>Lights in un-recognized spaces will be left alone. This measure will attempt to retain schedules from the initial model. If the initial model contained multiple lights associated with multiple schedules, then one of those schedules will be picked for the new lights.</modeler_description>
+  <arguments>
+    <argument>
+      <name>material_cost_ip</name>
+      <display_name>Material and Installation Costs for Lights per Floor Area ($/ft^2).</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Electric Lighting.Lighting Equipment</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>SecondarySchoolCustomRef_01_0228.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>01E83E37</checksum>
+    </file>
+    <file>
+      <filename>measure_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>084BEC7F</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>810AEA77</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>530CD6C5</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>9CFC43FB</checksum>
+    </file>
+    <file>
+      <filename>os_lib_lighting_and_equipment.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>E63C7739</checksum>
+    </file>
+    <file>
+      <filename>os_lib_schedules.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>5F1CEF3A</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>9640B6CB</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>9171CC08</checksum>
+    </file>
+  </files>
+</measure>

@@ -1,0 +1,151 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>zedgk_12_kitchen</name>
+  <uid>6d9f212d-e859-4857-8ee7-1670de9c2bfb</uid>
+  <version_id>9aa7e2c4-4f93-4190-81a0-2be3c38b47f8</version_id>
+  <version_modified>20181005T172020Z</version_modified>
+  <xml_checksum>CE83CD3D</xml_checksum>
+  <class_name>ZEDGK12Kitchen</class_name>
+  <display_name>ZEDG K12 Kitchen</display_name>
+  <description>Electric equipment added per ZEDG recommendations for kitchens. Refrigeration is included in the plug loads.</description>
+  <modeler_description>Measure is only applied to kitchen space types.  All refrigeration systems are deleted (assumption is that refrigeration would only be needed for kitchen operations).  Gas and electric equipment are removed from kitchen spaces.  The largest kitchen space is selected as the representative space, to which ZEDG recommended kitchen loads are applied.  Loads are applied on a per student basis.  The user can input number of students manually.  Otherwise, the measure will calculate the number of students from the classroom floor area.  If there is no classroom floor area, the user wil be required to specify a number of students.</modeler_description>
+  <arguments>
+    <argument>
+      <name>costTotalKitchenSystem</name>
+      <display_name>Total Cost for Kitchen System ($).</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0</default_value>
+    </argument>
+    <argument>
+      <name>numberOfStudents</name>
+      <display_name>Total Number of Students.</display_name>
+      <type>Integer</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Whole Building.Space Types</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Analysis Spreadsheet</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>AEDG_HVAC_GenericTestModel_0225_a.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>3337CE47</checksum>
+    </file>
+    <file>
+      <filename>measure_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>0FF55635</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>9D51CDB6</checksum>
+    </file>
+    <file>
+      <filename>OsLib_HVAC.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>15E2F291</checksum>
+    </file>
+    <file>
+      <filename>os_lib_constructions.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>B24DDC22</checksum>
+    </file>
+    <file>
+      <filename>os_lib_geometry.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>3D17299B</checksum>
+    </file>
+    <file>
+      <filename>os_lib_helper_methods.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>9CFC43FB</checksum>
+    </file>
+    <file>
+      <filename>os_lib_lighting_and_equipment.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>E63C7739</checksum>
+    </file>
+    <file>
+      <filename>os_lib_schedules.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>5F1CEF3A</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.0.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>D1F71BB1</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>9640B6CB</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>3D0DDFA7</checksum>
+    </file>
+  </files>
+</measure>
