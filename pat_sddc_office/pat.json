@@ -1,7 +1,7 @@
 {
   "projectName": "pat_sddc_office",
   "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office",
-  "analysisName": "pat_sddc_office_demo",
+  "analysisName": "pat_sddc_office",
   "seed": "SDDC Office Example Plan seed.osm",
   "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
   "analysis_type": "Manual",
@@ -187,7 +187,11 @@
           "option_13": "option_13",
           "option_14": "option_14",
           "option_15": "option_15",
-          "option_16": "option_16"
+          "option_16": "option_16",
+          "variable": false,
+          "option_17": "option_17",
+          "option_18": "option_18",
+          "option_19": "option_19"
         },
         {
           "specialRowId": "optionName",
@@ -221,7 +225,11 @@
           "option_13": "Rochester",
           "option_14": "Great Falls",
           "option_15": "International Falls",
-          "option_16": "Fairbanks"
+          "option_16": "Fairbanks",
+          "variable": false,
+          "option_17": "Hanoi",
+          "option_18": "Abu Dhabi",
+          "option_19": "New Delhi"
         },
         {
           "specialRowId": "optionDescription",
@@ -255,7 +263,11 @@
           "option_13": "Option 13 Description: Change the building location",
           "option_14": "Option 14 Description: Change the building location",
           "option_15": "Option 15 Description: Change the building location",
-          "option_16": "Option 16 Description: Change the building location"
+          "option_16": "Option 16 Description: Change the building location",
+          "variable": false,
+          "option_17": "Option 17 Description: Change the building location",
+          "option_18": "Option 18 Description: Change the building location",
+          "option_19": "Option 19 Description: Change the building location"
         },
         {
           "name": "weather_file_name",
@@ -267,8 +279,8 @@
           "$$hashKey": "uiGrid-02KE",
           "variable": true,
           "units": "",
-          "minimum": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-          "maximum": "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
+          "minimum": "ARE_Abu.Dhabi.412170_IWEC.epw",
+          "maximum": "VNM_Hanoi.488200_IWEC.epw",
           "mode": null,
           "inputs": {
             "relationship": "Standard",
@@ -316,7 +328,10 @@
           "option_13": "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
           "option_14": "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw",
           "option_15": "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw",
-          "option_16": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw"
+          "option_16": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+          "option_17": "VNM_Hanoi.488200_IWEC.epw",
+          "option_18": "ARE_Abu.Dhabi.412170_IWEC.epw",
+          "option_19": "IND_New.Delhi.421820_ISHRAE.epw"
         },
         {
           "name": "climate_zone",
@@ -370,9 +385,9 @@
             "Lookup From Stat File"
           ],
           "$$hashKey": "uiGrid-02KG",
-          "variable": false,
+          "variable": true,
           "units": "",
-          "minimum": "Lookup From Stat File",
+          "minimum": "1A",
           "maximum": "Lookup From Stat File",
           "mode": null,
           "inputs": {
@@ -467,7 +482,10 @@
           "option_13": "Lookup From Stat File",
           "option_14": "Lookup From Stat File",
           "option_15": "Lookup From Stat File",
-          "option_16": "Lookup From Stat File"
+          "option_16": "Lookup From Stat File",
+          "option_17": "1A",
+          "option_18": "1A",
+          "option_19": "1A"
         },
         {
           "name": "set_year",
@@ -493,7 +511,10 @@
           "option_15": 0,
           "option_16": 0,
           "variable": false,
-          "$$hashKey": "uiGrid-12J4"
+          "$$hashKey": "uiGrid-12J4",
+          "option_17": 0,
+          "option_18": 0,
+          "option_19": 0
         },
         {
           "name": "use_upstream_args",
@@ -519,7 +540,10 @@
           "option_15": false,
           "option_16": false,
           "variable": false,
-          "$$hashKey": "uiGrid-12J6"
+          "$$hashKey": "uiGrid-12J6",
+          "option_17": false,
+          "option_18": false,
+          "option_19": false
         }
       ],
       "edit": "",
@@ -879,13 +903,82 @@
           ],
           "name": "Fairbanks",
           "description": "Option 16 Description: Change the building location"
+        },
+        {
+          "id": "option_17",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "VNM_Hanoi.488200_IWEC.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "1A"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": false
+            }
+          ],
+          "name": "Hanoi",
+          "description": "Option 17 Description: Change the building location"
+        },
+        {
+          "id": "option_18",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "ARE_Abu.Dhabi.412170_IWEC.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "1A"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": false
+            }
+          ],
+          "name": "Abu Dhabi",
+          "description": "Option 18 Description: Change the building location"
+        },
+        {
+          "id": "option_19",
+          "arguments": [
+            {
+              "name": "weather_file_name",
+              "value": "IND_New.Delhi.421820_ISHRAE.epw"
+            },
+            {
+              "name": "climate_zone",
+              "value": "1A"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": false
+            }
+          ],
+          "name": "New Delhi",
+          "description": "Option 19 Description: Change the building location"
         }
       ],
-      "numberOfOptions": 15,
+      "numberOfOptions": 18,
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.5810457029434541,
+      "instanceId": 0.7090654470267228,
       "showWarningText": false
     },
     {
@@ -1004,7 +1097,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.22158270498037203,
+      "instanceId": 0.25388721238280443,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false,
@@ -1267,7 +1360,7 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.6812024089761706,
+      "instanceId": 0.6430971537845305,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false,
@@ -1418,9 +1511,10 @@
           "description": "Option 1 Description: Replace all Space Infiltration objects with a new one that has a prescribed flow rate per exterior surface area.  There are many strategies that can be used to reduce infiltration.\r\r\r\r\r\r\n\r\r\r\r\r\r\nSeal Windows ? Seal all windows and doors with weather strip and fill any air gaps with insulation and caulking to prevent air infiltration.\r\r\r\r\r\r\n\r\r\r\r\r\r\nInstall Revolving Doors on the Inner Door Entrance - Replace the high traffic entrance doors with revolving doors.  This will reduce the air infiltration associated with the doors.  Notice that loading dock doors and handicapped accessible entrances cannot be replaced with revolving doors.\r\r\r\r\r\r\n\r\r\r\r\r\r\nInstall an Air Curtain for the Loading Dock Door - An air curtain should be installed in the entryway of loading dock doors.  This will greatly reduce outside air from infiltrating during periods of time when loading dock doors are open.\r\r\r\r\r\r\n\r\r\r\r\r\r\nIdentify and seal other sources of infiltration ? Look for other uncontrolled infiltration sources and work to air seal.  These could be former electrical chases, abandoned HVAC ducting, general envelope deterioration, or many other sources.\r\r\r\r\r\r\n  "
         }
       ],
-      "instanceId": 0.07425032516922458,
+      "instanceId": 0.7266965307298285,
       "numberOfOptions": 1,
-      "$$hashKey": "object:8203"
+      "$$hashKey": "object:8203",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeElectricEquipment",
@@ -1509,9 +1603,10 @@
           "description": "Option 1 Description: This measure removes all existing electric equipment from spaces recognized as office building space types. New electric objects will be added based on the 50% Small to Medium Office AEDG recommendations."
         }
       ],
-      "instanceId": 0.935851760025399,
+      "instanceId": 0.6427016779922052,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31559"
+      "$$hashKey": "object:31559",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeElectricEquipmentControls",
@@ -1600,9 +1695,10 @@
           "description": "Option 1 Description: This measure reduces the values associated with electric equipment schedules to simulate reductions due to equipment controls throughout the building. This includes occupancy based outlets or adapters, as well as network or timer based controls."
         }
       ],
-      "instanceId": 0.6657272855606193,
+      "instanceId": 0.4660418532802073,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31560"
+      "$$hashKey": "object:31560",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/add_electric_equipment_instance_to_space",
@@ -2105,7 +2201,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.7502157295970244,
+      "instanceId": 0.13136556933761412,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -2198,9 +2294,10 @@
           "description": "Option 1 Description: This measure removes all existing lighting objects from spaces recognized as primary or secondary school space types. New lighting will be added based on the 50% Small to Medium Office AEDG recommendations."
         }
       ],
-      "instanceId": 0.7015272841628892,
+      "instanceId": 0.2309746054836015,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31565"
+      "$$hashKey": "object:31565",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeInteriorLightingControls",
@@ -2289,9 +2386,10 @@
           "description": "Option 1 Description: This measure reduces the values associated with lighting schedules to simulate reductions due to vacancy sensors throughout the building."
         }
       ],
-      "instanceId": 0.7027934504131315,
+      "instanceId": 0.9477539895242442,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31566"
+      "$$hashKey": "object:31566",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
@@ -2444,7 +2542,7 @@
           "description": "Option 1 Description: This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Small to Medium Office AEDG recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor."
         }
       ],
-      "instanceId": 0.12582080170956544,
+      "instanceId": 0.8906167980023185,
       "numberOfOptions": 1,
       "$$hashKey": "object:164368",
       "outputMeasure": false
@@ -2536,9 +2634,10 @@
           "description": "Option 1 Description: This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.4288032086379452,
+      "instanceId": 0.5696831471971264,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31563"
+      "$$hashKey": "object:31563",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeExteriorDoorConstruction",
@@ -2627,9 +2726,10 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration that includes user arguments for primary entry points. "
         }
       ],
-      "instanceId": 0.32692607143278907,
+      "instanceId": 0.10334179720351555,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31561"
+      "$$hashKey": "object:31561",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeRoofConstruction",
@@ -2734,9 +2834,10 @@
           "description": "Option 1 Description: This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.5358406422843356,
+      "instanceId": 0.3396848787016269,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31567"
+      "$$hashKey": "object:31567",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeInteriorFinishes",
@@ -2847,9 +2948,10 @@
           "description": "Option 1 Description: This measure will adjust the visible reflectance of materials used on interior building surfaces. Different target values will be set for floors, ceilings, and furniture/interior partition surfaces."
         }
       ],
-      "instanceId": 0.22626232760527376,
+      "instanceId": 0.5727544210840843,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31564"
+      "$$hashKey": "object:31564",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeExteriorFloorConstruction",
@@ -2938,9 +3040,10 @@
           "description": "Option 1 Description: This measure will modify existing exterior floor (air exposed) insulation levels based on construction type and climate zone. The exterior floor construction type and climate zone should be set in the model prior to using this measure. For mass floors if an existing insulation layer can be found it will be increase or added at the inside of the floor. For steel and wood framed floors, insulation will be enhanced for an existing layer, or a new exterior layer will be added."
         }
       ],
-      "instanceId": 0.362738106389775,
+      "instanceId": 0.7183648899138244,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31562"
+      "$$hashKey": "object:31562",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/AedgSmallToMediumOfficeExteriorLighting",
@@ -2975,21 +3078,24 @@
           "specialRowId": "optionDelete",
           "$$hashKey": "uiGrid-1E90",
           "variable": false,
-          "option_1": "option_1"
+          "option_1": "option_1",
+          "option_2": "option_2"
         },
         {
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-1E92",
           "variable": false,
-          "option_1": "AEDG Office Ext Lighting"
+          "option_1": "Ext Lighting - Low",
+          "option_2": "Ext Lighting Baseline"
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
           "$$hashKey": "uiGrid-1E94",
           "variable": false,
-          "option_1": "Option 1 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
+          "option_1": "Option 1 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. ",
+          "option_2": "Option 2 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
         },
         {
           "name": "target",
@@ -3008,8 +3114,13 @@
             "AEDG SmMdOff - Target"
           ],
           "$$hashKey": "uiGrid-1E96",
-          "variable": false,
-          "option_1": "AEDG SmMdOff - Target"
+          "variable": true,
+          "option_1": "AEDG SmMdOff - Target",
+          "option_2": "AEDG SmMdOff - Baseline",
+          "units": "",
+          "minimum": "AEDG SmMdOff - Baseline",
+          "maximum": "AEDG SmMdOff - Target",
+          "mode": null
         },
         {
           "name": "lightingZone",
@@ -3031,7 +3142,8 @@
           ],
           "$$hashKey": "uiGrid-1E98",
           "variable": false,
-          "option_1": "2 - Residential, Mixed Use"
+          "option_1": "2 - Residential, Mixed Use",
+          "option_2": "2 - Residential, Mixed Use"
         },
         {
           "name": "facadeLandscapeLighting",
@@ -3043,7 +3155,8 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-1E9A",
           "variable": false,
-          "option_1": 5000
+          "option_1": 5000,
+          "option_2": 5000
         },
         {
           "name": "parkingDrivesLighting",
@@ -3055,7 +3168,8 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-1E9C",
           "variable": false,
-          "option_1": 30000
+          "option_1": 30000,
+          "option_2": 30000
         },
         {
           "name": "walkwayPlazaSpecialLighting",
@@ -3067,7 +3181,8 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-1E9E",
           "variable": false,
-          "option_1": 10000
+          "option_1": 10000,
+          "option_2": 10000
         },
         {
           "name": "costTotalExteriorLights",
@@ -3079,7 +3194,8 @@
           "default_value": 0,
           "$$hashKey": "uiGrid-1E9G",
           "variable": false,
-          "option_1": 0
+          "option_1": 0,
+          "option_2": 0
         }
       ],
       "edit": "",
@@ -3123,12 +3239,43 @@
               "value": 0
             }
           ],
-          "name": "AEDG Office Ext Lighting",
+          "name": "Ext Lighting - Low",
           "description": "Option 1 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
+        },
+        {
+          "id": "option_2",
+          "arguments": [
+            {
+              "name": "target",
+              "value": "AEDG SmMdOff - Baseline"
+            },
+            {
+              "name": "lightingZone",
+              "value": "2 - Residential, Mixed Use"
+            },
+            {
+              "name": "facadeLandscapeLighting",
+              "value": 5000
+            },
+            {
+              "name": "parkingDrivesLighting",
+              "value": 30000
+            },
+            {
+              "name": "walkwayPlazaSpecialLighting",
+              "value": 10000
+            },
+            {
+              "name": "costTotalExteriorLights",
+              "value": 0
+            }
+          ],
+          "name": "Ext Lighting Baseline",
+          "description": "Option 2 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
         }
       ],
-      "instanceId": 0.24370087469989143,
-      "numberOfOptions": 1,
+      "instanceId": 0.7918948421458896,
+      "numberOfOptions": 2,
       "$$hashKey": "object:164367",
       "outputMeasure": false
     },
@@ -3476,7 +3623,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.8838142158775595,
+      "instanceId": 0.9401620162792779,
       "showWarningText": false
     },
     {
@@ -3582,9 +3729,10 @@
           "description": "Option 1 Description: Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.17207249518166146,
+      "instanceId": 0.045093043977540326,
       "numberOfOptions": 1,
-      "$$hashKey": "object:31568"
+      "$$hashKey": "object:31568",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/SetThermostatSchedules",
@@ -4063,7 +4211,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.9271607253364234,
+      "instanceId": 0.3815580365170361,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
@@ -4139,7 +4287,7 @@
           "type": "String",
           "$$hashKey": "uiGrid-2MME",
           "variable": false,
-          "option_1": "NZE HVAC"
+          "option_1": "Fan Coil with DOAS"
         },
         {
           "specialRowId": "optionDescription",
@@ -4248,11 +4396,11 @@
               "value": "Automatic Partition"
             }
           ],
-          "name": "NZE HVAC",
+          "name": "Fan Coil with DOAS",
           "description": "Option 1 Description: This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads."
         }
       ],
-      "instanceId": 0.07750100974959873,
+      "instanceId": 0.41763579208453927,
       "numberOfOptions": 1,
       "$$hashKey": "object:285279",
       "outputMeasure": false
@@ -4652,8 +4800,8 @@
           "default_value": true,
           "$$hashKey": "uiGrid-0FC6",
           "variable": false,
-          "option_1": true,
-          "option_2": true
+          "option_1": false,
+          "option_2": false
         },
         {
           "name": "onsite_parking_fraction",
@@ -4691,8 +4839,8 @@
           "default_value": true,
           "$$hashKey": "uiGrid-0FCC",
           "variable": false,
-          "option_1": true,
-          "option_2": true
+          "option_1": false,
+          "option_2": false
         },
         {
           "name": "add_thermostat",
@@ -4818,7 +4966,7 @@
             },
             {
               "name": "add_exterior_lights",
-              "value": true
+              "value": false
             },
             {
               "name": "onsite_parking_fraction",
@@ -4830,7 +4978,7 @@
             },
             {
               "name": "add_swh",
-              "value": true
+              "value": false
             },
             {
               "name": "add_thermostat",
@@ -4901,7 +5049,7 @@
             },
             {
               "name": "add_exterior_lights",
-              "value": true
+              "value": false
             },
             {
               "name": "onsite_parking_fraction",
@@ -4913,7 +5061,7 @@
             },
             {
               "name": "add_swh",
-              "value": true
+              "value": false
             },
             {
               "name": "add_thermostat",
@@ -4940,9 +5088,10 @@
           "description": "Option 2 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.9343532164879578,
+      "instanceId": 0.5706650505722157,
       "numberOfOptions": 2,
-      "$$hashKey": "object:40245"
+      "$$hashKey": "object:40245",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/create_baseline_building",
@@ -4996,21 +5145,21 @@
           "specialRowId": "optionName",
           "type": "String",
           "$$hashKey": "uiGrid-04ST",
-          "option_1": "Baseline 1A 2007",
-          "option_2": "Baseline 2A 2007",
-          "option_3": "Baseline 2B 2007",
-          "option_4": "Baseline 3A 2007",
-          "option_5": "Baseline 3B 2007",
-          "option_6": "Baseline 3C 2007",
-          "option_7": "Baseline 4A 2007",
-          "option_8": "Baseline 4B 2007",
-          "option_9": "Baseline 4C 2007",
-          "option_10": "Baseline 5A 2007",
-          "option_11": "Baseline 5B 2007",
-          "option_12": "Baseline 6A 2007",
-          "option_13": "Baseline 6B 2007",
-          "option_14": "Baseline 7A 2007",
-          "option_15": "Baseline 8A 2007"
+          "option_1": "Baseline 1A 2013",
+          "option_2": "Baseline 2A 2013",
+          "option_3": "Baseline 2B 2013",
+          "option_4": "Baseline 3A 2013",
+          "option_5": "Baseline 3B 2013",
+          "option_6": "Baseline 3C 2013",
+          "option_7": "Baseline 4A 2013",
+          "option_8": "Baseline 4B 2013",
+          "option_9": "Baseline 4C 2013",
+          "option_10": "Baseline 5A 2013",
+          "option_11": "Baseline 5B 2013",
+          "option_12": "Baseline 6A 2013",
+          "option_13": "Baseline 6B 2013",
+          "option_14": "Baseline 7A 2013",
+          "option_15": "Baseline 8A 2013"
         },
         {
           "specialRowId": "optionDescription",
@@ -5290,7 +5439,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 1A 2007",
+          "name": "Baseline 1A 2013",
           "description": "Option 1 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5317,7 +5466,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 2A 2007",
+          "name": "Baseline 2A 2013",
           "description": "Option 2 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5344,7 +5493,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 2B 2007",
+          "name": "Baseline 2B 2013",
           "description": "Option 3 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5371,7 +5520,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 3A 2007",
+          "name": "Baseline 3A 2013",
           "description": "Option 4 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5398,7 +5547,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 3B 2007",
+          "name": "Baseline 3B 2013",
           "description": "Option 5 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5425,7 +5574,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 3C 2007",
+          "name": "Baseline 3C 2013",
           "description": "Option 6 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5452,7 +5601,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 4A 2007",
+          "name": "Baseline 4A 2013",
           "description": "Option 7 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5479,7 +5628,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 4B 2007",
+          "name": "Baseline 4B 2013",
           "description": "Option 8 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5506,7 +5655,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 4C 2007",
+          "name": "Baseline 4C 2013",
           "description": "Option 9 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5533,7 +5682,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 5A 2007",
+          "name": "Baseline 5A 2013",
           "description": "Option 10 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5560,7 +5709,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 5B 2007",
+          "name": "Baseline 5B 2013",
           "description": "Option 11 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5587,7 +5736,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 6A 2007",
+          "name": "Baseline 6A 2013",
           "description": "Option 12 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5614,7 +5763,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 6B 2007",
+          "name": "Baseline 6B 2013",
           "description": "Option 13 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5641,7 +5790,7 @@
               "value": false
             }
           ],
-          "name": "Baseline 7A 2007",
+          "name": "Baseline 7A 2013",
           "description": "Option 14 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         },
         {
@@ -5668,11 +5817,11 @@
               "value": false
             }
           ],
-          "name": "Baseline 8A 2007",
+          "name": "Baseline 8A 2013",
           "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         }
       ],
-      "instanceId": 0.46048013546401156,
+      "instanceId": 0.33143540715688724,
       "numberOfOptions": 15,
       "$$hashKey": "object:13368",
       "outputMeasure": false
@@ -5747,9 +5896,10 @@
           "description": "Option 1 Description: Visualize an OpenStudio model in a web based viewer"
         }
       ],
-      "instanceId": 0.9392766322363426,
+      "instanceId": 0.3952430065835091,
       "numberOfOptions": 1,
-      "$$hashKey": "object:35546"
+      "$$hashKey": "object:35546",
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/tariff_selection_flat",
@@ -6142,7 +6292,7 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.4957690231014946,
+      "instanceId": 0.8658370177084829,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
@@ -7474,7 +7624,7 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.7901158072019119,
+      "instanceId": 0.07741387510309194,
       "showWarningText": false
     },
     {
@@ -7584,7 +7734,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.1671623741968371,
+      "instanceId": 0.41726132849926345,
       "numberOfOptions": 1,
       "$$hashKey": "object:57845",
       "outputMeasure": false
@@ -7611,73 +7761,7 @@
   },
   "designAlternatives": [
     {
-      "name": "Baseline",
-      "seedModel": "SDDC Office Example Plan seed.osm",
-      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-      "change_building_location": "Aurora",
-      "add_rooftop_pv": "None",
-      "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
-      "openstudio_results": "Results",
-      "set_thermostat_schedules": "Set Thermostats",
-      "add_electric_equipment_instance_to_space": "Elevators",
-      "tariff_selection_flat": "Tariff Flat",
-      "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
-      "surface_matching_diagnostic": "Surface Matching Diagnostic",
-      "create_baseline_building": "Baseline 5B 2007",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "aedg_small_to_medium_office_exterior_lighting": "AEDG Office Ext Lighting",
-      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "None",
-      "nze_hvac": "NZE HVAC",
-      "set_space_infiltration_by_exterior_surface_area": "Infiltration",
-      "aedg_small_to_medium_office_electric_equipment": "Elec Equip",
-      "aedg_small_to_medium_office_electric_equipment_controls": "Equip Ctrl",
-      "aedg_small_to_medium_office_exterior_door_construction": "Ext Door",
-      "aedg_small_to_medium_office_exterior_floor_construction": "Ext Floor",
-      "aedg_small_to_medium_office_exterior_wall_construction": "Ext Wall",
-      "aedg_small_to_medium_office_interior_finishes": "Int Finishes",
-      "aedg_small_to_medium_office_interior_lighting": "Int Lighting",
-      "aedg_small_to_medium_office_interior_lighting_controls": "Int Lighting Ctrl",
-      "aedg_small_to_medium_office_roof_construction": "Roof",
-      "aedg_office_swh": "SWH",
-      "view_model": "View Model",
-      "create_typical_building_from_model": "None",
-      "$$hashKey": "uiGrid-0N9L"
-    },
-    {
-      "name": "Baseline Duplicate 1",
-      "seedModel": "SDDC Office Example Plan seed.osm",
-      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-      "change_building_location": "Aurora",
-      "add_rooftop_pv": "None",
-      "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
-      "openstudio_results": "Results",
-      "set_thermostat_schedules": "Set Thermostats",
-      "add_electric_equipment_instance_to_space": "Elevators",
-      "tariff_selection_flat": "Tariff Flat",
-      "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
-      "surface_matching_diagnostic": "Surface Matching Diagnostic",
-      "create_baseline_building": "Baseline 5B 2007",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "aedg_small_to_medium_office_exterior_lighting": "AEDG Office Ext Lighting",
-      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration and Daylighting Controls",
-      "nze_hvac": "NZE HVAC",
-      "set_space_infiltration_by_exterior_surface_area": "Infiltration",
-      "aedg_small_to_medium_office_electric_equipment": "Elec Equip",
-      "aedg_small_to_medium_office_electric_equipment_controls": "Equip Ctrl",
-      "aedg_small_to_medium_office_exterior_door_construction": "Ext Door",
-      "aedg_small_to_medium_office_exterior_floor_construction": "Ext Floor",
-      "aedg_small_to_medium_office_exterior_wall_construction": "Ext Wall",
-      "aedg_small_to_medium_office_interior_finishes": "Int Finishes",
-      "aedg_small_to_medium_office_interior_lighting": "Int Lighting",
-      "aedg_small_to_medium_office_interior_lighting_controls": "Int Lighting Ctrl",
-      "aedg_small_to_medium_office_roof_construction": "Roof",
-      "aedg_office_swh": "SWH",
-      "view_model": "View Model",
-      "create_typical_building_from_model": "Typical 2013",
-      "$$hashKey": "uiGrid-0VSV"
-    },
-    {
-      "name": "Typical",
+      "name": "Typical 2004",
       "seedModel": "SDDC Office Example Plan seed.osm",
       "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
       "change_building_location": "Aurora",
@@ -7689,15 +7773,15 @@
       "add_electric_equipment_instance_to_space": "None",
       "aedg_small_to_medium_office_interior_lighting": "None",
       "aedg_small_to_medium_office_interior_lighting_controls": "None",
-      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration and Daylighting Controls",
+      "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "None",
       "aedg_small_to_medium_office_exterior_wall_construction": "None",
       "aedg_small_to_medium_office_exterior_door_construction": "None",
       "aedg_small_to_medium_office_roof_construction": "None",
       "aedg_small_to_medium_office_interior_finishes": "None",
       "aedg_small_to_medium_office_exterior_floor_construction": "None",
-      "aedg_small_to_medium_office_exterior_lighting": "None",
+      "aedg_small_to_medium_office_exterior_lighting": "Ext Lighting Baseline",
       "add_rooftop_pv": "None",
-      "aedg_office_swh": "None",
+      "aedg_office_swh": "SWH",
       "set_thermostat_schedules": "Set Thermostats",
       "nze_hvac": "None",
       "create_baseline_building": "None",
@@ -7705,8 +7789,8 @@
       "openstudio_results": "Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "view_model": "View Model",
-      "create_typical_building_from_model": "Typical 2013",
-      "$$hashKey": "uiGrid-151G"
+      "create_typical_building_from_model": "Typical 2004",
+      "$$hashKey": "uiGrid-0JRR"
     },
     {
       "name": "Low Energy",
@@ -7723,9 +7807,9 @@
       "surface_matching_diagnostic": "Surface Matching Diagnostic",
       "create_baseline_building": "None",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "aedg_small_to_medium_office_exterior_lighting": "AEDG Office Ext Lighting",
+      "aedg_small_to_medium_office_exterior_lighting": "Ext Lighting - Low",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration and Daylighting Controls",
-      "nze_hvac": "NZE HVAC",
+      "nze_hvac": "Fan Coil with DOAS",
       "set_space_infiltration_by_exterior_surface_area": "Infiltration",
       "aedg_small_to_medium_office_electric_equipment": "Elec Equip",
       "aedg_small_to_medium_office_electric_equipment_controls": "Equip Ctrl",
@@ -7739,7 +7823,7 @@
       "aedg_office_swh": "SWH",
       "view_model": "View Model",
       "create_typical_building_from_model": "None",
-      "$$hashKey": "uiGrid-151E"
+      "$$hashKey": "uiGrid-1425"
     },
     {
       "name": "Low Energy with PV",
@@ -7756,9 +7840,9 @@
       "surface_matching_diagnostic": "Surface Matching Diagnostic",
       "create_baseline_building": "None",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
-      "aedg_small_to_medium_office_exterior_lighting": "AEDG Office Ext Lighting",
+      "aedg_small_to_medium_office_exterior_lighting": "Ext Lighting - Low",
       "aedg_small_to_medium_office_fenestration_and_daylighting_controls": "Fenestration and Daylighting Controls",
-      "nze_hvac": "NZE HVAC",
+      "nze_hvac": "Fan Coil with DOAS",
       "set_space_infiltration_by_exterior_surface_area": "Infiltration",
       "aedg_small_to_medium_office_electric_equipment": "Elec Equip",
       "aedg_small_to_medium_office_electric_equipment_controls": "Equip Ctrl",
@@ -7772,28 +7856,14 @@
       "aedg_office_swh": "SWH",
       "view_model": "View Model",
       "create_typical_building_from_model": "None",
-      "$$hashKey": "uiGrid-151C"
+      "$$hashKey": "uiGrid-1423"
     }
   ],
   "analysisID": null,
   "datapoints": [
     {
-      "name": "Baseline",
-      "id": "Baseline",
-      "run": false,
-      "modified": false,
-      "selected": false
-    },
-    {
-      "name": "Baseline Duplicate 1",
-      "id": "Baseline Duplicate 1",
-      "run": false,
-      "modified": false,
-      "selected": false
-    },
-    {
-      "name": "Typical",
-      "id": "Typical",
+      "name": "Typical 2004",
+      "id": "Typical 2004",
       "run": false,
       "modified": false,
       "selected": false
