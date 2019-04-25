@@ -1,0 +1,447 @@
+{
+  "seed_file": "ZEDG K12 Primary TSD seed.osm",
+  "weather_file": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+  "file_format_version": "0.0.1",
+  "osa_id": "6c1ed557-8d2d-40dd-b867-4ce9d89e0345",
+  "osd_id": "7a8d006d-ead4-4023-ba46-a2e66d737039",
+  "created_at": "2019-04-25 08:55:56 -0600",
+  "measure_paths": [
+    "../../measures"
+  ],
+  "file_paths": [
+    "../../weather",
+    "../../seeds",
+    "../../seed"
+  ],
+  "run_directory": "./run",
+  "steps": [
+    {
+      "measure_dir_name": "ChangeBuildingLocation",
+      "arguments": {
+        "set_year": 0,
+        "use_upstream_args": true,
+        "weather_file_name": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+        "climate_zone": "Lookup From Stat File"
+      },
+      "name": "Aurora",
+      "description": "Option 11 Description: Change the building location",
+      "measure_id": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
+      "version_id": "aa6af1cd-6cce-4352-bddd-e4cf47d79b35",
+      "taxonomy": "Whole Building.Space Types",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "create_and_assign_thermal_zones_for_unassigned_spaces",
+      "arguments": {
+      },
+      "name": "Create Zones",
+      "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space.",
+      "measure_id": "ddaa752e-5d40-49b2-88de-62e71697e614",
+      "version_id": "627391f5-aca3-422d-9b65-432f92925668",
+      "taxonomy": "Envelope.Form",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "surface_matching_diagnostic",
+      "arguments": {
+        "remove_duplicate_vertices": true,
+        "remove_collinear_vertices": true,
+        "remove_duplicate_surfaces": true,
+        "intersect_surfaces": true,
+        "match_surfaces": true
+      },
+      "name": "Surface Matching Diagnostic",
+      "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them.",
+      "measure_id": "ffb0d487-eb1c-4ca4-b008-4fbb7bf511b2",
+      "version_id": "6f946959-67ee-4a30-9096-8c73bf2dd607",
+      "taxonomy": "Envelope.Form",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_electric_equipment",
+      "arguments": {
+        "material_cost_ip": 0,
+        "__SKIP__": false
+      },
+      "name": "ZEDG Elec Equip",
+      "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen.",
+      "measure_id": "d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268",
+      "version_id": "b6eb83e3-0b10-480d-9283-a6609e7f91dd",
+      "taxonomy": "Equipment.Electric Equipment",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "AedgK12ElectricEquipmentControls",
+      "arguments": {
+        "costTotal": 0,
+        "__SKIP__": false
+      },
+      "name": "AEDG Elec Equip Controls",
+      "description": "Option 1 Description",
+      "measure_id": "285bc263-7429-4049-a0ce-f60fabf46eec",
+      "version_id": "8c099513-e0b8-428b-9e78-10fa4ff951b7",
+      "taxonomy": "Equipment.Equipment Controls",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_interior_lighting",
+      "arguments": {
+        "material_cost_ip": 0,
+        "__SKIP__": false
+      },
+      "name": "ZEDG Int Lighting",
+      "description": "Option 1 Description",
+      "measure_id": "d3283a8e-aee1-4b9d-9217-a7a988726fb4",
+      "version_id": "73e85ca1-84a0-4835-8228-c47879d65396",
+      "taxonomy": "Electric Lighting.Lighting Equipment",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "AedgK12InteriorLightingControls",
+      "arguments": {
+        "costTotal": 0,
+        "__SKIP__": false
+      },
+      "name": "AEDG Int Lighting Controls",
+      "description": "Option 1 Description",
+      "measure_id": "9f395ee4-5f82-4ca6-8a50-cb854893827e",
+      "version_id": "00713f83-bb3a-4070-b6bf-33354f76f616",
+      "taxonomy": "Electric Lighting.Electric Lighting Controls",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_exterior_wall_construction",
+      "arguments": {
+        "material_cost_insulation_increase_ip": 0,
+        "__SKIP__": false
+      },
+      "name": "ZEDG Ext Wall",
+      "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. ",
+      "measure_id": "39d1c328-0bbb-40ee-a18c-ba977b462a11",
+      "version_id": "c806c74a-a5b4-4ab9-b7ee-85943f1c88ad",
+      "taxonomy": "Envelope.Opaque",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_roof_construction",
+      "arguments": {
+        "material_cost_insulation_increase_ip": 0,
+        "material_cost_sri_increase_ip": 0,
+        "alter_sri": false,
+        "__SKIP__": false
+      },
+      "name": "ZEDG Roof",
+      "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces.",
+      "measure_id": "d322d264-5855-4b20-bd3e-3c5e5032bc05",
+      "version_id": "71e3aafa-6959-471e-81b1-754043481d74",
+      "taxonomy": "Envelope.Opaque",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "AedgK12InteriorFinishes",
+      "arguments": {
+        "object": "*All Interior Partition Surfaces*",
+        "__SKIP__": false
+      },
+      "name": "AEDG Int Finishes",
+      "description": "Option 1 Description",
+      "measure_id": "9165a1f8-9cd1-4492-b20b-5257c05fc5d9",
+      "version_id": "4b6ad275-804a-4c26-95ea-9fa64a58c1e7",
+      "taxonomy": "Envelope.Opaque",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_fenestration_and_daylighting_controls",
+      "arguments": {
+        "cost_daylight_glazing": 0,
+        "cost_view_glazing": 0,
+        "cost_shading_surface": 0,
+        "cost_light_shelf": 0,
+        "__SKIP__": false
+      },
+      "name": "ZEDG Fenistration with Daylighting",
+      "description": "Option 2 Description: This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Net Zero K12 recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor.",
+      "measure_id": "eb3bfd3d-64b6-4a9f-857d-3dd8a7becec5",
+      "version_id": "8c076613-5e5d-4c39-b1ed-669418e2fd33",
+      "taxonomy": "Envelope.Fenestration",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_exterior_door_construction",
+      "arguments": {
+        "material_cost_insulation_increase_ip": 0,
+        "__SKIP__": false
+      },
+      "name": "ZEDG Exterior Door",
+      "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. ",
+      "measure_id": "11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c",
+      "version_id": "1df2399d-92e1-4749-9e6c-f519c19bc29f",
+      "taxonomy": "Envelope.Opaque",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_envelope_infiltration",
+      "arguments": {
+        "costTotalEnvelopeInfiltration": 0,
+        "__SKIP__": false
+      },
+      "name": "ZEDG Envelope Infiltration",
+      "description": "Option 1 Description",
+      "measure_id": "e6232b68-8c72-4986-8693-84c0fe1d00ec",
+      "version_id": "6d7d0933-7354-4234-857b-6bff931d6b07",
+      "taxonomy": "Envelope.Infiltration",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_swh",
+      "arguments": {
+        "costTotalSwhSystem": 0,
+        "numberOfStudents": 650
+      },
+      "name": "ZEDG SWH Primary",
+      "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG.",
+      "measure_id": "d765082f-34fb-4b03-bd4e-e8e4a418ba2a",
+      "version_id": "bffbd58f-c771-4309-b9b5-c2a11af69007",
+      "taxonomy": "Service Water Heating.Water Heating",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_kitchen",
+      "arguments": {
+        "costTotalKitchenSystem": 0,
+        "numberOfStudents": 650
+      },
+      "name": "ZEDG Kitchen Primary",
+      "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG.",
+      "measure_id": "6d9f212d-e859-4857-8ee7-1670de9c2bfb",
+      "version_id": "9aa7e2c4-4f93-4190-81a0-2be3c38b47f8",
+      "taxonomy": "Whole Building.Space Types",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "AedgK12ExteriorLighting",
+      "arguments": {
+        "lightingZone": "2 - Residential, Mixed Use",
+        "facadeLandscapeLighting": 10000,
+        "parkingDrivesLighting": 20000,
+        "walkwayPlazaSpecialLighting": 3250,
+        "costTotalExteriorLights": 0,
+        "target": "AEDG K-12 - Target"
+      },
+      "name": "AEDG Ext Lighting Primary",
+      "description": "Option 1 Description",
+      "measure_id": "04fd62eb-3e9f-4bfc-98d8-7827b47e034a",
+      "version_id": "d0ce689c-f2cb-48f0-9962-1b1cf0d2e4d7",
+      "taxonomy": "Electric Lighting.Lighting Equipment",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "add_electric_equipment_instance_to_space",
+      "arguments": {
+        "space": "Mech 1",
+        "elec_equip_def": "14610W elevator with motor efficency of 0.91",
+        "schedule": "secondary Elevator_Sch",
+        "multiplier": 2
+      },
+      "name": "Elevators",
+      "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier",
+      "measure_id": "d226e8df-700b-4c67-8816-ea0c53e7f6ab",
+      "version_id": "dabc8d74-d2a0-48aa-ad66-ec3dfcfc2f46",
+      "taxonomy": "Equipment.Electric Equipment",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "add_electric_equipment_instance_to_space",
+      "arguments": {
+        "space": "Art_Class 1",
+        "elec_equip_def": "Art_Class_LowEnergy_Kiln_Equip Definition",
+        "schedule": "Art Kiln Firing Schedule Primary 10x year",
+        "multiplier": 1
+      },
+      "name": "Electric Kiln",
+      "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier",
+      "measure_id": "d226e8df-700b-4c67-8816-ea0c53e7f6ab",
+      "version_id": "dabc8d74-d2a0-48aa-ad66-ec3dfcfc2f46",
+      "taxonomy": "Equipment.Electric Equipment",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "add_rooftop_pv",
+      "arguments": {
+        "cell_efficiency": 0.18,
+        "inverter_efficiency": 0.98,
+        "__SKIP__": false,
+        "fraction_of_surface": 0.75
+      },
+      "name": "Rooftop PV 75%",
+      "description": "Option 2 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV",
+      "measure_id": "34550614-0c87-44db-9252-0ca0915b1e64",
+      "version_id": "63be24bc-c80d-4ebd-87a5-7ba559aa5d81",
+      "taxonomy": "Onsite Power Generation.Photovoltaic",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "SetThermostatSchedules",
+      "arguments": {
+        "zones": "*All Thermal Zones*",
+        "cooling_sch": "primary ClgSetP_Sch",
+        "heating_sch": "primary HtgSetP_Sch",
+        "material_cost": 0
+      },
+      "name": "Thermostat Typical",
+      "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one",
+      "measure_id": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
+      "version_id": "c6c768cd-4cbf-4a7a-93cd-23bcc0656182",
+      "taxonomy": "HVAC.HVAC Controls",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "SetThermostatSchedules",
+      "arguments": {
+        "zones": "Thermal Zone: Gym",
+        "cooling_sch": "primary Gym_ClgSetP_Sch",
+        "heating_sch": "primary Gym_HtgSetP_Sch",
+        "material_cost": 0
+      },
+      "name": "Thermostat Gym",
+      "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one",
+      "measure_id": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
+      "version_id": "c6c768cd-4cbf-4a7a-93cd-23bcc0656182",
+      "taxonomy": "HVAC.HVAC Controls",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_hvac_vrf_with_doas",
+      "arguments": {
+        "costTotalHVACSystem": 0,
+        "remake_schedules": true,
+        "__SKIP__": false
+      },
+      "name": "VRF",
+      "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit.",
+      "measure_id": "633b8efc-7bcb-4aa0-8821-d0ee08f960db",
+      "version_id": "f46d05e8-104f-4249-9ebf-9af11f910b2a",
+      "taxonomy": "HVAC.Whole System",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_hvac_gshp_doas",
+      "arguments": {
+        "costTotalHVACSystem": 0,
+        "remake_schedules": true,
+        "__SKIP__": true
+      },
+      "name": "zedgk_12_hvac",
+      "description": "Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP.",
+      "measure_id": "59793426-1d07-41d2-9478-d7abf1410764",
+      "version_id": "8e9b6c69-9af5-4d11-b3b8-c200166ef183",
+      "taxonomy": "HVAC.Whole System",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
+      "arguments": {
+        "costTotalHVACSystem": 0,
+        "remake_schedules": true,
+        "__SKIP__": true
+      },
+      "name": "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller",
+      "description": "Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  ",
+      "measure_id": "33ed4338-5e86-415f-8df0-87e32e413711",
+      "version_id": "6b17fd40-1b4f-43df-91c3-fc00d0ef7b50",
+      "taxonomy": "HVAC.Whole System",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "create_baseline_building",
+      "arguments": {
+        "standard": "90.1-2007 BETA",
+        "building_type": "PrimarySchool",
+        "custom": "*None*",
+        "debug": false,
+        "__SKIP__": true,
+        "climate_zone": "ASHRAE 169-2006-2A"
+      },
+      "name": "create_baseline_building",
+      "description": "Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline.",
+      "measure_id": "4de56e21-b6cd-45d9-8466-862507d228b2",
+      "version_id": "0e1b8429-e27a-42c5-aaae-da4b21026101",
+      "taxonomy": "Whole Building.Space Types",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "zedgk_12_insert_ground_domain_e_kusdua",
+      "arguments": {
+        "min_warmup_days": 120
+      },
+      "name": "Kusuda",
+      "description": "Option 1 Description",
+      "measure_id": "aa8123f0-4d04-4141-8a00-8a2bccf30315",
+      "version_id": "b81fef0d-dc3f-4ec8-980c-b65f7815824d",
+      "taxonomy": "Envelope.Form",
+      "measure_type": "EnergyPlusMeasure"
+    },
+    {
+      "measure_dir_name": "tariff_selection_flat",
+      "arguments": {
+        "demand_window_length": "QuarterHour",
+        "elec_rate": 0.12,
+        "gas_rate": 0.5,
+        "water_rate": 0.005,
+        "disthtg_rate": 0.2,
+        "distclg_rate": 0.2
+      },
+      "name": "Tariff Flat",
+      "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling.",
+      "measure_id": "539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55",
+      "version_id": "0be9a66a-a087-4225-9570-205d0c1d30a8",
+      "taxonomy": "Economics.Life Cycle Cost Analysis",
+      "measure_type": "EnergyPlusMeasure"
+    },
+    {
+      "measure_dir_name": "openstudio_results",
+      "arguments": {
+        "building_summary_section": true,
+        "annual_overview_section": true,
+        "monthly_overview_section": true,
+        "utility_bills_rates_section": true,
+        "envelope_section_section": true,
+        "space_type_breakdown_section": true,
+        "space_type_details_section": true,
+        "interior_lighting_section": true,
+        "plug_loads_section": true,
+        "exterior_light_section": true,
+        "water_use_section": true,
+        "hvac_load_profile": true,
+        "zone_condition_section": true,
+        "zone_summary_section": true,
+        "zone_equipment_detail_section": true,
+        "air_loops_detail_section": true,
+        "plant_loops_detail_section": true,
+        "outdoor_air_section": true,
+        "cost_summary_section": true,
+        "source_energy_section": true,
+        "schedules_overview_section": true
+      },
+      "name": "Results",
+      "description": "Option 1 Description",
+      "measure_id": "a25386cd-60e4-46bc-8b11-c755f379d916",
+      "version_id": "11202fa8-8161-4fad-b5d1-453db21abdf8",
+      "taxonomy": "Reporting.QAQC",
+      "measure_type": "ReportingMeasure"
+    },
+    {
+      "measure_dir_name": "envelope_and_internal_load_breakdown",
+      "arguments": {
+      },
+      "name": "Envelope and Internal Load Breakdown",
+      "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads.",
+      "measure_id": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
+      "version_id": "f63919e1-a65a-4f4e-8b7d-8c14125f6f04",
+      "taxonomy": "Reporting.QAQC",
+      "measure_type": "ReportingMeasure"
+    }
+  ],
+  "name": "HVAC - VRF",
+  "description": "Autogenerated 0"
+}
