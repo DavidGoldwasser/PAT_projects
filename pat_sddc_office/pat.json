@@ -978,7 +978,7 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7090654470267228,
+      "instanceId": 0.9538689567284993,
       "showWarningText": false
     },
     {
@@ -1097,7 +1097,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.25388721238280443,
+      "instanceId": 0.1330999504278101,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false,
@@ -1360,7 +1360,7 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.6430971537845305,
+      "instanceId": 0.9304335999958313,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false,
@@ -1511,7 +1511,7 @@
           "description": "Option 1 Description: Replace all Space Infiltration objects with a new one that has a prescribed flow rate per exterior surface area.  There are many strategies that can be used to reduce infiltration.\r\r\r\r\r\r\n\r\r\r\r\r\r\nSeal Windows ? Seal all windows and doors with weather strip and fill any air gaps with insulation and caulking to prevent air infiltration.\r\r\r\r\r\r\n\r\r\r\r\r\r\nInstall Revolving Doors on the Inner Door Entrance - Replace the high traffic entrance doors with revolving doors.  This will reduce the air infiltration associated with the doors.  Notice that loading dock doors and handicapped accessible entrances cannot be replaced with revolving doors.\r\r\r\r\r\r\n\r\r\r\r\r\r\nInstall an Air Curtain for the Loading Dock Door - An air curtain should be installed in the entryway of loading dock doors.  This will greatly reduce outside air from infiltrating during periods of time when loading dock doors are open.\r\r\r\r\r\r\n\r\r\r\r\r\r\nIdentify and seal other sources of infiltration ? Look for other uncontrolled infiltration sources and work to air seal.  These could be former electrical chases, abandoned HVAC ducting, general envelope deterioration, or many other sources.\r\r\r\r\r\r\n  "
         }
       ],
-      "instanceId": 0.7266965307298285,
+      "instanceId": 0.6451238546988927,
       "numberOfOptions": 1,
       "$$hashKey": "object:8203",
       "outputMeasure": false
@@ -1603,7 +1603,7 @@
           "description": "Option 1 Description: This measure removes all existing electric equipment from spaces recognized as office building space types. New electric objects will be added based on the 50% Small to Medium Office AEDG recommendations."
         }
       ],
-      "instanceId": 0.6427016779922052,
+      "instanceId": 0.43237432494000916,
       "numberOfOptions": 1,
       "$$hashKey": "object:31559",
       "outputMeasure": false
@@ -1695,7 +1695,7 @@
           "description": "Option 1 Description: This measure reduces the values associated with electric equipment schedules to simulate reductions due to equipment controls throughout the building. This includes occupancy based outlets or adapters, as well as network or timer based controls."
         }
       ],
-      "instanceId": 0.4660418532802073,
+      "instanceId": 0.9957147435214595,
       "numberOfOptions": 1,
       "$$hashKey": "object:31560",
       "outputMeasure": false
@@ -2201,7 +2201,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.13136556933761412,
+      "instanceId": 0.40637137576907545,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -2294,7 +2294,7 @@
           "description": "Option 1 Description: This measure removes all existing lighting objects from spaces recognized as primary or secondary school space types. New lighting will be added based on the 50% Small to Medium Office AEDG recommendations."
         }
       ],
-      "instanceId": 0.2309746054836015,
+      "instanceId": 0.5393411082359649,
       "numberOfOptions": 1,
       "$$hashKey": "object:31565",
       "outputMeasure": false
@@ -2386,7 +2386,7 @@
           "description": "Option 1 Description: This measure reduces the values associated with lighting schedules to simulate reductions due to vacancy sensors throughout the building."
         }
       ],
-      "instanceId": 0.9477539895242442,
+      "instanceId": 0.6115075937542065,
       "numberOfOptions": 1,
       "$$hashKey": "object:31566",
       "outputMeasure": false
@@ -2542,7 +2542,7 @@
           "description": "Option 1 Description: This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Small to Medium Office AEDG recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor."
         }
       ],
-      "instanceId": 0.8906167980023185,
+      "instanceId": 0.6979470992072663,
       "numberOfOptions": 1,
       "$$hashKey": "object:164368",
       "outputMeasure": false
@@ -2634,7 +2634,7 @@
           "description": "Option 1 Description: This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.5696831471971264,
+      "instanceId": 0.4181357279075666,
       "numberOfOptions": 1,
       "$$hashKey": "object:31563",
       "outputMeasure": false
@@ -2726,7 +2726,7 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration that includes user arguments for primary entry points. "
         }
       ],
-      "instanceId": 0.10334179720351555,
+      "instanceId": 0.9799448064898604,
       "numberOfOptions": 1,
       "$$hashKey": "object:31561",
       "outputMeasure": false
@@ -2834,7 +2834,7 @@
           "description": "Option 1 Description: This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.3396848787016269,
+      "instanceId": 0.807307335511193,
       "numberOfOptions": 1,
       "$$hashKey": "object:31567",
       "outputMeasure": false
@@ -2948,7 +2948,7 @@
           "description": "Option 1 Description: This measure will adjust the visible reflectance of materials used on interior building surfaces. Different target values will be set for floors, ceilings, and furniture/interior partition surfaces."
         }
       ],
-      "instanceId": 0.5727544210840843,
+      "instanceId": 0.2594491801417318,
       "numberOfOptions": 1,
       "$$hashKey": "object:31564",
       "outputMeasure": false
@@ -3040,7 +3040,7 @@
           "description": "Option 1 Description: This measure will modify existing exterior floor (air exposed) insulation levels based on construction type and climate zone. The exterior floor construction type and climate zone should be set in the model prior to using this measure. For mass floors if an existing insulation layer can be found it will be increase or added at the inside of the floor. For steel and wood framed floors, insulation will be enhanced for an existing layer, or a new exterior layer will be added."
         }
       ],
-      "instanceId": 0.7183648899138244,
+      "instanceId": 0.6441644797841843,
       "numberOfOptions": 1,
       "$$hashKey": "object:31562",
       "outputMeasure": false
@@ -3274,7 +3274,7 @@
           "description": "Option 2 Description: This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the \"How to Implement Recommendations\" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. "
         }
       ],
-      "instanceId": 0.7918948421458896,
+      "instanceId": 0.03574668233090472,
       "numberOfOptions": 2,
       "$$hashKey": "object:164367",
       "outputMeasure": false
@@ -3623,7 +3623,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9401620162792779,
+      "instanceId": 0.6418141423225023,
       "showWarningText": false
     },
     {
@@ -3729,7 +3729,7 @@
           "description": "Option 1 Description: Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% Small and Medium Office AEDG."
         }
       ],
-      "instanceId": 0.045093043977540326,
+      "instanceId": 0.6833729860730307,
       "numberOfOptions": 1,
       "$$hashKey": "object:31568",
       "outputMeasure": false
@@ -4211,7 +4211,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.3815580365170361,
+      "instanceId": 0.4773902209068146,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
@@ -4400,7 +4400,7 @@
           "description": "Option 1 Description: This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads."
         }
       ],
-      "instanceId": 0.41763579208453927,
+      "instanceId": 0.69419028032529,
       "numberOfOptions": 1,
       "$$hashKey": "object:285279",
       "outputMeasure": false
@@ -5088,7 +5088,7 @@
           "description": "Option 2 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.5706650505722157,
+      "instanceId": 0.3729662245515979,
       "numberOfOptions": 2,
       "$$hashKey": "object:40245",
       "outputMeasure": false
@@ -5821,7 +5821,7 @@
           "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         }
       ],
-      "instanceId": 0.33143540715688724,
+      "instanceId": 0.41725615198166066,
       "numberOfOptions": 15,
       "$$hashKey": "object:13368",
       "outputMeasure": false
@@ -5896,7 +5896,7 @@
           "description": "Option 1 Description: Visualize an OpenStudio model in a web based viewer"
         }
       ],
-      "instanceId": 0.3952430065835091,
+      "instanceId": 0.284512135162831,
       "numberOfOptions": 1,
       "$$hashKey": "object:35546",
       "outputMeasure": false
@@ -6292,7 +6292,7 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.8658370177084829,
+      "instanceId": 0.5738061335701987,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
@@ -7624,7 +7624,7 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.07741387510309194,
+      "instanceId": 0.9924689603631316,
       "showWarningText": false
     },
     {
@@ -7734,7 +7734,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.41726132849926345,
+      "instanceId": 0.6074023019200199,
       "numberOfOptions": 1,
       "$$hashKey": "object:57845",
       "outputMeasure": false

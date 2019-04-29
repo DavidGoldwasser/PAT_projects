@@ -35,10 +35,14 @@
 
 # Authors : Nicholas Long, David Goldwasser
 # Simple measure to load the EPW file and DDY file
-require_relative 'resources/stat_file'
-require_relative 'resources/epw'
 
 class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
+
+  Dir[File.dirname(__FILE__) + '/resources/*.rb'].each { |file| require file }
+
+  # resource file modules
+  include OsLib_HelperMethods
+
   # define the name that a user will see, this method may be deprecated as
   # the display name in PAT comes from the name field in measure.xml
   def name
@@ -79,6 +83,19 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
     climate_zone.setDefaultValue('Lookup From Stat File')
     args << climate_zone
 
+    set_year = OpenStudio::Measure::OSArgument.makeIntegerArgument('set_year', true)
+    set_year.setDisplayName('Set Calendar Year')
+    set_year.setDefaultValue (0)
+    set_year.setDescription('This will impact the day of the week the simulation starts on. An input value of 0 will leave the year un-altered')
+    args << set_year
+
+    # make an argument for use_upstream_args
+    use_upstream_args = OpenStudio::Measure::OSArgument.makeBoolArgument('use_upstream_args', true)
+    use_upstream_args.setDisplayName('Use Upstream Argument Values')
+    use_upstream_args.setDescription('When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.')
+    use_upstream_args.setDefaultValue(true)
+    args << use_upstream_args
+
     args
   end
 
@@ -86,9 +103,30 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
   def run(model, runner, user_arguments)
     super(model, runner, user_arguments)
 
-    # use the built-in error checking
-    if !runner.validateUserArguments(arguments(model), user_arguments)
-      return false
+    # assign the user inputs to variables
+    args = OsLib_HelperMethods.createRunVariables(runner, model, user_arguments, arguments(model))
+    if !args then return false end
+
+    # lookup and replace argument values from upstream measures
+    if args['use_upstream_args'] == true
+      args.each do |arg,value|
+        next if arg == 'use_upstream_args' # this argument should not be changed
+        value_from_osw = OsLib_HelperMethods.check_upstream_measure_for_arg(runner, arg)
+        if !value_from_osw.empty?
+          runner.registerInfo("Replacing argument named #{arg} from current measure with a value of #{value_from_osw[:value]} from #{value_from_osw[:measure_name]}.")
+          new_val = value_from_osw[:value]
+          # todo - make code to handle non strings more robust. check_upstream_measure_for_arg coudl pass bakc the argument type
+          if arg == 'total_bldg_floor_area'
+            args[arg] = new_val.to_f
+          elsif arg == 'num_stories_above_grade'
+            args[arg] = new_val.to_f
+          elsif arg == 'zipcode'
+            args[arg] = new_val.to_i
+          else
+            args[arg] = new_val
+          end
+        end
+      end
     end
 
     # create initial condition
@@ -98,16 +136,12 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
       runner.registerInitialCondition("No weather file is set. The model has #{model.getDesignDays.size} design day objects")
     end
 
-    # get variables
-    weather_file_name = runner.getStringArgumentValue('weather_file_name', user_arguments)
-    climate_zone = runner.getStringArgumentValue('climate_zone', user_arguments)
-
     # find weather file
-    osw_file = runner.workflow.findFile(weather_file_name)
+    osw_file = runner.workflow.findFile(args['weather_file_name'])
     if osw_file.is_initialized
       weather_file = osw_file.get.to_s
     else
-      runner.registerError("Did not find #{weather_file_name} in paths described in OSW file.")
+      runner.registerError("Did not find #{args['weather_file_name']} in paths described in OSW file.")
       return false
     end
 
@@ -141,6 +175,12 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
     site.setElevation(weather_elev)
 
     runner.registerInfo("city is #{epw_file.city}. State is #{epw_file.state}")
+
+    # actual year of start date
+    if args['set_year'] > 0
+      model.getYearDescription.setCalendarYear(args['set_year'])
+      runner.registerInfo("Changing Calendar Year to #{args['set_year'].to_s},")
+    end
 
     # Add SiteWaterMainsTemperature -- via parsing of STAT file.
     stat_file = "#{File.join(File.dirname(epw_file.filename), File.basename(epw_file.filename, '.*'))}.stat"
@@ -208,7 +248,7 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
 
     # Set climate zone
     climateZones = model.getClimateZones
-    if climate_zone == 'Lookup From Stat File'
+    if args['climate_zone'] == 'Lookup From Stat File'
 
       # get climate zone from stat file
       text = nil
@@ -224,13 +264,13 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
       if match_data.nil?
         runner.registerWarning("Can't find ASHRAE climate zone in stat file.")
       else
-        climate_zone = match_data[1].to_s.strip
+        args['climate_zone'] = match_data[1].to_s.strip
       end
 
     end
     # set climate zone
     climateZones.clear
-    climateZones.setClimateZone('ASHRAE', climate_zone)
+    climateZones.setClimateZone('ASHRAE', args['climate_zone'])
     runner.registerInfo("Setting Climate Zone to #{climateZones.getClimateZones('ASHRAE').first.value}")
 
     # add final condition

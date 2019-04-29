@@ -1,0 +1,8 @@
+{
+   "created_at" : "20190410T051123Z",
+   "hash" : "74801C3E",
+   "seed_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_humid_office_vav_reheat_auto_partition/test_humid_office_vav_reheat_auto_partition.osm",
+   "steps" : [],
+   "updated_at" : "20190410T051123Z",
+   "weather_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_humid_office_vav_reheat_auto_partition/USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.epw"
+}

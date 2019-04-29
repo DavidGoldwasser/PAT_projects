@@ -1,0 +1,180 @@
+Shadowing Combinations
+..Solar Distribution=FullExterior
+..In the following, only the first 10 reference surfaces will be shown.
+..But all surfaces are used in the calculations.
+==================================
+Surface=DINING - WALL 000_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=DINING - WALL 000_A - SUB:A
+==================================
+Surface=DINING - WALL 000_A - SUB:A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=DINING - WALL 090_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=DINING - WALL 180_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=DINING - WALL 270_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=DINING - WALL 270_A - SUB:A
+==================================
+Surface=DINING - WALL 270_A - SUB:A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=DINING - FLOOR_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=DINING - ROOFCEILING_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=KITCHEN - WALL 000_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=KITCHEN - WALL 090_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=KITCHEN - WALL 180_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=2
+..Surface=LOBBY - WALL 090_A
+..Surface=PLENUM - WALL 090_B
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=KITCHEN - WALL 270_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=KITCHEN - FLOOR_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=KITCHEN - ROOFCEILING_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LOBBY - WALL 000_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LOBBY - WALL 090_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=2
+..Surface=KITCHEN - WALL 180_A
+..Surface=PLENUM - WALL 180_A
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=LOBBY - WALL 090_A - SUB:A
+==================================
+Surface=LOBBY - WALL 090_A - SUB:A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LOBBY - WALL 180_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=LOBBY - WALL 180_A - SUB:A
+==================================
+Surface=LOBBY - WALL 180_A - SUB:A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LOBBY - WALL 270_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=LOBBY - WALL 270_A - SUB:A
+==================================
+Surface=LOBBY - WALL 270_A - SUB:A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LOBBY - FLOOR_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=LOBBY - ROOFCEILING_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - WALL 000_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - WALL 090_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - WALL 090_B is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=PLENUM - WALL 180_A
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - WALL 180_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=PLENUM - WALL 090_B
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - WALL 180_B is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - WALL 270_A is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - FLOOR_A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - FLOOR_B is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - FLOOR_C is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=PLENUM - ROOFCEILING_A is used as Receiving Surface in calculations and is non-convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0

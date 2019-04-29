@@ -1,0 +1,1054 @@
+Program Version,EnergyPlus, Version 9.1.0-08d2e308bb, YMD=2019.04.09 23:15
+! <Version>, Version ID
+ Version, 9.1
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour,  6, 10
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 2, 25, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
+ Simulation Control, Yes, Yes, Yes, No, Yes, No
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 0.556, 0.556, 
+! <Site:GroundTemperature:BuildingSurface>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:BuildingSurface,  20.63,  20.57,  20.55,  20.59,  20.66,  22.91,  23.27,  23.36,  23.39,  21.14,  20.84,  20.72
+! <Site:GroundTemperature:FCfactorMethod>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:FCfactorMethod,  -3.82,  -4.96,  -2.93,   0.24,   8.54,  14.94,  19.26,  20.58,  18.34,  13.36,   6.72,   0.55
+! <Site:GroundTemperature:Shallow>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
+! <Site:GroundTemperature:Deep>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Deep,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00
+! <Site:GroundReflectance>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   1.000,   1.000
+! <Site:GroundReflectance:Snow>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:Snow:Daylighting>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient-Internal,Temperature Modifier Coefficient-Internal
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,Burlington International Ap VT USA TMY3 WMO#=726170,44.47,-73.15,-5.00,101.00,100118,1.1900
+! <Site Water Mains Temperature Information>,Calculation Method{},Water Mains Temperature Schedule Name{},Annual Average Outdoor Air Temperature{C},Maximum Difference In Monthly Average Outdoor Air Temperatures{deltaC},Fixed Default Water Mains Temperature{C}
+Site Water Mains Temperature Information,Correlation,NA,7.80,28.30,NA
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,Primary School ASHRAE 169-2006-6A,0.000,City,4.00000E-002,0.20000,FullInteriorAndExterior,25,6
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,TARP
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,TARP
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Value {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}
+ Zone Air Solution Algorithm, ThirdOrderBackwardDifference
+! <Zone Air Carbon Dioxide Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, No,N/A
+! <Zone Air Generic Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Zone Air Mass Flow Balance Simulation>, Enforce Mass Balance, Adjust Zone Mixing, Adjust Zone Infiltration {AddInfiltration | AdjustInfiltration | None}, Infiltration Zones {MixingSourceZonesOnly | AllZones}
+ Zone Air Mass Flow Balance Simulation, No,N/A,N/A,N/A
+! <HVACSystemRootFindingAlgorithm>, Value {RegulaFalsi | Bisection | BisectionThenRegulaFalsi | RegulaFalsiThenBisection}
+ HVACSystemRootFindingAlgorithm, RegulaFalsi
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.330,460.000,6.500000E-003
+! <Surface Geometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,UpperLeftCorner,Counterclockwise,RelativeCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Surface Heat Transfer Algorithm>, Value {CTF - ConductionTransferFunction | EMPD - MoisturePenetrationDepthConductionTransferFunction | CondFD - ConductionFiniteDifference | HAMT - CombinedHeatAndMoistureFiniteElement} - Description,Inside Surface Max Temperature Limit{C}, Surface Convection Coefficient Lower Limit {W/m2-K}, Surface Convection Coefficient Upper Limit {W/m2-K}
+Surface Heat Transfer Algorithm, CTF - ConductionTransferFunction,200,0.10,1000.0
+! <Shading Summary>, Number of Fixed Detached Shades, Number of Building Detached Shades, Number of Attached Shades
+ Shading Summary,0,0,0
+! <Zone Summary>, Number of Zones, Number of Zone Surfaces, Number of SubSurfaces
+ Zone Summary,25,233,33
+! <Zone Information>,Zone Name,North Axis {deg},Origin X-Coordinate {m},Origin Y-Coordinate {m},Origin Z-Coordinate {m},Centroid X-Coordinate {m},Centroid Y-Coordinate {m},Centroid Z-Coordinate {m},Type,Zone Multiplier,Zone List Multiplier,Minimum X {m},Maximum X {m},Minimum Y {m},Maximum Y {m},Minimum Z {m},Maximum Z {m},Ceiling Height {m},Volume {m3},Zone Inside Convection Algorithm {Simple-Detailed-CeilingDiffuser-TrombeWall},Zone Outside Convection Algorithm {Simple-Detailed-Tarp-MoWitt-DOE-2-BLAST}, Floor Area {m2},Exterior Gross Wall Area {m2},Exterior Net Wall Area {m2},Exterior Window Area {m2}, Number of Surfaces, Number of SubSurfaces, Number of Shading SubSurfaces,  Part of Total Building Area
+ Zone Information, BATH_ZN_1_FLR_1 ZN,0.0,0.00,51.00,0.00,9.50,56.00,2.00,1,1,1,0.00,19.00,51.00,61.00,0.00,4.00,4.00,760.00,TARP,TARP,190.00,40.00,26.00,14.00,7,1,0,Yes
+ Zone Information, CAFETERIA_ZN_1_FLR_1 ZN,0.0,19.00,46.00,0.00,29.50,53.50,2.00,1,1,1,19.00,40.00,46.00,61.00,0.00,4.00,4.00,1260.00,TARP,TARP,315.00,144.00,93.60,50.40,7,2,0,Yes
+ Zone Information, COMPUTER_CLASS_ZN_1_FLR_1 ZN,0.0,-18.00,73.00,0.00,-9.00,77.50,2.00,1,1,1,-18.00,0.00,73.00,82.00,0.00,4.00,4.00,648.00,TARP,TARP,162.00,72.00,46.80,25.20,6,1,0,Yes
+ Zone Information, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,0.0,-64.00,0.00,0.00,-58.50,4.50,2.00,1,1,1,-64.00,-53.00,0.00,9.00,0.00,4.00,4.00,396.00,TARP,TARP,99.00,80.00,52.00,28.00,6,2,0,Yes
+ Zone Information, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,0.0,-64.00,30.00,0.00,-58.50,34.50,2.00,1,1,1,-64.00,-53.00,30.00,39.00,0.00,4.00,4.00,396.00,TARP,TARP,99.00,80.00,52.00,28.00,6,2,0,Yes
+ Zone Information, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,0.0,-64.00,61.00,0.00,-58.50,65.50,2.00,1,1,1,-64.00,-53.00,61.00,70.00,0.00,4.00,4.00,396.00,TARP,TARP,99.00,80.00,52.00,28.00,6,2,0,Yes
+ Zone Information, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,0.0,-64.00,12.00,0.00,-58.50,16.50,2.00,1,1,1,-64.00,-53.00,12.00,21.00,0.00,4.00,4.00,396.00,TARP,TARP,99.00,80.00,52.00,28.00,6,2,0,Yes
+ Zone Information, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,0.0,-64.00,42.00,0.00,-58.50,46.50,2.00,1,1,1,-64.00,-53.00,42.00,51.00,0.00,4.00,4.00,396.00,TARP,TARP,99.00,80.00,52.00,28.00,6,2,0,Yes
+ Zone Information, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,0.0,-64.00,73.00,0.00,-58.50,77.50,2.00,1,1,1,-64.00,-53.00,73.00,82.00,0.00,4.00,4.00,396.00,TARP,TARP,99.00,80.00,52.00,28.00,6,2,0,Yes
+ Zone Information, CORRIDOR_POD_1_ZN_1_FLR_1 ZN,0.0,-64.00,9.00,0.00,-32.00,10.50,2.00,1,1,1,-64.00,0.00,9.00,12.00,0.00,4.00,4.00,768.00,TARP,TARP,192.00,12.00,7.80,4.20,8,1,0,Yes
+ Zone Information, CORRIDOR_POD_2_ZN_1_FLR_1 ZN,0.0,-64.00,39.00,0.00,-32.00,40.50,2.00,1,1,1,-64.00,0.00,39.00,42.00,0.00,4.00,4.00,768.00,TARP,TARP,192.00,12.00,7.80,4.20,8,1,0,Yes
+ Zone Information, CORRIDOR_POD_3_ZN_1_FLR_1 ZN,0.0,-64.00,70.00,0.00,-32.00,71.50,2.00,1,1,1,-64.00,0.00,70.00,73.00,0.00,4.00,4.00,768.00,TARP,TARP,192.00,12.00,7.80,4.20,9,1,0,Yes
+ Zone Information, GYM_ZN_1_FLR_1 ZN,0.0,19.00,21.00,0.00,29.50,29.50,2.00,1,1,1,19.00,40.00,21.00,38.00,0.00,4.00,4.00,1428.00,TARP,TARP,357.00,68.00,44.20,23.80,6,1,0,Yes
+ Zone Information, KITCHEN_ZN_1_FLR_1 ZN,0.0,19.00,38.00,0.00,29.50,42.00,2.00,1,1,1,19.00,40.00,38.00,46.00,0.00,4.00,4.00,672.00,TARP,TARP,168.00,32.00,20.80,11.20,6,1,0,Yes
+ Zone Information, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,0.0,0.00,61.00,0.00,9.50,71.50,2.00,1,1,1,0.00,19.00,61.00,82.00,0.00,4.00,4.00,1596.00,TARP,TARP,399.00,160.00,104.00,56.00,8,2,0,Yes
+ Zone Information, LOBBY_ZN_1_FLR_1 ZN,0.0,0.00,0.00,0.00,9.50,4.50,2.00,1,1,1,0.00,19.00,0.00,9.00,0.00,4.00,4.00,684.00,TARP,TARP,171.00,76.00,49.40,26.60,7,1,0,Yes
+ Zone Information, MAIN_CORRIDOR_ZN_1_FLR_1 ZN,0.0,0.00,9.00,0.00,6.50,30.00,2.00,1,1,1,0.00,13.00,9.00,51.00,0.00,4.00,4.00,2184.00,TARP,TARP,546.00,36.00,23.40,12.60,11,1,0,Yes
+ Zone Information, MECH_ZN_1_FLR_1 ZN,0.0,13.00,9.00,0.00,16.00,30.00,2.00,1,1,1,13.00,19.00,9.00,51.00,0.00,4.00,4.00,1008.00,TARP,TARP,252.00,0.00,0.00,0.00,9,0,0,Yes
+ Zone Information, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,0.0,-53.00,0.00,0.00,-26.50,4.50,2.00,1,1,1,-53.00,0.00,0.00,9.00,0.00,4.00,4.00,1908.00,TARP,TARP,477.00,212.00,137.80,74.20,6,1,0,Yes
+ Zone Information, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,0.0,-53.00,30.00,0.00,-26.50,34.50,2.00,1,1,1,-53.00,0.00,30.00,39.00,0.00,4.00,4.00,1908.00,TARP,TARP,477.00,212.00,137.80,74.20,6,1,0,Yes
+ Zone Information, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,0.0,-53.00,61.00,0.00,-26.50,65.50,2.00,1,1,1,-53.00,0.00,61.00,70.00,0.00,4.00,4.00,1908.00,TARP,TARP,477.00,212.00,137.80,74.20,6,1,0,Yes
+ Zone Information, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,0.0,-53.00,12.00,0.00,-26.50,16.50,2.00,1,1,1,-53.00,0.00,12.00,21.00,0.00,4.00,4.00,1908.00,TARP,TARP,477.00,212.00,137.80,74.20,6,1,0,Yes
+ Zone Information, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,0.0,-53.00,42.00,0.00,-26.50,46.50,2.00,1,1,1,-53.00,0.00,42.00,51.00,0.00,4.00,4.00,1908.00,TARP,TARP,477.00,212.00,137.80,74.20,6,1,0,Yes
+ Zone Information, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,0.0,-53.00,73.00,0.00,-35.50,77.50,2.00,1,1,1,-53.00,-18.00,73.00,82.00,0.00,4.00,4.00,1260.00,TARP,TARP,315.00,140.00,91.00,49.00,6,1,0,Yes
+ Zone Information, OFFICES_ZN_1_FLR_1 ZN,0.0,19.00,0.00,0.00,29.50,10.50,2.00,1,1,1,19.00,40.00,0.00,21.00,0.00,4.00,4.00,1764.00,TARP,TARP,441.00,168.00,109.20,58.80,7,2,0,Yes
+! <Zone Internal Gains Nominal>,Zone Name, Floor Area {m2},# Occupants,Area per Occupant {m2/person},Occupant per Area {person/m2},Interior Lighting {W/m2},Electric Load {W/m2},Gas Load {W/m2},Other Load {W/m2},Hot Water Eq {W/m2},Steam Equipment {W/m2},Sum Loads per Area {W/m2},Outdoor Controlled Baseboard Heat
+ Zone Internal Gains Nominal, BATH_ZN_1_FLR_1 ZN,190.00,0.0,N/A,0.000,10.549,3.983,0.000,0.000,0.000,0.000,14.531,No
+ Zone Internal Gains Nominal, CAFETERIA_ZN_1_FLR_1 ZN,315.00,339.1,0.929,1.076,6.997,25.403,0.000,0.000,0.000,0.000,32.399,No
+ Zone Internal Gains Nominal, COMPUTER_CLASS_ZN_1_FLR_1 ZN,162.00,43.6,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, CORRIDOR_POD_1_ZN_1_FLR_1 ZN,192.00,0.0,N/A,0.000,7.104,3.983,0.000,0.000,0.000,0.000,11.087,No
+ Zone Internal Gains Nominal, CORRIDOR_POD_2_ZN_1_FLR_1 ZN,192.00,0.0,N/A,0.000,7.104,3.983,0.000,0.000,0.000,0.000,11.087,No
+ Zone Internal Gains Nominal, CORRIDOR_POD_3_ZN_1_FLR_1 ZN,192.00,0.0,N/A,0.000,7.104,3.983,0.000,0.000,0.000,0.000,11.087,No
+ Zone Internal Gains Nominal, GYM_ZN_1_FLR_1 ZN,357.00,115.3,3.097,0.323,7.750,4.951,0.000,0.000,0.000,0.000,12.701,No
+ Zone Internal Gains Nominal, KITCHEN_ZN_1_FLR_1 ZN,168.00,27.0,6.223,0.161,13.024,199.361,1431.238,0.000,0.000,0.000,1643.623,No
+ Zone Internal Gains Nominal, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,399.00,107.4,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, LOBBY_ZN_1_FLR_1 ZN,171.00,0.0,N/A,0.000,9.688,3.983,0.000,0.000,0.000,0.000,13.670,No
+ Zone Internal Gains Nominal, MAIN_CORRIDOR_ZN_1_FLR_1 ZN,546.00,0.0,N/A,0.000,7.104,3.983,0.000,0.000,0.000,0.000,11.087,No
+ Zone Internal Gains Nominal, MECH_ZN_1_FLR_1 ZN,252.00,0.0,N/A,0.000,4.521,10.010,0.000,0.000,0.000,0.000,14.531,No
+ Zone Internal Gains Nominal, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,477.00,128.4,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,315.00,84.8,3.716,0.269,13.347,14.962,0.000,0.000,0.000,0.000,28.309,No
+ Zone Internal Gains Nominal, OFFICES_ZN_1_FLR_1 ZN,441.00,23.7,18.581,5.382E-002,11.948,10.764,0.000,0.000,0.000,0.000,22.712,No
+! <People Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Number of People {},People/Floor Area {person/m2},Floor Area per person {m2/person},Fraction Radiant,Fraction Convected,Sensible Fraction Calculation,Activity level,ASHRAE 55 Warnings,Carbon Dioxide Generation Rate,Nominal Minimum Number of People,Nominal Maximum Number of People
+ People Internal Gains Nominal, CAFETERIA_ZN_1_FLR_1 ZN PRIMARYSCHOOL CAFETERIA PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH_CAFETERIA,CAFETERIA_ZN_1_FLR_1 ZN,315.00,339.1,339.1,1.076,0.929,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,322
+ People Internal Gains Nominal, COMPUTER_CLASS_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,COMPUTER_CLASS_ZN_1_FLR_1 ZN,162.00,43.6,43.6,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,41
+ People Internal Gains Nominal, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,26.6,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,25
+ People Internal Gains Nominal, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,26.6,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,25
+ People Internal Gains Nominal, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,26.6,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,25
+ People Internal Gains Nominal, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,26.6,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,25
+ People Internal Gains Nominal, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,26.6,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,25
+ People Internal Gains Nominal, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,26.6,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,25
+ People Internal Gains Nominal, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,399.00,107.4,107.4,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,102
+ People Internal Gains Nominal, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,128.4,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,122
+ People Internal Gains Nominal, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,128.4,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,122
+ People Internal Gains Nominal, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,477.00,128.4,128.4,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,122
+ People Internal Gains Nominal, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,128.4,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,122
+ People Internal Gains Nominal, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,128.4,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,122
+ People Internal Gains Nominal, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,315.00,84.8,84.8,0.269,3.716,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,81
+ People Internal Gains Nominal, GYM_ZN_1_FLR_1 ZN PRIMARYSCHOOL GYM PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH_GYM,GYM_ZN_1_FLR_1 ZN,357.00,115.3,115.3,0.323,3.097,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,110
+ People Internal Gains Nominal, KITCHEN_ZN_1_FLR_1 ZN PRIMARYSCHOOL KITCHEN PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH,KITCHEN_ZN_1_FLR_1 ZN,168.00,27.0,27.0,0.161,6.223,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,26
+ People Internal Gains Nominal, OFFICES_ZN_1_FLR_1 ZN PRIMARYSCHOOL OFFICE PEOPLE,SCHOOLPRIMARY BLDG_OCC_SCH_OFFICES,OFFICES_ZN_1_FLR_1 ZN,441.00,23.7,23.7,5.382E-002,18.581,0.300,0.700,AutoCalculate,SCHOOLPRIMARY ACTIVITY_SCH,No,3.8200E-008,0,23
+! <Lights Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Lighting Level {W},Lights/Floor Area {W/m2},Lights per person {W/person},Fraction Return Air,Fraction Radiant,Fraction Short Wave,Fraction Convected,Fraction Replaceable,End-Use Category,Nominal Minimum Lighting Level {W},Nominal Maximum Lighting Level {W}
+ Lights Internal Gains Nominal, CAFETERIA_ZN_1_FLR_1 ZN PRIMARYSCHOOL CAFETERIA LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_SCH,CAFETERIA_ZN_1_FLR_1 ZN,315.00,339.1,2203.911,6.997,6.500,0.000,0.370,0.200,0.430,1.000,General,0.000,2203.911
+ Lights Internal Gains Nominal, COMPUTER_CLASS_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,COMPUTER_CLASS_ZN_1_FLR_1 ZN,162.00,43.6,2162.254,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,2162.254
+ Lights Internal Gains Nominal, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,1321.378,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,1321.378
+ Lights Internal Gains Nominal, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,1321.378,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,1321.378
+ Lights Internal Gains Nominal, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,1321.378,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,1321.378
+ Lights Internal Gains Nominal, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,1321.378,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,1321.378
+ Lights Internal Gains Nominal, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,1321.378,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,1321.378
+ Lights Internal Gains Nominal, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,1321.378,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,1321.378
+ Lights Internal Gains Nominal, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,399.00,107.4,5325.552,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,5325.552
+ Lights Internal Gains Nominal, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,6366.638,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,6366.638
+ Lights Internal Gains Nominal, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,6366.638,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,6366.638
+ Lights Internal Gains Nominal, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,477.00,128.4,6366.638,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,6366.638
+ Lights Internal Gains Nominal, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,6366.638,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,6366.638
+ Lights Internal Gains Nominal, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,6366.638,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,6366.638
+ Lights Internal Gains Nominal, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CLASSROOM_SCH OCCSENSOR REDUCTION,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,315.00,84.8,4204.383,13.347,49.600,0.000,0.370,0.200,0.430,1.000,General,0.000,4204.383
+ Lights Internal Gains Nominal, CORRIDOR_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CORRIDOR LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CORRIDOR_SCH,CORRIDOR_POD_1_ZN_1_FLR_1 ZN,192.00,0.0,1364.003,7.104,N/A,0.000,0.370,0.200,0.430,1.000,General,0.000,1364.003
+ Lights Internal Gains Nominal, CORRIDOR_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CORRIDOR LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CORRIDOR_SCH,CORRIDOR_POD_2_ZN_1_FLR_1 ZN,192.00,0.0,1364.003,7.104,N/A,0.000,0.370,0.200,0.430,1.000,General,0.000,1364.003
+ Lights Internal Gains Nominal, CORRIDOR_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CORRIDOR LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CORRIDOR_SCH,CORRIDOR_POD_3_ZN_1_FLR_1 ZN,192.00,0.0,1364.003,7.104,N/A,0.000,0.370,0.200,0.430,1.000,General,0.000,1364.003
+ Lights Internal Gains Nominal, MAIN_CORRIDOR_ZN_1_FLR_1 ZN PRIMARYSCHOOL CORRIDOR LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_CORRIDOR_SCH,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,546.00,0.0,3878.883,7.104,N/A,0.000,0.370,0.200,0.430,1.000,General,0.000,3878.883
+ Lights Internal Gains Nominal, GYM_ZN_1_FLR_1 ZN PRIMARYSCHOOL GYM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_GYM_SCH,GYM_ZN_1_FLR_1 ZN,357.00,115.3,2766.756,7.750,24.000,0.000,0.370,0.200,0.430,1.000,General,0.000,2766.756
+ Lights Internal Gains Nominal, KITCHEN_ZN_1_FLR_1 ZN PRIMARYSCHOOL KITCHEN LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_SCH,KITCHEN_ZN_1_FLR_1 ZN,168.00,27.0,2188.088,13.024,81.045,0.000,0.370,0.200,0.430,1.000,General,0.000,2188.088
+ Lights Internal Gains Nominal, LOBBY_ZN_1_FLR_1 ZN PRIMARYSCHOOL LOBBY LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_LOBBYFLR1_SCH,LOBBY_ZN_1_FLR_1 ZN,171.00,0.0,1656.566,9.688,N/A,0.000,0.370,0.200,0.430,1.000,General,0.000,1656.566
+ Lights Internal Gains Nominal, MECH_ZN_1_FLR_1 ZN PRIMARYSCHOOL MECHANICAL LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_SCH,MECH_ZN_1_FLR_1 ZN,252.00,0.0,1139.252,4.521,N/A,0.000,0.370,0.200,0.430,1.000,General,0.000,1139.252
+ Lights Internal Gains Nominal, OFFICES_ZN_1_FLR_1 ZN PRIMARYSCHOOL OFFICE LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_SCH OCCSENSOR REDUCTION,OFFICES_ZN_1_FLR_1 ZN,441.00,23.7,5269.042,11.948,222.000,0.000,0.370,0.200,0.430,1.000,General,0.000,5269.042
+ Lights Internal Gains Nominal, BATH_ZN_1_FLR_1 ZN PRIMARYSCHOOL RESTROOM LIGHTS,SCHOOLPRIMARY BLDG_LIGHT_BATH_SCH OCCSENSOR REDUCTION,BATH_ZN_1_FLR_1 ZN,190.00,0.0,2004.240,10.549,N/A,0.000,0.370,0.200,0.430,1.000,General,0.000,2004.240
+! <ElectricEquipment Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Equipment Level {W},Equipment/Floor Area {W/m2},Equipment per person {W/person},Fraction Latent,Fraction Radiant,Fraction Lost,Fraction Convected,End-Use SubCategory,Nominal Minimum Equipment Level {W},Nominal Maximum Equipment Level {W}
+ ElectricEquipment Internal Gains Nominal, CAFETERIA_ZN_1_FLR_1 ZN PRIMARYSCHOOL CAFETERIA ELEC EQUIP,SCHOOLPRIMARY KITCHEN_ELEC_EQUIP_SCH,CAFETERIA_ZN_1_FLR_1 ZN,315.00,339.1,8001.891,25.403,23.600,0.000,0.500,0.000,0.500,General,800.189,2000.473
+ ElectricEquipment Internal Gains Nominal, COMPUTER_CLASS_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,COMPUTER_CLASS_ZN_1_FLR_1 ZN,162.00,43.6,2423.817,14.962,55.600,0.000,0.500,0.000,0.500,General,472.454,2302.626
+ ElectricEquipment Internal Gains Nominal, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,1481.222,14.962,55.600,0.000,0.500,0.000,0.500,General,288.722,1407.161
+ ElectricEquipment Internal Gains Nominal, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,1481.222,14.962,55.600,0.000,0.500,0.000,0.500,General,288.722,1407.161
+ ElectricEquipment Internal Gains Nominal, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,1481.222,14.962,55.600,0.000,0.500,0.000,0.500,General,288.722,1407.161
+ ElectricEquipment Internal Gains Nominal, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,1481.222,14.962,55.600,0.000,0.500,0.000,0.500,General,288.722,1407.161
+ ElectricEquipment Internal Gains Nominal, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,1481.222,14.962,55.600,0.000,0.500,0.000,0.500,General,288.722,1407.161
+ ElectricEquipment Internal Gains Nominal, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,1481.222,14.962,55.600,0.000,0.500,0.000,0.500,General,288.722,1407.161
+ ElectricEquipment Internal Gains Nominal, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,399.00,107.4,5969.772,14.962,55.600,0.000,0.500,0.000,0.500,General,1163.636,5671.284
+ ElectricEquipment Internal Gains Nominal, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,7136.796,14.962,55.600,0.000,0.500,0.000,0.500,General,1391.114,6779.956
+ ElectricEquipment Internal Gains Nominal, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,7136.796,14.962,55.600,0.000,0.500,0.000,0.500,General,1391.114,6779.956
+ ElectricEquipment Internal Gains Nominal, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,477.00,128.4,7136.796,14.962,55.600,0.000,0.500,0.000,0.500,General,1391.114,6779.956
+ ElectricEquipment Internal Gains Nominal, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,7136.796,14.962,55.600,0.000,0.500,0.000,0.500,General,1391.114,6779.956
+ ElectricEquipment Internal Gains Nominal, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,7136.796,14.962,55.600,0.000,0.500,0.000,0.500,General,1391.114,6779.956
+ ElectricEquipment Internal Gains Nominal, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CLASSROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,315.00,84.8,4712.978,14.962,55.600,0.000,0.500,0.000,0.500,General,918.660,4477.329
+ ElectricEquipment Internal Gains Nominal, CORRIDOR_POD_1_ZN_1_FLR_1 ZN PRIMARYSCHOOL CORRIDOR ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORRIDOR_POD_1_ZN_1_FLR_1 ZN,192.00,0.0,764.668,3.983,N/A,0.000,0.500,0.000,0.500,General,149.050,726.435
+ ElectricEquipment Internal Gains Nominal, CORRIDOR_POD_2_ZN_1_FLR_1 ZN PRIMARYSCHOOL CORRIDOR ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORRIDOR_POD_2_ZN_1_FLR_1 ZN,192.00,0.0,764.668,3.983,N/A,0.000,0.500,0.000,0.500,General,149.050,726.435
+ ElectricEquipment Internal Gains Nominal, CORRIDOR_POD_3_ZN_1_FLR_1 ZN PRIMARYSCHOOL CORRIDOR ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,CORRIDOR_POD_3_ZN_1_FLR_1 ZN,192.00,0.0,764.668,3.983,N/A,0.000,0.500,0.000,0.500,General,149.050,726.435
+ ElectricEquipment Internal Gains Nominal, MAIN_CORRIDOR_ZN_1_FLR_1 ZN PRIMARYSCHOOL CORRIDOR ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,546.00,0.0,2174.525,3.983,N/A,0.000,0.500,0.000,0.500,General,423.861,2065.799
+ ElectricEquipment Internal Gains Nominal, GYM_ZN_1_FLR_1 ZN PRIMARYSCHOOL GYM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,GYM_ZN_1_FLR_1 ZN,357.00,115.3,1767.649,4.951,15.333,0.000,0.500,0.000,0.500,General,344.553,1679.267
+ ElectricEquipment Internal Gains Nominal, KITCHEN_ZN_1_FLR_1 ZN KITCHEN_REACH-IN-FREEZER,SCHOOLPRIMARY ALWAYS_ON,KITCHEN_ZN_1_FLR_1 ZN,168.00,27.0,915.000,5.446,33.891,0.000,0.250,0.000,0.750,General,915.000,915.000
+ ElectricEquipment Internal Gains Nominal, KITCHEN_ZN_1_FLR_1 ZN KITCHEN_REACH-IN-REFRIGERATOR,SCHOOLPRIMARY ALWAYS_ON,KITCHEN_ZN_1_FLR_1 ZN,168.00,27.0,570.000,3.393,21.112,0.000,0.250,0.000,0.750,General,570.000,570.000
+ ElectricEquipment Internal Gains Nominal, KITCHEN_ZN_1_FLR_1 ZN PRIMARYSCHOOL KITCHEN ELEC EQUIP,SCHOOLPRIMARY KITCHEN_ELEC_EQUIP_SCH,KITCHEN_ZN_1_FLR_1 ZN,168.00,27.0,32007.564,190.521,1185.532,0.250,0.300,0.200,0.250,General,3200.756,8001.891
+ ElectricEquipment Internal Gains Nominal, LOBBY_ZN_1_FLR_1 ZN PRIMARYSCHOOL LOBBY ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,LOBBY_ZN_1_FLR_1 ZN,171.00,0.0,681.033,3.983,N/A,0.000,0.500,0.000,0.500,General,132.748,646.981
+ ElectricEquipment Internal Gains Nominal, MECH_ZN_1_FLR_1 ZN PRIMARYSCHOOL MECHANICAL ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,MECH_ZN_1_FLR_1 ZN,252.00,0.0,2522.630,10.010,N/A,0.000,0.500,0.000,0.500,General,491.714,2396.499
+ ElectricEquipment Internal Gains Nominal, OFFICES_ZN_1_FLR_1 ZN PRIMARYSCHOOL OFFICE ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,OFFICES_ZN_1_FLR_1 ZN,441.00,23.7,4746.884,10.764,200.000,0.000,0.500,0.000,0.500,General,925.269,4509.540
+ ElectricEquipment Internal Gains Nominal, BATH_ZN_1_FLR_1 ZN PRIMARYSCHOOL RESTROOM ELEC EQUIP,SCHOOLPRIMARY BLDG_EQUIP_SCH_2013,BATH_ZN_1_FLR_1 ZN,190.00,0.0,756.703,3.983,N/A,0.000,0.500,0.000,0.500,General,147.498,718.868
+! <GasEquipment Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Equipment Level {W},Equipment/Floor Area {W/m2},Equipment per person {W/person},Fraction Latent,Fraction Radiant,Fraction Lost,Fraction Convected,End-Use SubCategory,Nominal Minimum Equipment Level {W},Nominal Maximum Equipment Level {W}
+ GasEquipment Internal Gains Nominal, KITCHEN_ZN_1_FLR_1 ZN PRIMARYSCHOOL KITCHEN GAS EQUIP,SCHOOLPRIMARY KITCHEN_GAS_EQUIP_SCH,KITCHEN_ZN_1_FLR_1 ZN,168.00,27.0,240447.954,1431.238,8905.984,0.100,0.200,0.700,0.000,General,4808.959,48089.591
+! <Shadowing/Sun Position Calculations Annual Simulations>, Calculation Method, Value {days}, Allowable Number Figures in Shadow Overlap {}, Polygon Clipping Algorithm, Sky Diffuse Modeling Algorithm, External Shading Calculation Method, Output External Shading Calculation Results, Disable Self-Shading Within Shading Zone Groups, Disable Self-Shading From Shading Zone Groups to Other Zones
+Shadowing/Sun Position Calculations Annual Simulations,AverageOverDaysInFrequency,15000,15000,SutherlandHodgman,SimpleSkyDiffuseModeling,InternalCalculation,No,No,No
+! <Zone/Window Adjacency Daylighting Counts>, Zone Name, Number of Exterior Windows, Number of Exterior Windows in Adjacent Zones
+Zone/Window Adjacency Daylighting Counts, BATH_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, CAFETERIA_ZN_1_FLR_1 ZN,2,0
+Zone/Window Adjacency Daylighting Counts, COMPUTER_CLASS_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,2,0
+Zone/Window Adjacency Daylighting Counts, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,2,0
+Zone/Window Adjacency Daylighting Counts, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,2,0
+Zone/Window Adjacency Daylighting Counts, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,2,0
+Zone/Window Adjacency Daylighting Counts, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,2,0
+Zone/Window Adjacency Daylighting Counts, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,2,0
+Zone/Window Adjacency Daylighting Counts, GYM_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, KITCHEN_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,2,0
+Zone/Window Adjacency Daylighting Counts, LOBBY_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, MAIN_CORRIDOR_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,1,0
+Zone/Window Adjacency Daylighting Counts, OFFICES_ZN_1_FLR_1 ZN,2,0
+! <Zone/Window Adjacency Daylighting Matrix>, Zone Name, Number of Adjacent Zones with Windows,Adjacent Zone Names - 1st 100 (max)
+Zone/Window Adjacency Daylighting Matrix, BATH_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, CAFETERIA_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, COMPUTER_CLASS_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, GYM_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, KITCHEN_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, LOBBY_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, MAIN_CORRIDOR_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,0
+Zone/Window Adjacency Daylighting Matrix, OFFICES_ZN_1_FLR_1 ZN,0
+! <#Detailed Refrigeration Systems>,Number of Detailed Refrigeration Systems
+! <Detailed Refrigeration System>,Refrigeration System Name,Refrigerant Used, # Refrigerated Cases Connected, # WalkInCoolers Connected, #Air Chillers Connected, # Secondary Loops Served, # Cascade Condensers Served, # Mechanical Subcoolers Served, # Compressors Connected, # Compression Stages, Intercooler Type, Intercooler Effectiveness, # Subcoolers Connected, Minimum Condensing Temperature (C)
+!  <Refrigeration Compressor>,Compressor Number,Compressor Name,Nominal Capacity (W)
+!  <Refrigeration Case>,Refrigeration Case Number, Refrigeration Case Name,Zone Name,Zone Node #,Zone Node Name,Capacity (W/m),LHR,Temperature (C),Length (m),Fan (W/m),Installed Lighting (W/m),Anti-Sweat (W/m),Defrost (W/m)
+!  <Refrigeration Condenser:Air-Cooled>,Condenser Number,Condenser Name,Rated Condensing Temperature (C),Rated Capacity (W), Rated Fan Power (W)
+#Detailed Refrigeration Systems,2
+ Detailed Refrigeration System,REFRIGERATION SYSTEM 1,R404A,1,0,0,0,0,0,1,1,0,0.80,0,21.0
+   Refrigeration Case,1,KITCHEN_ZN_1_FLR_1 ZN WALKIN FREEZER,KITCHEN_ZN_1_FLR_1 ZN,317,KITCHEN_ZN_1_FLR_1 ZN ZONE AIR NODE,734.0,0.10,-23.0,3.7,68.3,33.0,0.0,410.0
+   Refrigeration Compressor,1,REFRIGERATION COMPRESSOR 1,14587
+   Refrigeration Condenser:Air-Cooled,1,REFRIGERATION CONDENSER AIR COOLED 1,51.7,364739.4,750.0
+ Detailed Refrigeration System,REFRIGERATION SYSTEM 2,R404A,1,0,0,0,0,0,1,1,0,0.80,0,21.0
+   Refrigeration Case,2,KITCHEN_ZN_1_FLR_1 ZN DISPLAY CASE,KITCHEN_ZN_1_FLR_1 ZN,317,KITCHEN_ZN_1_FLR_1 ZN ZONE AIR NODE,734.0,8.00E-002,2.0,3.7,55.0,33.0,0.0,0.0
+   Refrigeration Compressor,2,REFRIGERATION COMPRESSOR 2,33153
+   Refrigeration Condenser:Air-Cooled,2,REFRIGERATION CONDENSER AIR COOLED 2,51.7,364739.4,750.0
+! <Water Heater Information>,Type,Name,Volume {m3},Maximum Capacity {W},Standard Rated Recovery Efficiency, Standard Rated Energy Factor
+! <ZoneInfiltration Airflow Stats Nominal>,Name,Schedule Name,Zone Name, Zone Floor Area {m2}, # Zone Occupants,Design Volume Flow Rate {m3/s},Volume Flow Rate/Floor Area {m3/s-m2},Volume Flow Rate/Exterior Surface Area {m3/s-m2},ACH - Air Changes per Hour,Equation A - Constant Term Coefficient {},Equation B - Temperature Term Coefficient {1/C},Equation C - Velocity Term Coefficient {s/m}, Equation D - Velocity Squared Term Coefficient {s2/m2}
+ ZoneInfiltration Airflow Stats Nominal, BATH_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,BATH_ZN_1_FLR_1 ZN,190.00,0.0,2.278E-002,1.199E-004,9.906E-005,0.108,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CAFETERIA_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CAFETERIA_ZN_1_FLR_1 ZN,315.00,339.1,8.202E-002,2.604E-004,1.787E-004,0.234,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, COMPUTER_CLASS_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,COMPUTER_CLASS_ZN_1_FLR_1 ZN,162.00,43.6,4.101E-002,2.531E-004,1.753E-004,0.228,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,4.557E-002,4.603E-004,2.546E-004,0.414,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,4.557E-002,4.603E-004,2.546E-004,0.414,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,4.557E-002,4.603E-004,2.546E-004,0.414,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,99.00,26.6,4.557E-002,4.603E-004,2.546E-004,0.414,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,99.00,26.6,4.557E-002,4.603E-004,2.546E-004,0.414,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,99.00,26.6,4.557E-002,4.603E-004,2.546E-004,0.414,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORRIDOR_POD_1_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORRIDOR_POD_1_ZN_1_FLR_1 ZN,192.00,0.0,6.835E-003,3.560E-005,3.350E-005,3.204E-002,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORRIDOR_POD_2_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORRIDOR_POD_2_ZN_1_FLR_1 ZN,192.00,0.0,6.835E-003,3.560E-005,3.350E-005,3.204E-002,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, CORRIDOR_POD_3_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,CORRIDOR_POD_3_ZN_1_FLR_1 ZN,192.00,0.0,6.835E-003,3.560E-005,3.350E-005,3.204E-002,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, GYM_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,GYM_ZN_1_FLR_1 ZN,357.00,115.3,3.873E-002,1.085E-004,9.113E-005,9.764E-002,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, KITCHEN_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,KITCHEN_ZN_1_FLR_1 ZN,168.00,27.0,1.823E-002,1.085E-004,9.113E-005,9.764E-002,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,399.00,107.4,9.113E-002,2.284E-004,1.630E-004,0.206,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, LOBBY_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,LOBBY_ZN_1_FLR_1 ZN,171.00,0.0,4.329E-002,2.531E-004,1.753E-004,0.228,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, MAIN_CORRIDOR_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,546.00,0.0,2.050E-002,3.755E-005,3.523E-005,3.380E-002,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, MULT_CLASS_1_POD_1_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,0.121,2.531E-004,1.753E-004,0.228,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, MULT_CLASS_1_POD_2_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,0.121,2.531E-004,1.753E-004,0.228,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, MULT_CLASS_1_POD_3_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,477.00,128.4,0.121,2.531E-004,1.753E-004,0.228,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, MULT_CLASS_2_POD_1_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,477.00,128.4,0.121,2.531E-004,1.753E-004,0.228,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, MULT_CLASS_2_POD_2_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,477.00,128.4,0.121,2.531E-004,1.753E-004,0.228,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, MULT_CLASS_2_POD_3_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,315.00,84.8,7.974E-002,2.531E-004,1.753E-004,0.228,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, OFFICES_ZN_1_FLR_1 INFILTRATION,SCHOOLPRIMARY INFIL_SCH_PNNL,OFFICES_ZN_1_FLR_1 ZN,441.00,23.7,9.569E-002,2.170E-004,1.571E-004,0.195,0.000,0.000,0.224,0.000
+! <AirFlow Model>, Simple
+ AirFlow Model, Simple
+! <RoomAir Model>, Zone Name, Mixing/Mundt/UCSDDV/UCSDCV/UCSDUFI/UCSDUFE/User Defined
+RoomAir Model,BATH_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CAFETERIA_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,COMPUTER_CLASS_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORRIDOR_POD_1_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORRIDOR_POD_2_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,CORRIDOR_POD_3_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,GYM_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,KITCHEN_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,LOBBY_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,MECH_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+RoomAir Model,OFFICES_ZN_1_FLR_1 ZN,Mixing/Well-Stirred
+! <AirflowNetwork Model:Control>, No Multizone or Distribution/Multizone with Distribution/Multizone without Distribution/Multizone with Distribution only during Fan Operation
+AirflowNetwork Model:Control,NoMultizoneOrDistribution
+! <Zone Volume Capacitance Multiplier>, Sensible Heat Capacity Multiplier, Moisture Capacity Multiplier, Carbon Dioxide Capacity Multiplier, Generic Contaminant Capacity Multiplier
+Zone Volume Capacitance Multiplier,   1.000 ,   1.000,   1.000,   1.000
+! <Zone Sizing DOAS Inputs>, Zone Name, DOAS Design Control Strategy, DOAS Design Low Setpoint Temperature {C}, DOAS Design High Setpoint Temperature {C} 
+ Zone Sizing DOAS Inputs, BATH_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CAFETERIA_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, COMPUTER_CLASS_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORRIDOR_POD_1_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORRIDOR_POD_2_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, CORRIDOR_POD_3_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, GYM_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, KITCHEN_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, LOBBY_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, MAIN_CORRIDOR_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, MECH_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, OFFICES_ZN_1_FLR_1 ZN, NeutralSupplyAir, 15.556, 21.111
+! <Load Timesteps in Zone Design Calculation Averaging Window>, Value
+ Load Timesteps in Zone Design Calculation Averaging Window,    6
+! <Heating Sizing Factor Information>, Sizing Factor ID, Value
+ Heating Sizing Factor Information, Global,   1.0000    
+! <Cooling Sizing Factor Information>, Sizing Factor ID, Value
+ Cooling Sizing Factor Information, Global,   1.0000    
+! <Sky Daylight Factors>, MonthAndDay, Zone Name, Window Name, Daylight Fac: Ref Pt #1, Daylight Fac: Ref Pt #2
+ Clear Sky Daylight Factors,07/21,BATH_ZN_1_FLR_1 ZN,BATH_ZN_1_FLR_1_WALL_5_WINDOW_1,3.4987E-002,1.1882E-002
+ Clear Turbid Sky Daylight Factors,07/21,BATH_ZN_1_FLR_1 ZN,BATH_ZN_1_FLR_1_WALL_5_WINDOW_1,3.1291E-002,1.0173E-002
+ Intermediate Sky Daylight Factors,07/21,BATH_ZN_1_FLR_1 ZN,BATH_ZN_1_FLR_1_WALL_5_WINDOW_1,2.9313E-002,8.0365E-003
+ Overcast Sky Daylight Factors,07/21,BATH_ZN_1_FLR_1 ZN,BATH_ZN_1_FLR_1_WALL_5_WINDOW_1,3.9708E-002,1.0679E-002
+ Clear Sky Daylight Factors,07/21,CAFETERIA_ZN_1_FLR_1 ZN,CAFETERIA_ZN_1_FLR_1_WALL_2_WINDOW_1,4.7477E-002,2.1306E-002
+ Clear Turbid Sky Daylight Factors,07/21,CAFETERIA_ZN_1_FLR_1 ZN,CAFETERIA_ZN_1_FLR_1_WALL_2_WINDOW_1,4.1929E-002,1.8005E-002
+ Intermediate Sky Daylight Factors,07/21,CAFETERIA_ZN_1_FLR_1 ZN,CAFETERIA_ZN_1_FLR_1_WALL_2_WINDOW_1,3.6471E-002,1.2794E-002
+ Overcast Sky Daylight Factors,07/21,CAFETERIA_ZN_1_FLR_1 ZN,CAFETERIA_ZN_1_FLR_1_WALL_2_WINDOW_1,4.8877E-002,1.6402E-002
+ Clear Sky Daylight Factors,07/21,CAFETERIA_ZN_1_FLR_1 ZN,CAFETERIA_ZN_1_FLR_1_WALL_3_WINDOW_1,4.4631E-003,5.0862E-003
+ Clear Turbid Sky Daylight Factors,07/21,CAFETERIA_ZN_1_FLR_1 ZN,CAFETERIA_ZN_1_FLR_1_WALL_3_WINDOW_1,3.5933E-003,4.0683E-003
+ Intermediate Sky Daylight Factors,07/21,CAFETERIA_ZN_1_FLR_1 ZN,CAFETERIA_ZN_1_FLR_1_WALL_3_WINDOW_1,2.1048E-003,2.2954E-003
+ Overcast Sky Daylight Factors,07/21,CAFETERIA_ZN_1_FLR_1 ZN,CAFETERIA_ZN_1_FLR_1_WALL_3_WINDOW_1,3.5602E-003,3.9129E-003
+ Clear Sky Daylight Factors,07/21,COMPUTER_CLASS_ZN_1_FLR_1 ZN,COMPUTER_CLASS_ZN_1_FLR_1_WALL_3_WINDOW_1,3.7905E-002,1.9996E-002
+ Clear Turbid Sky Daylight Factors,07/21,COMPUTER_CLASS_ZN_1_FLR_1 ZN,COMPUTER_CLASS_ZN_1_FLR_1_WALL_3_WINDOW_1,3.0844E-002,1.5916E-002
+ Intermediate Sky Daylight Factors,07/21,COMPUTER_CLASS_ZN_1_FLR_1 ZN,COMPUTER_CLASS_ZN_1_FLR_1_WALL_3_WINDOW_1,2.3558E-002,9.4818E-003
+ Overcast Sky Daylight Factors,07/21,COMPUTER_CLASS_ZN_1_FLR_1 ZN,COMPUTER_CLASS_ZN_1_FLR_1_WALL_3_WINDOW_1,5.1048E-002,1.8661E-002
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_1_ZN_1_FLR_1_WALL_1_WINDOW_1,7.7335E-002,3.2140E-002
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_1_ZN_1_FLR_1_WALL_1_WINDOW_1,7.6087E-002,2.9924E-002
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_1_ZN_1_FLR_1_WALL_1_WINDOW_1,6.3853E-002,2.2243E-002
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_1_ZN_1_FLR_1_WALL_1_WINDOW_1,5.0477E-002,1.7731E-002
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_1_ZN_1_FLR_1_WALL_4_WINDOW_1,8.5650E-003,9.6641E-003
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_1_ZN_1_FLR_1_WALL_4_WINDOW_1,7.2156E-003,8.1687E-003
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_1_ZN_1_FLR_1_WALL_4_WINDOW_1,4.9753E-003,5.6546E-003
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_1_ZN_1_FLR_1_WALL_4_WINDOW_1,6.2731E-003,6.8788E-003
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_2_ZN_1_FLR_1_WALL_1_WINDOW_1,7.5852E-002,2.2107E-002
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_2_ZN_1_FLR_1_WALL_1_WINDOW_1,7.4743E-002,2.0903E-002
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_2_ZN_1_FLR_1_WALL_1_WINDOW_1,6.2931E-002,1.6321E-002
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_2_ZN_1_FLR_1_WALL_1_WINDOW_1,4.9748E-002,1.3248E-002
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_2_ZN_1_FLR_1_WALL_4_WINDOW_1,8.5650E-003,9.6641E-003
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_2_ZN_1_FLR_1_WALL_4_WINDOW_1,7.2156E-003,8.1687E-003
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_2_ZN_1_FLR_1_WALL_4_WINDOW_1,4.9753E-003,5.6546E-003
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_2_ZN_1_FLR_1_WALL_4_WINDOW_1,6.2731E-003,6.8788E-003
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_3_ZN_1_FLR_1_WALL_1_WINDOW_1,7.5852E-002,2.2107E-002
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_3_ZN_1_FLR_1_WALL_1_WINDOW_1,7.4743E-002,2.0903E-002
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_3_ZN_1_FLR_1_WALL_1_WINDOW_1,6.2931E-002,1.6321E-002
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_3_ZN_1_FLR_1_WALL_1_WINDOW_1,4.9748E-002,1.3248E-002
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_3_ZN_1_FLR_1_WALL_4_WINDOW_1,8.5650E-003,9.6641E-003
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_3_ZN_1_FLR_1_WALL_4_WINDOW_1,7.2156E-003,8.1687E-003
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_3_ZN_1_FLR_1_WALL_4_WINDOW_1,4.9753E-003,5.6546E-003
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_1_POD_3_ZN_1_FLR_1_WALL_4_WINDOW_1,6.2731E-003,6.8788E-003
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_1_ZN_1_FLR_1_WALL_3_WINDOW_1,7.1313E-003,8.2877E-003
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_1_ZN_1_FLR_1_WALL_3_WINDOW_1,5.7551E-003,6.6555E-003
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_1_ZN_1_FLR_1_WALL_3_WINDOW_1,3.6653E-003,4.1315E-003
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_1_ZN_1_FLR_1_WALL_3_WINDOW_1,7.0096E-003,7.9604E-003
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_1_ZN_1_FLR_1_WALL_4_WINDOW_1,4.8443E-002,2.1036E-002
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_1_ZN_1_FLR_1_WALL_4_WINDOW_1,4.2938E-002,1.7896E-002
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_1_ZN_1_FLR_1_WALL_4_WINDOW_1,3.7545E-002,1.3099E-002
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_1_ZN_1_FLR_1_WALL_4_WINDOW_1,4.9642E-002,1.6647E-002
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_2_ZN_1_FLR_1_WALL_3_WINDOW_1,7.1313E-003,8.2877E-003
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_2_ZN_1_FLR_1_WALL_3_WINDOW_1,5.7551E-003,6.6555E-003
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_2_ZN_1_FLR_1_WALL_3_WINDOW_1,3.6653E-003,4.1315E-003
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_2_ZN_1_FLR_1_WALL_3_WINDOW_1,7.0096E-003,7.9604E-003
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_2_ZN_1_FLR_1_WALL_4_WINDOW_1,4.8443E-002,2.1036E-002
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_2_ZN_1_FLR_1_WALL_4_WINDOW_1,4.2938E-002,1.7896E-002
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_2_ZN_1_FLR_1_WALL_4_WINDOW_1,3.7545E-002,1.3099E-002
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_2_ZN_1_FLR_1_WALL_4_WINDOW_1,4.9642E-002,1.6647E-002
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_3_ZN_1_FLR_1_WALL_3_WINDOW_1,1.0770E-002,1.2249E-002
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_3_ZN_1_FLR_1_WALL_3_WINDOW_1,8.5903E-003,9.7361E-003
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_3_ZN_1_FLR_1_WALL_3_WINDOW_1,4.9746E-003,5.5396E-003
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_3_ZN_1_FLR_1_WALL_3_WINDOW_1,9.2355E-003,1.0387E-002
+ Clear Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_3_ZN_1_FLR_1_WALL_4_WINDOW_1,4.8443E-002,2.1036E-002
+ Clear Turbid Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_3_ZN_1_FLR_1_WALL_4_WINDOW_1,4.2938E-002,1.7896E-002
+ Intermediate Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_3_ZN_1_FLR_1_WALL_4_WINDOW_1,3.7545E-002,1.3099E-002
+ Overcast Sky Daylight Factors,07/21,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,CORNER_CLASS_2_POD_3_ZN_1_FLR_1_WALL_4_WINDOW_1,4.9642E-002,1.6647E-002
+ Clear Sky Daylight Factors,07/21,GYM_ZN_1_FLR_1 ZN,GYM_ZN_1_FLR_1_WALL_2_WINDOW_1,4.7719E-002,2.1676E-002
+ Clear Turbid Sky Daylight Factors,07/21,GYM_ZN_1_FLR_1 ZN,GYM_ZN_1_FLR_1_WALL_2_WINDOW_1,4.2145E-002,1.8328E-002
+ Intermediate Sky Daylight Factors,07/21,GYM_ZN_1_FLR_1 ZN,GYM_ZN_1_FLR_1_WALL_2_WINDOW_1,3.6640E-002,1.3024E-002
+ Overcast Sky Daylight Factors,07/21,GYM_ZN_1_FLR_1 ZN,GYM_ZN_1_FLR_1_WALL_2_WINDOW_1,4.9068E-002,1.6657E-002
+ Clear Sky Daylight Factors,07/21,KITCHEN_ZN_1_FLR_1 ZN,KITCHEN_ZN_1_FLR_1_WALL_2_WINDOW_1,4.6529E-002,1.9157E-002
+ Clear Turbid Sky Daylight Factors,07/21,KITCHEN_ZN_1_FLR_1 ZN,KITCHEN_ZN_1_FLR_1_WALL_2_WINDOW_1,4.1129E-002,1.6210E-002
+ Intermediate Sky Daylight Factors,07/21,KITCHEN_ZN_1_FLR_1 ZN,KITCHEN_ZN_1_FLR_1_WALL_2_WINDOW_1,3.6047E-002,1.1782E-002
+ Overcast Sky Daylight Factors,07/21,KITCHEN_ZN_1_FLR_1 ZN,KITCHEN_ZN_1_FLR_1_WALL_2_WINDOW_1,4.8432E-002,1.5292E-002
+ Clear Sky Daylight Factors,07/21,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1_WALL_2_WINDOW_1,4.5382E-002,1.9676E-002
+ Clear Turbid Sky Daylight Factors,07/21,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1_WALL_2_WINDOW_1,4.0064E-002,1.6575E-002
+ Intermediate Sky Daylight Factors,07/21,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1_WALL_2_WINDOW_1,3.5256E-002,1.1899E-002
+ Overcast Sky Daylight Factors,07/21,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1_WALL_2_WINDOW_1,4.7979E-002,1.5786E-002
+ Clear Sky Daylight Factors,07/21,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1_WALL_3_WINDOW_1,3.0907E-003,3.3367E-003
+ Clear Turbid Sky Daylight Factors,07/21,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1_WALL_3_WINDOW_1,2.4939E-003,2.6798E-003
+ Intermediate Sky Daylight Factors,07/21,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1_WALL_3_WINDOW_1,1.4724E-003,1.5409E-003
+ Overcast Sky Daylight Factors,07/21,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1_WALL_3_WINDOW_1,2.3877E-003,2.5128E-003
+ Clear Sky Daylight Factors,07/21,LOBBY_ZN_1_FLR_1 ZN,LOBBY_ZN_1_FLR_1_WALL_1_WINDOW_1,7.8261E-002,3.3837E-002
+ Clear Turbid Sky Daylight Factors,07/21,LOBBY_ZN_1_FLR_1 ZN,LOBBY_ZN_1_FLR_1_WALL_1_WINDOW_1,7.6936E-002,3.1441E-002
+ Intermediate Sky Daylight Factors,07/21,LOBBY_ZN_1_FLR_1 ZN,LOBBY_ZN_1_FLR_1_WALL_1_WINDOW_1,6.4500E-002,2.3332E-002
+ Overcast Sky Daylight Factors,07/21,LOBBY_ZN_1_FLR_1 ZN,LOBBY_ZN_1_FLR_1_WALL_1_WINDOW_1,5.1049E-002,1.8680E-002
+ Clear Sky Daylight Factors,07/21,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,MAIN_CORRIDOR_ZN_1_FLR_1_WALL_7_WINDOW_1,3.1927E-002,1.0882E-002
+ Clear Turbid Sky Daylight Factors,07/21,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,MAIN_CORRIDOR_ZN_1_FLR_1_WALL_7_WINDOW_1,2.8500E-002,9.2113E-003
+ Intermediate Sky Daylight Factors,07/21,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,MAIN_CORRIDOR_ZN_1_FLR_1_WALL_7_WINDOW_1,2.6881E-002,7.0447E-003
+ Overcast Sky Daylight Factors,07/21,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,MAIN_CORRIDOR_ZN_1_FLR_1_WALL_7_WINDOW_1,3.6695E-002,9.4584E-003
+ Clear Sky Daylight Factors,07/21,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_1_ZN_1_FLR_1_WALL_1_WINDOW_1,7.7314E-002,3.3942E-002
+ Clear Turbid Sky Daylight Factors,07/21,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_1_ZN_1_FLR_1_WALL_1_WINDOW_1,7.5813E-002,3.1514E-002
+ Intermediate Sky Daylight Factors,07/21,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_1_ZN_1_FLR_1_WALL_1_WINDOW_1,6.3733E-002,2.3359E-002
+ Overcast Sky Daylight Factors,07/21,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_1_ZN_1_FLR_1_WALL_1_WINDOW_1,5.0819E-002,1.8723E-002
+ Clear Sky Daylight Factors,07/21,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_2_ZN_1_FLR_1_WALL_1_WINDOW_1,7.5383E-002,2.0912E-002
+ Clear Turbid Sky Daylight Factors,07/21,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_2_ZN_1_FLR_1_WALL_1_WINDOW_1,7.4077E-002,1.9886E-002
+ Intermediate Sky Daylight Factors,07/21,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_2_ZN_1_FLR_1_WALL_1_WINDOW_1,6.2555E-002,1.5783E-002
+ Overcast Sky Daylight Factors,07/21,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_2_ZN_1_FLR_1_WALL_1_WINDOW_1,4.9875E-002,1.2904E-002
+ Clear Sky Daylight Factors,07/21,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_3_ZN_1_FLR_1_WALL_1_WINDOW_1,7.5383E-002,2.0927E-002
+ Clear Turbid Sky Daylight Factors,07/21,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_3_ZN_1_FLR_1_WALL_1_WINDOW_1,7.4077E-002,1.9898E-002
+ Intermediate Sky Daylight Factors,07/21,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_3_ZN_1_FLR_1_WALL_1_WINDOW_1,6.2555E-002,1.5790E-002
+ Overcast Sky Daylight Factors,07/21,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,MULT_CLASS_1_POD_3_ZN_1_FLR_1_WALL_1_WINDOW_1,4.9875E-002,1.2910E-002
+ Clear Sky Daylight Factors,07/21,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_1_ZN_1_FLR_1_WALL_3_WINDOW_1,3.6439E-002,1.1463E-002
+ Clear Turbid Sky Daylight Factors,07/21,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_1_ZN_1_FLR_1_WALL_3_WINDOW_1,2.9660E-002,9.2836E-003
+ Intermediate Sky Daylight Factors,07/21,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_1_ZN_1_FLR_1_WALL_3_WINDOW_1,2.2875E-002,6.3461E-003
+ Overcast Sky Daylight Factors,07/21,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_1_ZN_1_FLR_1_WALL_3_WINDOW_1,4.9875E-002,1.2904E-002
+ Clear Sky Daylight Factors,07/21,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_2_ZN_1_FLR_1_WALL_3_WINDOW_1,3.6439E-002,1.1477E-002
+ Clear Turbid Sky Daylight Factors,07/21,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_2_ZN_1_FLR_1_WALL_3_WINDOW_1,2.9660E-002,9.2942E-003
+ Intermediate Sky Daylight Factors,07/21,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_2_ZN_1_FLR_1_WALL_3_WINDOW_1,2.2875E-002,6.3512E-003
+ Overcast Sky Daylight Factors,07/21,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_2_ZN_1_FLR_1_WALL_3_WINDOW_1,4.9875E-002,1.2910E-002
+ Clear Sky Daylight Factors,07/21,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_3_ZN_1_FLR_1_WALL_3_WINDOW_1,3.7917E-002,2.0178E-002
+ Clear Turbid Sky Daylight Factors,07/21,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_3_ZN_1_FLR_1_WALL_3_WINDOW_1,3.0856E-002,1.6063E-002
+ Intermediate Sky Daylight Factors,07/21,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_3_ZN_1_FLR_1_WALL_3_WINDOW_1,2.3560E-002,9.5586E-003
+ Overcast Sky Daylight Factors,07/21,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,MULT_CLASS_2_POD_3_ZN_1_FLR_1_WALL_3_WINDOW_1,5.1014E-002,1.8736E-002
+ Clear Sky Daylight Factors,07/21,OFFICES_ZN_1_FLR_1 ZN,OFFICES_ZN_1_FLR_1_WALL_1_WINDOW_1,7.4949E-002,3.0581E-002
+ Clear Turbid Sky Daylight Factors,07/21,OFFICES_ZN_1_FLR_1 ZN,OFFICES_ZN_1_FLR_1_WALL_1_WINDOW_1,7.3693E-002,2.8246E-002
+ Intermediate Sky Daylight Factors,07/21,OFFICES_ZN_1_FLR_1 ZN,OFFICES_ZN_1_FLR_1_WALL_1_WINDOW_1,6.1792E-002,2.0655E-002
+ Overcast Sky Daylight Factors,07/21,OFFICES_ZN_1_FLR_1 ZN,OFFICES_ZN_1_FLR_1_WALL_1_WINDOW_1,4.8926E-002,1.6584E-002
+ Clear Sky Daylight Factors,07/21,OFFICES_ZN_1_FLR_1 ZN,OFFICES_ZN_1_FLR_1_WALL_2_WINDOW_1,3.4361E-003,3.7128E-003
+ Clear Turbid Sky Daylight Factors,07/21,OFFICES_ZN_1_FLR_1 ZN,OFFICES_ZN_1_FLR_1_WALL_2_WINDOW_1,2.9213E-003,3.1489E-003
+ Intermediate Sky Daylight Factors,07/21,OFFICES_ZN_1_FLR_1 ZN,OFFICES_ZN_1_FLR_1_WALL_2_WINDOW_1,2.0235E-003,2.1556E-003
+ Overcast Sky Daylight Factors,07/21,OFFICES_ZN_1_FLR_1 ZN,OFFICES_ZN_1_FLR_1_WALL_2_WINDOW_1,2.4047E-003,2.5330E-003
+! <Zone Sizing Information>, Zone Name, Load Type, Calc Des Load {W}, User Des Load {W}, Calc Des Air Flow Rate {m3/s}, User Des Air Flow Rate {m3/s}, Design Day Name, Date/Time of Peak, Temperature at Peak {C}, Humidity Ratio at Peak {kgWater/kgDryAir}, Floor Area {m2}, # Occupants, Calc Outdoor Air Flow Rate {m3/s}, Calc DOAS Heat Addition Rate {W}
+ Zone Sizing Information, BATH_ZN_1_FLR_1 ZN, Cooling, 5158.03520, 5158.03520, 0.37847, 0.37847, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:40:00, 30.08733, 1.25535E-002, 190.00000, 0.00000, 5.79120E-002, -171.97238
+ Zone Sizing Information, BATH_ZN_1_FLR_1 ZN, Heating, 3237.97910, 3237.97910, 0.14042, 0.14042, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 22:20:00, -22.40000, 5.08820E-004, 190.00000, 0.00000, 5.79120E-002, -316.92993
+ Zone Sizing Information, CAFETERIA_ZN_1_FLR_1 ZN, Cooling, 21710.49421, 21710.49421, 1.59564, 1.59564, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:00:00, 30.76500, 1.25535E-002, 315.00000, 339.06318, 1.48819, -4390.74402
+ Zone Sizing Information, CAFETERIA_ZN_1_FLR_1 ZN, Heating, 15112.31729, 15112.31729, 0.65464, 1.48819, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 21:20:00, -22.40000, 5.08820E-004, 315.00000, 339.06318, 1.48819, -8112.15020
+ Zone Sizing Information, COMPUTER_CLASS_ZN_1_FLR_1 ZN, Cooling, 6405.26699, 6405.26699, 0.47023, 0.47023, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 14:40:00, 31.30000, 1.25535E-002, 162.00000, 43.59384, 0.30450, -902.35229
+ Zone Sizing Information, COMPUTER_CLASS_ZN_1_FLR_1 ZN, Heating, 4868.10571, 4868.10571, 0.21101, 0.30450, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -22.40000, 5.08820E-004, 162.00000, 43.59384, 0.30450, -1663.48095
+ Zone Sizing Information, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN, Cooling, 6484.16793, 6484.16793, 0.47604, 0.47604, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 15:40:00, 30.87200, 1.25535E-002, 99.00000, 26.64068, 0.18608, -551.38580
+ Zone Sizing Information, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN, Heating, 4266.97079, 4266.97079, 0.18494, 0.18608, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -22.40000, 5.08820E-004, 99.00000, 26.64068, 0.18608, -1016.22854
+ Zone Sizing Information, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN, Cooling, 6379.08995, 6379.08995, 0.46832, 0.46832, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 15:40:00, 30.87200, 1.25535E-002, 99.00000, 26.64068, 0.18608, -551.38722
+ Zone Sizing Information, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN, Heating, 4251.61976, 4251.61976, 0.18427, 0.18608, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -22.40000, 5.08820E-004, 99.00000, 26.64068, 0.18608, -1016.23200
+ Zone Sizing Information, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN, Cooling, 6388.47928, 6388.47928, 0.46901, 0.46901, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 15:40:00, 30.87200, 1.25535E-002, 99.00000, 26.64068, 0.18608, -551.38711
+ Zone Sizing Information, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN, Heating, 4253.38501, 4253.38501, 0.18435, 0.18608, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 21:00:00, -22.40000, 5.08820E-004, 99.00000, 26.64068, 0.18608, -1016.23163
+ Zone Sizing Information, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN, Cooling, 5832.58117, 5832.58117, 0.42820, 0.42820, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:00:00, 30.65800, 1.25535E-002, 99.00000, 26.64068, 0.18608, -551.37604
+ Zone Sizing Information, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN, Heating, 4267.32302, 4267.32302, 0.18495, 0.18608, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -22.40000, 5.08820E-004, 99.00000, 26.64068, 0.18608, -1016.22649
+ Zone Sizing Information, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN, Cooling, 5839.66049, 5839.66049, 0.42872, 0.42872, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:00:00, 30.65800, 1.25535E-002, 99.00000, 26.64068, 0.18608, -551.37596
+ Zone Sizing Information, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN, Heating, 4268.28686, 4268.28686, 0.18499, 0.18608, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 20:50:00, -22.40000, 5.08820E-004, 99.00000, 26.64068, 0.18608, -1016.22627
+ Zone Sizing Information, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN, Cooling, 5937.20832, 5937.20832, 0.43588, 0.43588, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:00:00, 30.65800, 1.25535E-002, 99.00000, 26.64068, 0.18608, -551.37489
+ Zone Sizing Information, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN, Heating, 4280.87631, 4280.87631, 0.18554, 0.18608, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 16:20:00, -22.40000, 5.08820E-004, 99.00000, 26.64068, 0.18608, -1016.22342
+ Zone Sizing Information, CORRIDOR_POD_1_ZN_1_FLR_1 ZN, Cooling, 4447.94046, 4447.94046, 0.32636, 0.32636, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 15:50:00, 30.76500, 1.25535E-002, 192.00000, 0.00000, 5.85216E-002, -173.78395
+ Zone Sizing Information, CORRIDOR_POD_1_ZN_1_FLR_1 ZN, Heating, 2694.38709, 2694.38709, 0.11685, 0.11685, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 23:40:00, -22.40000, 5.08820E-004, 192.00000, 0.00000, 5.85216E-002, -320.27789
+ Zone Sizing Information, CORRIDOR_POD_2_ZN_1_FLR_1 ZN, Cooling, 4411.29848, 4411.29848, 0.32368, 0.32368, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 15:50:00, 30.76500, 1.25535E-002, 192.00000, 0.00000, 5.85216E-002, -173.78392
+ Zone Sizing Information, CORRIDOR_POD_2_ZN_1_FLR_1 ZN, Heating, 2688.69176, 2688.69176, 0.11660, 0.11660, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 23:40:00, -22.40000, 5.08820E-004, 192.00000, 0.00000, 5.85216E-002, -320.27796
+ Zone Sizing Information, CORRIDOR_POD_3_ZN_1_FLR_1 ZN, Cooling, 4453.47351, 4453.47351, 0.32677, 0.32677, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 15:50:00, 30.76500, 1.25535E-002, 192.00000, 0.00000, 5.85216E-002, -173.78398
+ Zone Sizing Information, CORRIDOR_POD_3_ZN_1_FLR_1 ZN, Heating, 2698.80229, 2698.80229, 0.11704, 0.11704, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -22.40000, 5.08820E-004, 192.00000, 0.00000, 5.85216E-002, -320.27784
+ Zone Sizing Information, GYM_ZN_1_FLR_1 ZN, Cooling, 10360.32684, 10360.32684, 0.76053, 0.76053, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 17:00:00, 29.80200, 1.25535E-002, 357.00000, 115.28148, 0.54407, -1612.78699
+ Zone Sizing Information, GYM_ZN_1_FLR_1 ZN, Heating, 7652.34356, 7652.34356, 0.33174, 0.54407, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 21:30:00, -22.40000, 5.08820E-004, 357.00000, 115.28148, 0.54407, -2973.70693
+ Zone Sizing Information, KITCHEN_ZN_1_FLR_1 ZN, Cooling, 13081.32560, 13081.32560, 0.96077, 0.96077, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:00:00, 30.76500, 1.25535E-002, 168.00000, 26.99847, 0.24918, -737.16871
+ Zone Sizing Information, KITCHEN_ZN_1_FLR_1 ZN, Heating, 2414.12053, 2414.12053, 0.10468, 0.24918, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 21:00:00, -22.40000, 5.08820E-004, 168.00000, 26.99847, 0.24918, -1362.86893
+ Zone Sizing Information, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN, Cooling, 17040.28934, 17040.28934, 1.25102, 1.25102, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 10:10:00, 27.50150, 1.25535E-002, 399.00000, 107.37001, 0.74996, -2222.20938
+ Zone Sizing Information, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN, Heating, 11389.06745, 11389.06745, 0.49366, 0.74996, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 23:20:00, -22.40000, 5.08820E-004, 399.00000, 107.37001, 0.74996, -4097.05309
+ Zone Sizing Information, LOBBY_ZN_1_FLR_1 ZN, Cooling, 5009.66722, 5009.66722, 0.36758, 0.36758, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:20:00, 30.94333, 1.25535E-002, 171.00000, 0.00000, 5.21208E-002, -154.76973
+ Zone Sizing Information, LOBBY_ZN_1_FLR_1 ZN, Heating, 4155.61472, 4155.61472, 0.18021, 0.18021, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 22:20:00, -22.40000, 5.08820E-004, 171.00000, 0.00000, 5.21208E-002, -285.19797
+ Zone Sizing Information, MAIN_CORRIDOR_ZN_1_FLR_1 ZN, Cooling, 8258.44837, 8258.44837, 0.60596, 0.60596, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:10:00, 30.51533, 1.25535E-002, 546.00000, 0.00000, 0.16642, -494.18534
+ Zone Sizing Information, MAIN_CORRIDOR_ZN_1_FLR_1 ZN, Heating, 5842.43897, 5842.43897, 0.25337, 0.25337, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 22:20:00, -22.40000, 5.08820E-004, 546.00000, 0.00000, 0.16642, -910.77173
+ Zone Sizing Information, MECH_ZN_1_FLR_1 ZN, Cooling, 3808.05466, 3808.05466, 0.27943, 0.27943, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 14:20:00, 31.30000, 1.25535E-002, 252.00000, 0.00000, 0.15362, -456.10133
+ Zone Sizing Information, MECH_ZN_1_FLR_1 ZN, Heating, 2230.62689, 2230.62689, 9.67318E-002, 0.15362, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 21:30:00, -22.40000, 5.08820E-004, 252.00000, 0.00000, 0.15362, -840.56727
+ Zone Sizing Information, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN, Cooling, 23827.18993, 23827.18993, 1.74929, 1.74929, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:20:00, 30.94333, 1.25535E-002, 477.00000, 128.35963, 0.89657, -2656.60174
+ Zone Sizing Information, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN, Heating, 14274.90658, 14274.90658, 0.61875, 0.89657, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 23:20:00, -22.40000, 5.08820E-004, 477.00000, 128.35963, 0.89657, -4897.88038
+ Zone Sizing Information, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN, Cooling, 23186.59620, 23186.59620, 1.70225, 1.70225, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:20:00, 30.94333, 1.25535E-002, 477.00000, 128.35963, 0.89657, -2656.62060
+ Zone Sizing Information, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN, Heating, 14141.47523, 14141.47523, 0.61297, 0.89657, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 23:50:00, -22.40000, 5.08820E-004, 477.00000, 128.35963, 0.89657, -4897.92657
+ Zone Sizing Information, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN, Cooling, 23327.78228, 23327.78228, 1.71262, 1.71262, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:20:00, 30.94333, 1.25535E-002, 477.00000, 128.35963, 0.89657, -2656.61788
+ Zone Sizing Information, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN, Heating, 14182.01188, 14182.01188, 0.61472, 0.89657, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 20:10:00, -22.40000, 5.08820E-004, 477.00000, 128.35963, 0.89657, -4897.91432
+ Zone Sizing Information, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN, Cooling, 18443.45171, 18443.45171, 1.35401, 1.35401, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 14:40:00, 31.30000, 1.25535E-002, 477.00000, 128.35963, 0.89657, -2656.82771
+ Zone Sizing Information, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN, Heating, 14177.93539, 14177.93539, 0.61455, 0.89657, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 23:20:00, -22.40000, 5.08820E-004, 477.00000, 128.35963, 0.89657, -4897.90270
+ Zone Sizing Information, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN, Cooling, 18474.79721, 18474.79721, 1.35631, 1.35631, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 14:40:00, 31.30000, 1.25535E-002, 477.00000, 128.35963, 0.89657, -2656.82612
+ Zone Sizing Information, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN, Heating, 14182.52437, 14182.52437, 0.61475, 0.89657, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 23:30:00, -22.40000, 5.08820E-004, 477.00000, 128.35963, 0.89657, -4897.90097
+ Zone Sizing Information, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN, Cooling, 12366.85919, 12366.85919, 0.90790, 0.90790, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 14:40:00, 31.30000, 1.25535E-002, 315.00000, 84.76579, 0.59207, -1754.52473
+ Zone Sizing Information, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN, Heating, 9464.44131, 9464.44131, 0.41024, 0.59207, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -22.40000, 5.08820E-004, 315.00000, 84.76579, 0.59207, -3234.46127
+ Zone Sizing Information, OFFICES_ZN_1_FLR_1 ZN, Cooling, 14813.66559, 14813.66559, 1.08706, 1.08706, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 11:00:00, 28.83900, 1.25535E-002, 441.00000, 23.73442, 0.19042, -565.22785
+ Zone Sizing Information, OFFICES_ZN_1_FLR_1 ZN, Heating, 9222.56021, 9222.56021, 0.39992, 0.39992, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 22:10:00, -22.40000, 5.08820E-004, 441.00000, 23.73442, 0.19042, -1041.78201
+! <System Sizing Information>, System Name, Load Type, Peak Load Kind, User Design Capacity, Calc Des Air Flow Rate [m3/s], User Des Air Flow Rate [m3/s], Design Day Name, Date/Time of Peak
+ System Sizing Information, 25 ZONE DOAS, Cooling, Sensible, 194350.02, 19.14531, 10.32336, BURLINGTON INTERNATIONAL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 05:00:00
+ System Sizing Information, 25 ZONE DOAS, Heating, Sensible, 537102.81, 11.00533, 10.32336, BURLINGTON INTERNATIONAL AP ANN HTG 99.6% CONDNS DB, 1/21 22:20:00
+! <Component Sizing Information>, Component Type, Component Name, Input Field Description, Value
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, BATH_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.79120E-002
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, BATH_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.37847
+ Component Sizing Information, Fan:OnOff, BATH_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.37847
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, BATH_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 7.08238E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, BATH_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 2.55178E-004
+ Component Sizing Information, Coil:Cooling:Water, BATH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.66168
+ Component Sizing Information, Coil:Cooling:Water, BATH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, BATH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 8.97754E-003
+ Component Sizing Information, Coil:Cooling:Water, BATH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, BATH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, BATH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 2.55178E-004
+ Component Sizing Information, Coil:Cooling:Water, BATH_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.37847
+! <Water Cooling Coil Capacity Information>,Component Type,Name,Nominal Total Capacity {W},Nominal Sensible Capacity {W},Nominal Latent Capacity {W},Nominal Sensible Heat Ratio, Nominal Coil UA Value {W/C}, Nominal Coil Surface Area {m2}
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,BATH_ZN_1_FLR_1 ZN FCU COOLING COIL,7681.05,5625.55,2055.50,0.73,734.16,7.45
+ Component Sizing Information, Coil:Heating:Water, BATH_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 3237.97910
+ Component Sizing Information, Coil:Heating:Water, BATH_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 7.08238E-005
+ Component Sizing Information, Coil:Heating:Water, BATH_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 296.68251
+! <Water Heating Coil Capacity Information>,Component Type,Name,Nominal Total Capacity {W}
+Water Heating Coil Capacity Information,Coil:Heating:Water,BATH_ZN_1_FLR_1 ZN FCU HEATING COIL,7649.35
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CAFETERIA_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 1.48819
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CAFETERIA_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 1.59564
+ Component Sizing Information, Fan:OnOff, CAFETERIA_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 1.59564
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CAFETERIA_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 7.51433E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CAFETERIA_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 1.72750E-003
+ Component Sizing Information, Coil:Cooling:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.63920
+ Component Sizing Information, Coil:Cooling:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.21606E-002
+ Component Sizing Information, Coil:Cooling:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 1.72750E-003
+ Component Sizing Information, Coil:Cooling:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 1.59564
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CAFETERIA_ZN_1_FLR_1 ZN FCU COOLING COIL,41076.95,27969.50,13107.45,0.68,4028.06,40.85
+ Component Sizing Information, Coil:Heating:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 34354.63590
+ Component Sizing Information, Coil:Heating:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 7.51433E-004
+ Component Sizing Information, Coil:Heating:Water, CAFETERIA_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 3164.42727
+Water Heating Coil Capacity Information,Coil:Heating:Water,CAFETERIA_ZN_1_FLR_1 ZN FCU HEATING COIL,81279.44
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, COMPUTER_CLASS_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.30450
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.47023
+ Component Sizing Information, Fan:OnOff, COMPUTER_CLASS_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.47023
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 1.53653E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 4.32180E-004
+ Component Sizing Information, Coil:Cooling:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65345
+ Component Sizing Information, Coil:Cooling:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.08837E-002
+ Component Sizing Information, Coil:Cooling:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 4.32180E-004
+ Component Sizing Information, Coil:Cooling:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.47023
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU COOLING COIL,11215.92,7811.58,3404.34,0.70,1083.72,10.99
+ Component Sizing Information, Coil:Heating:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 7024.81860
+ Component Sizing Information, Coil:Heating:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 1.53653E-004
+ Component Sizing Information, Coil:Heating:Water, COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 646.27824
+Water Heating Coil Capacity Information,Coil:Heating:Water,COMPUTER_CLASS_ZN_1_FLR_1 ZN FCU HEATING COIL,16616.98
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.18608
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.47604
+ Component Sizing Information, Fan:OnOff, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.47604
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 9.39079E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 3.94327E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65406
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.01784E-002
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 3.94327E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.47604
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL,10781.05,7629.02,3152.02,0.71,1036.36,10.51
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 4293.35869
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 9.39079E-005
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 394.43905
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL,10150.14
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.18608
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.46832
+ Component Sizing Information, Fan:OnOff, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.46832
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 9.39079E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 3.89178E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65404
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.01990E-002
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 3.89178E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.46832
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL,10623.86,7513.95,3109.91,0.71,1021.39,10.36
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 4293.35452
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 9.39079E-005
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 394.44452
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL,10150.19
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.18608
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.46901
+ Component Sizing Information, Fan:OnOff, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.46901
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 9.39079E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 3.89638E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65405
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.01971E-002
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 3.89638E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.46901
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL,10637.91,7524.24,3113.67,0.71,1022.73,10.37
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 4293.35496
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 9.39079E-005
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 394.44389
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL,10150.19
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.18608
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.42820
+ Component Sizing Information, Fan:OnOff, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.42820
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 9.39080E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 3.61992E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65385
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.03108E-002
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 3.61992E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.42820
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL,9799.72,6912.24,2887.48,0.71,942.89,9.56
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 4293.36116
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 9.39080E-005
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 394.43899
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL,10150.14
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.18608
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.42872
+ Component Sizing Information, Fan:OnOff, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.42872
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 9.39080E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 3.62343E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65385
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.03091E-002
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 3.62343E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.42872
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL,9810.39,6920.03,2890.36,0.71,943.90,9.57
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 4293.36143
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 9.39080E-005
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 394.43865
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL,10150.14
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.18608
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.43588
+ Component Sizing Information, Fan:OnOff, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.43588
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 9.39081E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 3.67174E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65387
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.02874E-002
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 3.67174E-004
+ Component Sizing Information, Coil:Cooling:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.43588
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL,9957.32,7027.35,2929.96,0.71,957.89,9.72
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 4293.36487
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 9.39081E-005
+ Component Sizing Information, Coil:Heating:Water, CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 394.43418
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL,10150.10
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORRIDOR_POD_1_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.85216E-002
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.32636
+ Component Sizing Information, Fan:OnOff, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.32636
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 5.89339E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 2.22569E-004
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.66162
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 9.03760E-003
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 2.22569E-004
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.32636
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL,6661.10,4870.21,1790.89,0.73,637.14,6.46
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 2694.38709
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 5.89339E-005
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 246.98015
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORRIDOR_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL,6366.22
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORRIDOR_POD_2_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.85216E-002
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.32368
+ Component Sizing Information, Fan:OnOff, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.32368
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 5.88093E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 2.20904E-004
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.66162
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 9.04164E-003
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 2.20904E-004
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.32368
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL,6608.72,4831.36,1777.36,0.73,632.17,6.41
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 2688.69176
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 5.88093E-005
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 246.45981
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORRIDOR_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL,6352.78
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, CORRIDOR_POD_3_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.85216E-002
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.32677
+ Component Sizing Information, Fan:OnOff, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.32677
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 5.90305E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 2.22817E-004
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.66162
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 9.03691E-003
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 2.22817E-004
+ Component Sizing Information, Coil:Cooling:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.32677
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL,6668.97,4876.06,1792.91,0.73,637.89,6.47
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 2698.80229
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 5.90305E-005
+ Component Sizing Information, Coil:Heating:Water, CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 247.38352
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORRIDOR_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL,6376.64
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, GYM_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.54407
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, GYM_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.76053
+ Component Sizing Information, Fan:OnOff, GYM_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.76053
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, GYM_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 2.74507E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, GYM_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 7.57986E-004
+ Component Sizing Information, Coil:Cooling:Water, GYM_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65260
+ Component Sizing Information, Coil:Cooling:Water, GYM_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, GYM_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.14870E-002
+ Component Sizing Information, Coil:Cooling:Water, GYM_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, GYM_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, GYM_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 7.57986E-004
+ Component Sizing Information, Coil:Cooling:Water, GYM_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.76053
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,GYM_ZN_1_FLR_1 ZN FCU COOLING COIL,18854.78,12980.88,5873.90,0.69,1833.50,18.60
+ Component Sizing Information, Coil:Heating:Water, GYM_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 12550.13854
+ Component Sizing Information, Coil:Heating:Water, GYM_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 2.74507E-004
+ Component Sizing Information, Coil:Heating:Water, GYM_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 1155.21854
+Water Heating Coil Capacity Information,Coil:Heating:Water,GYM_ZN_1_FLR_1 ZN FCU HEATING COIL,29694.57
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, KITCHEN_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.24918
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, KITCHEN_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.96077
+ Component Sizing Information, Fan:OnOff, KITCHEN_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.96077
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, KITCHEN_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 1.25700E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, KITCHEN_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 9.50875E-004
+ Component Sizing Information, Coil:Cooling:Water, KITCHEN_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.64782
+ Component Sizing Information, Coil:Cooling:Water, KITCHEN_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, KITCHEN_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.14349E-002
+ Component Sizing Information, Coil:Cooling:Water, KITCHEN_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, KITCHEN_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, KITCHEN_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 9.50875E-004
+ Component Sizing Information, Coil:Cooling:Water, KITCHEN_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.96077
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,KITCHEN_ZN_1_FLR_1 ZN FCU COOLING COIL,23741.85,16361.25,7380.60,0.69,2307.38,23.40
+ Component Sizing Information, Coil:Heating:Water, KITCHEN_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 5746.86421
+ Component Sizing Information, Coil:Heating:Water, KITCHEN_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 1.25700E-004
+ Component Sizing Information, Coil:Heating:Water, KITCHEN_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 528.37572
+Water Heating Coil Capacity Information,Coil:Heating:Water,KITCHEN_ZN_1_FLR_1 ZN FCU HEATING COIL,13592.75
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.74996
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 1.25102
+ Component Sizing Information, Fan:OnOff, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 1.25102
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 3.78442E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 1.13071E-003
+ Component Sizing Information, Coil:Cooling:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65330
+ Component Sizing Information, Coil:Cooling:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.07652E-002
+ Component Sizing Information, Coil:Cooling:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 1.13071E-003
+ Component Sizing Information, Coil:Cooling:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 1.25102
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU COOLING COIL,29595.42,20663.63,8931.79,0.70,2856.46,28.97
+ Component Sizing Information, Coil:Heating:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 17301.91495
+ Component Sizing Information, Coil:Heating:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 3.78442E-004
+ Component Sizing Information, Coil:Heating:Water, LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 1592.06070
+Water Heating Coil Capacity Information,Coil:Heating:Water,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN FCU HEATING COIL,40929.91
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, LOBBY_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.21208E-002
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, LOBBY_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.36758
+ Component Sizing Information, Fan:OnOff, LOBBY_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.36758
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, LOBBY_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 9.08951E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, LOBBY_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 2.46933E-004
+ Component Sizing Information, Coil:Cooling:Water, LOBBY_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.66161
+ Component Sizing Information, Coil:Cooling:Water, LOBBY_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, LOBBY_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 8.95838E-003
+ Component Sizing Information, Coil:Cooling:Water, LOBBY_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, LOBBY_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, LOBBY_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 2.46933E-004
+ Component Sizing Information, Coil:Cooling:Water, LOBBY_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.36758
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,LOBBY_ZN_1_FLR_1 ZN FCU COOLING COIL,7446.57,5456.83,1989.73,0.73,711.58,7.22
+ Component Sizing Information, Coil:Heating:Water, LOBBY_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 4155.61472
+ Component Sizing Information, Coil:Heating:Water, LOBBY_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 9.08951E-005
+ Component Sizing Information, Coil:Heating:Water, LOBBY_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 380.49959
+Water Heating Coil Capacity Information,Coil:Heating:Water,LOBBY_ZN_1_FLR_1 ZN FCU HEATING COIL,9814.47
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, MAIN_CORRIDOR_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.16642
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.60596
+ Component Sizing Information, Fan:OnOff, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.60596
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 1.27791E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 4.31863E-004
+ Component Sizing Information, Coil:Cooling:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.66126
+ Component Sizing Information, Coil:Cooling:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 9.27653E-003
+ Component Sizing Information, Coil:Cooling:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 4.31863E-004
+ Component Sizing Information, Coil:Cooling:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.60596
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU COOLING COIL,12656.87,9187.54,3469.33,0.73,1212.59,12.30
+ Component Sizing Information, Coil:Heating:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 5842.43897
+ Component Sizing Information, Coil:Heating:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 1.27791E-004
+ Component Sizing Information, Coil:Heating:Water, MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 536.04914
+Water Heating Coil Capacity Information,Coil:Heating:Water,MAIN_CORRIDOR_ZN_1_FLR_1 ZN FCU HEATING COIL,13809.15
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, MECH_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.15362
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MECH_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.27943
+ Component Sizing Information, Fan:OnOff, MECH_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.27943
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MECH_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 7.74833E-005
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MECH_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 2.17451E-004
+ Component Sizing Information, Coil:Cooling:Water, MECH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.66020
+ Component Sizing Information, Coil:Cooling:Water, MECH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, MECH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 9.78615E-003
+ Component Sizing Information, Coil:Cooling:Water, MECH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, MECH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, MECH_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 2.17451E-004
+ Component Sizing Information, Coil:Cooling:Water, MECH_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.27943
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,MECH_ZN_1_FLR_1 ZN FCU COOLING COIL,6123.75,4377.96,1745.79,0.71,587.40,5.96
+ Component Sizing Information, Coil:Heating:Water, MECH_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 3542.44369
+ Component Sizing Information, Coil:Heating:Water, MECH_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 7.74833E-005
+ Component Sizing Information, Coil:Heating:Water, MECH_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 326.08457
+Water Heating Coil Capacity Information,Coil:Heating:Water,MECH_ZN_1_FLR_1 ZN FCU HEATING COIL,8382.91
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.89657
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 1.74929
+ Component Sizing Information, Fan:OnOff, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 1.74929
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 4.52426E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 1.52954E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65354
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.05363E-002
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 1.52954E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 1.74929
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL,40724.22,28574.59,12149.64,0.70,3925.16,39.81
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 20684.36529
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 4.52426E-004
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 1902.96620
+Water Heating Coil Capacity Information,Coil:Heating:Water,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL,48928.20
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.89657
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 1.70225
+ Component Sizing Information, Fan:OnOff, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 1.70225
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 4.52425E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 1.49695E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65352
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.05752E-002
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 1.49695E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 1.70225
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL,39743.07,27861.75,11881.32,0.70,3831.84,38.86
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 20684.30957
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 4.52425E-004
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 1903.03447
+Water Heating Coil Capacity Information,Coil:Heating:Water,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL,48928.83
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.89657
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 1.71262
+ Component Sizing Information, Fan:OnOff, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 1.71262
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 4.52425E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 1.50415E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65353
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.05665E-002
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 1.50415E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 1.71262
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL,39959.61,28019.00,11940.61,0.70,3852.43,39.07
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 20684.32435
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 4.52425E-004
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 1903.01360
+Water Heating Coil Capacity Information,Coil:Heating:Water,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL,48928.64
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.89657
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 1.35401
+ Component Sizing Information, Fan:OnOff, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 1.35401
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 4.52425E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 1.25044E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65330
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.09182E-002
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 1.25044E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 1.35401
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU COOLING COIL,32371.42,22529.86,9841.56,0.70,3128.88,31.73
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 20684.33836
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 4.52425E-004
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 1903.01615
+Water Heating Coil Capacity Information,Coil:Heating:Water,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN FCU HEATING COIL,48928.67
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.89657
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 1.35631
+ Component Sizing Information, Fan:OnOff, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 1.35631
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 4.52425E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 1.25210E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65330
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.09156E-002
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 1.25210E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 1.35631
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU COOLING COIL,32420.66,22565.34,9855.32,0.70,3133.56,31.78
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 20684.34045
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 4.52425E-004
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 1903.01380
+Water Heating Coil Capacity Information,Coil:Heating:Water,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN FCU HEATING COIL,48928.65
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.59207
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 0.90790
+ Component Sizing Information, Fan:OnOff, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 0.90790
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 2.98771E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 8.35695E-004
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.65335
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 1.08946E-002
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 8.35695E-004
+ Component Sizing Information, Coil:Cooling:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 0.90790
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU COOLING COIL,21671.10,15089.96,6581.15,0.70,2094.16,21.24
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 13659.47208
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 2.98771E-004
+ Component Sizing Information, Coil:Heating:Water, MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 1256.65580
+Water Heating Coil Capacity Information,Coil:Heating:Water,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN FCU HEATING COIL,32310.88
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, OFFICES_ZN_1_FLR_1 ZN AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.19042
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, OFFICES_ZN_1_FLR_1 ZN FCU, Design Size Maximum Supply Air Flow Rate [m3/s], 1.08706
+ Component Sizing Information, Fan:OnOff, OFFICES_ZN_1_FLR_1 ZN FAN COIL FAN, Design Size Maximum Flow Rate [m3/s], 1.08706
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, OFFICES_ZN_1_FLR_1 ZN FCU, Design Size Maximum Hot Water Flow [m3/s], 2.01724E-004
+ Component Sizing Information, ZoneHVAC:FourPipeFanCoil, OFFICES_ZN_1_FLR_1 ZN FCU, Design Size Maximum Cold Water Flow [m3/s], 7.83329E-004
+ Component Sizing Information, Coil:Cooling:Water, OFFICES_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Temperature [C], 24.66000
+ Component Sizing Information, Coil:Cooling:Water, OFFICES_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, OFFICES_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Inlet Air Humidity Ratio, 9.33844E-003
+ Component Sizing Information, Coil:Cooling:Water, OFFICES_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Temperature [C], 12.77778
+ Component Sizing Information, Coil:Cooling:Water, OFFICES_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, OFFICES_ZN_1_FLR_1 ZN FCU COOLING COIL, Design Size Design Water Flow Rate [m3/s], 7.83329E-004
+ Component Sizing Information, Coil:Cooling:Water, OFFICES_ZN_1_FLR_1 ZN FCU COOLING COIL, User-Specified Design Air Flow Rate [m3/s], 1.08706
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,OFFICES_ZN_1_FLR_1 ZN FCU COOLING COIL,22845.80,16551.05,6294.75,0.72,2188.85,22.20
+ Component Sizing Information, Coil:Heating:Water, OFFICES_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Rated Capacity [W], 9222.56021
+ Component Sizing Information, Coil:Heating:Water, OFFICES_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size Maximum Water Flow Rate [m3/s], 2.01724E-004
+ Component Sizing Information, Coil:Heating:Water, OFFICES_ZN_1_FLR_1 ZN FCU HEATING COIL, Design Size U-Factor Times Area Value [W/K], 845.42922
+Water Heating Coil Capacity Information,Coil:Heating:Water,OFFICES_ZN_1_FLR_1 ZN FCU HEATING COIL,21790.28
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, Sum of Air Terminal Maximum Heating Flow Rates [m3/s], 0.00000
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, Sum of Air Terminal Minimum Heating Flow Rates [m3/s], 0.00000
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, Sum of Air Terminal Maximum Flow Rates [m3/s], 10.32336
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, Adjusted Heating Design Air Flow Rate [m3/s], 10.32336
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, Adjusted Cooling Design Air Flow Rate [m3/s], 10.32336
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, Adjusted Main Design Air Flow Rate [m3/s], 10.32336
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, User Heating Air Flow Ratio [], 1.00000
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, Calculated Heating Air Flow Ratio [], 1.00000
+ Component Sizing Information, AirLoopHVAC, 25 ZONE DOAS, Design Supply Air Flow Rate [m3/s], 10.32336
+ Component Sizing Information, Fan:ConstantVolume, DOAS EXHAUST FAN, Design Size Maximum Flow Rate [m3/s], 10.32336
+!<Controller:MechanicalVentilation>,Name,Availability Schedule Name,Demand Controlled Ventilation {Yes/No},System Outdoor Air Method,Zone Maximum Outdoor Air Fraction,Number of Zones,Zone Name,DSOA Name,DSZAD Name
+ Controller:MechanicalVentilation,25 ZONE DOAS MECHANICAL VENTILATION CONTROLLER,25 ZONE DOAS OCC SCH,No,ZoneSum,1.00,25,BATH_ZN_1_FLR_1 ZN,PRIMARYSCHOOL RESTROOM VENTILATION,BATH_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CAFETERIA_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CAFETERIA VENTILATION,CAFETERIA_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,COMPUTER_CLASS_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,COMPUTER_CLASS_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORRIDOR_POD_1_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CORRIDOR VENTILATION,CORRIDOR_POD_1_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORRIDOR_POD_2_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CORRIDOR VENTILATION,CORRIDOR_POD_2_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,CORRIDOR_POD_3_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CORRIDOR VENTILATION,CORRIDOR_POD_3_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,GYM_ZN_1_FLR_1 ZN,PRIMARYSCHOOL GYM VENTILATION,GYM_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,KITCHEN_ZN_1_FLR_1 ZN,PRIMARYSCHOOL KITCHEN VENTILATION,KITCHEN_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,LOBBY_ZN_1_FLR_1 ZN,PRIMARYSCHOOL LOBBY VENTILATION,LOBBY_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CORRIDOR VENTILATION,MAIN_CORRIDOR_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,MECH_ZN_1_FLR_1 ZN,PRIMARYSCHOOL MECHANICAL VENTILATION,MECH_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,PRIMARYSCHOOL CLASSROOM VENTILATION,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST,OFFICES_ZN_1_FLR_1 ZN,PRIMARYSCHOOL OFFICE VENTILATION,OFFICES_ZN_1_FLR_1 ZN DESIGN SPEC ZONE AIR DIST
+ Component Sizing Information, Controller:OutdoorAir, 25 ZONE DOAS OUTDOOR AIR CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 10.32336
+ Component Sizing Information, Controller:OutdoorAir, 25 ZONE DOAS OUTDOOR AIR CONTROLLER, Minimum Outdoor Air Flow Rate [m3/s], 10.32336
+ Component Sizing Information, HeatExchanger:AirToAir:SensibleAndLatent, 25 ZONE DOAS HEAT EXCHANGER, Design Size Nominal Supply Air Flow Rate [m3/s], 10.32336
+ Component Sizing Information, Coil:Cooling:Water, 25 ZONE DOAS CLG COIL, Design Size Design Inlet Air Temperature [C], 31.30000
+ Component Sizing Information, Coil:Cooling:Water, 25 ZONE DOAS CLG COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, 25 ZONE DOAS CLG COIL, Design Size Design Outlet Air Temperature [C], 14.54519
+ Component Sizing Information, Coil:Cooling:Water, 25 ZONE DOAS CLG COIL, Design Size Design Inlet Air Humidity Ratio, 1.25535E-002
+ Component Sizing Information, Coil:Cooling:Water, 25 ZONE DOAS CLG COIL, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, 25 ZONE DOAS CLG COIL, Design Size Design Coil Load [W], 337500.42740
+ Component Sizing Information, Coil:Cooling:Water, 25 ZONE DOAS CLG COIL, Design Size Design Water Flow Rate [m3/s], 1.43296E-002
+ Component Sizing Information, Coil:Cooling:Water, 25 ZONE DOAS CLG COIL, Design Size Design Air Flow Rate [m3/s], 10.32336
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,25 ZONE DOAS CLG COIL,287226.56,190974.44,96252.12,0.66,28039.38,284.39
+ Component Sizing Information, Coil:Heating:Water, 25 ZONE DOAS HTG COIL, Design Size Rated Capacity [W], 537102.80640
+ Component Sizing Information, Coil:Heating:Water, 25 ZONE DOAS HTG COIL, Design Size Maximum Water Flow Rate [m3/s], 1.17480E-002
+ Component Sizing Information, Coil:Heating:Water, 25 ZONE DOAS HTG COIL, Design Size U-Factor Times Area Value [W/K], 13272.72638
+Water Heating Coil Capacity Information,Coil:Heating:Water,25 ZONE DOAS HTG COIL,496987.74
+ Component Sizing Information, Fan:ConstantVolume, DOAS SUPPLY FAN, Design Size Maximum Flow Rate [m3/s], 10.32336
+ Component Sizing Information, Controller:WaterCoil, 25 ZONE DOAS CLG COIL CONTROLLER, Maximum Actuated Flow [m3/s], 1.43296E-002
+ Component Sizing Information, Controller:WaterCoil, 25 ZONE DOAS CLG COIL CONTROLLER, Controller Convergence Tolerance, 3.32312E-005
+ Component Sizing Information, Controller:WaterCoil, 25 ZONE DOAS HTG COIL CONTROLLER, Maximum Actuated Flow [m3/s], 1.17480E-002
+Water Heater Information,WaterHeater:Mixed,200GAL NATURAL GAS WATER HEATER - 200KBTU/HR 0.802 THERM EFF 0.805 THERM EFF,0.7570,58614.2,0.757,0.2773
+Water Heater Information,WaterHeater:Mixed,6.0GAL ELECTRICITY BOOSTER WATER HEATER - 20KBTU/HR 1.0 THERM EFF 1.0 THERM EFF,2.2712E-002,6000.0,1.384,1.2733
+ Component Sizing Information, Pump:VariableSpeed, CHILLED WATER LOOP SECONDARY PUMP, Design Flow Rate [m3/s], 3.20634E-002
+ Component Sizing Information, Pump:VariableSpeed, CHILLED WATER LOOP SECONDARY PUMP, Design Power Consumption [W], 6606.80509
+ Component Sizing Information, PlantLoop, CHILLED WATER LOOP, Maximum Loop Flow Rate [m3/s], 3.20634E-002
+ Component Sizing Information, PlantLoop, CHILLED WATER LOOP, Plant Loop Volume [m3], 3.84761
+ Component Sizing Information, Pump:ConstantSpeed, CHILLED WATER LOOP PRIMARY PUMP, Design Flow Rate [m3/s], 3.20634E-002
+ Component Sizing Information, Pump:ConstantSpeed, CHILLED WATER LOOP PRIMARY PUMP, Design Power Consumption [W], 4573.94199
+ Component Sizing Information, Chiller:Electric:EIR, NREL ZNE READY 2017 WATERCOOLED  ROTARY SCREW CHILLER 0 220TONS 0.6KW/TON, Design Size Reference Chilled Water Flow Rate [m3/s], 3.20634E-002
+ Component Sizing Information, Chiller:Electric:EIR, NREL ZNE READY 2017 WATERCOOLED  ROTARY SCREW CHILLER 0 220TONS 0.6KW/TON, Design Size Reference Capacity [W], 755178.78851
+ Component Sizing Information, Chiller:Electric:EIR, NREL ZNE READY 2017 WATERCOOLED  ROTARY SCREW CHILLER 0 220TONS 0.6KW/TON, Design Size Reference Condenser Fluid Flow Rate [m3/s], 3.82563E-002
+! <Chiller Standard Rating Information>, Component Type, Component Name, IPLV in SI Units {W/W}, IPLV in IP Units {Btu/W-h}
+ Chiller Standard Rating Information, Chiller:Electric:EIR, NREL ZNE READY 2017 WATERCOOLED  ROTARY SCREW CHILLER 0 220TONS 0.6KW/TON, 5.29, 18.04
+ Component Sizing Information, PlantLoop, SERVICE WATER LOOP, Maximum Loop Flow Rate [m3/s], 6.30902E-005
+ Component Sizing Information, PlantLoop, SERVICE WATER LOOP, Plant Loop Volume [m3], 7.57082E-003
+ Component Sizing Information, Pump:ConstantSpeed, BOOSTER WATER LOOP PUMP, Design Flow Rate [m3/s], 6.30902E-005
+ Component Sizing Information, Pump:ConstantSpeed, BOOSTER WATER LOOP PUMP, Design Power Consumption [W], 19.00000
+ Component Sizing Information, HeatExchanger:FluidToFluid, HX FOR BOOSTER WATER HEATING, Loop Supply Side Design Fluid Flow Rate [m3/s], 6.30902E-005
+ Component Sizing Information, HeatExchanger:FluidToFluid, HX FOR BOOSTER WATER HEATING, Loop Demand Side Design Fluid Flow Rate [m3/s], 6.30902E-005
+ Component Sizing Information, HeatExchanger:FluidToFluid, HX FOR BOOSTER WATER HEATING, Heat Exchanger U-Factor Times Area Value [W/C], 76.88358
+ Component Sizing Information, HeatExchanger:FluidToFluid, HX FOR BOOSTER WATER HEATING, Loop-to-loop Temperature Difference Used to Size Heat Exchanger U-Factor Times Area Value [C], 17.22222
+ Component Sizing Information, WaterHeater:Mixed, 6.0GAL ELECTRICITY BOOSTER WATER HEATER - 20KBTU/HR 1.0 THERM EFF 1.0 THERM EFF, Use Side Design Flow Rate [m3/s], 6.30902E-005
+ Component Sizing Information, PlantLoop, CONDENSER WATER LOOP, Maximum Loop Flow Rate [m3/s], 3.82563E-002
+ Component Sizing Information, PlantLoop, CONDENSER WATER LOOP, Plant Loop Volume [m3], 4.59076
+ Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Design Flow Rate [m3/s], 3.82563E-002
+ Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Design Power Consumption [W], 11521.13275
+ Component Sizing Information, CoolingTower:VariableSpeed, PROPELLER OR AXIAL VARIABLE SPEED FAN OPEN COOLING TOWER, Design Water Flow Rate [m3/s], 3.82563E-002
+ Component Sizing Information, CoolingTower:VariableSpeed, PROPELLER OR AXIAL VARIABLE SPEED FAN OPEN COOLING TOWER, Fan Power at Design Air Flow Rate [W], 9326.97237
+ Component Sizing Information, CoolingTower:VariableSpeed, PROPELLER OR AXIAL VARIABLE SPEED FAN OPEN COOLING TOWER, Design Air Flow Rate [m3/s], 24.84068
+ Component Sizing Information, CoolingTower:VariableSpeed, PROPELLER OR AXIAL VARIABLE SPEED FAN OPEN COOLING TOWER, Nominal Capacity [W], 883066.91394
+ Component Sizing Information, CoolingTower:VariableSpeed, PROPELLER OR AXIAL VARIABLE SPEED FAN OPEN COOLING TOWER, Air Flow Rate in free convection regime [m3/s], 4.96814
+ Component Sizing Information, CoolingTower:VariableSpeed, PROPELLER OR AXIAL VARIABLE SPEED FAN OPEN COOLING TOWER, Tower capacity in free convection regime at design conditions [W], 110383.36424
+ Component Sizing Information, PlantLoop, HOT WATER LOOP, Maximum Loop Flow Rate [m3/s], 1.73015E-002
+ Component Sizing Information, PlantLoop, HOT WATER LOOP, Plant Loop Volume [m3], 2.07618
+ Component Sizing Information, Pump:VariableSpeed, HOT WATER LOOP PUMP, Design Flow Rate [m3/s], 1.73015E-002
+ Component Sizing Information, Pump:VariableSpeed, HOT WATER LOOP PUMP, Design Power Consumption [W], 5210.46338
+ Component Sizing Information, Boiler:HotWater, BOILER 2699KBTU/HR 0.94 COMBUSTION EFF, Design Size Nominal Capacity [W], 791005.40216
+ Component Sizing Information, Boiler:HotWater, BOILER 2699KBTU/HR 0.94 COMBUSTION EFF, Design Size Design Water Flow Rate [m3/s], 1.73015E-002
+ Component Sizing Information, PlantLoop, MAIN SERVICE WATER LOOP, Maximum Loop Flow Rate [m3/s], 1.70344E-004
+ Component Sizing Information, PlantLoop, MAIN SERVICE WATER LOOP, Plant Loop Volume [m3], 2.04412E-002
+ Component Sizing Information, Pump:ConstantSpeed, SERVICE WATER LOOP PUMP, Design Flow Rate [m3/s], 1.70344E-004
+ Component Sizing Information, Pump:ConstantSpeed, SERVICE WATER LOOP PUMP, Design Power Consumption [W], 51.30000
+ Component Sizing Information, WaterHeater:Mixed, 200GAL NATURAL GAS WATER HEATER - 200KBTU/HR 0.802 THERM EFF 0.805 THERM EFF, Use Side Design Flow Rate [m3/s], 1.70344E-004
+! <Environment>,Environment Name,Environment Type, Start Date, End Date, Start DayOfWeek, Duration {#days}, Source:Start DayOfWeek,  Use Daylight Saving, Use Holidays, Apply Weekend Holiday Rule,  Use Rain Values, Use Snow Values
+! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
+! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
+! <Environment:WarmupDays>, NumberofWarmupDays
+Environment,RUN PERIOD 1,WeatherFileRunPeriod,01/01/2006,12/31/2006,Sunday,365,Use RunPeriod Specified Day,No,No,No,Yes,Yes
+Environment:Daylight Saving,No,RunPeriod Object
+Environment:WarmupDays,  6
+! <Tabular Report>,Style,Unit Conversion
+Tabular Report,HTML,None
+! <Warmup Convergence Information>,Zone Name,Environment Type/Name,Average Warmup Temperature Difference {deltaC},Std Dev Warmup Temperature Difference {deltaC},Max Temperature Pass/Fail Convergence,Min Temperature Pass/Fail Convergence,Average Warmup Load Difference {W},Std Dev Warmup Load Difference {W},Heating Load Pass/Fail Convergence,Cooling Load Pass/Fail Convergence
+ Warmup Convergence Information,BATH_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,1.6816636818E-002,1.2697175997E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,CAFETERIA_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.6871908295E-002,2.4967378624E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,COMPUTER_CLASS_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.5262942496E-002,2.2389062499E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,CORNER_CLASS_1_POD_1_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,7.4052440874E-002,6.2999774913E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,CORNER_CLASS_1_POD_2_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,7.2421283324E-002,6.1489359600E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,CORNER_CLASS_1_POD_3_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,7.2563335244E-002,6.1597151324E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,CORNER_CLASS_2_POD_1_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,3.3651313413E-002,2.9631712606E-002,Pass,Pass,4.6045759857E-002,0.1504107849,Pass,Pass
+ Warmup Convergence Information,CORNER_CLASS_2_POD_2_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,3.3684648536E-002,2.9687087879E-002,Pass,Pass,4.5770170845E-002,0.1486220407,Pass,Pass
+ Warmup Convergence Information,CORNER_CLASS_2_POD_3_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,3.4638649288E-002,3.0729848962E-002,Pass,Pass,4.1908384205E-002,0.1433879390,Pass,Pass
+ Warmup Convergence Information,CORRIDOR_POD_1_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.6380907461E-002,2.0477602479E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,CORRIDOR_POD_2_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.5765506623E-002,2.0020255331E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,CORRIDOR_POD_3_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.6243296957E-002,2.0351593067E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,GYM_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.0996478251E-002,1.9758707973E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,KITCHEN_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,9.4503631596E-003,8.7712792781E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,LIBRARY_MEDIA_CENTER_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.7116013118E-002,2.5150628565E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,LOBBY_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,6.1306240934E-002,6.0519033266E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,MAIN_CORRIDOR_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,1.8383416645E-002,1.4642312619E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,MECH_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,1.4971396506E-002,1.2479085414E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,MULT_CLASS_1_POD_1_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,6.3529273558E-002,6.0845846759E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,MULT_CLASS_1_POD_2_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,6.0518206932E-002,5.8512953785E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,MULT_CLASS_1_POD_3_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,6.0781820459E-002,5.8694792269E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,MULT_CLASS_2_POD_1_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.4450251004E-002,2.1600892434E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,MULT_CLASS_2_POD_2_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.4523152731E-002,2.1687347944E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,MULT_CLASS_2_POD_3_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,2.5857765217E-002,2.2718990968E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,OFFICES_ZN_1_FLR_1 ZN,RunPeriod: RUN PERIOD 1,4.3964050806E-002,3.9904968162E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
+Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
+End of Data

@@ -1,0 +1,8 @@
+{
+   "created_at" : "20190410T051229Z",
+   "hash" : "4E6CA1A7",
+   "seed_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_model_with_sizing_issues/test_model_with_sizing_issues.osm",
+   "steps" : [],
+   "updated_at" : "20190410T051229Z",
+   "weather_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_model_with_sizing_issues/USA_MD_Baltimore-Washington.Intl.AP.724060_TMY3.epw"
+}

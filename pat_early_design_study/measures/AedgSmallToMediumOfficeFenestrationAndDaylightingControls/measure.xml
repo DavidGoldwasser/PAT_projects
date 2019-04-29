@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>aedg_small_to_medium_office_fenestration_and_daylighting_controls</name>
   <uid>4252d6c7-ccd5-4cae-b55e-8d7b1dfcc717</uid>
-  <version_id>4826d6d2-1b5b-4ab0-b0bf-72256b776b3c</version_id>
-  <version_modified>20181109T142041Z</version_modified>
+  <version_id>71b53f1d-fda4-4c4d-9401-a2ef6185b405</version_id>
+  <version_modified>20190410T000414Z</version_modified>
   <xml_checksum>6FAFA9DE</xml_checksum>
   <class_name>AedgSmallToMediumOfficeFenestrationAndDaylightingControls</class_name>
   <display_name>AedgSmallToMediumOfficeFenestrationAndDaylightingControls</display_name>
@@ -82,6 +82,12 @@
       <checksum>64624291</checksum>
     </file>
     <file>
+      <filename>AedgSmallToMediumOfficeFenestrationAndDaylightingControls_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>AEDA0D57</checksum>
+    </file>
+    <file>
       <filename>LICENSE.md</filename>
       <filetype>md</filetype>
       <usage_type>license</usage_type>
@@ -144,19 +150,7 @@
       <filename>os_lib_schedules.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>5F1CEF3A</checksum>
-    </file>
-    <file>
-      <filename>AedgSmallToMediumOfficeFenestrationAndDaylightingControls_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>F14B9136</checksum>
-    </file>
-    <file>
-      <filename>SDDC Office Example Plan seed.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>7AC2F27A</checksum>
+      <checksum>26368263</checksum>
     </file>
   </files>
 </measure>

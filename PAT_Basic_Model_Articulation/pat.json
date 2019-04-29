@@ -63,14 +63,14 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/ChangeBuildingLocation",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation",
       "name": "change_building_location",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/ChangeBuildingLocation",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation",
       "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
-      "version_id": "2c222d7b-f13d-4635-866f-c87c8fc3ab3f",
-      "version_uuid": "{2c222d7b-f13d-4635-866f-c87c8fc3ab3f}",
-      "version_modified": "20180531T161312Z",
+      "version_id": "adf00d38-9033-466a-8072-eab7e56f7da0",
+      "version_uuid": "{adf00d38-9033-466a-8072-eab7e56f7da0}",
+      "version_modified": "20190325T201334Z",
       "xml_checksum": "057E8D9D",
       "display_name": "ChangeBuildingLocation",
       "class_name": "ChangeBuildingLocation",
@@ -179,6 +179,32 @@
           "option_1": "Lookup From Stat File",
           "variable": false,
           "option_2": "Lookup From Stat File"
+        },
+        {
+          "name": "set_year",
+          "display_name": "Set Calendar Year",
+          "description": "This will impact the day of the week the simulation starts on. An input value of 0 will leave the year un-altered",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "option_1": 0,
+          "option_2": 0,
+          "variable": false,
+          "$$hashKey": "uiGrid-044M"
+        },
+        {
+          "name": "use_upstream_args",
+          "display_name": "Use Upstream Argument Values",
+          "description": "When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "option_1": true,
+          "option_2": true,
+          "variable": false,
+          "$$hashKey": "uiGrid-044O"
         }
       ],
       "edit": "",
@@ -188,7 +214,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "5/31/2018",
+      "date": "3/25/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
@@ -204,6 +230,14 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "ChangeBuildingLocation Atlanta",
@@ -219,26 +253,34 @@
             {
               "name": "climate_zone",
               "value": "Lookup From Stat File"
+            },
+            {
+              "name": "set_year",
+              "value": 0
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "ChangeBuildingLocation Denver",
           "description": "Option 2 Description: Change the building location"
         }
       ],
-      "instanceId": 0.011947513382416286,
+      "instanceId": 0.14774682131775885,
       "numberOfOptions": 2,
       "$$hashKey": "object:3130",
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/create_bar_from_building_type_ratios",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_bar_from_building_type_ratios",
       "name": "create_bar_from_building_type_ratios",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/create_bar_from_building_type_ratios",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_bar_from_building_type_ratios",
       "uid": "6e3a14f8-c3c7-4e03-bc51-bef8a52e1a05",
       "uuid": "{6e3a14f8-c3c7-4e03-bc51-bef8a52e1a05}",
-      "version_id": "ca822a81-34e1-442c-8efc-5a32cb44abb3",
-      "version_uuid": "{ca822a81-34e1-442c-8efc-5a32cb44abb3}",
-      "version_modified": "20180522T170859Z",
+      "version_id": "d3adcd7e-700c-4f89-a393-e10d5a225d98",
+      "version_uuid": "{d3adcd7e-700c-4f89-a393-e10d5a225d98}",
+      "version_modified": "20180730T221523Z",
       "xml_checksum": "2AF3A68E",
       "display_name": "Create Bar From Building Type Ratios",
       "class_name": "CreateBarFromBuildingTypeRatios",
@@ -306,8 +348,8 @@
             "SmallHotel",
             "LargeHotel",
             "Warehouse",
-            "Retail",
-            "StripMall",
+            "RetailStandalone",
+            "RetailStripmall",
             "QuickServiceRestaurant",
             "FullServiceRestaurant",
             "MidriseApartment",
@@ -325,8 +367,8 @@
             "SmallHotel",
             "LargeHotel",
             "Warehouse",
-            "Retail",
-            "StripMall",
+            "RetailStandalone",
+            "RetailStripmall",
             "QuickServiceRestaurant",
             "FullServiceRestaurant",
             "MidriseApartment",
@@ -374,8 +416,8 @@
             "SmallHotel",
             "LargeHotel",
             "Warehouse",
-            "Retail",
-            "StripMall",
+            "RetailStandalone",
+            "RetailStripmall",
             "QuickServiceRestaurant",
             "FullServiceRestaurant",
             "MidriseApartment",
@@ -393,8 +435,8 @@
             "SmallHotel",
             "LargeHotel",
             "Warehouse",
-            "Retail",
-            "StripMall",
+            "RetailStandalone",
+            "RetailStripmall",
             "QuickServiceRestaurant",
             "FullServiceRestaurant",
             "MidriseApartment",
@@ -451,8 +493,8 @@
             "SmallHotel",
             "LargeHotel",
             "Warehouse",
-            "Retail",
-            "StripMall",
+            "RetailStandalone",
+            "RetailStripmall",
             "QuickServiceRestaurant",
             "FullServiceRestaurant",
             "MidriseApartment",
@@ -470,8 +512,8 @@
             "SmallHotel",
             "LargeHotel",
             "Warehouse",
-            "Retail",
-            "StripMall",
+            "RetailStandalone",
+            "RetailStripmall",
             "QuickServiceRestaurant",
             "FullServiceRestaurant",
             "MidriseApartment",
@@ -528,8 +570,8 @@
             "SmallHotel",
             "LargeHotel",
             "Warehouse",
-            "Retail",
-            "StripMall",
+            "RetailStandalone",
+            "RetailStripmall",
             "QuickServiceRestaurant",
             "FullServiceRestaurant",
             "MidriseApartment",
@@ -547,8 +589,8 @@
             "SmallHotel",
             "LargeHotel",
             "Warehouse",
-            "Retail",
-            "StripMall",
+            "RetailStandalone",
+            "RetailStripmall",
             "QuickServiceRestaurant",
             "FullServiceRestaurant",
             "MidriseApartment",
@@ -893,6 +935,19 @@
           "option_1": false,
           "variable": false,
           "option_2": false
+        },
+        {
+          "name": "use_upstream_args",
+          "display_name": "Use Upstream Argument Values",
+          "description": "When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "option_1": true,
+          "option_2": true,
+          "variable": false,
+          "$$hashKey": "uiGrid-035T"
         }
       ],
       "edit": "",
@@ -902,7 +957,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "5/22/2018",
+      "date": "7/30/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
@@ -1030,6 +1085,10 @@
             {
               "name": "make_mid_story_surfaces_adiabatic",
               "value": false
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "CreateBar LargeHotel",
@@ -1157,26 +1216,30 @@
             {
               "name": "make_mid_story_surfaces_adiabatic",
               "value": false
+            },
+            {
+              "name": "use_upstream_args",
+              "value": true
             }
           ],
           "name": "CreateBar MediumOffice",
           "description": "Option 2 Description: Create a core and perimeter bar sliced by space type."
         }
       ],
-      "instanceId": 0.6790771913825253,
+      "instanceId": 0.6349800598526094,
       "numberOfOptions": 2,
       "$$hashKey": "object:5499",
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/create_typical_building_from_model",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
       "name": "create_typical_building_from_model",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
       "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
       "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
-      "version_id": "b969048a-a312-419e-bf4a-524710f03aca",
-      "version_uuid": "{b969048a-a312-419e-bf4a-524710f03aca}",
-      "version_modified": "20180522T170859Z",
+      "version_id": "bdd09b31-2cba-414b-865e-0fd4de5df184",
+      "version_uuid": "{bdd09b31-2cba-414b-865e-0fd4de5df184}",
+      "version_modified": "20190424T053244Z",
       "xml_checksum": "EE13F09F",
       "display_name": "Create Typical Building from Model",
       "class_name": "CreateTypicalBuildingFromModel",
@@ -1228,394 +1291,6 @@
           "type": "String",
           "$$hashKey": "uiGrid-02UA",
           "option_1": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
-        },
-        {
-          "name": "template",
-          "display_name": "Target Standard",
-          "description": "",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "90.1-2010",
-          "choice_values": [
-            "DOE Ref Pre-1980",
-            "DOE Ref 1980-2004",
-            "90.1-2004",
-            "90.1-2007",
-            "90.1-2010",
-            "90.1-2013",
-            "NREL ZNE Ready 2017"
-          ],
-          "choice_display_names": [
-            "DOE Ref Pre-1980",
-            "DOE Ref 1980-2004",
-            "90.1-2004",
-            "90.1-2007",
-            "90.1-2010",
-            "90.1-2013",
-            "NREL ZNE Ready 2017"
-          ],
-          "$$hashKey": "uiGrid-02UC",
-          "option_1": "90.1-2004",
-          "variable": false
-        },
-        {
-          "name": "system_type",
-          "display_name": "HVAC System Type",
-          "description": "",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "Inferred",
-          "choice_values": [
-            "Inferred",
-            "Ideal Air Loads",
-            "PTAC with hot water heat",
-            "PTAC with gas coil heat",
-            "PTAC with electric baseboard heat",
-            "PTAC with no heat",
-            "PTAC with district hot water heat",
-            "PTHP",
-            "PSZ-AC with gas coil heat",
-            "PSZ-AC with electric baseboard heat",
-            "PSZ-AC with no heat",
-            "PSZ-AC with district hot water heat",
-            "PSZ-HP",
-            "Fan coil district chilled water with no heat",
-            "Fan coil district chilled water and boiler",
-            "Fan coil district chilled water unit heaters",
-            "Fan coil district chilled water electric baseboard heat",
-            "Fan coil district hot and chilled water",
-            "Fan coil district hot water and chiller",
-            "Fan coil chiller with no heat",
-            "Baseboard district hot water heat",
-            "Baseboard district hot water heat with direct evap coolers",
-            "Baseboard electric heat",
-            "Baseboard electric heat with direct evap coolers",
-            "Baseboard hot water heat",
-            "Baseboard hot water heat with direct evap coolers",
-            "Window AC with no heat",
-            "Window AC with forced air furnace",
-            "Window AC with district hot water baseboard heat",
-            "Window AC with hot water baseboard heat",
-            "Window AC with electric baseboard heat",
-            "Window AC with unit heaters",
-            "Direct evap coolers",
-            "Direct evap coolers with unit heaters",
-            "Unit heaters",
-            "Heat pump heat with no cooling",
-            "Heat pump heat with direct evap cooler",
-            "VAV with reheat",
-            "VAV with PFP boxes",
-            "VAV with gas reheat",
-            "VAV with zone unit heaters",
-            "VAV with electric baseboard heat",
-            "VAV cool with zone heat pump heat",
-            "PVAV with reheat",
-            "PVAV with PFP boxes",
-            "Residential forced air",
-            "Residential forced air cooling hot water baseboard heat",
-            "Residential forced air with district hot water",
-            "Residential heat pump",
-            "Forced air furnace",
-            "Forced air furnace district chilled water fan coil",
-            "Forced air furnace direct evap cooler",
-            "Residential AC with no heat",
-            "Residential AC with electric baseboard heat"
-          ],
-          "choice_display_names": [
-            "Inferred",
-            "Ideal Air Loads",
-            "PTAC with hot water heat",
-            "PTAC with gas coil heat",
-            "PTAC with electric baseboard heat",
-            "PTAC with no heat",
-            "PTAC with district hot water heat",
-            "PTHP",
-            "PSZ-AC with gas coil heat",
-            "PSZ-AC with electric baseboard heat",
-            "PSZ-AC with no heat",
-            "PSZ-AC with district hot water heat",
-            "PSZ-HP",
-            "Fan coil district chilled water with no heat",
-            "Fan coil district chilled water and boiler",
-            "Fan coil district chilled water unit heaters",
-            "Fan coil district chilled water electric baseboard heat",
-            "Fan coil district hot and chilled water",
-            "Fan coil district hot water and chiller",
-            "Fan coil chiller with no heat",
-            "Baseboard district hot water heat",
-            "Baseboard district hot water heat with direct evap coolers",
-            "Baseboard electric heat",
-            "Baseboard electric heat with direct evap coolers",
-            "Baseboard hot water heat",
-            "Baseboard hot water heat with direct evap coolers",
-            "Window AC with no heat",
-            "Window AC with forced air furnace",
-            "Window AC with district hot water baseboard heat",
-            "Window AC with hot water baseboard heat",
-            "Window AC with electric baseboard heat",
-            "Window AC with unit heaters",
-            "Direct evap coolers",
-            "Direct evap coolers with unit heaters",
-            "Unit heaters",
-            "Heat pump heat with no cooling",
-            "Heat pump heat with direct evap cooler",
-            "VAV with reheat",
-            "VAV with PFP boxes",
-            "VAV with gas reheat",
-            "VAV with zone unit heaters",
-            "VAV with electric baseboard heat",
-            "VAV cool with zone heat pump heat",
-            "PVAV with reheat",
-            "PVAV with PFP boxes",
-            "Residential forced air",
-            "Residential forced air cooling hot water baseboard heat",
-            "Residential forced air with district hot water",
-            "Residential heat pump",
-            "Forced air furnace",
-            "Forced air furnace district chilled water fan coil",
-            "Forced air furnace direct evap cooler",
-            "Residential AC with no heat",
-            "Residential AC with electric baseboard heat"
-          ],
-          "$$hashKey": "uiGrid-02UE",
-          "option_1": "Inferred",
-          "variable": false
-        },
-        {
-          "name": "hvac_delivery_type",
-          "display_name": "HVAC System Delivery Type",
-          "description": "How the HVAC system delivers heating or cooling to the zone.",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "Forced Air",
-          "choice_values": [
-            "Forced Air",
-            "Hydronic"
-          ],
-          "choice_display_names": [
-            "Forced Air",
-            "Hydronic"
-          ],
-          "$$hashKey": "uiGrid-02UG",
-          "option_1": "Forced Air",
-          "variable": false
-        },
-        {
-          "name": "htg_src",
-          "display_name": "HVAC Heating Source",
-          "description": "The primary source of heating used by HVAC systems in the model.",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "NaturalGas",
-          "choice_values": [
-            "Electricity",
-            "NaturalGas",
-            "DistrictHeating",
-            "DistrictAmbient"
-          ],
-          "choice_display_names": [
-            "Electricity",
-            "NaturalGas",
-            "DistrictHeating",
-            "DistrictAmbient"
-          ],
-          "$$hashKey": "uiGrid-02UI",
-          "option_1": "NaturalGas",
-          "variable": false
-        },
-        {
-          "name": "clg_src",
-          "display_name": "HVAC Cooling Source",
-          "description": "The primary source of cooling used by HVAC systems in the model.",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "Electricity",
-          "choice_values": [
-            "Electricity",
-            "DistrictCooling",
-            "DistrictAmbient"
-          ],
-          "choice_display_names": [
-            "Electricity",
-            "DistrictCooling",
-            "DistrictAmbient"
-          ],
-          "$$hashKey": "uiGrid-02UK",
-          "option_1": "Electricity",
-          "variable": false
-        },
-        {
-          "name": "kitchen_makeup",
-          "display_name": "Kitchen Exhaust MakeUp Air Calculation Method",
-          "description": "Determine logic to identify dining or cafe zones to provide makeup air to kitchen exhaust.",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "Adjacent",
-          "choice_values": [
-            "None",
-            "Largest Zone",
-            "Adjacent"
-          ],
-          "choice_display_names": [
-            "None",
-            "Largest Zone",
-            "Adjacent"
-          ],
-          "$$hashKey": "uiGrid-02UM",
-          "option_1": "Adjacent",
-          "variable": false
-        },
-        {
-          "name": "exterior_lighting_zone",
-          "display_name": "Exterior Lighting Zone",
-          "description": "Identify the Exterior Lighitng Zone for the Building Site.",
-          "type": "Choice",
-          "required": true,
-          "model_dependent": false,
-          "default_value": "3 - All Other Areas",
-          "choice_values": [
-            "0 - Undeveloped Areas Parks",
-            "1 - Developed Areas Parks",
-            "2 - Neighborhood",
-            "3 - All Other Areas",
-            "4 - High Activity"
-          ],
-          "choice_display_names": [
-            "0 - Undeveloped Areas Parks",
-            "1 - Developed Areas Parks",
-            "2 - Neighborhood",
-            "3 - All Other Areas",
-            "4 - High Activity"
-          ],
-          "$$hashKey": "uiGrid-02UO",
-          "option_1": "3 - All Other Areas",
-          "variable": false
-        },
-        {
-          "name": "add_constructions",
-          "display_name": "Add Constructions to Model",
-          "description": "Construction Set will be appied to entire building",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02UQ",
-          "option_1": true,
-          "variable": false
-        },
-        {
-          "name": "add_space_type_loads",
-          "display_name": "Add Space Type Loads to Model",
-          "description": "Populate existing space types in model with internal loads.",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02US",
-          "option_1": true,
-          "variable": false
-        },
-        {
-          "name": "add_elevators",
-          "display_name": "Add Elevators to Model",
-          "description": "Elevators will be add directly to space in model vs. being applied to a space type.",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02UU",
-          "option_1": true,
-          "variable": false
-        },
-        {
-          "name": "add_exterior_lights",
-          "display_name": "Add Exterior Lights to Model",
-          "description": "Multiple exterior lights objects will be added for different classes of lighting such as parking and facade.",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02UW",
-          "option_1": true,
-          "variable": false
-        },
-        {
-          "name": "onsite_parking_fraction",
-          "display_name": "Onsite Parking Fraction",
-          "description": "If set to 0 no exterior lighting for parking will be added",
-          "type": "Double",
-          "required": true,
-          "model_dependent": false,
-          "default_value": 1,
-          "$$hashKey": "uiGrid-02UY",
-          "option_1": 1,
-          "variable": false
-        },
-        {
-          "name": "add_exhaust",
-          "display_name": "Add Exhaust Fans to Model",
-          "description": "Depending upon building type exhaust fans can be in kitchens, restrooms or other space types",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02V0",
-          "option_1": true,
-          "variable": false
-        },
-        {
-          "name": "add_swh",
-          "display_name": "Add Service Water Heating to Model",
-          "description": "This will add both the supply and demand side of service water heating.",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02V2",
-          "option_1": true,
-          "variable": false
-        },
-        {
-          "name": "add_thermostat",
-          "display_name": "Add Thermostats",
-          "description": "Add Thermost to model based on Space Type Standards information of spaces assigned to thermal zones.",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02V4",
-          "option_1": true,
-          "variable": false
-        },
-        {
-          "name": "add_hvac",
-          "display_name": "Add HVAC System to Model",
-          "description": "Add HVAC System and thermostats to model",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02V6",
-          "option_1": true,
-          "variable": false
-        },
-        {
-          "name": "remove_objects",
-          "display_name": "Clean Model of non-gemoetry objects",
-          "description": "Only removes objects of type that are selected to be added.",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02V8",
-          "option_1": true,
-          "variable": false
         }
       ],
       "edit": "",
@@ -1625,7 +1300,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "5/22/2018",
+      "date": "4/23/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
@@ -1633,81 +1308,12 @@
       "options": [
         {
           "id": "option_1",
-          "arguments": [
-            {
-              "name": "template",
-              "value": "90.1-2004"
-            },
-            {
-              "name": "system_type",
-              "value": "Inferred"
-            },
-            {
-              "name": "hvac_delivery_type",
-              "value": "Forced Air"
-            },
-            {
-              "name": "htg_src",
-              "value": "NaturalGas"
-            },
-            {
-              "name": "clg_src",
-              "value": "Electricity"
-            },
-            {
-              "name": "kitchen_makeup",
-              "value": "Adjacent"
-            },
-            {
-              "name": "exterior_lighting_zone",
-              "value": "3 - All Other Areas"
-            },
-            {
-              "name": "add_constructions",
-              "value": true
-            },
-            {
-              "name": "add_space_type_loads",
-              "value": true
-            },
-            {
-              "name": "add_elevators",
-              "value": true
-            },
-            {
-              "name": "add_exterior_lights",
-              "value": true
-            },
-            {
-              "name": "onsite_parking_fraction",
-              "value": 1
-            },
-            {
-              "name": "add_exhaust",
-              "value": true
-            },
-            {
-              "name": "add_swh",
-              "value": true
-            },
-            {
-              "name": "add_thermostat",
-              "value": true
-            },
-            {
-              "name": "add_hvac",
-              "value": true
-            },
-            {
-              "name": "remove_objects",
-              "value": true
-            }
-          ],
+          "arguments": [],
           "name": "CreateTypicalModel",
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.14636308024142175,
+      "instanceId": 0.5154733645171763,
       "numberOfOptions": 1,
       "$$hashKey": "object:5498",
       "outputMeasure": false
@@ -1779,25 +1385,25 @@
           "description": "Option 1 Description: Visualize an OpenStudio model in a web based viewer"
         }
       ],
-      "instanceId": 0.5758094356896455,
+      "instanceId": 0.00772725063380042,
       "numberOfOptions": 1,
       "$$hashKey": "object:14523",
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/tariff_selection_generic",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/tariff_selection_generic",
       "name": "tariff_selection_generic",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/tariff_selection_generic",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/tariff_selection_generic",
       "uid": "d65ae535-f0ea-4745-9f5b-8d42c7070741",
       "uuid": "{d65ae535-f0ea-4745-9f5b-8d42c7070741}",
-      "version_id": "f51def40-c03d-44d9-b7c7-fff868ebb41f",
-      "version_uuid": "{f51def40-c03d-44d9-b7c7-fff868ebb41f}",
-      "version_modified": "20170531T170029Z",
+      "version_id": "16d8702a-a668-4f3d-82ce-c3a4138b5caf",
+      "version_uuid": "{16d8702a-a668-4f3d-82ce-c3a4138b5caf}",
+      "version_modified": "20190409T140616Z",
       "xml_checksum": "43564105",
       "display_name": " Tariff Selection-Generic",
       "class_name": "TariffSelectionGeneric",
-      "description": "This measure creates tariff objets from pre-poulated IDF files in the measures \"resoruces\" directory.",
-      "modeler_description": "The timestep for the simulation will be changed to four timesteps per hour to me more compatable with a variety of demand window lnegths that may be in tariff objects in the resources directory.",
+      "description": "This measure will add pre defined tariffs from IDF files in the resrouce directory for this measure.",
+      "modeler_description": "The measure works by cloning objects in from an external file into the current IDF file. Change functionality by changing the resource files. This measure may also adjust the simulation timestep.",
       "tags": "Economics.Life Cycle Cost Analysis",
       "outputs": [],
       "attributes": [
@@ -1925,7 +1531,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "5/31/2017",
+      "date": "4/9/2019",
       "author": "",
       "type": "EnergyPlusMeasure",
       "seed": "empty_seed.osm",
@@ -1947,20 +1553,20 @@
           "description": "Option 1 Description: This measure creates tariff objets from pre-poulated IDF files in the measures \"resoruces\" directory."
         }
       ],
-      "instanceId": 0.34890880169629335,
+      "instanceId": 0.8468368864350537,
       "numberOfOptions": 1,
       "$$hashKey": "object:3137",
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/openstudio_results",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/openstudio_results",
       "name": "openstudio_results",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_Basic_Model_Articulation/measures/openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/openstudio_results",
       "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
       "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
-      "version_id": "f538a5bb-0ea0-49c6-be0b-e206a840f207",
-      "version_uuid": "{f538a5bb-0ea0-49c6-be0b-e206a840f207}",
-      "version_modified": "20171218T173206Z",
+      "version_id": "8a8a3008-874e-465a-84f5-0b320fbbfa7b",
+      "version_uuid": "{8a8a3008-874e-465a-84f5-0b320fbbfa7b}",
+      "version_modified": "20190410T000421Z",
       "xml_checksum": "557BF06F",
       "display_name": "OpenStudio Results",
       "class_name": "OpenStudioResults",
@@ -2132,6 +1738,26 @@
           "option_1": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         },
         {
+          "name": "units",
+          "display_name": "Which Unit System do you want to use?",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "IP",
+          "choice_values": [
+            "IP",
+            "SI"
+          ],
+          "choice_display_names": [
+            "IP",
+            "SI"
+          ],
+          "option_1": "IP",
+          "variable": false,
+          "$$hashKey": "uiGrid-044Q"
+        },
+        {
           "name": "building_summary_section",
           "display_name": "Model Summary",
           "description": "",
@@ -2181,7 +1807,7 @@
         },
         {
           "name": "envelope_section_section",
-          "display_name": "Envelope",
+          "display_name": "Envelope Summary",
           "description": "",
           "type": "Boolean",
           "required": true,
@@ -2382,6 +2008,18 @@
           "$$hashKey": "uiGrid-01XS",
           "option_1": true,
           "variable": false
+        },
+        {
+          "name": "reg_monthly_details",
+          "display_name": "Report monthly fuel and enduse breakdown to registerValue",
+          "description": "This argument does not effect HTML file, instead it makes data from individal cells of monthly tables avaiable for machine readable values in the resulting OpenStudio Workflow file.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "option_1": false,
+          "variable": false,
+          "$$hashKey": "uiGrid-044S"
         }
       ],
       "edit": "",
@@ -2391,7 +2029,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "12/18/2017",
+      "date": "4/9/2019",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "empty_seed.osm",
@@ -2400,6 +2038,10 @@
         {
           "id": "option_1",
           "arguments": [
+            {
+              "name": "units",
+              "value": "IP"
+            },
             {
               "name": "building_summary_section",
               "value": true
@@ -2483,13 +2125,17 @@
             {
               "name": "schedules_overview_section",
               "value": true
+            },
+            {
+              "name": "reg_monthly_details",
+              "value": false
             }
           ],
           "name": "OpenStudio Results",
           "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         }
       ],
-      "instanceId": 0.4346199536185822,
+      "instanceId": 0.8992286868381612,
       "numberOfOptions": 1,
       "$$hashKey": "object:3144",
       "outputMeasure": true,

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test_suites>
+  <testsuite name="NzeHvac_Test" filepath="tests/NZEHVAC_Test.rb" skipped="0" failures="0" errors="0" tests="12" assertions="158" time="2242.2556682720005">
+    <testcase name="test_humid_office_vav_reheat_auto_partition" lineno="360" classname="NzeHvac_Test" assertions="14" time="155.404756171">
+    </testcase>
+    <testcase name="test_humid_office_doas_fancoils_dcv" lineno="338" classname="NzeHvac_Test" assertions="14" time="197.737322315">
+    </testcase>
+    <testcase name="test_humid_office_fancoils_doas" lineno="327" classname="NzeHvac_Test" assertions="14" time="207.919812799">
+    </testcase>
+    <testcase name="test_number_of_arguments_and_argument_names" lineno="231" classname="NzeHvac_Test" assertions="4" time="0.100019475">
+    </testcase>
+    <testcase name="test_office_vav_reheat" lineno="272" classname="NzeHvac_Test" assertions="14" time="432.121346932">
+    </testcase>
+    <testcase name="test_humid_office_fancoils_doas_auto_partition" lineno="349" classname="NzeHvac_Test" assertions="14" time="196.770622986">
+    </testcase>
+    <testcase name="test_office_pvav_reheat" lineno="283" classname="NzeHvac_Test" assertions="14" time="117.384978318">
+    </testcase>
+    <testcase name="test_mixed_use_gshp_doas" lineno="305" classname="NzeHvac_Test" assertions="14" time="174.833524755">
+    </testcase>
+    <testcase name="test_model_with_sizing_issues" lineno="316" classname="NzeHvac_Test" assertions="14" time="72.229475818">
+    </testcase>
+    <testcase name="test_mixed_use_vrf_doas" lineno="294" classname="NzeHvac_Test" assertions="14" time="190.216732526">
+    </testcase>
+    <testcase name="test_office_doas_vrf_per_story" lineno="261" classname="NzeHvac_Test" assertions="14" time="214.116485446">
+    </testcase>
+    <testcase name="test_primary_school_fancoils_doas" lineno="250" classname="NzeHvac_Test" assertions="14" time="283.420590731">
+    </testcase>
+  </testsuite>
+</test_suites>

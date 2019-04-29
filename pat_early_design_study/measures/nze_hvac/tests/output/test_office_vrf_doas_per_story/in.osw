@@ -1,0 +1,8 @@
+{
+   "created_at" : "20190410T050310Z",
+   "hash" : "C67636DE",
+   "seed_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_office_vrf_doas_per_story/test_office_vrf_doas_per_story.osm",
+   "steps" : [],
+   "updated_at" : "20190410T050310Z",
+   "weather_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_office_vrf_doas_per_story/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"
+}

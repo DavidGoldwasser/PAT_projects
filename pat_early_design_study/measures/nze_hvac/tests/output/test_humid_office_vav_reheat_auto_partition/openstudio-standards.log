@@ -1,0 +1,175 @@
+DEBUG WorkflowStepResult::value is deprecated, use stepResult instead
+WARN  WorkflowStepResult value called with undefined stepResult, returning 'Success'
+DEBUG WorkflowStepResult::value is deprecated, use stepResult instead
+WARN  WorkflowStepResult value called with undefined stepResult, returning 'Success'
+DEBUG WorkflowStepResult::warnings is deprecated, use stepWarnings instead
+DEBUG Dictionary Built
+ERROR Cannot find current Workflow Step
+INFO  Main Service Water Loop is used for SHW or refrigeration heat reclaim and will not be removed.
+DEBUG For Core_bottom ZN, heating fuels = .
+DEBUG For Core_bottom ZN, cooling fuels = .
+DEBUG For Core_mid ZN, heating fuels = .
+DEBUG For Core_mid ZN, cooling fuels = .
+DEBUG For Core_top ZN, heating fuels = .
+DEBUG For Core_top ZN, cooling fuels = .
+INFO  Zone FirstFloor_Plenum ZN is a plenum.  It will not be assigned a baseline system.
+INFO  Zone MidFloor_Plenum ZN is a plenum.  It will not be assigned a baseline system.
+DEBUG For Perimeter_bot_ZN_1 ZN, heating fuels = .
+DEBUG For Perimeter_bot_ZN_1 ZN, cooling fuels = .
+DEBUG For Perimeter_bot_ZN_2 ZN, heating fuels = .
+DEBUG For Perimeter_bot_ZN_2 ZN, cooling fuels = .
+DEBUG For Perimeter_bot_ZN_3 ZN, heating fuels = .
+DEBUG For Perimeter_bot_ZN_3 ZN, cooling fuels = .
+DEBUG For Perimeter_bot_ZN_4 ZN, heating fuels = .
+DEBUG For Perimeter_bot_ZN_4 ZN, cooling fuels = .
+DEBUG For Perimeter_mid_ZN_1 ZN, heating fuels = .
+DEBUG For Perimeter_mid_ZN_1 ZN, cooling fuels = .
+DEBUG For Perimeter_mid_ZN_2 ZN, heating fuels = .
+DEBUG For Perimeter_mid_ZN_2 ZN, cooling fuels = .
+DEBUG For Perimeter_mid_ZN_3 ZN, heating fuels = .
+DEBUG For Perimeter_mid_ZN_3 ZN, cooling fuels = .
+DEBUG For Perimeter_mid_ZN_4 ZN, heating fuels = .
+DEBUG For Perimeter_mid_ZN_4 ZN, cooling fuels = .
+DEBUG For Perimeter_top_ZN_1 ZN, heating fuels = .
+DEBUG For Perimeter_top_ZN_1 ZN, cooling fuels = .
+DEBUG For Perimeter_top_ZN_2 ZN, heating fuels = .
+DEBUG For Perimeter_top_ZN_2 ZN, cooling fuels = .
+DEBUG For Perimeter_top_ZN_3 ZN, heating fuels = .
+DEBUG For Perimeter_top_ZN_3 ZN, cooling fuels = .
+DEBUG For Perimeter_top_ZN_4 ZN, heating fuels = .
+DEBUG For Perimeter_top_ZN_4 ZN, cooling fuels = .
+INFO  Zone TopFloor_Plenum ZN is a plenum.  It will not be assigned a baseline system.
+INFO  Final system type group: occ = nonresidential, area = 53628 ft2, num stories = 3, zones:
+INFO  --- Core_bottom ZN, Core_mid ZN, Core_top ZN, Perimeter_bot_ZN_1 ZN, Perimeter_bot_ZN_2 ZN
+INFO  --- Perimeter_bot_ZN_3 ZN, Perimeter_bot_ZN_4 ZN, Perimeter_mid_ZN_1 ZN, Perimeter_mid_ZN_2 ZN, Perimeter_mid_ZN_3 ZN
+INFO  --- Perimeter_mid_ZN_4 ZN, Perimeter_top_ZN_1 ZN, Perimeter_top_ZN_2 ZN, Perimeter_top_ZN_3 ZN, Perimeter_top_ZN_4 ZN
+INFO  Determining which zones are served by the primary vs. secondary HVAC system.
+DEBUG Values for weekly operating hrs, tol = 40 hrs, area ft2:
+DEBUG vals  49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1, 49.1
+DEBUG areas 10587, 10587, 10587, 2232, 1413, 2232, 1413, 2232, 1413, 2232, 1413, 2232, 1413, 2232, 1413
+DEBUG names Core_bottom ZN, Core_mid ZN, Core_top ZN, Perimeter_bot_ZN_1 ZN, Perimeter_bot_ZN_2 ZN, Perimeter_bot_ZN_3 ZN, Perimeter_bot_ZN_4 ZN, Perimeter_mid_ZN_1 ZN, Perimeter_mid_ZN_2 ZN, Perimeter_mid_ZN_3 ZN, Perimeter_mid_ZN_4 ZN, Perimeter_top_ZN_1 ZN, Perimeter_top_ZN_2 ZN, Perimeter_top_ZN_3 ZN, Perimeter_top_ZN_4 ZN
+INFO  For zone Perimeter_top_ZN_4 ZN, the weekly operating hrs 49.14 hrs - average weekly operating hrs 49.14 hrs = 0.0 hrs < tolerance of 40 hrs, stopping elimination process.
+DEBUG Core_bottom has 48858W of design internal loads.
+DEBUG Core_mid has 16621W of design internal loads.
+DEBUG Core_top has 16621W of design internal loads.
+DEBUG Perimeter_bot_ZN_1 has 3504W of design internal loads.
+DEBUG Perimeter_bot_ZN_2 has 2218W of design internal loads.
+DEBUG Perimeter_bot_ZN_3 has 3504W of design internal loads.
+DEBUG Perimeter_bot_ZN_4 has 2218W of design internal loads.
+DEBUG Perimeter_mid_ZN_1 has 3504W of design internal loads.
+DEBUG Perimeter_mid_ZN_2 has 2218W of design internal loads.
+DEBUG Perimeter_mid_ZN_3 has 3504W of design internal loads.
+DEBUG Perimeter_mid_ZN_4 has 2218W of design internal loads.
+DEBUG Perimeter_top_ZN_1 has 3504W of design internal loads.
+DEBUG Perimeter_top_ZN_2 has 2218W of design internal loads.
+DEBUG Perimeter_top_ZN_3 has 3504W of design internal loads.
+DEBUG Perimeter_top_ZN_4 has 2218W of design internal loads.
+DEBUG Values for internal load, tol = 10 Btu/hr*ft^2, area ft2:
+DEBUG vals  5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 15.7
+DEBUG areas 1413, 10587, 10587, 2232, 1413, 2232, 1413, 2232, 1413, 2232, 1413, 2232, 1413, 2232, 10587
+DEBUG names Perimeter_top_ZN_4 ZN, Core_mid ZN, Core_top ZN, Perimeter_bot_ZN_1 ZN, Perimeter_bot_ZN_2 ZN, Perimeter_bot_ZN_3 ZN, Perimeter_bot_ZN_4 ZN, Perimeter_top_ZN_3 ZN, Perimeter_mid_ZN_2 ZN, Perimeter_mid_ZN_3 ZN, Perimeter_mid_ZN_4 ZN, Perimeter_top_ZN_1 ZN, Perimeter_top_ZN_2 ZN, Perimeter_mid_ZN_1 ZN, Core_bottom ZN
+INFO  For zone Core_bottom ZN, the internal load 15.75 Btu/hr*ft^2 - average internal load 7.41 Btu/hr*ft^2 = 8.34 Btu/hr*ft^2 < tolerance of 10 Btu/hr*ft^2, stopping elimination process.
+INFO  Primary system zones = Perimeter_top_ZN_4 ZN, Core_mid ZN, Core_top ZN, Perimeter_bot_ZN_1 ZN, Perimeter_bot_ZN_2 ZN, Perimeter_bot_ZN_3 ZN, Perimeter_bot_ZN_4 ZN, Perimeter_top_ZN_3 ZN, Perimeter_mid_ZN_2 ZN, Perimeter_mid_ZN_3 ZN, Perimeter_mid_ZN_4 ZN, Perimeter_top_ZN_1 ZN, Perimeter_top_ZN_2 ZN, Perimeter_mid_ZN_1 ZN, Core_bottom ZN.
+INFO  Adding hot water loop.
+INFO  New low temperature hot water loop created.
+INFO  Adding chilled water loop.
+INFO  Adding VAV system for 15 zones.
+DEBUG Adding VAV system terminal for Perimeter_top_ZN_4 ZN
+DEBUG For Perimeter_top_ZN_4 ZN, design min OA = 120 cfm.
+DEBUG Adding VAV system terminal for Core_mid ZN
+DEBUG For Core_mid ZN, design min OA = 900 cfm.
+DEBUG Adding VAV system terminal for Core_top ZN
+DEBUG For Core_top ZN, design min OA = 900 cfm.
+DEBUG Adding VAV system terminal for Perimeter_bot_ZN_1 ZN
+DEBUG For Perimeter_bot_ZN_1 ZN, design min OA = 190 cfm.
+DEBUG Adding VAV system terminal for Perimeter_bot_ZN_2 ZN
+DEBUG For Perimeter_bot_ZN_2 ZN, design min OA = 120 cfm.
+DEBUG Adding VAV system terminal for Perimeter_bot_ZN_3 ZN
+DEBUG For Perimeter_bot_ZN_3 ZN, design min OA = 190 cfm.
+DEBUG Adding VAV system terminal for Perimeter_bot_ZN_4 ZN
+DEBUG For Perimeter_bot_ZN_4 ZN, design min OA = 120 cfm.
+DEBUG Adding VAV system terminal for Perimeter_top_ZN_3 ZN
+DEBUG For Perimeter_top_ZN_3 ZN, design min OA = 190 cfm.
+DEBUG Adding VAV system terminal for Perimeter_mid_ZN_2 ZN
+DEBUG For Perimeter_mid_ZN_2 ZN, design min OA = 120 cfm.
+DEBUG Adding VAV system terminal for Perimeter_mid_ZN_3 ZN
+DEBUG For Perimeter_mid_ZN_3 ZN, design min OA = 190 cfm.
+DEBUG Adding VAV system terminal for Perimeter_mid_ZN_4 ZN
+DEBUG For Perimeter_mid_ZN_4 ZN, design min OA = 120 cfm.
+DEBUG Adding VAV system terminal for Perimeter_top_ZN_1 ZN
+DEBUG For Perimeter_top_ZN_1 ZN, design min OA = 190 cfm.
+DEBUG Adding VAV system terminal for Perimeter_top_ZN_2 ZN
+DEBUG For Perimeter_top_ZN_2 ZN, design min OA = 120 cfm.
+DEBUG Adding VAV system terminal for Perimeter_mid_ZN_1 ZN
+DEBUG For Perimeter_mid_ZN_1 ZN, design min OA = 190 cfm.
+DEBUG Adding VAV system terminal for Core_bottom ZN
+DEBUG For Core_bottom ZN, design min OA = 900 cfm.
+INFO  For 15 Zone VAV: VAV damper action was set to Dual Maximum control.
+DEBUG Starting simulation here: /Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_humid_office_vav_reheat_auto_partition/SizingRun.
+INFO  Running simulation /Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_humid_office_vav_reheat_auto_partition/SizingRun.
+DEBUG Running with OS 2.x WorkflowJSON.
+INFO  Finished run.
+DEBUG Dictionary Built
+INFO  Started applying HVAC efficiency standards for nrel_zne_ready_2017 template.
+INFO  Applying multizone VAV Reheat system controls.
+INFO  For 15 Zone VAV, ERV required based on 16% OA flow, design supply air flow of 28821cfm, and climate zone ASHRAE 169-2006-2A. Exceeds minimum flow requirement of 2500cfm.
+INFO  For 15 Zone VAV ERV, ERV power is calculated to be 1594 W, based on a min OA flow of 4558 cfm.
+DEBUG For 15 Zone VAV: Economizer type = DifferentialEnthalpy, no limits defined.
+INFO  For 15 Zone VAV: Economizer type = DifferentialEnthalpy, limits
+INFO  For 15 Zone VAV: VAV damper action was set to Dual Maximum control.
+INFO  For 15 Zone VAV: Supply air temperature reset is not required per 6.5.3.4 Exception 1, the system is located in climate zone ASHRAE 169-2006-2A.
+DEBUG 15 Zone VAV has 1 unique occ schedules.
+DEBUG OfficeMedium BLDG_OCC_SCH - 268 people
+DEBUG Total 268 people on 15 Zone VAV
+DEBUG Monday
+DEBUG Making a new rule for Monday from 2006-Jan-01 to 2006-Dec-25
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 18:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Tuesday
+DEBUG Making a new rule for Tuesday from 2006-Jan-01 to 2006-Dec-26
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 18:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Wednesday
+DEBUG Making a new rule for Wednesday from 2006-Jan-01 to 2006-Dec-27
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 18:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Thursday
+DEBUG Making a new rule for Thursday from 2006-Jan-01 to 2006-Dec-28
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 18:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Friday
+DEBUG Making a new rule for Friday from 2006-Jan-01 to 2006-Dec-29
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 18:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Saturday
+DEBUG Making a new rule for Saturday from 2006-Jan-01 to 2006-Dec-30
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 12:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Sunday
+DEBUG Making a new rule for Sunday from 2006-Jan-01 to 2006-Dec-31
+DEBUG Adding value 24:00:00, 0
+INFO  For 15 Zone VAV: Annual occupied hours = 3068 hr/yr, assuming a 0.15 occupancy threshold.  This schedule will be used as the HVAC operation schedule.
+INFO  For 15 Zone VAV: Setting motorized OA damper schedule to 15 Zone VAV Occ Sch.
+INFO  For 15 Zone VAV: Optimum start control enabled.
+INFO  For 15 Zone VAV Fan: motor nameplate = 30HP, motor eff = 93.6%.
+INFO  For Service Water Loop Pump: brake hp = 0.0HP, motor nameplate = 0.1HP, motor eff = 70.0%.
+INFO  For Chilled Water Loop Pump: brake hp = 3.88HP, motor nameplate = 5.0HP, motor eff = 89.5%.
+INFO  For Hot Water Loop Pump: brake hp = 1.22HP, motor nameplate = 1.5HP, motor eff = 86.5%.
+INFO  For Chilled Water Loop Pump: motor nameplate = 8HP, motor eff = 91.7%; 22 W/gpm translates to a pressure rise of 83.44 ftH2O.
+DEBUG For Chilled Water Loop Pump: calculated W/gpm = 22.0.
+INFO  For Hot Water Loop Pump: motor nameplate = 1.5HP, motor eff = 86.5%; 19 W/gpm translates to a pressure rise of 67.98 ftH2O.
+DEBUG For Hot Water Loop Pump: calculated W/gpm = 19.0.
+INFO  For Service Water Loop Pump: motor nameplate = 0.1HP, motor eff = 70.0%; 19 W/gpm translates to a pressure rise of 55.01 ftH2O.
+DEBUG For Service Water Loop Pump: calculated W/gpm = 19.0.
+INFO  For NREL ZNE Ready 2017: NREL ZNE Ready 2017    Chiller 0 84tons 1.1kW/ton: AirCooled   Capacity = 84tons; COP = 3.3 (1.1kW/ton)
+INFO  For NREL ZNE Ready 2017: Boiler: Gas Hot Water Capacity = 617kBtu/hr; Combustion Efficiency = 0.94
+DEBUG For 100gal Natural Gas Water Heater - 100kBtu/hr 0.802 Therm Eff, skin-loss UA = 7.9623919708019955 W/K.
+INFO  For NREL ZNE Ready 2017: 100gal Natural Gas Water Heater - 100kBtu/hr 0.802 Therm Eff 0.808 Therm Eff; thermal efficiency = 0.808, skin-loss UA = 15Btu/hr
+INFO  For 15 Zone VAV ERV: Set sensible and latent effectiveness to 72%.
+INFO  Finished applying HVAC efficiency standards for nrel_zne_ready_2017 template.

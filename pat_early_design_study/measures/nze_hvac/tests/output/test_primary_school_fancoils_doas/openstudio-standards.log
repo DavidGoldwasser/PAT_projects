@@ -1,0 +1,377 @@
+DEBUG WorkflowStepResult::value is deprecated, use stepResult instead
+WARN  WorkflowStepResult value called with undefined stepResult, returning 'Success'
+DEBUG WorkflowStepResult::value is deprecated, use stepResult instead
+WARN  WorkflowStepResult value called with undefined stepResult, returning 'Success'
+DEBUG WorkflowStepResult::warnings is deprecated, use stepWarnings instead
+DEBUG Dictionary Built
+ERROR Cannot find current Workflow Step
+INFO  Service Water Loop is used for SHW or refrigeration heat reclaim and will not be removed.
+INFO  Main Service Water Loop is used for SHW or refrigeration heat reclaim and will not be removed.
+INFO  Bath_ZN_1_FLR_1 ZN Exhaust Fan is a zone exhaust fan and will not be removed.
+INFO  Kitchen_ZN_1_FLR_1 ZN Exhaust Fan is a zone exhaust fan and will not be removed.
+INFO  Adding hot water loop.
+INFO  New low temperature hot water loop created.
+INFO  Adding condenser water loop.
+INFO  Adding chilled water loop.
+DEBUG For Offices_ZN_1_FLR_1 ZN, design min OA = 403 cfm.
+DEBUG For Mult_Class_2_Pod_2_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG For Mult_Class_2_Pod_1_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG For Mult_Class_2_Pod_3_ZN_1_FLR_1 ZN, design min OA = 1255 cfm.
+DEBUG For Mult_Class_1_Pod_1_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG For Bath_ZN_1_FLR_1 ZN, design min OA = 123 cfm.
+DEBUG For Corridor_Pod_1_ZN_1_FLR_1 ZN, design min OA = 124 cfm.
+DEBUG For Library_Media_Center_ZN_1_FLR_1 ZN, design min OA = 1589 cfm.
+DEBUG For Kitchen_ZN_1_FLR_1 ZN, design min OA = 528 cfm.
+DEBUG For Lobby_ZN_1_FLR_1 ZN, design min OA = 110 cfm.
+DEBUG For Computer_Class_ZN_1_FLR_1 ZN, design min OA = 645 cfm.
+DEBUG For Corridor_Pod_3_ZN_1_FLR_1 ZN, design min OA = 124 cfm.
+DEBUG For Mech_ZN_1_FLR_1 ZN, design min OA = 326 cfm.
+DEBUG For Corner_Class_1_Pod_3_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG For Cafeteria_ZN_1_FLR_1 ZN, design min OA = 3153 cfm.
+DEBUG For Corridor_Pod_2_ZN_1_FLR_1 ZN, design min OA = 124 cfm.
+DEBUG For Corner_Class_2_Pod_3_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG For Corner_Class_2_Pod_2_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG For Corner_Class_2_Pod_1_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG For Gym_ZN_1_FLR_1 ZN, design min OA = 1153 cfm.
+DEBUG For Corner_Class_1_Pod_1_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG For Mult_Class_1_Pod_2_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG For Mult_Class_1_Pod_3_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG For Main_Corridor_ZN_1_FLR_1 ZN, design min OA = 353 cfm.
+DEBUG For Corner_Class_1_Pod_2_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+INFO  Adding DOAS system for 25 zones.
+DEBUG For Offices_ZN_1_FLR_1 ZN, design min OA = 403 cfm.
+DEBUG ---adding Offices_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Mult_Class_2_Pod_2_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG ---adding Mult_Class_2_Pod_2_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Mult_Class_2_Pod_1_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG ---adding Mult_Class_2_Pod_1_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Mult_Class_2_Pod_3_ZN_1_FLR_1 ZN, design min OA = 1255 cfm.
+DEBUG ---adding Mult_Class_2_Pod_3_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Mult_Class_1_Pod_1_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG ---adding Mult_Class_1_Pod_1_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Bath_ZN_1_FLR_1 ZN, design min OA = 123 cfm.
+DEBUG ---adding Bath_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corridor_Pod_1_ZN_1_FLR_1 ZN, design min OA = 124 cfm.
+DEBUG ---adding Corridor_Pod_1_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Library_Media_Center_ZN_1_FLR_1 ZN, design min OA = 1589 cfm.
+DEBUG ---adding Library_Media_Center_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Kitchen_ZN_1_FLR_1 ZN, design min OA = 528 cfm.
+DEBUG ---adding Kitchen_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Lobby_ZN_1_FLR_1 ZN, design min OA = 110 cfm.
+DEBUG ---adding Lobby_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Computer_Class_ZN_1_FLR_1 ZN, design min OA = 645 cfm.
+DEBUG ---adding Computer_Class_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corridor_Pod_3_ZN_1_FLR_1 ZN, design min OA = 124 cfm.
+DEBUG ---adding Corridor_Pod_3_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Mech_ZN_1_FLR_1 ZN, design min OA = 326 cfm.
+DEBUG ---adding Mech_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corner_Class_1_Pod_3_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG ---adding Corner_Class_1_Pod_3_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Cafeteria_ZN_1_FLR_1 ZN, design min OA = 3153 cfm.
+DEBUG ---adding Cafeteria_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corridor_Pod_2_ZN_1_FLR_1 ZN, design min OA = 124 cfm.
+DEBUG ---adding Corridor_Pod_2_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corner_Class_2_Pod_3_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG ---adding Corner_Class_2_Pod_3_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corner_Class_2_Pod_2_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG ---adding Corner_Class_2_Pod_2_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corner_Class_2_Pod_1_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG ---adding Corner_Class_2_Pod_1_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Gym_ZN_1_FLR_1 ZN, design min OA = 1153 cfm.
+DEBUG ---adding Gym_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corner_Class_1_Pod_1_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG ---adding Corner_Class_1_Pod_1_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Mult_Class_1_Pod_2_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG ---adding Mult_Class_1_Pod_2_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Mult_Class_1_Pod_3_ZN_1_FLR_1 ZN, design min OA = 1900 cfm.
+DEBUG ---adding Mult_Class_1_Pod_3_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Main_Corridor_ZN_1_FLR_1 ZN, design min OA = 353 cfm.
+DEBUG ---adding Main_Corridor_ZN_1_FLR_1 ZN to 25 Zone DOAS
+DEBUG For Corner_Class_1_Pod_2_ZN_1_FLR_1 ZN, design min OA = 394 cfm.
+DEBUG ---adding Corner_Class_1_Pod_2_ZN_1_FLR_1 ZN to 25 Zone DOAS
+INFO  Adding fan coil for Offices_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Mult_Class_2_Pod_2_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Mult_Class_2_Pod_1_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Mult_Class_2_Pod_3_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Mult_Class_1_Pod_1_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Bath_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corridor_Pod_1_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Library_Media_Center_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Kitchen_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Lobby_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Computer_Class_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corridor_Pod_3_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Mech_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corner_Class_1_Pod_3_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Cafeteria_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corridor_Pod_2_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corner_Class_2_Pod_3_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corner_Class_2_Pod_2_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corner_Class_2_Pod_1_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Gym_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corner_Class_1_Pod_1_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Mult_Class_1_Pod_2_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Mult_Class_1_Pod_3_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Main_Corridor_ZN_1_FLR_1 ZN.
+INFO  Adding fan coil for Corner_Class_1_Pod_2_ZN_1_FLR_1 ZN.
+DEBUG Starting simulation here: /Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_primary_school_fancoils_doas/SizingRun.
+INFO  Running simulation /Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_primary_school_fancoils_doas/SizingRun.
+DEBUG Running with OS 2.x WorkflowJSON.
+INFO  Finished run.
+DEBUG Dictionary Built
+INFO  Started applying HVAC efficiency standards for nrel_zne_ready_2017 template.
+DEBUG 25 Zone DOAS has 4 unique occ schedules.
+DEBUG SchoolPrimary BLDG_OCC_SCH_Offices - 24 people
+DEBUG SchoolPrimary BLDG_OCC_SCH - 1064 people
+DEBUG SchoolPrimary BLDG_OCC_SCH_Cafeteria - 339 people
+DEBUG SchoolPrimary BLDG_OCC_SCH_Gym - 115 people
+DEBUG Total 1542 people on 25 Zone DOAS
+DEBUG Monday
+DEBUG Making a new rule for Monday from 2006-Jan-01 to 2006-Jun-12
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Monday from 2006-Jun-13 to 2006-Jun-26
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Monday from 2006-Jun-27 to 2006-Aug-28
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 19:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Monday from 2006-Aug-29 to 2006-Sep-11
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Monday from 2006-Sep-12 to 2006-Dec-25
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Tuesday
+DEBUG Making a new rule for Tuesday from 2006-Jan-01 to 2006-Jun-13
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Tuesday from 2006-Jun-14 to 2006-Jun-27
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Tuesday from 2006-Jun-28 to 2006-Aug-29
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 19:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Tuesday from 2006-Aug-30 to 2006-Sep-12
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Tuesday from 2006-Sep-13 to 2006-Dec-26
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Wednesday
+DEBUG Making a new rule for Wednesday from 2006-Jan-01 to 2006-Jun-14
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Wednesday from 2006-Jun-15 to 2006-Jun-28
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Wednesday from 2006-Jun-29 to 2006-Aug-30
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 19:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Wednesday from 2006-Aug-31 to 2006-Sep-13
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Wednesday from 2006-Sep-14 to 2006-Dec-27
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Thursday
+DEBUG Making a new rule for Thursday from 2006-Jan-01 to 2006-Jun-15
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Thursday from 2006-Jun-16 to 2006-Jun-29
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Thursday from 2006-Jun-30 to 2006-Aug-31
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 19:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Thursday from 2006-Sep-01 to 2006-Sep-14
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Thursday from 2006-Sep-15 to 2006-Dec-28
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Friday
+DEBUG Making a new rule for Friday from 2006-Jan-01 to 2006-Jun-09
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Friday from 2006-Jun-10 to 2006-Jun-30
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Friday from 2006-Jul-01 to 2006-Aug-25
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 19:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Friday from 2006-Aug-26 to 2006-Sep-15
+DEBUG Adding value 09:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Making a new rule for Friday from 2006-Sep-16 to 2006-Dec-29
+DEBUG Adding value 08:00:00, 0
+DEBUG Adding value 21:00:00, 1
+DEBUG Adding value 24:00:00, 0
+DEBUG Saturday
+DEBUG Making a new rule for Saturday from 2006-Jan-01 to 2006-Dec-30
+DEBUG Adding value 24:00:00, 0
+DEBUG Sunday
+DEBUG Making a new rule for Sunday from 2006-Jan-01 to 2006-Dec-31
+DEBUG Adding value 24:00:00, 0
+INFO  For 25 Zone DOAS: Annual occupied hours = 3226 hr/yr, assuming a 0.15 occupancy threshold.  This schedule will be used as the HVAC operation schedule.
+INFO  For 25 Zone DOAS: Setting motorized OA damper schedule to 25 Zone DOAS Occ Sch.
+INFO  For 25 Zone DOAS: Optimum start control enabled.
+INFO  For DOAS Exhaust Fan: motor nameplate = 15HP, motor eff = 92.4%.
+INFO  For DOAS Supply Fan: motor nameplate = 20HP, motor eff = 93.0%.
+INFO  For Bath_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Cafeteria_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Computer_Class_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_1_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_1_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_1_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_2_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_2_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_2_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corridor_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corridor_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corridor_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Gym_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Kitchen_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Library_Media_Center_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Lobby_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Main_Corridor_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mech_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_1_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_1_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_1_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_2_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_2_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_2_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Offices_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Bath_ZN_1_FLR_1 ZN Exhaust Fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Kitchen_ZN_1_FLR_1 ZN Exhaust Fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+DEBUG Setting fan power for Bath_ZN_1_FLR_1 ZN Exhaust Fan.
+DEBUG Setting fan power for Kitchen_ZN_1_FLR_1 ZN Exhaust Fan.
+DEBUG Setting fan power for Bath_ZN_1_FLR_1 ZN FCU.
+INFO  For Bath_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Bath_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Cafeteria_ZN_1_FLR_1 ZN FCU.
+INFO  For Cafeteria_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Cafeteria_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Computer_Class_ZN_1_FLR_1 ZN FCU.
+INFO  For Computer_Class_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Computer_Class_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corner_Class_1_Pod_1_ZN_1_FLR_1 ZN FCU.
+INFO  For Corner_Class_1_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_1_Pod_1_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corner_Class_1_Pod_2_ZN_1_FLR_1 ZN FCU.
+INFO  For Corner_Class_1_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_1_Pod_2_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corner_Class_1_Pod_3_ZN_1_FLR_1 ZN FCU.
+INFO  For Corner_Class_1_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_1_Pod_3_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corner_Class_2_Pod_1_ZN_1_FLR_1 ZN FCU.
+INFO  For Corner_Class_2_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_2_Pod_1_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corner_Class_2_Pod_2_ZN_1_FLR_1 ZN FCU.
+INFO  For Corner_Class_2_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_2_Pod_2_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corner_Class_2_Pod_3_ZN_1_FLR_1 ZN FCU.
+INFO  For Corner_Class_2_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corner_Class_2_Pod_3_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corridor_Pod_1_ZN_1_FLR_1 ZN FCU.
+INFO  For Corridor_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corridor_Pod_1_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corridor_Pod_2_ZN_1_FLR_1 ZN FCU.
+INFO  For Corridor_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corridor_Pod_2_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Corridor_Pod_3_ZN_1_FLR_1 ZN FCU.
+INFO  For Corridor_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Corridor_Pod_3_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Gym_ZN_1_FLR_1 ZN FCU.
+INFO  For Gym_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Gym_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Kitchen_ZN_1_FLR_1 ZN FCU.
+INFO  For Kitchen_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Kitchen_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Library_Media_Center_ZN_1_FLR_1 ZN FCU.
+INFO  For Library_Media_Center_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Library_Media_Center_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Lobby_ZN_1_FLR_1 ZN FCU.
+INFO  For Lobby_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Lobby_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Main_Corridor_ZN_1_FLR_1 ZN FCU.
+INFO  For Main_Corridor_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Main_Corridor_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Mech_ZN_1_FLR_1 ZN FCU.
+INFO  For Mech_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mech_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Mult_Class_1_Pod_1_ZN_1_FLR_1 ZN FCU.
+INFO  For Mult_Class_1_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_1_Pod_1_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Mult_Class_1_Pod_2_ZN_1_FLR_1 ZN FCU.
+INFO  For Mult_Class_1_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_1_Pod_2_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Mult_Class_1_Pod_3_ZN_1_FLR_1 ZN FCU.
+INFO  For Mult_Class_1_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_1_Pod_3_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Mult_Class_2_Pod_1_ZN_1_FLR_1 ZN FCU.
+INFO  For Mult_Class_2_Pod_1_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_2_Pod_1_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Mult_Class_2_Pod_2_ZN_1_FLR_1 ZN FCU.
+INFO  For Mult_Class_2_Pod_2_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_2_Pod_2_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Mult_Class_2_Pod_3_ZN_1_FLR_1 ZN FCU.
+INFO  For Mult_Class_2_Pod_3_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Mult_Class_2_Pod_3_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+DEBUG Setting fan power for Offices_ZN_1_FLR_1 ZN FCU.
+INFO  For Offices_ZN_1_FLR_1 ZN Fan Coil fan: motor eff = 70.0%; assumed to represent several < 1 HP motors.
+INFO  For Offices_ZN_1_FLR_1 ZN FCU: fan efficacy set to 0.38 W/cfm.
+INFO  For Booster Water Loop Pump: brake hp = 0.0HP, motor nameplate = 0.0HP, motor eff = 100.0%.
+INFO  For Chilled Water Loop Primary Pump: brake hp = 2.53HP, motor nameplate = 3.0HP, motor eff = 89.5%.
+INFO  For Condenser Water Loop Constant Pump: brake hp = 10.05HP, motor nameplate = 15.0HP, motor eff = 92.4%.
+INFO  For Service Water Loop Pump: brake hp = 0.01HP, motor nameplate = 0.1HP, motor eff = 70.0%.
+INFO  For Chilled Water Loop Secondary Pump: brake hp = 7.59HP, motor nameplate = 10.0HP, motor eff = 91.7%.
+INFO  For Hot Water Loop Pump: brake hp = 5.33HP, motor nameplate = 8.0HP, motor eff = 91.7%.
+INFO  For Chilled Water Loop Primary Pump: motor nameplate = 8HP, motor eff = 91.7%; 9 W/gpm translates to a pressure rise of 34.14 ftH2O.
+DEBUG For Chilled Water Loop Primary Pump: calculated W/gpm = 9.0.
+INFO  For Chilled Water Loop Secondary Pump: motor nameplate = 10HP, motor eff = 91.7%; 13 W/gpm translates to a pressure rise of 49.31 ftH2O.
+DEBUG For Chilled Water Loop Secondary Pump: calculated W/gpm = 13.0.
+INFO  For Condenser Water Loop Constant Pump: motor nameplate = 15HP, motor eff = 92.4%; 19 W/gpm translates to a pressure rise of 72.61 ftH2O.
+DEBUG For Condenser Water Loop Constant Pump: calculated W/gpm = 19.0.
+INFO  For Hot Water Loop Pump: motor nameplate = 8HP, motor eff = 91.7%; 19 W/gpm translates to a pressure rise of 72.06 ftH2O.
+DEBUG For Hot Water Loop Pump: calculated W/gpm = 19.0.
+INFO  For Service Water Loop Pump: motor nameplate = 0.1HP, motor eff = 70.0%; 19 W/gpm translates to a pressure rise of 55.01 ftH2O.
+DEBUG For Service Water Loop Pump: calculated W/gpm = 19.0.
+INFO  For Booster Water Loop Pump: motor nameplate = 0.1HP, motor eff = 70.0%; 19 W/gpm translates to a pressure rise of 55.01 ftH2O.
+DEBUG For Booster Water Loop Pump: calculated W/gpm = 19.0.
+INFO  For NREL ZNE Ready 2017: NREL ZNE Ready 2017 WaterCooled  Rotary Screw Chiller 0 220tons 0.6kW/ton: WaterCooled  Rotary Screw Capacity = 220tons; COP = 5.7 (0.6kW/ton)
+INFO  For NREL ZNE Ready 2017: Boiler: Gas Hot Water Capacity = 2699kBtu/hr; Combustion Efficiency = 0.94
+DEBUG For 200gal Natural Gas Water Heater - 200kBtu/hr 0.802 Therm Eff, skin-loss UA = 9.662177382731612 W/K.
+INFO  For NREL ZNE Ready 2017: 200gal Natural Gas Water Heater - 200kBtu/hr 0.802 Therm Eff 0.805 Therm Eff; thermal efficiency = 0.805, skin-loss UA = 18Btu/hr
+DEBUG For 6.0gal Electricity Booster Water Heater - 20kBtu/hr 1.0 Therm Eff, skin-loss UA = 1.0548628438992471 W/K.
+INFO  For NREL ZNE Ready 2017: 6.0gal Electricity Booster Water Heater - 20kBtu/hr 1.0 Therm Eff 1.0 Therm Eff; thermal efficiency = 1.0, skin-loss UA = 2Btu/hr
+DEBUG Find objects search criteria returned no results. Search criteria: {"template"=>"NREL ZNE Ready 2017", "equipment_type"=>"Open Cooling Tower", "fan_type"=>"Propeller or Axial"}. Called from :/ruby/2.2.0/gems/openstudio-standards-0.2.9/lib/openstudio-standards/standards/Standards.Model.rb:1707:in `model_find_object'.
+DEBUG Find object search criteria returned no results. Search criteria: {"template"=>"NREL ZNE Ready 2017", "equipment_type"=>"Open Cooling Tower", "fan_type"=>"Propeller or Axial"}. Called from :/ruby/2.2.0/gems/openstudio-standards-0.2.9/lib/openstudio-standards/standards/Standards.CoolingTower.rb:74:in `cooling_tower_apply_minimum_power_per_flow'
+WARN  For Propeller or Axial Variable Speed Fan Open Cooling Tower, cannot find heat rejection properties, cannot apply standard efficiencies or curves.
+INFO  For 25 Zone DOAS Heat Exchanger: Set sensible and latent effectiveness to 72%.
+INFO  Finished applying HVAC efficiency standards for nrel_zne_ready_2017 template.

@@ -1,0 +1,543 @@
+{
+  "total_measures": 1,
+  "total_files": 2,
+  "total_issues": 86,
+  "total_info": 0,
+  "total_warnings": 1,
+  "total_errors": 85,
+  "by_measure": {
+    "": {
+      "measure_issues": 86,
+      "measure_info": 0,
+      "measure_warnings": 1,
+      "measure_errors": 85,
+      "files": [
+        {
+          "file_name": "measure.rb",
+          "violations": [
+            {
+              "line": "37",
+              "column": "0",
+              "severity": "error",
+              "message": "Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning."
+            },
+            {
+              "line": "41",
+              "column": "11",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "46",
+              "column": "11",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "51",
+              "column": "11",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "59",
+              "column": "39",
+              "severity": "error",
+              "message": "Lint/StringConversionInInterpolation: Redundant use of `Object#to_s` in interpolation."
+            },
+            {
+              "line": "68",
+              "column": "38",
+              "severity": "error",
+              "message": "Lint/StringConversionInInterpolation: Redundant use of `Object#to_s` in interpolation."
+            },
+            {
+              "line": "78",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "80",
+              "column": "53",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "81",
+              "column": "65",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "82",
+              "column": "55",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "83",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "83",
+              "column": "23",
+              "severity": "error",
+              "message": "Layout/LeadingCommentSpace: Missing space after `#`."
+            },
+            {
+              "line": "85",
+              "column": "53",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "86",
+              "column": "55",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "87",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "89",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "91",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "93",
+              "column": "55",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "94",
+              "column": "55",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "95",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "97",
+              "column": "55",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "98",
+              "column": "55",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "99",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "101",
+              "column": "53",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "102",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "104",
+              "column": "53",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "105",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "107",
+              "column": "53",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "108",
+              "column": "9",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "121",
+              "column": "58",
+              "severity": "error",
+              "message": "Style/ColonMethodCall: Do not use `::` for method calls."
+            },
+            {
+              "line": "121",
+              "column": "77",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "121",
+              "column": "99",
+              "severity": "error",
+              "message": "Layout/SpaceAfterComma: Space missing after comma."
+            },
+            {
+              "line": "122",
+              "column": "40",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "130",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "133",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "136",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "139",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "142",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "145",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "148",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "151",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "154",
+              "column": "32",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "158",
+              "column": "4",
+              "severity": "error",
+              "message": "Layout/LeadingCommentSpace: Missing space after `#`."
+            },
+            {
+              "line": "161",
+              "column": "4",
+              "severity": "error",
+              "message": "Layout/LeadingCommentSpace: Missing space after `#`."
+            },
+            {
+              "line": "164",
+              "column": "4",
+              "severity": "error",
+              "message": "Layout/LeadingCommentSpace: Missing space after `#`."
+            },
+            {
+              "line": "167",
+              "column": "4",
+              "severity": "error",
+              "message": "Layout/LeadingCommentSpace: Missing space after `#`."
+            },
+            {
+              "line": "169",
+              "column": "54",
+              "severity": "error",
+              "message": "Style/ColonMethodCall: Do not use `::` for method calls."
+            },
+            {
+              "line": "169",
+              "column": "75",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "170",
+              "column": "36",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "171",
+              "column": "36",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "172",
+              "column": "37",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "177",
+              "column": "37",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "178",
+              "column": "37",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "179",
+              "column": "37",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "180",
+              "column": "37",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "182",
+              "column": "59",
+              "severity": "error",
+              "message": "Style/ColonMethodCall: Do not use `::` for method calls."
+            },
+            {
+              "line": "182",
+              "column": "80",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "183",
+              "column": "41",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "184",
+              "column": "41",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "185",
+              "column": "42",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "191",
+              "column": "6",
+              "severity": "error",
+              "message": "Style/CommentedKeyword: Do not place comments on the same line as the `end` keyword."
+            },
+            {
+              "line": "193",
+              "column": "2",
+              "severity": "warning",
+              "message": "Metrics/AbcSize: Assignment Branch Condition size for run is too high. [88.53/50]"
+            },
+            {
+              "line": "196",
+              "column": "37",
+              "severity": "error",
+              "message": "Layout/TrailingWhitespace: Trailing whitespace detected."
+            },
+            {
+              "line": "197",
+              "column": "7",
+              "severity": "error",
+              "message": "Style/Not: Use `!` instead of `not`."
+            },
+            {
+              "line": "202",
+              "column": "55",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "203",
+              "column": "61",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "204",
+              "column": "66",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "208",
+              "column": "25",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "215",
+              "column": "51",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "222",
+              "column": "60",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "223",
+              "column": "29",
+              "severity": "error",
+              "message": "Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments."
+            },
+            {
+              "line": "224",
+              "column": "27",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "232",
+              "column": "26",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "247",
+              "column": "11",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "271",
+              "column": "11",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "274",
+              "column": "11",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "280",
+              "column": "11",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "287",
+              "column": "29",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "299",
+              "column": "27",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "314",
+              "column": "24",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "329",
+              "column": "13",
+              "severity": "error",
+              "message": "Style/MethodCallWithoutArgsParentheses: Do not use parentheses for method calls with no arguments."
+            },
+            {
+              "line": "332",
+              "column": "24",
+              "severity": "error",
+              "message": "Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols."
+            },
+            {
+              "line": "339",
+              "column": "0",
+              "severity": "error",
+              "message": "Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end."
+            },
+            {
+              "line": "340",
+              "column": "6",
+              "severity": "error",
+              "message": "Style/CommentedKeyword: Do not place comments on the same line as the `end` keyword."
+            },
+            {
+              "line": "341",
+              "column": "4",
+              "severity": "error",
+              "message": "Style/CommentedKeyword: Do not place comments on the same line as the `end` keyword."
+            },
+            {
+              "line": "344",
+              "column": "35",
+              "severity": "error",
+              "message": "Layout/TrailingBlankLines: Final newline missing."
+            }
+          ],
+          "issues": 86,
+          "info": 0,
+          "warning": 1,
+          "error": 85
+        }
+      ]
+    }
+  }
+}

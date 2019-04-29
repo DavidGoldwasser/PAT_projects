@@ -305,7 +305,8 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
 
     # perform a sizing run to get equipment sizes for efficiency standards
     if std.model_run_sizing_run(model, "#{Dir.pwd}/SizingRun") == false
-      runner.registerError("Unable to perform sizing run for hvac system #{hvac_system_type} for this model.")
+      runner.registerError("Unable to perform sizing run for hvac system #{hvac_system_type} for this model.  Check the openstudio-standards.log in this measure for more details.")
+      log_messages_to_file("#{Dir.pwd}/openstudio-standards.log", debug = true)
       return false
     end
 

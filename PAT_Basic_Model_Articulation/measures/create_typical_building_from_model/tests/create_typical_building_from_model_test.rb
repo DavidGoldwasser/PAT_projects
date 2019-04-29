@@ -36,6 +36,10 @@ class CreateTypicalBuildingFromModel_Test < Minitest::Test
       model = model.get
     end
 
+    # set the weather file for the test model
+    epw_file = OpenStudio::EpwFile.new("#{__dir__}/USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.epw")
+    OpenStudio::Model::WeatherFile.setWeatherFile(model, epw_file).get
+
     # get arguments
     arguments = measure.arguments(model)
     argument_map = OpenStudio::Measure.convertOSArgumentVectorToMap(arguments)
@@ -119,10 +123,16 @@ class CreateTypicalBuildingFromModel_Test < Minitest::Test
     apply_measure_to_model(__method__.to_s.gsub('test_', ''), args, 'SmallOffice.osm', nil, nil)
   end
 
-  # maade this test for temp work around for night cycle mode
+  # made this test for temp work around for night cycle mode
   def test_pfp_boxes
     args = {}
     args['system_type'] = 'VAV with PFP boxes'
     apply_measure_to_model(__method__.to_s.gsub('test_', ''), args, 'SmallOffice.osm', nil, nil)
   end
+
+  def test_generic_gbxml
+    args = {}
+    apply_measure_to_model(__method__.to_s.gsub('test_', ''), args, 'GenericGbxml.osm', nil, nil)
+  end
+
 end

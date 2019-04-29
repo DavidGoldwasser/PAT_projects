@@ -1,0 +1,8 @@
+{
+   "created_at" : "20190410T051552Z",
+   "hash" : "402F0FC5",
+   "seed_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_primary_school_fancoils_doas/test_primary_school_fancoils_doas.osm",
+   "steps" : [],
+   "updated_at" : "20190410T051552Z",
+   "weather_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_primary_school_fancoils_doas/USA_VT_Burlington.Intl.AP.726170_TMY3.epw"
+}

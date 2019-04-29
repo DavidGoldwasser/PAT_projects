@@ -1,0 +1,769 @@
+Program Version,EnergyPlus, Version 9.1.0-08d2e308bb, YMD=2019.04.09 23:17
+! <Version>, Version ID
+ Version, 9.1
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour,  6, 10
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 2, 25, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
+ Simulation Control, Yes, Yes, Yes, Yes, No, No
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 0.556, 0.556, 
+! <Site:GroundTemperature:BuildingSurface>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:BuildingSurface,  20.49,  20.43,  20.44,  20.50,  20.59,  22.83,  23.24,  23.33,  23.36,  21.14,  20.78,  20.61
+! <Site:GroundTemperature:FCfactorMethod>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:FCfactorMethod,  -1.89,  -3.06,  -0.99,   2.23,  10.68,  17.20,  21.60,  22.94,  20.66,  15.60,   8.83,   2.56
+! <Site:GroundTemperature:Shallow>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
+! <Site:GroundTemperature:Deep>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Deep,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00
+! <Site:GroundReflectance>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   1.000,   1.000
+! <Site:GroundReflectance:Snow>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:Snow:Daylighting>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient-Internal,Temperature Modifier Coefficient-Internal
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,41.98,-87.92,-6.00,201.00,98934,1.1759
+! <Site Water Mains Temperature Information>,Calculation Method{},Water Mains Temperature Schedule Name{},Annual Average Outdoor Air Temperature{C},Maximum Difference In Monthly Average Outdoor Air Temperatures{deltaC},Fixed Default Water Mains Temperature{C}
+Site Water Mains Temperature Information,Correlation,NA,9.93,28.70,NA
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,Medium Office Retail Mix ASHRAE 169-2006-5A,0.000,City,4.00000E-002,0.20000,FullInteriorAndExterior,25,6
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,TARP
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,TARP
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Value {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}
+ Zone Air Solution Algorithm, ThirdOrderBackwardDifference
+! <Zone Air Carbon Dioxide Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, No,N/A
+! <Zone Air Generic Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Zone Air Mass Flow Balance Simulation>, Enforce Mass Balance, Adjust Zone Mixing, Adjust Zone Infiltration {AddInfiltration | AdjustInfiltration | None}, Infiltration Zones {MixingSourceZonesOnly | AllZones}
+ Zone Air Mass Flow Balance Simulation, No,N/A,N/A,N/A
+! <HVACSystemRootFindingAlgorithm>, Value {RegulaFalsi | Bisection | BisectionThenRegulaFalsi | RegulaFalsiThenBisection}
+ HVACSystemRootFindingAlgorithm, RegulaFalsi
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.330,460.000,6.500000E-003
+! <Surface Geometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,UpperLeftCorner,Counterclockwise,RelativeCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Surface Heat Transfer Algorithm>, Value {CTF - ConductionTransferFunction | EMPD - MoisturePenetrationDepthConductionTransferFunction | CondFD - ConductionFiniteDifference | HAMT - CombinedHeatAndMoistureFiniteElement} - Description,Inside Surface Max Temperature Limit{C}, Surface Convection Coefficient Lower Limit {W/m2-K}, Surface Convection Coefficient Upper Limit {W/m2-K}
+Surface Heat Transfer Algorithm, CTF - ConductionTransferFunction,200,0.10,1000.0
+! <Shading Summary>, Number of Fixed Detached Shades, Number of Building Detached Shades, Number of Attached Shades
+ Shading Summary,0,0,0
+! <Zone Summary>, Number of Zones, Number of Zone Surfaces, Number of SubSurfaces
+ Zone Summary,24,209,16
+! <Zone Information>,Zone Name,North Axis {deg},Origin X-Coordinate {m},Origin Y-Coordinate {m},Origin Z-Coordinate {m},Centroid X-Coordinate {m},Centroid Y-Coordinate {m},Centroid Z-Coordinate {m},Type,Zone Multiplier,Zone List Multiplier,Minimum X {m},Maximum X {m},Minimum Y {m},Maximum Y {m},Minimum Z {m},Maximum Z {m},Ceiling Height {m},Volume {m3},Zone Inside Convection Algorithm {Simple-Detailed-CeilingDiffuser-TrombeWall},Zone Outside Convection Algorithm {Simple-Detailed-Tarp-MoWitt-DOE-2-BLAST}, Floor Area {m2},Exterior Gross Wall Area {m2},Exterior Net Wall Area {m2},Exterior Window Area {m2}, Number of Surfaces, Number of SubSurfaces, Number of Shading SubSurfaces,  Part of Total Building Area
+ Zone Information, TZ_CORE_BOTTOM,0.0,0.00,0.00,4.57,24.96,16.64,5.94,1,1,1,4.57,45.34,4.57,28.70,4.57,7.32,2.74,2698.04,TARP,TARP,983.54,0.00,0.00,0.00,7,0,0,Yes
+ Zone Information, TZ_CORE_GROUND,0.0,45.34,4.57,0.00,24.96,16.64,1.98,1,1,1,4.57,45.34,4.57,28.70,0.00,3.96,3.96,3897.17,TARP,TARP,983.54,0.00,0.00,0.00,6,0,0,Yes
+ Zone Information, TZ_CORE_MID,0.0,0.00,0.00,4.57,24.96,16.64,9.91,1,1,1,4.57,45.34,4.57,28.70,8.53,11.28,2.74,2698.04,TARP,TARP,983.54,0.00,0.00,0.00,6,0,0,Yes
+ Zone Information, TZ_CORE_TOP,0.0,0.00,0.00,4.57,24.96,16.64,13.87,1,1,1,4.57,45.34,4.57,28.70,12.50,15.24,2.74,2698.04,TARP,TARP,983.54,0.00,0.00,0.00,6,0,0,Yes
+ Zone Information, TZ_FIRSTFLOOR_PLENUM,0.0,0.00,0.00,4.57,24.96,16.64,7.92,1,1,1,0.00,49.91,0.00,33.27,7.32,8.53,1.22,2024.76,TARP,TARP,1660.73,202.84,202.84,0.00,14,0,0,No
+ Zone Information, TZ_GROUNDFLOOR_PLENUM,0.0,49.91,33.27,3.96,24.96,16.64,4.27,1,1,1,0.00,49.91,0.00,33.27,3.96,4.57,0.61,1012.38,TARP,TARP,1660.73,101.42,101.42,0.00,17,0,0,Yes
+ Zone Information, TZ_MIDFLOOR_PLENUM,0.0,0.00,0.00,4.57,24.96,16.64,11.89,1,1,1,0.00,49.91,0.00,33.27,11.28,12.50,1.22,2024.76,TARP,TARP,1660.73,202.84,202.84,0.00,14,0,0,No
+ Zone Information, TZ_PERIMETER_BOT_ZN_1,0.0,0.00,0.00,4.57,24.96,2.16,5.94,1,1,1,0.00,49.91,0.00,4.57,4.57,7.32,2.74,568.77,TARP,TARP,207.34,136.92,71.63,65.28,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_BOT_ZN_2,0.0,0.00,0.00,4.57,47.82,16.64,5.94,1,1,1,45.34,49.91,0.00,33.27,4.57,7.32,2.74,360.08,TARP,TARP,131.26,91.28,47.75,43.52,7,1,0,Yes
+ Zone Information, TZ_PERIMETER_BOT_ZN_3,0.0,0.00,0.00,4.57,24.96,31.11,5.94,1,1,1,0.00,49.91,28.70,33.27,4.57,7.32,2.74,568.77,TARP,TARP,207.34,136.92,71.63,65.28,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_BOT_ZN_4,0.0,0.00,0.00,4.57,2.09,16.64,5.94,1,1,1,-2.05E-032,4.57,-1.72E-041,33.27,4.57,7.32,2.74,360.05,TARP,TARP,131.25,91.28,47.75,43.52,7,1,0,Yes
+ Zone Information, TZ_PERIMETER_GROUND_ZN_1,0.0,49.91,0.00,0.00,24.96,2.15,1.98,1,1,1,0.00,49.91,0.00,4.57,0.00,3.96,3.96,821.56,TARP,TARP,207.34,197.77,39.55,158.21,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_GROUND_ZN_2,0.0,45.34,28.70,0.00,47.84,16.64,1.98,1,1,1,45.34,49.91,0.00,33.27,-9.92E-031,3.96,3.96,520.11,TARP,TARP,131.26,131.84,26.37,105.48,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_GROUND_ZN_3,0.0,0.00,33.27,0.00,24.96,31.13,1.98,1,1,1,0.00,49.91,28.70,33.27,0.00,3.96,3.96,821.56,TARP,TARP,207.34,197.77,39.55,158.21,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_GROUND_ZN_4,0.0,0.00,0.00,0.00,2.07,16.64,1.98,1,1,1,0.00,4.57,0.00,33.27,0.00,3.96,3.96,520.08,TARP,TARP,131.25,131.84,26.37,105.48,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_MID_ZN_1,0.0,0.00,0.00,4.57,24.96,2.16,9.91,1,1,1,0.00,49.91,0.00,4.57,8.53,11.28,2.74,568.77,TARP,TARP,207.34,136.92,71.63,65.28,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_MID_ZN_2,0.0,0.00,0.00,4.57,47.82,16.64,9.91,1,1,1,45.34,49.91,0.00,33.27,8.53,11.28,2.74,360.08,TARP,TARP,131.26,91.28,47.75,43.52,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_MID_ZN_3,0.0,0.00,0.00,4.57,24.96,31.11,9.91,1,1,1,0.00,49.91,28.70,33.27,8.53,11.28,2.74,568.77,TARP,TARP,207.34,136.92,71.63,65.28,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_MID_ZN_4,0.0,0.00,0.00,4.57,2.09,16.64,9.91,1,1,1,0.00,4.57,0.00,33.27,8.53,11.28,2.74,360.05,TARP,TARP,131.25,91.28,47.75,43.52,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_TOP_ZN_1,0.0,0.00,0.00,4.57,24.96,2.16,13.87,1,1,1,0.00,49.91,0.00,4.57,12.50,15.24,2.74,568.77,TARP,TARP,207.34,136.92,71.63,65.28,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_TOP_ZN_2,0.0,0.00,0.00,4.57,47.82,16.64,13.87,1,1,1,45.34,49.91,0.00,33.27,12.50,15.24,2.74,360.08,TARP,TARP,131.26,91.28,47.75,43.52,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_TOP_ZN_3,0.0,0.00,0.00,4.57,24.96,31.11,13.87,1,1,1,0.00,49.91,28.70,33.27,12.50,15.24,2.74,568.77,TARP,TARP,207.34,136.92,71.63,65.28,6,1,0,Yes
+ Zone Information, TZ_PERIMETER_TOP_ZN_4,0.0,0.00,0.00,4.57,2.09,16.64,13.87,1,1,1,0.00,4.57,0.00,33.27,12.50,15.24,2.74,360.05,TARP,TARP,131.25,91.28,47.75,43.52,6,1,0,Yes
+ Zone Information, TZ_TOPFLOOR_PLENUM,0.0,0.00,0.00,4.57,24.96,16.64,15.85,1,1,1,0.00,49.91,0.00,33.27,15.24,16.46,1.22,2024.76,TARP,TARP,1660.73,202.84,202.84,0.00,10,0,0,No
+! <Zone Internal Gains Nominal>,Zone Name, Floor Area {m2},# Occupants,Area per Occupant {m2/person},Occupant per Area {person/m2},Interior Lighting {W/m2},Electric Load {W/m2},Gas Load {W/m2},Other Load {W/m2},Hot Water Eq {W/m2},Steam Equipment {W/m2},Sum Loads per Area {W/m2},Outdoor Controlled Baseboard Heat
+ Zone Internal Gains Nominal, TZ_CORE_BOTTOM,983.54,52.9,18.581,5.382E-002,8.826,40.849,0.000,0.000,0.000,0.000,49.676,No
+ Zone Internal Gains Nominal, TZ_CORE_GROUND,983.54,158.8,6.194,0.161,18.083,2.368,0.000,0.000,0.000,0.000,20.451,No
+ Zone Internal Gains Nominal, TZ_CORE_MID,983.54,52.9,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_CORE_TOP,983.54,52.9,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_FIRSTFLOOR_PLENUM,1660.73,0.0,N/A,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,No
+ Zone Internal Gains Nominal, TZ_GROUNDFLOOR_PLENUM,1660.73,0.0,N/A,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,No
+ Zone Internal Gains Nominal, TZ_MIDFLOOR_PLENUM,1660.73,0.0,N/A,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_1,207.34,11.2,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_2,131.26,7.1,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_3,207.34,11.2,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_4,131.25,7.1,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_1,207.34,33.5,6.194,0.161,18.083,2.368,0.000,0.000,0.000,0.000,20.451,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_2,131.26,21.2,6.194,0.161,18.083,2.368,0.000,0.000,0.000,0.000,20.451,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_3,207.34,33.5,6.194,0.161,18.083,2.368,0.000,0.000,0.000,0.000,20.451,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_4,131.25,21.2,6.194,0.161,18.083,2.368,0.000,0.000,0.000,0.000,20.451,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_MID_ZN_1,207.34,11.2,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_MID_ZN_2,131.26,7.1,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_MID_ZN_3,207.34,11.2,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_MID_ZN_4,131.25,7.1,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_1,207.34,11.2,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_2,131.26,7.1,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_3,207.34,11.2,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_4,131.25,7.1,18.581,5.382E-002,8.826,8.073,0.000,0.000,0.000,0.000,16.899,No
+ Zone Internal Gains Nominal, TZ_TOPFLOOR_PLENUM,1660.73,0.0,N/A,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,No
+! <People Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Number of People {},People/Floor Area {person/m2},Floor Area per person {m2/person},Fraction Radiant,Fraction Convected,Sensible Fraction Calculation,Activity level,ASHRAE 55 Warnings,Carbon Dioxide Generation Rate,Nominal Minimum Number of People,Nominal Maximum Number of People
+ People Internal Gains Nominal, TZ_CORE_GROUND 90.1-2010 - RETAIL - RETAIL PEOPLE,RETAIL BLDG OCC,TZ_CORE_GROUND,983.54,158.8,158.8,0.161,6.194,0.300,0.700,AutoCalculate,RETAIL ACTIVITY,No,3.8200E-008,0,159
+ People Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_1 90.1-2010 - RETAIL - RETAIL PEOPLE,RETAIL BLDG OCC,TZ_PERIMETER_GROUND_ZN_1,207.34,33.5,33.5,0.161,6.194,0.300,0.700,AutoCalculate,RETAIL ACTIVITY,No,3.8200E-008,0,33
+ People Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_2 90.1-2010 - RETAIL - RETAIL PEOPLE,RETAIL BLDG OCC,TZ_PERIMETER_GROUND_ZN_2,131.26,21.2,21.2,0.161,6.194,0.300,0.700,AutoCalculate,RETAIL ACTIVITY,No,3.8200E-008,0,21
+ People Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_3 90.1-2010 - RETAIL - RETAIL PEOPLE,RETAIL BLDG OCC,TZ_PERIMETER_GROUND_ZN_3,207.34,33.5,33.5,0.161,6.194,0.300,0.700,AutoCalculate,RETAIL ACTIVITY,No,3.8200E-008,0,33
+ People Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_4 90.1-2010 - RETAIL - RETAIL PEOPLE,RETAIL BLDG OCC,TZ_PERIMETER_GROUND_ZN_4,131.25,21.2,21.2,0.161,6.194,0.300,0.700,AutoCalculate,RETAIL ACTIVITY,No,3.8200E-008,0,21
+ People Internal Gains Nominal, TZ_CORE_BOTTOM OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_CORE_BOTTOM,983.54,52.9,52.9,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,53
+ People Internal Gains Nominal, TZ_CORE_MID OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_CORE_MID,983.54,52.9,52.9,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,53
+ People Internal Gains Nominal, TZ_CORE_TOP OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_CORE_TOP,983.54,52.9,52.9,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,53
+ People Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_BOT_ZN_1,207.34,11.2,11.2,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,11
+ People Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_BOT_ZN_2,131.26,7.1,7.1,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,7
+ People Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_BOT_ZN_3,207.34,11.2,11.2,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,11
+ People Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_BOT_ZN_4,131.25,7.1,7.1,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,7
+ People Internal Gains Nominal, TZ_PERIMETER_MID_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_MID_ZN_1,207.34,11.2,11.2,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,11
+ People Internal Gains Nominal, TZ_PERIMETER_MID_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_MID_ZN_2,131.26,7.1,7.1,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,7
+ People Internal Gains Nominal, TZ_PERIMETER_MID_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_MID_ZN_3,207.34,11.2,11.2,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,11
+ People Internal Gains Nominal, TZ_PERIMETER_MID_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_MID_ZN_4,131.25,7.1,7.1,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,7
+ People Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_TOP_ZN_1,207.34,11.2,11.2,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,11
+ People Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_TOP_ZN_2,131.26,7.1,7.1,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,7
+ People Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_TOP_ZN_3,207.34,11.2,11.2,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,11
+ People Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE PEOPLE,OFFICEMEDIUM BLDG_OCC_SCH,TZ_PERIMETER_TOP_ZN_4,131.25,7.1,7.1,5.382E-002,18.581,0.300,0.700,AutoCalculate,OFFICEMEDIUM ACTIVITY_SCH,No,3.8200E-008,0,7
+! <Lights Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Lighting Level {W},Lights/Floor Area {W/m2},Lights per person {W/person},Fraction Return Air,Fraction Radiant,Fraction Short Wave,Fraction Convected,Fraction Replaceable,End-Use Category,Nominal Minimum Lighting Level {W},Nominal Maximum Lighting Level {W}
+ Lights Internal Gains Nominal, TZ_CORE_GROUND 90.1-2010 - RETAIL - RETAIL LIGHTS,RETAIL BLDG LIGHT,TZ_CORE_GROUND,983.54,158.8,17785.655,18.083,112.000,0.000,0.000,0.000,1.000,1.000,General,0.000,17785.655
+ Lights Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_1 90.1-2010 - RETAIL - RETAIL LIGHTS,RETAIL BLDG LIGHT,TZ_PERIMETER_GROUND_ZN_1,207.34,33.5,3749.372,18.083,112.000,0.000,0.000,0.000,1.000,1.000,General,0.000,3749.372
+ Lights Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_2 90.1-2010 - RETAIL - RETAIL LIGHTS,RETAIL BLDG LIGHT,TZ_PERIMETER_GROUND_ZN_2,131.26,21.2,2373.663,18.083,112.000,0.000,0.000,0.000,1.000,1.000,General,0.000,2373.663
+ Lights Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_3 90.1-2010 - RETAIL - RETAIL LIGHTS,RETAIL BLDG LIGHT,TZ_PERIMETER_GROUND_ZN_3,207.34,33.5,3749.372,18.083,112.000,0.000,0.000,0.000,1.000,1.000,General,0.000,3749.372
+ Lights Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_4 90.1-2010 - RETAIL - RETAIL LIGHTS,RETAIL BLDG LIGHT,TZ_PERIMETER_GROUND_ZN_4,131.25,21.2,2373.507,18.083,112.000,0.000,0.000,0.000,1.000,1.000,General,0.000,2373.507
+ Lights Internal Gains Nominal, TZ_CORE_BOTTOM OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_CORE_BOTTOM,983.54,52.9,8681.094,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,8681.094
+ Lights Internal Gains Nominal, TZ_CORE_MID OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_CORE_MID,983.54,52.9,8681.094,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,8681.094
+ Lights Internal Gains Nominal, TZ_CORE_TOP OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_CORE_TOP,983.54,52.9,8681.094,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,8681.094
+ Lights Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_BOT_ZN_1,207.34,11.2,1830.051,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1830.051
+ Lights Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_BOT_ZN_2,131.26,7.1,1158.573,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1158.573
+ Lights Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_BOT_ZN_3,207.34,11.2,1830.051,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1830.051
+ Lights Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_BOT_ZN_4,131.25,7.1,1158.497,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1158.497
+ Lights Internal Gains Nominal, TZ_PERIMETER_MID_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_MID_ZN_1,207.34,11.2,1830.051,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1830.051
+ Lights Internal Gains Nominal, TZ_PERIMETER_MID_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_MID_ZN_2,131.26,7.1,1158.573,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1158.573
+ Lights Internal Gains Nominal, TZ_PERIMETER_MID_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_MID_ZN_3,207.34,11.2,1830.051,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1830.051
+ Lights Internal Gains Nominal, TZ_PERIMETER_MID_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_MID_ZN_4,131.25,7.1,1158.497,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1158.497
+ Lights Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_TOP_ZN_1,207.34,11.2,1830.051,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1830.051
+ Lights Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_TOP_ZN_2,131.26,7.1,1158.573,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1158.573
+ Lights Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_TOP_ZN_3,207.34,11.2,1830.051,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1830.051
+ Lights Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE LIGHTS,OFFICEMEDIUM BLDG_LIGHT_SCH_2013,TZ_PERIMETER_TOP_ZN_4,131.25,7.1,1158.497,8.826,164.000,0.000,0.700,0.200,0.100,1.000,General,0.000,1158.497
+! <ElectricEquipment Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Equipment Level {W},Equipment/Floor Area {W/m2},Equipment per person {W/person},Fraction Latent,Fraction Radiant,Fraction Lost,Fraction Convected,End-Use SubCategory,Nominal Minimum Equipment Level {W},Nominal Maximum Equipment Level {W}
+ ElectricEquipment Internal Gains Nominal, 2 ELEVATOR FANS,OFFICEMEDIUM ELEV_LIGHT_FAN_SCH_ADD_DF,TZ_CORE_BOTTOM,983.54,52.9,61.915,6.295E-002,1.170,0.000,0.500,0.000,0.500,General,0.000,42.721
+ ElectricEquipment Internal Gains Nominal, 2 ELEVATOR LIFT MOTORS,OFFICEMEDIUM BLDG_ELEVATORS,TZ_CORE_BOTTOM,983.54,52.9,32110.000,32.647,606.610,0.000,0.500,0.000,0.500,General,0.000,22155.900
+ ElectricEquipment Internal Gains Nominal, 2 ELEVATOR LIGHTS,OFFICEMEDIUM ELEV_LIGHT_FAN_SCH_ADD_DF,TZ_CORE_BOTTOM,983.54,52.9,64.697,6.578E-002,1.222,0.000,0.500,0.000,0.500,General,0.000,44.641
+ ElectricEquipment Internal Gains Nominal, TZ_CORE_GROUND 90.1-2010 - RETAIL - RETAIL ELECTRIC EQUIPMENT,RETAIL BLDG EQUIP,TZ_CORE_GROUND,983.54,158.8,2329.075,2.368,14.667,0.000,0.000,0.000,1.000,General,0.000,2329.075
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_1 90.1-2010 - RETAIL - RETAIL ELECTRIC EQUIPMENT,RETAIL BLDG EQUIP,TZ_PERIMETER_GROUND_ZN_1,207.34,33.5,490.989,2.368,14.667,0.000,0.000,0.000,1.000,General,0.000,490.989
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_2 90.1-2010 - RETAIL - RETAIL ELECTRIC EQUIPMENT,RETAIL BLDG EQUIP,TZ_PERIMETER_GROUND_ZN_2,131.26,21.2,310.837,2.368,14.667,0.000,0.000,0.000,1.000,General,0.000,310.837
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_3 90.1-2010 - RETAIL - RETAIL ELECTRIC EQUIPMENT,RETAIL BLDG EQUIP,TZ_PERIMETER_GROUND_ZN_3,207.34,33.5,490.989,2.368,14.667,0.000,0.000,0.000,1.000,General,0.000,490.989
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_GROUND_ZN_4 90.1-2010 - RETAIL - RETAIL ELECTRIC EQUIPMENT,RETAIL BLDG EQUIP,TZ_PERIMETER_GROUND_ZN_4,131.25,21.2,310.817,2.368,14.667,0.000,0.000,0.000,1.000,General,0.000,310.817
+ ElectricEquipment Internal Gains Nominal, TZ_CORE_BOTTOM OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_CORE_BOTTOM,983.54,52.9,7940.025,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,7940.025
+ ElectricEquipment Internal Gains Nominal, TZ_CORE_MID OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_CORE_MID,983.54,52.9,7940.025,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,7940.025
+ ElectricEquipment Internal Gains Nominal, TZ_CORE_TOP OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_CORE_TOP,983.54,52.9,7940.025,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,7940.025
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_BOT_ZN_1,207.34,11.2,1673.827,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1673.827
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_BOT_ZN_2,131.26,7.1,1059.671,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1059.671
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_BOT_ZN_3,207.34,11.2,1673.827,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1673.827
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_BOT_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_BOT_ZN_4,131.25,7.1,1059.601,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1059.601
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_MID_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_MID_ZN_1,207.34,11.2,1673.827,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1673.827
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_MID_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_MID_ZN_2,131.26,7.1,1059.671,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1059.671
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_MID_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_MID_ZN_3,207.34,11.2,1673.827,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1673.827
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_MID_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_MID_ZN_4,131.25,7.1,1059.601,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1059.601
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_1 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_TOP_ZN_1,207.34,11.2,1673.827,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1673.827
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_2 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_TOP_ZN_2,131.26,7.1,1059.671,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1059.671
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_3 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_TOP_ZN_3,207.34,11.2,1673.827,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1673.827
+ ElectricEquipment Internal Gains Nominal, TZ_PERIMETER_TOP_ZN_4 OFFICE WHOLEBUILDING - MD OFFICE ELEC EQUIP,OFFICEMEDIUM BLDG_EQUIP_SCH_2013,TZ_PERIMETER_TOP_ZN_4,131.25,7.1,1059.601,8.073,150.000,0.000,0.500,0.000,0.500,General,0.000,1059.601
+! <Shadowing/Sun Position Calculations Annual Simulations>, Calculation Method, Value {days}, Allowable Number Figures in Shadow Overlap {}, Polygon Clipping Algorithm, Sky Diffuse Modeling Algorithm, External Shading Calculation Method, Output External Shading Calculation Results, Disable Self-Shading Within Shading Zone Groups, Disable Self-Shading From Shading Zone Groups to Other Zones
+Shadowing/Sun Position Calculations Annual Simulations,AverageOverDaysInFrequency,7,15000,SutherlandHodgman,SimpleSkyDiffuseModeling,InternalCalculation,No,No,No
+! <Zone/Window Adjacency Daylighting Counts>, Zone Name, Number of Exterior Windows, Number of Exterior Windows in Adjacent Zones
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_BOT_ZN_1,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_BOT_ZN_2,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_BOT_ZN_3,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_BOT_ZN_4,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_MID_ZN_1,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_MID_ZN_2,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_MID_ZN_3,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_MID_ZN_4,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_TOP_ZN_1,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_TOP_ZN_2,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_TOP_ZN_3,1,0
+Zone/Window Adjacency Daylighting Counts, TZ_PERIMETER_TOP_ZN_4,1,0
+! <Zone/Window Adjacency Daylighting Matrix>, Zone Name, Number of Adjacent Zones with Windows,Adjacent Zone Names - 1st 100 (max)
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_BOT_ZN_1,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_BOT_ZN_2,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_BOT_ZN_3,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_BOT_ZN_4,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_MID_ZN_1,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_MID_ZN_2,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_MID_ZN_3,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_MID_ZN_4,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_TOP_ZN_1,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_TOP_ZN_2,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_TOP_ZN_3,0
+Zone/Window Adjacency Daylighting Matrix, TZ_PERIMETER_TOP_ZN_4,0
+! <Water Heater Information>,Type,Name,Volume {m3},Maximum Capacity {W},Standard Rated Recovery Efficiency, Standard Rated Energy Factor
+! <ZoneInfiltration Airflow Stats Nominal>,Name,Schedule Name,Zone Name, Zone Floor Area {m2}, # Zone Occupants,Design Volume Flow Rate {m3/s},Volume Flow Rate/Floor Area {m3/s-m2},Volume Flow Rate/Exterior Surface Area {m3/s-m2},ACH - Air Changes per Hour,Equation A - Constant Term Coefficient {},Equation B - Temperature Term Coefficient {1/C},Equation C - Velocity Term Coefficient {s/m}, Equation D - Velocity Squared Term Coefficient {s2/m2}
+ ZoneInfiltration Airflow Stats Nominal, FIRSTFLOOR_PLENUM INFILTRATION,ALWAYS ON DISCRETE,TZ_FIRSTFLOOR_PLENUM,1660.73,0.0,0.116,6.957E-005,5.696E-004,0.205,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, MIDFLOOR_PLENUM INFILTRATION,ALWAYS ON DISCRETE,TZ_MIDFLOOR_PLENUM,1660.73,0.0,0.116,6.957E-005,5.696E-004,0.205,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, ENTRY DOOR INFILTRATION,OFFICEMEDIUM INFIL_DOOR_OPENING_SCH,TZ_PERIMETER_BOT_ZN_1,207.34,11.2,0.679,3.273E-003,4.957E-003,4.296,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_BOT_ZN_1 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_BOT_ZN_1,207.34,11.2,7.798E-002,3.761E-004,5.696E-004,0.494,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_BOT_ZN_2 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_BOT_ZN_2,131.26,7.1,5.199E-002,3.961E-004,5.696E-004,0.520,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_BOT_ZN_3 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_BOT_ZN_3,207.34,11.2,7.798E-002,3.761E-004,5.696E-004,0.494,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_BOT_ZN_4 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_BOT_ZN_4,131.25,7.1,5.199E-002,3.961E-004,5.696E-004,0.520,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_MID_ZN_1 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_MID_ZN_1,207.34,11.2,7.798E-002,3.761E-004,5.696E-004,0.494,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_MID_ZN_2 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_MID_ZN_2,131.26,7.1,5.199E-002,3.961E-004,5.696E-004,0.520,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_MID_ZN_3 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_MID_ZN_3,207.34,11.2,7.798E-002,3.761E-004,5.696E-004,0.494,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_MID_ZN_4 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_MID_ZN_4,131.25,7.1,5.199E-002,3.961E-004,5.696E-004,0.520,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_TOP_ZN_1 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_TOP_ZN_1,207.34,11.2,7.798E-002,3.761E-004,5.696E-004,0.494,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_TOP_ZN_2 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_TOP_ZN_2,131.26,7.1,5.199E-002,3.961E-004,5.696E-004,0.520,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_TOP_ZN_3 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_TOP_ZN_3,207.34,11.2,7.798E-002,3.761E-004,5.696E-004,0.494,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, PERIMETER_TOP_ZN_4 INFILTRATION,OFFICEMEDIUM INFIL_SCH_PNNL,TZ_PERIMETER_TOP_ZN_4,131.25,7.1,5.199E-002,3.961E-004,5.696E-004,0.520,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, TOPFLOOR_PLENUM INFILTRATION,ALWAYS ON DISCRETE,TZ_TOPFLOOR_PLENUM,1660.73,0.0,0.116,6.957E-005,6.199E-005,0.205,0.000,0.000,0.224,0.000
+ ZoneInfiltration Airflow Stats Nominal, TZ_CORE_GROUND 90.1-2010 - RETAIL - RETAIL INFILTRATION,RETAIL INFIL HALF ON,TZ_CORE_GROUND,983.54,158.8,0.000,0.000,N/A,0.000,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, TZ_PERIMETER_GROUND_ZN_1 90.1-2010 - RETAIL - RETAIL INFILTRATION,RETAIL INFIL HALF ON,TZ_PERIMETER_GROUND_ZN_1,207.34,33.5,4.481E-002,2.161E-004,2.266E-004,0.196,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, TZ_PERIMETER_GROUND_ZN_2 90.1-2010 - RETAIL - RETAIL INFILTRATION,RETAIL INFIL HALF ON,TZ_PERIMETER_GROUND_ZN_2,131.26,21.2,2.987E-002,2.276E-004,2.266E-004,0.207,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, TZ_PERIMETER_GROUND_ZN_3 90.1-2010 - RETAIL - RETAIL INFILTRATION,RETAIL INFIL HALF ON,TZ_PERIMETER_GROUND_ZN_3,207.34,33.5,4.481E-002,2.161E-004,2.266E-004,0.196,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, TZ_PERIMETER_GROUND_ZN_4 90.1-2010 - RETAIL - RETAIL INFILTRATION,RETAIL INFIL HALF ON,TZ_PERIMETER_GROUND_ZN_4,131.25,21.2,2.987E-002,2.276E-004,2.266E-004,0.207,1.000,0.000,0.000,0.000
+! <AirFlow Model>, Simple
+ AirFlow Model, Simple
+! <RoomAir Model>, Zone Name, Mixing/Mundt/UCSDDV/UCSDCV/UCSDUFI/UCSDUFE/User Defined
+RoomAir Model,TZ_CORE_BOTTOM,Mixing/Well-Stirred
+RoomAir Model,TZ_CORE_GROUND,Mixing/Well-Stirred
+RoomAir Model,TZ_CORE_MID,Mixing/Well-Stirred
+RoomAir Model,TZ_CORE_TOP,Mixing/Well-Stirred
+RoomAir Model,TZ_FIRSTFLOOR_PLENUM,Mixing/Well-Stirred
+RoomAir Model,TZ_GROUNDFLOOR_PLENUM,Mixing/Well-Stirred
+RoomAir Model,TZ_MIDFLOOR_PLENUM,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_BOT_ZN_1,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_BOT_ZN_2,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_BOT_ZN_3,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_BOT_ZN_4,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_GROUND_ZN_1,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_GROUND_ZN_2,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_GROUND_ZN_3,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_GROUND_ZN_4,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_MID_ZN_1,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_MID_ZN_2,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_MID_ZN_3,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_MID_ZN_4,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_TOP_ZN_1,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_TOP_ZN_2,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_TOP_ZN_3,Mixing/Well-Stirred
+RoomAir Model,TZ_PERIMETER_TOP_ZN_4,Mixing/Well-Stirred
+RoomAir Model,TZ_TOPFLOOR_PLENUM,Mixing/Well-Stirred
+! <AirflowNetwork Model:Control>, No Multizone or Distribution/Multizone with Distribution/Multizone without Distribution/Multizone with Distribution only during Fan Operation
+AirflowNetwork Model:Control,NoMultizoneOrDistribution
+! <Zone Volume Capacitance Multiplier>, Sensible Heat Capacity Multiplier, Moisture Capacity Multiplier, Carbon Dioxide Capacity Multiplier, Generic Contaminant Capacity Multiplier
+Zone Volume Capacitance Multiplier,   1.000 ,   1.000,   1.000,   1.000
+! <Zone Sizing DOAS Inputs>, Zone Name, DOAS Design Control Strategy, DOAS Design Low Setpoint Temperature {C}, DOAS Design High Setpoint Temperature {C} 
+ Zone Sizing DOAS Inputs, TZ_CORE_BOTTOM, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_CORE_GROUND, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_CORE_MID, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_CORE_TOP, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_BOT_ZN_1, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_BOT_ZN_2, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_BOT_ZN_3, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_BOT_ZN_4, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_GROUND_ZN_1, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_GROUND_ZN_2, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_GROUND_ZN_3, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_GROUND_ZN_4, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_MID_ZN_1, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_MID_ZN_2, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_MID_ZN_3, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_MID_ZN_4, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_TOP_ZN_1, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_TOP_ZN_2, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_TOP_ZN_3, NeutralSupplyAir, 15.556, 21.111
+ Zone Sizing DOAS Inputs, TZ_PERIMETER_TOP_ZN_4, NeutralSupplyAir, 15.556, 21.111
+! <Load Timesteps in Zone Design Calculation Averaging Window>, Value
+ Load Timesteps in Zone Design Calculation Averaging Window,    6
+! <Heating Sizing Factor Information>, Sizing Factor ID, Value
+ Heating Sizing Factor Information, Global,   1.0000    
+! <Cooling Sizing Factor Information>, Sizing Factor ID, Value
+ Cooling Sizing Factor Information, Global,   1.0000    
+! <Sky Daylight Factors>, MonthAndDay, Zone Name, Window Name, Daylight Fac: Ref Pt #1, Daylight Fac: Ref Pt #2
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_1,PERIMETER_BOT_ZN_1 - WALL 180_A - SUB:A,7.7213E-002,3.6727E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_1,PERIMETER_BOT_ZN_1 - WALL 180_A - SUB:A,7.4415E-002,3.3910E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_1,PERIMETER_BOT_ZN_1 - WALL 180_A - SUB:A,5.9918E-002,2.4501E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_1,PERIMETER_BOT_ZN_1 - WALL 180_A - SUB:A,5.2979E-002,2.1484E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_2,PERIMETER_BOT_ZN_2 - WALL 090_A - SUB:A,5.3391E-002,2.7620E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_2,PERIMETER_BOT_ZN_2 - WALL 090_A - SUB:A,4.6986E-002,2.3639E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_2,PERIMETER_BOT_ZN_2 - WALL 090_A - SUB:A,3.8036E-002,1.6523E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_2,PERIMETER_BOT_ZN_2 - WALL 090_A - SUB:A,5.3492E-002,2.1803E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_3,PERIMETER_BOT_ZN_3 - WALL 000_A - SUB:A,4.1696E-002,2.3166E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_3,PERIMETER_BOT_ZN_3 - WALL 000_A - SUB:A,3.4161E-002,1.8696E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_3,PERIMETER_BOT_ZN_3 - WALL 000_A - SUB:A,2.4486E-002,1.1116E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_3,PERIMETER_BOT_ZN_3 - WALL 000_A - SUB:A,5.2979E-002,2.1484E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_4,PERIMETER_BOT_ZN_4 - WALL 270_A - SUB:A,5.4180E-002,2.7924E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_4,PERIMETER_BOT_ZN_4 - WALL 270_A - SUB:A,4.7872E-002,2.3977E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_4,PERIMETER_BOT_ZN_4 - WALL 270_A - SUB:A,3.8843E-002,1.6831E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_BOT_ZN_4,PERIMETER_BOT_ZN_4 - WALL 270_A - SUB:A,5.3492E-002,2.1804E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_1,PERIMETER_MID_ZN_1 - WALL 180_A - SUB:A,7.8066E-002,3.7580E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_1,PERIMETER_MID_ZN_1 - WALL 180_A - SUB:A,7.5229E-002,3.4724E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_1,PERIMETER_MID_ZN_1 - WALL 180_A - SUB:A,6.0512E-002,2.5095E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_1,PERIMETER_MID_ZN_1 - WALL 180_A - SUB:A,5.3411E-002,2.1915E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_2,PERIMETER_MID_ZN_2 - WALL 090_A - SUB:A,5.3932E-002,2.8161E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_2,PERIMETER_MID_ZN_2 - WALL 090_A - SUB:A,4.7431E-002,2.4085E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_2,PERIMETER_MID_ZN_2 - WALL 090_A - SUB:A,3.8327E-002,1.6814E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_2,PERIMETER_MID_ZN_2 - WALL 090_A - SUB:A,5.3935E-002,2.2246E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_3,PERIMETER_MID_ZN_3 - WALL 000_A - SUB:A,4.2072E-002,2.3543E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_3,PERIMETER_MID_ZN_3 - WALL 000_A - SUB:A,3.4425E-002,1.8960E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_3,PERIMETER_MID_ZN_3 - WALL 000_A - SUB:A,2.4590E-002,1.1221E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_3,PERIMETER_MID_ZN_3 - WALL 000_A - SUB:A,5.3411E-002,2.1915E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_4,PERIMETER_MID_ZN_4 - WALL 270_A - SUB:A,5.4732E-002,2.8476E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_4,PERIMETER_MID_ZN_4 - WALL 270_A - SUB:A,4.8330E-002,2.4435E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_4,PERIMETER_MID_ZN_4 - WALL 270_A - SUB:A,3.9145E-002,1.7134E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_MID_ZN_4,PERIMETER_MID_ZN_4 - WALL 270_A - SUB:A,5.3935E-002,2.2247E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_1,PERIMETER_TOP_ZN_1 - WALL 180_A - SUB:A,7.8066E-002,3.7580E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_1,PERIMETER_TOP_ZN_1 - WALL 180_A - SUB:A,7.5229E-002,3.4724E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_1,PERIMETER_TOP_ZN_1 - WALL 180_A - SUB:A,6.0512E-002,2.5095E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_1,PERIMETER_TOP_ZN_1 - WALL 180_A - SUB:A,5.3411E-002,2.1915E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_2,PERIMETER_TOP_ZN_2 - WALL 090_A - SUB:A,5.3932E-002,2.8161E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_2,PERIMETER_TOP_ZN_2 - WALL 090_A - SUB:A,4.7431E-002,2.4085E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_2,PERIMETER_TOP_ZN_2 - WALL 090_A - SUB:A,3.8327E-002,1.6814E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_2,PERIMETER_TOP_ZN_2 - WALL 090_A - SUB:A,5.3935E-002,2.2246E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_3,PERIMETER_TOP_ZN_3 - WALL 000_A - SUB:A,4.2072E-002,2.3543E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_3,PERIMETER_TOP_ZN_3 - WALL 000_A - SUB:A,3.4425E-002,1.8960E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_3,PERIMETER_TOP_ZN_3 - WALL 000_A - SUB:A,2.4590E-002,1.1221E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_3,PERIMETER_TOP_ZN_3 - WALL 000_A - SUB:A,5.3411E-002,2.1915E-002
+ Clear Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_4,PERIMETER_TOP_ZN_4 - WALL 270_A - SUB:A,5.4732E-002,2.8476E-002
+ Clear Turbid Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_4,PERIMETER_TOP_ZN_4 - WALL 270_A - SUB:A,4.8330E-002,2.4435E-002
+ Intermediate Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_4,PERIMETER_TOP_ZN_4 - WALL 270_A - SUB:A,3.9145E-002,1.7134E-002
+ Overcast Sky Daylight Factors,07/21,TZ_PERIMETER_TOP_ZN_4,PERIMETER_TOP_ZN_4 - WALL 270_A - SUB:A,5.3935E-002,2.2247E-002
+! <Zone Sizing Information>, Zone Name, Load Type, Calc Des Load {W}, User Des Load {W}, Calc Des Air Flow Rate {m3/s}, User Des Air Flow Rate {m3/s}, Design Day Name, Date/Time of Peak, Temperature at Peak {C}, Humidity Ratio at Peak {kgWater/kgDryAir}, Floor Area {m2}, # Occupants, Calc Outdoor Air Flow Rate {m3/s}, Calc DOAS Heat Addition Rate {W}
+ Zone Sizing Information, TZ_CORE_BOTTOM, Cooling, 48652.15095, 48652.15095, 3.58498, 3.58498, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 08:00:00, 25.53000, 1.49611E-002, 983.53657, 52.93350, 0.42469, -1293.26120
+ Zone Sizing Information, TZ_CORE_BOTTOM, Heating, 15143.43572, 15143.43572, 0.43538, 0.43538, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:20:00, -20.00000, 6.49857E-004, 983.53657, 52.93350, 0.42469, -2322.71388
+ Zone Sizing Information, TZ_CORE_GROUND, Cooling, 49845.43137, 49845.43137, 3.70142, 3.70142, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 07:00:00, 23.74500, 1.49611E-002, 983.53657, 158.80049, 1.16166, -3709.88084
+ Zone Sizing Information, TZ_CORE_GROUND, Heating, 1546.94741, 1546.94741, 0.12648, 1.16166, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 23:30:00, 25.05750, 1.49611E-002, 983.53657, 158.80049, 1.16166, -10610.92741
+ Zone Sizing Information, TZ_CORE_MID, Cooling, 29223.90835, 29223.90835, 2.15038, 2.15038, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 08:00:00, 25.53000, 1.49611E-002, 983.53657, 52.93350, 0.42469, -1292.11782
+ Zone Sizing Information, TZ_CORE_MID, Heating, 17815.84348, 17815.84348, 0.51219, 0.51219, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:20:00, -20.00000, 6.49857E-004, 983.53657, 52.93350, 0.42469, -2322.37711
+ Zone Sizing Information, TZ_CORE_TOP, Cooling, 29488.11718, 29488.11718, 2.16988, 2.16988, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 08:00:00, 25.53000, 1.49611E-002, 983.53657, 52.93350, 0.42469, -1292.14104
+ Zone Sizing Information, TZ_CORE_TOP, Heating, 29173.93066, 29173.93066, 0.83461, 0.83461, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 983.53657, 52.93350, 0.42469, -2303.34621
+ Zone Sizing Information, TZ_PERIMETER_BOT_ZN_1, Cooling, 11963.71448, 11963.71448, 0.88852, 0.88852, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:00:00, 32.77500, 1.49611E-002, 207.33814, 11.15885, 8.95286E-002, -266.57870
+ Zone Sizing Information, TZ_PERIMETER_BOT_ZN_1, Heating, 10340.91287, 10340.91287, 0.29621, 0.29621, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 207.33814, 11.15885, 8.95286E-002, -485.15909
+ Zone Sizing Information, TZ_PERIMETER_BOT_ZN_2, Cooling, 10981.41663, 10981.41663, 0.81555, 0.81555, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 08:20:00, 26.19500, 1.49611E-002, 131.26219, 7.06447, 5.66790E-002, -168.78353
+ Zone Sizing Information, TZ_PERIMETER_BOT_ZN_2, Heating, 6714.42870, 6714.42870, 0.19234, 0.19234, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 131.26219, 7.06447, 5.66790E-002, -307.14728
+ Zone Sizing Information, TZ_PERIMETER_BOT_ZN_3, Cooling, 8213.53803, 8213.53803, 0.61001, 0.61001, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 14:20:00, 33.30000, 1.49611E-002, 207.33814, 11.15885, 8.95286E-002, -266.57689
+ Zone Sizing Information, TZ_PERIMETER_BOT_ZN_3, Heating, 10223.72096, 10223.72096, 0.29284, 0.29284, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 207.33814, 11.15885, 8.95286E-002, -485.15828
+ Zone Sizing Information, TZ_PERIMETER_BOT_ZN_4, Cooling, 11048.83020, 11048.83020, 0.82057, 0.82057, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:50:00, 31.97000, 1.49611E-002, 131.25358, 7.06401, 5.66753E-002, -168.75957
+ Zone Sizing Information, TZ_PERIMETER_BOT_ZN_4, Heating, 6803.98003, 6803.98003, 0.19491, 0.19491, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 131.25358, 7.06401, 5.66753E-002, -307.12690
+ Zone Sizing Information, TZ_PERIMETER_GROUND_ZN_1, Cooling, 19193.60212, 19193.60212, 1.60031, 1.60031, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 12:50:00, 32.63500, 1.49611E-002, 207.33814, 33.47654, 0.24489, -728.29245
+ Zone Sizing Information, TZ_PERIMETER_GROUND_ZN_1, Heating, 10407.10671, 10407.10671, 0.45653, 0.45653, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 13:50:00, -20.00000, 6.49857E-004, 207.33814, 33.47654, 0.24489, -1338.48087
+ Zone Sizing Information, TZ_PERIMETER_GROUND_ZN_2, Cooling, 19199.61779, 19199.61779, 1.60078, 1.60078, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 08:40:00, 26.86000, 1.49611E-002, 131.26219, 21.19342, 0.15503, -461.09352
+ Zone Sizing Information, TZ_PERIMETER_GROUND_ZN_2, Heating, 6909.29734, 6909.29734, 0.30309, 0.30309, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 13:50:00, -20.00000, 6.49857E-004, 131.26219, 21.19342, 0.15503, -847.35581
+ Zone Sizing Information, TZ_PERIMETER_GROUND_ZN_3, Cooling, 13529.36338, 13529.36338, 1.02936, 1.02936, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 07:00:00, 23.74500, 1.49611E-002, 207.33814, 33.47654, 0.24489, -788.43034
+ Zone Sizing Information, TZ_PERIMETER_GROUND_ZN_3, Heating, 10407.09751, 10407.09751, 0.45653, 0.45653, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 13:50:00, -20.00000, 6.49857E-004, 207.33814, 33.47654, 0.24489, -1338.48087
+ Zone Sizing Information, TZ_PERIMETER_GROUND_ZN_4, Cooling, 19650.03930, 19650.03930, 1.63834, 1.63834, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:40:00, 32.11000, 1.49611E-002, 131.25358, 21.19203, 0.15502, -461.06066
+ Zone Sizing Information, TZ_PERIMETER_GROUND_ZN_4, Heating, 7041.26345, 7041.26345, 0.30888, 0.30888, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 13:50:00, -20.00000, 6.49857E-004, 131.25358, 21.19203, 0.15502, -847.29200
+ Zone Sizing Information, TZ_PERIMETER_MID_ZN_1, Cooling, 11652.91634, 11652.91634, 0.86544, 0.86544, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:00:00, 32.77500, 1.49611E-002, 207.33814, 11.15885, 8.95286E-002, -266.57379
+ Zone Sizing Information, TZ_PERIMETER_MID_ZN_1, Heating, 10977.18532, 10977.18532, 0.31447, 0.31447, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 207.33814, 11.15885, 8.95286E-002, -485.15281
+ Zone Sizing Information, TZ_PERIMETER_MID_ZN_2, Cooling, 10766.68167, 10766.68167, 0.79961, 0.79961, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 08:20:00, 26.19500, 1.49611E-002, 131.26219, 7.06447, 5.66790E-002, -168.77901
+ Zone Sizing Information, TZ_PERIMETER_MID_ZN_2, Heating, 7116.54876, 7116.54876, 0.20388, 0.20388, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 131.26219, 7.06447, 5.66790E-002, -307.14279
+ Zone Sizing Information, TZ_PERIMETER_MID_ZN_3, Cooling, 7947.80185, 7947.80185, 0.59027, 0.59027, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 14:20:00, 33.30000, 1.49611E-002, 207.33814, 11.15885, 8.95286E-002, -266.57239
+ Zone Sizing Information, TZ_PERIMETER_MID_ZN_3, Heating, 10865.20022, 10865.20022, 0.31125, 0.31125, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 207.33814, 11.15885, 8.95286E-002, -485.15236
+ Zone Sizing Information, TZ_PERIMETER_MID_ZN_4, Cooling, 10840.28118, 10840.28118, 0.80509, 0.80509, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:50:00, 31.97000, 1.49611E-002, 131.25358, 7.06401, 5.66753E-002, -168.75636
+ Zone Sizing Information, TZ_PERIMETER_MID_ZN_4, Heating, 7211.15901, 7211.15901, 0.20659, 0.20659, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 131.25358, 7.06401, 5.66753E-002, -307.12222
+ Zone Sizing Information, TZ_PERIMETER_TOP_ZN_1, Cooling, 11871.31633, 11871.31633, 0.88167, 0.88167, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 13:00:00, 32.77500, 1.49611E-002, 207.33814, 11.15885, 8.95286E-002, -266.57060
+ Zone Sizing Information, TZ_PERIMETER_TOP_ZN_1, Heating, 13296.31536, 13296.31536, 0.38103, 0.38103, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 207.33814, 11.15885, 8.95286E-002, -485.14239
+ Zone Sizing Information, TZ_PERIMETER_TOP_ZN_2, Cooling, 10780.98756, 10780.98756, 0.80067, 0.80067, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 08:20:00, 26.19500, 1.49611E-002, 131.26219, 7.06447, 5.66790E-002, -168.77715
+ Zone Sizing Information, TZ_PERIMETER_TOP_ZN_2, Heating, 8583.89933, 8583.89933, 0.24599, 0.24599, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 131.26219, 7.06447, 5.66790E-002, -307.13585
+ Zone Sizing Information, TZ_PERIMETER_TOP_ZN_3, Cooling, 8310.47616, 8310.47616, 0.61721, 0.61721, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 18:20:00, 30.25500, 1.49611E-002, 207.33814, 11.15885, 8.95286E-002, -266.56731
+ Zone Sizing Information, TZ_PERIMETER_TOP_ZN_3, Heating, 13201.70310, 13201.70310, 0.37831, 0.37831, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 207.33814, 11.15885, 8.95286E-002, -485.14175
+ Zone Sizing Information, TZ_PERIMETER_TOP_ZN_4, Cooling, 11131.59838, 11131.59838, 0.82672, 0.82672, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 16:50:00, 31.97000, 1.49611E-002, 131.25358, 7.06401, 5.66753E-002, -168.75485
+ Zone Sizing Information, TZ_PERIMETER_TOP_ZN_4, Heating, 8681.99918, 8681.99918, 0.24881, 0.24881, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00, -20.00000, 6.49857E-004, 131.25358, 7.06401, 5.66753E-002, -307.11524
+! <System Sizing Information>, System Name, Load Type, Peak Load Kind, User Design Capacity, Calc Des Air Flow Rate [m3/s], User Des Air Flow Rate [m3/s], Design Day Name, Date/Time of Peak
+ System Sizing Information, 20 ZONE DOAS, Cooling, Sensible, 86232.13, 22.03133, 4.11279, CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB, 7/21 00:00:00
+ System Sizing Information, 20 ZONE DOAS, Heating, Sensible, 199786.39, 7.72054, 4.11279, CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB, 1/21 08:00:00
+! <Component Sizing Information>, Component Type, Component Name, Input Field Description, Value
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_CORE_BOTTOM AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.42469
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_BOTTOM WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 3.58498
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_BOTTOM WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 3.58498
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_BOTTOM WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 3.58498
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_BOTTOM WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_CORE_BOTTOM WSHP FAN, Design Size Maximum Flow Rate [m3/s], 3.58498
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_BOTTOM WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 3.58498
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_BOTTOM WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 63301.75614
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_BOTTOM WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 46765.57048
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_BOTTOM WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 2.27927E-003
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_BOTTOM WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 3.58498
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_BOTTOM WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 63301.75614
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_BOTTOM WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 2.27927E-003
+ Component Sizing Information, Coil:Heating:Electric, TZ_CORE_BOTTOM SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 15143.39131
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_CORE_GROUND AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 1.16166
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_GROUND WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 3.70142
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_GROUND WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 3.70142
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_GROUND WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 3.70142
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_GROUND WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Fan:OnOff, TZ_CORE_GROUND WSHP FAN, Design Size Maximum Flow Rate [m3/s], 3.70142
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_GROUND WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 3.70142
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_GROUND WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 79976.32791
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_GROUND WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 50835.75891
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_GROUND WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 2.87966E-003
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_GROUND WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 3.70142
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_GROUND WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 79976.32791
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_GROUND WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 2.87966E-003
+ Component Sizing Information, Coil:Heating:Electric, TZ_CORE_GROUND SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 13930.70422
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_CORE_MID AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.42469
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_MID WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 2.15038
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_MID WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 2.15038
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_MID WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 2.15038
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_MID WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_CORE_MID WSHP FAN, Design Size Maximum Flow Rate [m3/s], 2.15038
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_MID WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 2.15038
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_MID WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 40723.19349
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_MID WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 29053.04697
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_MID WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 1.46630E-003
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_MID WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 2.15038
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_MID WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 40723.19349
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_MID WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 1.46630E-003
+ Component Sizing Information, Coil:Heating:Electric, TZ_CORE_MID SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 17815.56237
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_CORE_TOP AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.42469
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_TOP WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 2.16988
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_TOP WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 2.16988
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_TOP WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 2.16988
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_CORE_TOP WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_CORE_TOP WSHP FAN, Design Size Maximum Flow Rate [m3/s], 2.16988
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_TOP WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 2.16988
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_TOP WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 41025.92532
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_TOP WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 29291.37770
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_TOP WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 1.47720E-003
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_TOP WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 2.16988
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_TOP WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 41025.92532
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_CORE_TOP WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 1.47720E-003
+ Component Sizing Information, Coil:Heating:Electric, TZ_CORE_TOP SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 29032.15541
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_BOT_ZN_1 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 8.95286E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_1 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.88852
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_1 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.88852
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_1 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.88852
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_1 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_BOT_ZN_1 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.88852
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.88852
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 15475.09713
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 11509.94130
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 5.57203E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.88852
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 15475.09713
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 5.57203E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_BOT_ZN_1 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 10303.21721
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_BOT_ZN_2 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.66790E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_2 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.81555
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_2 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.81555
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_2 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.81555
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_2 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_BOT_ZN_2 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.81555
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.81555
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 13738.96905
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 10405.79404
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 4.94691E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.81555
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 13738.96905
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 4.94691E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_BOT_ZN_2 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 6690.27100
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_BOT_ZN_3 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 8.95286E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_3 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.61001
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_3 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.61001
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_3 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.61001
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_3 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_BOT_ZN_3 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.61001
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.61001
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 11108.17243
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 8073.92099
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 3.99966E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.61001
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 11108.17243
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 3.99966E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_BOT_ZN_3 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 10186.23516
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_BOT_ZN_4 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.66753E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_4 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.82057
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_4 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.82057
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_4 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.82057
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_BOT_ZN_4 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_BOT_ZN_4 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.82057
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.82057
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 13809.64038
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 10465.17811
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 4.97236E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.82057
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 13809.64038
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_BOT_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 4.97236E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_BOT_ZN_4 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 6779.67619
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_GROUND_ZN_1 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.24489
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_1 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 1.60031
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_1 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 1.60031
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_1 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 1.60031
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_1 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_GROUND_ZN_1 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 1.60031
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 1.60031
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 26905.83104
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 19063.85710
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 9.68783E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 1.60031
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 26905.83104
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 9.68783E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_GROUND_ZN_1 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 10407.10667
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_GROUND_ZN_2 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.15503
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_2 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 1.60078
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_2 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 1.60078
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_2 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 1.60078
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_2 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_GROUND_ZN_2 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 1.60078
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 1.60078
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 25318.28943
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 18566.64653
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 9.11621E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 1.60078
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 25318.28943
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 9.11621E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_GROUND_ZN_2 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 6909.29731
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_GROUND_ZN_3 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.24489
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_3 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 1.02936
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_3 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 1.02936
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_3 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 1.02936
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_3 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_GROUND_ZN_3 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 1.02936
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 1.02936
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 20328.93889
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 13365.02816
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 7.31972E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 1.02936
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 20328.93889
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 7.31972E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_GROUND_ZN_3 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 10407.09747
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_GROUND_ZN_4 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 0.15502
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_4 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 1.63834
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_4 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 1.63834
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_4 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 1.63834
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_GROUND_ZN_4 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 40.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_GROUND_ZN_4 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 1.63834
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 1.63834
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 25845.34314
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 18981.76110
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 9.30598E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 1.63834
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 25845.34314
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_GROUND_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 9.30598E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_GROUND_ZN_4 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 7041.26342
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_MID_ZN_1 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 8.95286E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_1 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.86544
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_1 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.86544
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_1 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.86544
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_1 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_MID_ZN_1 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.86544
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.86544
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 15136.07961
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 11232.86716
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 5.44996E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.86544
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 15136.07961
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 5.44996E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_MID_ZN_1 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 10938.42829
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_MID_ZN_2 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.66790E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_2 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.79961
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_2 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.79961
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_2 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.79961
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_2 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_MID_ZN_2 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.79961
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.79961
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 13507.37930
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 10214.81816
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 4.86352E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.79961
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 13507.37930
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 4.86352E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_MID_ZN_2 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 7091.71985
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_MID_ZN_3 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 8.95286E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_3 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.59027
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_3 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.59027
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_3 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.59027
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_3 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_MID_ZN_3 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.59027
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.59027
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 10815.31832
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 7836.98585
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 3.89421E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.59027
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 10815.31832
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 3.89421E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_MID_ZN_3 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 10826.64491
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_MID_ZN_4 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.66753E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_4 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.80509
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_4 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.80509
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_4 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.80509
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_MID_ZN_4 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_MID_ZN_4 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.80509
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.80509
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 13584.79308
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 10279.70846
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 4.89140E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.80509
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 13584.79308
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_MID_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 4.89140E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_MID_ZN_4 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 7186.17542
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_TOP_ZN_1 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 8.95286E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_1 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.88167
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_1 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.88167
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_1 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.88167
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_1 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_TOP_ZN_1 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.88167
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.88167
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 15404.65478
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 11438.15087
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_1 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 5.54666E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.88167
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 15404.65478
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_1 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 5.54666E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_TOP_ZN_1 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 13253.65524
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_TOP_ZN_2 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.66790E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_2 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.80067
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_2 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.80067
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_2 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.80067
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_2 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_TOP_ZN_2 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.80067
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.80067
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 13535.78093
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 10231.92928
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_2 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 4.87375E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.80067
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 13535.78093
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_2 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 4.87375E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_TOP_ZN_2 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 8556.59857
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_TOP_ZN_3 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 8.95286E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_3 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.61721
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_3 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.61721
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_3 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.61721
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_3 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_TOP_ZN_3 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.61721
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.61721
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 11254.35053
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 8174.73081
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_3 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 4.05229E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.61721
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 11254.35053
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_3 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 4.05229E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_TOP_ZN_3 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 13159.21521
+ Component Sizing Information, AirTerminal:SingleDuct:ConstantVolume:NoReheat, TZ_PERIMETER_TOP_ZN_4 AIR TERMINAL, Design Size Maximum Air Flow Rate [m3/s], 5.66753E-002
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_4 WSHP, Design Size Cooling Supply Air Flow Rate [m3/s], 0.82672
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_4 WSHP, Design Size Heating Supply Air Flow Rate [m3/s], 0.82672
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_4 WSHP, Design Size No Load Supply Air Flow Rate [m3/s], 0.82672
+ Component Sizing Information, ZoneHVAC:WaterToAirHeatPump, TZ_PERIMETER_TOP_ZN_4 WSHP, Design Size Maximum Supply Air Temperature from Supplemental Heater [C], 50.00000
+ Component Sizing Information, Fan:OnOff, TZ_PERIMETER_TOP_ZN_4 WSHP FAN, Design Size Maximum Flow Rate [m3/s], 0.82672
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Air Flow Rate [m3/s], 0.82672
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Total Cooling Capacity [W], 13931.54356
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Sensible Cooling Capacity [W], 10549.80823
+ Component Sizing Information, COIL:COOLING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_4 WATER-TO-AIR HP CLG COIL, Design Size Rated Water Flow Rate [m3/s], 5.01625E-004
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Air Flow Rate [m3/s], 0.82672
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Heating Capacity [W], 13931.54356
+ Component Sizing Information, COIL:HEATING:WATERTOAIRHEATPUMP:EQUATIONFIT, TZ_PERIMETER_TOP_ZN_4 WATER-TO-AIR HP HTG COIL, Design Size Rated Water Flow Rate [m3/s], 5.01625E-004
+ Component Sizing Information, Coil:Heating:Electric, TZ_PERIMETER_TOP_ZN_4 SUPPLEMENTAL HTG COIL, Design Size Nominal Capacity [W], 8654.53750
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, Sum of Air Terminal Maximum Heating Flow Rates [m3/s], 0.00000
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, Sum of Air Terminal Minimum Heating Flow Rates [m3/s], 0.00000
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, Sum of Air Terminal Maximum Flow Rates [m3/s], 4.11279
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, Adjusted Heating Design Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, Adjusted Cooling Design Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, Adjusted Main Design Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, User Heating Air Flow Ratio [], 1.00000
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, Calculated Heating Air Flow Ratio [], 1.00000
+ Component Sizing Information, AirLoopHVAC, 20 ZONE DOAS, Design Supply Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, Fan:ConstantVolume, DOAS EXHAUST FAN, Design Size Maximum Flow Rate [m3/s], 4.11279
+!<Controller:MechanicalVentilation>,Name,Availability Schedule Name,Demand Controlled Ventilation {Yes/No},System Outdoor Air Method,Zone Maximum Outdoor Air Fraction,Number of Zones,Zone Name,DSOA Name,DSZAD Name
+ Controller:MechanicalVentilation,20 ZONE DOAS MECHANICAL VENTILATION CONTROLLER,ALWAYS ON DISCRETE,No,ZoneSum,1.00,20,TZ_CORE_BOTTOM,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_CORE_BOTTOM DESIGN SPEC ZONE AIR DIST,TZ_CORE_GROUND,90.1-2010 - RETAIL - RETAIL VENTILATION,TZ_CORE_GROUND DESIGN SPEC ZONE AIR DIST,TZ_CORE_MID,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_CORE_MID DESIGN SPEC ZONE AIR DIST,TZ_CORE_TOP,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_CORE_TOP DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_BOT_ZN_1,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_BOT_ZN_1 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_BOT_ZN_2,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_BOT_ZN_2 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_BOT_ZN_3,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_BOT_ZN_3 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_BOT_ZN_4,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_BOT_ZN_4 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_GROUND_ZN_1,90.1-2010 - RETAIL - RETAIL VENTILATION,TZ_PERIMETER_GROUND_ZN_1 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_GROUND_ZN_2,90.1-2010 - RETAIL - RETAIL VENTILATION,TZ_PERIMETER_GROUND_ZN_2 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_GROUND_ZN_3,90.1-2010 - RETAIL - RETAIL VENTILATION,TZ_PERIMETER_GROUND_ZN_3 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_GROUND_ZN_4,90.1-2010 - RETAIL - RETAIL VENTILATION,TZ_PERIMETER_GROUND_ZN_4 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_MID_ZN_1,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_MID_ZN_1 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_MID_ZN_2,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_MID_ZN_2 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_MID_ZN_3,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_MID_ZN_3 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_MID_ZN_4,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_MID_ZN_4 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_TOP_ZN_1,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_TOP_ZN_1 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_TOP_ZN_2,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_TOP_ZN_2 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_TOP_ZN_3,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_TOP_ZN_3 DESIGN SPEC ZONE AIR DIST,TZ_PERIMETER_TOP_ZN_4,OFFICE WHOLEBUILDING - MD OFFICE VENTILATION,TZ_PERIMETER_TOP_ZN_4 DESIGN SPEC ZONE AIR DIST
+ Component Sizing Information, Controller:OutdoorAir, 20 ZONE DOAS OUTDOOR AIR CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, Controller:OutdoorAir, 20 ZONE DOAS OUTDOOR AIR CONTROLLER, Minimum Outdoor Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, HeatExchanger:AirToAir:SensibleAndLatent, 20 ZONE DOAS HEAT EXCHANGER, Design Size Nominal Supply Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, 20 ZONE DOAS 2SPD DX CLG COIL, Design Size High Speed Rated Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, 20 ZONE DOAS 2SPD DX CLG COIL, Design Size High Speed Gross Rated Total Cooling Capacity [W], 102130.48067
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, 20 ZONE DOAS 2SPD DX CLG COIL, Design Size High Speed Rated Sensible Heat Ratio, 0.69808
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, 20 ZONE DOAS 2SPD DX CLG COIL, Design Size Low Speed Rated Air Flow Rate [m3/s], 1.37079
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, 20 ZONE DOAS 2SPD DX CLG COIL, Design Size Low Speed Gross Rated Total Cooling Capacity [W], 34040.08921
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, 20 ZONE DOAS 2SPD DX CLG COIL, User-Specified Low Speed Gross Rated Sensible Heat Ratio, 0.69000
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, 20 ZONE DOAS HTG COIL, Design Size Rated Air Flow Rate [m3/s], 4.11279
+ Component Sizing Information, Coil:Heating:DX:SingleSpeed, 20 ZONE DOAS HTG COIL, Design Size Gross Rated Heating Capacity [W], 102130.48067
+! <DX Heating Coil Standard Rating Information>, Component Type, Component Name, High Temperature Heating (net) Rating Capacity {W}, Low Temperature Heating (net) Rating Capacity {W}, HSPF {Btu/W-h}, Region Number
+ DX Heating Coil Standard Rating Information, Coil:Heating:DX:SingleSpeed, 20 ZONE DOAS HTG COIL, 105434.7, 58016.1, 7.00, 4
+ Component Sizing Information, Coil:Heating:Electric, 20 ZONE DOAS BACKUP HTG COIL, Design Size Nominal Capacity [W], 199786.39048
+ Component Sizing Information, Fan:ConstantVolume, DOAS SUPPLY FAN, Design Size Maximum Flow Rate [m3/s], 4.11279
+Water Heater Information,WaterHeater:Mixed,100GAL NATURAL GAS WATER HEATER - 100KBTU/HR 0.802 THERM EFF,0.3785,29307.1,1.016,0.3043
+ Component Sizing Information, PlantLoop, GROUND HX LOOP, Maximum Loop Flow Rate [m3/s], 1.74533E-002
+ Component Sizing Information, PlantLoop, GROUND HX LOOP, Plant Loop Volume [m3], 2.09440
+ Component Sizing Information, Pump:ConstantSpeed, GROUND HX LOOP PUMP, Design Flow Rate [m3/s], 1.74533E-002
+ Component Sizing Information, Pump:ConstantSpeed, GROUND HX LOOP PUMP, Design Power Consumption [W], 4458.89536
+ Component Sizing Information, PlantComponent:TemperatureSource, GROUND HX, Design Size Design Fluid Flow Rate [m3/s], 1.74533E-002
+ Component Sizing Information, PlantLoop, MAIN SERVICE WATER LOOP, Maximum Loop Flow Rate [m3/s], 5.36265E-005
+ Component Sizing Information, PlantLoop, MAIN SERVICE WATER LOOP, Plant Loop Volume [m3], 6.43518E-003
+ Component Sizing Information, Pump:ConstantSpeed, SERVICE WATER LOOP PUMP, Design Flow Rate [m3/s], 5.36265E-005
+ Component Sizing Information, Pump:ConstantSpeed, SERVICE WATER LOOP PUMP, Design Power Consumption [W], 2.93580
+ Component Sizing Information, WaterHeater:Mixed, 100GAL NATURAL GAS WATER HEATER - 100KBTU/HR 0.802 THERM EFF, Use Side Design Flow Rate [m3/s], 5.36265E-005
+ Component Sizing Information, PlantEquipmentOperation:ComponentSetPoint, GROUND HX LOOP SETPOINT OPERATION SCHEME, Design Water Flow Rate [m3/s] Equipment # 58, 5.36265E-005
+! <Environment>,Environment Name,Environment Type, Start Date, End Date, Start DayOfWeek, Duration {#days}, Source:Start DayOfWeek,  Use Daylight Saving, Use Holidays, Apply Weekend Holiday Rule,  Use Rain Values, Use Snow Values
+! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
+! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
+! <Environment:WarmupDays>, NumberofWarmupDays
+Environment,CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,SizingPeriod:DesignDay,07/21,07/21,SummerDesignDay,1,N/A,N/A,N/A,N/A,N/A,N/A
+Environment:Daylight Saving,No,SizingPeriod:DesignDay
+! <Environment:Design Day Data>, Max Dry-Bulb Temp {C}, Temp Range {dC}, Temp Range Ind Type, Hum Ind Value at Max Temp, Hum Ind Type,Pressure {Pa}, Wind Direction {deg CW from N}, Wind Speed {m/s}, Clearness, Rain, Snow
+! <Environment:Design Day Misc>,DayOfYear,ASHRAE A Coeff,ASHRAE B Coeff,ASHRAE C Coeff,Solar Constant-Annual Variation,Eq of Time {minutes}, Solar Declination Angle {deg}, Solar Model
+Environment:Design Day Data,33.30,10.50,DefaultMultipliers,98934,230,5.2,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:WarmupDays,  6
+! <Tabular Report>,Style,Unit Conversion
+Tabular Report,HTML,None
+! <Warmup Convergence Information>,Zone Name,Environment Type/Name,Average Warmup Temperature Difference {deltaC},Std Dev Warmup Temperature Difference {deltaC},Max Temperature Pass/Fail Convergence,Min Temperature Pass/Fail Convergence,Average Warmup Load Difference {W},Std Dev Warmup Load Difference {W},Heating Load Pass/Fail Convergence,Cooling Load Pass/Fail Convergence
+ Warmup Convergence Information,TZ_CORE_BOTTOM,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7559275930E-002,0.2066303975,Pass,Pass,2.0769086321E-002,0.1137467383,Pass,Pass
+ Warmup Convergence Information,TZ_CORE_GROUND,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,6.3452613333E-002,0.3108361157,Pass,Pass,2.8633801155E-002,0.1460561574,Pass,Pass
+ Warmup Convergence Information,TZ_CORE_MID,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7568257875E-002,0.1616212211,Pass,Pass,4.1305411851E-002,0.3199755300,Pass,Pass
+ Warmup Convergence Information,TZ_CORE_TOP,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7568534617E-002,0.1664346985,Pass,Pass,4.5342082653E-002,0.3436824023,Pass,Pass
+ Warmup Convergence Information,TZ_FIRSTFLOOR_PLENUM,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,6.0541642234E-003,3.9943632574E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,TZ_GROUNDFLOOR_PLENUM,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,4.9599122941E-003,4.5837053299E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,TZ_MIDFLOOR_PLENUM,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,6.9203872879E-003,4.9203246274E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_BOT_ZN_1,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7663558672E-002,0.1781670754,Pass,Pass,5.9364720373E-002,0.3910769640,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_BOT_ZN_2,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7565854739E-002,0.1735189716,Pass,Pass,5.9367823221E-002,0.3997772028,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_BOT_ZN_3,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7576490021E-002,0.1690358060,Pass,Pass,4.9006028635E-002,0.3770922489,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_BOT_ZN_4,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7572803220E-002,0.1872865931,Pass,Pass,6.6790247616E-002,0.4489295970,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_GROUND_ZN_1,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,6.3170533347E-002,0.3193735215,Pass,Pass,2.9192605971E-002,0.1339752589,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_GROUND_ZN_2,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,9.0158310022E-002,0.4191095836,Pass,Pass,3.2326355145E-002,0.1318550463,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_GROUND_ZN_3,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,7.4124620904E-002,0.3342485536,Pass,Pass,3.0369100271E-002,0.1428063670,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_GROUND_ZN_4,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,6.9386834197E-002,0.3651203202,Pass,Pass,3.7925336826E-002,0.1613509153,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_MID_ZN_1,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7830937488E-002,0.1758904246,Pass,Pass,5.6529318187E-002,0.3795438172,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_MID_ZN_2,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7567122981E-002,0.1710226596,Pass,Pass,5.7399093798E-002,0.3892129184,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_MID_ZN_3,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7700207620E-002,0.1668848502,Pass,Pass,4.7232545462E-002,0.3652250567,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_MID_ZN_4,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7576479626E-002,0.1855851857,Pass,Pass,6.7157568137E-002,0.4384321101,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_TOP_ZN_1,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7759781575E-002,0.1805400409,Pass,Pass,6.0848558455E-002,0.4028385126,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_TOP_ZN_2,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7568208467E-002,0.1757596802,Pass,Pass,6.0671110548E-002,0.4124388253,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_TOP_ZN_3,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7582574713E-002,0.1722597950,Pass,Pass,5.2209890048E-002,0.3904453252,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_TOP_ZN_4,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,3.7575699778E-002,0.1899448335,Pass,Pass,6.8278455662E-002,0.4601639002,Pass,Pass
+ Warmup Convergence Information,TZ_TOPFLOOR_PLENUM,SizingPeriod: CHICAGO OHARE INTL AP ANN CLG .4% CONDNS DB=>MWB,5.1640656719E-002,3.7043225936E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+Environment,CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,SizingPeriod:DesignDay,01/21,01/21,WinterDesignDay,1,N/A,N/A,N/A,N/A,N/A,N/A
+Environment:Daylight Saving,No,SizingPeriod:DesignDay
+Environment:Design Day Data,-20.00,0.00,DefaultMultipliers,98934,270,4.9,0.00,No,No
+Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
+Environment:WarmupDays,  7
+ Warmup Convergence Information,TZ_CORE_BOTTOM,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,2.8660539218E-002,0.1468134085,Pass,Pass,0.3055048857,2.4057696040,Pass,Pass
+ Warmup Convergence Information,TZ_CORE_GROUND,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,2.3369734690E-004,1.3392410909E-004,Pass,Pass,1.7071577367E-004,9.8684992715E-005,Pass,Pass
+ Warmup Convergence Information,TZ_CORE_MID,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,3.2680301463E-002,0.1508885793,Pass,Pass,0.1227044618,1.0702829118,Pass,Pass
+ Warmup Convergence Information,TZ_CORE_TOP,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,4.7504361257E-002,0.2212005614,Pass,Pass,0.1368762048,1.2126201910,Pass,Pass
+ Warmup Convergence Information,TZ_FIRSTFLOOR_PLENUM,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,6.5934776633E-003,2.6673237121E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,TZ_GROUNDFLOOR_PLENUM,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,3.0903553228E-003,1.3194405589E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,TZ_MIDFLOOR_PLENUM,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.7430724230E-003,3.1244118693E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_BOT_ZN_1,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5933922506E-002,0.3541025208,Pass,Pass,0.1575473634,1.3717845571,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_BOT_ZN_2,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5307809338E-002,0.3547715751,Pass,Pass,0.1569893351,1.3960355571,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_BOT_ZN_3,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5002426178E-002,0.3424204283,Pass,Pass,0.1555436188,1.3667874039,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_BOT_ZN_4,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5280817610E-002,0.3568174456,Pass,Pass,0.1567501208,1.3999400959,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_GROUND_ZN_1,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,6.6850961199E-007,2.2778867350E-006,Pass,Pass,4.2492283458E-005,2.2940409101E-005,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_GROUND_ZN_2,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,6.4029743357E-007,2.1734346689E-006,Pass,Pass,4.0493597007E-005,2.1843779024E-005,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_GROUND_ZN_3,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,6.7067539749E-007,2.2963567679E-006,Pass,Pass,4.2491268831E-005,2.2941375517E-005,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_GROUND_ZN_4,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,6.3857150017E-007,2.1654991807E-006,Pass,Pass,3.9717314818E-005,2.1421945607E-005,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_MID_ZN_1,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5701587388E-002,0.3664113197,Pass,Pass,0.1537465212,1.3952654940,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_MID_ZN_2,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5226173939E-002,0.3681821341,Pass,Pass,0.1551055075,1.4207864403,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_MID_ZN_3,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5002305568E-002,0.3560800948,Pass,Pass,0.1543690365,1.3921226045,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_MID_ZN_4,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5202959831E-002,0.3702910854,Pass,Pass,0.1548330858,1.4244745518,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_TOP_ZN_1,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5389088812E-002,0.3918212588,Pass,Pass,6.6095727491E-002,0.3692172619,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_TOP_ZN_2,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5003483467E-002,0.3923455326,Pass,Pass,6.9417693317E-002,0.4142721502,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_TOP_ZN_3,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5003449361E-002,0.3848382961,Pass,Pass,6.9575875002E-002,0.4034459013,Pass,Pass
+ Warmup Convergence Information,TZ_PERIMETER_TOP_ZN_4,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,7.5003440002E-002,0.3936667615,Pass,Pass,7.3772895847E-002,0.4739944816,Pass,Pass
+ Warmup Convergence Information,TZ_TOPFLOOR_PLENUM,SizingPeriod: CHICAGO OHARE INTL AP ANN HTG 99.6% CONDNS DB,1.4341408318E-002,6.4623204726E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
+Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
+End of Data

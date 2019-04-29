@@ -1,0 +1,19 @@
+{
+  "by_measure": {
+    "NzeHvac": {
+      "measure_info": 0,
+      "measure_warnings": 0,
+      "measure_errors": 1,
+      "issues": [
+        {
+          "message": "Argument display name 'Remove existing HVAC?' cannot contain ?#.[] characters.",
+          "type": "syntax",
+          "severity": "error"
+        }
+      ]
+    }
+  },
+  "total_info": 0,
+  "total_warnings": 0,
+  "total_errors": 1
+}

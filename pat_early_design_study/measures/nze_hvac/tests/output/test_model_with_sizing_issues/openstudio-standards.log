@@ -1,0 +1,79 @@
+DEBUG WorkflowStepResult::value is deprecated, use stepResult instead
+WARN  WorkflowStepResult value called with undefined stepResult, returning 'Success'
+DEBUG WorkflowStepResult::value is deprecated, use stepResult instead
+WARN  WorkflowStepResult value called with undefined stepResult, returning 'Success'
+DEBUG WorkflowStepResult::warnings is deprecated, use stepWarnings instead
+DEBUG Dictionary Built
+ERROR Cannot find current Workflow Step
+INFO  QuickServiceRestaurant is the dominant standards building type.
+INFO  Adding hot water loop.
+INFO  New low temperature hot water loop created.
+INFO  Adding chilled water loop.
+INFO  Adding VAV system for 3 zones.
+DEBUG Adding VAV system terminal for TZ_Kitchen
+DEBUG For TZ_Kitchen, design min OA = 30 cfm.
+DEBUG Adding VAV system terminal for TZ_Dining
+DEBUG For TZ_Dining, design min OA = 536 cfm.
+DEBUG Adding VAV system terminal for TZ_Lobby
+DEBUG For TZ_Lobby, design min OA = 60 cfm.
+INFO  For 3 Zone VAV: VAV damper action was set to Dual Maximum control.
+DEBUG Starting simulation here: /Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_model_with_sizing_issues/SizingRun.
+INFO  Running simulation /Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_model_with_sizing_issues/SizingRun.
+DEBUG Running with OS 2.x WorkflowJSON.
+INFO  Finished run.
+DEBUG Dictionary Built
+INFO  Started applying HVAC efficiency standards for nrel_zne_ready_2017 template.
+INFO  Applying multizone VAV Reheat system controls.
+INFO  For 3 Zone VAV, ERV required based on 17% OA flow, design supply air flow of 3638cfm, and climate zone ASHRAE 169-2006-4A. Exceeds minimum flow requirement of 200cfm.
+INFO  For 3 Zone VAV ERV, ERV power is calculated to be 262 W, based on a min OA flow of 626 cfm.
+DEBUG For 3 Zone VAV: Economizer type = DifferentialEnthalpy, no limits defined.
+INFO  For 3 Zone VAV: Economizer type = DifferentialEnthalpy, limits
+INFO  For 3 Zone VAV: VAV damper action was set to Dual Maximum control.
+INFO  For 3 Zone VAV: Supply air temperature reset is required.
+INFO  For 3 Zone VAV: Supply air temperature reset was enabled using a SPM Warmest with a min SAT of 55F and a max SAT of 60F.
+DEBUG 3 Zone VAV has 2 unique occ schedules.
+DEBUG QuickServiceRestaurant Bldg Occ - 29 people
+DEBUG Office Misc Occ - 4 people
+DEBUG Total 33 people on 3 Zone VAV
+DEBUG Monday
+DEBUG Making a new rule for Monday from 2006-Jan-01 to 2006-Dec-25
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 24:00:00, 1
+DEBUG Tuesday
+DEBUG Making a new rule for Tuesday from 2006-Jan-01 to 2006-Dec-26
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 24:00:00, 1
+DEBUG Wednesday
+DEBUG Making a new rule for Wednesday from 2006-Jan-01 to 2006-Dec-27
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 24:00:00, 1
+DEBUG Thursday
+DEBUG Making a new rule for Thursday from 2006-Jan-01 to 2006-Dec-28
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 24:00:00, 1
+DEBUG Friday
+DEBUG Making a new rule for Friday from 2006-Jan-01 to 2006-Dec-29
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 24:00:00, 1
+DEBUG Saturday
+DEBUG Making a new rule for Saturday from 2006-Jan-01 to 2006-Dec-30
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 24:00:00, 1
+DEBUG Sunday
+DEBUG Making a new rule for Sunday from 2006-Jan-01 to 2006-Dec-31
+DEBUG Adding value 07:00:00, 0
+DEBUG Adding value 24:00:00, 1
+INFO  For 3 Zone VAV: Annual occupied hours = 6205 hr/yr, assuming a 0.15 occupancy threshold.  This schedule will be used as the HVAC operation schedule.
+INFO  For 3 Zone VAV: Setting motorized OA damper schedule to 3 Zone VAV Occ Sch.
+INFO  For 3 Zone VAV: Optimum start control enabled.
+INFO  For 3 Zone VAV Fan: motor nameplate = 5HP, motor eff = 89.5%.
+INFO  For Chilled Water Loop Pump: brake hp = 0.49HP, motor nameplate = 1.0HP, motor eff = 85.5%.
+INFO  For Hot Water Loop Pump: brake hp = 0.18HP, motor nameplate = 1.0HP, motor eff = 85.5%.
+INFO  For Chilled Water Loop Pump: motor nameplate = 1.0HP, motor eff = 85.5%; 22 W/gpm translates to a pressure rise of 77.8 ftH2O.
+DEBUG For Chilled Water Loop Pump: calculated W/gpm = 22.0.
+INFO  For Hot Water Loop Pump: motor nameplate = 1.0HP, motor eff = 85.5%; 19 W/gpm translates to a pressure rise of 67.19 ftH2O.
+DEBUG For Hot Water Loop Pump: calculated W/gpm = 19.0.
+INFO  For NREL ZNE Ready 2017: NREL ZNE Ready 2017    Chiller 0 11tons 1.1kW/ton: AirCooled   Capacity = 11tons; COP = 3.3 (1.1kW/ton)
+INFO  For NREL ZNE Ready 2017: Boiler: Gas Hot Water Capacity = 89kBtu/hr; Combustion Efficiency = 0.94
+INFO  For 3 Zone VAV ERV: Set sensible and latent effectiveness to 72%.
+INFO  Finished applying HVAC efficiency standards for nrel_zne_ready_2017 template.

@@ -1005,7 +1005,7 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.002297432460311555,
+      "instanceId": 0.4656279927439615,
       "showWarningText": false
     },
     {
@@ -1124,7 +1124,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.1345318534938973,
+      "instanceId": 0.6483252621670965,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false,
@@ -1387,7 +1387,7 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.2482589042967076,
+      "instanceId": 0.13988602541127904,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false,
@@ -1534,7 +1534,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.46738018278857574,
+      "instanceId": 0.6281408230111558,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1704,7 +1704,7 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9228691218056353,
+      "instanceId": 0.42232459212548057,
       "showWarningText": false
     },
     {
@@ -1869,7 +1869,7 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9088210411403259,
+      "instanceId": 0.4421659525704549,
       "showWarningText": false
     },
     {
@@ -2034,7 +2034,7 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.8244179305644144,
+      "instanceId": 0.7904364709229958,
       "showWarningText": false
     },
     {
@@ -2178,7 +2178,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.5973032186581471,
+      "instanceId": 0.675015339140963,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -2388,7 +2388,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.47694543030937453,
+      "instanceId": 0.5330163680479705,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -2570,7 +2570,7 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.3315283679082932,
+      "instanceId": 0.25148253358696415,
       "showWarningText": false
     },
     {
@@ -2909,7 +2909,7 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.09259674087877734,
+      "instanceId": 0.25930743668802037,
       "showWarningText": false
     },
     {
@@ -3049,7 +3049,7 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
         }
       ],
-      "instanceId": 0.930746353601368,
+      "instanceId": 0.35450054366864703,
       "numberOfOptions": 1,
       "$$hashKey": "object:56484",
       "outputMeasure": false,
@@ -3217,7 +3217,7 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.7265529896081182,
+      "instanceId": 0.4985841903997532,
       "showWarningText": false
     },
     {
@@ -3416,7 +3416,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.24991972251839734,
+      "instanceId": 0.34992787591781505,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -3619,7 +3619,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.754890710405905,
+      "instanceId": 0.4153497880712995,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -4122,7 +4122,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.036714399987502144,
+      "instanceId": 0.181858852863523,
       "showWarningText": false
     },
     {
@@ -4556,7 +4556,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.19768151910685106,
+      "instanceId": 0.12088457113353379,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -4993,7 +4993,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.8363960321273103,
+      "instanceId": 0.4031721660900174,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880",
       "outputMeasure": false,
@@ -5343,7 +5343,7 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.48848581039065997,
+      "instanceId": 0.8564367406867444,
       "showWarningText": false
     },
     {
@@ -5754,7 +5754,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.3387651820515689,
+      "instanceId": 0.7709183028107516,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
@@ -6168,7 +6168,7 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.7214644378986736,
+      "instanceId": 0.8770837743865589,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361",
       "outputMeasure": false,
@@ -6408,7 +6408,7 @@
           "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
         }
       ],
-      "instanceId": 0.5230144716968681,
+      "instanceId": 0.25225971266033853,
       "numberOfOptions": 1,
       "$$hashKey": "object:7459",
       "outputMeasure": false,
@@ -6648,7 +6648,7 @@
           "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
         }
       ],
-      "instanceId": 0.5734488077622006,
+      "instanceId": 0.7514283224356142,
       "numberOfOptions": 1,
       "$$hashKey": "object:7458",
       "outputMeasure": false,
@@ -6888,7 +6888,7 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
         }
       ],
-      "instanceId": 0.913564573488509,
+      "instanceId": 0.5637530024206807,
       "numberOfOptions": 1,
       "$$hashKey": "object:7460",
       "outputMeasure": false,
@@ -7622,7 +7622,7 @@
           "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         }
       ],
-      "instanceId": 0.5176320153845015,
+      "instanceId": 0.5812760713490435,
       "numberOfOptions": 15,
       "$$hashKey": "object:13368",
       "outputMeasure": false
@@ -7816,7 +7816,7 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.781324483978032,
+      "instanceId": 0.4336252709414261,
       "showWarningText": false
     },
     {
@@ -8210,7 +8210,7 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.11089761356402983,
+      "instanceId": 0.6668978101947276,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
@@ -9542,7 +9542,7 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.5542102804161491,
+      "instanceId": 0.9880551974146017,
       "showWarningText": false
     },
     {
@@ -9652,7 +9652,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.6979992103225598,
+      "instanceId": 0.7653792394727639,
       "numberOfOptions": 1,
       "$$hashKey": "object:57845"
     }

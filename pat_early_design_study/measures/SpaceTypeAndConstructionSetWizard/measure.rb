@@ -187,14 +187,14 @@ class SpaceTypeAndConstructionSetWizard < OpenStudio::Measure::ModelMeasure
     # remap small medium and large office to office
     if building_type.include?("Office") then building_type = "Office" end
 
+    # get array of new space types
+    space_types_new = []
+
     # create_space_types
     if create_space_types
 
       # array of starting space types
       space_types_starting = model.getSpaceTypes
-
-      # get array of new space types
-      space_types_new = []
 
       # create stub space types
       space_type_hash.each do |space_type_name, hash|
@@ -273,12 +273,16 @@ class SpaceTypeAndConstructionSetWizard < OpenStudio::Measure::ModelMeasure
 
       # set default space type
       building = model.getBuilding
-      building.setSpaceType(default_space_type)
-      runner.registerInfo("Setting default Space Type for building to #{building.spaceType.get.name}")
+      if !default_space_type.nil?
+        building.setSpaceType(default_space_type)
+        runner.registerInfo("Setting default Space Type for building to #{building.spaceType.get.name}")
+      end
 
       # default construction
-      building.setDefaultConstructionSet(bldg_def_const_set)
-      runner.registerInfo("Setting default Construction Set for building to #{building.defaultConstructionSet.get.name}")
+      if !bldg_def_const_set.nil?
+        building.setDefaultConstructionSet(bldg_def_const_set)
+        runner.registerInfo("Setting default Construction Set for building to #{building.defaultConstructionSet.get.name}")
+      end
 
       # set climate zone
       os_climate_zone = climate_zone.gsub('ASHRAE 169-2006-', '')

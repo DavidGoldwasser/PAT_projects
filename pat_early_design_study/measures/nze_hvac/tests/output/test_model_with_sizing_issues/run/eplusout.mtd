@@ -1,0 +1,578 @@
+
+ Meters for 9,TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 LIGHTS:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:TZ_LOBBY [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:TZ_LOBBY [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+
+ Meters for 82,TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 LIGHTS:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:TZ_DINING [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:TZ_DINING [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+
+ Meters for 107,TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 LIGHTS:Lights Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:TZ_KITCHEN [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:TZ_KITCHEN [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+
+ Meters for 132,TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:TZ_LOBBY [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:TZ_LOBBY [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+
+ Meters for 169,TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:TZ_DINING [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:TZ_DINING [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+
+ Meters for 182,TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:TZ_KITCHEN [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:TZ_KITCHEN [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+
+ Meters for 195,TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 GAS EQUIPMENT:Gas Equipment Gas Energy [J]
+  OnMeter=Gas:Facility [J]
+  OnMeter=Gas:Building [J]
+  OnMeter=Gas:Zone:TZ_KITCHEN [J]
+  OnMeter=InteriorEquipment:Gas [J]
+  OnMeter=InteriorEquipment:Gas:Zone:TZ_KITCHEN [J]
+  OnMeter=General:InteriorEquipment:Gas [J]
+
+ Meters for 268,TZ_DINING:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZ_DINING [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZ_DINING [J]
+
+ Meters for 329,TZ_DINING:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZ_DINING [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZ_DINING [J]
+
+ Meters for 356,TZ_KITCHEN:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZ_KITCHEN [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZ_KITCHEN [J]
+
+ Meters for 381,TZ_KITCHEN:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZ_KITCHEN [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZ_KITCHEN [J]
+
+ Meters for 396,TZ_LOBBY:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZ_LOBBY [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZ_LOBBY [J]
+
+ Meters for 421,TZ_LOBBY:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZ_LOBBY [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZ_LOBBY [J]
+
+ Meters for 436,TZ_PLENUM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZ_PLENUM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:TZ_PLENUM [J]
+
+ Meters for 461,TZ_PLENUM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:TZ_PLENUM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:TZ_PLENUM [J]
+
+ Meters for 476,Whole Building:Facility Total Purchased Electric Energy [J]
+  OnMeter=ElectricityPurchased:Facility [J]
+  OnMeter=ElectricityPurchased:Plant [J]
+  OnMeter=Cogeneration:ElectricityPurchased [J]
+
+ Meters for 513,Whole Building:Facility Total Surplus Electric Energy [J]
+  OnMeter=ElectricitySurplusSold:Facility [J]
+  OnMeter=ElectricitySurplusSold:Plant [J]
+  OnMeter=Cogeneration:ElectricitySurplusSold [J]
+
+ Meters for 550,Whole Building:Facility Net Purchased Electric Energy [J]
+  OnMeter=ElectricityNet:Facility [J]
+  OnMeter=ElectricityNet:Plant [J]
+  OnMeter=Cogeneration:ElectricityNet [J]
+
+ Meters for 587,TZ_DINING REHEAT COIL:Heating Coil Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 612,TZ_DINING REHEAT COIL:Heating Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 649,TZ_KITCHEN REHEAT COIL:Heating Coil Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 650,TZ_KITCHEN REHEAT COIL:Heating Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 651,TZ_LOBBY REHEAT COIL:Heating Coil Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 652,TZ_LOBBY REHEAT COIL:Heating Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 653,3 ZONE VAV MAIN HTG COIL:Heating Coil Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatingCoils:EnergyTransfer [J]
+
+ Meters for 654,3 ZONE VAV MAIN HTG COIL:Heating Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:HVAC [J]
+  OnMeter=HeatingCoils:PlantLoopHeatingDemand [J]
+
+ Meters for 655,3 ZONE VAV CLG COIL:Cooling Coil Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 668,3 ZONE VAV CLG COIL:Cooling Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 705,3 ZONE VAV FAN:Fan Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=General:Fans:Electricity [J]
+
+ Meters for 742,3 ZONE VAV ERV:Heat Exchanger Total Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatRecoveryForHeating:EnergyTransfer [J]
+
+ Meters for 755,3 ZONE VAV ERV:Heat Exchanger Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=HeatRecoveryForCooling:EnergyTransfer [J]
+
+ Meters for 768,3 ZONE VAV ERV:Heat Exchanger Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=HeatRecovery:Electricity [J]
+
+ Meters for 781,NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Cooling:Electricity [J]
+  OnMeter=General:Cooling:Electricity [J]
+
+ Meters for 818,NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Evaporator Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=Chillers:EnergyTransfer [J]
+
+ Meters for 843,NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Condenser Heat Transfer Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=HeatRejection:EnergyTransfer [J]
+
+ Meters for 856,BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=Boilers:EnergyTransfer [J]
+
+ Meters for 869,BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Gas Energy [J]
+  OnMeter=Gas:Facility [J]
+  OnMeter=Gas:Plant [J]
+  OnMeter=Heating:Gas [J]
+  OnMeter=General:Heating:Gas [J]
+
+ Meters for 906,BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Ancillary Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Heating:Electricity [J]
+  OnMeter=Boiler Parasitic:Heating:Electricity [J]
+
+ Meters for 931,CHILLED WATER LOOP PUMP:Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+  OnMeter=General:Pumps:Electricity [J]
+
+ Meters for 956,HOT WATER LOOP PUMP:Pump Electric Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+  OnMeter=General:Pumps:Electricity [J]
+
+ Meters for 957,Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 982,Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 983,Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ For Meter=Electricity:Facility [J], ResourceType=Electricity, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  3 ZONE VAV FAN:Fan Electric Energy
+  3 ZONE VAV ERV:Heat Exchanger Electric Energy
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Electric Energy
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Ancillary Electric Energy
+  CHILLED WATER LOOP PUMP:Pump Electric Energy
+  HOT WATER LOOP PUMP:Pump Electric Energy
+
+ For Meter=Electricity:Building [J], ResourceType=Electricity, Group=Building, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=Electricity:Zone:TZ_LOBBY [J], ResourceType=Electricity, Group=Zone, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 LIGHTS:Lights Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:TZ_LOBBY [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 LIGHTS:Lights Electric Energy
+
+ For Meter=General:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 LIGHTS:Lights Electric Energy
+
+ For Meter=Electricity:Zone:TZ_DINING [J], ResourceType=Electricity, Group=Zone, contents are:
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:TZ_DINING [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 LIGHTS:Lights Electric Energy
+
+ For Meter=Electricity:Zone:TZ_KITCHEN [J], ResourceType=Electricity, Group=Zone, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 LIGHTS:Lights Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=InteriorLights:Electricity:Zone:TZ_KITCHEN [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 LIGHTS:Lights Electric Energy
+
+ For Meter=InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:TZ_LOBBY [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=General:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  TZ_LOBBY 189.1-2009 - OFFICE - LOBBY - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:TZ_DINING [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  TZ_DINING 189.1-2009 - QCKSRVREST - DINING - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:TZ_KITCHEN [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 ELECTRIC EQUIPMENT:Electric Equipment Electric Energy
+
+ For Meter=Gas:Facility [J], ResourceType=Gas, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 GAS EQUIPMENT:Gas Equipment Gas Energy
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Gas Energy
+
+ For Meter=Gas:Building [J], ResourceType=Gas, Group=Building, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 GAS EQUIPMENT:Gas Equipment Gas Energy
+
+ For Meter=Gas:Zone:TZ_KITCHEN [J], ResourceType=Gas, Group=Zone, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 GAS EQUIPMENT:Gas Equipment Gas Energy
+
+ For Meter=InteriorEquipment:Gas [J], ResourceType=Gas, EndUse=InteriorEquipment, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 GAS EQUIPMENT:Gas Equipment Gas Energy
+
+ For Meter=InteriorEquipment:Gas:Zone:TZ_KITCHEN [J], ResourceType=Gas, EndUse=InteriorEquipment, Group=Zone, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 GAS EQUIPMENT:Gas Equipment Gas Energy
+
+ For Meter=General:InteriorEquipment:Gas [J], ResourceType=Gas, EndUse=InteriorEquipment, contents are:
+  TZ_KITCHEN 189.1-2009 - QCKSRVREST - KITCHEN - CZ4-8 GAS EQUIPMENT:Gas Equipment Gas Energy
+
+ For Meter=EnergyTransfer:Facility [J], ResourceType=EnergyTransfer, contents are:
+  TZ_DINING:Zone Air System Sensible Heating Energy
+  TZ_DINING:Zone Air System Sensible Cooling Energy
+  TZ_KITCHEN:Zone Air System Sensible Heating Energy
+  TZ_KITCHEN:Zone Air System Sensible Cooling Energy
+  TZ_LOBBY:Zone Air System Sensible Heating Energy
+  TZ_LOBBY:Zone Air System Sensible Cooling Energy
+  TZ_PLENUM:Zone Air System Sensible Heating Energy
+  TZ_PLENUM:Zone Air System Sensible Cooling Energy
+  TZ_DINING REHEAT COIL:Heating Coil Heating Energy
+  TZ_KITCHEN REHEAT COIL:Heating Coil Heating Energy
+  TZ_LOBBY REHEAT COIL:Heating Coil Heating Energy
+  3 ZONE VAV MAIN HTG COIL:Heating Coil Heating Energy
+  3 ZONE VAV CLG COIL:Cooling Coil Total Cooling Energy
+  3 ZONE VAV ERV:Heat Exchanger Total Heating Energy
+  3 ZONE VAV ERV:Heat Exchanger Total Cooling Energy
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Evaporator Cooling Energy
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Condenser Heat Transfer Energy
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Heating Energy
+
+ For Meter=EnergyTransfer:Building [J], ResourceType=EnergyTransfer, Group=Building, contents are:
+  TZ_DINING:Zone Air System Sensible Heating Energy
+  TZ_DINING:Zone Air System Sensible Cooling Energy
+  TZ_KITCHEN:Zone Air System Sensible Heating Energy
+  TZ_KITCHEN:Zone Air System Sensible Cooling Energy
+  TZ_LOBBY:Zone Air System Sensible Heating Energy
+  TZ_LOBBY:Zone Air System Sensible Cooling Energy
+  TZ_PLENUM:Zone Air System Sensible Heating Energy
+  TZ_PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZ_DINING [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZ_DINING:Zone Air System Sensible Heating Energy
+  TZ_DINING:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
+  TZ_DINING:Zone Air System Sensible Heating Energy
+  TZ_KITCHEN:Zone Air System Sensible Heating Energy
+  TZ_LOBBY:Zone Air System Sensible Heating Energy
+  TZ_PLENUM:Zone Air System Sensible Heating Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZ_DINING [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZ_DINING:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Cooling, contents are:
+  TZ_DINING:Zone Air System Sensible Cooling Energy
+  TZ_KITCHEN:Zone Air System Sensible Cooling Energy
+  TZ_LOBBY:Zone Air System Sensible Cooling Energy
+  TZ_PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZ_DINING [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZ_DINING:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZ_KITCHEN [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZ_KITCHEN:Zone Air System Sensible Heating Energy
+  TZ_KITCHEN:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZ_KITCHEN [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZ_KITCHEN:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZ_KITCHEN [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZ_KITCHEN:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZ_LOBBY [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZ_LOBBY:Zone Air System Sensible Heating Energy
+  TZ_LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZ_LOBBY [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZ_LOBBY:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZ_LOBBY [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZ_LOBBY:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:TZ_PLENUM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  TZ_PLENUM:Zone Air System Sensible Heating Energy
+  TZ_PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:TZ_PLENUM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  TZ_PLENUM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:TZ_PLENUM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  TZ_PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=ElectricityPurchased:Facility [J], ResourceType=ElectricityPurchased, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=ElectricityPurchased:Plant [J], ResourceType=ElectricityPurchased, Group=Plant, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=Cogeneration:ElectricityPurchased [J], ResourceType=ElectricityPurchased, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Purchased Electric Energy
+
+ For Meter=ElectricitySurplusSold:Facility [J], ResourceType=ElectricitySurplusSold, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=ElectricitySurplusSold:Plant [J], ResourceType=ElectricitySurplusSold, Group=Plant, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=Cogeneration:ElectricitySurplusSold [J], ResourceType=ElectricitySurplusSold, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Surplus Electric Energy
+
+ For Meter=ElectricityNet:Facility [J], ResourceType=ElectricityNet, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=ElectricityNet:Plant [J], ResourceType=ElectricityNet, Group=Plant, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=Cogeneration:ElectricityNet [J], ResourceType=ElectricityNet, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Net Purchased Electric Energy
+
+ For Meter=EnergyTransfer:HVAC [J], ResourceType=EnergyTransfer, Group=HVAC, contents are:
+  TZ_DINING REHEAT COIL:Heating Coil Heating Energy
+  TZ_KITCHEN REHEAT COIL:Heating Coil Heating Energy
+  TZ_LOBBY REHEAT COIL:Heating Coil Heating Energy
+  3 ZONE VAV MAIN HTG COIL:Heating Coil Heating Energy
+  3 ZONE VAV CLG COIL:Cooling Coil Total Cooling Energy
+  3 ZONE VAV ERV:Heat Exchanger Total Heating Energy
+  3 ZONE VAV ERV:Heat Exchanger Total Cooling Energy
+
+ For Meter=HeatingCoils:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatingCoils, contents are:
+  TZ_DINING REHEAT COIL:Heating Coil Heating Energy
+  TZ_KITCHEN REHEAT COIL:Heating Coil Heating Energy
+  TZ_LOBBY REHEAT COIL:Heating Coil Heating Energy
+  3 ZONE VAV MAIN HTG COIL:Heating Coil Heating Energy
+
+ For Meter=PlantLoopHeatingDemand:Facility [J], ResourceType=PlantLoopHeatingDemand, contents are:
+  TZ_DINING REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  TZ_KITCHEN REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  TZ_LOBBY REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  3 ZONE VAV MAIN HTG COIL:Heating Coil Source Side Heat Transfer Energy
+
+ For Meter=PlantLoopHeatingDemand:HVAC [J], ResourceType=PlantLoopHeatingDemand, Group=HVAC, contents are:
+  TZ_DINING REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  TZ_KITCHEN REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  TZ_LOBBY REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  3 ZONE VAV MAIN HTG COIL:Heating Coil Source Side Heat Transfer Energy
+
+ For Meter=HeatingCoils:PlantLoopHeatingDemand [J], ResourceType=PlantLoopHeatingDemand, EndUse=HeatingCoils, contents are:
+  TZ_DINING REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  TZ_KITCHEN REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  TZ_LOBBY REHEAT COIL:Heating Coil Source Side Heat Transfer Energy
+  3 ZONE VAV MAIN HTG COIL:Heating Coil Source Side Heat Transfer Energy
+
+ For Meter=CoolingCoils:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=CoolingCoils, contents are:
+  3 ZONE VAV CLG COIL:Cooling Coil Total Cooling Energy
+
+ For Meter=PlantLoopCoolingDemand:Facility [J], ResourceType=PlantLoopCoolingDemand, contents are:
+  3 ZONE VAV CLG COIL:Cooling Coil Source Side Heat Transfer Energy
+
+ For Meter=PlantLoopCoolingDemand:HVAC [J], ResourceType=PlantLoopCoolingDemand, Group=HVAC, contents are:
+  3 ZONE VAV CLG COIL:Cooling Coil Source Side Heat Transfer Energy
+
+ For Meter=CoolingCoils:PlantLoopCoolingDemand [J], ResourceType=PlantLoopCoolingDemand, EndUse=CoolingCoils, contents are:
+  3 ZONE VAV CLG COIL:Cooling Coil Source Side Heat Transfer Energy
+
+ For Meter=Electricity:HVAC [J], ResourceType=Electricity, Group=HVAC, contents are:
+  3 ZONE VAV FAN:Fan Electric Energy
+  3 ZONE VAV ERV:Heat Exchanger Electric Energy
+
+ For Meter=Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  3 ZONE VAV FAN:Fan Electric Energy
+
+ For Meter=General:Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  3 ZONE VAV FAN:Fan Electric Energy
+
+ For Meter=HeatRecoveryForHeating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRecoveryForHeating, contents are:
+  3 ZONE VAV ERV:Heat Exchanger Total Heating Energy
+
+ For Meter=HeatRecoveryForCooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRecoveryForCooling, contents are:
+  3 ZONE VAV ERV:Heat Exchanger Total Cooling Energy
+
+ For Meter=HeatRecovery:Electricity [J], ResourceType=Electricity, EndUse=HeatRecovery, contents are:
+  3 ZONE VAV ERV:Heat Exchanger Electric Energy
+
+ For Meter=Electricity:Plant [J], ResourceType=Electricity, Group=Plant, contents are:
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Electric Energy
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Ancillary Electric Energy
+  CHILLED WATER LOOP PUMP:Pump Electric Energy
+  HOT WATER LOOP PUMP:Pump Electric Energy
+
+ For Meter=Cooling:Electricity [J], ResourceType=Electricity, EndUse=Cooling, contents are:
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Electric Energy
+
+ For Meter=General:Cooling:Electricity [J], ResourceType=Electricity, EndUse=Cooling, contents are:
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Electric Energy
+
+ For Meter=EnergyTransfer:Plant [J], ResourceType=EnergyTransfer, Group=Plant, contents are:
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Evaporator Cooling Energy
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Condenser Heat Transfer Energy
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Heating Energy
+
+ For Meter=Chillers:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Chillers, contents are:
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Evaporator Cooling Energy
+
+ For Meter=HeatRejection:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRejection, contents are:
+  NREL ZNE READY 2017    CHILLER 0 11TONS 1.1KW/TON:Chiller Condenser Heat Transfer Energy
+
+ For Meter=Boilers:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Boilers, contents are:
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Heating Energy
+
+ For Meter=Gas:Plant [J], ResourceType=Gas, Group=Plant, contents are:
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Gas Energy
+
+ For Meter=Heating:Gas [J], ResourceType=Gas, EndUse=Heating, contents are:
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Gas Energy
+
+ For Meter=General:Heating:Gas [J], ResourceType=Gas, EndUse=Heating, contents are:
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Gas Energy
+
+ For Meter=Heating:Electricity [J], ResourceType=Electricity, EndUse=Heating, contents are:
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Ancillary Electric Energy
+
+ For Meter=Boiler Parasitic:Heating:Electricity [J], ResourceType=Electricity, EndUse=Heating, contents are:
+  BOILER 89KBTU/HR 0.94 COMBUSTION EFF:Boiler Ancillary Electric Energy
+
+ For Meter=Pumps:Electricity [J], ResourceType=Electricity, EndUse=Pumps, contents are:
+  CHILLED WATER LOOP PUMP:Pump Electric Energy
+  HOT WATER LOOP PUMP:Pump Electric Energy
+
+ For Meter=General:Pumps:Electricity [J], ResourceType=Electricity, EndUse=Pumps, contents are:
+  CHILLED WATER LOOP PUMP:Pump Electric Energy
+  HOT WATER LOOP PUMP:Pump Electric Energy
+
+ For Meter=Carbon Equivalent:Facility [kg], ResourceType=Carbon Equivalent, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
+
+ For Meter=CarbonEquivalentEmissions:Carbon Equivalent [kg], ResourceType=Carbon Equivalent, EndUse=CarbonEquivalentEmissions, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass

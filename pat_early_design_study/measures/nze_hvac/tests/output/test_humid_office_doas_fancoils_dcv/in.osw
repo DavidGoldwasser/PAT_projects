@@ -1,0 +1,8 @@
+{
+   "created_at" : "20190410T050826Z",
+   "hash" : "3C5ECE3E",
+   "seed_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_humid_office_doas_fancoils_dcv/test_humid_office_doas_fancoils_dcv.osm",
+   "steps" : [],
+   "updated_at" : "20190410T050826Z",
+   "weather_file" : "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac/tests/output/test_humid_office_doas_fancoils_dcv/USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.epw"
+}

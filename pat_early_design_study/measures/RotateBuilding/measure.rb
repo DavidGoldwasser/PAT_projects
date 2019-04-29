@@ -40,6 +40,16 @@ class RotateBuilding < OpenStudio::Measure::ModelMeasure
     return 'Rotate Building'
   end
 
+  # human readable description
+  def description
+    return 'Rotate your building relative to its current orientation. This will not rotate site shading objects.'
+  end
+
+  # human readable description of modeling approach
+  def modeler_description
+    return 'Get the North Axis field for the  OS:Building object and adjusted it based on the user specified value. If the starting value is 20 degrees and the user value is 5 degrees, then the resulting value is 25 degrees.'
+  end
+
   # define the arguments that the user will input
   def arguments(model)
     args = OpenStudio::Measure::OSArgumentVector.new
@@ -48,6 +58,7 @@ class RotateBuilding < OpenStudio::Measure::ModelMeasure
     relative_building_rotation = OpenStudio::Measure::OSArgument.makeDoubleArgument('relative_building_rotation', true)
     relative_building_rotation.setDisplayName('Number of Degrees to Rotate Building (positive value is clockwise).')
     relative_building_rotation.setDefaultValue(90.0)
+    relative_building_rotation.setUnits('degrees')
     args << relative_building_rotation
 
     return args

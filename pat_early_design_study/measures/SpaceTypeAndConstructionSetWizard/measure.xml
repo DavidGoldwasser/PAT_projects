@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>space_type_and_construction_set_wizard</name>
   <uid>7c65af63-4316-47c9-b7a5-68d7a019e533</uid>
-  <version_id>b22ece97-f1dc-4f6d-bbbd-95429516f800</version_id>
-  <version_modified>20180730T221545Z</version_modified>
+  <version_id>d36b8097-8fca-4407-87dc-41f639b91b8e</version_id>
+  <version_modified>20190409T192913Z</version_modified>
   <xml_checksum>057E8D9D</xml_checksum>
   <class_name>SpaceTypeAndConstructionSetWizard</class_name>
   <display_name>Space Type and Construction Set Wizard</display_name>
@@ -304,17 +304,6 @@
       <checksum>9640B6CB</checksum>
     </file>
     <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>2.0.0</identifier>
-        <min_compatible>2.5.1</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>193862FF</checksum>
-    </file>
-    <file>
       <filename>README.md.erb</filename>
       <filetype>erb</filetype>
       <usage_type>readmeerb</usage_type>
@@ -343,6 +332,17 @@
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
       <checksum>67AC7BF3</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.5.1</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>720B179D</checksum>
     </file>
   </files>
 </measure>

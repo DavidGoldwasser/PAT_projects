@@ -1,0 +1,180 @@
+Program Version,EnergyPlus, Version 9.1.0-08d2e308bb, YMD=2019.04.09 23:08,
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="ECONOMIZER MAX OA FRACTION 70 PCT DEFAULT", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="OFFICEMEDIUM HVACOPERATIONSCHD DEFAULT", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="OFFICEMEDIUM HVACOPERATIONSCHD SMRDSN|WKDY DAY", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="OFFICEMEDIUM HVACOPERATIONSCHD SUMMER DESIGN DAY", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="OFFICEMEDIUM HVACOPERATIONSCHD WINTER DESIGN DAY", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="OFFICEMEDIUM HVACOPERATIONSCHD WNTRDSN|SAT DAY", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** ProcessScheduleInput: Schedule:Year="OFFICEMEDIUM HVACOPERATIONSCHD", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** ProcessScheduleInput: Schedule:Constant="ALWAYS OFF DISCRETE", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** ProcessScheduleInput: Schedule:Constant="ALWAYS ON CONTINUOUS", Blank Schedule Type Limits Name input -- will not be validated.
+   ** Warning ** CheckUsedConstructions: There are 9 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_BOT_ZN_1 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_BOT_ZN_2 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_BOT_ZN_3 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_BOT_ZN_4 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_MID_ZN_1 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_MID_ZN_2 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_MID_ZN_3 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_MID_ZN_4 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_TOP_ZN_1 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_TOP_ZN_2 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_TOP_ZN_3 ZN", only 0.52 of the zone is controlled.
+   ** Warning ** GetDaylightingControls: Fraction of Zone controlled by the Daylighting reference points is < 1.0.
+   **   ~~~   ** ..discovered in "Daylighting:Controls" for Zone="PERIMETER_TOP_ZN_4 ZN", only 0.52 of the zone is controlled.
+   ************* Beginning System Sizing Calculations
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = CORE_BOTTOM ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = CORE_MID ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = CORE_TOP ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_BOT_ZN_1 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_BOT_ZN_2 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_BOT_ZN_3 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_BOT_ZN_4 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_MID_ZN_1 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_MID_ZN_2 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_MID_ZN_3 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_MID_ZN_4 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_TOP_ZN_1 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_TOP_ZN_2 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_TOP_ZN_3 ZN AIR TERMINAL
+   ** Warning ** Since Zone Minimum Air Flow Input Method = CONSTANT, input for Fixed Minimum Air Flow Rate will be ignored.
+   **   ~~~   ** Occurs in AirTerminal:SingleDuct:VAV:NoReheat = PERIMETER_TOP_ZN_4 ZN AIR TERMINAL
+   ************* Beginning Plant Sizing Calculations
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="CORE_BOTTOM ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="CORE_MID ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="CORE_TOP ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_BOT_ZN_1 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_BOT_ZN_2 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_BOT_ZN_3 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_BOT_ZN_4 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_MID_ZN_1 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_MID_ZN_2 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_MID_ZN_3 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_MID_ZN_4 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_TOP_ZN_1 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_TOP_ZN_2 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_TOP_ZN_3 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** Controller:MechanicalVentilation="15 ZONE DOAS MECHANICAL VENTILATION CONTROLLER", Zone OA/person rate
+   **   ~~~   ** For Zone="PERIMETER_TOP_ZN_4 ZN".
+   **   ~~~   ** Zone outside air per person rate not set in Design Specification Outdoor Air Object="OFFICE WHOLEBUILDING - MD OFFICE VENTILATION".
+   ** Warning ** In calculating the design coil UA for Coil:Cooling:Water 15 ZONE DOAS CLG COIL
+   **   ~~~   ** the apparatus dew-point is below the coil design inlet water temperature;
+   **   ~~~   ** the coil outlet design conditions will be changed to correct the problem.
+   **   ~~~   ** The initial design conditions are: Tair,in = 36.0000
+   **   ~~~   **                                    Wair,in = 1.519472E-002
+   **   ~~~   **                                    Twater,in = 6.6667
+   **   ~~~   **                                    Tair,out = 14.5196
+   **   ~~~   **                                    Wair,out = 8.500000E-003
+   **   ~~~   ** The revised design conditions are: Tair,out = 13.7164
+   **   ~~~   **                                    Wair,out = 8.824456E-003
+   ** Warning ** Missing temperature setpoint for LeavingSetpointModulated mode Boiler named BOILER
+   **   ~~~   **   A temperature setpoint is needed at the outlet node of a boiler in variable flow mode
+   **   ~~~   **   use a Setpoint Manager to establish a setpoint at the boiler outlet node 
+   **   ~~~   **   or use an EMS actuator to establish a setpoint at the boiler outlet node 
+   **   ~~~   **   The overall loop setpoint will be assumed for Boiler. The simulation continues ... 
+   ** Warning ** Output:Meter: invalid Key Name="DISTRICTCOOLING:FACILITY" - not found.
+   ** Warning ** Output:Meter: invalid Key Name="DISTRICTHEATING:FACILITY" - not found.
+   ** Warning ** Output:Meter:MeterFileOnly requested for "Electricity:Facility" (TimeStep), already on "Output:Meter". Will report to both eplusout.eso and eplusout.mtr
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** Output:Table:Monthly requested with SimulationControl Run Simulation for Weather File Run Periods set to No so Output:Table:Monthly will not be generated
+   ** Warning ** CoolingTower:VariableSpeed "PROPELLER OR AXIAL VARIABLE SPEED FAN OPEN COOLING TOWER" - Tower range temperature is outside model boundaries at 0.79.
+   **   ~~~   **  ...Valid range = 1.11 to 11.11. Occurrence info = HOUSTON BUSH INTERCONTINENTAL ANN CLG .4% CONDNS DB=>MWB, 07/21 22:02 - 22:04
+   **   ~~~   **  ...Tower range temperature passed to the model = 0.78737
+   **   ~~~   **  ...Range temperatures outside model boundaries may not adversely affect tower performance.
+   **   ~~~   **  ...This is not an unexpected occurrence when simulating actual conditions.
+   ************* Simulation Error Summary *************
+   ************* There are 8 unused objects in input.
+   ************* Use Output:Diagnostics,DisplayUnusedObjects; to see them.
+   ************* There are 10 unused schedules in input.
+   ************* There are 10 unused week schedules in input.
+   ************* There are 22 unused day schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** Plant loop exceeding upper temperature limit, PlantLoop="MAIN SERVICE WATER LOOP"
+   *************  **   ~~~   **   This error occurred 3263 total times;
+   *************  **   ~~~   **   during Warmup 2948 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=82.222222
+   *************
+   *************  ** Warning ** CoolingTower:VariableSpeed "PROPELLER OR AXIAL VARIABLE SPEED FAN OPEN COOLING TOWER" - Tower range temperature is out of range error continues...
+   *************  **   ~~~   **   This error occurred 6 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=1.070986  Min=0.758692
+   *************
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 37 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 3328 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  3.54sec

@@ -49,7 +49,7 @@ class AedgSmallToMediumOfficeFenestrationAndDaylightingControls_Test < Minitest:
     runner = OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new)
 
     translator = OpenStudio::OSVersion::VersionTranslator.new
-    path = OpenStudio::Path.new(File.dirname(__FILE__) + '/SDDC Office Example Plan seed.osm')
+    path = OpenStudio::Path.new(File.dirname(__FILE__) + '/BasicOfficeWithOnePlenumFloor.osm')
     model = translator.loadModel(path)
     assert(!model.empty?)
     model = model.get

@@ -8,7 +8,7 @@
   "remoteSettings": {
     "open": true,
     "remoteType": "Existing Remote Server",
-    "remoteServerURL": "http://bball-130553.nrel.gov:8080/",
+    "remoteServerURL": "http://localhost:8080/",
     "aws": {},
     "credentials": {
       "yamlFilename": null,
@@ -17,29 +17,11 @@
     }
   },
   "samplingMethod": {
-    "id": "lhs",
-    "name": "analysis.type.lhs",
-    "link": "https://cran.r-project.org/web/packages/lhs/lhs.pdf"
+    "id": "single_run",
+    "name": "analysis.type.singleRun",
+    "link": null
   },
   "algorithmSettings": [
-    {
-      "name": "sample_method",
-      "displayName": "Sample Method",
-      "description": "Options: individual_variables or all_variables",
-      "defaultValue": "individual_variables",
-      "type": "string",
-      "value": "all_variables",
-      "$$hashKey": "object:9730"
-    },
-    {
-      "name": "number_of_samples",
-      "displayName": "Number of Samples",
-      "description": "Positive integer (if individual, total simulations is this times each variable)",
-      "defaultValue": 5,
-      "type": "number",
-      "value": 500,
-      "$$hashKey": "object:9731"
-    },
     {
       "name": "seed",
       "displayName": "Seed",
@@ -75,14 +57,14 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/ChangeBuildingLocation",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation",
       "name": "change_building_location",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/ChangeBuildingLocation",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation",
       "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
-      "version_id": "aa6af1cd-6cce-4352-bddd-e4cf47d79b35",
-      "version_uuid": "{aa6af1cd-6cce-4352-bddd-e4cf47d79b35}",
-      "version_modified": "20181101T151202Z",
+      "version_id": "adf00d38-9033-466a-8072-eab7e56f7da0",
+      "version_uuid": "{adf00d38-9033-466a-8072-eab7e56f7da0}",
+      "version_modified": "20190325T201334Z",
       "xml_checksum": "057E8D9D",
       "display_name": "ChangeBuildingLocation",
       "class_name": "ChangeBuildingLocation",
@@ -269,27 +251,27 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "11/1/2018",
+      "date": "3/25/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.9888512466011508,
+      "instanceId": 0.4803746733507228,
       "skip": false,
       "$$hashKey": "object:5274",
       "showWarningText": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/SpaceTypeAndConstructionSetWizard",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/SpaceTypeAndConstructionSetWizard",
       "name": "space_type_and_construction_set_wizard",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/SpaceTypeAndConstructionSetWizard",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/SpaceTypeAndConstructionSetWizard",
       "uid": "7c65af63-4316-47c9-b7a5-68d7a019e533",
       "uuid": "{7c65af63-4316-47c9-b7a5-68d7a019e533}",
-      "version_id": "b22ece97-f1dc-4f6d-bbbd-95429516f800",
-      "version_uuid": "{b22ece97-f1dc-4f6d-bbbd-95429516f800}",
-      "version_modified": "20180730T221545Z",
+      "version_id": "d36b8097-8fca-4407-87dc-41f639b91b8e",
+      "version_uuid": "{d36b8097-8fca-4407-87dc-41f639b91b8e}",
+      "version_modified": "20190409T192913Z",
       "xml_checksum": "057E8D9D",
       "display_name": "Space Type and Construction Set Wizard",
       "class_name": "SpaceTypeAndConstructionSetWizard",
@@ -603,13 +585,13 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "7/30/2018",
+      "date": "4/9/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.46720236772021284,
+      "instanceId": 0.450070511969358,
       "skip": false,
       "$$hashKey": "object:5272",
       "showWarningText": false,
@@ -701,7 +683,7 @@
             "deltaX": 2,
             "stdDev": 2,
             "default_value": 2,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
           "$$hashKey": "object:5563"
         },
@@ -757,7 +739,7 @@
             "deltaX": 2,
             "stdDev": 2,
             "default_value": 2,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
           "$$hashKey": "object:5564"
         },
@@ -851,21 +833,21 @@
       "seed": "empty_seed.osm",
       "workflow_index": 2,
       "options": [],
-      "instanceId": 0.8262104498385174,
+      "instanceId": 0.3198194075764047,
       "skip": false,
       "$$hashKey": "object:5271",
-      "showWarningText": false,
+      "showWarningText": true,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/RotateBuilding",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/RotateBuilding",
       "name": "rotate_building",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/RotateBuilding",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/RotateBuilding",
       "uid": "b2742307-bce7-4747-8f94-977718217305",
       "uuid": "{b2742307-bce7-4747-8f94-977718217305}",
-      "version_id": "cce4c219-b44d-458e-a5ca-6f8d25196967",
-      "version_uuid": "{cce4c219-b44d-458e-a5ca-6f8d25196967}",
-      "version_modified": "20180712T011843Z",
+      "version_id": "30fc0dc3-f66c-4c4c-90fa-fcfcce6db100",
+      "version_uuid": "{30fc0dc3-f66c-4c4c-90fa-fcfcce6db100}",
+      "version_modified": "20190325T200053Z",
       "xml_checksum": "49BEF039",
       "display_name": "Rotate Building",
       "class_name": "RotateBuilding",
@@ -917,9 +899,10 @@
             "deltaX": 90,
             "stdDev": 90,
             "default_value": 0,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
-          "$$hashKey": "object:7025"
+          "$$hashKey": "object:7025",
+          "units": "degrees"
         }
       ],
       "edit": "",
@@ -929,27 +912,27 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "7/11/2018",
+      "date": "3/25/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 3,
       "options": [],
-      "instanceId": 0.8402815353776589,
+      "instanceId": 0.5877188774084918,
       "skip": false,
       "$$hashKey": "object:5278",
-      "showWarningText": false,
+      "showWarningText": true,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
       "name": "aedg_small_to_medium_office_fenestration_and_daylighting_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
       "uid": "4252d6c7-ccd5-4cae-b55e-8d7b1dfcc717",
       "uuid": "{4252d6c7-ccd5-4cae-b55e-8d7b1dfcc717}",
-      "version_id": "4826d6d2-1b5b-4ab0-b0bf-72256b776b3c",
-      "version_uuid": "{4826d6d2-1b5b-4ab0-b0bf-72256b776b3c}",
-      "version_modified": "20181109T142041Z",
+      "version_id": "71b53f1d-fda4-4c4d-9401-a2ef6185b405",
+      "version_uuid": "{71b53f1d-fda4-4c4d-9401-a2ef6185b405}",
+      "version_modified": "20190410T000414Z",
       "xml_checksum": "6FAFA9DE",
       "display_name": "AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
       "class_name": "AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
@@ -1103,32 +1086,32 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "11/9/2018",
+      "date": "4/9/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 4,
       "options": [],
-      "instanceId": 0.250108209987836,
+      "instanceId": 0.8722635175756539,
       "skip": false,
       "$$hashKey": "object:5277",
       "showWarningText": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/ReduceLightingLoadsByPercentage",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceLightingLoadsByPercentage",
       "name": "reduce_lighting_loads_by_percentage",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/ReduceLightingLoadsByPercentage",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceLightingLoadsByPercentage",
       "uid": "791f3404-a28b-4a80-ba3f-e15b339e39ea",
       "uuid": "{791f3404-a28b-4a80-ba3f-e15b339e39ea}",
-      "version_id": "cb04096c-31d0-457e-ad9b-f82af8144533",
-      "version_uuid": "{cb04096c-31d0-457e-ad9b-f82af8144533}",
-      "version_modified": "20180626T202329Z",
+      "version_id": "a3fd24ea-f077-43b8-835c-677bb58e37fe",
+      "version_uuid": "{a3fd24ea-f077-43b8-835c-677bb58e37fe}",
+      "version_modified": "20190319T172949Z",
       "xml_checksum": "293730A7",
       "display_name": "Reduce Lighting Loads by Percentage",
       "class_name": "ReduceLightingLoadsByPercentage",
       "description": "The lighting system in this building uses more power per area than is required with the latest lighting technologies.  Replace the lighting system with a newer, more efficient lighting technology.  Newer technologies provide the same amount of light but use less energy in the process.",
-      "modeler_description": "This measure supports models which have a mixture of lighting assigned to spaces and space types.  The lighting may be specified as individual luminaires, lighting equipment level, lighting power per area, or lighting power per person.\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\nLoop through all lights and luminaires in the specified space type or the entire building. Clone the definition if it is shared by other lights, rename and adjust the power based on the specified percentage. Link the new definition to the existing lights or luminaire instance.  Adjust the power for lighting equipment assigned to a particular space but only if that space is part of the selected space type by  looping through the objects first in space types and then in spaces, but again only for spaces that are in the specified space type (unless the entire building has been chosen).  Material and installation cost increases will be applied to all costs related to both the definition and instance of the lighting object.  If this measure includes baseline costs, then the material and installation costs of the lighting objects in the baseline model will be summed together and added as a capital cost on the building object.",
+      "modeler_description": "This measure supports models which have a mixture of lighting assigned to spaces and space types.  The lighting may be specified as individual luminaires, lighting equipment level, lighting power per area, or lighting power per person. Loop through all lights and luminaires in the specified space type or the entire building. Clone the definition if it is shared by other lights, rename and adjust the power based on the specified percentage. Link the new definition to the existing lights or luminaire instance.  Adjust the power for lighting equipment assigned to a particular space but only if that space is part of the selected space type by  looping through the objects first in space types and then in spaces, but again only for spaces that are in the specified space type (unless the entire building has been chosen).  Material and installation cost increases will be applied to all costs related to both the definition and instance of the lighting object.  If this measure includes baseline costs, then the material and installation costs of the lighting objects in the baseline model will be summed together and added as a capital cost on the building object.",
       "tags": "Electric Lighting.Lighting Equipment",
       "outputs": [],
       "attributes": [
@@ -1156,7 +1139,7 @@
       "arguments": [
         {
           "name": "space_type",
-          "display_name": "Apply the Measure to a Specific Space Type or to the Entire Model.",
+          "display_name": "Apply the Measure to a Specific Space Type or to the Entire Model",
           "description": "",
           "type": "Choice",
           "required": true,
@@ -1189,7 +1172,7 @@
         },
         {
           "name": "lighting_power_reduction_percent",
-          "display_name": "Lighting Power Reduction (%).",
+          "display_name": "Lighting Power Reduction",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1208,13 +1191,14 @@
             "deltaX": 30,
             "stdDev": 30,
             "default_value": 0,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
-          "$$hashKey": "object:6509"
+          "$$hashKey": "object:6509",
+          "units": "%"
         },
         {
           "name": "material_and_installation_cost",
-          "display_name": "Increase in Material and Installation Cost for Lighting per Floor Area (%).",
+          "display_name": "Increase in Material and Installation Cost for Lighting per Floor Area",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1235,11 +1219,12 @@
             "default_value": 0,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:6510"
+          "$$hashKey": "object:6510",
+          "units": "%"
         },
         {
           "name": "demolition_cost",
-          "display_name": "Increase in Demolition Costs for Lighting per Floor Area (%).",
+          "display_name": "Increase in Demolition Costs for Lighting per Floor Area",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1260,11 +1245,12 @@
             "default_value": 0,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:6511"
+          "$$hashKey": "object:6511",
+          "units": "%"
         },
         {
           "name": "years_until_costs_start",
-          "display_name": "Years Until Costs Start (whole years).",
+          "display_name": "Years Until Costs Start",
           "description": "",
           "type": "Integer",
           "required": true,
@@ -1285,11 +1271,12 @@
             "default_value": 0,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:6512"
+          "$$hashKey": "object:6512",
+          "units": "whole years"
         },
         {
           "name": "demo_cost_initial_const",
-          "display_name": "Demolition Costs Occur During Initial Construction?",
+          "display_name": "Demolition Costs Occur During Initial Construction",
           "description": "",
           "type": "Boolean",
           "required": true,
@@ -1314,7 +1301,7 @@
         },
         {
           "name": "expected_life",
-          "display_name": "Expected Life (whole years).",
+          "display_name": "Expected Life",
           "description": "",
           "type": "Integer",
           "required": true,
@@ -1335,11 +1322,12 @@
             "default_value": 15,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:6514"
+          "$$hashKey": "object:6514",
+          "units": "whole years"
         },
         {
           "name": "om_cost",
-          "display_name": "Increase O & M Costs for Lighting per Floor Area (%).",
+          "display_name": "Increase O & M Costs for Lighting per Floor Area",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1360,11 +1348,12 @@
             "default_value": 0,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:6515"
+          "$$hashKey": "object:6515",
+          "units": "%"
         },
         {
           "name": "om_frequency",
-          "display_name": "O & M Frequency (whole years).",
+          "display_name": "O & M Frequency",
           "description": "",
           "type": "Integer",
           "required": true,
@@ -1385,7 +1374,8 @@
             "default_value": 1,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:6516"
+          "$$hashKey": "object:6516",
+          "units": "whole years"
         }
       ],
       "edit": "",
@@ -1395,27 +1385,27 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "6/26/2018",
+      "date": "3/19/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 5,
       "options": [],
-      "instanceId": 0.18829139878475187,
+      "instanceId": 0.9498063750282497,
       "skip": false,
       "$$hashKey": "object:5276",
-      "showWarningText": false,
+      "showWarningText": true,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/ReduceSpaceInfiltrationByPercentage",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceSpaceInfiltrationByPercentage",
       "name": "reduce_space_infiltration_by_percentage",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/ReduceSpaceInfiltrationByPercentage",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceSpaceInfiltrationByPercentage",
       "uid": "6e9de4b1-aa97-4010-80c8-529e53ffe943",
       "uuid": "{6e9de4b1-aa97-4010-80c8-529e53ffe943}",
-      "version_id": "fb09e4de-469a-4be4-b419-77e281a7d101",
-      "version_uuid": "{fb09e4de-469a-4be4-b419-77e281a7d101}",
-      "version_modified": "20180626T202329Z",
+      "version_id": "21f2fe14-66fc-4cee-a07f-97fe9687b59b",
+      "version_uuid": "{21f2fe14-66fc-4cee-a07f-97fe9687b59b}",
+      "version_modified": "20190201T195726Z",
       "xml_checksum": "EACB548E",
       "display_name": "ReduceSpaceInfiltrationByPercentage",
       "class_name": "ReduceSpaceInfiltrationByPercentage",
@@ -1471,7 +1461,7 @@
         },
         {
           "name": "space_infiltration_reduction_percent",
-          "display_name": "Space Infiltration Power Reduction (%).",
+          "display_name": "Space Infiltration Power Reduction",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1490,13 +1480,14 @@
             "deltaX": 30,
             "stdDev": 30,
             "default_value": 0,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
-          "$$hashKey": "object:9036"
+          "$$hashKey": "object:9036",
+          "units": "%"
         },
         {
           "name": "constant_coefficient",
-          "display_name": "Constant Coefficient.",
+          "display_name": "Constant Coefficient",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1521,7 +1512,7 @@
         },
         {
           "name": "temperature_coefficient",
-          "display_name": "Temperature Coefficient.",
+          "display_name": "Temperature Coefficient",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1546,7 +1537,7 @@
         },
         {
           "name": "wind_speed_coefficient",
-          "display_name": "Wind Speed Coefficient.",
+          "display_name": "Wind Speed Coefficient",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1571,7 +1562,7 @@
         },
         {
           "name": "wind_speed_squared_coefficient",
-          "display_name": "Wind Speed Squared Coefficient.",
+          "display_name": "Wind Speed Squared Coefficient",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1597,7 +1588,7 @@
         {
           "name": "alter_coef",
           "display_name": "Alter constant temperature and wind speed coefficients.",
-          "description": "Setting this to false will result in infiltration objects that maintain the coefficients from the initial model. Setting this to true replaces the existing coefficients with the values entered for the coefficient arguments in this measure.",
+          "description": "Setting this to false will result in infiltration objects that maintain the coefficients from the initial model. Setting this to true replaces the existing coefficients with the values entered for the coefficient arguments in this measure",
           "type": "Boolean",
           "required": true,
           "model_dependent": false,
@@ -1621,7 +1612,7 @@
         },
         {
           "name": "material_and_installation_cost",
-          "display_name": "Increase in Material and Installation Costs for Building per Affected Floor Area ($/ft^2).",
+          "display_name": "Increase in Material and Installation Costs for Building per Affected Floor Area",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1642,11 +1633,12 @@
             "default_value": 0,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:9042"
+          "$$hashKey": "object:9042",
+          "units": "$/ft^2"
         },
         {
           "name": "om_cost",
-          "display_name": "O & M Costs for Construction per Affected Floor Area ($/ft^2).",
+          "display_name": "O & M Costs for Construction per Affected Floor Area",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1667,11 +1659,12 @@
             "default_value": 0,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:9043"
+          "$$hashKey": "object:9043",
+          "units": "$/ft^2"
         },
         {
           "name": "om_frequency",
-          "display_name": "O & M Frequency (whole years).",
+          "display_name": "O & M Frequency",
           "description": "",
           "type": "Integer",
           "required": true,
@@ -1692,7 +1685,8 @@
             "default_value": 1,
             "showWarningIcon": false
           },
-          "$$hashKey": "object:9044"
+          "$$hashKey": "object:9044",
+          "units": "whole years"
         }
       ],
       "edit": "",
@@ -1702,31 +1696,31 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "6/26/2018",
+      "date": "2/1/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 6,
       "options": [],
-      "instanceId": 0.8845808438619176,
+      "instanceId": 0.7538948590695058,
       "skip": false,
       "$$hashKey": "object:8992",
-      "showWarningText": false,
+      "showWarningText": true,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/ReduceElectricEquipmentLoadsByPercentage",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceElectricEquipmentLoadsByPercentage",
       "name": "reduce_electric_equipment_loads_by_percentage",
       "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ReduceElectricEquipmentLoadsByPercentage",
       "uid": "0902e302-70db-4339-99b0-17f08bc93629",
       "uuid": "{0902e302-70db-4339-99b0-17f08bc93629}",
-      "version_id": "250dee10-48ca-4552-9916-0a15d9c2075b",
-      "version_uuid": "{250dee10-48ca-4552-9916-0a15d9c2075b}",
-      "version_modified": "20180626T202329Z",
+      "version_id": "b368f05c-813b-4df5-9d21-09f980ea33da",
+      "version_uuid": "{b368f05c-813b-4df5-9d21-09f980ea33da}",
+      "version_modified": "20190319T172949Z",
       "xml_checksum": "F9A5B8F0",
       "display_name": "Reduce Electric Equipment Loads by Percentage",
       "class_name": "ReduceElectricEquipmentLoadsByPercentage",
-      "description": "Reduce electric equipment loads. This will affect equipment that have a, power, power per area (LPD), or power per person value. This can be applied to the entire building or a specific space type. A positive percentage represents an increase electric equipment power, while a negative percentage can be used for an increase in electric equipment power.",
+      "description": "Reduce Electric Equipment Loads by Percentage</display_name>\n  <description>Reduce electric equipment loads. This will affect equipment that have a, power, power per area (LPD), or power per person value. This can be applied to the entire building or a specific space type. A positive percentage represents an increase electric equipment power, while a negative percentage can be used for an increase in electric equipment power.",
       "modeler_description": "Loop through all electric equipment objects in the specified space type or the entire building. Clone the definition if it has not already been cloned, rename and adjust the power based on the specified percentage. Link the new definition to the existing electric equipment instance. Loop through objects first in space types and then in spaces, but only for spaces that are in the specified space type, unless entire building has been chosen.",
       "tags": "Equipment.Electric Equipment",
       "outputs": [],
@@ -1755,7 +1749,7 @@
       "arguments": [
         {
           "name": "space_type",
-          "display_name": "Apply the Measure to a Specific Space Type or to the Entire Model.",
+          "display_name": "Apply the Measure to a Specific Space Type or to the Entire Model",
           "description": "",
           "type": "Choice",
           "required": true,
@@ -1781,13 +1775,14 @@
             "mean": "*Entire Building*",
             "deltaX": "*Entire Building*",
             "stdDev": "*Entire Building*",
-            "default_value": "*Entire Building*"
+            "default_value": "*Entire Building*",
+            "showWarningIcon": false
           },
           "$$hashKey": "object:21070"
         },
         {
           "name": "elecequip_power_reduction_percent",
-          "display_name": "Electric Equipment Power Reduction (%).",
+          "display_name": "Electric Equipment Power Reduction",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1806,13 +1801,14 @@
             "deltaX": 30,
             "stdDev": 30,
             "default_value": 0,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
-          "$$hashKey": "object:21071"
+          "$$hashKey": "object:21071",
+          "units": "%"
         },
         {
           "name": "material_and_installation_cost",
-          "display_name": "Increase in Material and Installation Cost for Electric Equipment per Floor Area (%).",
+          "display_name": "Increase in Material and Installation Cost for Electric Equipment per Floor Area",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1830,13 +1826,15 @@
             "mean": 0,
             "deltaX": 0,
             "stdDev": 0,
-            "default_value": 0
+            "default_value": 0,
+            "showWarningIcon": false
           },
-          "$$hashKey": "object:21072"
+          "$$hashKey": "object:21072",
+          "units": "%"
         },
         {
           "name": "demolition_cost",
-          "display_name": "Increase in Demolition Costs for Electric Equipment per Floor Area (%).",
+          "display_name": "Increase in Demolition Costs for Electric Equipment per Floor Area",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1854,13 +1852,15 @@
             "mean": 0,
             "deltaX": 0,
             "stdDev": 0,
-            "default_value": 0
+            "default_value": 0,
+            "showWarningIcon": false
           },
-          "$$hashKey": "object:21073"
+          "$$hashKey": "object:21073",
+          "units": "%"
         },
         {
           "name": "years_until_costs_start",
-          "display_name": "Years Until Costs Start (whole years).",
+          "display_name": "Years Until Costs Start",
           "description": "",
           "type": "Integer",
           "required": true,
@@ -1878,13 +1878,15 @@
             "mean": 0,
             "deltaX": 0,
             "stdDev": 0,
-            "default_value": 0
+            "default_value": 0,
+            "showWarningIcon": false
           },
-          "$$hashKey": "object:21074"
+          "$$hashKey": "object:21074",
+          "units": "whole years"
         },
         {
           "name": "demo_cost_initial_const",
-          "display_name": "Demolition Costs Occur During Initial Construction?",
+          "display_name": "Demolition Costs Occur During Initial Construction",
           "description": "",
           "type": "Boolean",
           "required": true,
@@ -1902,13 +1904,14 @@
             "mean": false,
             "deltaX": false,
             "stdDev": false,
-            "default_value": false
+            "default_value": false,
+            "showWarningIcon": false
           },
           "$$hashKey": "object:21075"
         },
         {
           "name": "expected_life",
-          "display_name": "Expected Life (whole years).",
+          "display_name": "Expected Life",
           "description": "",
           "type": "Integer",
           "required": true,
@@ -1926,13 +1929,15 @@
             "mean": 15,
             "deltaX": 15,
             "stdDev": 15,
-            "default_value": 15
+            "default_value": 15,
+            "showWarningIcon": false
           },
-          "$$hashKey": "object:21076"
+          "$$hashKey": "object:21076",
+          "units": "whole years"
         },
         {
           "name": "om_cost",
-          "display_name": "Increase O & M Costs for Electric Equipment per Floor Area (%).",
+          "display_name": "Increase O & M Costs for Electric Equipment per Floor Area",
           "description": "",
           "type": "Double",
           "required": true,
@@ -1950,13 +1955,15 @@
             "mean": 0,
             "deltaX": 0,
             "stdDev": 0,
-            "default_value": 0
+            "default_value": 0,
+            "showWarningIcon": false
           },
-          "$$hashKey": "object:21077"
+          "$$hashKey": "object:21077",
+          "units": "%"
         },
         {
           "name": "om_frequency",
-          "display_name": "O & M Frequency (whole years).",
+          "display_name": "O & M Frequency",
           "description": "",
           "type": "Integer",
           "required": true,
@@ -1974,9 +1981,11 @@
             "mean": 1,
             "deltaX": 1,
             "stdDev": 1,
-            "default_value": 1
+            "default_value": 1,
+            "showWarningIcon": false
           },
-          "$$hashKey": "object:21078"
+          "$$hashKey": "object:21078",
+          "units": "whole years"
         }
       ],
       "edit": "",
@@ -1986,22 +1995,22 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "6/26/2018",
+      "date": "3/19/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 7,
       "options": [],
-      "instanceId": 0.6247310409205742,
+      "instanceId": 0.3069908019325174,
       "skip": false,
       "$$hashKey": "object:20730",
-      "showWarningText": false,
+      "showWarningText": true,
       "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/SetThermostatSchedules",
       "name": "set_thermostat_schedules",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/SetThermostatSchedules",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/SetThermostatSchedules",
       "uid": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
       "uuid": "{2978cde0-53d5-4096-bdab-11f9f6e074f1}",
       "version_id": "c6c768cd-4cbf-4a7a-93cd-23bcc0656182",
@@ -2065,7 +2074,8 @@
             "mean": "*All Thermal Zones*",
             "deltaX": "*All Thermal Zones*",
             "stdDev": "*All Thermal Zones*",
-            "default_value": "*All Thermal Zones*"
+            "default_value": "*All Thermal Zones*",
+            "showWarningIcon": false
           },
           "$$hashKey": "object:116263"
         },
@@ -2103,7 +2113,8 @@
             "mean": "*No Change*",
             "deltaX": "*No Change*",
             "stdDev": "*No Change*",
-            "default_value": "Small Office ClgSetp"
+            "default_value": "Small Office ClgSetp",
+            "showWarningIcon": false
           },
           "$$hashKey": "object:116264"
         },
@@ -2141,7 +2152,8 @@
             "mean": "*No Change*",
             "deltaX": "*No Change*",
             "stdDev": "*No Change*",
-            "default_value": "Small Office HtgSetp"
+            "default_value": "Small Office HtgSetp",
+            "showWarningIcon": false
           },
           "$$hashKey": "object:116265"
         },
@@ -2165,7 +2177,8 @@
             "mean": 0,
             "deltaX": 0,
             "stdDev": 0,
-            "default_value": 0
+            "default_value": 0,
+            "showWarningIcon": false
           },
           "$$hashKey": "object:116266"
         }
@@ -2183,14 +2196,15 @@
       "seed": "empty_seed.osm",
       "workflow_index": 8,
       "options": [],
-      "instanceId": 0.6603012481815451,
+      "instanceId": 0.5082380698004052,
       "skip": false,
-      "$$hashKey": "object:116220"
+      "$$hashKey": "object:116220",
+      "showWarningText": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/AdjustThermostatSetpointsByDegrees",
       "name": "adjust_thermostat_setpoints_by_degrees",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/AdjustThermostatSetpointsByDegrees",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/AdjustThermostatSetpointsByDegrees",
       "uid": "6e1f34f9-92e1-44ea-9279-de0b9b64f6a1",
       "uuid": "{6e1f34f9-92e1-44ea-9279-de0b9b64f6a1}",
       "version_id": "0ffde0cf-822a-4965-9ceb-e661600495d2",
@@ -2247,7 +2261,7 @@
             "deltaX": 1,
             "stdDev": 1,
             "default_value": 0,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
           "$$hashKey": "object:20932"
         },
@@ -2272,7 +2286,7 @@
             "deltaX": -1,
             "stdDev": -1,
             "default_value": 0,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
           "$$hashKey": "object:20933"
         },
@@ -2296,7 +2310,8 @@
             "mean": false,
             "deltaX": false,
             "stdDev": false,
-            "default_value": false
+            "default_value": false,
+            "showWarningIcon": false
           },
           "$$hashKey": "object:20934"
         }
@@ -2314,21 +2329,21 @@
       "seed": "empty_seed.osm",
       "workflow_index": 9,
       "options": [],
-      "instanceId": 0.4506263160523205,
+      "instanceId": 0.7395364596893179,
       "skip": false,
       "$$hashKey": "object:20729",
-      "showWarningText": false,
+      "showWarningText": true,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/nze_hvac",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac",
       "name": "nze_hvac",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/nze_hvac",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/nze_hvac",
       "uid": "f060dff2-b28d-4194-a6af-e66d88ddb33c",
       "uuid": "{f060dff2-b28d-4194-a6af-e66d88ddb33c}",
-      "version_id": "6b074f4d-26f0-4adc-b5d0-21c06d58dd40",
-      "version_uuid": "{6b074f4d-26f0-4adc-b5d0-21c06d58dd40}",
-      "version_modified": "20181109T085211Z",
+      "version_id": "84a5e30b-4b29-448a-861b-294e6801e2c4",
+      "version_uuid": "{84a5e30b-4b29-448a-861b-294e6801e2c4}",
+      "version_modified": "20190325T201421Z",
       "xml_checksum": "0E5E4776",
       "display_name": "NZEHVAC",
       "class_name": "NzeHvac",
@@ -2511,31 +2526,31 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "11/9/2018",
+      "date": "3/25/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 10,
       "options": [],
-      "instanceId": 0.5618485451258575,
+      "instanceId": 0.18201195599441045,
       "skip": false,
       "$$hashKey": "object:5275",
       "showWarningText": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/add_rooftop_pv",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/add_rooftop_pv",
       "name": "add_rooftop_pv",
       "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/add_rooftop_pv",
       "uid": "34550614-0c87-44db-9252-0ca0915b1e64",
       "uuid": "{34550614-0c87-44db-9252-0ca0915b1e64}",
-      "version_id": "63be24bc-c80d-4ebd-87a5-7ba559aa5d81",
-      "version_uuid": "{63be24bc-c80d-4ebd-87a5-7ba559aa5d81}",
-      "version_modified": "20180710T213330Z",
+      "version_id": "37b2144a-b2ec-4d27-bfa8-9db800255fc9",
+      "version_uuid": "{37b2144a-b2ec-4d27-bfa8-9db800255fc9}",
+      "version_modified": "20190410T000409Z",
       "xml_checksum": "178163B6",
       "display_name": "Add Rooftop PV",
       "class_name": "AddRooftopPV",
-      "description": "This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV",
+      "description": "This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV.",
       "modeler_description": "The fraction of surface containing PV will not only set the PV properties, but will also change the transmittance value for the shading surface. This allows the measure to avoid attempting to layout the panels. Simple PV will be used to model the PV.",
       "tags": "Onsite Power Generation.Photovoltaic",
       "outputs": [],
@@ -2604,7 +2619,7 @@
             "deltaX": 0.75,
             "stdDev": 0.75,
             "default_value": 0,
-            "showWarningIcon": false
+            "showWarningIcon": true
           },
           "$$hashKey": "object:20801"
         },
@@ -2629,7 +2644,8 @@
             "mean": 0.18,
             "deltaX": 0.18,
             "stdDev": 0.18,
-            "default_value": 0.18
+            "default_value": 0.18,
+            "showWarningIcon": false
           },
           "$$hashKey": "object:20802"
         },
@@ -2654,7 +2670,8 @@
             "mean": 0.98,
             "deltaX": 0.98,
             "stdDev": 0.98,
-            "default_value": 0.98
+            "default_value": 0.98,
+            "showWarningIcon": false
           },
           "$$hashKey": "object:20803"
         }
@@ -2666,16 +2683,16 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "7/10/2018",
+      "date": "4/9/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 11,
       "options": [],
-      "instanceId": 0.6107568145217173,
+      "instanceId": 0.15264650249781742,
       "skip": true,
       "$$hashKey": "object:20728",
-      "showWarningText": false,
+      "showWarningText": true,
       "outputMeasure": false
     },
     {
@@ -2720,21 +2737,21 @@
       "seed": "empty_seed.osm",
       "workflow_index": 12,
       "options": [],
-      "instanceId": 0.7411126877164749,
+      "instanceId": 0.23458519453729187,
       "skip": false,
       "$$hashKey": "object:5279",
       "showWarningText": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/02ad7007-fe7b-4747-bd7a-29d697c4d91a",
+      "measure_dir": "/Users/dgoldwas/BCL/a25386cd-60e4-46bc-8b11-c755f379d916/8a8a3008-874e-465a-84f5-0b320fbbfa7b",
       "name": "openstudio_results",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_early_design_study/measures/02ad7007-fe7b-4747-bd7a-29d697c4d91a",
+      "directory": "/Users/dgoldwas/BCL/a25386cd-60e4-46bc-8b11-c755f379d916/8a8a3008-874e-465a-84f5-0b320fbbfa7b",
       "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
       "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
-      "version_id": "02ad7007-fe7b-4747-bd7a-29d697c4d91a",
-      "version_uuid": "{02ad7007-fe7b-4747-bd7a-29d697c4d91a}",
-      "version_modified": "20180711T183039Z",
+      "version_id": "8a8a3008-874e-465a-84f5-0b320fbbfa7b",
+      "version_uuid": "{8a8a3008-874e-465a-84f5-0b320fbbfa7b}",
+      "version_modified": "20190410T000421Z",
       "xml_checksum": "557BF06F",
       "display_name": "OpenStudio Results",
       "class_name": "OpenStudioResults",
@@ -2749,12 +2766,7 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:16046",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "openstudio_results",
-          "measure_class_name": "OpenStudioResults",
-          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+          "checked": true
         },
         {
           "name": "natural_gas_ip",
@@ -2763,12 +2775,7 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:16047",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "openstudio_results",
-          "measure_class_name": "OpenStudioResults",
-          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+          "checked": true
         },
         {
           "name": "additional_fuel_ip",
@@ -2776,8 +2783,7 @@
           "short_name": "additional_fuel_ip",
           "description": "",
           "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:16048"
+          "model_dependent": false
         },
         {
           "name": "district_heating_ip",
@@ -2785,8 +2791,7 @@
           "short_name": "district_heating_ip",
           "description": "",
           "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:16049"
+          "model_dependent": false
         },
         {
           "name": "district_cooling_ip",
@@ -2794,8 +2799,7 @@
           "short_name": "district_cooling_ip",
           "description": "",
           "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:16050"
+          "model_dependent": false
         },
         {
           "name": "total_site_eui",
@@ -2804,12 +2808,7 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:16051",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "openstudio_results",
-          "measure_class_name": "OpenStudioResults",
-          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+          "checked": true
         },
         {
           "name": "eui",
@@ -2817,8 +2816,7 @@
           "short_name": "eui",
           "description": "",
           "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:16052"
+          "model_dependent": false
         },
         {
           "name": "net_site_energy",
@@ -2827,12 +2825,7 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:16053",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "openstudio_results",
-          "measure_class_name": "OpenStudioResults",
-          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+          "checked": true
         },
         {
           "name": "annual_peak_electric_demand",
@@ -2841,12 +2834,7 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:16054",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "openstudio_results",
-          "measure_class_name": "OpenStudioResults",
-          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+          "checked": true
         },
         {
           "name": "unmet_hours_during_occupied_cooling",
@@ -2855,12 +2843,7 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:16055",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "openstudio_results",
-          "measure_class_name": "OpenStudioResults",
-          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+          "checked": true
         },
         {
           "name": "unmet_hours_during_occupied_heating",
@@ -2869,12 +2852,7 @@
           "description": "",
           "type": "Double",
           "model_dependent": false,
-          "$$hashKey": "object:16056",
-          "checked": true,
-          "visualize": "true",
-          "measure_name": "openstudio_results",
-          "measure_class_name": "OpenStudioResults",
-          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+          "checked": true
         },
         {
           "name": "first_year_capital_cost",
@@ -2882,9 +2860,7 @@
           "short_name": "first_year_capital_cost",
           "description": "",
           "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:16057",
-          "checked": false
+          "model_dependent": false
         },
         {
           "name": "annual_utility_cost",
@@ -2892,8 +2868,7 @@
           "short_name": "annual_utility_cost",
           "description": "",
           "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:16058"
+          "model_dependent": false
         },
         {
           "name": "total_lifecycle_cost",
@@ -2901,8 +2876,7 @@
           "short_name": "total_lifecycle_cost",
           "description": "",
           "type": "Double",
-          "model_dependent": false,
-          "$$hashKey": "object:16059"
+          "model_dependent": false
         }
       ],
       "attributes": [
@@ -2938,6 +2912,43 @@
         }
       ],
       "arguments": [
+        {
+          "name": "units",
+          "display_name": "Which Unit System do you want to use?",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "IP",
+          "choice_values": [
+            "IP",
+            "SI"
+          ],
+          "choice_display_names": [
+            "IP",
+            "SI"
+          ],
+          "variable": false,
+          "$$hashKey": "object:5903",
+          "display_name_short": "units",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "IP",
+              "SI"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "IP",
+            "minimum": "IP",
+            "mean": "IP",
+            "deltaX": "IP",
+            "stdDev": "IP",
+            "default_value": "IP",
+            "showWarningIcon": false
+          }
+        },
         {
           "name": "building_summary_section",
           "display_name": "Model Summary",
@@ -3462,6 +3473,32 @@
             "showWarningIcon": false
           },
           "$$hashKey": "object:7120"
+        },
+        {
+          "name": "reg_monthly_details",
+          "display_name": "Report monthly fuel and enduse breakdown to registerValue",
+          "description": "This argument does not effect HTML file, instead it makes data from individal cells of monthly tables avaiable for machine readable values in the resulting OpenStudio Workflow file.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "variable": false,
+          "$$hashKey": "object:5904",
+          "inputs": {
+            "default_value": false,
+            "minimum": false,
+            "maximum": false,
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "mean": false,
+            "deltaX": false,
+            "stdDev": false,
+            "showWarningIcon": false
+          },
+          "display_name_short": "reg_monthly_details"
         }
       ],
       "edit": "",
@@ -3471,13 +3508,13 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "7/11/2018",
+      "date": "4/9/2019",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "empty_seed.osm",
       "workflow_index": 13,
       "options": [],
-      "instanceId": 0.5187878115945772,
+      "instanceId": 0.6816415621633958,
       "skip": false,
       "$$hashKey": "object:5302",
       "showWarningText": false,
@@ -3666,7 +3703,7 @@
       "seed": "empty_seed.osm",
       "workflow_index": 14,
       "options": [],
-      "instanceId": 0.38855569048582117,
+      "instanceId": 0.12473615775751012,
       "skip": false,
       "$$hashKey": "object:5303",
       "showWarningText": false,

@@ -256,6 +256,8 @@ class CreateBarFromBuildingTypeRatios_Test < Minitest::Test
   #   This planar surface shares the same SketchUp face as Surface 143.
   #       This error cannot be automatically fixed.  The surface will not be drawn.
   def test_mid_story_model
+    skip "For some reason this specific test locks up testing framework but passes in raw ruby test."
+
     args = {}
     args['total_bldg_floor_area'] = 40000.0
     args['bldg_type_a'] = 'MediumOffice'
@@ -314,6 +316,14 @@ class CreateBarFromBuildingTypeRatios_Test < Minitest::Test
     args['single_floor_area'] = 2000.0
     args['ns_to_ew_ratio'] = 1.5
     args['num_stories_above_grade'] = 5.0
+
+    apply_measure_to_model(__method__.to_s.gsub('test_', ''), args, nil, nil, nil)
+  end
+
+  def test_warehouse
+    args = {}
+    args['total_bldg_floor_area'] = 100000.0
+    args['bldg_type_a'] = 'Warehouse'
 
     apply_measure_to_model(__method__.to_s.gsub('test_', ''), args, nil, nil, nil)
   end

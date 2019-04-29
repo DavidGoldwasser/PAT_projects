@@ -1,0 +1,258 @@
+{
+  "seed_file": "empty_seed.osm",
+  "weather_file": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+  "file_format_version": "0.0.1",
+  "osa_id": "522e8ba9-4ecf-4f0c-b34c-bd1285cb090f",
+  "osd_id": "4bd4e225-87ab-4038-ab2e-90187a63c75f",
+  "created_at": "2019-04-29 10:14:16 -0600",
+  "measure_paths": [
+    "../../measures"
+  ],
+  "file_paths": [
+    "../../weather",
+    "../../seeds",
+    "../../seed"
+  ],
+  "run_directory": "./run",
+  "steps": [
+    {
+      "measure_dir_name": "ChangeBuildingLocation",
+      "arguments": {
+        "weather_file_name": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+        "climate_zone": "Lookup From Stat File",
+        "set_year": 0,
+        "use_upstream_args": false
+      },
+      "name": "change_building_location",
+      "description": "Change the building location",
+      "measure_id": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
+      "version_id": "adf00d38-9033-466a-8072-eab7e56f7da0",
+      "taxonomy": "Whole Building.Space Types",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "SpaceTypeAndConstructionSetWizard",
+      "arguments": {
+        "building_type": "MediumOffice",
+        "template": "90.1-2004",
+        "climate_zone": "ASHRAE 169-2006-5B",
+        "create_space_types": true,
+        "create_construction_set": true,
+        "set_building_defaults": true
+      },
+      "name": "space_type_and_construction_set_wizard",
+      "description": "Create space types and or construction sets for the requested building type, climate zone, and target.",
+      "measure_id": "7c65af63-4316-47c9-b7a5-68d7a019e533",
+      "version_id": "d36b8097-8fca-4407-87dc-41f639b91b8e",
+      "taxonomy": "Whole Building.Space Types",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "BarAspectRatioStudy",
+      "arguments": {
+        "total_bldg_area_ip": 10000,
+        "ns_to_ew_ratio": 2,
+        "num_floors": 2,
+        "floor_to_floor_height_ip": 10,
+        "surface_matching": true,
+        "make_zones": true
+      },
+      "name": "bar_aspect_ratio_study",
+      "description": "This measure will create a building envelope based on a target floor area, aspect ratio, and floor to floor height.",
+      "measure_id": "3dcac94d-8a2e-43b6-8698-a3a4e8f3903f",
+      "version_id": "c2ea7852-0ed4-442a-802a-d1061e8ff483",
+      "taxonomy": "Envelope.Form",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "RotateBuilding",
+      "arguments": {
+        "relative_building_rotation": 0
+      },
+      "name": "rotate_building",
+      "description": "Rotate your building relative to its current orientation. This will not rotate site shading objects.",
+      "measure_id": "b2742307-bce7-4747-8f94-977718217305",
+      "version_id": "30fc0dc3-f66c-4c4c-90fa-fcfcce6db100",
+      "taxonomy": "Envelope.Form",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "AedgSmallToMediumOfficeFenestrationAndDaylightingControls",
+      "arguments": {
+        "cost_daylight_glazing": 0,
+        "cost_view_glazing": 0,
+        "cost_skylight": 0,
+        "cost_shading_surface": 0,
+        "cost_light_shelf": 0
+      },
+      "name": "aedg_small_to_medium_office_fenestration_and_daylighting_controls",
+      "description": "This measure will remove all existing exterior windows, glass doors, and skylights from your model. They will be replaced with view and daylight windows as recommended by the Small to Medium Office AEDG recommendations. Windows on the south facade will have a exterior shading or light shelf surfaces depending on if they are view or daylight windows. East and west view windows will have internal shading controls. In spaces with daylighting controls daylight sensor will be added. The modeler should inspect where the sensors were placed, the recommended illuminance setpoint, and the fraction of the zones lighting controlled by the sensor.",
+      "measure_id": "4252d6c7-ccd5-4cae-b55e-8d7b1dfcc717",
+      "version_id": "71b53f1d-fda4-4c4d-9401-a2ef6185b405",
+      "taxonomy": "Envelope.Fenestration",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "ReduceLightingLoadsByPercentage",
+      "arguments": {
+        "space_type": "*Entire Building*",
+        "lighting_power_reduction_percent": 0,
+        "material_and_installation_cost": 0,
+        "demolition_cost": 0,
+        "years_until_costs_start": 0,
+        "demo_cost_initial_const": false,
+        "expected_life": 15,
+        "om_cost": 0,
+        "om_frequency": 1
+      },
+      "name": "reduce_lighting_loads_by_percentage",
+      "description": "The lighting system in this building uses more power per area than is required with the latest lighting technologies.  Replace the lighting system with a newer, more efficient lighting technology.  Newer technologies provide the same amount of light but use less energy in the process.",
+      "measure_id": "791f3404-a28b-4a80-ba3f-e15b339e39ea",
+      "version_id": "a3fd24ea-f077-43b8-835c-677bb58e37fe",
+      "taxonomy": "Electric Lighting.Lighting Equipment",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "ReduceSpaceInfiltrationByPercentage",
+      "arguments": {
+        "space_type": "*Entire Building*",
+        "space_infiltration_reduction_percent": 0,
+        "constant_coefficient": 1,
+        "temperature_coefficient": 0,
+        "wind_speed_coefficient": 0,
+        "wind_speed_squared_coefficient": 0,
+        "alter_coef": true,
+        "material_and_installation_cost": 0,
+        "om_cost": 0,
+        "om_frequency": 1
+      },
+      "name": "reduce_space_infiltration_by_percentage",
+      "description": "This measure will reduce space infiltration rates by the requested percentage. A cost per square foot of building area can be added to the model.",
+      "measure_id": "6e9de4b1-aa97-4010-80c8-529e53ffe943",
+      "version_id": "21f2fe14-66fc-4cee-a07f-97fe9687b59b",
+      "taxonomy": "Envelope.Infiltration",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "ReduceElectricEquipmentLoadsByPercentage",
+      "arguments": {
+        "space_type": "*Entire Building*",
+        "elecequip_power_reduction_percent": 0,
+        "material_and_installation_cost": 0,
+        "demolition_cost": 0,
+        "years_until_costs_start": 0,
+        "demo_cost_initial_const": false,
+        "expected_life": 15,
+        "om_cost": 0,
+        "om_frequency": 1
+      },
+      "name": "reduce_electric_equipment_loads_by_percentage",
+      "description": "Reduce Electric Equipment Loads by Percentage</display_name>\n  <description>Reduce electric equipment loads. This will affect equipment that have a, power, power per area (LPD), or power per person value. This can be applied to the entire building or a specific space type. A positive percentage represents an increase electric equipment power, while a negative percentage can be used for an increase in electric equipment power.",
+      "measure_id": "0902e302-70db-4339-99b0-17f08bc93629",
+      "version_id": "b368f05c-813b-4df5-9d21-09f980ea33da",
+      "taxonomy": "Equipment.Electric Equipment",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "SetThermostatSchedules",
+      "arguments": {
+        "zones": "*All Thermal Zones*",
+        "cooling_sch": "Small Office ClgSetp",
+        "heating_sch": "Small Office HtgSetp",
+        "material_cost": 0
+      },
+      "name": "set_thermostat_schedules",
+      "description": "Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one",
+      "measure_id": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
+      "version_id": "c6c768cd-4cbf-4a7a-93cd-23bcc0656182",
+      "taxonomy": "HVAC.HVAC Controls",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "AdjustThermostatSetpointsByDegrees",
+      "arguments": {
+        "cooling_adjustment": 0,
+        "heating_adjustment": 0,
+        "alter_design_days": false
+      },
+      "name": "adjust_thermostat_setpoints_by_degrees",
+      "description": "This measure adjusts heating and cooling setpoints by a user specified number of degrees. This is applied throughout the entire building.",
+      "measure_id": "6e1f34f9-92e1-44ea-9279-de0b9b64f6a1",
+      "version_id": "0ffde0cf-822a-4965-9ceb-e661600495d2",
+      "taxonomy": "HVAC.HVAC Controls",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "nze_hvac",
+      "arguments": {
+        "remove_existing_hvac": false,
+        "hvac_system_type": "VAV Reheat",
+        "hvac_system_partition": "Automatic Partition"
+      },
+      "name": "nze_hvac",
+      "description": "This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads.",
+      "measure_id": "f060dff2-b28d-4194-a6af-e66d88ddb33c",
+      "version_id": "84a5e30b-4b29-448a-861b-294e6801e2c4",
+      "taxonomy": "HVAC.Whole System",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "78db3ab6-ad89-4d66-9140-e6f1c1a2a5d0",
+      "arguments": {
+      },
+      "name": "view_model",
+      "description": "Visualize an OpenStudio model in a web based viewer",
+      "measure_id": "f4669f10-fda5-489d-8e1c-7ca3c2d40378",
+      "version_id": "108b3c04-6ab8-473f-8aa8-0d406d4c863f",
+      "taxonomy": "Reporting.QAQC",
+      "measure_type": "ModelMeasure"
+    },
+    {
+      "measure_dir_name": "8a8a3008-874e-465a-84f5-0b320fbbfa7b",
+      "arguments": {
+        "units": "IP",
+        "building_summary_section": true,
+        "annual_overview_section": true,
+        "monthly_overview_section": true,
+        "utility_bills_rates_section": true,
+        "envelope_section_section": true,
+        "space_type_breakdown_section": true,
+        "space_type_details_section": true,
+        "interior_lighting_section": true,
+        "plug_loads_section": true,
+        "exterior_light_section": true,
+        "water_use_section": true,
+        "hvac_load_profile": true,
+        "zone_condition_section": true,
+        "zone_summary_section": true,
+        "zone_equipment_detail_section": true,
+        "air_loops_detail_section": true,
+        "plant_loops_detail_section": true,
+        "outdoor_air_section": true,
+        "cost_summary_section": true,
+        "source_energy_section": true,
+        "schedules_overview_section": true,
+        "reg_monthly_details": false
+      },
+      "name": "openstudio_results",
+      "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+      "measure_id": "a25386cd-60e4-46bc-8b11-c755f379d916",
+      "version_id": "8a8a3008-874e-465a-84f5-0b320fbbfa7b",
+      "taxonomy": "Reporting.QAQC",
+      "measure_type": "ReportingMeasure"
+    },
+    {
+      "measure_dir_name": "envelope_and_internal_load_breakdown",
+      "arguments": {
+      },
+      "name": "envelope_and_internal_load_breakdown",
+      "description": "Report provides annual and monthly views into heat gains and losses for envelope and internal loads.",
+      "measure_id": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
+      "version_id": "f63919e1-a65a-4f4e-8b7d-8c14125f6f04",
+      "taxonomy": "Reporting.QAQC",
+      "measure_type": "ReportingMeasure"
+    }
+  ],
+  "name": "Single Run Autogenerated",
+  "description": ""
+}

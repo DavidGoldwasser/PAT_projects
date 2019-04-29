@@ -45,8 +45,8 @@ module OsLib_ModelGeneration
     array << 'SmallHotel'
     array << 'LargeHotel'
     array << 'Warehouse'
-    array << 'Retail'
-    array << 'StripMall'
+    array << 'RetailStandalone'
+    array << 'RetailStripmall'
     array << 'QuickServiceRestaurant'
     array << 'FullServiceRestaurant'
     array << 'MidriseApartment'
@@ -65,7 +65,7 @@ module OsLib_ModelGeneration
     array << 'DOE Ref 1980-2004'
     array << '90.1-2004'
     array << '90.1-2007'
-    # array << '189.1-2009' # if turn this on need to update space_type_array for stripmall
+    # array << '189.1-2009' # if turn this on need to update space_type_array for RetailStripmall
     array << '90.1-2010'
     array << '90.1-2013'
     array << 'NREL ZNE Ready 2017'
@@ -83,7 +83,7 @@ module OsLib_ModelGeneration
   end
 
   # Building Form Defaults from Table 4.2 in Achieving the 30% Goal: Energy and Cost Savings Analysis of ASHRAE Standard 90.1-2010
-  # aspect ratio for NA repaced with floor area to perimeter ratio from prototype model
+  # aspect ratio for NA replaced with floor area to perimeter ratio from prototype model
   def building_form_defaults(building_type)
     hash = {}
 
@@ -99,16 +99,18 @@ module OsLib_ModelGeneration
     hash['SmallOffice'] = { aspect_ratio: 1.5, wwr: 0.15, typical_story: 10.0 }
     hash['MediumOffice'] = { aspect_ratio: 1.5, wwr: 0.33, typical_story: 13.0 }
     hash['LargeOffice'] = { aspect_ratio: 1.5, wwr: 0.15, typical_story: 13.0 }
-    hash['Retail'] = { aspect_ratio: 1.28, wwr: 0.07, typical_story: 20.0 }
-    hash['StripMall'] = { aspect_ratio: 4.0, wwr: 0.11, typical_story: 17.0 }
+    hash['RetailStandalone'] = { aspect_ratio: 1.28, wwr: 0.07, typical_story: 20.0 }
+    hash['RetailStripmall'] = { aspect_ratio: 4.0, wwr: 0.11, typical_story: 17.0 }
     hash['PrimarySchool'] = { aspect_ratio: primary_aspet_ratio.round(1), wwr: 0.35, typical_story: 13.0 }
     hash['SecondarySchool'] = { aspect_ratio: secondary_aspet_ratio.round(1), wwr: 0.33, typical_story: 13.0 }
     hash['Outpatient'] = { aspect_ratio: outpatient_aspet_ratio.round(1), wwr: 0.20, typical_story: 10.0 }
     hash['Hospital'] = { aspect_ratio: 1.33, wwr: 0.16, typical_story: 14.0 }
     hash['SmallHotel'] = { aspect_ratio: 3.0, wwr: 0.11, typical_story: 9.0, first_story: 11.0 }
     hash['LargeHotel'] = { aspect_ratio: 5.1, wwr: 0.27, typical_story: 10.0, first_story: 13.0 }
-    # wwr for Warehouse is just for Office space type, all others is building wide
-    hash['Warehouse'] = { aspect_ratio: 2.2, wwr: 0.71, typical_story: 28.0 }
+
+    # code in get_space_types_from_building_type is used to override building wwr with space type specific wwr
+    hash['Warehouse'] = { aspect_ratio: 2.2, wwr: 0.0, typical_story: 28.0}
+
     hash['QuickServiceRestaurant'] = { aspect_ratio: 1.0, wwr: 0.14, typical_story: 10.0 }
     hash['FullServiceRestaurant'] = { aspect_ratio: 1.0, wwr: 0.18, typical_story: 10.0 }
     hash['QuickServiceRestaurant'] = { aspect_ratio: 1.0, wwr: 0.18, typical_story: 10.0 }
@@ -279,13 +281,13 @@ module OsLib_ModelGeneration
     elsif building_type == 'Warehouse'
       hash['Bulk'] = { ratio: 0.6628, space_type_gen: true, default: true }
       hash['Fine'] = { ratio: 0.2882, space_type_gen: true, default: false }
-      hash['Office'] = { ratio: 0.0490, space_type_gen: true, default: false }
-    elsif building_type == 'Retail'
+      hash['Office'] = { ratio: 0.0490, space_type_gen: true, default: false, wwr: 0.71 }
+    elsif building_type == 'RetailStandalone'
       hash['Back_Space'] = { ratio: 0.1656, space_type_gen: true, default: false }
       hash['Entry'] = { ratio: 0.0052, space_type_gen: true, default: false }
       hash['Point_of_Sale'] = { ratio: 0.0657, space_type_gen: true, default: false }
       hash['Retail'] = { ratio: 0.7635, space_type_gen: true, default: true }
-    elsif building_type == 'StripMall'
+    elsif building_type == 'RetailStripmall'
       hash['Strip mall - type 1'] = { ratio: 0.25, space_type_gen: true, default: false }
       hash['Strip mall - type 2'] = { ratio: 0.25, space_type_gen: true, default: false }
       hash['Strip mall - type 3'] = { ratio: 0.50, space_type_gen: true, default: true }
@@ -635,6 +637,9 @@ module OsLib_ModelGeneration
       sorted_stories[story.name.to_s] = story
     end
 
+    # flag space types that have wwr overrides
+    space_type_wwr_overrides = {}
+
     # loop through building stories, spaces, and surfaces
     sorted_stories.sort.each_with_index do |(key, story), i|
       # flag for adiabatic floor if building doesn't have ground exposed floor
@@ -677,30 +682,56 @@ module OsLib_ModelGeneration
           absoluteAzimuth = absoluteAzimuth % 360.0 # should result in value between 0 and 360
           absoluteAzimuth = absoluteAzimuth.round(5) # this was creating issues at 45 deg angles with opposing facades
 
+          # target wwr values that may be changed for specific space types
+          wwr_n = bar_hash[:building_wwr_n]
+          wwr_e = bar_hash[:building_wwr_e]
+          wwr_s = bar_hash[:building_wwr_s]
+          wwr_w = bar_hash[:building_wwr_w]
+
+          # look for space type specific wwr values
+          if surface.space.is_initialized && surface.space.get.spaceType.is_initialized
+            space_type = surface.space.get.spaceType.get
+
+            # see if space type has wwr value
+            bar_hash[:space_types].each do |k,v|
+              if v.has_key?(:space_type) && space_type == v[:space_type]
+
+                # if matching space type specifies a wwr then override the orientaiton specific recommendations for this surface.
+                if v.has_key?(:wwr)
+                  wwr_n = v[:wwr]
+                  wwr_e = v[:wwr]
+                  wwr_s = v[:wwr]
+                  wwr_w = v[:wwr]
+                  space_type_wwr_overrides[space_type] = v[:wwr]
+                end
+              end
+            end
+          end
+
           # add fenestration (wwr for now, maybe overhang and overhead doors later)
           if (absoluteAzimuth >= 315.0) || (absoluteAzimuth < 45.0)
             if party_wall_facades.include?('north')
               make_surfaces_adiabatic([surface])
             else
-              surface.setWindowToWallRatio(bar_hash[:building_wwr_n])
+              surface.setWindowToWallRatio(wwr_n)
             end
           elsif (absoluteAzimuth >= 45.0) && (absoluteAzimuth < 135.0)
             if party_wall_facades.include?('east')
               make_surfaces_adiabatic([surface])
             else
-              surface.setWindowToWallRatio(bar_hash[:building_wwr_e])
+              surface.setWindowToWallRatio(wwr_e)
             end
           elsif (absoluteAzimuth >= 135.0) && (absoluteAzimuth < 225.0)
             if party_wall_facades.include?('south')
               make_surfaces_adiabatic([surface])
             else
-              surface.setWindowToWallRatio(bar_hash[:building_wwr_s])
+              surface.setWindowToWallRatio(wwr_s)
             end
           elsif (absoluteAzimuth >= 225.0) && (absoluteAzimuth < 315.0)
             if party_wall_facades.include?('west')
               make_surfaces_adiabatic([surface])
             else
-              surface.setWindowToWallRatio(bar_hash[:building_wwr_w])
+              surface.setWindowToWallRatio(wwr_w)
             end
           else
             runner.registerError('Unexpected value of facade: ' + absoluteAzimuth + '.')
@@ -708,6 +739,11 @@ module OsLib_ModelGeneration
           end
         end
       end
+    end
+
+    # report space types with custom wwr values
+    space_type_wwr_overrides.each do |space_type,wwr|
+      runner.registerInfo("For #{space_type.name} the default building wwr was replaced with a space type specifc value of #{wwr}")
     end
 
     final_floor_area_ip = OpenStudio.convert(model.getBuilding.floorArea, 'm^2', 'ft^2').get

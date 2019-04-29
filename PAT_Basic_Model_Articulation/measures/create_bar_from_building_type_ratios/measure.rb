@@ -244,6 +244,13 @@ class CreateBarFromBuildingTypeRatios < OpenStudio::Measure::ModelMeasure
     make_mid_story_surfaces_adiabatic.setDefaultValue(false)
     args << make_mid_story_surfaces_adiabatic
 
+    # make an argument for use_upstream_args
+    use_upstream_args = OpenStudio::Measure::OSArgument.makeBoolArgument('use_upstream_args', true)
+    use_upstream_args.setDisplayName('Use Upstream Argument Values')
+    use_upstream_args.setDescription('When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.')
+    use_upstream_args.setDefaultValue(true)
+    args << use_upstream_args
+
     return args
   end
 
@@ -254,6 +261,28 @@ class CreateBarFromBuildingTypeRatios < OpenStudio::Measure::ModelMeasure
     # assign the user inputs to variables
     args = OsLib_HelperMethods.createRunVariables(runner, model, user_arguments, arguments(model))
     if !args then return false end
+
+    # lookup and replace argument values from upstream measures
+    if args['use_upstream_args'] == true
+      args.each do |arg,value|
+        next if arg == 'use_upstream_args' # this argument should not be changed
+        value_from_osw = OsLib_HelperMethods.check_upstream_measure_for_arg(runner, arg)
+        if !value_from_osw.empty?
+          runner.registerInfo("Replacing argument named #{arg} from current measure with a value of #{value_from_osw[:value]} from #{value_from_osw[:measure_name]}.")
+          new_val = value_from_osw[:value]
+          # todo - make code to handle non strings more robust. check_upstream_measure_for_arg coudl pass bakc the argument type
+          if arg == 'total_bldg_floor_area'
+            args[arg] = new_val.to_f
+          elsif arg == 'num_stories_above_grade'
+            args[arg] = new_val.to_f
+          elsif arg == 'zipcode'
+            args[arg] = new_val.to_i
+          else
+            args[arg] = new_val
+          end
+        end
+      end
+    end
 
     # check expected values of double arguments
     fraction_args = ['bldg_type_b_fract_bldg_area',
@@ -420,7 +449,11 @@ class CreateBarFromBuildingTypeRatios < OpenStudio::Measure::ModelMeasure
         space_type = hash[:space_type]
         ratio_of_bldg_total = hash[:ratio] * building_type_hash[:ratio_adjustment_multiplier] * building_type_hash[:frac_bldg_area]
         final_floor_area = ratio_of_bldg_total * total_bldg_floor_area_si # I think I can just pass ratio but passing in area is cleaner
-        space_types_hash[space_type] = { floor_area: final_floor_area }
+        # only add wwr if 0 used for wwr arg and if space type has wwr as key
+        space_types_hash[space_type] = { floor_area: final_floor_area, space_type: space_type }
+        if args['wwr'] == 0 && hash.has_key?(:wwr)
+          space_types_hash[space_type][:wwr] = hash[:wwr]
+        end
       end
     end
 
