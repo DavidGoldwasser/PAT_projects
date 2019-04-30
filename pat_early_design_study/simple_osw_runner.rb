@@ -3,11 +3,16 @@ Shoes.app :title => "Simple OSW Runner" do
   require 'json'
   require 'fileutils'
 
+  # select file
+  alert "Select an OpenStudio Workflow."
+  sel = ask_open_file title: "Select OpenStudio Workflow (OSW) file"
+
   # openstudio command doesn't work here without the path
   @openstudio_path = "/Applications/OpenStudio-2.8.0/"
-  @osw_dir = "workflow_testing/zedg_k12_01/"
-  @osw_path = "#{@osw_dir}data_point.osw"
-  @out_path = "#{@osw_dir}out.osw"
+  @osw_path = sel
+  @osw_file = sel.split("/").last
+  @osw_dir = "#{sel.gsub(@osw_file,"/")}"
+  @out_path = "#{sel.gsub(@osw_file,"/out.osw")}"
 
   # checkbox to run measures only
   background lemonchiffon
@@ -34,7 +39,7 @@ Shoes.app :title => "Simple OSW Runner" do
   end
    
   # button to run workflow
-  button "Run OpenStudio ZEDG K12 Workflow" do
+  button "Run Selected OpenStudio Workflow" do
     @display.clear
     @display = stack do
 
