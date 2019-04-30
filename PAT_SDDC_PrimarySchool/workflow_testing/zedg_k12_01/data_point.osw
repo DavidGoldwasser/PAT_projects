@@ -23,7 +23,7 @@
         "weather_file_name": "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
         "climate_zone": "Lookup From Stat File"
       },
-      "name": "Aurora",
+      "name": "Change Building Location",
       "description": "Option 11 Description: Change the building location",
       "measure_id": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "version_id": "aa6af1cd-6cce-4352-bddd-e4cf47d79b35",
@@ -273,7 +273,7 @@
         "__SKIP__": false,
         "fraction_of_surface": 0.75
       },
-      "name": "Rooftop PV 75%",
+      "name": "Rooftop PV",
       "description": "Option 2 Description: This measure will create new shading surface geometry above the roof for each thermal zone inyour model where the surface azmith falls within the user specified range. Arguments are exposed for panel efficiency, inverter efficiency, and the fraction of each roof surface that has PV",
       "measure_id": "34550614-0c87-44db-9252-0ca0915b1e64",
       "version_id": "63be24bc-c80d-4ebd-87a5-7ba559aa5d81",
@@ -370,6 +370,13 @@
       "measure_type": "ModelMeasure"
     },
     {
+      "measure_dir_name": "ViewModel",
+      "name": "View Model",
+      "arguments": {
+        "__SKIP__": false
+      }
+    },
+    {
       "measure_dir_name": "zedgk_12_insert_ground_domain_e_kusdua",
       "arguments": {
         "min_warmup_days": 120
@@ -423,7 +430,7 @@
         "source_energy_section": true,
         "schedules_overview_section": true
       },
-      "name": "Results",
+      "name": "OpenStudio Results",
       "description": "Option 1 Description",
       "measure_id": "a25386cd-60e4-46bc-8b11-c755f379d916",
       "version_id": "11202fa8-8161-4fad-b5d1-453db21abdf8",

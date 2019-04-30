@@ -197,18 +197,16 @@
       "measure_type": "ModelMeasure"
     },
     {
-      "measure_dir_name": "78db3ab6-ad89-4d66-9140-e6f1c1a2a5d0",
+      "measure_dir_name": "ViewModel",
       "arguments": {
       },
-      "name": "view_model",
+      "name": "View Model",
       "description": "Visualize an OpenStudio model in a web based viewer",
-      "measure_id": "f4669f10-fda5-489d-8e1c-7ca3c2d40378",
-      "version_id": "108b3c04-6ab8-473f-8aa8-0d406d4c863f",
       "taxonomy": "Reporting.QAQC",
       "measure_type": "ModelMeasure"
     },
     {
-      "measure_dir_name": "8a8a3008-874e-465a-84f5-0b320fbbfa7b",
+      "measure_dir_name": "openstudio_results",
       "arguments": {
         "units": "IP",
         "building_summary_section": true,
@@ -234,10 +232,8 @@
         "schedules_overview_section": true,
         "reg_monthly_details": false
       },
-      "name": "openstudio_results",
+      "name": "OpenStudio Results",
       "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
-      "measure_id": "a25386cd-60e4-46bc-8b11-c755f379d916",
-      "version_id": "8a8a3008-874e-465a-84f5-0b320fbbfa7b",
       "taxonomy": "Reporting.QAQC",
       "measure_type": "ReportingMeasure"
     },
@@ -245,7 +241,7 @@
       "measure_dir_name": "envelope_and_internal_load_breakdown",
       "arguments": {
       },
-      "name": "envelope_and_internal_load_breakdown",
+      "name": "Envelope and Internal Load Breakdown",
       "description": "Report provides annual and monthly views into heat gains and losses for envelope and internal loads.",
       "measure_id": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
       "version_id": "f63919e1-a65a-4f4e-8b7d-8c14125f6f04",
