@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>openstudio_model_articulation_testing_scenario_builder</name>
   <uid>05852664-7db9-4b27-bfec-afa6c37ba8a3</uid>
-  <version_id>cbfbab59-75e7-47e9-9050-428469863432</version_id>
-  <version_modified>20180730T221526Z</version_modified>
+  <version_id>1939e215-dd60-4b32-b934-7fe240b18976</version_id>
+  <version_modified>20190625T180711Z</version_modified>
   <xml_checksum>F075CD99</xml_checksum>
   <class_name>OpenStudioModelArticulationTestingScenarioBuilder</class_name>
   <display_name>OpenStudio Model Articulation Testing Scenario Builder</display_name>
@@ -199,10 +199,11 @@
     <argument>
       <name>scenario</name>
       <display_name>Model Articulation Scenario.</display_name>
-      <description>This choice will determine which measrues will run and may also alter argument values for those measures.</description>
+      <description>This choice will determine which measures will run and may also alter argument values for those measures.</description>
       <type>Choice</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
+      <default_value>s0 Prototype</default_value>
       <choices>
         <choice>
           <value>s0 Prototype</value>
@@ -227,18 +228,6 @@
         <choice>
           <value>s5 Prototype - hvac</value>
           <display_name>s5 Prototype - hvac</display_name>
-        </choice>
-        <choice>
-          <value>s6 Bar Sliced</value>
-          <display_name>s6 Bar Sliced</display_name>
-        </choice>
-        <choice>
-          <value>s7 Bar Blended Core and Perimeter</value>
-          <display_name>s7 Bar Blended Core and Perimeter</display_name>
-        </choice>
-        <choice>
-          <value>s8 Footprint Blended Single Space per Story</value>
-          <display_name>s8 Footprint Blended Single Space per Story</display_name>
         </choice>
       </choices>
     </argument>
@@ -273,22 +262,28 @@
       <checksum>37FF5C37</checksum>
     </file>
     <file>
+      <filename>testing_baseline.osw</filename>
+      <filetype>osw</filetype>
+      <usage_type>test</usage_type>
+      <checksum>18AF9805</checksum>
+    </file>
+    <file>
+      <filename>os_lib_model_generation.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>67AC7BF3</checksum>
+    </file>
+    <file>
       <filename>test.osw</filename>
       <filetype>osw</filetype>
       <usage_type>test</usage_type>
-      <checksum>26565680</checksum>
+      <checksum>23CD016D</checksum>
     </file>
     <file>
       <filename>openstudio_model_articulation_testing_scenario_builder_test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>949CE6FD</checksum>
-    </file>
-    <file>
-      <filename>testing_baseline.osw</filename>
-      <filetype>osw</filetype>
-      <usage_type>test</usage_type>
-      <checksum>18AF9805</checksum>
+      <checksum>ED4BA6E5</checksum>
     </file>
     <file>
       <version>
@@ -299,13 +294,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>E698AF70</checksum>
-    </file>
-    <file>
-      <filename>os_lib_model_generation.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>67AC7BF3</checksum>
+      <checksum>4794DDA3</checksum>
     </file>
   </files>
 </measure>

@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>create_doe_prototype_building</name>
   <uid>be90fd0b-a651-467a-bc8d-29d310b0f937</uid>
-  <version_id>7094cb3e-b618-473a-b1e3-a4dad0fcf2f7</version_id>
-  <version_modified>20180918T153720Z</version_modified>
+  <version_id>f55b0fcf-29c3-4386-97d3-c0c903b81418</version_id>
+  <version_modified>20190409T140609Z</version_modified>
   <xml_checksum>057E8D9D</xml_checksum>
   <class_name>CreateDOEPrototypeBuilding</class_name>
   <display_name>Create DOE Prototype Building</display_name>
@@ -309,6 +309,10 @@
           <display_name>IMPERIAL_747185_CZ2010.epw</display_name>
         </choice>
         <choice>
+          <value>IND_Delhi_New.Delhi-Safdarjung.AP.421820_IWEC2.epw</value>
+          <display_name>IND_Delhi_New.Delhi-Safdarjung.AP.421820_IWEC2.epw</display_name>
+        </choice>
+        <choice>
           <value>INYOKERN_723826_CZ2010.epw</value>
           <display_name>INYOKERN_723826_CZ2010.epw</display_name>
         </choice>
@@ -549,12 +553,24 @@
           <display_name>USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw</display_name>
         </choice>
         <choice>
+          <value>USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw</value>
+          <display_name>USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_CA_San.Deigo-Brown.Field.Muni.AP.722904_TMY3.epw</value>
+          <display_name>USA_CA_San.Deigo-Brown.Field.Muni.AP.722904_TMY3.epw</display_name>
+        </choice>
+        <choice>
           <value>USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw</value>
           <display_name>USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw</display_name>
         </choice>
         <choice>
           <value>USA_CO_Boulder-Broomfield-Jefferson.County.AP.724699_TMY3.epw</value>
           <display_name>USA_CO_Boulder-Broomfield-Jefferson.County.AP.724699_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_CO_Denver-Aurora-Buckley.AFB.724695_TMY3.epw</value>
+          <display_name>USA_CO_Denver-Aurora-Buckley.AFB.724695_TMY3.epw</display_name>
         </choice>
         <choice>
           <value>USA_CO_Denver.Intl.AP.725650_TMY3.epw</value>
@@ -567,6 +583,18 @@
         <choice>
           <value>USA_FL_Miami.Intl.AP.722020_TMY3.epw</value>
           <display_name>USA_FL_Miami.Intl.AP.722020_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_FL_Tampa-MacDill.AFB.747880_TMY3.epw</value>
+          <display_name>USA_FL_Tampa-MacDill.AFB.747880_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw</value>
+          <display_name>USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_HI_Honolulu.Intl.AP.911820_TMY3.epw</value>
+          <display_name>USA_HI_Honolulu.Intl.AP.911820_TMY3.epw</display_name>
         </choice>
         <choice>
           <value>USA_ID_Boise.Air.Terminal.726810_TMY3.epw</value>
@@ -585,12 +613,36 @@
           <display_name>USA_MN_Duluth.Intl.AP.727450_TMY3.epw</display_name>
         </choice>
         <choice>
+          <value>USA_MN_International.Falls.Intl.AP.727470_TMY3.epw</value>
+          <display_name>USA_MN_International.Falls.Intl.AP.727470_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_MN_Rochester.Intl.AP.726440_TMY3.epw</value>
+          <display_name>USA_MN_Rochester.Intl.AP.726440_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw</value>
+          <display_name>USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw</display_name>
+        </choice>
+        <choice>
           <value>USA_MT_Helena.Rgnl.AP.727720_TMY3.epw</value>
           <display_name>USA_MT_Helena.Rgnl.AP.727720_TMY3.epw</display_name>
         </choice>
         <choice>
           <value>USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw</value>
           <display_name>USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw</value>
+          <display_name>USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_NY_Buffalo.Niagara.Intl.AP.725280_TMY3.epw</value>
+          <display_name>USA_NY_Buffalo.Niagara.Intl.AP.725280_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_NY_New.York-John.F.Kennedy.Intl.AP.744860_TMY3.epw</value>
+          <display_name>USA_NY_New.York-John.F.Kennedy.Intl.AP.744860_TMY3.epw</display_name>
         </choice>
         <choice>
           <value>USA_OR_Salem-McNary.Field.726940_TMY3.epw</value>
@@ -611,6 +663,14 @@
         <choice>
           <value>USA_VT_Burlington.Intl.AP.726170_TMY3.epw</value>
           <display_name>USA_VT_Burlington.Intl.AP.726170_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw</value>
+          <display_name>USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw</display_name>
+        </choice>
+        <choice>
+          <value>USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw</value>
+          <display_name>USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw</display_name>
         </choice>
         <choice>
           <value>VAN-NUYS_722886_CZ2010.epw</value>

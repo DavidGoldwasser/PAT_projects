@@ -78,15 +78,15 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     scenario_chs << 's3 Prototype - swh exhaust'
     scenario_chs << 's4 Prototype - setpoints'
     scenario_chs << 's5 Prototype - hvac'
-    scenario_chs << 's6 Bar Sliced' # May start from prototype or empty seed model with same simulation settings
-    scenario_chs << 's7 Bar Blended Core and Perimeter'
-    scenario_chs << 's8 Footprint Blended Single Space per Story' # May be whole building blend or, blend by story
+    #scenario_chs << 's6 Bar Sliced' # May start from prototype or empty seed model with same simulation settings
+    #scenario_chs << 's7 Bar Blended Core and Perimeter'
+    #scenario_chs << 's8 Footprint Blended Single Space per Story' # May be whole building blend or, blend by story
     #scenario_chs << 's9 Prototype Geometry Blended' # whole building blended space type applied to prototype geometry, every thing other than geometry should be removed and rebuilt
-    #scenario_chs << 'Footprint Blended Core and Perimeter'
+    #scenario_chs << 's10 Footprint Blended Core and Perimeter'
     scenario = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('scenario', scenario_chs, true)
     scenario.setDisplayName('Model Articulation Scenario.')
-    scenario.setDescription("This choice will determine which measrues will run and may also alter argument values for those measures.")
-    scenario.setDefaultValue('Prototype')
+    scenario.setDescription("This choice will determine which measures will run and may also alter argument values for those measures.")
+    scenario.setDefaultValue('s0 Prototype')
     args << scenario
 
     # todo - add argument to use pre-saved OSW in resources directory vs. grabbing from live project
@@ -110,7 +110,7 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     scenario = runner.getStringArgumentValue("scenario", user_arguments)
 
     # save new osw
-    new_workflow_path = 'output/new_workflow.osw'
+    new_workflow_path = 'scenario_builder/new_workflow.osw'
     new_workflow_path = File.absolute_path(new_workflow_path)
     runner.workflow.saveAs(new_workflow_path)
 
@@ -129,6 +129,9 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     scenario_hash['s4 Prototype - setpoints'] = 4
     scenario_hash['s5 Prototype - hvac'] = 5
 
+    # used to differentiate first versus second instance of create_typical
+    found_typical = false
+
     # loop through steps
     new_osw[:steps].each do |step|
 
@@ -137,7 +140,7 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
       else
         runner.registerInfo("Inspecting #{step[:name]}")
 
-        # change building type, temlpate, and climate zone
+        # change building type, template, and climate zone
         step[:arguments].each do |k,v|
           if k == :building_type
             runner.registerInfo("Changing value of #{k} to #{building_type}")
@@ -158,18 +161,19 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
 
       # add logic for which measures to skip for each scenario
       # todo - update for scenarios beyond s5
-      found_typical = false
       if step[:measure_dir_name] == "create_typical_building_from_model"
 
         if scenario_hash[scenario] > 0
-          step[:arguments][:__SKIP__] = false
 
           if found_typical
             #add hvac
             if scenario_hash[scenario] >= 5
               step[:arguments][:add_hvac] = true
+              step[:arguments][:use_upstream_args] = false # don't want to inherit bools from first instance. Template is already taken care of.
+              step[:arguments][:__SKIP__] = false
             else
               step[:arguments][:add_hvac] = false
+              step[:arguments][:__SKIP__] = true
             end
           else
             if scenario_hash[scenario] >= 1 then step[:arguments][:add_constructions] = true else step[:arguments][:add_constructions] = false end
@@ -180,6 +184,7 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
             if scenario_hash[scenario] >= 3 then step[:arguments][:add_swh] = true else step[:arguments][:add_swh] = false end
             if scenario_hash[scenario] >= 4 then step[:arguments][:add_thermostat] = true else step[:arguments][:add_thermostat] = false end
             step[:arguments][:add_hvac] = false
+            step[:arguments][:__SKIP__] = false
 
             # set flag so next instance will be flagged to set HVAC if requested
             found_typical = true
@@ -202,11 +207,19 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
 
     # todo - map floor area and num stories above and below grade from bldg_type_a
 
-    # todo - map climate zone and weather files if add change building location in vs. running prototptye first for bar and footprint workflows
+    # todo - map climate zone and weather files if add change building location in vs. running prototype first for bar and footprint workflows
 
     # update path to measures and seed model
-    new_osw[:measure_paths] = ["../../../../measures"]
-    new_osw[:file_paths] = ["../../../../seeds","../../../../weather"]
+    new_measure_paths = []
+    new_osw[:measure_paths].each do |path|
+      new_measure_paths << "../../../#{path}"
+    end
+    new_osw[:measure_paths] = new_measure_paths
+    new_file_paths = []
+    new_osw[:file_paths].each do |path|
+      new_file_paths << "../../../#{path}"
+    end
+    new_osw[:file_paths] = new_file_paths
 
     # report initial condition of model
     runner.registerInitialCondition("Reverting back to #{new_osw[:seed_file]}.")
@@ -223,10 +236,8 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     cmd = "\"#{cli_path}\" run -m -w \"#{new_workflow_path}\""
     system(cmd)
 
-    # todo - map info, warning, and error messages from out.osw
-
     # open resulting osw
-    out_osw_path = 'output/out.osw'
+    out_osw_path = 'scenario_builder/out.osw'
     out_osw_path = File.absolute_path(out_osw_path)
     # load the new workflows
     out_osw = nil
@@ -266,7 +277,7 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
     runner.registerInfo("Finished Running OpenStudio CLI")
 
     # get the model out of the OSW
-    new_model_path = 'output/run/in.osm'
+    new_model_path = 'scenario_builder/run/in.osm'
     new_model_path = File.absolute_path(new_model_path)
     runner.registerInfo("Replacing model with #{new_model_path}")
 

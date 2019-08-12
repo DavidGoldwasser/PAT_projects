@@ -8,7 +8,7 @@
   "remoteSettings": {
     "open": true,
     "remoteType": "Existing Remote Server",
-    "remoteServerURL": "http://localhost:8080/",
+    "remoteServerURL": "http://bball-130590.nrel.gov:8080/",
     "aws": {},
     "credentials": {
       "yamlFilename": null,
@@ -17,11 +17,29 @@
     }
   },
   "samplingMethod": {
-    "id": "single_run",
-    "name": "analysis.type.singleRun",
-    "link": null
+    "id": "lhs",
+    "name": "analysis.type.lhs",
+    "link": "https://cran.r-project.org/web/packages/lhs/lhs.pdf"
   },
   "algorithmSettings": [
+    {
+      "name": "sample_method",
+      "displayName": "Sample Method",
+      "description": "Options: individual_variables or all_variables",
+      "defaultValue": "individual_variables",
+      "type": "string",
+      "value": "all_variables",
+      "$$hashKey": "object:10738"
+    },
+    {
+      "name": "number_of_samples",
+      "displayName": "Number of Samples",
+      "description": "Positive integer (if individual, total simulations is this times each variable)",
+      "defaultValue": 5,
+      "type": "number",
+      "value": 40,
+      "$$hashKey": "object:10739"
+    },
     {
       "name": "seed",
       "displayName": "Seed",
@@ -62,9 +80,9 @@
       "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_DOE_prototype_building",
       "uid": "be90fd0b-a651-467a-bc8d-29d310b0f937",
       "uuid": "{be90fd0b-a651-467a-bc8d-29d310b0f937}",
-      "version_id": "7094cb3e-b618-473a-b1e3-a4dad0fcf2f7",
-      "version_uuid": "{7094cb3e-b618-473a-b1e3-a4dad0fcf2f7}",
-      "version_modified": "20180918T153720Z",
+      "version_id": "f55b0fcf-29c3-4386-97d3-c0c903b81418",
+      "version_uuid": "{f55b0fcf-29c3-4386-97d3-c0c903b81418}",
+      "version_modified": "20190409T140609Z",
       "xml_checksum": "057E8D9D",
       "display_name": "Create DOE Prototype Building",
       "class_name": "CreateDOEPrototypeBuilding",
@@ -392,6 +410,7 @@
             "HAYWARD_724935_CZ2010.epw",
             "IMPERIAL-BEACH_722909_CZ2010.epw",
             "IMPERIAL_747185_CZ2010.epw",
+            "IND_Delhi_New.Delhi-Safdarjung.AP.421820_IWEC2.epw",
             "INYOKERN_723826_CZ2010.epw",
             "LANCASTER_723816_CZ2010.epw",
             "LEMOORE_747020_CZ2010.epw",
@@ -452,22 +471,36 @@
             "UKIAH_725905_CZ2010.epw",
             "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
             "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw",
+            "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw",
+            "USA_CA_San.Deigo-Brown.Field.Muni.AP.722904_TMY3.epw",
             "USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw",
             "USA_CO_Boulder-Broomfield-Jefferson.County.AP.724699_TMY3.epw",
+            "USA_CO_Denver-Aurora-Buckley.AFB.724695_TMY3.epw",
             "USA_CO_Denver.Intl.AP.725650_TMY3.epw",
             "USA_CO_Fort.Collins.AWOS.724769_TMY3.epw",
             "USA_FL_Miami.Intl.AP.722020_TMY3.epw",
+            "USA_FL_Tampa-MacDill.AFB.747880_TMY3.epw",
+            "USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw",
+            "USA_HI_Honolulu.Intl.AP.911820_TMY3.epw",
             "USA_ID_Boise.Air.Terminal.726810_TMY3.epw",
             "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
             "USA_MD_Baltimore-Washington.Intl.AP.724060_TMY3.epw",
             "USA_MN_Duluth.Intl.AP.727450_TMY3.epw",
+            "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw",
+            "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
+            "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw",
             "USA_MT_Helena.Rgnl.AP.727720_TMY3.epw",
             "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw",
+            "USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw",
+            "USA_NY_Buffalo.Niagara.Intl.AP.725280_TMY3.epw",
+            "USA_NY_New.York-John.F.Kennedy.Intl.AP.744860_TMY3.epw",
             "USA_OR_Salem-McNary.Field.726940_TMY3.epw",
             "USA_TN_Memphis.Intl.AP.723340_TMY3.epw",
             "USA_TX_El.Paso.Intl.AP.722700_TMY3.epw",
             "USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.epw",
             "USA_VT_Burlington.Intl.AP.726170_TMY3.epw",
+            "USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw",
+            "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
             "VAN-NUYS_722886_CZ2010.epw",
             "VANDENBERG-AFB_723930_CZ2010.epw",
             "VISALIA_723896_CZ2010.epw",
@@ -500,6 +533,7 @@
             "HAYWARD_724935_CZ2010.epw",
             "IMPERIAL-BEACH_722909_CZ2010.epw",
             "IMPERIAL_747185_CZ2010.epw",
+            "IND_Delhi_New.Delhi-Safdarjung.AP.421820_IWEC2.epw",
             "INYOKERN_723826_CZ2010.epw",
             "LANCASTER_723816_CZ2010.epw",
             "LEMOORE_747020_CZ2010.epw",
@@ -560,22 +594,36 @@
             "UKIAH_725905_CZ2010.epw",
             "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
             "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw",
+            "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw",
+            "USA_CA_San.Deigo-Brown.Field.Muni.AP.722904_TMY3.epw",
             "USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw",
             "USA_CO_Boulder-Broomfield-Jefferson.County.AP.724699_TMY3.epw",
+            "USA_CO_Denver-Aurora-Buckley.AFB.724695_TMY3.epw",
             "USA_CO_Denver.Intl.AP.725650_TMY3.epw",
             "USA_CO_Fort.Collins.AWOS.724769_TMY3.epw",
             "USA_FL_Miami.Intl.AP.722020_TMY3.epw",
+            "USA_FL_Tampa-MacDill.AFB.747880_TMY3.epw",
+            "USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw",
+            "USA_HI_Honolulu.Intl.AP.911820_TMY3.epw",
             "USA_ID_Boise.Air.Terminal.726810_TMY3.epw",
             "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
             "USA_MD_Baltimore-Washington.Intl.AP.724060_TMY3.epw",
             "USA_MN_Duluth.Intl.AP.727450_TMY3.epw",
+            "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw",
+            "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
+            "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw",
             "USA_MT_Helena.Rgnl.AP.727720_TMY3.epw",
             "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw",
+            "USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw",
+            "USA_NY_Buffalo.Niagara.Intl.AP.725280_TMY3.epw",
+            "USA_NY_New.York-John.F.Kennedy.Intl.AP.744860_TMY3.epw",
             "USA_OR_Salem-McNary.Field.726940_TMY3.epw",
             "USA_TN_Memphis.Intl.AP.723340_TMY3.epw",
             "USA_TX_El.Paso.Intl.AP.722700_TMY3.epw",
             "USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.epw",
             "USA_VT_Burlington.Intl.AP.726170_TMY3.epw",
+            "USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw",
+            "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
             "VAN-NUYS_722886_CZ2010.epw",
             "VANDENBERG-AFB_723930_CZ2010.epw",
             "VISALIA_723896_CZ2010.epw",
@@ -611,6 +659,7 @@
               "HAYWARD_724935_CZ2010.epw",
               "IMPERIAL-BEACH_722909_CZ2010.epw",
               "IMPERIAL_747185_CZ2010.epw",
+              "IND_Delhi_New.Delhi-Safdarjung.AP.421820_IWEC2.epw",
               "INYOKERN_723826_CZ2010.epw",
               "LANCASTER_723816_CZ2010.epw",
               "LEMOORE_747020_CZ2010.epw",
@@ -671,22 +720,36 @@
               "UKIAH_725905_CZ2010.epw",
               "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
               "USA_AZ_Phoenix-Sky.Harbor.Intl.AP.722780_TMY3.epw",
+              "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw",
+              "USA_CA_San.Deigo-Brown.Field.Muni.AP.722904_TMY3.epw",
               "USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw",
               "USA_CO_Boulder-Broomfield-Jefferson.County.AP.724699_TMY3.epw",
+              "USA_CO_Denver-Aurora-Buckley.AFB.724695_TMY3.epw",
               "USA_CO_Denver.Intl.AP.725650_TMY3.epw",
               "USA_CO_Fort.Collins.AWOS.724769_TMY3.epw",
               "USA_FL_Miami.Intl.AP.722020_TMY3.epw",
+              "USA_FL_Tampa-MacDill.AFB.747880_TMY3.epw",
+              "USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw",
+              "USA_HI_Honolulu.Intl.AP.911820_TMY3.epw",
               "USA_ID_Boise.Air.Terminal.726810_TMY3.epw",
               "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
               "USA_MD_Baltimore-Washington.Intl.AP.724060_TMY3.epw",
               "USA_MN_Duluth.Intl.AP.727450_TMY3.epw",
+              "USA_MN_International.Falls.Intl.AP.727470_TMY3.epw",
+              "USA_MN_Rochester.Intl.AP.726440_TMY3.epw",
+              "USA_MT_Great.Falls.Intl.AP.727750_TMY3.epw",
               "USA_MT_Helena.Rgnl.AP.727720_TMY3.epw",
               "USA_NM_Albuquerque.Intl.AP.723650_TMY3.epw",
+              "USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw",
+              "USA_NY_Buffalo.Niagara.Intl.AP.725280_TMY3.epw",
+              "USA_NY_New.York-John.F.Kennedy.Intl.AP.744860_TMY3.epw",
               "USA_OR_Salem-McNary.Field.726940_TMY3.epw",
               "USA_TN_Memphis.Intl.AP.723340_TMY3.epw",
               "USA_TX_El.Paso.Intl.AP.722700_TMY3.epw",
               "USA_TX_Houston-Bush.Intercontinental.AP.722430_TMY3.epw",
               "USA_VT_Burlington.Intl.AP.726170_TMY3.epw",
+              "USA_WA_Port.Angeles-William.R.Fairchild.Intl.AP.727885_TMY3.epw",
+              "USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw",
               "VAN-NUYS_722886_CZ2010.epw",
               "VANDENBERG-AFB_723930_CZ2010.epw",
               "VISALIA_723896_CZ2010.epw",
@@ -715,7 +778,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "9/18/2018",
+      "date": "4/9/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
@@ -745,7 +808,7 @@
           "description": "Option 1 Description: Creates the DOE Reference Building Models as starting points for other analyses."
         }
       ],
-      "instanceId": 0.4566181650318877,
+      "instanceId": 0.6604370802308666,
       "skip": false,
       "$$hashKey": "object:1582",
       "numberOfOptions": 1,
@@ -753,14 +816,14 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
       "name": "create_typical_building_from_model",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
       "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
       "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
-      "version_id": "1082176e-fd8a-40b7-b88f-9802f25baf32",
-      "version_uuid": "{1082176e-fd8a-40b7-b88f-9802f25baf32}",
-      "version_modified": "20181022T022604Z",
+      "version_id": "8c44ca47-cd8d-4a26-864c-f045c7e3e41f",
+      "version_uuid": "{8c44ca47-cd8d-4a26-864c-f045c7e3e41f}",
+      "version_modified": "20190812T193415Z",
       "xml_checksum": "EE13F09F",
       "display_name": "Create Typical Building from Model",
       "class_name": "CreateTypicalBuildingFromModel",
@@ -1645,7 +1708,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/21/2018",
+      "date": "8/12/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
@@ -1735,7 +1798,7 @@
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.491310306987518,
+      "instanceId": 0.6299876440147485,
       "skip": false,
       "$$hashKey": "object:3178",
       "numberOfOptions": 1,
@@ -1743,14 +1806,14 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
       "name": "create_typical_building_from_model_2",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
       "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
       "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
-      "version_id": "1082176e-fd8a-40b7-b88f-9802f25baf32",
-      "version_uuid": "{1082176e-fd8a-40b7-b88f-9802f25baf32}",
-      "version_modified": "20181022T022604Z",
+      "version_id": "8c44ca47-cd8d-4a26-864c-f045c7e3e41f",
+      "version_uuid": "{8c44ca47-cd8d-4a26-864c-f045c7e3e41f}",
+      "version_modified": "20190812T193415Z",
       "xml_checksum": "EE13F09F",
       "display_name": "Create Typical Building from Model 2",
       "class_name": "CreateTypicalBuildingFromModel",
@@ -2596,7 +2659,7 @@
             "mean": true,
             "deltaX": true,
             "stdDev": true,
-            "default_value": true,
+            "default_value": false,
             "showWarningIcon": false
           }
         },
@@ -2635,7 +2698,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/21/2018",
+      "date": "8/12/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
@@ -2725,7 +2788,7 @@
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.0813820333298465,
+      "instanceId": 0.29303150449055915,
       "skip": true,
       "$$hashKey": "object:3929",
       "numberOfOptions": 1,
@@ -2738,9 +2801,9 @@
       "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/openstudio_model_articulation_testing_scenario_builder",
       "uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3",
       "uuid": "{05852664-7db9-4b27-bfec-afa6c37ba8a3}",
-      "version_id": "cbfbab59-75e7-47e9-9050-428469863432",
-      "version_uuid": "{cbfbab59-75e7-47e9-9050-428469863432}",
-      "version_modified": "20180730T221526Z",
+      "version_id": "1939e215-dd60-4b32-b934-7fe240b18976",
+      "version_uuid": "{1939e215-dd60-4b32-b934-7fe240b18976}",
+      "version_modified": "20190625T180711Z",
       "xml_checksum": "F075CD99",
       "display_name": "OpenStudio Model Articulation Testing Scenario Builder",
       "class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
@@ -2995,7 +3058,7 @@
             "deltaX": "SmallOffice",
             "stdDev": "SmallOffice",
             "default_value": "SmallOffice",
-            "showWarningIcon": true
+            "showWarningIcon": false
           },
           "$$hashKey": "object:1645",
           "option_1": "RetailStandalone",
@@ -3051,14 +3114,34 @@
             "distribution": "Uniform",
             "discreteVariables": [
               {
-                "value": "90.1-2004",
-                "weight": 0.5,
+                "value": "DOE Ref Pre-1980",
+                "weight": 0.15,
                 "$$hashKey": "object:20159"
               },
               {
-                "value": "90.1-2010",
-                "weight": 0.5,
+                "value": "DOE Ref 1980-2004",
+                "weight": 0.15,
                 "$$hashKey": "object:20170"
+              },
+              {
+                "value": "90.1-2004",
+                "weight": 0.15,
+                "$$hashKey": "object:30988"
+              },
+              {
+                "value": "90.1-2007",
+                "weight": 0.15,
+                "$$hashKey": "object:30998"
+              },
+              {
+                "value": "90.1-2010",
+                "weight": 0.15,
+                "$$hashKey": "object:31008"
+              },
+              {
+                "value": "90.1-2013",
+                "weight": 0.25,
+                "$$hashKey": "object:31018"
               }
             ],
             "maximum": "90.1-2004",
@@ -3067,7 +3150,7 @@
             "deltaX": "90.1-2004",
             "stdDev": "90.1-2004",
             "default_value": "90.1-2004",
-            "showWarningIcon": true
+            "showWarningIcon": false
           },
           "$$hashKey": "object:1646",
           "option_1": "90.1-2004",
@@ -3147,14 +3230,74 @@
             "distribution": "Uniform",
             "discreteVariables": [
               {
-                "value": "ASHRAE 169-2006-2A",
-                "weight": 0.5,
+                "value": "ASHRAE 169-2006-1A",
+                "weight": 0.07,
                 "$$hashKey": "object:20199"
               },
               {
-                "value": "ASHRAE 169-2006-5B",
-                "weight": 0.5,
+                "value": "ASHRAE 169-2006-2A",
+                "weight": 0.07,
                 "$$hashKey": "object:20210"
+              },
+              {
+                "value": "ASHRAE 169-2006-2B",
+                "weight": 0.07,
+                "$$hashKey": "object:30868"
+              },
+              {
+                "value": "ASHRAE 169-2006-3A",
+                "weight": 0.07,
+                "$$hashKey": "object:30878"
+              },
+              {
+                "value": "ASHRAE 169-2006-3B",
+                "weight": 0.07,
+                "$$hashKey": "object:30888"
+              },
+              {
+                "value": "ASHRAE 169-2006-4A",
+                "weight": 0.07,
+                "$$hashKey": "object:30898"
+              },
+              {
+                "value": "ASHRAE 169-2006-4B",
+                "weight": 0.07,
+                "$$hashKey": "object:30908"
+              },
+              {
+                "value": "ASHRAE 169-2006-4C",
+                "weight": 0.07,
+                "$$hashKey": "object:30918"
+              },
+              {
+                "value": "ASHRAE 169-2006-5A",
+                "weight": 0.07,
+                "$$hashKey": "object:30928"
+              },
+              {
+                "value": "ASHRAE 169-2006-5B",
+                "weight": 0.07,
+                "$$hashKey": "object:30938"
+              },
+              {
+                "value": "ASHRAE 169-2006-6A",
+                "weight": 0.07,
+                "$$hashKey": "object:30948"
+              },
+              {
+                "value": "ASHRAE 169-2006-6B",
+                "weight": 0.07,
+                "$$hashKey": "object:30958"
+              },
+              {
+                "value": "ASHRAE 169-2006-7A",
+                "weight": 0.07,
+                "$$hashKey": "object:30968"
+              },
+              {
+                "value": "ASHRAE 169-2006-8A",
+                "weight": 0.09,
+                "$$hashKey": "object:30978"
               }
             ],
             "maximum": "ASHRAE 169-2006-2A",
@@ -3163,7 +3306,7 @@
             "deltaX": "ASHRAE 169-2006-2A",
             "stdDev": "ASHRAE 169-2006-2A",
             "default_value": "ASHRAE 169-2006-5B",
-            "showWarningIcon": true
+            "showWarningIcon": false
           },
           "$$hashKey": "object:1647",
           "option_1": "ASHRAE 169-2006-5B",
@@ -3180,11 +3323,11 @@
         {
           "name": "scenario",
           "display_name": "Model Articulation Scenario.",
-          "description": "This choice will determine which measrues will run and may also alter argument values for those measures.",
+          "description": "This choice will determine which measures will run and may also alter argument values for those measures.",
           "type": "Choice",
           "required": true,
           "model_dependent": false,
-          "default_value": "Prototype",
+          "default_value": "s0 Prototype",
           "choice_values": [
             "s0 Prototype",
             "s1 Prototype - const",
@@ -3226,28 +3369,33 @@
             "discreteVariables": [
               {
                 "value": "s0 Prototype",
-                "weight": 0.2,
+                "weight": 0.15,
                 "$$hashKey": "object:20184"
               },
               {
                 "value": "s1 Prototype - const",
-                "weight": 0.2,
+                "weight": 0.15,
                 "$$hashKey": "object:20220"
               },
               {
                 "value": "s2 Prototype - loads",
-                "weight": 0.2,
+                "weight": 0.15,
                 "$$hashKey": "object:27235"
               },
               {
                 "value": "s3 Prototype - swh exhaust",
-                "weight": 0.2,
+                "weight": 0.15,
                 "$$hashKey": "object:27245"
               },
               {
                 "value": "s4 Prototype - setpoints",
-                "weight": 0.2,
+                "weight": 0.15,
                 "$$hashKey": "object:27255"
+              },
+              {
+                "value": "s5 Prototype - hvac",
+                "weight": 0.25,
+                "$$hashKey": "object:21360"
               }
             ],
             "maximum": "Prototype",
@@ -3256,7 +3404,7 @@
             "deltaX": "DOE Prototype Building",
             "stdDev": "DOE Prototype Building",
             "default_value": "s0 Prototype",
-            "showWarningIcon": true
+            "showWarningIcon": false
           },
           "$$hashKey": "object:1648",
           "option_1": "s0 Prototype",
@@ -3278,7 +3426,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "7/30/2018",
+      "date": "6/25/2019",
       "author": "",
       "type": "ModelMeasure",
       "seed": "empty_seed.osm",
@@ -3400,12 +3548,120 @@
           "description": "Option 5 Description: This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure. It should be the last OpenStudio measure in the workflow."
         }
       ],
-      "instanceId": 0.4428622563629674,
+      "instanceId": 0.6713386009726572,
       "skip": false,
       "$$hashKey": "object:1581",
       "numberOfOptions": 5,
-      "showWarningText": true,
-      "outputMeasure": false
+      "showWarningText": false,
+      "outputMeasure": true,
+      "userDefinedOutputs": [
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder.building_type",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:17359",
+          "display_name": "building_type",
+          "short_name": "building_type",
+          "visualize": "true",
+          "type": "String",
+          "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3"
+        },
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder.scenario",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:17366",
+          "display_name": "scenario",
+          "short_name": "scenario",
+          "visualize": "true",
+          "type": "String",
+          "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3"
+        },
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder.template",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:17371",
+          "display_name": "template",
+          "short_name": "template",
+          "visualize": "true",
+          "type": "String",
+          "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3"
+        },
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder.climate_zone",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:17376",
+          "display_name": "climate_zone",
+          "short_name": "climate_zone",
+          "visualize": "true",
+          "type": "String",
+          "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3"
+        }
+      ],
+      "analysisOutputs": [
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder.building_type",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:17359",
+          "display_name": "building_type",
+          "short_name": "building_type",
+          "visualize": "true",
+          "type": "String",
+          "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3"
+        },
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder.scenario",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:17366",
+          "display_name": "scenario",
+          "short_name": "scenario",
+          "visualize": "true",
+          "type": "String",
+          "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3"
+        },
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder.template",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:17371",
+          "display_name": "template",
+          "short_name": "template",
+          "visualize": "true",
+          "type": "String",
+          "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3"
+        },
+        {
+          "name": "openstudio_model_articulation_testing_scenario_builder.climate_zone",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:17376",
+          "display_name": "climate_zone",
+          "short_name": "climate_zone",
+          "visualize": "true",
+          "type": "String",
+          "measure_name": "openstudio_model_articulation_testing_scenario_builder",
+          "measure_class_name": "OpenStudioModelArticulationTestingScenarioBuilder",
+          "measure_uid": "05852664-7db9-4b27-bfec-afa6c37ba8a3"
+        }
+      ]
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/openstudio_results",
@@ -3413,9 +3669,9 @@
       "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/openstudio_results",
       "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
       "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
-      "version_id": "05eeb3c4-53ee-4dbb-b3e6-9ad45fac8fab",
-      "version_uuid": "{05eeb3c4-53ee-4dbb-b3e6-9ad45fac8fab}",
-      "version_modified": "20181026T181811Z",
+      "version_id": "59a144aa-c7c3-4da9-99bf-3c6758c7e577",
+      "version_uuid": "{59a144aa-c7c3-4da9-99bf-3c6758c7e577}",
+      "version_modified": "20190615T041251Z",
       "xml_checksum": "557BF06F",
       "display_name": "OpenStudio Results",
       "class_name": "OpenStudioResults",
@@ -3631,6 +3887,44 @@
             "deltaX": "",
             "stdDev": "",
             "default_value": "",
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "units",
+          "display_name": "Which Unit System do you want to use?",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "IP",
+          "choice_values": [
+            "IP",
+            "SI"
+          ],
+          "choice_display_names": [
+            "IP",
+            "SI"
+          ],
+          "option_1": "IP",
+          "variable": false,
+          "$$hashKey": "object:4660",
+          "display_name_short": "units",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "IP",
+              "SI"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "IP",
+            "minimum": "IP",
+            "mean": "IP",
+            "deltaX": "IP",
+            "stdDev": "IP",
+            "default_value": "IP",
             "showWarningIcon": false
           }
         },
@@ -4200,6 +4494,33 @@
           "$$hashKey": "object:5987",
           "option_1": true,
           "variable": false
+        },
+        {
+          "name": "reg_monthly_details",
+          "display_name": "Report monthly fuel and enduse breakdown to registerValue",
+          "description": "This argument does not effect HTML file, instead it makes data from individal cells of monthly tables avaiable for machine readable values in the resulting OpenStudio Workflow file.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "option_1": false,
+          "variable": false,
+          "$$hashKey": "object:4661",
+          "inputs": {
+            "default_value": false,
+            "minimum": false,
+            "maximum": false,
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "mean": false,
+            "deltaX": false,
+            "stdDev": false,
+            "showWarningIcon": false
+          },
+          "display_name_short": "reg_monthly_details"
         }
       ],
       "edit": "",
@@ -4209,7 +4530,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "10/26/2018",
+      "date": "6/14/2019",
       "author": "",
       "type": "ReportingMeasure",
       "seed": "empty_seed.osm",
@@ -4218,6 +4539,10 @@
         {
           "id": "option_1",
           "arguments": [
+            {
+              "name": "units",
+              "value": "IP"
+            },
             {
               "name": "building_summary_section",
               "value": true
@@ -4301,13 +4626,17 @@
             {
               "name": "schedules_overview_section",
               "value": true
+            },
+            {
+              "name": "reg_monthly_details",
+              "value": false
             }
           ],
           "name": "OpenStudio Results",
           "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         }
       ],
-      "instanceId": 0.4141842062197134,
+      "instanceId": 0.5190154629869743,
       "skip": false,
       "$$hashKey": "object:5934",
       "numberOfOptions": 1,
@@ -4915,11 +5244,426 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.28567099448188205,
+      "instanceId": 0.16612061331850314,
       "skip": false,
       "$$hashKey": "object:4635",
       "numberOfOptions": 1,
-      "showWarningText": false
+      "showWarningText": false,
+      "outputMeasure": true,
+      "userDefinedOutputs": [
+        {
+          "name": "envelope_and_internal_load_breakdown.electric_equipment_total_heating_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16523",
+          "display_name": "electric_equipment_total_heating_energy_annual",
+          "short_name": "electric_equipment_total_heating_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.zone_lights_total_heating_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16530",
+          "display_name": "zone_lights_total_heating_energy_annual",
+          "short_name": "zone_lights_total_heating_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.gas_equipment_total_heating_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16535",
+          "display_name": "gas_equipment_total_heating_energy_annual",
+          "short_name": "gas_equipment_total_heating_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.zone_people_sensible_heating_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16540",
+          "display_name": "zone_people_sensible_heating_energy_annual",
+          "short_name": "zone_people_sensible_heating_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.zone_infiltration_sensible_heat_gain_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16545",
+          "display_name": "zone_infiltration_sensible_heat_gain_energy_annual",
+          "short_name": "zone_infiltration_sensible_heat_gain_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ground_heat_gain",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16550",
+          "display_name": "ground_heat_gain",
+          "short_name": "ground_heat_gain",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ext_wall_heat_gain",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16555",
+          "display_name": "ext_wall_heat_gain",
+          "short_name": "ext_wall_heat_gain",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.surface_window_heat_gain_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16560",
+          "display_name": "surface_window_heat_gain_energy_annual",
+          "short_name": "surface_window_heat_gain_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ext_roof_heat_gain",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16565",
+          "display_name": "ext_roof_heat_gain",
+          "short_name": "ext_roof_heat_gain",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ext_roof_heat_loss",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16570",
+          "display_name": "ext_roof_heat_loss",
+          "short_name": "ext_roof_heat_loss",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.surface_window_heat_loss_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16575",
+          "display_name": "surface_window_heat_loss_energy_annual",
+          "short_name": "surface_window_heat_loss_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ext_wall_heat_loss",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16580",
+          "display_name": "ext_wall_heat_loss",
+          "short_name": "ext_wall_heat_loss",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ground_heat_loss",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16585",
+          "display_name": "ground_heat_loss",
+          "short_name": "ground_heat_loss",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.zone_infiltration_sensible_heat_loss_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16590",
+          "display_name": "zone_infiltration_sensible_heat_loss_energy_annual",
+          "short_name": "zone_infiltration_sensible_heat_loss_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        }
+      ],
+      "analysisOutputs": [
+        {
+          "name": "envelope_and_internal_load_breakdown.electric_equipment_total_heating_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16523",
+          "display_name": "electric_equipment_total_heating_energy_annual",
+          "short_name": "electric_equipment_total_heating_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.zone_lights_total_heating_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16530",
+          "display_name": "zone_lights_total_heating_energy_annual",
+          "short_name": "zone_lights_total_heating_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.gas_equipment_total_heating_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16535",
+          "display_name": "gas_equipment_total_heating_energy_annual",
+          "short_name": "gas_equipment_total_heating_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.zone_people_sensible_heating_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16540",
+          "display_name": "zone_people_sensible_heating_energy_annual",
+          "short_name": "zone_people_sensible_heating_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.zone_infiltration_sensible_heat_gain_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16545",
+          "display_name": "zone_infiltration_sensible_heat_gain_energy_annual",
+          "short_name": "zone_infiltration_sensible_heat_gain_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ground_heat_gain",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16550",
+          "display_name": "ground_heat_gain",
+          "short_name": "ground_heat_gain",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ext_wall_heat_gain",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16555",
+          "display_name": "ext_wall_heat_gain",
+          "short_name": "ext_wall_heat_gain",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.surface_window_heat_gain_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16560",
+          "display_name": "surface_window_heat_gain_energy_annual",
+          "short_name": "surface_window_heat_gain_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ext_roof_heat_gain",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16565",
+          "display_name": "ext_roof_heat_gain",
+          "short_name": "ext_roof_heat_gain",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ext_roof_heat_loss",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16570",
+          "display_name": "ext_roof_heat_loss",
+          "short_name": "ext_roof_heat_loss",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.surface_window_heat_loss_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16575",
+          "display_name": "surface_window_heat_loss_energy_annual",
+          "short_name": "surface_window_heat_loss_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ext_wall_heat_loss",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16580",
+          "display_name": "ext_wall_heat_loss",
+          "short_name": "ext_wall_heat_loss",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.ground_heat_loss",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16585",
+          "display_name": "ground_heat_loss",
+          "short_name": "ground_heat_loss",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        },
+        {
+          "name": "envelope_and_internal_load_breakdown.zone_infiltration_sensible_heat_loss_energy_annual",
+          "userDefined": true,
+          "newOut": false,
+          "$$hashKey": "object:16590",
+          "display_name": "zone_infiltration_sensible_heat_loss_energy_annual",
+          "short_name": "zone_infiltration_sensible_heat_loss_energy_annual",
+          "visualize": "true",
+          "type": "Double",
+          "measure_name": "envelope_and_internal_load_breakdown",
+          "measure_class_name": "EnvelopeAndInternalLoadBreakdown",
+          "measure_uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02"
+        }
+      ]
+    },
+    {
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/ServerDirectoryCleanup",
+      "name": "server_directory_cleanup",
+      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-Calibration-Measures/measures/ServerDirectoryCleanup",
+      "uid": "ec7d04ad-0b7b-495b-825a-e1b6d28d1d3f",
+      "uuid": "{ec7d04ad-0b7b-495b-825a-e1b6d28d1d3f}",
+      "version_id": "03ab227d-43f0-4842-98c8-536e07813189",
+      "version_uuid": "{03ab227d-43f0-4842-98c8-536e07813189}",
+      "version_modified": "20160620T200626Z",
+      "xml_checksum": "5F1EDF75",
+      "display_name": "Server Directory Cleanup",
+      "class_name": "ServerDirectoryCleanup",
+      "description": "Removes a significant portion of the saved results from each run, helping to alleviate memory problems.",
+      "modeler_description": "Use during large server runs, when individual sequel files and the like will not be needed.",
+      "tags": "Calibration",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "6/20/2016",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "empty_seed.osm",
+      "workflow_index": 6,
+      "options": [],
+      "instanceId": 0.9882380116543557,
+      "skip": false,
+      "$$hashKey": "object:27293"
     }
   ],
   "filesToInclude": [],
@@ -4952,7 +5696,8 @@
       "create_typical_building_from_model_2": "None",
       "openstudio_results": "OpenStudio Results",
       "$$hashKey": "uiGrid-02O4",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "server_directory_cleanup": "None"
     },
     {
       "name": "New Const",
@@ -4964,7 +5709,8 @@
       "create_typical_building_from_model_2": "None",
       "openstudio_results": "OpenStudio Results",
       "$$hashKey": "uiGrid-06VF",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "server_directory_cleanup": "None"
     },
     {
       "name": "New Loads and Sch",
@@ -4976,7 +5722,8 @@
       "create_typical_building_from_model_2": "None",
       "openstudio_results": "OpenStudio Results",
       "$$hashKey": "uiGrid-06WH",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "server_directory_cleanup": "None"
     },
     {
       "name": "New SWH and Exhaust",
@@ -4988,7 +5735,8 @@
       "create_typical_building_from_model_2": "None",
       "openstudio_results": "OpenStudio Results",
       "$$hashKey": "uiGrid-06XJ",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "server_directory_cleanup": "None"
     },
     {
       "name": "New Thermostat",
@@ -5000,9 +5748,10 @@
       "create_typical_building_from_model_2": "None",
       "openstudio_results": "OpenStudio Results",
       "$$hashKey": "uiGrid-06YL",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "server_directory_cleanup": "None"
     }
   ],
-  "analysisID": "fc601fc2-75aa-4bf0-b719-7055691a4952",
+  "analysisID": null,
   "datapoints": []
 }
