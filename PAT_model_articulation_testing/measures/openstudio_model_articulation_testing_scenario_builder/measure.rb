@@ -183,7 +183,8 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
             if scenario_hash[scenario] >= 3 then step[:arguments][:add_exhaust] = true else step[:arguments][:add_exhaust] = false end
             if scenario_hash[scenario] >= 3 then step[:arguments][:add_swh] = true else step[:arguments][:add_swh] = false end
             if scenario_hash[scenario] >= 4 then step[:arguments][:add_thermostat] = true else step[:arguments][:add_thermostat] = false end
-            step[:arguments][:add_hvac] = false
+            if scenario_hash[scenario] >= 5 then step[:arguments][:add_hvac] = true else step[:arguments][:add_hvac] = false end
+            #step[:arguments][:add_hvac] = false
             step[:arguments][:__SKIP__] = false
 
             # set flag so next instance will be flagged to set HVAC if requested

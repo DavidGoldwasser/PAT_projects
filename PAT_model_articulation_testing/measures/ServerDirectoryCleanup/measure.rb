@@ -35,8 +35,12 @@ class ServerDirectoryCleanup < OpenStudio::Ruleset::ReportingUserScript
     Dir.glob("./../*.audit").each do |f|
       File.delete(f)
       runner.registerInfo("Deleted #{f} from the run directory.") if !File.exist?(f)
-   end
+    end
     Dir.glob("./../in.osm").each do |f|
+      File.delete(f)
+      runner.registerInfo("Deleted #{f} from the run directory.") if !File.exist?(f)
+    end
+    Dir.glob("./../in.idf").each do |f|
       File.delete(f)
       runner.registerInfo("Deleted #{f} from the run directory.") if !File.exist?(f)
     end
@@ -60,6 +64,14 @@ class ServerDirectoryCleanup < OpenStudio::Ruleset::ReportingUserScript
       File.delete(f)
       runner.registerInfo("Deleted #{f} from the run directory.") if !File.exist?(f)
     end
+    # delete measure run directories
+    runner.registerInfo("Hello #{Dir.glob("./../*").join(",")}")
+    FileUtils.rm_f Dir.glob("./../000_create_DOE_prototype_building/*")
+    FileUtils.rm_f Dir.glob("./../001_create_typical_building_from_model/*")
+    FileUtils.rm_f Dir.glob("./../002_openstudio_model_articulation_testing_scenario_builder/*")
+    FileUtils.remove_dir("./../000_create_DOE_prototype_building",true)
+    FileUtils.remove_dir("./../001_create_typical_building_from_model",true)
+    FileUtils.remove_dir("./../002_openstudio_model_articulation_testing_scenario_builder",true)
 
     final_string = "The following files were in the local run directory following to the execution of this measure: "
     Dir.entries("./..").each do |f|

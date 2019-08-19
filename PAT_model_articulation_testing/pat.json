@@ -1,7 +1,7 @@
 {
   "projectName": "PAT_model_articulation_testing",
   "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing",
-  "analysisName": "PAT_model_articulation_testing",
+  "analysisName": "PAT_model_articulation_testing-hvaconly_c_temp_single_pass",
   "seed": "empty_seed.osm",
   "weatherFile": "USA_CO_Denver.Intl.AP.725650_TMY3.epw",
   "analysis_type": "Algorithmic",
@@ -17,25 +17,25 @@
     }
   },
   "samplingMethod": {
-    "id": "lhs",
-    "name": "analysis.type.lhs",
-    "link": "https://cran.r-project.org/web/packages/lhs/lhs.pdf"
+    "id": "doe",
+    "name": "analysis.type.doe",
+    "link": "https://cran.r-project.org/web/packages/DoE.base/DoE.base.pdf"
   },
   "algorithmSettings": [
     {
-      "name": "sample_method",
-      "displayName": "Sample Method",
-      "description": "Options: individual_variables or all_variables",
-      "defaultValue": "individual_variables",
+      "name": "experiment_type",
+      "displayName": "Experiment Type",
+      "description": "Options: full_factorial",
+      "defaultValue": "full_factorial",
       "type": "string",
-      "value": "all_variables",
-      "$$hashKey": "object:10738"
+      "value": "full_factorial",
+      "$$hashKey": "object:7151"
     },
     {
       "name": "number_of_samples",
       "displayName": "Number of Samples",
-      "description": "Positive integer (if individual, total simulations is this times each variable)",
-      "defaultValue": 5,
+      "description": "Positive integer (this discretizes a continous variable)",
+      "defaultValue": 2,
       "type": "number",
       "value": 40,
       "$$hashKey": "object:10739"
@@ -808,7 +808,7 @@
           "description": "Option 1 Description: Creates the DOE Reference Building Models as starting points for other analyses."
         }
       ],
-      "instanceId": 0.6604370802308666,
+      "instanceId": 0.9595591941662622,
       "skip": false,
       "$$hashKey": "object:1582",
       "numberOfOptions": 1,
@@ -816,9 +816,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
       "name": "create_typical_building_from_model",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
       "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
       "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
       "version_id": "8c44ca47-cd8d-4a26-864c-f045c7e3e41f",
@@ -1798,7 +1798,7 @@
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.6299876440147485,
+      "instanceId": 0.9321723573463907,
       "skip": false,
       "$$hashKey": "object:3178",
       "numberOfOptions": 1,
@@ -1806,9 +1806,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
       "name": "create_typical_building_from_model_2",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_dev/create_typical_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
       "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
       "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
       "version_id": "8c44ca47-cd8d-4a26-864c-f045c7e3e41f",
@@ -2602,7 +2602,7 @@
             "mean": true,
             "deltaX": true,
             "stdDev": true,
-            "default_value": true,
+            "default_value": false,
             "showWarningIcon": false
           },
           "$$hashKey": "object:3980",
@@ -2686,7 +2686,7 @@
             "mean": true,
             "deltaX": true,
             "stdDev": true,
-            "default_value": true,
+            "default_value": false,
             "showWarningIcon": false
           }
         }
@@ -2788,7 +2788,7 @@
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.29303150449055915,
+      "instanceId": 0.687676045915977,
       "skip": true,
       "$$hashKey": "object:3929",
       "numberOfOptions": 1,
@@ -3364,7 +3364,7 @@
               "s7 Bar Blended Core and Perimeter",
               "s8 Footprint Blended Single Space per Story"
             ],
-            "variableSetting": "Discrete",
+            "variableSetting": "Argument",
             "distribution": "Uniform",
             "discreteVariables": [
               {
@@ -3403,7 +3403,7 @@
             "mean": "DOE Prototype Building",
             "deltaX": "DOE Prototype Building",
             "stdDev": "DOE Prototype Building",
-            "default_value": "s0 Prototype",
+            "default_value": "s5 Prototype - hvac",
             "showWarningIcon": false
           },
           "$$hashKey": "object:1648",
@@ -3548,7 +3548,7 @@
           "description": "Option 5 Description: This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure. It should be the last OpenStudio measure in the workflow."
         }
       ],
-      "instanceId": 0.6713386009726572,
+      "instanceId": 0.17950307643200136,
       "skip": false,
       "$$hashKey": "object:1581",
       "numberOfOptions": 5,
@@ -4636,7 +4636,7 @@
           "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         }
       ],
-      "instanceId": 0.5190154629869743,
+      "instanceId": 0.8861008692319119,
       "skip": false,
       "$$hashKey": "object:5934",
       "numberOfOptions": 1,
@@ -5244,7 +5244,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.16612061331850314,
+      "instanceId": 0.7005746358856815,
       "skip": false,
       "$$hashKey": "object:4635",
       "numberOfOptions": 1,
@@ -5622,7 +5622,7 @@
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/ServerDirectoryCleanup",
       "name": "server_directory_cleanup",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-Calibration-Measures/measures/ServerDirectoryCleanup",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/ServerDirectoryCleanup",
       "uid": "ec7d04ad-0b7b-495b-825a-e1b6d28d1d3f",
       "uuid": "{ec7d04ad-0b7b-495b-825a-e1b6d28d1d3f}",
       "version_id": "03ab227d-43f0-4842-98c8-536e07813189",
@@ -5661,9 +5661,10 @@
       "seed": "empty_seed.osm",
       "workflow_index": 6,
       "options": [],
-      "instanceId": 0.9882380116543557,
+      "instanceId": 0.5414720495017424,
       "skip": false,
-      "$$hashKey": "object:27293"
+      "$$hashKey": "object:27293",
+      "showWarningText": false
     }
   ],
   "filesToInclude": [],
