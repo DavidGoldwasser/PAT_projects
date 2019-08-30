@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>create_typical_building_from_model</name>
   <uid>339a2e3a-273c-4494-bb50-bfe586a0647c</uid>
-  <version_id>8c44ca47-cd8d-4a26-864c-f045c7e3e41f</version_id>
-  <version_modified>20190812T193415Z</version_modified>
+  <version_id>4000ae70-b415-4d8e-99cf-95c9acf87034</version_id>
+  <version_modified>20190830T185001Z</version_modified>
   <xml_checksum>EE13F09F</xml_checksum>
   <class_name>CreateTypicalBuildingFromModel</class_name>
   <display_name>Create Typical Building from Model</display_name>
@@ -46,6 +46,42 @@
           <value>NREL ZNE Ready 2017</value>
           <display_name>NREL ZNE Ready 2017</display_name>
         </choice>
+        <choice>
+          <value>DEER Pre-1975</value>
+          <display_name>DEER Pre-1975</display_name>
+        </choice>
+        <choice>
+          <value>DEER 1985</value>
+          <display_name>DEER 1985</display_name>
+        </choice>
+        <choice>
+          <value>DEER 1996</value>
+          <display_name>DEER 1996</display_name>
+        </choice>
+        <choice>
+          <value>DEER 2003</value>
+          <display_name>DEER 2003</display_name>
+        </choice>
+        <choice>
+          <value>DEER 2007</value>
+          <display_name>DEER 2007</display_name>
+        </choice>
+        <choice>
+          <value>DEER 2011</value>
+          <display_name>DEER 2011</display_name>
+        </choice>
+        <choice>
+          <value>DEER 2014</value>
+          <display_name>DEER 2014</display_name>
+        </choice>
+        <choice>
+          <value>DEER 2015</value>
+          <display_name>DEER 2015</display_name>
+        </choice>
+        <choice>
+          <value>DEER 2017</value>
+          <display_name>DEER 2017</display_name>
+        </choice>
       </choices>
     </argument>
     <argument>
@@ -69,6 +105,10 @@
           <display_name>PTAC with hot water heat</display_name>
         </choice>
         <choice>
+          <value>PTAC with hot water heat with central air source heat pump</value>
+          <display_name>PTAC with hot water heat with central air source heat pump</display_name>
+        </choice>
+        <choice>
           <value>PTAC with gas coil heat</value>
           <display_name>PTAC with gas coil heat</display_name>
         </choice>
@@ -83,6 +123,10 @@
         <choice>
           <value>PTAC with district hot water heat</value>
           <display_name>PTAC with district hot water heat</display_name>
+        </choice>
+        <choice>
+          <value>PTAC with central air source heat pump heat</value>
+          <display_name>PTAC with central air source heat pump heat</display_name>
         </choice>
         <choice>
           <value>PTHP</value>
@@ -105,6 +149,10 @@
           <display_name>PSZ-AC with district hot water heat</display_name>
         </choice>
         <choice>
+          <value>PSZ-AC with central air source heat pump heat</value>
+          <display_name>PSZ-AC with central air source heat pump heat</display_name>
+        </choice>
+        <choice>
           <value>PSZ-HP</value>
           <display_name>PSZ-HP</display_name>
         </choice>
@@ -115,6 +163,10 @@
         <choice>
           <value>Fan coil district chilled water and boiler</value>
           <display_name>Fan coil district chilled water and boiler</display_name>
+        </choice>
+        <choice>
+          <value>Fan coil district chilled water and central air source heat pump</value>
+          <display_name>Fan coil district chilled water and central air source heat pump</display_name>
         </choice>
         <choice>
           <value>Fan coil district chilled water unit heaters</value>
@@ -133,8 +185,88 @@
           <display_name>Fan coil district hot water and chiller</display_name>
         </choice>
         <choice>
+          <value>Fan coil district hot water and air-cooled chiller</value>
+          <display_name>Fan coil district hot water and air-cooled chiller</display_name>
+        </choice>
+        <choice>
+          <value>Fan coil chiller and boiler</value>
+          <display_name>Fan coil chiller and boiler</display_name>
+        </choice>
+        <choice>
+          <value>Fan coil air-cooled chiller and boiler</value>
+          <display_name>Fan coil air-cooled chiller and boiler</display_name>
+        </choice>
+        <choice>
+          <value>Fan coil chiller and central air source heat pump</value>
+          <display_name>Fan coil chiller and central air source heat pump</display_name>
+        </choice>
+        <choice>
+          <value>Fan coil air-cooled chiller and central air source heat pump</value>
+          <display_name>Fan coil air-cooled chiller and central air source heat pump</display_name>
+        </choice>
+        <choice>
           <value>Fan coil chiller with no heat</value>
           <display_name>Fan coil chiller with no heat</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil district chilled water with no heat</value>
+          <display_name>DOAS with fan coil district chilled water with no heat</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil district chilled water and boiler</value>
+          <display_name>DOAS with fan coil district chilled water and boiler</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil district chilled water and central air source heat pump</value>
+          <display_name>DOAS with fan coil district chilled water and central air source heat pump</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil district chilled water unit heaters</value>
+          <display_name>DOAS with fan coil district chilled water unit heaters</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil district chilled water electric baseboard heat</value>
+          <display_name>DOAS with fan coil district chilled water electric baseboard heat</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil district hot and chilled water</value>
+          <display_name>DOAS with fan coil district hot and chilled water</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil district hot water and chiller</value>
+          <display_name>DOAS with fan coil district hot water and chiller</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil district hot water and air-cooled chiller</value>
+          <display_name>DOAS with fan coil district hot water and air-cooled chiller</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil chiller and boiler</value>
+          <display_name>DOAS with fan coil chiller and boiler</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil air-cooled chiller and boiler</value>
+          <display_name>DOAS with fan coil air-cooled chiller and boiler</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil chiller and central air source heat pump</value>
+          <display_name>DOAS with fan coil chiller and central air source heat pump</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil air-cooled chiller and central air source heat pump</value>
+          <display_name>DOAS with fan coil air-cooled chiller and central air source heat pump</display_name>
+        </choice>
+        <choice>
+          <value>DOAS with fan coil chiller with no heat</value>
+          <display_name>DOAS with fan coil chiller with no heat</display_name>
+        </choice>
+        <choice>
+          <value>VRF with DOAS</value>
+          <display_name>VRF with DOAS</display_name>
+        </choice>
+        <choice>
+          <value>Ground Source Heat Pumps with DOAS</value>
+          <display_name>Ground Source Heat Pumps with DOAS</display_name>
         </choice>
         <choice>
           <value>Baseboard district hot water heat</value>
@@ -209,6 +341,10 @@
           <display_name>VAV with reheat</display_name>
         </choice>
         <choice>
+          <value>VAV with reheat central air source heat pump</value>
+          <display_name>VAV with reheat central air source heat pump</display_name>
+        </choice>
+        <choice>
           <value>VAV with PFP boxes</value>
           <display_name>VAV with PFP boxes</display_name>
         </choice>
@@ -231,6 +367,10 @@
         <choice>
           <value>PVAV with reheat</value>
           <display_name>PVAV with reheat</display_name>
+        </choice>
+        <choice>
+          <value>PVAV with reheat with central air source heat pump</value>
+          <display_name>PVAV with reheat with central air source heat pump</display_name>
         </choice>
         <choice>
           <value>PVAV with PFP boxes</value>
@@ -340,6 +480,179 @@
         <choice>
           <value>DistrictAmbient</value>
           <display_name>DistrictAmbient</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>swh_src</name>
+      <display_name>Service Water Heating Source</display_name>
+      <description>The primary source of heating used by SWH systems in the model.</description>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Inferred</default_value>
+      <choices>
+        <choice>
+          <value>Inferred</value>
+          <display_name>Inferred</display_name>
+        </choice>
+        <choice>
+          <value>NaturalGas</value>
+          <display_name>NaturalGas</display_name>
+        </choice>
+        <choice>
+          <value>Electricity</value>
+          <display_name>Electricity</display_name>
+        </choice>
+        <choice>
+          <value>HeatPump</value>
+          <display_name>HeatPump</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>climate_zone</name>
+      <display_name>Climate Zone.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Lookup From Model</default_value>
+      <choices>
+        <choice>
+          <value>Lookup From Model</value>
+          <display_name>Lookup From Model</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-1A</value>
+          <display_name>ASHRAE 169-2013-1A</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-1B</value>
+          <display_name>ASHRAE 169-2013-1B</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-2A</value>
+          <display_name>ASHRAE 169-2013-2A</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-2B</value>
+          <display_name>ASHRAE 169-2013-2B</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-3A</value>
+          <display_name>ASHRAE 169-2013-3A</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-3B</value>
+          <display_name>ASHRAE 169-2013-3B</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-3C</value>
+          <display_name>ASHRAE 169-2013-3C</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-4A</value>
+          <display_name>ASHRAE 169-2013-4A</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-4B</value>
+          <display_name>ASHRAE 169-2013-4B</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-4C</value>
+          <display_name>ASHRAE 169-2013-4C</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-5A</value>
+          <display_name>ASHRAE 169-2013-5A</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-5B</value>
+          <display_name>ASHRAE 169-2013-5B</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-5C</value>
+          <display_name>ASHRAE 169-2013-5C</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-6A</value>
+          <display_name>ASHRAE 169-2013-6A</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-6B</value>
+          <display_name>ASHRAE 169-2013-6B</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-7A</value>
+          <display_name>ASHRAE 169-2013-7A</display_name>
+        </choice>
+        <choice>
+          <value>ASHRAE 169-2013-8A</value>
+          <display_name>ASHRAE 169-2013-8A</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC1</value>
+          <display_name>CEC T24-CEC1</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC2</value>
+          <display_name>CEC T24-CEC2</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC3</value>
+          <display_name>CEC T24-CEC3</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC4</value>
+          <display_name>CEC T24-CEC4</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC5</value>
+          <display_name>CEC T24-CEC5</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC6</value>
+          <display_name>CEC T24-CEC6</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC7</value>
+          <display_name>CEC T24-CEC7</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC8</value>
+          <display_name>CEC T24-CEC8</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC9</value>
+          <display_name>CEC T24-CEC9</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC10</value>
+          <display_name>CEC T24-CEC10</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC11</value>
+          <display_name>CEC T24-CEC11</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC12</value>
+          <display_name>CEC T24-CEC12</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC13</value>
+          <display_name>CEC T24-CEC13</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC14</value>
+          <display_name>CEC T24-CEC14</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC15</value>
+          <display_name>CEC T24-CEC15</display_name>
+        </choice>
+        <choice>
+          <value>CEC T24-CEC16</value>
+          <display_name>CEC T24-CEC16</display_name>
         </choice>
       </choices>
     </argument>
@@ -559,8 +872,129 @@
       </choices>
     </argument>
     <argument>
+      <name>add_internal_mass</name>
+      <display_name>Add Internal Mass to Model</display_name>
+      <description>Adds internal mass to each space.</description>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>add_refrigeration</name>
+      <display_name>Add Refrigeration to Model</display_name>
+      <description>Add refrigeration cases and walkins model</description>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>modify_wkdy_op_hrs</name>
+      <display_name>Modify weekday hours of operation</display_name>
+      <description>Modify the weekday hours of operation in the model.</description>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>false</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>wkdy_op_hrs_start_time</name>
+      <display_name>Weekday Operating Hours Start Time</display_name>
+      <description>Weekday operating hours start time in 08:30 format, using 24-hr clock.  Only used if Modify weekday hours of operation is true.</description>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>08:00</default_value>
+    </argument>
+    <argument>
+      <name>wkdy_op_hrs_duration</name>
+      <display_name>Weekday Operating Hours Duration</display_name>
+      <description>Length of weekday operating hours in 08:30 format, up to 24:00.  Only used if Modify weekday hours of operation is true.</description>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>08:00</default_value>
+    </argument>
+    <argument>
+      <name>modify_wknd_op_hrs</name>
+      <display_name>Modify weekend hours of operation</display_name>
+      <description>Modify the weekend hours of operation in the model.</description>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>false</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>wknd_op_hrs_start_time</name>
+      <display_name>Weekend Operating Hours Start Time</display_name>
+      <description>Weekend operating hours start time in 08:30 format, using 24-hr clock.  Only used if Modify weekend hours of operation is true.</description>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>08:00</default_value>
+    </argument>
+    <argument>
+      <name>wknd_op_hrs_duration</name>
+      <display_name>Weekend Operating Hours Duration</display_name>
+      <description>Length of weekend operating hours in 08:30 format, up to 24:00.  Only used if Modify weekend hours of operation is true.</description>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>08:00</default_value>
+    </argument>
+    <argument>
+      <name>unmet_hours_tolerance</name>
+      <display_name>Unmet Hours Tolerance</display_name>
+      <description>Set the thermostat setpoint tolerance for unmet hours in degrees Rankine</description>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>1</default_value>
+    </argument>
+    <argument>
       <name>remove_objects</name>
-      <display_name>Clean Model of non-gemoetry objects</display_name>
+      <display_name>Clean Model of non-geometry objects</display_name>
       <description>Only removes objects of type that are selected to be added.</description>
       <type>Boolean</type>
       <required>true</required>
@@ -581,25 +1015,6 @@
       <name>use_upstream_args</name>
       <display_name>Use Upstream Argument Values</display_name>
       <description>When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.</description>
-      <type>Boolean</type>
-      <required>true</required>
-      <model_dependent>false</model_dependent>
-      <default_value>true</default_value>
-      <choices>
-        <choice>
-          <value>true</value>
-          <display_name>true</display_name>
-        </choice>
-        <choice>
-          <value>false</value>
-          <display_name>false</display_name>
-        </choice>
-      </choices>
-    </argument>
-    <argument>
-      <name>enable_dst</name>
-      <display_name>Enable Daylight Savings.</display_name>
-      <description>By default this will force dayligint savsings to be enabled. Set to false if in a location where DST is not followed, or if needed for specific use case.</description>
       <type>Boolean</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
@@ -683,31 +1098,187 @@
       <filename>GenericGbxml.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>E27658D5</checksum>
-    </file>
-    <file>
-      <filename>test_hvac.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>9C1567A6</checksum>
+      <checksum>E56FFF95</checksum>
     </file>
     <file>
       <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>22515A49</checksum>
+      <checksum>9CFC43FB</checksum>
     </file>
     <file>
       <filename>os_lib_model_generation.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>EDE22C1A</checksum>
+      <checksum>2FF56267</checksum>
     </file>
     <file>
       <filename>Model.hvac.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>84B5FB0E</checksum>
+      <checksum>4C8F2B0C</checksum>
+    </file>
+    <file>
+      <filename>create_typical_building_from_model_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>CA0F69F3</checksum>
+    </file>
+    <file>
+      <filename>asm.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>C927EDEB</checksum>
+    </file>
+    <file>
+      <filename>ecc.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>0D1FD7A7</checksum>
+    </file>
+    <file>
+      <filename>epr.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>55F8A3CA</checksum>
+    </file>
+    <file>
+      <filename>erc.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>F0ADEB91</checksum>
+    </file>
+    <file>
+      <filename>ese.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>08859CC2</checksum>
+    </file>
+    <file>
+      <filename>eun.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>4230F1BD</checksum>
+    </file>
+    <file>
+      <filename>gro.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>3DCB949D</checksum>
+    </file>
+    <file>
+      <filename>hsp.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>3324A4F6</checksum>
+    </file>
+    <file>
+      <filename>htl.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>08158030</checksum>
+    </file>
+    <file>
+      <filename>mbt.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>A03CF17A</checksum>
+    </file>
+    <file>
+      <filename>mfm.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>FAE2CA01</checksum>
+    </file>
+    <file>
+      <filename>mli.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>0D86F0AB</checksum>
+    </file>
+    <file>
+      <filename>mtl.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>4F124552</checksum>
+    </file>
+    <file>
+      <filename>nrs.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>06BC1C8F</checksum>
+    </file>
+    <file>
+      <filename>ofl.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>49A20678</checksum>
+    </file>
+    <file>
+      <filename>ofs.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>B9224A80</checksum>
+    </file>
+    <file>
+      <filename>rff.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>47177F4F</checksum>
+    </file>
+    <file>
+      <filename>rsd.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>E9854661</checksum>
+    </file>
+    <file>
+      <filename>rt3.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>14568D61</checksum>
+    </file>
+    <file>
+      <filename>rtl.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>B2BA32EE</checksum>
+    </file>
+    <file>
+      <filename>rts.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>E26A1E95</checksum>
+    </file>
+    <file>
+      <filename>scn.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>0CB53C80</checksum>
+    </file>
+    <file>
+      <filename>sun.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>58FF4052</checksum>
+    </file>
+    <file>
+      <filename>wrf.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>F22DEFBC</checksum>
+    </file>
+    <file>
+      <filename>deer_vintages.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>D0DB3AF7</checksum>
+    </file>
+    <file>
+      <filename>test_hvac.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>5D475DC5</checksum>
     </file>
     <file>
       <version>
@@ -718,31 +1289,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>865E94EE</checksum>
-    </file>
-    <file>
-      <filename>create_typical_building_from_model_test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>E5C95E54</checksum>
-    </file>
-    <file>
-      <filename>LICENSE.md</filename>
-      <filetype>md</filetype>
-      <usage_type>license</usage_type>
-      <checksum>9640B6CB</checksum>
-    </file>
-    <file>
-      <filename>README.md</filename>
-      <filetype>md</filetype>
-      <usage_type>readme</usage_type>
-      <checksum>09D324A2</checksum>
-    </file>
-    <file>
-      <filename>README.md.erb</filename>
-      <filetype>erb</filetype>
-      <usage_type>readmeerb</usage_type>
-      <checksum>703C9964</checksum>
+      <checksum>14F80400</checksum>
     </file>
   </files>
 </measure>

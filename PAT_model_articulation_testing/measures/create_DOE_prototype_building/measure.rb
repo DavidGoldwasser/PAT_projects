@@ -62,29 +62,29 @@ class CreateDOEPrototypeBuilding < OpenStudio::Measure::ModelMeasure
 
     # Make an argument for the climate zone
     climate_zone_chs = OpenStudio::StringVector.new
-    climate_zone_chs << 'ASHRAE 169-2006-1A'
-    # climate_zone_chs << 'ASHRAE 169-2006-1B'
-    climate_zone_chs << 'ASHRAE 169-2006-2A'
-    climate_zone_chs << 'ASHRAE 169-2006-2B'
-    climate_zone_chs << 'ASHRAE 169-2006-3A'
-    climate_zone_chs << 'ASHRAE 169-2006-3B'
-    climate_zone_chs << 'ASHRAE 169-2006-3C'
-    climate_zone_chs << 'ASHRAE 169-2006-4A'
-    climate_zone_chs << 'ASHRAE 169-2006-4B'
-    climate_zone_chs << 'ASHRAE 169-2006-4C'
-    climate_zone_chs << 'ASHRAE 169-2006-5A'
-    climate_zone_chs << 'ASHRAE 169-2006-5B'
-    # climate_zone_chs << 'ASHRAE 169-2006-5C'
-    climate_zone_chs << 'ASHRAE 169-2006-6A'
-    climate_zone_chs << 'ASHRAE 169-2006-6B'
-    climate_zone_chs << 'ASHRAE 169-2006-7A'
-    # climate_zone_chs << 'ASHRAE 169-2006-7B'
-    climate_zone_chs << 'ASHRAE 169-2006-8A'
-    # climate_zone_chs << 'ASHRAE 169-2006-8B'
+    climate_zone_chs << 'ASHRAE 169-2013-1A'
+    # climate_zone_chs << 'ASHRAE 169-2013-1B'
+    climate_zone_chs << 'ASHRAE 169-2013-2A'
+    climate_zone_chs << 'ASHRAE 169-2013-2B'
+    climate_zone_chs << 'ASHRAE 169-2013-3A'
+    climate_zone_chs << 'ASHRAE 169-2013-3B'
+    climate_zone_chs << 'ASHRAE 169-2013-3C'
+    climate_zone_chs << 'ASHRAE 169-2013-4A'
+    climate_zone_chs << 'ASHRAE 169-2013-4B'
+    climate_zone_chs << 'ASHRAE 169-2013-4C'
+    climate_zone_chs << 'ASHRAE 169-2013-5A'
+    climate_zone_chs << 'ASHRAE 169-2013-5B'
+    # climate_zone_chs << 'ASHRAE 169-2013-5C'
+    climate_zone_chs << 'ASHRAE 169-2013-6A'
+    climate_zone_chs << 'ASHRAE 169-2013-6B'
+    climate_zone_chs << 'ASHRAE 169-2013-7A'
+    # climate_zone_chs << 'ASHRAE 169-2013-7B'
+    climate_zone_chs << 'ASHRAE 169-2013-8A'
+    # climate_zone_chs << 'ASHRAE 169-2013-8B'
     climate_zone_chs << 'NECB HDD Method'
     climate_zone = OpenStudio::Measure::OSArgument.makeChoiceArgument('climate_zone', climate_zone_chs, true)
     climate_zone.setDisplayName('Climate Zone.')
-    climate_zone.setDefaultValue('ASHRAE 169-2006-2A')
+    climate_zone.setDefaultValue('ASHRAE 169-2013-2A')
     args << climate_zone
 
     # Drop down selector for Canadian weather files.

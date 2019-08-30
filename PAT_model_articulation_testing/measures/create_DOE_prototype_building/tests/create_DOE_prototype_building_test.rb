@@ -82,7 +82,7 @@ class CreateDOEPrototypeBuildingTest < Minitest::Test
   def dont_test_primary_school
     bldg_types = ['PrimarySchool']
     vintages = ['DOE Ref Pre-1980'] # , 'DOE Ref 1980-2004', '90.1-2004', '90.1-2007', '90.1-2010']
-    climate_zones = ['ASHRAE 169-2006-3A']
+    climate_zones = ['ASHRAE 169-2013-3A']
 
     all_failures = []
 
@@ -97,7 +97,7 @@ class CreateDOEPrototypeBuildingTest < Minitest::Test
   def test_secondary_school
     bldg_types = ['SecondarySchool']
     vintages = ['DOE Ref Pre-1980', 'DOE Ref 1980-2004', '90.1-2004', '90.1-2007', '90.1-2010']
-    climate_zones = ['ASHRAE 169-2006-2A']
+    climate_zones = ['ASHRAE 169-2013-2A']
 
     all_failures = []
 
@@ -112,7 +112,7 @@ class CreateDOEPrototypeBuildingTest < Minitest::Test
   def test_primary_school
     bldg_types = ['PrimarySchool']
     vintages = ['DOE Ref Pre-1980', 'DOE Ref 1980-2004', '90.1-2004', '90.1-2007', '90.1-2010']
-    climate_zones = ['ASHRAE 169-2006-3A']
+    climate_zones = ['ASHRAE 169-2013-3A']
 
     all_failures = []
 

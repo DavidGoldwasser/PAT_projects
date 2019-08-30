@@ -45,29 +45,29 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
 
     # Make an argument for the climate zone (copied from create_doe_prototype_building iwth NECB HDD Method removed)
     climate_zone_chs = OpenStudio::StringVector.new
-    climate_zone_chs << 'ASHRAE 169-2006-1A'
-    #climate_zone_chs << 'ASHRAE 169-2006-1B'
-    climate_zone_chs << 'ASHRAE 169-2006-2A'
-    climate_zone_chs << 'ASHRAE 169-2006-2B'
-    climate_zone_chs << 'ASHRAE 169-2006-3A'
-    climate_zone_chs << 'ASHRAE 169-2006-3B'
-    climate_zone_chs << 'ASHRAE 169-2006-3C'
-    climate_zone_chs << 'ASHRAE 169-2006-4A'
-    climate_zone_chs << 'ASHRAE 169-2006-4B'
-    climate_zone_chs << 'ASHRAE 169-2006-4C'
-    climate_zone_chs << 'ASHRAE 169-2006-5A'
-    climate_zone_chs << 'ASHRAE 169-2006-5B'
-    #climate_zone_chs << 'ASHRAE 169-2006-5C'
-    climate_zone_chs << 'ASHRAE 169-2006-6A'
-    climate_zone_chs << 'ASHRAE 169-2006-6B'
-    climate_zone_chs << 'ASHRAE 169-2006-7A'
-    #climate_zone_chs << 'ASHRAE 169-2006-7B'
-    climate_zone_chs << 'ASHRAE 169-2006-8A'
-    #climate_zone_chs << 'ASHRAE 169-2006-8B'
+    climate_zone_chs << 'ASHRAE 169-2013-1A'
+    #climate_zone_chs << 'ASHRAE 169-2013-1B'
+    climate_zone_chs << 'ASHRAE 169-2013-2A'
+    climate_zone_chs << 'ASHRAE 169-2013-2B'
+    climate_zone_chs << 'ASHRAE 169-2013-3A'
+    climate_zone_chs << 'ASHRAE 169-2013-3B'
+    climate_zone_chs << 'ASHRAE 169-2013-3C'
+    climate_zone_chs << 'ASHRAE 169-2013-4A'
+    climate_zone_chs << 'ASHRAE 169-2013-4B'
+    climate_zone_chs << 'ASHRAE 169-2013-4C'
+    climate_zone_chs << 'ASHRAE 169-2013-5A'
+    climate_zone_chs << 'ASHRAE 169-2013-5B'
+    #climate_zone_chs << 'ASHRAE 169-2013-5C'
+    climate_zone_chs << 'ASHRAE 169-2013-6A'
+    climate_zone_chs << 'ASHRAE 169-2013-6B'
+    climate_zone_chs << 'ASHRAE 169-2013-7A'
+    #climate_zone_chs << 'ASHRAE 169-2013-7B'
+    climate_zone_chs << 'ASHRAE 169-2013-8A'
+    #climate_zone_chs << 'ASHRAE 169-2013-8B'
     #climate_zone_chs << 'NECB HDD Method'
     climate_zone = OpenStudio::Ruleset::OSArgument::makeChoiceArgument('climate_zone', climate_zone_chs, true)
     climate_zone.setDisplayName('Climate Zone.')
-    climate_zone.setDefaultValue('ASHRAE 169-2006-2A')
+    climate_zone.setDefaultValue('ASHRAE 169-2013-2A')
     args << climate_zone
 
     # Make an argument for the climate zone (copied from create_doe_prototype_building iwth NECB HDD Method removed)
@@ -159,6 +159,11 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
         end
       end
 
+      # add logic for EMS clean when HVAC is boing to be replaced by create_typical
+      if step[:measure_dir_name] = "remove_ems_objects"
+        if scenario_hash[scenario] >= 5 then step[:arguments][:__SKIP__] = false else step[:__SKIP__][:add_constructions] = true end
+      end
+
       # add logic for which measures to skip for each scenario
       # todo - update for scenarios beyond s5
       if step[:measure_dir_name] == "create_typical_building_from_model"
@@ -177,11 +182,13 @@ class OpenStudioModelArticulationTestingScenarioBuilder < OpenStudio::Ruleset::M
             end
           else
             if scenario_hash[scenario] >= 1 then step[:arguments][:add_constructions] = true else step[:arguments][:add_constructions] = false end
+            if scenario_hash[scenario] >= 1 then step[:arguments][:add_internal_mass] = true else step[:arguments][:add_internal_mass] = false end
             if scenario_hash[scenario] >= 2 then step[:arguments][:add_space_type_loads] = true else step[:arguments][:add_space_type_loads] = false end
             if scenario_hash[scenario] >= 2 then step[:arguments][:add_elevators] = true else step[:arguments][:add_elevators] = false end
             if scenario_hash[scenario] >= 2 then step[:arguments][:add_exterior_lights] = true else step[:arguments][:add_exterior_lights] = false end
             if scenario_hash[scenario] >= 3 then step[:arguments][:add_exhaust] = true else step[:arguments][:add_exhaust] = false end
             if scenario_hash[scenario] >= 3 then step[:arguments][:add_swh] = true else step[:arguments][:add_swh] = false end
+            if scenario_hash[scenario] >= 3 then step[:arguments][:add_refrigeration] = true else step[:arguments][:add_refrigeration] = false end
             if scenario_hash[scenario] >= 4 then step[:arguments][:add_thermostat] = true else step[:arguments][:add_thermostat] = false end
             if scenario_hash[scenario] >= 5 then step[:arguments][:add_hvac] = true else step[:arguments][:add_hvac] = false end
             #step[:arguments][:add_hvac] = false

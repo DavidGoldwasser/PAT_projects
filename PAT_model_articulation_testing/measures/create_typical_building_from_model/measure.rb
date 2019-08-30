@@ -1,57 +1,13 @@
-# *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2019, Alliance for Sustainable Energy, LLC.
-# All rights reserved.
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#
-# (1) Redistributions of source code must retain the above copyright notice,
-# this list of conditions and the following disclaimer.
-#
-# (2) Redistributions in binary form must reproduce the above copyright notice,
-# this list of conditions and the following disclaimer in the documentation
-# and/or other materials provided with the distribution.
-#
-# (3) Neither the name of the copyright holder nor the names of any contributors
-# may be used to endorse or promote products derived from this software without
-# specific prior written permission from the respective party.
-#
-# (4) Other than as required in clauses (1) and (2), distributions in any form
-# of modifications or other derivative works may not use the "OpenStudio"
-# trademark, "OS", "os", or any other confusingly similar designation without
-# specific prior written permission from Alliance for Sustainable Energy, LLC.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER(S) AND ANY CONTRIBUTORS
-# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
-# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER(S), ANY CONTRIBUTORS, THE
-# UNITED STATES GOVERNMENT, OR THE UNITED STATES DEPARTMENT OF ENERGY, NOR ANY OF
-# THEIR EMPLOYEES, BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
-# OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# *******************************************************************************
-
 # see the URL below for information on how to write OpenStudio measures
 # http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
 
-require 'openstudio-standards'
-
-begin
-  # load OpenStudio measure libraries from common location
-  require 'measure_resources/os_lib_helper_methods'
-  require 'measure_resources/os_lib_model_generation'
-rescue LoadError
-  # common location unavailable, load from local resources
-  require_relative 'resources/os_lib_helper_methods'
-  require_relative 'resources/os_lib_model_generation'
-end
-
-require_relative 'resources/Model.hvac' # DLM: should this be in openstudio-standards?
-
 # start the measure
 class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
+  require 'openstudio-standards'
+
+  # require all .rb files in resources folder
+  Dir[File.dirname(__FILE__) + '/resources/*.rb'].each { |file| require file }
+
   # resource file modules
   include OsLib_HelperMethods
   include OsLib_ModelGeneration
@@ -95,23 +51,47 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     hvac_chs << 'Inferred'
     hvac_chs << 'Ideal Air Loads'
     hvac_chs << 'PTAC with hot water heat'
+    hvac_chs << 'PTAC with hot water heat with central air source heat pump'
     hvac_chs << 'PTAC with gas coil heat'
     hvac_chs << 'PTAC with electric baseboard heat'
     hvac_chs << 'PTAC with no heat'
     hvac_chs << 'PTAC with district hot water heat'
+    hvac_chs << 'PTAC with central air source heat pump heat'
     hvac_chs << 'PTHP'
     hvac_chs << 'PSZ-AC with gas coil heat'
     hvac_chs << 'PSZ-AC with electric baseboard heat'
     hvac_chs << 'PSZ-AC with no heat'
     hvac_chs << 'PSZ-AC with district hot water heat'
+    hvac_chs << 'PSZ-AC with central air source heat pump heat'
     hvac_chs << 'PSZ-HP'
     hvac_chs << 'Fan coil district chilled water with no heat'
     hvac_chs << 'Fan coil district chilled water and boiler'
+    hvac_chs << 'Fan coil district chilled water and central air source heat pump'
     hvac_chs << 'Fan coil district chilled water unit heaters'
     hvac_chs << 'Fan coil district chilled water electric baseboard heat'
     hvac_chs << 'Fan coil district hot and chilled water'
     hvac_chs << 'Fan coil district hot water and chiller'
+    hvac_chs << 'Fan coil district hot water and air-cooled chiller'
+    hvac_chs << 'Fan coil chiller and boiler'
+    hvac_chs << 'Fan coil air-cooled chiller and boiler'
+    hvac_chs << 'Fan coil chiller and central air source heat pump'
+    hvac_chs << 'Fan coil air-cooled chiller and central air source heat pump'
     hvac_chs << 'Fan coil chiller with no heat'
+    hvac_chs << 'DOAS with fan coil district chilled water with no heat'
+    hvac_chs << 'DOAS with fan coil district chilled water and boiler'
+    hvac_chs << 'DOAS with fan coil district chilled water and central air source heat pump'
+    hvac_chs << 'DOAS with fan coil district chilled water unit heaters'
+    hvac_chs << 'DOAS with fan coil district chilled water electric baseboard heat'
+    hvac_chs << 'DOAS with fan coil district hot and chilled water'
+    hvac_chs << 'DOAS with fan coil district hot water and chiller'
+    hvac_chs << 'DOAS with fan coil district hot water and air-cooled chiller'
+    hvac_chs << 'DOAS with fan coil chiller and boiler'
+    hvac_chs << 'DOAS with fan coil air-cooled chiller and boiler'
+    hvac_chs << 'DOAS with fan coil chiller and central air source heat pump'
+    hvac_chs << 'DOAS with fan coil air-cooled chiller and central air source heat pump'
+    hvac_chs << 'DOAS with fan coil chiller with no heat'
+    hvac_chs << 'VRF with DOAS'
+    hvac_chs << 'Ground Source Heat Pumps with DOAS'
     hvac_chs << 'Baseboard district hot water heat'
     hvac_chs << 'Baseboard district hot water heat with direct evap coolers'
     hvac_chs << 'Baseboard electric heat'
@@ -130,12 +110,14 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     hvac_chs << 'Heat pump heat with no cooling'
     hvac_chs << 'Heat pump heat with direct evap cooler'
     hvac_chs << 'VAV with reheat'
+    hvac_chs << 'VAV with reheat central air source heat pump'
     hvac_chs << 'VAV with PFP boxes'
     hvac_chs << 'VAV with gas reheat'
     hvac_chs << 'VAV with zone unit heaters'
     hvac_chs << 'VAV with electric baseboard heat'
     hvac_chs << 'VAV cool with zone heat pump heat'
     hvac_chs << 'PVAV with reheat'
+    hvac_chs << 'PVAV with reheat with central air source heat pump'
     hvac_chs << 'PVAV with PFP boxes'
     hvac_chs << 'Residential forced air'
     hvac_chs << 'Residential forced air cooling hot water baseboard heat'
@@ -184,18 +166,17 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     clg_src.setDefaultValue('Electricity')
     args << clg_src
 
-    #     # fuel choices for multiple arguments
-    #     fuel_choices = OpenStudio::StringVector.new
-    #     fuel_choices << "Electric"
-    #     fuel_choices << "Gas"
-    #     fuel_choices << "Infer from HVAC System Type"
-    #
-    #     # make argument for fuel type (not used yet)
-    #     fuel_type_swh = OpenStudio::Measure::OSArgument::makeChoiceArgument("fuel_type_swh", fuel_choices,true)
-    #     fuel_type_swh.setDisplayName("Fuel Type for Service Water Heating Supply")
-    #     fuel_type_swh.setDefaultValue("Infer from HVAC System Type")
-    #     args << fuel_type_swh
-    #
+    swh_src_chs = OpenStudio::StringVector.new
+    swh_src_chs << 'Inferred'
+    swh_src_chs << 'NaturalGas'
+    swh_src_chs << 'Electricity'
+    swh_src_chs << 'HeatPump'
+    swh_src = OpenStudio::Measure::OSArgument.makeChoiceArgument('swh_src', swh_src_chs, true)
+    swh_src.setDisplayName('Service Water Heating Source')
+    swh_src.setDescription('The primary source of heating used by SWH systems in the model.')
+    swh_src.setDefaultValue('Inferred')
+    args << swh_src
+
     #     # make argument for fuel type (not used yet)
     #     fuel_type_cooking = OpenStudio::Measure::OSArgument::makeChoiceArgument("fuel_type_cooking", fuel_choices,true)
     #     fuel_type_cooking.setDisplayName("Fuel Type for Cooking Loads")
@@ -207,6 +188,47 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     #     fuel_type_laundry.setDisplayName("Fuel Type for Laundry Dryer Loads")
     #     fuel_type_laundry.setDefaultValue("Electric")
     #     args << fuel_type_laundry
+
+    # Argument used to make ComStock tsv workflow run correctly
+    cz_choices = OpenStudio::StringVector.new
+    cz_choices << 'Lookup From Model'
+    cz_choices << 'ASHRAE 169-2013-1A'
+    cz_choices << 'ASHRAE 169-2013-1B'
+    cz_choices << 'ASHRAE 169-2013-2A'
+    cz_choices << 'ASHRAE 169-2013-2B'
+    cz_choices << 'ASHRAE 169-2013-3A'
+    cz_choices << 'ASHRAE 169-2013-3B'
+    cz_choices << 'ASHRAE 169-2013-3C'
+    cz_choices << 'ASHRAE 169-2013-4A'
+    cz_choices << 'ASHRAE 169-2013-4B'
+    cz_choices << 'ASHRAE 169-2013-4C'
+    cz_choices << 'ASHRAE 169-2013-5A'
+    cz_choices << 'ASHRAE 169-2013-5B'
+    cz_choices << 'ASHRAE 169-2013-5C'
+    cz_choices << 'ASHRAE 169-2013-6A'
+    cz_choices << 'ASHRAE 169-2013-6B'
+    cz_choices << 'ASHRAE 169-2013-7A'
+    cz_choices << 'ASHRAE 169-2013-8A'
+    cz_choices << 'CEC T24-CEC1'
+    cz_choices << 'CEC T24-CEC2'
+    cz_choices << 'CEC T24-CEC3'
+    cz_choices << 'CEC T24-CEC4'
+    cz_choices << 'CEC T24-CEC5'
+    cz_choices << 'CEC T24-CEC6'
+    cz_choices << 'CEC T24-CEC7'
+    cz_choices << 'CEC T24-CEC8'
+    cz_choices << 'CEC T24-CEC9'
+    cz_choices << 'CEC T24-CEC10'
+    cz_choices << 'CEC T24-CEC11'
+    cz_choices << 'CEC T24-CEC12'
+    cz_choices << 'CEC T24-CEC13'
+    cz_choices << 'CEC T24-CEC14'
+    cz_choices << 'CEC T24-CEC15'
+    cz_choices << 'CEC T24-CEC16'
+    climate_zone = OpenStudio::Measure::OSArgument.makeChoiceArgument('climate_zone', cz_choices, true)
+    climate_zone.setDisplayName('Climate Zone.')
+    climate_zone.setDefaultValue('Lookup From Model')
+    args << climate_zone
 
     # make argument for kitchen makeup
     kitchen_makeup_choices = OpenStudio::StringVector.new
@@ -295,9 +317,72 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     add_hvac.setDefaultValue(true)
     args << add_hvac
 
+    # make an argument for add_internal_mass
+    add_internal_mass = OpenStudio::Measure::OSArgument.makeBoolArgument('add_internal_mass', true)
+    add_internal_mass.setDisplayName('Add Internal Mass to Model')
+    add_internal_mass.setDescription('Adds internal mass to each space.')
+    add_internal_mass.setDefaultValue(true)
+    args << add_internal_mass
+
+    # make an argument for add_refrigeration
+    add_refrigeration = OpenStudio::Measure::OSArgument.makeBoolArgument('add_refrigeration', true)
+    add_refrigeration.setDisplayName('Add Refrigeration to Model')
+    add_refrigeration.setDescription('Add refrigeration cases and walkins model')
+    add_refrigeration.setDefaultValue(true)
+    args << add_refrigeration
+
+    # modify weekday hours of operation
+    modify_wkdy_op_hrs = OpenStudio::Measure::OSArgument.makeBoolArgument('modify_wkdy_op_hrs', true)
+    modify_wkdy_op_hrs.setDisplayName('Modify weekday hours of operation')
+    modify_wkdy_op_hrs.setDescription('Modify the weekday hours of operation in the model.')
+    modify_wkdy_op_hrs.setDefaultValue(false)
+    args << modify_wkdy_op_hrs
+
+    # weekday hours of operation start time
+    wkdy_op_hrs_start_time = OpenStudio::Measure::OSArgument.makeStringArgument('wkdy_op_hrs_start_time', true)
+    wkdy_op_hrs_start_time.setDisplayName('Weekday Operating Hours Start Time')
+    wkdy_op_hrs_start_time.setDescription('Weekday operating hours start time in 08:30 format, using 24-hr clock.  Only used if Modify weekday hours of operation is true.')
+    wkdy_op_hrs_start_time.setDefaultValue('08:00')
+    args << wkdy_op_hrs_start_time
+
+    # weekday hours of operation duration
+    wkdy_op_hrs_duration = OpenStudio::Measure::OSArgument.makeStringArgument('wkdy_op_hrs_duration', true)
+    wkdy_op_hrs_duration.setDisplayName('Weekday Operating Hours Duration')
+    wkdy_op_hrs_duration.setDescription('Length of weekday operating hours in 08:30 format, up to 24:00.  Only used if Modify weekday hours of operation is true.')
+    wkdy_op_hrs_duration.setDefaultValue('08:00')
+    args << wkdy_op_hrs_duration
+
+    # modify weekend hours of operation
+    modify_wknd_op_hrs = OpenStudio::Measure::OSArgument.makeBoolArgument('modify_wknd_op_hrs', true)
+    modify_wknd_op_hrs.setDisplayName('Modify weekend hours of operation')
+    modify_wknd_op_hrs.setDescription('Modify the weekend hours of operation in the model.')
+    modify_wknd_op_hrs.setDefaultValue(false)
+    args << modify_wknd_op_hrs
+
+    # weekend hours of operation start time
+    wknd_op_hrs_start_time = OpenStudio::Measure::OSArgument.makeStringArgument('wknd_op_hrs_start_time', true)
+    wknd_op_hrs_start_time.setDisplayName('Weekend Operating Hours Start Time')
+    wknd_op_hrs_start_time.setDescription('Weekend operating hours start time in 08:30 format, using 24-hr clock.  Only used if Modify weekend hours of operation is true.')
+    wknd_op_hrs_start_time.setDefaultValue('08:00')
+    args << wknd_op_hrs_start_time
+
+    # weekend hours of operation duration
+    wknd_op_hrs_duration = OpenStudio::Measure::OSArgument.makeStringArgument('wknd_op_hrs_duration', true)
+    wknd_op_hrs_duration.setDisplayName('Weekend Operating Hours Duration')
+    wknd_op_hrs_duration.setDescription('Length of weekend operating hours in 08:30 format, up to 24:00.  Only used if Modify weekend hours of operation is true.')
+    wknd_op_hrs_duration.setDefaultValue('08:00')
+    args << wknd_op_hrs_duration
+
+    # make an argument for unmet_hours_tolerance
+    unmet_hours_tolerance = OpenStudio::Measure::OSArgument.makeDoubleArgument('unmet_hours_tolerance', true)
+    unmet_hours_tolerance.setDisplayName('Unmet Hours Tolerance')
+    unmet_hours_tolerance.setDescription('Set the thermostat setpoint tolerance for unmet hours in degrees Rankine')
+    unmet_hours_tolerance.setDefaultValue(1.0)
+    args << unmet_hours_tolerance
+
     # make an argument for remove_objects
     remove_objects = OpenStudio::Measure::OSArgument.makeBoolArgument('remove_objects', true)
-    remove_objects.setDisplayName('Clean Model of non-gemoetry objects')
+    remove_objects.setDisplayName('Clean Model of non-geometry objects')
     remove_objects.setDescription('Only removes objects of type that are selected to be added.')
     remove_objects.setDefaultValue(true)
     args << remove_objects
@@ -308,13 +393,6 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     use_upstream_args.setDescription('When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.')
     use_upstream_args.setDefaultValue(true)
     args << use_upstream_args
-
-    # make force daylight savings on
-    enable_dst = OpenStudio::Measure::OSArgument.makeBoolArgument('enable_dst', true)
-    enable_dst.setDisplayName('Enable Daylight Savings.')
-    enable_dst.setDescription('By default this will force dayligint savsings to be enabled. Set to false if in a location where DST is not followed, or if needed for specific use case.')
-    enable_dst.setDefaultValue(true)
-    args << enable_dst
 
     return args
   end
@@ -329,13 +407,13 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
 
     # lookup and replace argument values from upstream measures
     if args['use_upstream_args'] == true
-      args.each do |arg, value|
+      args.each do |arg,value|
         next if arg == 'use_upstream_args' # this argument should not be changed
         value_from_osw = OsLib_HelperMethods.check_upstream_measure_for_arg(runner, arg)
         if !value_from_osw.empty?
           runner.registerInfo("Replacing argument named #{arg} from current measure with a value of #{value_from_osw[:value]} from #{value_from_osw[:measure_name]}.")
           new_val = value_from_osw[:value]
-          # TODO: - make code to handle non strings more robust. check_upstream_measure_for_arg coudl pass bakc the argument type
+          # todo - make code to handle non strings more robust. check_upstream_measure_for_arg coudl pass bakc the argument type
           if arg == 'total_bldg_floor_area'
             args[arg] = new_val.to_f
           elsif arg == 'num_stories_above_grade'
@@ -353,6 +431,90 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     fraction = OsLib_HelperMethods.checkDoubleAndIntegerArguments(runner, user_arguments, 'min' => 0.0, 'max' => 1.0, 'min_eq_bool' => true, 'max_eq_bool' => true, 'arg_array' => ['onsite_parking_fraction'])
     if !fraction then return false end
 
+    # validate unmet hours tolerance
+    unmet_hours_tolerance_valid = OsLib_HelperMethods.checkDoubleAndIntegerArguments(runner, user_arguments, 'min' => 0.0, 'max' => 5.0, 'min_eq_bool' => true, 'max_eq_bool' => true, 'arg_array' => ['unmet_hours_tolerance'])
+    if !unmet_hours_tolerance_valid then return false end
+
+    # validate weekday hours of operation
+    wkdy_op_hrs_start_time_hr = nil
+    wkdy_op_hrs_start_time_min = nil
+    wkdy_op_hrs_duration_hr = nil
+    wkdy_op_hrs_duration_min = nil
+    if args['modify_wkdy_op_hrs']
+      # weekday start time hr
+      wkdy_op_hrs_start_time_hr = args['wkdy_op_hrs_start_time'].split(':')[0].to_i
+      if wkdy_op_hrs_start_time_hr < 0 || wkdy_op_hrs_start_time_hr > 24
+        runner.registerError("Weekday operating hours start time hrs must be between 0 and 24.  #{args['wkdy_op_hrs_start_time']} was entered.")
+        return false
+      end
+
+      # weekday start time min
+      wkdy_op_hrs_start_time_min = args['wkdy_op_hrs_start_time'].split(':')[1].to_i
+      if wkdy_op_hrs_start_time_min < 0 || wkdy_op_hrs_start_time_min > 59
+        runner.registerError("Weekday operating hours start time mins must be between 0 and 59.  #{args['wkdy_op_hrs_start_time']} was entered.")
+        return false
+      end
+
+      # weekday duration hr
+      wkdy_op_hrs_duration_hr = args['wkdy_op_hrs_duration'].split(':')[0].to_i
+      if wkdy_op_hrs_duration_hr < 0 || wkdy_op_hrs_duration_hr > 24
+        runner.registerError("Weekday operating hours duration hrs must be between 0 and 24.  #{args['wkdy_op_hrs_duration']} was entered.")
+        return false
+      end
+
+      # weekday duration min
+      wkdy_op_hrs_duration_min = args['wkdy_op_hrs_duration'].split(':')[1].to_i
+      if wkdy_op_hrs_duration_min < 0 || wkdy_op_hrs_duration_min > 59
+        runner.registerError("Weekday operating hours duration mins must be between 0 and 59.  #{args['wkdy_op_hrs_duration']} was entered.")
+        return false
+      end
+
+      # check that weekday start time plus duration does not exceed 24 hrs
+      if (wkdy_op_hrs_start_time_hr + wkdy_op_hrs_duration_hr + (wkdy_op_hrs_start_time_min + wkdy_op_hrs_duration_min)/60.0) > 24.0
+        runner.registerInfo("Weekday start time of #{args['wkdy_op_hrs_start']} plus duration of #{args['wkdy_op_hrs_duration']} is more than 24 hrs, hours of operation overlap midnight.")
+      end
+    end
+
+    # validate weekend hours of operation
+    wknd_op_hrs_start_time_hr = nil
+    wknd_op_hrs_start_time_min = nil
+    wknd_op_hrs_duration_hr = nil
+    wknd_op_hrs_duration_min = nil
+    if args['modify_wknd_op_hrs']
+      # weekend start time hr
+      wknd_op_hrs_start_time_hr = args['wknd_op_hrs_start_time'].split(':')[0].to_i
+      if wknd_op_hrs_start_time_hr < 0 || wknd_op_hrs_start_time_hr > 24
+        runner.registerError("Weekend operating hours start time hrs must be between 0 and 24.  #{args['wknd_op_hrs_start_time_change']} was entered.")
+        return false
+      end
+
+      # weekend start time min
+      wknd_op_hrs_start_time_min = args['wknd_op_hrs_start_time'].split(':')[1].to_i
+      if wknd_op_hrs_start_time_min < 0 || wknd_op_hrs_start_time_min > 59
+        runner.registerError("Weekend operating hours start time mins must be between 0 and 59.  #{args['wknd_op_hrs_start_time_change']} was entered.")
+        return false
+      end
+
+      # weekend duration hr
+      wknd_op_hrs_duration_hr = args['wknd_op_hrs_duration'].split(':')[0].to_i
+      if wknd_op_hrs_duration_hr < 0 || wknd_op_hrs_duration_hr > 24
+        runner.registerError("Weekend operating hours duration hrs must be between 0 and 24.  #{args['wknd_op_hrs_duration']} was entered.")
+        return false
+      end
+
+      # weekend duration min
+      wknd_op_hrs_duration_min = args['wknd_op_hrs_duration'].split(':')[1].to_i
+      if wknd_op_hrs_duration_min < 0 || wknd_op_hrs_duration_min > 59
+        runner.registerError("Weekend operating hours duration min smust be between 0 and 59.  #{args['wknd_op_hrs_duration']} was entered.")
+        return false
+      end
+
+      # check that weekend start time plus duration does not exceed 24 hrs
+      if (wknd_op_hrs_start_time_hr + wknd_op_hrs_duration_hr + (wknd_op_hrs_start_time_min + wknd_op_hrs_duration_min)/60.0) > 24.0
+        runner.registerInfo("Weekend start time of #{args['wknd_op_hrs_start']} plus duration of #{args['wknd_op_hrs_duration']} is more than 24 hrs, hours of operation overlap midnight.")
+      end
+    end
+
     # report initial condition of model
     initial_objects = model.getModelObjects.size
     runner.registerInitialCondition("The building started with #{initial_objects} objects.")
@@ -362,16 +524,6 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
 
     # Make the standard applier
     standard = Standard.build((args['template']).to_s)
-
-    # make sure daylight savings is turned on up prior to any sizing runs being done.
-    if args['enable_dst']
-      start_date = '2nd Sunday in March'
-      end_date = '1st Sunday in November'
-
-      runperiodctrl_daylgtsaving = model.getRunPeriodControlDaylightSavingTime
-      runperiodctrl_daylgtsaving.setStartDate(start_date)
-      runperiodctrl_daylgtsaving.setEndDate(end_date)
-    end
 
     # add internal loads to space types
     if args['add_space_type_loads']
@@ -449,7 +601,13 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
       else
         is_residential = 'No'
       end
-      climate_zone = standard.model_get_building_climate_zone_and_building_type(model)['climate_zone']
+      if args['climate_zone'] == 'Lookup From Model'
+        climate_zone = standard.model_get_building_climate_zone_and_building_type(model)['climate_zone']
+        runner.registerInfo("Using climate zone #{climate_zone} from model")
+      else
+        climate_zone = args['climate_zone']
+        runner.registerInfo("Using climate zone #{climate_zone} from user arguments")
+      end
       bldg_def_const_set = standard.model_add_construction_set(model, climate_zone, lookup_building_type, nil, is_residential)
       if bldg_def_const_set.is_initialized
         bldg_def_const_set = bldg_def_const_set.get
@@ -471,7 +629,7 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
         surface.setOutsideBoundaryCondition('Adiabatic')
       end
 
-      # Modify the infiltration rates
+      # modify the infiltration rates
       if args['remove_objects']
         model.getSpaceInfiltrationDesignFlowRates.each(&:remove)
       end
@@ -503,6 +661,8 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
         elevator_def = elevators.electricEquipmentDefinition
         design_level = elevator_def.designLevel.get
         runner.registerInfo("Adding #{elevators.multiplier.round(1)} elevators each with power of #{OpenStudio.toNeatString(design_level, 0, true)} (W), plus lights and fans.")
+        elevator_def.setFractionLost(1.0)
+        elevator_def.setFractionRadiant(0.0)
       end
     end
 
@@ -554,7 +714,20 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
         model.getWaterUseConnectionss.each(&:remove)
       end
 
-      typical_swh = standard.model_add_typical_swh(model)
+      # Infer the SWH type
+      if args['swh_src'] == 'Inferred'
+        if args['htg_src'] == 'NaturalGas' || args['htg_src'] == 'DistrictHeating'
+          args['swh_src'] = 'NaturalGas' # If building has gas service, probably uses natural gas for SWH
+        elsif args['htg_src'] == 'Electricity'
+          args['swh_src'] == 'Electricity' # If building is doing space heating with electricity, probably used for SWH
+        elsif args['htg_src'] == 'DistrictAmbient'
+          args['swh_src'] == 'HeatPump' # If building has district ambient loop, it is fancy and probably uses HPs for SWH
+        else
+          args['swh_src'] = nil # Use inferences built into OpenStudio Standards for each building and space type
+        end
+      end
+
+      typical_swh = standard.model_add_typical_swh(model, water_heater_fuel: args['swh_src'])
       midrise_swh_loops = []
       stripmall_swh_loops = []
       typical_swh.each do |loop|
@@ -590,20 +763,18 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     end
     standard.model_add_daylighting_controls(model)
 
-    # TODO: - add refrigeration
-    # remove refrigeration equipment
-    if args['remove_objects']
-      model.getRefrigerationSystems.each(&:remove)
-    end
+    # add refrigeration
+    if args['add_refrigeration']
 
-    # TODO: - add internal mass
-    # remove internal mass
-    # if args['remove_objects']
-    #  model.getSpaceLoads.each do |instance|
-    #    next if not instance.to_InternalMass.is_initialized
-    #    instance.remove
-    #  end
-    # end
+      # remove refrigeration equipment
+      if args['remove_objects']
+        model.getRefrigerationSystems.each(&:remove)
+      end
+
+      # Add refrigerated cases and walkins
+      standard.model_add_typical_refrigeration(model, primary_bldg_type)
+
+    end
 
     # TODO: - add slab modeling and slab insulation
 
@@ -620,21 +791,19 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
 
       model.getSpaceTypes.each do |space_type|
         # create thermostat schedules
-        # skip un-recognized space types
-        next if standard.space_type_get_standards_data(space_type).empty?
+        # apply internal load schedules
         # the last bool test it to make thermostat schedules. They are added to the model but not assigned
         standard.space_type_apply_internal_load_schedules(space_type, false, false, false, false, false, false, true)
 
         # identify thermal thermostat and apply to zones (apply_internal_load_schedules names )
         model.getThermostatSetpointDualSetpoints.each do |thermostat|
-          next if thermostat.name.to_s != "#{space_type.name} Thermostat"
-          next if !thermostat.coolingSetpointTemperatureSchedule.is_initialized
-          next if !thermostat.heatingSetpointTemperatureSchedule.is_initialized
+          next if !thermostat.name.to_s.include?(space_type.name.to_s)
           runner.registerInfo("Assigning #{thermostat.name} to thermal zones with #{space_type.name} assigned.")
           space_type.spaces.each do |space|
             next if !space.thermalZone.is_initialized
             space.thermalZone.get.setThermostatSetpointDualSetpoint(thermostat)
           end
+          next
         end
       end
     end
@@ -719,11 +888,50 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
       end
     end
 
-    # TODO: - hours of operation customization (initially using existing measure downstream of this one)
-    # not clear yet if this is altering existing schedules, or additional inputs when schedules first requested
+    # hours of operation
+    if args['modify_wkdy_op_hrs'] || args['modify_wknd_op_hrs']
+      # Infer the current hours of operation schedule for the building
+      op_sch = standard.model_infer_hours_of_operation_building(model)
+
+      # Convert existing schedules in the model to parametric schedules based on current hours of operation
+      standard.model_setup_parametric_schedules(model)
+
+      # Create start and end times from start time and duration supplied
+      wkdy_start_time = nil
+      wkdy_end_time = nil
+      wknd_start_time = nil
+      wknd_end_time = nil
+      # weekdays
+      if args['modify_wkdy_op_hrs']
+        wkdy_start_time = OpenStudio::Time.new(0, wkdy_op_hrs_start_time_hr, wkdy_op_hrs_start_time_min, 0)
+        wkdy_end_time = wkdy_start_time + OpenStudio::Time.new(0, wkdy_op_hrs_duration_hr, wkdy_op_hrs_duration_min, 0)
+      end
+      # weekends
+      if args['modify_wknd_op_hrs']
+        wknd_start_time = OpenStudio::Time.new(0, wknd_op_hrs_start_time_hr, wknd_op_hrs_start_time_min, 0)
+        wknd_end_time = wknd_start_time + OpenStudio::Time.new(0, wknd_op_hrs_duration_hr, wknd_op_hrs_duration_min, 0)
+      end
+
+      # Modify hours of operation, using weekdays values for all weekdays and weekend values for Saturday and Sunday
+      standard.schedule_ruleset_set_hours_of_operation(op_sch,
+                                                       wkdy_start_time: wkdy_start_time,
+                                                       wkdy_end_time: wkdy_end_time,
+                                                       sat_start_time: wknd_start_time,
+                                                       sat_end_time: wknd_end_time,
+                                                       sun_start_time: wknd_start_time,
+                                                       sun_end_time: wknd_end_time)
+
+      # Apply new operating hours to parametric schedules to make schedules in model reflect modified hours of operation
+      parametric_schedules = standard.model_apply_parametric_schedules(model, error_on_out_of_order: false)
+      runner.registerInfo("Updated #{parametric_schedules.size} schedules with new hours of operation.")
+    end
 
     # set hvac controls and efficiencies (this should be last model articulation element)
     if args['add_hvac']
+      # set additional properties for building
+      props = model.getBuilding.additionalProperties
+      props.setFeature('hvac_system_type',"#{args['system_type']}")
+
       case args['system_type']
         when 'Ideal Air Loads'
 
@@ -749,6 +957,27 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
           standard.model_apply_hvac_efficiency_standard(model, climate_zone)
       end
     end
+
+    # add internal mass
+    if args['add_internal_mass']
+
+      if args['remove_objects']
+        model.getSpaceLoads.each do |instance|
+          next unless instance.to_InternalMass.is_initialized
+          instance.remove
+        end
+      end
+
+      # add internal mass to conditioned spaces; needs to happen after thermostats are applied
+      standard.model_add_internal_mass(model, primary_bldg_type)
+    end
+
+    # set unmet hours tolerance
+    unmet_hrs_tol_r = args['unmet_hours_tolerance']
+    unmet_hrs_tol_k = OpenStudio.convert(unmet_hrs_tol_r, 'R', 'K').get
+    tolerances = model.getOutputControlReportingTolerances
+    tolerances.setToleranceforTimeHeatingSetpointNotMet(unmet_hrs_tol_k)
+    tolerances.setToleranceforTimeCoolingSetpointNotMet(unmet_hrs_tol_k)
 
     # remove everything but spaces, zones, and stub space types (extend as needed for additional objects, may make bool arg for this)
     if args['remove_objects']

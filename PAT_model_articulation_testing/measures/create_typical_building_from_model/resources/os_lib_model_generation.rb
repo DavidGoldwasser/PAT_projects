@@ -1,5 +1,5 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2019, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -37,6 +37,7 @@ module OsLib_ModelGeneration
   # simple list of building types that are valid for get_space_types_from_building_type
   def get_building_types
     array = OpenStudio::StringVector.new
+    # DOE Prototypes
     array << 'SecondarySchool'
     array << 'PrimarySchool'
     array << 'SmallOffice'
@@ -54,6 +55,34 @@ module OsLib_ModelGeneration
     array << 'Hospital'
     array << 'Outpatient'
     array << 'SuperMarket'
+    # DEER Prototypes
+    array << 'Asm'
+    array << 'DMo'
+    array << 'ECC'
+    array << 'EPr'
+    array << 'ERC'
+    array << 'ESe'
+    array << 'EUn'
+    array << 'GHs'
+    array << 'Gro'
+    array << 'Hsp'
+    array << 'Htl'
+    array << 'MBT'
+    array << 'MFm'
+    array << 'MLI'
+    array << 'Mtl'
+    array << 'Nrs'
+    array << 'OfL'
+    array << 'OfS'
+    array << 'RFF'
+    array << 'RSD'
+    array << 'Rt3'
+    array << 'RtL'
+    array << 'RtS'
+    array << 'SCn'
+    array << 'SFm'
+    array << 'SUn'
+    array << 'WRf'
 
     return array
   end
@@ -61,6 +90,7 @@ module OsLib_ModelGeneration
   # simple list of templates that are valid for get_space_types_from_building_type
   def get_templates
     array = OpenStudio::StringVector.new
+    # DOE Prototypes
     array << 'DOE Ref Pre-1980'
     array << 'DOE Ref 1980-2004'
     array << '90.1-2004'
@@ -69,6 +99,28 @@ module OsLib_ModelGeneration
     array << '90.1-2010'
     array << '90.1-2013'
     array << 'NREL ZNE Ready 2017'
+    # DEER Prototypes
+    array << 'DEER Pre-1975'
+    array << 'DEER 1985'
+    array << 'DEER 1996'
+    array << 'DEER 2003'
+    array << 'DEER 2007'
+    array << 'DEER 2011'
+    array << 'DEER 2014'
+    array << 'DEER 2015'
+    array << 'DEER 2017'
+	  array << 'DEER 2020'
+	  array << 'DEER 2025'
+	  array << 'DEER 2030'
+	  array << 'DEER 2035'
+	  array << 'DEER 2040'
+	  array << 'DEER 2045'
+	  array << 'DEER 2050'
+	  array << 'DEER 2055'
+	  array << 'DEER 2060'
+	  array << 'DEER 2065'
+	  array << 'DEER 2070'
+	  array << 'DEER 2075'
 
     return array
   end
@@ -86,6 +138,8 @@ module OsLib_ModelGeneration
   # aspect ratio for NA replaced with floor area to perimeter ratio from prototype model
   def building_form_defaults(building_type)
     hash = {}
+
+    # DOE Prototypes
 
     # calculate aspect ratios not represented on Table 4.2
     primary_aspet_ratio = calc_aspect_ratio(73958.0, 2060.0)
@@ -109,7 +163,7 @@ module OsLib_ModelGeneration
     hash['LargeHotel'] = { aspect_ratio: 5.1, wwr: 0.27, typical_story: 10.0, first_story: 13.0 }
 
     # code in get_space_types_from_building_type is used to override building wwr with space type specific wwr
-    hash['Warehouse'] = { aspect_ratio: 2.2, wwr: 0.0, typical_story: 28.0 }
+    hash['Warehouse'] = { aspect_ratio: 2.2, wwr: 0.0, typical_story: 28.0}
 
     hash['QuickServiceRestaurant'] = { aspect_ratio: 1.0, wwr: 0.14, typical_story: 10.0 }
     hash['FullServiceRestaurant'] = { aspect_ratio: 1.0, wwr: 0.18, typical_story: 10.0 }
@@ -119,6 +173,32 @@ module OsLib_ModelGeneration
     # SuperMarket inputs come from prototype model
     hash['SuperMarket'] = { aspect_ratio: supermarket_aspet_ratio.round(1), wwr: supermarket_wwr.round(2), typical_story: 20.0 }
 
+    # DEER Prototypes
+    hash['Asm'] = { aspect_ratio: 1.0, wwr: 0.19, typical_story: 15.0 }
+    hash['ECC'] = { aspect_ratio: 4.0, wwr: 0.25, typical_story: 13.0 }
+    hash['EPr'] = { aspect_ratio: 2.0, wwr: 0.16, typical_story: 12.0 }
+    hash['ERC'] = { aspect_ratio: 1.7, wwr: 0.03, typical_story: 12.0 }
+    hash['ESe'] = { aspect_ratio: 1.0, wwr: 0.15, typical_story: 13.0 }
+    hash['EUn'] = { aspect_ratio: 2.5, wwr: 0.3, typical_story: 14.0 }
+    hash['Gro'] = { aspect_ratio: 1.0, wwr: 0.07, typical_story: 25.0 }
+    hash['Hsp'] = { aspect_ratio: 1.5, wwr: 0.11, typical_story: 13.0 }
+    hash['Htl'] = { aspect_ratio: 3.0, wwr: 0.23, typical_story: 9.5, first_story: 12.0 }
+    hash['MBT'] = { aspect_ratio: 10.7, wwr: 0.12, typical_story: 15.0 }
+    hash['MFm'] = { aspect_ratio: 1.4, wwr: 0.24, typical_story: 9.5 }
+    hash['MLI'] = { aspect_ratio: 1.0, wwr: 0.01, typical_story: 35.0 }
+    hash['Mtl'] = { aspect_ratio: 5.1, wwr: 0.41, typical_story: 9.0 }
+    hash['Nrs'] = { aspect_ratio: 10.3, wwr: 0.2, typical_story: 13.0 }
+    hash['OfL'] = { aspect_ratio: 1.5, wwr: 0.33, typical_story: 12.0 }
+    hash['OfS'] = { aspect_ratio: 1.5, wwr: 0.33, typical_story: 12.0 }
+    hash['RFF'] = { aspect_ratio: 1.0, wwr: 0.25, typical_story: 13.0 }
+    hash['RSD'] = { aspect_ratio: 1.0, wwr: 0.13, typical_story: 13.0 }
+    hash['Rt3'] = { aspect_ratio: 1.0, wwr: 0.02, typical_story: 20.8 }
+    hash['RtL'] = { aspect_ratio: 1.0, wwr: 0.03, typical_story: 20.5 }
+    hash['RtS'] = { aspect_ratio: 1.0, wwr: 0.13, typical_story: 12.0 }
+    hash['SCn'] = { aspect_ratio: 1.0, wwr: 0.01, typical_story: 48.0 }
+    hash['SUn'] = { aspect_ratio: 1.0, wwr: 0.01, typical_story: 48.0 }
+    hash['WRf'] = { aspect_ratio: 1.6, wwr: 0.0, typical_story: 32.0 }
+
     return hash[building_type]
   end
 
@@ -127,7 +207,7 @@ module OsLib_ModelGeneration
     hash = {}
 
     # TODO: - Confirm that these work for all standards
-
+    # DOE Prototypes
     if building_type == 'SecondarySchool'
       hash['Auditorium'] = { ratio: 0.0504, space_type_gen: true, default: false }
       hash['Cafeteria'] = { ratio: 0.0319, space_type_gen: true, default: false }
@@ -372,6 +452,129 @@ module OsLib_ModelGeneration
       hash['Meeting'] = { ratio: 0.99, space_type_gen: true, default: true }
       hash['Restroom'] = { ratio: 0.99, space_type_gen: true, default: true }
       hash['Vestibule'] = { ratio: 0.99, space_type_gen: true, default: true }
+    # DEER Prototypes
+    elsif building_type == 'Asm'
+      hash['Auditorium'] = { ratio: 0.7658, space_type_gen: true, default: true }
+      hash['OfficeGeneral'] = { ratio: 0.2342, space_type_gen: true, default: false }
+    elsif building_type == 'ECC'
+      hash['Classroom'] = { ratio: 0.5558, space_type_gen: true, default: true }
+      hash['CompRoomClassRm'] = { ratio: 0.0319, space_type_gen: true, default: false }
+      hash['Shop'] = { ratio: 0.1249, space_type_gen: true, default: false }
+      hash['Dining'] = { ratio: 0.0876, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.0188, space_type_gen: true, default: false }
+      hash['OfficeGeneral'] = { ratio: 0.181, space_type_gen: true, default: false }
+    elsif building_type == 'EPr'
+      hash['Classroom'] = { ratio: 0.53, space_type_gen: true, default: true }
+      hash['CorridorStairway'] = { ratio: 0.1, space_type_gen: true, default: false }
+      hash['Dining'] = { ratio: 0.15, space_type_gen: true, default: false }
+      hash['Gymnasium'] = { ratio: 0.15, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.07, space_type_gen: true, default: false }
+    elsif building_type == 'ERC'
+      hash['Classroom'] = { ratio: 0.5, space_type_gen: true, default: true }
+    elsif building_type == 'ESe'
+      hash['Classroom'] = { ratio: 0.488, space_type_gen: true, default: true }
+      hash['CompRoomClassRm'] = { ratio: 0.021, space_type_gen: true, default: false }
+      hash['CorridorStairway'] = { ratio: 0.1, space_type_gen: true, default: false }
+      hash['Dining'] = { ratio: 0.15, space_type_gen: true, default: false }
+      hash['Gymnasium'] = { ratio: 0.15, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.07, space_type_gen: true, default: false }
+      hash['OfficeGeneral'] = { ratio: 0.021, space_type_gen: true, default: true }
+    elsif building_type == 'EUn'
+      hash['Dining'] = { ratio: 0.0238, space_type_gen: true, default: false }
+      hash['Classroom'] = { ratio: 0.3056, space_type_gen: true, default: false }
+      hash['OfficeGeneral'] = { ratio: 0.3422, space_type_gen: true, default: true }
+      hash['CompRoomClassRm'] = { ratio: 0.038, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.0105, space_type_gen: true, default: false }
+      hash['CorridorStairway'] = { ratio: 0.03, space_type_gen: true, default: false }
+      hash['FacMaint'] = { ratio: 0.08, space_type_gen: true, default: false }
+      hash['DormitoryRoom'] = { ratio: 0.1699, space_type_gen: true, default: false }
+    elsif building_type == 'Gro'
+      hash['GrocSales'] = { ratio: 0.8002, space_type_gen: true, default: true }
+      hash['RefWalkInCool'] = { ratio: 0.0312, space_type_gen: true, default: false }
+      hash['OfficeGeneral'] = { ratio: 0.07, space_type_gen: true, default: false }
+      hash['RefFoodPrep'] = { ratio: 0.0253, space_type_gen: true, default: false }
+      hash['RefWalkInFreeze'] = { ratio: 0.0162, space_type_gen: true, default: false }
+      hash['IndLoadDock'] = { ratio: 0.057, space_type_gen: true, default: false }
+    elsif building_type == 'Hsp'
+      hash['HspSurgOutptLab'] = { ratio: 0.2317, space_type_gen: true, default: false }
+      hash['Dining'] = { ratio: 0.0172, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.0075, space_type_gen: true, default: false }
+      hash['OfficeGeneral'] = { ratio: 0.3636, space_type_gen: true, default: false }
+      hash['PatientRoom'] = { ratio: 0.38, space_type_gen: true, default: true }
+    elsif building_type == 'Htl'
+      hash['Dining'] = { ratio: 0.004, space_type_gen: true, default: false }
+      hash['BarCasino'] = { ratio: 0.005, space_type_gen: true, default: false }
+      hash['HotelLobby'] = { ratio: 0.0411, space_type_gen: true, default: false }
+      hash['OfficeGeneral'] = { ratio: 0.0205, space_type_gen: true, default: false }
+      hash['GuestRmCorrid'] = { ratio: 0.1011, space_type_gen: true, default: false }
+      hash['Laundry'] = { ratio: 0.0205, space_type_gen: true, default: false }
+      hash['GuestRmOcc'] = { ratio: 0.64224, space_type_gen: true, default: true }
+      hash['GuestRmUnOcc'] = { ratio: 0.16056, space_type_gen: true, default: true }
+      hash['Kitchen'] = { ratio: 0.005, space_type_gen: true, default: false }
+    elsif building_type == 'MBT'
+      hash['CompRoomData'] = { ratio: 0.02, space_type_gen: true, default: false }
+      hash['Laboratory'] = { ratio: 0.4534, space_type_gen: true, default: true }
+      hash['CorridorStairway'] = { ratio: 0.2, space_type_gen: true, default: false }
+      hash['Conference'] = { ratio: 0.02, space_type_gen: true, default: false }
+      hash['Dining'] = { ratio: 0.03, space_type_gen: true, default: false }
+      hash['OfficeOpen'] = { ratio: 0.2666, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.01, space_type_gen: true, default: false }
+    elsif building_type == 'MFm'
+      hash['ResLiving'] = { ratio: 0.9297, space_type_gen: true, default: true }
+      hash['ResPublicArea'] = { ratio: 0.0725, space_type_gen: true, default: false }
+    elsif building_type == 'MLI'
+      hash['StockRoom'] = { ratio: 0.2, space_type_gen: true, default: false }
+      hash['Work'] = { ratio: 0.8, space_type_gen: true, default: true }
+    elsif building_type == 'Mtl'
+      hash['OfficeGeneral'] = { ratio: 0.02, space_type_gen: true, default: false }
+      hash['GuestRmCorrid'] = { ratio: 0.649, space_type_gen: true, default: true }
+      hash['Laundry'] = { ratio: 0.016, space_type_gen: true, default: false }
+      hash['GuestRmOcc'] = { ratio: 0.25208, space_type_gen: true, default: false }
+      hash['GuestRmUnOcc'] = { ratio: 0.06302, space_type_gen: true, default: false }
+    elsif building_type == 'Nrs'
+      hash['CorridorStairway'] = { ratio: 0.0555, space_type_gen: true, default: false }
+      hash['Dining'] = { ratio: 0.105, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.045, space_type_gen: true, default: false }
+      hash['OfficeGeneral'] = { ratio: 0.35, space_type_gen: true, default: false }
+      hash['PatientRoom'] = { ratio: 0.4445, space_type_gen: true, default: true }
+    elsif building_type == 'OfL'
+      hash['LobbyWaiting'] = { ratio: 0.0412, space_type_gen: true, default: false }
+      hash['OfficeSmall'] = { ratio: 0.3704, space_type_gen: true, default: false }
+      hash['OfficeOpen'] = { ratio: 0.5296, space_type_gen: true, default: true }
+      hash['MechElecRoom'] = { ratio: 0.0588, space_type_gen: true, default: false }
+    elsif building_type == 'OfS'
+      hash['Hall'] = { ratio: 0.3141, space_type_gen: true, default: false }
+      hash['OfficeSmall'] = { ratio: 0.6859, space_type_gen: true, default: true }
+    elsif building_type == 'RFF'
+      hash['Dining'] = { ratio: 0.3997, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.4, space_type_gen: true, default: true }
+      hash['LobbyWaiting'] = { ratio: 0.1501, space_type_gen: true, default: false }
+      hash['Restroom'] = { ratio: 0.0501, space_type_gen: true, default: false }
+    elsif building_type == 'RSD'
+      hash['Restroom'] = { ratio: 0.0357, space_type_gen: true, default: false }
+      hash['Dining'] = { ratio: 0.5353, space_type_gen: true, default: true }
+      hash['LobbyWaiting'] = { ratio: 0.1429, space_type_gen: true, default: false }
+      hash['Kitchen'] = { ratio: 0.2861, space_type_gen: true, default: false }
+    elsif building_type == 'Rt3'
+      hash['RetailSales'] = { ratio: 1.0, space_type_gen: true, default: true }
+    elsif building_type == 'RtL'
+      hash['OfficeGeneral'] = { ratio: 0.0359, space_type_gen: true, default: false }
+      hash['Work'] = { ratio: 0.04, space_type_gen: true, default: false }
+      hash['StockRoom'] = { ratio: 0.091, space_type_gen: true, default: false }
+      hash['RetailSales'] = { ratio: 0.8219, space_type_gen: true, default: true }
+      hash['Kitchen'] = { ratio: 0.0113, space_type_gen: true, default: false }
+    elsif building_type == 'RtS'
+      hash['RetailSales'] = { ratio: 0.8, space_type_gen: true, default: true }
+      hash['StockRoom'] = { ratio: 0.2, space_type_gen: true, default: false }
+    elsif building_type == 'SCn'
+      hash['WarehouseCond'] = { ratio: 1.0, space_type_gen: true, default: true }
+    elsif building_type == 'SUn'
+      hash['WarehouseUnCond'] = { ratio: 1.0, space_type_gen: true, default: true }
+    elsif building_type == 'WRf'
+      hash['IndLoadDock'] = { ratio: 0.08, space_type_gen: true, default: false }
+      hash['OfficeGeneral'] = { ratio: 0.02, space_type_gen: true, default: false }
+      hash['RefStorFreezer'] = { ratio: 0.4005, space_type_gen: true, default: false }
+      hash['RefStorCooler'] = { ratio: 0.4995, space_type_gen: true, default: true }
     else
       return false
     end
@@ -693,11 +896,11 @@ module OsLib_ModelGeneration
             space_type = surface.space.get.spaceType.get
 
             # see if space type has wwr value
-            bar_hash[:space_types].each do |k, v|
-              if v.key?(:space_type) && space_type == v[:space_type]
+            bar_hash[:space_types].each do |k,v|
+              if v.has_key?(:space_type) && space_type == v[:space_type]
 
                 # if matching space type specifies a wwr then override the orientaiton specific recommendations for this surface.
-                if v.key?(:wwr)
+                if v.has_key?(:wwr)
                   wwr_n = v[:wwr]
                   wwr_e = v[:wwr]
                   wwr_s = v[:wwr]
@@ -742,7 +945,7 @@ module OsLib_ModelGeneration
     end
 
     # report space types with custom wwr values
-    space_type_wwr_overrides.each do |space_type, wwr|
+    space_type_wwr_overrides.each do |space_type,wwr|
       runner.registerInfo("For #{space_type.name} the default building wwr was replaced with a space type specifc value of #{wwr}")
     end
 

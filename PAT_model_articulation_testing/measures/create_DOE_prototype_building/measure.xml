@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>create_doe_prototype_building</name>
   <uid>be90fd0b-a651-467a-bc8d-29d310b0f937</uid>
-  <version_id>f55b0fcf-29c3-4386-97d3-c0c903b81418</version_id>
-  <version_modified>20190409T140609Z</version_modified>
+  <version_id>29690b5c-1f2b-433a-8273-49c07552c2e8</version_id>
+  <version_modified>20190830T191015Z</version_modified>
   <xml_checksum>057E8D9D</xml_checksum>
   <class_name>CreateDOEPrototypeBuilding</class_name>
   <display_name>Create DOE Prototype Building</display_name>
@@ -128,67 +128,67 @@
       <type>Choice</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
-      <default_value>ASHRAE 169-2006-2A</default_value>
+      <default_value>ASHRAE 169-2013-2A</default_value>
       <choices>
         <choice>
-          <value>ASHRAE 169-2006-1A</value>
-          <display_name>ASHRAE 169-2006-1A</display_name>
+          <value>ASHRAE 169-2013-1A</value>
+          <display_name>ASHRAE 169-2013-1A</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-2A</value>
-          <display_name>ASHRAE 169-2006-2A</display_name>
+          <value>ASHRAE 169-2013-2A</value>
+          <display_name>ASHRAE 169-2013-2A</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-2B</value>
-          <display_name>ASHRAE 169-2006-2B</display_name>
+          <value>ASHRAE 169-2013-2B</value>
+          <display_name>ASHRAE 169-2013-2B</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-3A</value>
-          <display_name>ASHRAE 169-2006-3A</display_name>
+          <value>ASHRAE 169-2013-3A</value>
+          <display_name>ASHRAE 169-2013-3A</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-3B</value>
-          <display_name>ASHRAE 169-2006-3B</display_name>
+          <value>ASHRAE 169-2013-3B</value>
+          <display_name>ASHRAE 169-2013-3B</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-3C</value>
-          <display_name>ASHRAE 169-2006-3C</display_name>
+          <value>ASHRAE 169-2013-3C</value>
+          <display_name>ASHRAE 169-2013-3C</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-4A</value>
-          <display_name>ASHRAE 169-2006-4A</display_name>
+          <value>ASHRAE 169-2013-4A</value>
+          <display_name>ASHRAE 169-2013-4A</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-4B</value>
-          <display_name>ASHRAE 169-2006-4B</display_name>
+          <value>ASHRAE 169-2013-4B</value>
+          <display_name>ASHRAE 169-2013-4B</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-4C</value>
-          <display_name>ASHRAE 169-2006-4C</display_name>
+          <value>ASHRAE 169-2013-4C</value>
+          <display_name>ASHRAE 169-2013-4C</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-5A</value>
-          <display_name>ASHRAE 169-2006-5A</display_name>
+          <value>ASHRAE 169-2013-5A</value>
+          <display_name>ASHRAE 169-2013-5A</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-5B</value>
-          <display_name>ASHRAE 169-2006-5B</display_name>
+          <value>ASHRAE 169-2013-5B</value>
+          <display_name>ASHRAE 169-2013-5B</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-6A</value>
-          <display_name>ASHRAE 169-2006-6A</display_name>
+          <value>ASHRAE 169-2013-6A</value>
+          <display_name>ASHRAE 169-2013-6A</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-6B</value>
-          <display_name>ASHRAE 169-2006-6B</display_name>
+          <value>ASHRAE 169-2013-6B</value>
+          <display_name>ASHRAE 169-2013-6B</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-7A</value>
-          <display_name>ASHRAE 169-2006-7A</display_name>
+          <value>ASHRAE 169-2013-7A</value>
+          <display_name>ASHRAE 169-2013-7A</display_name>
         </choice>
         <choice>
-          <value>ASHRAE 169-2006-8A</value>
-          <display_name>ASHRAE 169-2006-8A</display_name>
+          <value>ASHRAE 169-2013-8A</value>
+          <display_name>ASHRAE 169-2013-8A</display_name>
         </choice>
         <choice>
           <value>NECB HDD Method</value>
@@ -722,12 +722,6 @@
       <checksum>9640B6CB</checksum>
     </file>
     <file>
-      <filename>create_DOE_prototype_building_test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>16A2D58F</checksum>
-    </file>
-    <file>
       <filename>README.md.erb</filename>
       <filetype>erb</filetype>
       <usage_type>readmeerb</usage_type>
@@ -740,6 +734,12 @@
       <checksum>8950E7AF</checksum>
     </file>
     <file>
+      <filename>create_DOE_prototype_building_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>71A4C8AE</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.0.0</identifier>
@@ -748,7 +748,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>E1930035</checksum>
+      <checksum>ADBFC024</checksum>
     </file>
   </files>
 </measure>
