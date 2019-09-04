@@ -1,7 +1,7 @@
 {
   "projectName": "PAT_model_articulation_testing",
   "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing",
-  "analysisName": "PAT_model_articulation_testing_830_prototype_and_typical",
+  "analysisName": "PAT_model_articulation_testing_0904_test_c",
   "seed": "empty_seed.osm",
   "weatherFile": "USA_CO_Denver.Intl.AP.725650_TMY3.epw",
   "analysis_type": "Algorithmic",
@@ -29,7 +29,7 @@
       "defaultValue": "full_factorial",
       "type": "string",
       "value": "full_factorial",
-      "$$hashKey": "object:7151"
+      "$$hashKey": "object:55420"
     },
     {
       "name": "number_of_samples",
@@ -37,8 +37,8 @@
       "description": "Positive integer (this discretizes a continous variable)",
       "defaultValue": 2,
       "type": "number",
-      "value": 40,
-      "$$hashKey": "object:10739"
+      "value": 2,
+      "$$hashKey": "object:55421"
     },
     {
       "name": "seed",
@@ -77,7 +77,7 @@
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_DOE_prototype_building",
       "name": "create_doe_prototype_building",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/create_DOE_prototype_building",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_DOE_prototype_building",
       "uid": "be90fd0b-a651-467a-bc8d-29d310b0f937",
       "uuid": "{be90fd0b-a651-467a-bc8d-29d310b0f937}",
       "version_id": "29690b5c-1f2b-433a-8273-49c07552c2e8",
@@ -176,7 +176,8 @@
             "mean": "SmallOffice",
             "deltaX": "SmallOffice",
             "stdDev": "SmallOffice",
-            "default_value": "SmallOffice"
+            "default_value": "SmallOffice",
+            "showWarningIcon": false
           },
           "$$hashKey": "object:12449"
         },
@@ -226,7 +227,8 @@
             "mean": "90.1-2010",
             "deltaX": "90.1-2010",
             "stdDev": "90.1-2010",
-            "default_value": "90.1-2010"
+            "default_value": "90.1-2004",
+            "showWarningIcon": false
           },
           "$$hashKey": "object:12450"
         },
@@ -303,7 +305,8 @@
             "mean": "ASHRAE 169-2013-2A",
             "deltaX": "ASHRAE 169-2013-2A",
             "stdDev": "ASHRAE 169-2013-2A",
-            "default_value": "ASHRAE 169-2013-2A"
+            "default_value": "ASHRAE 169-2013-2A",
+            "showWarningIcon": false
           },
           "$$hashKey": "object:12451"
         },
@@ -695,7 +698,8 @@
             "mean": "Not Applicable",
             "deltaX": "Not Applicable",
             "stdDev": "Not Applicable",
-            "default_value": "Not Applicable"
+            "default_value": "Not Applicable",
+            "showWarningIcon": false
           },
           "$$hashKey": "object:12452"
         }
@@ -713,9 +717,11 @@
       "seed": "empty_seed.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.41722384400994184,
+      "instanceId": 0.7615159083790515,
       "skip": false,
-      "$$hashKey": "object:12406"
+      "$$hashKey": "object:12406",
+      "showWarningText": false,
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/remove_ems_objects",
@@ -769,9 +775,11 @@
       "seed": "empty_seed.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.8003504936351606,
+      "instanceId": 0.11750006810409896,
       "skip": false,
-      "$$hashKey": "object:47312"
+      "$$hashKey": "object:47312",
+      "showWarningText": false,
+      "outputMeasure": false
     },
     {
       "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_model_articulation_testing/measures/create_typical_building_from_model",
@@ -1391,7 +1399,8 @@
             "mean": "Inferred",
             "deltaX": "Inferred",
             "stdDev": "Inferred",
-            "default_value": "Inferred"
+            "default_value": "Inferred",
+            "showWarningIcon": false
           }
         },
         {
@@ -1524,7 +1533,8 @@
             "mean": "Lookup From Model",
             "deltaX": "Lookup From Model",
             "stdDev": "Lookup From Model",
-            "default_value": "Lookup From Model"
+            "default_value": "Lookup From Model",
+            "showWarningIcon": false
           }
         },
         {
@@ -1880,7 +1890,8 @@
             "discreteVariables": [],
             "mean": false,
             "deltaX": false,
-            "stdDev": false
+            "stdDev": false,
+            "showWarningIcon": false
           },
           "display_name_short": "add_internal_mass"
         },
@@ -1906,7 +1917,8 @@
             "discreteVariables": [],
             "mean": false,
             "deltaX": false,
-            "stdDev": false
+            "stdDev": false,
+            "showWarningIcon": false
           },
           "display_name_short": "add_refrigeration"
         },
@@ -1932,7 +1944,8 @@
             "discreteVariables": [],
             "mean": false,
             "deltaX": false,
-            "stdDev": false
+            "stdDev": false,
+            "showWarningIcon": false
           },
           "display_name_short": "modify_wkdy_op_hrs"
         },
@@ -1959,7 +1972,8 @@
             "mean": "08:00",
             "deltaX": "08:00",
             "stdDev": "08:00",
-            "default_value": "08:00"
+            "default_value": "08:00",
+            "showWarningIcon": false
           }
         },
         {
@@ -1985,7 +1999,8 @@
             "mean": "08:00",
             "deltaX": "08:00",
             "stdDev": "08:00",
-            "default_value": "08:00"
+            "default_value": "08:00",
+            "showWarningIcon": false
           }
         },
         {
@@ -2010,7 +2025,8 @@
             "discreteVariables": [],
             "mean": false,
             "deltaX": false,
-            "stdDev": false
+            "stdDev": false,
+            "showWarningIcon": false
           },
           "display_name_short": "modify_wknd_op_hrs"
         },
@@ -2037,7 +2053,8 @@
             "mean": "08:00",
             "deltaX": "08:00",
             "stdDev": "08:00",
-            "default_value": "08:00"
+            "default_value": "08:00",
+            "showWarningIcon": false
           }
         },
         {
@@ -2063,7 +2080,8 @@
             "mean": "08:00",
             "deltaX": "08:00",
             "stdDev": "08:00",
-            "default_value": "08:00"
+            "default_value": "08:00",
+            "showWarningIcon": false
           }
         },
         {
@@ -2089,7 +2107,8 @@
             "mean": 1,
             "deltaX": 1,
             "stdDev": 1,
-            "default_value": 1
+            "default_value": 1,
+            "showWarningIcon": false
           }
         },
         {
@@ -2284,7 +2303,7 @@
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.6627453809295871,
+      "instanceId": 0.016474260076435376,
       "skip": false,
       "$$hashKey": "object:3178",
       "numberOfOptions": 1,
@@ -2909,7 +2928,8 @@
             "mean": "Inferred",
             "deltaX": "Inferred",
             "stdDev": "Inferred",
-            "default_value": "Inferred"
+            "default_value": "Inferred",
+            "showWarningIcon": false
           }
         },
         {
@@ -3042,7 +3062,8 @@
             "mean": "Lookup From Model",
             "deltaX": "Lookup From Model",
             "stdDev": "Lookup From Model",
-            "default_value": "Lookup From Model"
+            "default_value": "Lookup From Model",
+            "showWarningIcon": false
           }
         },
         {
@@ -3398,7 +3419,8 @@
             "discreteVariables": [],
             "mean": false,
             "deltaX": false,
-            "stdDev": false
+            "stdDev": false,
+            "showWarningIcon": false
           },
           "display_name_short": "add_internal_mass"
         },
@@ -3424,7 +3446,8 @@
             "discreteVariables": [],
             "mean": false,
             "deltaX": false,
-            "stdDev": false
+            "stdDev": false,
+            "showWarningIcon": false
           },
           "display_name_short": "add_refrigeration"
         },
@@ -3450,7 +3473,8 @@
             "discreteVariables": [],
             "mean": false,
             "deltaX": false,
-            "stdDev": false
+            "stdDev": false,
+            "showWarningIcon": false
           },
           "display_name_short": "modify_wkdy_op_hrs"
         },
@@ -3477,7 +3501,8 @@
             "mean": "08:00",
             "deltaX": "08:00",
             "stdDev": "08:00",
-            "default_value": "08:00"
+            "default_value": "08:00",
+            "showWarningIcon": false
           }
         },
         {
@@ -3503,7 +3528,8 @@
             "mean": "08:00",
             "deltaX": "08:00",
             "stdDev": "08:00",
-            "default_value": "08:00"
+            "default_value": "08:00",
+            "showWarningIcon": false
           }
         },
         {
@@ -3528,7 +3554,8 @@
             "discreteVariables": [],
             "mean": false,
             "deltaX": false,
-            "stdDev": false
+            "stdDev": false,
+            "showWarningIcon": false
           },
           "display_name_short": "modify_wknd_op_hrs"
         },
@@ -3555,7 +3582,8 @@
             "mean": "08:00",
             "deltaX": "08:00",
             "stdDev": "08:00",
-            "default_value": "08:00"
+            "default_value": "08:00",
+            "showWarningIcon": false
           }
         },
         {
@@ -3581,7 +3609,8 @@
             "mean": "08:00",
             "deltaX": "08:00",
             "stdDev": "08:00",
-            "default_value": "08:00"
+            "default_value": "08:00",
+            "showWarningIcon": false
           }
         },
         {
@@ -3607,7 +3636,8 @@
             "mean": 1,
             "deltaX": 1,
             "stdDev": 1,
-            "default_value": 1
+            "default_value": 1,
+            "showWarningIcon": false
           }
         },
         {
@@ -3802,7 +3832,7 @@
           "description": "Option 1 Description: Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating. The end result is somewhat like a custom protptye model with user geometry, but it may use different HVAC systems."
         }
       ],
-      "instanceId": 0.5033035308480684,
+      "instanceId": 0.10034344268782203,
       "skip": true,
       "$$hashKey": "object:3929",
       "numberOfOptions": 1,
@@ -3982,87 +4012,87 @@
               "Outpatient",
               "SuperMarket"
             ],
-            "variableSetting": "Discrete",
+            "variableSetting": "Argument",
             "distribution": "Uniform",
             "discreteVariables": [
               {
                 "value": "SecondarySchool",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:20124"
               },
               {
                 "value": "PrimarySchool",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:20135"
               },
               {
                 "value": "SmallOffice",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:20145"
               },
               {
                 "value": "MediumOffice",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:27265"
               },
               {
                 "value": "LargeOffice",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:27275"
               },
               {
                 "value": "SmallHotel",
-                "weight": 0.06,
+                "weight": 0.5,
                 "$$hashKey": "object:5792"
               },
               {
                 "value": "LargeHotel",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:5802"
               },
               {
                 "value": "Warehouse",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:5812"
               },
               {
                 "value": "RetailStandalone",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:5822"
               },
               {
                 "value": "RetailStripmall",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:5832"
               },
               {
                 "value": "QuickServiceRestaurant",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:5842"
               },
               {
                 "value": "FullServiceRestaurant",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:5852"
               },
               {
                 "value": "MidriseApartment",
-                "weight": 0.06,
+                "weight": 0.5,
                 "$$hashKey": "object:5862"
               },
               {
                 "value": "HighriseApartment",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:5872"
               },
               {
                 "value": "Hospital",
-                "weight": 0.06,
+                "weight": 0,
                 "$$hashKey": "object:5882"
               },
               {
                 "value": "Outpatient",
-                "weight": 0.1,
+                "weight": 0,
                 "$$hashKey": "object:5892"
               }
             ],
@@ -4319,7 +4349,7 @@
             "mean": "ASHRAE 169-2013-2A",
             "deltaX": "ASHRAE 169-2013-2A",
             "stdDev": "ASHRAE 169-2013-2A",
-            "default_value": "ASHRAE 169-2013-5B",
+            "default_value": "ASHRAE 169-2013-2A",
             "showWarningIcon": false
           },
           "$$hashKey": "object:1647",
@@ -4397,7 +4427,7 @@
             "mean": "DOE Prototype Building",
             "deltaX": "DOE Prototype Building",
             "stdDev": "DOE Prototype Building",
-            "default_value": "s5 Prototype - hvac",
+            "default_value": "s0 Prototype",
             "showWarningIcon": false
           },
           "$$hashKey": "object:1648",
@@ -4542,7 +4572,7 @@
           "description": "Option 5 Description: This measure will copy the OSW, alter it based on argument choices selected, run the OSW in the CLI, and pass the resulting model out of the measure. It should be the last OpenStudio measure in the workflow."
         }
       ],
-      "instanceId": 0.05919728012555625,
+      "instanceId": 0.06670117213914195,
       "skip": false,
       "$$hashKey": "object:1581",
       "numberOfOptions": 5,
@@ -5630,7 +5660,7 @@
           "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         }
       ],
-      "instanceId": 0.5312422378602357,
+      "instanceId": 0.5285021744684737,
       "skip": false,
       "$$hashKey": "object:5934",
       "numberOfOptions": 1,
@@ -6238,7 +6268,7 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.23878492597439283,
+      "instanceId": 0.6447196207605927,
       "skip": false,
       "$$hashKey": "object:4635",
       "numberOfOptions": 1,
@@ -6655,8 +6685,8 @@
       "seed": "empty_seed.osm",
       "workflow_index": 7,
       "options": [],
-      "instanceId": 0.07072903144662979,
-      "skip": false,
+      "instanceId": 0.49678979071294993,
+      "skip": true,
       "$$hashKey": "object:27293",
       "showWarningText": false,
       "outputMeasure": false
@@ -6665,20 +6695,20 @@
   "filesToInclude": [],
   "serverScripts": {
     "server_initialization": {
-      "file": "initialize.sh",
-      "arguments": [
-        "openstudio-standards",
-        "nrel/openstudio-standards",
-        "master"
-      ]
+      "file": null,
+      "arguments": []
     },
     "server_finalization": {
       "file": null,
       "arguments": []
     },
     "worker_initialization": {
-      "file": null,
-      "arguments": []
+      "file": "initialize.sh",
+      "arguments": [
+        "openstudio-standards",
+        "nrel/openstudio-standards",
+        "fix/single_zone_controls"
+      ]
     },
     "worker_finalization": {
       "file": null,

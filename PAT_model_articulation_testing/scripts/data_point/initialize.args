@@ -1,5 +1,5 @@
 [
   "openstudio-standards",
   "nrel/openstudio-standards",
-  "master"
+  "fix/single_zone_controls"
 ]
