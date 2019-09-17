@@ -39,6 +39,9 @@ echo "$NEWGEM"
 cp /usr/local/openstudio-2.8.1/Ruby/Gemfile /var/oscli/
 sed -i -e "s|$OLDGEM.*|$NEWGEM|g" $GEMFILE
 
+# Modify the gemspec in place3
+sed -i '/openstudio-standards/d' /var/oscli/openstudio-gems.gemspec
+
 # Show the modified Gemfile contents in the log
 cd $GEMFILEDIR
 dos2unix $GEMFILE
@@ -56,7 +59,7 @@ export RUBYLIB=/usr/local/openstudio-2.8.1/Ruby:/usr/Ruby
 # Update the specified gem in the bundle
 echo "***Updating the specified gem:"
 rm Gemfile.lock
-bundle _1.14.4_ install --path gems
+bundle _1.17.1_ install --path gems
 
 # Note that the bundle has been updated
 echo >> $GEMFILEUPDATE
