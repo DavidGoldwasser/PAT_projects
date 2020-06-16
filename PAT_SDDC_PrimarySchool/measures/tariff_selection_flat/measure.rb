@@ -1,5 +1,5 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -36,7 +36,9 @@
 # see the URL below for information on how to write OpenStudio measures
 # http://nrel.github.io/OpenStudio-user-documentation/measures/measure_writing_guide/
 
-require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
+# load OpenStudio measure libraries from openstudio-extension gem
+require 'openstudio-extension'
+require 'openstudio/extension/core/os_lib_helper_methods'
 
 # start the measure
 class TariffSelectionFlat < OpenStudio::Measure::EnergyPlusMeasure
@@ -79,12 +81,33 @@ class TariffSelectionFlat < OpenStudio::Measure::EnergyPlusMeasure
     elec_rate.setDefaultValue(0.12)
     args << elec_rate
 
+    # adding argument for electric demand rate
+    elec_demand_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('elec_demand_rate', true)
+    elec_demand_rate.setDisplayName('Electric Demand Rate')
+    elec_demand_rate.setUnits('$/kW')
+    elec_demand_rate.setDefaultValue(12.00)
+    args << elec_demand_rate
+
+    # adding argument for electric monthly charge
+    elec_monthly_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('elec_monthly_rate', true)
+    elec_monthly_rate.setDisplayName('Electric Monthly Rate')
+    elec_monthly_rate.setUnits('$/month')
+    elec_monthly_rate.setDefaultValue(120.0)
+    args << elec_monthly_rate
+
     # adding argument for gas_rate
     gas_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('gas_rate', true)
     gas_rate.setDisplayName('Gas Rate')
     gas_rate.setUnits('$/therm')
     gas_rate.setDefaultValue(0.5)
     args << gas_rate
+
+    # adding argument for gas monthly rate
+    gas_monthly_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('gas_monthly_rate', true)
+    gas_monthly_rate.setDisplayName('Gas Montly Rate')
+    gas_monthly_rate.setUnits('$/month')
+    gas_monthly_rate.setDefaultValue(50)
+    args << gas_monthly_rate
 
     # adding argument for water_rate
     water_rate = OpenStudio::Measure::OSArgument.makeDoubleArgument('water_rate', true)
@@ -169,7 +192,7 @@ class TariffSelectionFlat < OpenStudio::Measure::EnergyPlusMeasure
         ,                                       !- Season Schedule Name
         ,                                       !- Month Schedule Name
         Day,                                    !- Demand Window Length
-        0.0;                                    !- Monthly Charge or Variable Name
+        #{args['elec_monthly_rate']};                                    !- Monthly Charge or Variable Name
         "
       elec_tariff = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
 
@@ -184,6 +207,19 @@ class TariffSelectionFlat < OpenStudio::Measure::EnergyPlusMeasure
         #{args['elec_rate']};          !- Cost per Unit Value or Variable Name
         "
       elec_utility_cost = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
+
+      if args['elec_demand_rate'] > 0
+        new_object_string = "
+        UtilityCost:Charge:Simple,
+          ElectricityTariffDemandCharge,        !- Name
+          Electricity Tariff,                   !- Tariff Name
+          totalDemand,                          !- Source Variable
+          Annual,                               !- Season
+          DemandCharges,                        !- Category Variable Name
+          #{args['elec_demand_rate']};          !- Cost per Unit Value or Variable Name
+          "
+        elec_utility_cost = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
+      end
     end
 
     # gas tariff object
@@ -199,7 +235,7 @@ class TariffSelectionFlat < OpenStudio::Measure::EnergyPlusMeasure
         ,                                       !- Season Schedule Name
         ,                                       !- Month Schedule Name
         Day,                                    !- Demand Window Length
-        0.0;                                    !- Monthly Charge or Variable Name
+        #{args['gas_monthly_rate']};                                    !- Monthly Charge or Variable Name
         "
       gas_tariff = workspace.addObject(OpenStudio::IdfObject.load(new_object_string).get).get
 

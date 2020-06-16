@@ -1,5 +1,5 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -156,7 +156,7 @@ class OpenStudioResults_Test < Minitest::Test
     model = model.get
     model.addObjects(request_model.objects)
     model.save(model_out_path(test_name), true)
-    
+
     if ENV['OPENSTUDIO_TEST_NO_CACHE_SQLFILE']
       if File.exist?(sql_path(test_name))
         FileUtils.rm_f(sql_path(test_name))
@@ -196,7 +196,7 @@ class OpenStudioResults_Test < Minitest::Test
   end
 
   def test_example_model
-    #skip "Broken in 2.5.1, address immediately"
+    # skip "Broken in 2.5.1, address immediately"
 
     test_name = 'test_example_model'
     model_in_path = "#{File.dirname(__FILE__)}/ExampleModel.osm"
@@ -225,7 +225,79 @@ class OpenStudioResults_Test < Minitest::Test
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
-    assert_equal(3, idf_output_requests.size)
+    assert_equal(11, idf_output_requests.size)
+
+    # mimic the process of running this measure in OS App or PAT
+    epw_path = epw_path_default
+    setup_test(test_name, idf_output_requests, model_in_path)
+
+    assert(File.exist?(model_out_path(test_name)))
+    assert(File.exist?(sql_path(test_name)))
+    assert(File.exist?(epw_path))
+
+    # set up runner, this will happen automatically when measure is run in PAT or OpenStudio
+    runner.setLastOpenStudioModelPath(OpenStudio::Path.new(model_out_path(test_name)))
+    runner.setLastEnergyPlusWorkspacePath(OpenStudio::Path.new(workspace_path(test_name)))
+    runner.setLastEpwFilePath(epw_path)
+    runner.setLastEnergyPlusSqlFilePath(OpenStudio::Path.new(sql_path(test_name)))
+
+    # delete the output if it exists
+    if File.exist?(report_path(test_name))
+      FileUtils.rm(report_path(test_name))
+    end
+    assert(!File.exist?(report_path(test_name)))
+
+    # temporarily change directory to the run directory and run the measure
+    start_dir = Dir.pwd
+    begin
+      Dir.chdir(run_dir(test_name))
+
+      # run the measure
+      measure.run(runner, argument_map)
+      result = runner.result
+      show_output(result)
+      assert_equal('Success', result.value.valueName)
+
+      # look for section_errors
+      assert(section_errors(runner).empty?)
+    ensure
+      Dir.chdir(start_dir)
+    end
+
+    # make sure the report file exists
+    assert(File.exist?(report_path(test_name)))
+  end
+
+  def test_example_model_si
+    test_name = 'test_example_model_si'
+    model_in_path = "#{File.dirname(__FILE__)}/ExampleModel.osm"
+
+    # create an instance of the measure
+    measure = OpenStudioResults.new
+
+    # create an instance of a runner
+    runner = OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new)
+
+    # get arguments
+    arguments = measure.arguments
+    argument_map = OpenStudio::Measure.convertOSArgumentVectorToMap(arguments)
+
+    # create hash of argument values
+    args_hash = {}
+    args_hash['units'] = 'SI'
+
+    # populate argument with specified hash value if specified
+    arguments.each do |arg|
+      temp_arg_var = arg.clone
+      if args_hash[arg.name]
+        assert(temp_arg_var.setValue(args_hash[arg.name]))
+      end
+      argument_map[arg.name] = temp_arg_var
+    end
+
+    # get the energyplus output requests, this will be done automatically by OS App and PAT
+    idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
+    assert_equal(11, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -269,8 +341,6 @@ class OpenStudioResults_Test < Minitest::Test
   end
 
   def test_edge_model
-    #skip "Broken in 2.5.1, address immediately"
-
     test_name = 'test_edge_model'
     model_in_path = "#{File.dirname(__FILE__)}/EdgeCaseModel.osm"
 
@@ -298,7 +368,7 @@ class OpenStudioResults_Test < Minitest::Test
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
-    assert_equal(3, idf_output_requests.size)
+    # assert_equal(5, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -333,6 +403,26 @@ class OpenStudioResults_Test < Minitest::Test
 
       # look for section_errors
       assert(section_errors(runner).empty?)
+
+      # assert that additional fuel annual values were found
+      # this is annual value pulled from pie chart
+      # query = "SELECT Value FROM tabulardatawithstrings WHERE ReportName='AnnualBuildingUtilityPerformanceSummary' and TableName='End Uses' and RowName= 'Total End Uses' and ColumnName= 'Additional Fuel'"
+      # results = sqlFile.execAndReturnFirstDouble(query)
+      result.stepValues.each do |value|
+        if value.name == 'fuel_additional_fuel'
+          assert(value.valueAsDouble > 0)
+        end
+      end
+      # assert that additional fuel monthly values were found
+      # this is some of monthly values from from call below
+      # sqlFile.energyConsumptionByMonth(OpenStudio::EndUseFuelType.new("Additional Fuel"), OpenStudio::EndUseCategoryType.new(0), OpenStudio::MonthOfYear.new(1)).get
+      # now using a manual sqlFile.execAndReturnFirstDouble with specific additional fuel type names, but doesn't currently work on test with 2.7.1 because Output:Table:Monthy objects are lost of reverse translation of test setup.
+      result.stepValues.each do |value|
+        if value.name == 'fuel_oil_1_ip' # individual month would be fuel_oil_1_ip_jan
+          # todo - enable this once test setup handles Output:Table:Monthly output requests properly.
+          # assert(value.valueAsDouble > 0)
+        end
+      end
     ensure
       Dir.chdir(start_dir)
     end
@@ -342,7 +432,7 @@ class OpenStudioResults_Test < Minitest::Test
   end
 
   def test_empty_model
-    #skip "Broken in 2.5.1, address immediately"
+    # skip "Broken in 2.5.1, address immediately"
 
     test_name = 'test_empty_model'
     model_in_path = "#{File.dirname(__FILE__)}/EmptyModel.osm"
@@ -371,7 +461,7 @@ class OpenStudioResults_Test < Minitest::Test
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
-    assert_equal(3, idf_output_requests.size)
+    assert_equal(11, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -442,7 +532,7 @@ class OpenStudioResults_Test < Minitest::Test
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
-    assert_equal(3, idf_output_requests.size)
+    assert_equal(11, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -486,7 +576,7 @@ class OpenStudioResults_Test < Minitest::Test
   end
 
   def test_sm_hotel
-    #skip "Broken in 2.5.1, address immediately"
+    # skip "Broken in 2.5.1, address immediately"
 
     test_name = 'sm_hotel'
     model_in_path = "#{File.dirname(__FILE__)}/1004_SmallHotel_a.osm"
@@ -515,7 +605,7 @@ class OpenStudioResults_Test < Minitest::Test
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
-    assert_equal(3, idf_output_requests.size)
+    assert_equal(11, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -559,7 +649,7 @@ class OpenStudioResults_Test < Minitest::Test
   end
 
   def test_period_in_const_name
-    #skip "Broken in 2.5.1, address immediately"
+    # skip "Broken in 2.5.1, address immediately"
 
     test_name = 'period_in_const_name'
     model_in_path = "#{File.dirname(__FILE__)}/PeriodInConstName.osm"
@@ -588,7 +678,7 @@ class OpenStudioResults_Test < Minitest::Test
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
-    assert_equal(3, idf_output_requests.size)
+    assert_equal(11, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -632,7 +722,7 @@ class OpenStudioResults_Test < Minitest::Test
   end
 
   def test_heating_only
-    #skip "Broken in 2.5.1, address immediately"
+    # skip "Broken in 2.5.1, address immediately"
 
     test_name = 'test_heating_only'
     model_in_path = "#{File.dirname(__FILE__)}/HeatingOnly.osm"
@@ -661,7 +751,7 @@ class OpenStudioResults_Test < Minitest::Test
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
-    assert_equal(3, idf_output_requests.size)
+    assert_equal(11, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default
@@ -705,7 +795,7 @@ class OpenStudioResults_Test < Minitest::Test
   end
 
   def test_tariff
-    #skip "Broken in 2.5.1, address immediately"
+    # skip "Broken in 2.5.1, address immediately"
 
     test_name = 'tariff'
     model_in_path = "#{File.dirname(__FILE__)}/ExampleModel.osm"
@@ -714,7 +804,12 @@ class OpenStudioResults_Test < Minitest::Test
     measure = OpenStudioResults.new
 
     # create an instance of a runner
-    runner = OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new)
+    # runner = OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new)
+
+    # create an instance of a runner with OSW (pre-populated with result data)
+    osw_path = OpenStudio::Path.new(File.dirname(__FILE__) + '/add_tariff.osw')
+    osw = OpenStudio::WorkflowJSON.load(osw_path).get
+    runner = OpenStudio::Measure::OSRunner.new(osw)
 
     # get arguments
     arguments = measure.arguments
@@ -722,6 +817,7 @@ class OpenStudioResults_Test < Minitest::Test
 
     # create hash of argument values
     args_hash = {}
+    args_hash['reg_monthly_details'] = true # the OSW used for test should match this, as that is what is checked in the measure
 
     # populate argument with specified hash value if specified
     arguments.each do |arg|
@@ -734,7 +830,7 @@ class OpenStudioResults_Test < Minitest::Test
 
     # get the energyplus output requests, this will be done automatically by OS App and PAT
     idf_output_requests = measure.energyPlusOutputRequests(OpenStudio::Measure::OSRunner.new(OpenStudio::WorkflowJSON.new), argument_map)
-    assert_equal(3, idf_output_requests.size)
+    assert_equal(11, idf_output_requests.size)
 
     # mimic the process of running this measure in OS App or PAT
     epw_path = epw_path_default

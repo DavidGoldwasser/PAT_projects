@@ -1,5 +1,5 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -48,9 +48,7 @@ module OsLib_AedgMeasures
     end
 
     if ashraeClimateZone == '' # should this be not applicable or error?
-      if !runner.nil?
-        runner.registerError("Please assign an ASHRAE Climate Zone to your model using the site tab in the OpenStudio application. The measure can't make AEDG recommendations without this information.")
-      end
+      runner&.registerError("Please assign an ASHRAE Climate Zone to your model using the site tab in the OpenStudio application. The measure can't make AEDG recommendations without this information.")
       return false # note - for this to work need to check for false in measure.rb and add return false there as well.
     else
       climateZoneNumber = ashraeClimateZone.split(//).first

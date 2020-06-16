@@ -1,9 +1,10 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>zedgk_12_exterior_door_construction</name>
   <uid>11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c</uid>
-  <version_id>1df2399d-92e1-4749-9e6c-f519c19bc29f</version_id>
-  <version_modified>20181005T172018Z</version_modified>
+  <version_id>322f37c3-7df7-4086-aacf-149e6c59505e</version_id>
+  <version_modified>20200401T014102Z</version_modified>
   <xml_checksum>5091078B</xml_checksum>
   <class_name>ZEDGK12ExteriorDoorConstruction</class_name>
   <display_name>ZEDG K12 ExteriorDoorConstruction</display_name>
@@ -22,8 +23,8 @@
       <default_value>0</default_value>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Envelope.Opaque</tag>
   </tags>
@@ -47,51 +48,10 @@
       <checksum>6BCD99F2</checksum>
     </file>
     <file>
-      <filename>measure_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>A4D7CFBD</checksum>
-    </file>
-    <file>
       <filename>no_doors.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
       <checksum>81C4639F</checksum>
-    </file>
-    <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9D51CDB6</checksum>
-    </file>
-    <file>
-      <filename>os_lib_constructions.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>B24DDC22</checksum>
-    </file>
-    <file>
-      <filename>os_lib_helper_methods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9CFC43FB</checksum>
-    </file>
-    <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>58C462DB</checksum>
-    </file>
-    <file>
-      <filename>LICENSE.md</filename>
-      <filetype>md</filetype>
-      <usage_type>license</usage_type>
-      <checksum>9640B6CB</checksum>
     </file>
     <file>
       <filename>README.md.erb</filename>
@@ -104,6 +64,35 @@
       <filetype>md</filetype>
       <usage_type>readme</usage_type>
       <checksum>A6898E8A</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>E0468DD6</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>EDB45706</checksum>
+    </file>
+    <file>
+      <filename>measure_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>6270D702</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>1CAEEE79</checksum>
     </file>
   </files>
 </measure>

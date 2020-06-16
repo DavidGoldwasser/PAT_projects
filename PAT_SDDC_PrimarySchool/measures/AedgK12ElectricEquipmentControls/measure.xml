@@ -1,9 +1,10 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>aedg_k_12_electric_equipment_controls</name>
   <uid>285bc263-7429-4049-a0ce-f60fabf46eec</uid>
-  <version_id>8c099513-e0b8-428b-9e78-10fa4ff951b7</version_id>
-  <version_modified>20180626T202312Z</version_modified>
+  <version_id>d98faa47-3f28-49b2-8ab3-1bc9e5220776</version_id>
+  <version_modified>20200512T201425Z</version_modified>
   <xml_checksum>1F21832E</xml_checksum>
   <class_name>AedgK12ElectricEquipmentControls</class_name>
   <display_name>AedgK12ElectricEquipmentControls</display_name>
@@ -19,8 +20,8 @@
       <default_value>0</default_value>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Equipment.Equipment Controls</tag>
   </tags>
@@ -44,53 +45,6 @@
       <checksum>01E83E37</checksum>
     </file>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>A022CF22</checksum>
-    </file>
-    <file>
-      <filename>os_lib_helper_methods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9CFC43FB</checksum>
-    </file>
-    <file>
-      <filename>os_lib_lighting_and_equipment.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E63C7739</checksum>
-    </file>
-    <file>
-      <filename>os_lib_schedules.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>5F1CEF3A</checksum>
-    </file>
-    <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>7686162B</checksum>
-    </file>
-    <file>
-      <filename>AedgK12ElectricEquipmentControls_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>1B246EEA</checksum>
-    </file>
-    <file>
-      <filename>LICENSE.md</filename>
-      <filetype>md</filetype>
-      <usage_type>license</usage_type>
-      <checksum>9640B6CB</checksum>
-    </file>
-    <file>
       <filename>README.md.erb</filename>
       <filetype>erb</filetype>
       <usage_type>readmeerb</usage_type>
@@ -101,6 +55,35 @@
       <filetype>md</filetype>
       <usage_type>readme</usage_type>
       <checksum>83034D02</checksum>
+    </file>
+    <file>
+      <filename>AedgK12ElectricEquipmentControls_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>72AE0DF6</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>E0468DD6</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>AB0FDB10</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>8212825C</checksum>
     </file>
   </files>
 </measure>

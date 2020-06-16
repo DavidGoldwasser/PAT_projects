@@ -1,9 +1,10 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>zedgk_12_electric_equipment</name>
   <uid>d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268</uid>
-  <version_id>b6eb83e3-0b10-480d-9283-a6609e7f91dd</version_id>
-  <version_modified>20181005T172018Z</version_modified>
+  <version_id>c3374ad6-5ef9-4741-908d-f6b57998d240</version_id>
+  <version_modified>20200512T201424Z</version_modified>
   <xml_checksum>8C4D4034</xml_checksum>
   <class_name>ZEDGK12ElectricEquipment</class_name>
   <display_name>ZEDG K12 ElectricEquipment</display_name>
@@ -19,8 +20,8 @@
       <default_value>0</default_value>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Equipment.Electric Equipment</tag>
   </tags>
@@ -44,53 +45,6 @@
       <checksum>FF262AB2</checksum>
     </file>
     <file>
-      <filename>measure_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>55C91E4C</checksum>
-    </file>
-    <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>810AEA77</checksum>
-    </file>
-    <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>DDF8F076</checksum>
-    </file>
-    <file>
-      <filename>os_lib_helper_methods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9CFC43FB</checksum>
-    </file>
-    <file>
-      <filename>os_lib_lighting_and_equipment.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E63C7739</checksum>
-    </file>
-    <file>
-      <filename>os_lib_schedules.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>5F1CEF3A</checksum>
-    </file>
-    <file>
-      <filename>LICENSE.md</filename>
-      <filetype>md</filetype>
-      <usage_type>license</usage_type>
-      <checksum>9640B6CB</checksum>
-    </file>
-    <file>
       <filename>README.md.erb</filename>
       <filetype>erb</filetype>
       <usage_type>readmeerb</usage_type>
@@ -101,6 +55,35 @@
       <filetype>md</filetype>
       <usage_type>readme</usage_type>
       <checksum>2BBFB693</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>E0468DD6</checksum>
+    </file>
+    <file>
+      <filename>measure_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>ACF8FC37</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.0.0</identifier>
+        <min_compatible>2.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>69B39F80</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>8212825C</checksum>
     </file>
   </files>
 </measure>
