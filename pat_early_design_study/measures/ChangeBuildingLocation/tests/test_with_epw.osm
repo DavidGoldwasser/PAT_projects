@@ -1,7 +1,7 @@
 
 OS:Version,
-  {0949260c-10b8-4c77-8080-09f0e99ef64a}, !- Handle
-  2.8.0;                                  !- Version Identifier
+  {6f6a9b1c-a10e-4653-bd1c-fa57d635172e}, !- Handle
+  2.8.1;                                  !- Version Identifier
 
 OS:SpaceType,
   {a7add399-372e-443d-8845-f1bd4bc0f9ec}, !- Handle
@@ -8726,7 +8726,7 @@ OS:Surface,
   -5.01015, 3.33934269125535e-015, 0;     !- X,Y,Z Vertex 4 {m}
 
 OS:WeatherFile,
-  {d312e05b-56be-4e5d-b9e2-354eeef38841}, !- Handle
+  {272295f5-0f23-431e-85ee-d7bf26781b13}, !- Handle
   Boston Logan IntL Arpt,                 !- City
   MA,                                     !- State Province Region
   USA,                                    !- Country
@@ -8736,11 +8736,11 @@ OS:WeatherFile,
   -71.02,                                 !- Longitude {deg}
   -5,                                     !- Time Zone {hr}
   6,                                      !- Elevation {m}
-  file:////Users/dgoldwas/Documents/GitHub/NREL/OpenStudio-measures/nrel_published/ChangeBuildingLocation/tests/USA_MA_Boston-Logan.Intl.AP.725090_TMY3.epw, !- Url
+  USA_MA_Boston-Logan.Intl.AP.725090_TMY3.epw, !- Url
   ;                                       !- Checksum
 
 OS:Site,
-  {72f39c61-a350-4019-a6ac-69d4ca92d863}, !- Handle
+  {c059f274-7619-40cf-b6b6-44ce2552e94e}, !- Handle
   Boston Logan IntL Arpt_MA_USA,          !- Name
   42.37,                                  !- Latitude {deg}
   -71.02,                                 !- Longitude {deg}
@@ -8748,15 +8748,21 @@ OS:Site,
   6,                                      !- Elevation {m}
   ;                                       !- Terrain
 
+OS:YearDescription,
+  {eacc3166-3b9d-491c-bd81-5256323533b5}, !- Handle
+  2012,                                   !- Calendar Year
+  ,                                       !- Day of Week for Start Day
+  ;                                       !- Is Leap Year
+
 OS:Site:WaterMainsTemperature,
-  {b8d8610d-1ee5-4037-b5c9-9e8e341ab9f8}, !- Handle
+  {1161287c-d7de-4d7d-837a-fb871ecc7d3a}, !- Handle
   Correlation,                            !- Calculation Method
   ,                                       !- Temperature Schedule Name
   10.55,                                  !- Annual Average Outdoor Air Temperature {C}
   26.4;                                   !- Maximum Difference In Monthly Average Outdoor Air Temperatures {deltaC}
 
 OS:SizingPeriod:DesignDay,
-  {a6e17090-afec-40b2-86d0-e5ec0f6448ae}, !- Handle
+  {8e78e571-1541-417c-9a77-85a427bc13d5}, !- Handle
   Boston Logan IntL Arpt Ann Clg .4% Condns DB=>MWB, !- Name
   32.7,                                   !- Maximum Dry-Bulb Temperature {C}
   8.4,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
@@ -8782,7 +8788,7 @@ OS:SizingPeriod:DesignDay,
   1.95;                                   !- ASHRAE Taud {dimensionless}
 
 OS:SizingPeriod:DesignDay,
-  {b09a8f2f-47f4-4f41-8b58-3b29babb13ac}, !- Handle
+  {bb893b4b-0a38-4283-b4bb-dc23a2c6ca8c}, !- Handle
   Boston Logan IntL Arpt Ann Clg .4% Condns WB=>MDB, !- Name
   30.2,                                   !- Maximum Dry-Bulb Temperature {C}
   8.4,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
@@ -8808,7 +8814,7 @@ OS:SizingPeriod:DesignDay,
   1.95;                                   !- ASHRAE Taud {dimensionless}
 
 OS:SizingPeriod:DesignDay,
-  {b284dc7d-820f-42e4-8068-2c81bbcea21f}, !- Handle
+  {e940e27b-dc89-4400-9a1a-6376ab760d2e}, !- Handle
   Boston Logan IntL Arpt Ann Htg 99.6% Condns DB, !- Name
   -13.6,                                  !- Maximum Dry-Bulb Temperature {C}
   0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
@@ -8830,7 +8836,7 @@ OS:SizingPeriod:DesignDay,
   ASHRAEClearSky;                         !- Solar Model Indicator
 
 OS:ClimateZones,
-  {5a7f5cbf-b1e5-40b0-976b-a0b11201e8a4}, !- Handle
+  {c3883524-ce6a-4d23-938a-9c7b4cec6854}, !- Handle
   ,                                       !- Active Institution
   ,                                       !- Active Year
   ASHRAE,                                 !- Climate Zone Institution Name 1
