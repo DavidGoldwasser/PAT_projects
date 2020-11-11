@@ -1,5 +1,5 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -105,14 +105,14 @@ class CreateBaselineBuildingTest < Minitest::Unit::TestCase
   end
 
   def test_901_2013_sec_school
-    model = apply_measure_to_model('SecondarySchool-DOE Ref Pre-1980-ASHRAE 169-2006-2A.osm', '90.1-2013', 'ASHRAE 169-2006-2A', 'SecondarySchool')
+    model = apply_measure_to_model('SecondarySchool-DOE Ref Pre-1980-ASHRAE 169-2006-2A.osm', '90.1-2013', 'ASHRAE 169-2013-2A', 'SecondarySchool')
   end
 
   def test_901_2007_sec_school
-    model = apply_measure_to_model('SecondarySchool-DOE Ref Pre-1980-ASHRAE 169-2006-2A.osm', '90.1-2007 BETA', 'ASHRAE 169-2006-2A', 'SecondarySchool')
+    model = apply_measure_to_model('SecondarySchool-DOE Ref Pre-1980-ASHRAE 169-2006-2A.osm', '90.1-2007 BETA', 'ASHRAE 169-2013-2A', 'SecondarySchool')
   end
 
   def test_901_2010_sec_school
-    model = apply_measure_to_model('SecondarySchool-DOE Ref Pre-1980-ASHRAE 169-2006-2A.osm', '90.1-2010 BETA', 'ASHRAE 169-2006-2A', 'SecondarySchool')
+    model = apply_measure_to_model('SecondarySchool-DOE Ref Pre-1980-ASHRAE 169-2006-2A.osm', '90.1-2010 BETA', 'ASHRAE 169-2013-2A', 'SecondarySchool')
   end
 end

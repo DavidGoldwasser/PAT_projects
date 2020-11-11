@@ -1,5 +1,5 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -42,12 +42,15 @@
 # see the URL below for access to C++ documentation on model objects (click on "model" in the main window to view model objects)
 # http://openstudio.nrel.gov/sites/openstudio.nrel.gov/files/nv_data/cpp_documentation_it/model/html/namespaces.html
 
+# load OpenStudio measure libraries from openstudio-extension gem
+require 'openstudio-extension'
+require 'openstudio/extension/core/os_lib_constructions'
+require 'openstudio/extension/core/os_lib_geometry'
+require 'openstudio/extension/core/os_lib_helper_methods'
+require 'openstudio/extension/core/os_lib_lighting_and_equipment'
+
 # load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
-require "#{File.dirname(__FILE__)}/resources/os_lib_constructions"
-require "#{File.dirname(__FILE__)}/resources/os_lib_geometry"
-require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
-require "#{File.dirname(__FILE__)}/resources/os_lib_lighting_and_equipment"
 
 # start the measure
 class AedgSmallToMediumOfficeFenestrationAndDaylightingControls < OpenStudio::Measure::ModelMeasure
@@ -113,7 +116,7 @@ class AedgSmallToMediumOfficeFenestrationAndDaylightingControls < OpenStudio::Me
     cost_light_shelf = runner.getDoubleArgumentValue('cost_light_shelf', user_arguments)
 
     # check arguments for reasonableness
-    checkDoubleArguments = OsLib_HelperMethods.checkDoubleAndIntegerArguments(runner, user_arguments, 'min' => 0.0, 'max' => nil, 'min_eq_bool' => true, 'max_eq_bool' => true, 'arg_array' => ['cost_daylight_glazing', 'cost_view_glazing', 'cost_skylight','cost_shading_surface','cost_light_shelf'])
+    checkDoubleArguments = OsLib_HelperMethods.checkDoubleAndIntegerArguments(runner, user_arguments, 'min' => 0.0, 'max' => nil, 'min_eq_bool' => true, 'max_eq_bool' => true, 'arg_array' => ['cost_daylight_glazing', 'cost_view_glazing', 'cost_skylight', 'cost_shading_surface', 'cost_light_shelf'])
     if !checkDoubleArguments then return false end
 
     # get climate zone

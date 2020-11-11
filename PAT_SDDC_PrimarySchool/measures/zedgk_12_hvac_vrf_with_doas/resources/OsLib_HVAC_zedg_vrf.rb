@@ -1,25 +1,48 @@
+# frozen_string_literal: true
+
+# *******************************************************************************
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
+# All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# (1) Redistributions of source code must retain the above copyright notice,
+# this list of conditions and the following disclaimer.
+#
+# (2) Redistributions in binary form must reproduce the above copyright notice,
+# this list of conditions and the following disclaimer in the documentation
+# and/or other materials provided with the distribution.
+#
+# (3) Neither the name of the copyright holder nor the names of any contributors
+# may be used to endorse or promote products derived from this software without
+# specific prior written permission from the respective party.
+#
+# (4) Other than as required in clauses (1) and (2), distributions in any form
+# of modifications or other derivative works may not use the "OpenStudio"
+# trademark, "OS", "os", or any other confusingly similar designation without
+# specific prior written permission from Alliance for Sustainable Energy, LLC.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER(S) AND ANY CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER(S), ANY CONTRIBUTORS, THE
+# UNITED STATES GOVERNMENT, OR THE UNITED STATES DEPARTMENT OF ENERGY, NOR ANY OF
+# THEIR EMPLOYEES, BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+# OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# *******************************************************************************
+
 module OsLib_HVAC_zedg_vrf
-
-  # do something
-  def OsLib_HVAC_zedg_vrf.doSomething(input)
-
-    # do something
-    output = input
-
-    result = output
-    return result
-
-  end
-
-
   # validate and make plenum zones
-  def OsLib_HVAC_zedg_vrf.validateAndAddPlenumZonesToSystem(model, runner, options = {})
-
+  def self.validateAndAddPlenumZonesToSystem(model, runner, options = {})
     # set defaults to use if user inputs not passed in
     defaults = {
-        "zonesPlenum" => nil,
-        "zonesPrimary" => nil,
-        "type" => "ceilingReturn",
+      'zonesPlenum' => nil,
+      'zonesPrimary' => nil,
+      'type' => 'ceilingReturn'
     }
 
     # merge user inputs with defaults
@@ -28,11 +51,11 @@ module OsLib_HVAC_zedg_vrf
     # array of valid ceiling plenums
     zoneSurfaceHash = {}
     zonePlenumHash = {}
-    
-    if options["zonesPlenum"] == nil
-      runner.registerWarning("No plenum zones were passed in, validateAndAddPlenumZonesToSystem will not alter the model.")
+
+    if options['zonesPlenum'].nil?
+      runner.registerWarning('No plenum zones were passed in, validateAndAddPlenumZonesToSystem will not alter the model.')
     else
-      options["zonesPlenum"].each do |zone|
+      options['zonesPlenum'].each do |zone|
         # get spaces in zone
         spaces = zone.spaces
         # get adjacent spaces
@@ -41,19 +64,19 @@ module OsLib_HVAC_zedg_vrf
           surfaces = space.surfaces
           # loop through surfaces looking for floors with surface boundary condition, grab zone that surface's parent space is in.
           surfaces.each do |surface|
-            if surface.outsideBoundaryCondition == "Surface" and surface.surfaceType == "Floor"
+            if (surface.outsideBoundaryCondition == 'Surface') && (surface.surfaceType == 'Floor')
               next unless surface.adjacentSurface.is_initialized
               adjacentSurface = surface.adjacentSurface.get
               next unless adjacentSurface.space.is_initialized
               adjacentSurfaceSpace =  adjacentSurface.space.get
               next unless adjacentSurfaceSpace.thermalZone.is_initialized
               adjacentSurfaceSpaceZone = adjacentSurfaceSpace.thermalZone.get
-              if options["zonesPrimary"].include? adjacentSurfaceSpaceZone
-                if zoneSurfaceHash[adjacentSurfaceSpaceZone].nil? or surface.grossArea > zoneSurfaceHash[adjacentSurfaceSpaceZone]
+              if options['zonesPrimary'].include? adjacentSurfaceSpaceZone
+                if zoneSurfaceHash[adjacentSurfaceSpaceZone].nil? || (surface.grossArea > zoneSurfaceHash[adjacentSurfaceSpaceZone])
                   adjacentSurfaceSpaceZone.setReturnPlenum(zone)
                   zoneSurfaceHash[adjacentSurfaceSpaceZone] = surface.grossArea
                   zonePlenumHash[adjacentSurfaceSpaceZone] = zone
-                end  
+                end
               end
             end
           end
@@ -62,23 +85,20 @@ module OsLib_HVAC_zedg_vrf
     end
 
     # report out results of zone-plenum hash
-    zonePlenumHash.each do |zone,plenum|
+    zonePlenumHash.each do |zone, plenum|
       runner.registerInfo("#{plenum.name} has been set as a return air plenum for #{zone.name}.")
     end
-    
+
     # pass back zone-plenum hash
     result = zonePlenumHash
     return result
-
   end
 
-  def OsLib_HVAC_zedg_vrf.sortZones(model, runner, options = {})
-
+  def self.sortZones(model, runner, options = {})
     # set defaults to use if user inputs not passed in
-    defaults = {"standardBuildingTypeTest" => nil, # not used for now
-                "secondarySpaceTypeTest" => nil,
-                "ceilingReturnPlenumSpaceType" => nil
-    }
+    defaults = { 'standardBuildingTypeTest' => nil, # not used for now
+                 'secondarySpaceTypeTest' => nil,
+                 'ceilingReturnPlenumSpaceType' => nil }
 
     # merge user inputs with defaults
     options = defaults.merge(options)
@@ -94,26 +114,7 @@ module OsLib_HVAC_zedg_vrf
     zones.each do |zone|
       # assign appropriate zones to zonesPlenum or zonesUnconditioned (those that don't have thermostats or zone HVAC equipment)
       # if not conditioned then add to zonesPlenum or zonesUnconditioned
-      unless zone.thermostatSetpointDualSetpoint.is_initialized or zone.equipment.size > 0
-        # determine if zone is a plenum zone or general unconditioned zone
-        # assume it is a plenum if it has at least one planum space
-        zone.spaces.each do |space|
-          # if a zone has already been assigned as a plenum, skip
-          next if zonesPlenum.include? zone
-          # if zone not assigned as a plenum, get space type if it exists
-          # compare to plenum space type if it has been assigned
-          if space.spaceType.is_initialized and options["ceilingReturnPlenumSpaceType"].nil? == false
-            spaceType = space.spaceType.get
-            if spaceType == options["ceilingReturnPlenumSpaceType"]
-              zonesPlenum << zone # zone has a plenum space; assign it as a plenum
-            end
-          end
-        end
-        # if zone not assigned as a plenum, assign it as unconditioned
-        unless zonesPlenum.include? zone
-          zonesUnconditioned << zone
-        end
-      else
+      if zone.thermostatSetpointDualSetpoint.is_initialized || !zone.equipment.empty?
         # zone is conditioned.  check if its space type is secondary or primary
         spaces = zone.spaces
         spaces.each do |space|
@@ -128,7 +129,7 @@ module OsLib_HVAC_zedg_vrf
           standardSpaceType = spaceType.standardsSpaceType.get
           # test space type against secondary space type array
           # if any space type in zone is secondary, assign zone as secondary
-          if options["secondarySpaceTypeTest"].include? standardSpaceType
+          if options['secondarySpaceTypeTest'].include? standardSpaceType
             zonesSecondary << zone
           end
         end
@@ -136,21 +137,38 @@ module OsLib_HVAC_zedg_vrf
         unless zonesSecondary.include? zone
           zonesPrimary << zone
         end
+      else
+        # determine if zone is a plenum zone or general unconditioned zone
+        # assume it is a plenum if it has at least one planum space
+        zone.spaces.each do |space|
+          # if a zone has already been assigned as a plenum, skip
+          next if zonesPlenum.include? zone
+          # if zone not assigned as a plenum, get space type if it exists
+          # compare to plenum space type if it has been assigned
+          if space.spaceType.is_initialized && (options['ceilingReturnPlenumSpaceType'].nil? == false)
+            spaceType = space.spaceType.get
+            if spaceType == options['ceilingReturnPlenumSpaceType']
+              zonesPlenum << zone # zone has a plenum space; assign it as a plenum
+            end
+          end
+        end
+        # if zone not assigned as a plenum, assign it as unconditioned
+        unless zonesPlenum.include? zone
+          zonesUnconditioned << zone
+        end
       end
     end
 
-    zonesSorted = {"zonesPrimary" => zonesPrimary,
-                   "zonesSecondary" => zonesSecondary,
-                   "zonesPlenum" => zonesPlenum,
-                   "zonesUnconditioned" => zonesUnconditioned}
+    zonesSorted = { 'zonesPrimary' => zonesPrimary,
+                    'zonesSecondary' => zonesSecondary,
+                    'zonesPlenum' => zonesPlenum,
+                    'zonesUnconditioned' => zonesUnconditioned }
     # pass back zonesSorted hash
     result = zonesSorted
     return result
-
   end
 
-  def OsLib_HVAC_zedg_vrf.reportConditions(model, runner, condition)
-
+  def self.reportConditions(model, runner, condition)
     airloops = model.getAirLoopHVACs
     plantLoops = model.getPlantLoops
     zones = model.getThermalZones
@@ -158,96 +176,90 @@ module OsLib_HVAC_zedg_vrf
     # count up zone equipment (not counting zone exhaust fans)
     zoneHasEquip = false
     zonesWithEquipCounter = 0
-    
+
     zones.each do |zone|
-      if zone.equipment.size > 0
+      if !zone.equipment.empty?
         zone.equipment.each do |equip|
           unless equip.to_FanZoneExhaust.is_initialized
             zonesWithEquipCounter += 1
             break
           end
-        end        
+        end
       end
-    end  
-    
-    if condition == "initial"
+    end
+
+    if condition == 'initial'
       runner.registerInitialCondition("The building started with #{airloops.size} air loops and #{plantLoops.size} plant loops. #{zonesWithEquipCounter} zones were conditioned with zone equipment.")
-    elsif condition == "final"
+    elsif condition == 'final'
       runner.registerFinalCondition("The building finished with #{airloops.size} air loops and #{plantLoops.size} plant loops. #{zonesWithEquipCounter} zones are conditioned with zone equipment.")
     end
-    
   end
 
- def OsLib_HVAC_zedg_vrf.removeEquipment(model, runner, options)
+  def self.removeEquipment(model, runner, options)
     airloops = model.getAirLoopHVACs
     plantLoops = model.getPlantLoops
-    zones = model.getThermalZones   
+    zones = model.getThermalZones
 
-		# remove all zone equipment except zone exhaust fans
+    # remove all zone equipment except zone exhaust fans
     zones.each do |zone|
-			# runner.registerInfo("primary zones values are #{value.name}")
-				if options["zonesPrimary"].include? zone
-					zone.equipment.each do |equip|
-						if equip.to_FanZoneExhaust.is_initialized #or (equip.to_ZoneHVACUnitHeater.is_initialized and zone.get.equipment.size == 1)
-						else  
-							equip.remove
-						end
-					end
-				end
-			end
-    	
+      # runner.registerInfo("primary zones values are #{value.name}")
+      if options['zonesPrimary'].include? zone
+        zone.equipment.each do |equip|
+          if equip.to_FanZoneExhaust.is_initialized # or (equip.to_ZoneHVACUnitHeater.is_initialized and zone.get.equipment.size == 1)
+          else
+            equip.remove
+          end
+        end
+      end
+    end
+
     # remove an air loop if it's empty
     airloops.each do |air_loop|
-			air_loop.thermalZones.each do |airZone|
-				if options["zonesPrimary"].include? airZone
-							air_loop.removeBranchForZone(airZone)
-				end
-			end
-			if air_loop.thermalZones.empty?
-				air_loop.remove
-			end
+      air_loop.thermalZones.each do |airZone|
+        if options['zonesPrimary'].include? airZone
+          air_loop.removeBranchForZone(airZone)
+        end
+      end
+      if air_loop.thermalZones.empty?
+        air_loop.remove
+      end
     end
-   
+
     # remove plant loops
     plantLoops.each do |plantLoop|
       # get the demand components and see if water use connection, then save it
       # notify user with info statement if supply side of plant loop had heat exchanger for refrigeration
-     	usedForSWHOrRefrigeration = false
-			usedForZoneHCCoils = false
-			plantLoop.demandComponents.each do |comp| #AP code to check your comments above
-				runner.registerInfo("plant loops component is #{comp.name.to_s}")
-				if comp.to_WaterUseConnections.is_initialized or comp.to_CoilWaterHeatingDesuperheater.is_initialized
-					usedForSWHOrRefrigeration = true
-					runner.registerWarning("#{plantLoop.name} is used for SWH or refrigeration. Loop will not be deleted.")
-				elsif comp.name.to_s.include? "Coil" and comp.name.to_s != "Coil Heating Water 1" and comp.name.to_s != "Coil Cooling Water 1"#to_CoilWaterHeatingDesuperheater.is_initialized or comp.name.to_s.include? "coil"
-					runner.registerWarning("#{plantLoop.name} has coils used by Zone HVAC components. Loop will not be deleted.")
-					usedForZoneHCCoils = true
-				end
-			end
-			# runner.registerInfo("Used for ZoneHCCoils Value is #{usedForZoneHCCoils}")
-			# runner.registerInfo("Used for SWH or refrigeration is #{usedForSWHOrRefrigeration}")
-			if usedForSWHOrRefrigeration == false and usedForZoneHCCoils == false
-				plantLoop.remove
-				runner.registerInfo("Plant Loop #{plantLoop.name} is removed")
-			end
-  end
+      usedForSWHOrRefrigeration = false
+      usedForZoneHCCoils = false
+      plantLoop.demandComponents.each do |comp| # AP code to check your comments above
+        runner.registerInfo("plant loops component is #{comp.name}")
+        if comp.to_WaterUseConnections.is_initialized || comp.to_CoilWaterHeatingDesuperheater.is_initialized
+          usedForSWHOrRefrigeration = true
+          runner.registerWarning("#{plantLoop.name} is used for SWH or refrigeration. Loop will not be deleted.")
+        elsif comp.name.to_s.include?('Coil') && (comp.name.to_s != 'Coil Heating Water 1') && (comp.name.to_s != 'Coil Cooling Water 1') # to_CoilWaterHeatingDesuperheater.is_initialized or comp.name.to_s.include? "coil"
+          runner.registerWarning("#{plantLoop.name} has coils used by Zone HVAC components. Loop will not be deleted.")
+          usedForZoneHCCoils = true
+        end
+      end
+      # runner.registerInfo("Used for ZoneHCCoils Value is #{usedForZoneHCCoils}")
+      # runner.registerInfo("Used for SWH or refrigeration is #{usedForSWHOrRefrigeration}")
+      if (usedForSWHOrRefrigeration == false) && (usedForZoneHCCoils == false)
+        plantLoop.remove
+        runner.registerInfo("Plant Loop #{plantLoop.name} is removed")
+      end
+    end
+   end
 
-      
-  end
-
-  def OsLib_HVAC_zedg_vrf.assignHVACSchedules(model, runner, options = {})
-   
-    require "#{File.dirname(__FILE__)}/os_lib_schedules"
-   
+  def self.assignHVACSchedules(model, runner, options = {})
     schedulesHVAC = {}
     airloops = model.getAirLoopHVACs
-    
+
     # find airloop with most primary spaces
     max_primary_spaces = 0
     representative_airloop = false
     building_HVAC_schedule = false
     building_ventilation_schedule = false
-    unless options["remake_schedules"]
+    unless options['remake_schedules']
       # if remake schedules not selected, get relevant schedules from model if they exist
       airloops.each do |air_loop|
         primary_spaces = 0
@@ -255,216 +267,214 @@ module OsLib_HVAC_zedg_vrf
           thermal_zone.spaces.each do |space|
             if space.spaceType.is_initialized
               if space.spaceType.get.name.is_initialized
-                if space.spaceType.get.name.get.include? options["primarySpaceType"]
+                if space.spaceType.get.name.get.include? options['primarySpaceType']
                   primary_spaces += 1
                 end
-              end  
-            end  
+              end
+            end
           end
         end
         if primary_spaces > max_primary_spaces
           max_primary_spaces = primary_spaces
           representative_airloop = air_loop
-        end      
+        end
       end
-    end  
+    end
     if representative_airloop
       building_HVAC_schedule = representative_airloop.availabilitySchedule
       if representative_airloop.airLoopHVACOutdoorAirSystem.is_initialized
-        building_ventilation_schedule_optional = representative_airloop.airLoopHVACOutdoorAirSystem.get.getControllerOutdoorAir.maximumFractionofOutdoorAirSchedule 
+        building_ventilation_schedule_optional = representative_airloop.airLoopHVACOutdoorAirSystem.get.getControllerOutdoorAir.maximumFractionofOutdoorAirSchedule
         if building_ventilation_schedule_optional.is_initialized
           building_ventilation_schedule = building_ventilation_schedule.get
         end
-      end  
+      end
     end
     # build new airloop schedules if existing model doesn't have them
-    if  1 == 1   #options["primarySpaceType"] == "Classroom"
+    if 1 == 1 # options["primarySpaceType"] == "Classroom"
       # ventilation schedule
       unless building_ventilation_schedule
-	    runner.registerInfo("Baseline does not have minimum OA ventilation schedule. A new K-12 Ventilation schedule is created")
-        ruleset_name = "New K-12 Ventilation Schedule"
-        winter_design_day = [[24,1]]
-        summer_design_day = [[24,1]]
-        default_day = ["Weekday",[6,0],[18,1],[24,0]]
+        runner.registerInfo('Baseline does not have minimum OA ventilation schedule. A new K-12 Ventilation schedule is created')
+        ruleset_name = 'New K-12 Ventilation Schedule'
+        winter_design_day = [[24, 1]]
+        summer_design_day = [[24, 1]]
+        default_day = ['Weekday', [6, 0], [18, 1], [24, 0]]
         rules = []
-        rules << ["Weekend","1/1-12/31","Sat/Sun",[24,0]]
-        rules << ["Summer Weekday","7/1-8/31","Mon/Tue/Wed/Thu/Fri",[8,0],[13,1],[24,0]]
-        options_ventilation = {"name" => ruleset_name,
-                               "winter_design_day" => winter_design_day,
-                               "summer_design_day" => summer_design_day,
-                               "default_day" => default_day,
-                               "rules" => rules}
+        rules << ['Weekend', '1/1-12/31', 'Sat/Sun', [24, 0]]
+        rules << ['Summer Weekday', '7/1-8/31', 'Mon/Tue/Wed/Thu/Fri', [8, 0], [13, 1], [24, 0]]
+        options_ventilation = { 'name' => ruleset_name,
+                                'winter_design_day' => winter_design_day,
+                                'summer_design_day' => summer_design_day,
+                                'default_day' => default_day,
+                                'rules' => rules }
         building_ventilation_schedule = OsLib_Schedules.createComplexSchedule(model, options_ventilation)
       end
       # HVAC availability schedule
       unless building_HVAC_schedule
-	    runner.registerInfo("Baseline does not have HVAC availability schedule. A new K-12 HVAC availability schedule is created")
-        ruleset_name = "New K-12 HVAC Availability Schedule"
-        winter_design_day = [[24,1]]
-        summer_design_day = [[24,1]]
-        default_day = ["Weekday",[6,0],[18,1],[24,0]]
+        runner.registerInfo('Baseline does not have HVAC availability schedule. A new K-12 HVAC availability schedule is created')
+        ruleset_name = 'New K-12 HVAC Availability Schedule'
+        winter_design_day = [[24, 1]]
+        summer_design_day = [[24, 1]]
+        default_day = ['Weekday', [6, 0], [18, 1], [24, 0]]
         rules = []
-        rules << ["Weekend","1/1-12/31","Sat/Sun",[24,0]]
-        rules << ["Summer Weekday","7/1-8/31","Mon/Tue/Wed/Thu/Fri",[8,0],[13,1],[24,0]]
-        options_hvac = {"name" => ruleset_name,
-                        "winter_design_day" => winter_design_day,
-                        "summer_design_day" => summer_design_day,
-                        "default_day" => default_day,
-                        "rules" => rules}
+        rules << ['Weekend', '1/1-12/31', 'Sat/Sun', [24, 0]]
+        rules << ['Summer Weekday', '7/1-8/31', 'Mon/Tue/Wed/Thu/Fri', [8, 0], [13, 1], [24, 0]]
+        options_hvac = { 'name' => ruleset_name,
+                         'winter_design_day' => winter_design_day,
+                         'summer_design_day' => summer_design_day,
+                         'default_day' => default_day,
+                         'rules' => rules }
         building_HVAC_schedule = OsLib_Schedules.createComplexSchedule(model, options_hvac)
       end
-    elsif options["primarySpaceType"] == "Office" # xf - leave as is
+    elsif options['primarySpaceType'] == 'Office' # xf - leave as is
       # ventilation schedule
       unless building_ventilation_schedule
-	    runner.registerInfo("Baseline does not have minimum OA ventilation schedule. A new ZEDG Ventilation schedule is created.")
-        ruleset_name = "New Office Ventilation Schedule"
-        winter_design_day = [[24,1]] #ML These are not always on in PNNL model
-        summer_design_day = [[24,1]] #ML These are not always on in PNNL model
-        default_day = ["Weekday",[7,0],[22,1],[24,0]] #ML PNNL has a one hour ventilation offset
+        runner.registerInfo('Baseline does not have minimum OA ventilation schedule. A new ZEDG Ventilation schedule is created.')
+        ruleset_name = 'New Office Ventilation Schedule'
+        winter_design_day = [[24, 1]] # ML These are not always on in PNNL model
+        summer_design_day = [[24, 1]] # ML These are not always on in PNNL model
+        default_day = ['Weekday', [7, 0], [22, 1], [24, 0]] # ML PNNL has a one hour ventilation offset
         rules = []
-        rules << ["Saturday","1/1-12/31","Sat",[7,0],[18,1],[24,0]] #ML PNNL has a one hour ventilation offset
-        rules << ["Sunday","1/1-12/31","Sun",[24,0]]
-        options_ventilation = {"name" => ruleset_name,
-                               "winter_design_day" => winter_design_day,
-                               "summer_design_day" => summer_design_day,
-                               "default_day" => default_day,
-                               "rules" => rules}
+        rules << ['Saturday', '1/1-12/31', 'Sat', [7, 0], [18, 1], [24, 0]] # ML PNNL has a one hour ventilation offset
+        rules << ['Sunday', '1/1-12/31', 'Sun', [24, 0]]
+        options_ventilation = { 'name' => ruleset_name,
+                                'winter_design_day' => winter_design_day,
+                                'summer_design_day' => summer_design_day,
+                                'default_day' => default_day,
+                                'rules' => rules }
         building_ventilation_schedule = OsLib_Schedules.createComplexSchedule(model, options_ventilation)
       end
       # HVAC availability schedule
       unless building_HVAC_schedule
-				runner.registerInfo("Baseline does not have HVAC availability schedule. A new office HVAC availability schedule is created")
-        ruleset_name = "New Office HVAC Availability Schedule"
-        winter_design_day = [[24,1]] #ML These are not always on in PNNL model
-        summer_design_day = [[24,1]] #ML These are not always on in PNNL model
-        default_day = ["Weekday",[6,0],[22,1],[24,0]] #ML PNNL has a one hour ventilation offset
+        runner.registerInfo('Baseline does not have HVAC availability schedule. A new office HVAC availability schedule is created')
+        ruleset_name = 'New Office HVAC Availability Schedule'
+        winter_design_day = [[24, 1]] # ML These are not always on in PNNL model
+        summer_design_day = [[24, 1]] # ML These are not always on in PNNL model
+        default_day = ['Weekday', [6, 0], [22, 1], [24, 0]] # ML PNNL has a one hour ventilation offset
         rules = []
-        rules << ["Saturday","1/1-12/31","Sat",[6,0],[18,1],[24,0]] #ML PNNL has a one hour ventilation offset
-        rules << ["Sunday","1/1-12/31","Sun",[24,0]]
-        options_hvac = {"name" => ruleset_name,
-                        "winter_design_day" => winter_design_day,
-                        "summer_design_day" => summer_design_day,
-                        "default_day" => default_day,
-                        "rules" => rules}
+        rules << ['Saturday', '1/1-12/31', 'Sat', [6, 0], [18, 1], [24, 0]] # ML PNNL has a one hour ventilation offset
+        rules << ['Sunday', '1/1-12/31', 'Sun', [24, 0]]
+        options_hvac = { 'name' => ruleset_name,
+                         'winter_design_day' => winter_design_day,
+                         'summer_design_day' => summer_design_day,
+                         'default_day' => default_day,
+                         'rules' => rules }
         building_HVAC_schedule = OsLib_Schedules.createComplexSchedule(model, options_hvac)
       end
       # special loops for radiant system (different temperature setpoints)
-      if options["allHVAC"]["zone"] == "Radiant"
+      if options['allHVAC']['zone'] == 'Radiant'
         # create hot water schedule for radiant heating loop
-        schedulesHVAC["radiant_hot_water"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "New HW-Radiant-Loop-Temp-Schedule",
-                                                                                   "default_day" => ["All Days",[24,45.0]]})
+        schedulesHVAC['radiant_hot_water'] = OsLib_Schedules.createComplexSchedule(model, 'name' => 'New HW-Radiant-Loop-Temp-Schedule',
+                                                                                          'default_day' => ['All Days', [24, 45.0]])
         # create hot water schedule for radiant cooling loop
-        schedulesHVAC["radiant_chilled_water"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "New CW-Radiant-Loop-Temp-Schedule",
-                                                                                   "default_day" => ["All Days",[24,15.0]]})
+        schedulesHVAC['radiant_chilled_water'] = OsLib_Schedules.createComplexSchedule(model, 'name' => 'New CW-Radiant-Loop-Temp-Schedule',
+                                                                                              'default_day' => ['All Days', [24, 15.0]])
         # create mean radiant heating and cooling setpoint schedules
         # ML ideally, should grab schedules tied to zone thermostat and make modified versions that follow the setback pattern
         # for now, create new ones that match the recommended HVAC schedule
         # mean radiant heating setpoint schedule (PNNL values)
-        ruleset_name = "New Office Mean Radiant Heating Setpoint Schedule"
-        winter_design_day = [[24,18.8]]
-        summer_design_day = [[6,18.3],[22,18.8],[24,18.3]]
-        default_day = ["Weekday",[6,18.3],[22,18.8],[24,18.3]]
+        ruleset_name = 'New Office Mean Radiant Heating Setpoint Schedule'
+        winter_design_day = [[24, 18.8]]
+        summer_design_day = [[6, 18.3], [22, 18.8], [24, 18.3]]
+        default_day = ['Weekday', [6, 18.3], [22, 18.8], [24, 18.3]]
         rules = []
-        rules << ["Saturday","1/1-12/31","Sat",[6,18.3],[18,18.8],[24,18.3]]
-        rules << ["Sunday","1/1-12/31","Sun",[24,18.3]]
-        options_radiant_heating = {"name" => ruleset_name,
-                        "winter_design_day" => winter_design_day,
-                        "summer_design_day" => summer_design_day,
-                        "default_day" => default_day,
-                        "rules" => rules}
+        rules << ['Saturday', '1/1-12/31', 'Sat', [6, 18.3], [18, 18.8], [24, 18.3]]
+        rules << ['Sunday', '1/1-12/31', 'Sun', [24, 18.3]]
+        options_radiant_heating = { 'name' => ruleset_name,
+                                    'winter_design_day' => winter_design_day,
+                                    'summer_design_day' => summer_design_day,
+                                    'default_day' => default_day,
+                                    'rules' => rules }
         mean_radiant_heating_schedule = OsLib_Schedules.createComplexSchedule(model, options_radiant_heating)
-        schedulesHVAC["mean_radiant_heating"] = mean_radiant_heating_schedule
+        schedulesHVAC['mean_radiant_heating'] = mean_radiant_heating_schedule
         # mean radiant cooling setpoint schedule (PNNL values)
-        ruleset_name = "New Office Mean Radiant Cooling Setpoint Schedule"
-        winter_design_day = [[6,26.7],[22,24.0],[24,26.7]]
-        summer_design_day = [[24,24.0]]
-        default_day = ["Weekday",[6,26.7],[22,24.0],[24,26.7]]
+        ruleset_name = 'New Office Mean Radiant Cooling Setpoint Schedule'
+        winter_design_day = [[6, 26.7], [22, 24.0], [24, 26.7]]
+        summer_design_day = [[24, 24.0]]
+        default_day = ['Weekday', [6, 26.7], [22, 24.0], [24, 26.7]]
         rules = []
-        rules << ["Saturday","1/1-12/31","Sat",[6,26.7],[18,24.0],[24,26.7]]
-        rules << ["Sunday","1/1-12/31","Sun",[24,26.7]]
-        options_radiant_cooling = {"name" => ruleset_name,
-                        "winter_design_day" => winter_design_day,
-                        "summer_design_day" => summer_design_day,
-                        "default_day" => default_day,
-                        "rules" => rules}
+        rules << ['Saturday', '1/1-12/31', 'Sat', [6, 26.7], [18, 24.0], [24, 26.7]]
+        rules << ['Sunday', '1/1-12/31', 'Sun', [24, 26.7]]
+        options_radiant_cooling = { 'name' => ruleset_name,
+                                    'winter_design_day' => winter_design_day,
+                                    'summer_design_day' => summer_design_day,
+                                    'default_day' => default_day,
+                                    'rules' => rules }
         mean_radiant_cooling_schedule = OsLib_Schedules.createComplexSchedule(model, options_radiant_cooling)
-        schedulesHVAC["mean_radiant_cooling"] = mean_radiant_cooling_schedule
+        schedulesHVAC['mean_radiant_cooling'] = mean_radiant_cooling_schedule
       end
     end
     # SAT schedule
-    if options["allHVAC"]["primary"]["doas"]
+    if options['allHVAC']['primary']['doas']
       # primary airloop is DOAS
-      schedulesHVAC["primary_sat"] = sch_ruleset_DOAS_setpoint = OsLib_Schedules.createComplexSchedule(model, {"name" => "DOAS Temperature Setpoint Schedule",
-                                                                                "default_day" => ["All Days",[24,21.111]]})
-    else 
+      schedulesHVAC['primary_sat'] = sch_ruleset_DOAS_setpoint = OsLib_Schedules.createComplexSchedule(model,  'name' => 'DOAS Temperature Setpoint Schedule',
+                                                                                                               'default_day' => ['All Days', [24, 21.111]])
+    else
       # primary airloop is multizone VAV that cools
-      schedulesHVAC["primary_sat"] = sch_ruleset_DOAS_setpoint = OsLib_Schedules.createComplexSchedule(model, {"name" => "Cold Deck Temperature Setpoint Schedule",
-                                                                                "default_day" => ["All Days",[24,12.8]]})
+      schedulesHVAC['primary_sat'] = sch_ruleset_DOAS_setpoint = OsLib_Schedules.createComplexSchedule(model,  'name' => 'Cold Deck Temperature Setpoint Schedule',
+                                                                                                               'default_day' => ['All Days', [24, 12.8]])
     end
-    schedulesHVAC["ventilation"] = building_ventilation_schedule
-    schedulesHVAC["hvac"] = building_HVAC_schedule
+    schedulesHVAC['ventilation'] = building_ventilation_schedule
+    schedulesHVAC['hvac'] = building_HVAC_schedule
     # build new plant schedules as needed
-    zoneHVACHotWaterPlant = ["FanCoil","DualDuct","Baseboard"] # dual duct has fan coil and baseboard
-    zoneHVACChilledWaterPlant = ["FanCoil","DualDuct"] # dual duct has fan coil
+    zoneHVACHotWaterPlant = ['FanCoil', 'DualDuct', 'Baseboard'] # dual duct has fan coil and baseboard
+    zoneHVACChilledWaterPlant = ['FanCoil', 'DualDuct'] # dual duct has fan coil
     # hot water
-    if options["allHVAC"]["primary"]["heat"] == "Water" or options["allHVAC"]["secondary"]["heat"] == "Water" or zoneHVACHotWaterPlant.include? options["allHVAC"]["zone"]
-      schedulesHVAC["hot_water"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "HW-Loop-Temp-Schedule",
-                                                                                 "default_day" => ["All Days",[24,67.0]]})
+    if (options['allHVAC']['primary']['heat'] == 'Water') || (options['allHVAC']['secondary']['heat'] == 'Water') || zoneHVACHotWaterPlant.include?(options['allHVAC']['zone'])
+      schedulesHVAC['hot_water'] = OsLib_Schedules.createComplexSchedule(model,  'name' => 'HW-Loop-Temp-Schedule',
+                                                                                 'default_day' => ['All Days', [24, 67.0]])
     end
     # chilled water
-    if options["allHVAC"]["primary"]["cool"] == "Water" or options["allHVAC"]["secondary"]["cool"] == "Water" or zoneHVACChilledWaterPlant.include? options["allHVAC"]["zone"]
-      schedulesHVAC["chilled_water"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "CW-Loop-Temp-Schedule",
-                                                                                     "default_day" => ["All Days",[24,6.7]]})
+    if (options['allHVAC']['primary']['cool'] == 'Water') || (options['allHVAC']['secondary']['cool'] == 'Water') || zoneHVACChilledWaterPlant.include?(options['allHVAC']['zone'])
+      schedulesHVAC['chilled_water'] = OsLib_Schedules.createComplexSchedule(model, 'name' => 'CW-Loop-Temp-Schedule',
+                                                                                    'default_day' => ['All Days', [24, 6.7]])
     end
     # heat pump condenser loop schedules
-    if options["allHVAC"]["zone"] == "GSHP"
+    if options['allHVAC']['zone'] == 'GSHP'
       # there will be a heat pump condenser loop
       # loop setpoint schedule
-      schedulesHVAC["hp_loop"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "New HP-Loop-Temp-Schedule",
-                                                                               "default_day" => ["All Days",[24,21]]})
+      schedulesHVAC['hp_loop'] = OsLib_Schedules.createComplexSchedule(model, 'name' => 'New HP-Loop-Temp-Schedule',
+                                                                              'default_day' => ['All Days', [24, 21]])
       # cooling component schedule (#ML won't need this if a ground loop is actually modeled)
-      schedulesHVAC["hp_loop_cooling"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "New HP-Loop-Clg-Temp-Schedule",
-                                                                                       "default_day" => ["All Days",[24,21]]})
+      schedulesHVAC['hp_loop_cooling'] = OsLib_Schedules.createComplexSchedule(model,  'name' => 'New HP-Loop-Clg-Temp-Schedule',
+                                                                                       'default_day' => ['All Days', [24, 21]])
       # heating component schedule
-      schedulesHVAC["hp_loop_heating"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "New HP-Loop-Htg-Temp-Schedule",
-                                                                                       "default_day" => ["All Days",[24,5]]})
+      schedulesHVAC['hp_loop_heating'] = OsLib_Schedules.createComplexSchedule(model,  'name' => 'New HP-Loop-Htg-Temp-Schedule',
+                                                                                       'default_day' => ['All Days', [24, 5]])
     end
-    if options["allHVAC"]["zone"] == "WSHP" or options["allHVAC"]["zone"] == "VRF"
+    if (options['allHVAC']['zone'] == 'WSHP') || (options['allHVAC']['zone'] == 'VRF')
       # there will be a heat pump condenser loop
       # loop setpoint schedule
-      schedulesHVAC["hp_loop"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "New HP-Loop-Temp-Schedule",
-                                                                               "default_day" => ["All Days",[24,30]]}) #PNNL
+      schedulesHVAC['hp_loop'] = OsLib_Schedules.createComplexSchedule(model, 'name' => 'New HP-Loop-Temp-Schedule',
+                                                                              'default_day' => ['All Days', [24, 30]]) # PNNL
       # cooling component schedule (#ML won't need this if a ground loop is actually modeled)
-      schedulesHVAC["hp_loop_cooling"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "New HP-Loop-Clg-Temp-Schedule",
-                                                                                       "default_day" => ["All Days",[24,30]]}) #PNNL
+      schedulesHVAC['hp_loop_cooling'] = OsLib_Schedules.createComplexSchedule(model,  'name' => 'New HP-Loop-Clg-Temp-Schedule',
+                                                                                       'default_day' => ['All Days', [24, 30]]) # PNNL
       # heating component schedule
-      schedulesHVAC["hp_loop_heating"] = OsLib_Schedules.createComplexSchedule(model, {"name" => "New HP-Loop-Htg-Temp-Schedule",
-                                                                                       "default_day" => ["All Days",[24,20]]}) #PNNL
+      schedulesHVAC['hp_loop_heating'] = OsLib_Schedules.createComplexSchedule(model,  'name' => 'New HP-Loop-Htg-Temp-Schedule',
+                                                                                       'default_day' => ['All Days', [24, 20]]) # PNNL
     end
-    
+
     # pass back schedulesHVAC hash
     result = schedulesHVAC
     return result
-
   end
 
-  def OsLib_HVAC_zedg_vrf.createHotWaterPlant(model, runner, hot_water_setpoint_schedule, loop_type, parameters)
-    
+  def self.createHotWaterPlant(model, runner, hot_water_setpoint_schedule, loop_type, parameters)
     hot_water_plant = OpenStudio::Model::PlantLoop.new(model)
     hot_water_plant.setName("New #{loop_type} Loop")
     hot_water_plant.setMaximumLoopTemperature(100)
     hot_water_plant.setMinimumLoopTemperature(10)
     loop_sizing = hot_water_plant.sizingPlant
-    loop_sizing.setLoopType("Heating")
-    if loop_type == "Hot Water"
+    loop_sizing.setLoopType('Heating')
+    if loop_type == 'Hot Water'
       loop_sizing.setDesignLoopExitTemperature(82)
-    elsif loop_type == "Radiant Hot Water"
-      loop_sizing.setDesignLoopExitTemperature(60) #ML follows convention of sizing temp being larger than supplu temp
-    end    
+    elsif loop_type == 'Radiant Hot Water'
+      loop_sizing.setDesignLoopExitTemperature(60) # ML follows convention of sizing temp being larger than supplu temp
+    end
     loop_sizing.setLoopDesignTemperatureDifference(11)
     # create a pump
     pump = OpenStudio::Model::PumpVariableSpeed.new(model)
-    pump.setRatedPumpHead(119563) #Pa
+    pump.setRatedPumpHead(119563) # Pa
     pump.setMotorEfficiency(0.9)
     pump.setCoefficient1ofthePartLoadPerformanceCurve(0)
     pump.setCoefficient2ofthePartLoadPerformanceCurve(0.0216)
@@ -474,7 +484,7 @@ module OsLib_HVAC_zedg_vrf
     boiler = OpenStudio::Model::BoilerHotWater.new(model)
     boiler.setNominalThermalEfficiency(0.9)
     # create a scheduled setpoint manager
-    setpoint_manager_scheduled = OpenStudio::Model::SetpointManagerScheduled.new(model,hot_water_setpoint_schedule)
+    setpoint_manager_scheduled = OpenStudio::Model::SetpointManagerScheduled.new(model, hot_water_setpoint_schedule)
     # create a supply bypass pipe
     pipe_supply_bypass = OpenStudio::Model::PipeAdiabatic.new(model)
     # create a supply outlet pipe
@@ -500,34 +510,32 @@ module OsLib_HVAC_zedg_vrf
     # pass back hot water plant
     result = hot_water_plant
     return result
-
   end
 
-  def OsLib_HVAC_zedg_vrf.createChilledWaterPlant(model, runner, chilled_water_setpoint_schedule, loop_type, chillerType)
-    
+  def self.createChilledWaterPlant(model, runner, chilled_water_setpoint_schedule, loop_type, chillerType)
     # chilled water plant
     chilled_water_plant = OpenStudio::Model::PlantLoop.new(model)
     chilled_water_plant.setName("New #{loop_type} Loop")
     chilled_water_plant.setMaximumLoopTemperature(98)
     chilled_water_plant.setMinimumLoopTemperature(1)
     loop_sizing = chilled_water_plant.sizingPlant
-    loop_sizing.setLoopType("Cooling")
-    if loop_type == "Chilled Water"
+    loop_sizing.setLoopType('Cooling')
+    if loop_type == 'Chilled Water'
       loop_sizing.setDesignLoopExitTemperature(6.7)
-    elsif loop_type == "Radiant Chilled Water"
+    elsif loop_type == 'Radiant Chilled Water'
       loop_sizing.setDesignLoopExitTemperature(15)
-    end    
+    end
     loop_sizing.setLoopDesignTemperatureDifference(6.7)
     # create a pump
     pump = OpenStudio::Model::PumpVariableSpeed.new(model)
-    pump.setRatedPumpHead(149453) #Pa
+    pump.setRatedPumpHead(149453) # Pa
     pump.setMotorEfficiency(0.9)
     pump.setCoefficient1ofthePartLoadPerformanceCurve(0)
     pump.setCoefficient2ofthePartLoadPerformanceCurve(0.0216)
     pump.setCoefficient3ofthePartLoadPerformanceCurve(-0.0325)
     pump.setCoefficient4ofthePartLoadPerformanceCurve(1.0095)
     # create a chiller
-    if chillerType == "WaterCooled"
+    if chillerType == 'WaterCooled'
       # create clgCapFuncTempCurve
       clgCapFuncTempCurve = OpenStudio::Model::CurveBiquadratic.new(model)
       clgCapFuncTempCurve.setCoefficient1Constant(1.07E+00)
@@ -560,11 +568,11 @@ module OsLib_HVAC_zedg_vrf
       eirFuncPlrCurve.setMinimumValueofx(0)
       eirFuncPlrCurve.setMaximumValueofx(1.2)
       # construct chiller
-      chiller = OpenStudio::Model::ChillerElectricEIR.new(model,clgCapFuncTempCurve,eirFuncTempCurve,eirFuncPlrCurve)
+      chiller = OpenStudio::Model::ChillerElectricEIR.new(model, clgCapFuncTempCurve, eirFuncTempCurve, eirFuncPlrCurve)
       chiller.setReferenceCOP(6.1)
-      chiller.setCondenserType("WaterCooled")
-      chiller.setChillerFlowMode("ConstantFlow")
-    elsif chillerType == "AirCooled"
+      chiller.setCondenserType('WaterCooled')
+      chiller.setChillerFlowMode('ConstantFlow')
+    elsif chillerType == 'AirCooled'
       # create clgCapFuncTempCurve
       clgCapFuncTempCurve = OpenStudio::Model::CurveBiquadratic.new(model)
       clgCapFuncTempCurve.setCoefficient1Constant(1.05E+00)
@@ -597,13 +605,13 @@ module OsLib_HVAC_zedg_vrf
       eirFuncPlrCurve.setMinimumValueofx(0)
       eirFuncPlrCurve.setMaximumValueofx(1.2)
       # construct chiller
-      chiller = OpenStudio::Model::ChillerElectricEIR.new(model,clgCapFuncTempCurve,eirFuncTempCurve,eirFuncPlrCurve)
+      chiller = OpenStudio::Model::ChillerElectricEIR.new(model, clgCapFuncTempCurve, eirFuncTempCurve, eirFuncPlrCurve)
       chiller.setReferenceCOP(2.93)
-      chiller.setCondenserType("AirCooled")
-      chiller.setChillerFlowMode("ConstantFlow")
+      chiller.setCondenserType('AirCooled')
+      chiller.setChillerFlowMode('ConstantFlow')
     end
     # create a scheduled setpoint manager
-    setpoint_manager_scheduled = OpenStudio::Model::SetpointManagerScheduled.new(model,chilled_water_setpoint_schedule)
+    setpoint_manager_scheduled = OpenStudio::Model::SetpointManagerScheduled.new(model, chilled_water_setpoint_schedule)
     # create a supply bypass pipe
     pipe_supply_bypass = OpenStudio::Model::PipeAdiabatic.new(model)
     # create a supply outlet pipe
@@ -629,39 +637,37 @@ module OsLib_HVAC_zedg_vrf
     # pass back chilled water plant
     result = chilled_water_plant
     return result
-
   end
 
-  def OsLib_HVAC_zedg_vrf.createCondenserLoop(model, runner, options, parameters)
-
+  def self.createCondenserLoop(model, runner, options, parameters)
     condenserLoops = {}
     # condLoopCoolingTemp_si = OpenStudio::convert(parameters["condLoopCoolingTemp"],"F","C").get
     # condLoopHeatingTemp_si = OpenStudio::convert(parameters["condLoopHeatingTemp"],"F","C").get
-		# coolingTowerWB_si = OpenStudio::convert(parameters["coolingTowerWB"],"F","C").get
-		# boilerHWST_si =  OpenStudio::convert(parameters["boilerHWST"],"F","C").get
+    # coolingTowerWB_si = OpenStudio::convert(parameters["coolingTowerWB"],"F","C").get
+    # boilerHWST_si =  OpenStudio::convert(parameters["boilerHWST"],"F","C").get
 
     # check for water-cooled chillers
     waterCooledChiller = false
     model.getChillerElectricEIRs.each do |chiller|
       next if waterCooledChiller == true
-      if chiller.condenserType == "WaterCooled"
+      if chiller.condenserType == 'WaterCooled'
         waterCooledChiller = true
-      end   
+      end
     end
     # create condenser loop for water-cooled chillers
     if waterCooledChiller
       # create condenser loop for water-cooled chiller(s)
       condenser_loop = OpenStudio::Model::PlantLoop.new(model)
-      condenser_loop.setName("New Condenser Loop")
+      condenser_loop.setName('New Condenser Loop')
       condenser_loop.setMaximumLoopTemperature(80)
       condenser_loop.setMinimumLoopTemperature(5)
       loop_sizing = condenser_loop.sizingPlant
-      loop_sizing.setLoopType("Condenser")
+      loop_sizing.setLoopType('Condenser')
       loop_sizing.setDesignLoopExitTemperature(29.4)
       loop_sizing.setLoopDesignTemperatureDifference(5.6)
       # create a pump
       pump = OpenStudio::Model::PumpVariableSpeed.new(model)
-      pump.setRatedPumpHead(134508) #Pa
+      pump.setRatedPumpHead(134508) # Pa
       pump.setMotorEfficiency(0.9)
       pump.setCoefficient1ofthePartLoadPerformanceCurve(0)
       pump.setCoefficient2ofthePartLoadPerformanceCurve(0.0216)
@@ -693,34 +699,34 @@ module OsLib_HVAC_zedg_vrf
       setpoint_manager_follow_oa.addToNode(condenser_loop.supplyOutletNode)
       # demand side components
       model.getChillerElectricEIRs.each do |chiller|
-        if chiller.condenserType == "WaterCooled" # works only if chillers not already connected to condenser loop(s)
+        if chiller.condenserType == 'WaterCooled' # works only if chillers not already connected to condenser loop(s)
           condenser_loop.addDemandBranchForComponent(chiller)
-        end   
+        end
       end
       condenser_loop.addDemandBranchForComponent(pipe_demand_bypass)
       pipe_demand_inlet.addToNode(condenser_loop.demandInletNode)
       pipe_demand_outlet.addToNode(condenser_loop.demandOutletNode)
-      condenserLoops["condenser_loop"] = condenser_loop    
+      condenserLoops['condenser_loop'] = condenser_loop
     end
-    if options["zoneHVAC"] == "WSHP" or options["zoneHVAC"] == "VRF"
+    if (options['zoneHVAC'] == 'WSHP') || (options['zoneHVAC'] == 'VRF')
       # create condenser loop for heat pumps
       condenser_loop = OpenStudio::Model::PlantLoop.new(model)
-      condenser_loop.setName("Heat Pump Loop")
+      condenser_loop.setName('Heat Pump Loop')
       condenser_loop.setMaximumLoopTemperature(80)
       condenser_loop.setMinimumLoopTemperature(5)
       loop_sizing = condenser_loop.sizingPlant
-      loop_sizing.setLoopType("Condenser")
-	  
-      if options["zoneHVAC"] == "GSHP"
+      loop_sizing.setLoopType('Condenser')
+
+      if options['zoneHVAC'] == 'GSHP'
         loop_sizing.setDesignLoopExitTemperature(condLoopCoolingTemp_si)
-        loop_sizing.setLoopDesignTemperatureDifference(10/1.8)
-      elsif options["zoneHVAC"] == "WSHP" or options["zoneHVAC"] == "VRF"
+        loop_sizing.setLoopDesignTemperatureDifference(10 / 1.8)
+      elsif (options['zoneHVAC'] == 'WSHP') || (options['zoneHVAC'] == 'VRF')
         loop_sizing.setDesignLoopExitTemperature(32.222)
-        loop_sizing.setLoopDesignTemperatureDifference(10/1.8)
-      end  
+        loop_sizing.setLoopDesignTemperatureDifference(10 / 1.8)
+      end
       # create a pump
       pump = OpenStudio::Model::PumpVariableSpeed.new(model)
-      pump.setRatedPumpHead(134508) #Pa
+      pump.setRatedPumpHead(134508) # Pa
       pump.setMotorEfficiency(0.9)
       pump.setCoefficient1ofthePartLoadPerformanceCurve(0)
       pump.setCoefficient2ofthePartLoadPerformanceCurve(0.0216)
@@ -737,9 +743,9 @@ module OsLib_HVAC_zedg_vrf
       # create a demand outlet pipe
       pipe_demand_outlet = OpenStudio::Model::PipeAdiabatic.new(model)
       # create setpoint managers
-      setpoint_manager_scheduled_loop = OpenStudio::Model::SetpointManagerScheduled.new(model,options["loop_setpoint_schedule"])
-      setpoint_manager_scheduled_cooling = OpenStudio::Model::SetpointManagerScheduled.new(model,options["cooling_setpoint_schedule"])
-      setpoint_manager_scheduled_heating = OpenStudio::Model::SetpointManagerScheduled.new(model,options["heating_setpoint_schedule"])
+      setpoint_manager_scheduled_loop = OpenStudio::Model::SetpointManagerScheduled.new(model, options['loop_setpoint_schedule'])
+      setpoint_manager_scheduled_cooling = OpenStudio::Model::SetpointManagerScheduled.new(model, options['cooling_setpoint_schedule'])
+      setpoint_manager_scheduled_heating = OpenStudio::Model::SetpointManagerScheduled.new(model, options['heating_setpoint_schedule'])
       # connect components to plant loop
       # supply side components
       condenser_loop.addSupplyBranchForComponent(pipe_supply_bypass)
@@ -751,7 +757,7 @@ module OsLib_HVAC_zedg_vrf
       pipe_demand_inlet.addToNode(condenser_loop.demandInletNode)
       pipe_demand_outlet.addToNode(condenser_loop.demandOutletNode)
       # add additional components according to specific system type
-      if options["zoneHVAC"] == "GSHP"
+      if options['zoneHVAC'] == 'GSHP'
         # add district cooling and heating to supply side
         district_cooling = OpenStudio::Model::DistrictCooling.new(model)
         district_cooling.setNominalCapacity(1000000000000) # large number; no autosizing
@@ -762,52 +768,52 @@ module OsLib_HVAC_zedg_vrf
         district_heating.addToNode(district_cooling.outletModelObject.get.to_Node.get)
         setpoint_manager_scheduled_heating.addToNode(district_heating.outletModelObject.get.to_Node.get)
         # add heat pumps to demand side after they get created
-      elsif options["zoneHVAC"] == "WSHP" 
+      elsif options['zoneHVAC'] == 'WSHP'
         # add a boiler and cooling tower to supply side
         # create a boiler
         boiler = OpenStudio::Model::BoilerHotWater.new(model)
-        boiler.setNominalThermalEfficiency(parameters["boilerEff"])
-				boiler.setFuelType(parameters["boilerFuelType"])
-				boiler.setDesignWaterOutletTemperature(boilerHWST_si)
+        boiler.setNominalThermalEfficiency(parameters['boilerEff'])
+        boiler.setFuelType(parameters['boilerFuelType'])
+        boiler.setDesignWaterOutletTemperature(boilerHWST_si)
         condenser_loop.addSupplyBranchForComponent(boiler)
         setpoint_manager_scheduled_heating.addToNode(boiler.outletModelObject.get.to_Node.get)
         # create a cooling tower
         tower = OpenStudio::Model::CoolingTowerVariableSpeed.new(model)
-				tower.setDesignInletAirWetBulbTemperature(coolingTowerWB_si)
-				tower.setDesignApproachTemperature(parameters["coolingTowerApproach"]/1.8)
-				tower.setDesignRangeTemperature(parameters["coolingTowerDeltaT"]/1.8)
+        tower.setDesignInletAirWetBulbTemperature(coolingTowerWB_si)
+        tower.setDesignApproachTemperature(parameters['coolingTowerApproach'] / 1.8)
+        tower.setDesignRangeTemperature(parameters['coolingTowerDeltaT'] / 1.8)
         tower.addToNode(boiler.outletModelObject.get.to_Node.get)
         setpoint_manager_scheduled_cooling.addToNode(tower.outletModelObject.get.to_Node.get)
-      elsif options["zoneHVAC"] == "VRF"
+      elsif options['zoneHVAC'] == 'VRF'
         # add a boiler and cooling tower to supply side
         # create a boiler
         boiler = OpenStudio::Model::BoilerHotWater.new(model)
         boiler.setNominalThermalEfficiency(0.9)
-				boiler.setDesignWaterOutletTemperature(48)
+        boiler.setDesignWaterOutletTemperature(48)
         condenser_loop.addSupplyBranchForComponent(boiler)
         setpoint_manager_scheduled_heating.addToNode(boiler.outletModelObject.get.to_Node.get)
         # create a cooling tower
         tower = OpenStudio::Model::CoolingTowerVariableSpeed.new(model)
-				tower.setDesignInletAirWetBulbTemperature(20)
-				tower.setDesignApproachTemperature(3.89)
-				tower.setDesignRangeTemperature(5.56)
+        tower.setDesignInletAirWetBulbTemperature(20)
+        tower.setDesignApproachTemperature(3.89)
+        tower.setDesignRangeTemperature(5.56)
         tower.addToNode(boiler.outletModelObject.get.to_Node.get)
-        setpoint_manager_scheduled_cooling.addToNode(tower.outletModelObject.get.to_Node.get)				
+        setpoint_manager_scheduled_cooling.addToNode(tower.outletModelObject.get.to_Node.get)
       end
-      condenserLoops["heat_pump_loop"] = condenser_loop    
+      condenserLoops['heat_pump_loop'] = condenser_loop
     end
-      
+
     # pass back condenser loop(s)
     result = condenserLoops
     return result
-
   end
-  def OsLib_HVAC_zedg_vrf.createPrimaryAirLoops(model, runner, options, parameters)
+
+  def self.createPrimaryAirLoops(model, runner, options, parameters)
     primary_airloops = []
     # create primary airloop for each story
     assignedThermalZones = []
     model.getBuildingStorys.sort.each do |building_story|
-      #ML stories need to be reordered from the ground up
+      # ML stories need to be reordered from the ground up
       thermalZonesToAdd = []
       building_story.spaces.each do |space|
         # make sure spaces are assigned to thermal zones
@@ -815,7 +821,7 @@ module OsLib_HVAC_zedg_vrf
         if space.thermalZone.is_initialized
           thermal_zone = space.thermalZone.get
           # grab primary zones
-          if options["zonesPrimary"].include? thermal_zone
+          if options['zonesPrimary'].include? thermal_zone
             # make sure zone was not already assigned to another air loop
             unless assignedThermalZones.include? thermal_zone
               # make sure thermal zones are not duplicated (spaces can share thermal zones)
@@ -823,12 +829,12 @@ module OsLib_HVAC_zedg_vrf
                 thermalZonesToAdd << thermal_zone
               end
             end
-          end  
-        end      
+          end
+        end
       end
       # make sure thermal zones don't get added to more than one air loop
       assignedThermalZones << thermalZonesToAdd
-            
+
       # create new air loop if story contains primary zones
       unless thermalZonesToAdd.empty?
         airloop_primary = OpenStudio::Model::AirLoopHVAC.new(model)
@@ -837,31 +843,31 @@ module OsLib_HVAC_zedg_vrf
         sizing_system = airloop_primary.sizingSystem
         # set central heating and cooling temperatures for sizing
         sizing_system.setCentralCoolingDesignSupplyAirTemperature(12.8)
-        sizing_system.setCentralHeatingDesignSupplyAirTemperature(40) #ML OS default is 16.7
+        sizing_system.setCentralHeatingDesignSupplyAirTemperature(40) # ML OS default is 16.7
         # load specification
-        sizing_system.setSystemOutdoorAirMethod("VentilationRateProcedure") #ML OS default is ZoneSum
-        if options["primaryHVAC"]["doas"]
-          sizing_system.setTypeofLoadtoSizeOn("VentilationRequirement") #DOAS
-          sizing_system.setAllOutdoorAirinCooling(true) #DOAS
-          sizing_system.setAllOutdoorAirinHeating(true) #DOAS
-        else  
-          sizing_system.setTypeofLoadtoSizeOn("Sensible") #VAV
-          sizing_system.setAllOutdoorAirinCooling(false) #VAV
-          sizing_system.setAllOutdoorAirinHeating(false) #VAV
-        end    
+        sizing_system.setSystemOutdoorAirMethod('VentilationRateProcedure') # ML OS default is ZoneSum
+        if options['primaryHVAC']['doas']
+          sizing_system.setTypeofLoadtoSizeOn('VentilationRequirement') # DOAS
+          sizing_system.setAllOutdoorAirinCooling(true) # DOAS
+          sizing_system.setAllOutdoorAirinHeating(true) # DOAS
+        else
+          sizing_system.setTypeofLoadtoSizeOn('Sensible') # VAV
+          sizing_system.setAllOutdoorAirinCooling(false) # VAV
+          sizing_system.setAllOutdoorAirinHeating(false) # VAV
+        end
 
         air_loop_comps = []
         # set availability schedule
-        airloop_primary.setAvailabilitySchedule(options["hvac_schedule"])
+        airloop_primary.setAvailabilitySchedule(options['hvac_schedule'])
         # create air loop fan
-        if options["primaryHVAC"]["fan"] == "Variable"
+        if options['primaryHVAC']['fan'] == 'Variable'
           # create variable speed fan and set system sizing accordingly
-          sizing_system.setMinimumSystemAirFlowRatio(0.3) #DCV
+          sizing_system.setMinimumSystemAirFlowRatio(0.3) # DCV
           # variable speed fan
-          fan = OpenStudio::Model::FanVariableVolume.new(model, model.alwaysOnDiscreteSchedule())
+          fan = OpenStudio::Model::FanVariableVolume.new(model, model.alwaysOnDiscreteSchedule)
           fan.setFanEfficiency(0.6)
-          fan.setPressureRise(1120) #Pa
-          fan.autosizeMaximumFlowRate()
+          fan.setPressureRise(1120) # Pa
+          fan.autosizeMaximumFlowRate
           fan.setFanPowerMinimumFlowFraction(0.6)
           fan.setMotorEfficiency(0.85)
           fan.setMotorInAirstreamFraction(1.0)
@@ -869,25 +875,25 @@ module OsLib_HVAC_zedg_vrf
         else
           sizing_system.setMinimumSystemAirFlowRatio(1.0) # No DCV
           # constant speed fan
-          fan = OpenStudio::Model::FanConstantVolume.new(model, model.alwaysOnDiscreteSchedule())
+          fan = OpenStudio::Model::FanConstantVolume.new(model, model.alwaysOnDiscreteSchedule)
           fan.setFanEfficiency(0.6)
-          fan.setPressureRise(500) #Pa
-          fan.autosizeMaximumFlowRate()
+          fan.setPressureRise(500) # Pa
+          fan.autosizeMaximumFlowRate
           fan.setMotorEfficiency(0.9)
           fan.setMotorInAirstreamFraction(1.0)
           air_loop_comps << fan
         end
 
         # for ze school add in electric coil
-        htg_coil_extra = OpenStudio::Model::CoilHeatingElectric.new(model,model.alwaysOnDiscreteSchedule())
+        htg_coil_extra = OpenStudio::Model::CoilHeatingElectric.new(model, model.alwaysOnDiscreteSchedule)
         air_loop_comps << htg_coil_extra
 
         # create heating coil
-        if options["primaryHVAC"]["heat"] == "Water"
+        if options['primaryHVAC']['heat'] == 'Water'
           # water coil
-          heating_coil = OpenStudio::Model::CoilHeatingWater.new(model, model.alwaysOnDiscreteSchedule())
+          heating_coil = OpenStudio::Model::CoilHeatingWater.new(model, model.alwaysOnDiscreteSchedule)
           air_loop_comps << heating_coil
-        elsif options["primaryHVAC"]["heat"] == "SingleDX"
+        elsif options['primaryHVAC']['heat'] == 'SingleDX'
           # dx heating coil
 
           htg_cap_f_of_temp = OpenStudio::Model::CurveCubic.new(model)
@@ -928,27 +934,27 @@ module OsLib_HVAC_zedg_vrf
           htg_part_load_fraction.setMinimumValueofx(0.0)
           htg_part_load_fraction.setMaximumValueofx(1.0)
 
-          heating_coil = OpenStudio::Model::CoilHeatingDXSingleSpeed.new( model,
-                                                                      model.alwaysOnDiscreteSchedule(),
-                                                                      htg_cap_f_of_temp,
-                                                                      htg_cap_f_of_flow,
-                                                                      htg_energy_input_ratio_f_of_temp,
-                                                                      htg_energy_input_ratio_f_of_flow,
-                                                                      htg_part_load_fraction )
+          heating_coil = OpenStudio::Model::CoilHeatingDXSingleSpeed.new(model,
+                                                                         model.alwaysOnDiscreteSchedule,
+                                                                         htg_cap_f_of_temp,
+                                                                         htg_cap_f_of_flow,
+                                                                         htg_energy_input_ratio_f_of_temp,
+                                                                         htg_energy_input_ratio_f_of_flow,
+                                                                         htg_part_load_fraction)
 
           air_loop_comps << heating_coil
         else
-          # todo dfg - change to dx heating coil
+          # TODO: dfg - change to dx heating coil
           # gas coil
-          heating_coil = OpenStudio::Model::CoilHeatingGas.new(model, model.alwaysOnDiscreteSchedule())
+          heating_coil = OpenStudio::Model::CoilHeatingGas.new(model, model.alwaysOnDiscreteSchedule)
           air_loop_comps << heating_coil
-        end  
+        end
         # create cooling coil
-        if options["primaryHVAC"]["cool"] == "Water"
+        if options['primaryHVAC']['cool'] == 'Water'
           # water coil
-          cooling_coil = OpenStudio::Model::CoilCoolingWater.new(model, model.alwaysOnDiscreteSchedule())
+          cooling_coil = OpenStudio::Model::CoilCoolingWater.new(model, model.alwaysOnDiscreteSchedule)
           air_loop_comps << cooling_coil
-        elsif options["primaryHVAC"]["cool"] == "SingleDX"
+        elsif options['primaryHVAC']['cool'] == 'SingleDX'
           # single speed DX coil
           # create cooling coil
           # create clgCapFuncTempCurve
@@ -998,13 +1004,13 @@ module OsLib_HVAC_zedg_vrf
           clgPlrCurve.setMaximumValueofx(1.0)
           # cooling coil
           cooling_coil = OpenStudio::Model::CoilCoolingDXSingleSpeed.new(model,
-                                                                           model.alwaysOnDiscreteSchedule(),
-                                                                           clgCapFuncTempCurve,
-                                                                           clgCapFuncFlowFracCurve,
-                                                                           clgEirFuncTempCurve,
-                                                                           clgEirFuncFlowFracCurve,
-                                                                           clgPlrCurve)
-          cooling_coil.setRatedCOP(OpenStudio::OptionalDouble.new(parameters["doasDXEER"]/3.412))
+                                                                         model.alwaysOnDiscreteSchedule,
+                                                                         clgCapFuncTempCurve,
+                                                                         clgCapFuncFlowFracCurve,
+                                                                         clgEirFuncTempCurve,
+                                                                         clgEirFuncFlowFracCurve,
+                                                                         clgPlrCurve)
+          cooling_coil.setRatedCOP(OpenStudio::OptionalDouble.new(parameters['doasDXEER'] / 3.412))
           air_loop_comps << cooling_coil
         else
           # two speed DX coil (PNNL curves)
@@ -1056,7 +1062,7 @@ module OsLib_HVAC_zedg_vrf
           clgPlrCurve.setMaximumValueofx(1.0)
           # cooling coil
           cooling_coil = OpenStudio::Model::CoilCoolingDXTwoSpeed.new(model,
-                                                                      model.alwaysOnDiscreteSchedule(),
+                                                                      model.alwaysOnDiscreteSchedule,
                                                                       clgCapFuncTempCurve,
                                                                       clgCapFuncFlowFracCurve,
                                                                       clgEirFuncTempCurve,
@@ -1064,108 +1070,108 @@ module OsLib_HVAC_zedg_vrf
                                                                       clgPlrCurve,
                                                                       clgCapFuncTempCurve,
                                                                       clgEirFuncTempCurve)
-          cooling_coil.setRatedHighSpeedCOP(parameters["doasDXEER"]/3.412)
-          cooling_coil.setRatedLowSpeedCOP(parameters["doasDXEER"]/3.412)
+          cooling_coil.setRatedHighSpeedCOP(parameters['doasDXEER'] / 3.412)
+          cooling_coil.setRatedLowSpeedCOP(parameters['doasDXEER'] / 3.412)
           air_loop_comps << cooling_coil
         end
 
-        unless options["zoneHVAC"] == "DualDuct"
+        unless options['zoneHVAC'] == 'DualDuct'
           # create controller outdoor air
           controller_OA = OpenStudio::Model::ControllerOutdoorAir.new(model)
-          controller_OA.autosizeMinimumOutdoorAirFlowRate()
-          controller_OA.autosizeMaximumOutdoorAirFlowRate()
+          controller_OA.autosizeMinimumOutdoorAirFlowRate
+          controller_OA.autosizeMaximumOutdoorAirFlowRate
           # create ventilation schedules and assign to OA controller
-          if options["primaryHVAC"]["doas"]
-            controller_OA.setMinimumFractionofOutdoorAirSchedule(model.alwaysOnDiscreteSchedule())
-            controller_OA.setMaximumFractionofOutdoorAirSchedule(model.alwaysOnDiscreteSchedule())
+          if options['primaryHVAC']['doas']
+            controller_OA.setMinimumFractionofOutdoorAirSchedule(model.alwaysOnDiscreteSchedule)
+            controller_OA.setMaximumFractionofOutdoorAirSchedule(model.alwaysOnDiscreteSchedule)
           else
             # multizone VAV that ventilates
-            controller_OA.setMaximumFractionofOutdoorAirSchedule(options["ventilation_schedule"])
-            controller_OA.setEconomizerControlType("DifferentialEnthalpy")
+            controller_OA.setMaximumFractionofOutdoorAirSchedule(options['ventilation_schedule'])
+            controller_OA.setEconomizerControlType('DifferentialEnthalpy')
             # add night cycling (ML would people actually do this for a VAV system?))
-            airloop_primary.setNightCycleControlType("CycleOnAny") #ML Does this work with variable speed fans?
-          end  
-          controller_OA.setHeatRecoveryBypassControlType("BypassWhenOAFlowGreaterThanMinimum")
+            airloop_primary.setNightCycleControlType('CycleOnAny') # ML Does this work with variable speed fans?
+          end
+          controller_OA.setHeatRecoveryBypassControlType('BypassWhenOAFlowGreaterThanMinimum')
 
           # create outdoor air system
           system_OA = OpenStudio::Model::AirLoopHVACOutdoorAirSystem.new(model, controller_OA)
           air_loop_comps << system_OA
           # create Evaporative cooler
-		  unless parameters["doasEvap"] =="none"
-				evap_cooler = OpenStudio::Model::EvaporativeCoolerDirectResearchSpecial.new(model,model.alwaysOnDiscreteSchedule())
-				evap_cooler.setCoolerEffectiveness(0.85)
-		  end
-		  # create ERV
-		  unless parameters["doasERV"] == "none"
-			  heat_exchanger = OpenStudio::Model::HeatExchangerAirToAirSensibleAndLatent.new(model)
-			  heat_exchanger.setAvailabilitySchedule(model.alwaysOnDiscreteSchedule())
-			  if parameters["doasERV"] == "rotary wheel w/o economizer lockout"
-				sensible_eff = 0.75
-				latent_eff = 0.69
-				#heat_exchanger.setEconomizerLockout(false)
-				heat_exchanger.setString(23,"No")
-			  elsif parameters["doasERV"] == "rotary wheel w/ economizer lockout"
-			  	sensible_eff = 0.75
-				latent_eff = 0.69
-			   # heat_exchanger.setEconomizerLockout(true)
-				heat_exchanger.setString(23,"Yes")
-        elsif parameters["doasERV"] == "plate w/o economizer lockout"
-			    sensible_eff = 0.52
-				latent_eff = 0.50
-				#heat_exchanger.setEconomizerLockout(false)
-				heat_exchanger.setString(23,"No")
-        elsif parameters["doasERV"] == "plate w/o economizer lockout - zedg"
-          #heat_exchanger.setEconomizerLockout(false)
+          unless parameters['doasEvap'] == 'none'
+            evap_cooler = OpenStudio::Model::EvaporativeCoolerDirectResearchSpecial.new(model, model.alwaysOnDiscreteSchedule)
+            evap_cooler.setCoolerEffectiveness(0.85)
+          end
+          # create ERV
+          unless parameters['doasERV'] == 'none'
+            heat_exchanger = OpenStudio::Model::HeatExchangerAirToAirSensibleAndLatent.new(model)
+            heat_exchanger.setAvailabilitySchedule(model.alwaysOnDiscreteSchedule)
+            if parameters['doasERV'] == 'rotary wheel w/o economizer lockout'
+              sensible_eff = 0.75
+              latent_eff = 0.69
+              # heat_exchanger.setEconomizerLockout(false)
+              heat_exchanger.setString(23, 'No')
+            elsif parameters['doasERV'] == 'rotary wheel w/ economizer lockout'
+              sensible_eff = 0.75
+              latent_eff = 0.69
+              # heat_exchanger.setEconomizerLockout(true)
+              heat_exchanger.setString(23, 'Yes')
+            elsif parameters['doasERV'] == 'plate w/o economizer lockout'
+              sensible_eff = 0.52
+              latent_eff = 0.50
+              # heat_exchanger.setEconomizerLockout(false)
+              heat_exchanger.setString(23, 'No')
+            elsif parameters['doasERV'] == 'plate w/o economizer lockout - zedg'
+              # heat_exchanger.setEconomizerLockout(false)
 
-          heat_exchanger.setSensibleEffectivenessat100CoolingAirFlow(0.76)
-          heat_exchanger.setSensibleEffectivenessat100HeatingAirFlow(0.76)
-          heat_exchanger.setSensibleEffectivenessat75CoolingAirFlow(0.81)
-          heat_exchanger.setSensibleEffectivenessat75HeatingAirFlow(0.81)
-          heat_exchanger.setLatentEffectivenessat100CoolingAirFlow(0.68)
-          heat_exchanger.setLatentEffectivenessat100HeatingAirFlow(0.68)
-          heat_exchanger.setLatentEffectivenessat75CoolingAirFlow(0.73)
-          heat_exchanger.setLatentEffectivenessat75HeatingAirFlow(0.73)
-          heat_exchanger.setFrostControlType("ExhaustOnly")
-          heat_exchanger.setThresholdTemperature(10.0)
-          heat_exchanger.setInitialDefrostTimeFraction(0.1670)
-          heat_exchanger.setRateofDefrostTimeFractionIncrease(0.0130)
+              heat_exchanger.setSensibleEffectivenessat100CoolingAirFlow(0.76)
+              heat_exchanger.setSensibleEffectivenessat100HeatingAirFlow(0.76)
+              heat_exchanger.setSensibleEffectivenessat75CoolingAirFlow(0.81)
+              heat_exchanger.setSensibleEffectivenessat75HeatingAirFlow(0.81)
+              heat_exchanger.setLatentEffectivenessat100CoolingAirFlow(0.68)
+              heat_exchanger.setLatentEffectivenessat100HeatingAirFlow(0.68)
+              heat_exchanger.setLatentEffectivenessat75CoolingAirFlow(0.73)
+              heat_exchanger.setLatentEffectivenessat75HeatingAirFlow(0.73)
+              heat_exchanger.setFrostControlType('ExhaustOnly')
+              heat_exchanger.setThresholdTemperature(10.0)
+              heat_exchanger.setInitialDefrostTimeFraction(0.1670)
+              heat_exchanger.setRateofDefrostTimeFractionIncrease(0.0130)
 
-			  elsif parameters["doasERV"] == "plate w/ economizer lockout"
-			    sensible_eff = 0.52
-				latent_eff = 0.50
-			   # heat_exchanger.setEconomizerLockout(true)
-				heat_exchanger.setString(23,"Yes")
-        end
+            elsif parameters['doasERV'] == 'plate w/ economizer lockout'
+              sensible_eff = 0.52
+              latent_eff = 0.50
+              # heat_exchanger.setEconomizerLockout(true)
+              heat_exchanger.setString(23, 'Yes')
+            end
 
-        if parameters["doasERV"] != "plate w/o economizer lockout - zedg"
-          heat_exchanger.setSensibleEffectivenessat100CoolingAirFlow(sensible_eff)
-          heat_exchanger.setSensibleEffectivenessat100HeatingAirFlow(sensible_eff)
-          heat_exchanger.setSensibleEffectivenessat75CoolingAirFlow(sensible_eff)
-          heat_exchanger.setSensibleEffectivenessat75HeatingAirFlow(sensible_eff)
-          heat_exchanger.setLatentEffectivenessat100CoolingAirFlow(latent_eff)
-          heat_exchanger.setLatentEffectivenessat100HeatingAirFlow(latent_eff)
-          heat_exchanger.setLatentEffectivenessat75CoolingAirFlow(latent_eff)
-          heat_exchanger.setLatentEffectivenessat75HeatingAirFlow(latent_eff)
-          heat_exchanger.setFrostControlType("ExhaustOnly")
-          heat_exchanger.setThresholdTemperature(-12.2)
-          heat_exchanger.setInitialDefrostTimeFraction(0.1670)
-          heat_exchanger.setRateofDefrostTimeFractionIncrease(0.0240)
-        end
+            if parameters['doasERV'] != 'plate w/o economizer lockout - zedg'
+              heat_exchanger.setSensibleEffectivenessat100CoolingAirFlow(sensible_eff)
+              heat_exchanger.setSensibleEffectivenessat100HeatingAirFlow(sensible_eff)
+              heat_exchanger.setSensibleEffectivenessat75CoolingAirFlow(sensible_eff)
+              heat_exchanger.setSensibleEffectivenessat75HeatingAirFlow(sensible_eff)
+              heat_exchanger.setLatentEffectivenessat100CoolingAirFlow(latent_eff)
+              heat_exchanger.setLatentEffectivenessat100HeatingAirFlow(latent_eff)
+              heat_exchanger.setLatentEffectivenessat75CoolingAirFlow(latent_eff)
+              heat_exchanger.setLatentEffectivenessat75HeatingAirFlow(latent_eff)
+              heat_exchanger.setFrostControlType('ExhaustOnly')
+              heat_exchanger.setThresholdTemperature(-12.2)
+              heat_exchanger.setInitialDefrostTimeFraction(0.1670)
+              heat_exchanger.setRateofDefrostTimeFractionIncrease(0.0240)
+            end
 
-		   end
+           end
 
-end  
+end
         # create scheduled setpoint manager for airloop
-        unless (options["primaryHVAC"]["doas"] or options["zoneHVAC"] == "DualDuct")
+        if options['primaryHVAC']['doas'] || (options['zoneHVAC'] == 'DualDuct')
+          # DOAS or VAV for cooling and not ventilation
+          setpoint_manager = OpenStudio::Model::SetpointManagerScheduled.new(model, options['primary_sat_schedule'])
+        else
           # VAV for cooling and ventilation
           setpoint_manager = OpenStudio::Model::SetpointManagerOutdoorAirReset.new(model)
           setpoint_manager.setSetpointatOutdoorLowTemperature(15.6)
           setpoint_manager.setOutdoorLowTemperature(14.4)
           setpoint_manager.setSetpointatOutdoorHighTemperature(12.8)
           setpoint_manager.setOutdoorHighTemperature(21.1)
-        else
-          # DOAS or VAV for cooling and not ventilation
-          setpoint_manager = OpenStudio::Model::SetpointManagerScheduled.new(model,options["primary_sat_schedule"])
         end
         # connect components to airloop
         # find the supply inlet node of the airloop
@@ -1174,53 +1180,51 @@ end
         air_loop_comps.each do |comp|
           comp.addToNode(airloop_supply_inlet)
           if comp.to_CoilHeatingWater.is_initialized
-            options["hot_water_plant"].addDemandBranchForComponent(comp)
+            options['hot_water_plant'].addDemandBranchForComponent(comp)
             comp.controllerWaterCoil.get.setMinimumActuatedFlow(0)
           elsif comp.to_CoilCoolingWater.is_initialized
-            options["chilled_water_plant"].addDemandBranchForComponent(comp)
+            options['chilled_water_plant'].addDemandBranchForComponent(comp)
             comp.controllerWaterCoil.get.setMinimumActuatedFlow(0)
           end
         end
-		unless options["zoneHVAC"] == "DualDuct" or parameters["doasERV"] == "none"
-		  	heat_exchanger.addToNode(system_OA.outboardOANode.get)
-        end  
-		
-		unless parameters["doasEvap"] == "none"
-		    if parameters["doasERV"] == "none"
-				evap_cooler.addToNode(system_OA.outboardOANode.get)
-			else
-			  hxPrimary_outlet_node = heat_exchanger.primaryAirOutletModelObject.get.to_Node.get
-				evap_cooler.addToNode(hxPrimary_outlet_node)
-			end
-		end
-	
+        unless (options['zoneHVAC'] == 'DualDuct') || (parameters['doasERV'] == 'none')
+          heat_exchanger.addToNode(system_OA.outboardOANode.get)
+            end
+
+        unless parameters['doasEvap'] == 'none'
+          if parameters['doasERV'] == 'none'
+            evap_cooler.addToNode(system_OA.outboardOANode.get)
+          else
+            hxPrimary_outlet_node = heat_exchanger.primaryAirOutletModelObject.get.to_Node.get
+            evap_cooler.addToNode(hxPrimary_outlet_node)
+          end
+        end
+
         # add setpoint manager to supply equipment outlet node
         setpoint_manager.addToNode(airloop_primary.supplyOutletNode)
         # add thermal zones to airloop
         thermalZonesToAdd.each do |zone|
           # make an air terminal for the zone
-          if options["primaryHVAC"]["fan"] == "Variable"
-            air_terminal = OpenStudio::Model::AirTerminalSingleDuctVAVNoReheat.new(model, model.alwaysOnDiscreteSchedule())
+          if options['primaryHVAC']['fan'] == 'Variable'
+            air_terminal = OpenStudio::Model::AirTerminalSingleDuctVAVNoReheat.new(model, model.alwaysOnDiscreteSchedule)
             air_terminal.setConstantMinimumAirFlowFraction(0.0)
-            air_terminal.setControlForOutdoorAir (true)
+            air_terminal.setControlForOutdoorAir true
           else
-            air_terminal = OpenStudio::Model::AirTerminalSingleDuctUncontrolled.new(model, model.alwaysOnDiscreteSchedule())
+            air_terminal = OpenStudio::Model::AirTerminalSingleDuctUncontrolled.new(model, model.alwaysOnDiscreteSchedule)
           end
           # attach new terminal to the zone and to the airloop
           airloop_primary.addBranchForZone(zone, air_terminal.to_StraightComponent)
-        end 
-        primary_airloops << airloop_primary       
+        end
+        primary_airloops << airloop_primary
       end
     end
 
     # pass back primary airloops
     result = primary_airloops
     return result
-
   end
 
-  def OsLib_HVAC_zedg_vrf.createVRFAirConditioners(model, runner, options, parameters)
-
+  def self.createVRFAirConditioners(model, runner, options, parameters)
     # add and alter base vrf acbase units in model
     base_vrf_ac = options['vrf_ac'].to_AirConditionerVariableRefrigerantFlow.get
     base_vrf_ac.autosizeRatedTotalCoolingCapacity
@@ -1237,8 +1241,8 @@ end
     base_vrf_terminalUnit.setSupplyAirFanOperatingModeSchedule(model.alwaysOffDiscreteSchedule)
 
     # get coils
-    os_version = OpenStudio::VersionString.new(OpenStudio::openStudioVersion())
-    min_version_feature1 = OpenStudio::VersionString.new("2.3.1")
+    os_version = OpenStudio::VersionString.new(OpenStudio.openStudioVersion)
+    min_version_feature1 = OpenStudio::VersionString.new('2.3.1')
     if os_version >= min_version_feature1
       if base_vrf_terminalUnit.coolingCoil.is_initialized
         vrf_clg_coil = base_vrf_terminalUnit.coolingCoil.get
@@ -1270,7 +1274,7 @@ end
     # create primary airloop for each story
     assignedThermalZones = []
     model.getBuildingStorys.sort.each do |building_story|
-      #ML stories need to be reordered from the ground up
+      # ML stories need to be reordered from the ground up
       thermalZonesToAdd = []
       building_story.spaces.each do |space|
         # make sure spaces are assigned to thermal zones
@@ -1278,7 +1282,7 @@ end
         if space.thermalZone.is_initialized
           thermal_zone = space.thermalZone.get
           # grab primary zones
-          if options["zonesPrimary"].include? thermal_zone
+          if options['zonesPrimary'].include? thermal_zone
             # make sure zone was not already assigned to another air loop
             unless assignedThermalZones.include? thermal_zone
               # make sure thermal zones are not duplicated (spaces can share thermal zones)
@@ -1286,38 +1290,36 @@ end
                 thermalZonesToAdd << thermal_zone
               end
             end
-          end  
-        end      
+          end
+        end
       end
       # make sure thermal zones don't get added to more than one air loop
       assignedThermalZones << thermalZonesToAdd
-			
-			unless thermalZonesToAdd.empty?
+
+      unless thermalZonesToAdd.empty?
 
         # load in vrf unit and terminal from resource folder and hook up in place of new one.
         vrfAirConditioner = base_vrf_ac.clone(model).to_AirConditionerVariableRefrigerantFlow.get
-			  if parameters["vrfCondenserType"] == "WaterCooled"
-					options["heat_pump_loop"].addDemandBranchForComponent(vrfAirConditioner)
-				end
+        if parameters['vrfCondenserType'] == 'WaterCooled'
+          options['heat_pump_loop'].addDemandBranchForComponent(vrfAirConditioner)
+        end
 
-				# add terminal unit to the air conditioner VRF, one TU per thermal zone
-		   	thermalZonesToAdd.each do |zone|
-					# construct Terminal VRF Unit
+        # add terminal unit to the air conditioner VRF, one TU per thermal zone
+        thermalZonesToAdd.each do |zone|
+          # construct Terminal VRF Unit
           vrf_terminalUnit = base_vrf_terminalUnit.clone(model).to_ZoneHVACTerminalUnitVariableRefrigerantFlow.get
 
-=begin
-          # todo - temp code to stop art room from failing at sizing
-          if zone.name.to_s.downcase.include?("art")
-            base_vrf_terminalUnit.autosizeOutdoorAirFlowRateDuringCoolingOperation
-            base_vrf_terminalUnit.autosizeOutdoorAirFlowRateDuringHeatingOperation
-            base_vrf_terminalUnit.autosizeOutdoorAirFlowRateWhenNoCoolingorHeatingisNeeded
-          end
-=end
+          #           # todo - temp code to stop art room from failing at sizing
+          #           if zone.name.to_s.downcase.include?("art")
+          #             base_vrf_terminalUnit.autosizeOutdoorAirFlowRateDuringCoolingOperation
+          #             base_vrf_terminalUnit.autosizeOutdoorAirFlowRateDuringHeatingOperation
+          #             base_vrf_terminalUnit.autosizeOutdoorAirFlowRateWhenNoCoolingorHeatingisNeeded
+          #           end
 
-			 		vrf_terminalUnit.addToThermalZone(zone)
-				  vrfAirConditioner.addTerminal(vrf_terminalUnit)
-				end
-				vrf_AirConditioners << vrfAirConditioner
+          vrf_terminalUnit.addToThermalZone(zone)
+          vrfAirConditioner.addTerminal(vrf_terminalUnit)
+        end
+        vrf_AirConditioners << vrfAirConditioner
       end
     end
 
@@ -1328,59 +1330,57 @@ end
     # pass back primary airloops
     result = vrf_AirConditioners
     return result
-
   end
 
-   def OsLib_HVAC_zedg_vrf.createPrimaryZoneEquipment(model, runner, options, parameters)
-
+  def self.createPrimaryZoneEquipment(model, runner, options, parameters)
     model.getThermalZones.each do |zone|
-      if options["zonesPrimary"].include? zone
-        if options["zoneHVAC"] == "FanCoil"
+      if options['zonesPrimary'].include? zone
+        if options['zoneHVAC'] == 'FanCoil'
           # create fan coil
           # create fan
-          fan = OpenStudio::Model::FanOnOff.new(model, model.alwaysOnDiscreteSchedule())
+          fan = OpenStudio::Model::FanOnOff.new(model, model.alwaysOnDiscreteSchedule)
           fan.setFanEfficiency(0.5)
-          fan.setPressureRise(75) #Pa
-          fan.autosizeMaximumFlowRate()
+          fan.setPressureRise(75) # Pa
+          fan.autosizeMaximumFlowRate
           fan.setMotorEfficiency(0.9)
           fan.setMotorInAirstreamFraction(1.0)
           # create cooling coil and connect to chilled water plant
-          cooling_coil = OpenStudio::Model::CoilCoolingWater.new(model, model.alwaysOnDiscreteSchedule())
-          options["chilled_water_plant"].addDemandBranchForComponent(cooling_coil)
+          cooling_coil = OpenStudio::Model::CoilCoolingWater.new(model, model.alwaysOnDiscreteSchedule)
+          options['chilled_water_plant'].addDemandBranchForComponent(cooling_coil)
           cooling_coil.controllerWaterCoil.get.setMinimumActuatedFlow(0)
           # create heating coil and connect to hot water plant
-          heating_coil = OpenStudio::Model::CoilHeatingWater.new(model, model.alwaysOnDiscreteSchedule())
-          options["hot_water_plant"].addDemandBranchForComponent(heating_coil)
+          heating_coil = OpenStudio::Model::CoilHeatingWater.new(model, model.alwaysOnDiscreteSchedule)
+          options['hot_water_plant'].addDemandBranchForComponent(heating_coil)
           heating_coil.controllerWaterCoil.get.setMinimumActuatedFlow(0)
           # construct fan coil
           fan_coil = OpenStudio::Model::ZoneHVACFourPipeFanCoil.new(model,
-                                                                    model.alwaysOnDiscreteSchedule(),
+                                                                    model.alwaysOnDiscreteSchedule,
                                                                     fan,
                                                                     cooling_coil,
                                                                     heating_coil)
-          fan_coil.setMaximumOutdoorAirFlowRate(0)                                                          
+          fan_coil.setMaximumOutdoorAirFlowRate(0)
           # add fan coil to thermal zone
           fan_coil.addToThermalZone(zone)
-        elsif options["zoneHVAC"] == "WSHP" or options["zoneHVAC"] == "GSHP"
+        elsif (options['zoneHVAC'] == 'WSHP') || (options['zoneHVAC'] == 'GSHP')
           # create water source heat pump and attach to heat pump loop
           # create fan
-          fan = OpenStudio::Model::FanOnOff.new(model, model.alwaysOnDiscreteSchedule())
-					fan.setFanEfficiency(0.75) 
-					fan_eff = fan.fanEfficiency()
-					fan.setMotorEfficiency(0.9)
-					motor_eff = fan.motorEfficiency()
-					fan.autosizeMaximumFlowRate()
-          if parameters["wshpFanType"] == "PSC" # use 0.3W/cfm, ECM - 0.2W/cfm
+          fan = OpenStudio::Model::FanOnOff.new(model, model.alwaysOnDiscreteSchedule)
+          fan.setFanEfficiency(0.75)
+          fan_eff = fan.fanEfficiency
+          fan.setMotorEfficiency(0.9)
+          motor_eff = fan.motorEfficiency
+          fan.autosizeMaximumFlowRate
+          if parameters['wshpFanType'] == 'PSC' # use 0.3W/cfm, ECM - 0.2W/cfm
             watt_per_cfm = 0.30 # W/cfm
-		  else
-		    watt_per_cfm = 0.20 # W/cfm
-		  end
-		  pres_rise = OpenStudio::convert(watt_per_cfm * fan_eff * motor_eff/0.1175,"inH_{2}O","Pa").get  
-		  fan.setPressureRise(pres_rise) #Pa
-	      fan.setMotorInAirstreamFraction(1.0)
+          else
+            watt_per_cfm = 0.20 # W/cfm
+       end
+          pres_rise = OpenStudio.convert(watt_per_cfm * fan_eff * motor_eff / 0.1175, 'inH_{2}O', 'Pa').get
+          fan.setPressureRise(pres_rise) # Pa
+          fan.setMotorInAirstreamFraction(1.0)
           # create cooling coil and connect to heat pump loop
           cooling_coil = OpenStudio::Model::CoilCoolingWaterToAirHeatPumpEquationFit.new(model)
-					cooling_coil.setRatedCoolingCoefficientofPerformance(parameters["wshpCoolingEER"]/3.412) # xf 061014: need to change per fan power and pump power adjustment
+          cooling_coil.setRatedCoolingCoefficientofPerformance(parameters['wshpCoolingEER'] / 3.412) # xf 061014: need to change per fan power and pump power adjustment
           cooling_coil.setRatedCoolingCoefficientofPerformance(6.45)
           cooling_coil.setTotalCoolingCapacityCoefficient1(-9.149069561)
           cooling_coil.setTotalCoolingCapacityCoefficient2(10.87814026)
@@ -1398,10 +1398,10 @@ end
           cooling_coil.setCoolingPowerConsumptionCoefficient3(3.97892546)
           cooling_coil.setCoolingPowerConsumptionCoefficient4(0.938181818)
           cooling_coil.setCoolingPowerConsumptionCoefficient5(0.0)
-          options["heat_pump_loop"].addDemandBranchForComponent(cooling_coil)
+          options['heat_pump_loop'].addDemandBranchForComponent(cooling_coil)
           # create heating coil and connect to heat pump loop
           heating_coil = OpenStudio::Model::CoilHeatingWaterToAirHeatPumpEquationFit.new(model)
-					heating_coil.setRatedHeatingCoefficientofPerformance(parameters["wshpHeatingCOP"]) # xf 061014: need to change per fan power and pump power adjustment
+          heating_coil.setRatedHeatingCoefficientofPerformance(parameters['wshpHeatingCOP']) # xf 061014: need to change per fan power and pump power adjustment
           heating_coil.setRatedHeatingCoefficientofPerformance(4.0)
           heating_coil.setHeatingCapacityCoefficient1(-1.361311959)
           heating_coil.setHeatingCapacityCoefficient2(-2.471798046)
@@ -1413,29 +1413,29 @@ end
           heating_coil.setHeatingPowerConsumptionCoefficient3(1.570743399)
           heating_coil.setHeatingPowerConsumptionCoefficient4(0.690793651)
           heating_coil.setHeatingPowerConsumptionCoefficient5(0.0)
-          options["heat_pump_loop"].addDemandBranchForComponent(heating_coil)
+          options['heat_pump_loop'].addDemandBranchForComponent(heating_coil)
           # create supplemental heating coil
-          supplemental_heating_coil = OpenStudio::Model::CoilHeatingElectric.new(model, model.alwaysOnDiscreteSchedule())
+          supplemental_heating_coil = OpenStudio::Model::CoilHeatingElectric.new(model, model.alwaysOnDiscreteSchedule)
           # construct heat pump
           heat_pump = OpenStudio::Model::ZoneHVACWaterToAirHeatPump.new(model,
-                                                                        model.alwaysOnDiscreteSchedule(),
+                                                                        model.alwaysOnDiscreteSchedule,
                                                                         fan,
                                                                         heating_coil,
                                                                         cooling_coil,
-                                                                        supplemental_heating_coil)																		
+                                                                        supplemental_heating_coil)
           heat_pump.setSupplyAirFlowRateWhenNoCoolingorHeatingisNeeded(OpenStudio::OptionalDouble.new(0))
           heat_pump.setOutdoorAirFlowRateDuringCoolingOperation(OpenStudio::OptionalDouble.new(0))
           heat_pump.setOutdoorAirFlowRateDuringHeatingOperation(OpenStudio::OptionalDouble.new(0))
           heat_pump.setOutdoorAirFlowRateWhenNoCoolingorHeatingisNeeded(OpenStudio::OptionalDouble.new(0))
           # add heat pump to thermal zone
           heat_pump.addToThermalZone(zone)
-        elsif options["zoneHVAC"] == "ASHP"
+        elsif options['zoneHVAC'] == 'ASHP'
           # create air source heat pump
           # create fan
-          fan = OpenStudio::Model::FanOnOff.new(model, model.alwaysOnDiscreteSchedule())
+          fan = OpenStudio::Model::FanOnOff.new(model, model.alwaysOnDiscreteSchedule)
           fan.setFanEfficiency(0.5)
-          fan.setPressureRise(75) #Pa
-          fan.autosizeMaximumFlowRate()
+          fan.setPressureRise(75) # Pa
+          fan.autosizeMaximumFlowRate
           fan.setMotorEfficiency(0.9)
           fan.setMotorInAirstreamFraction(1.0)
           # create heating coil
@@ -1479,12 +1479,12 @@ end
           htgPlrCurve.setMaximumValueofx(1.0)
           # heating coil
           heating_coil = OpenStudio::Model::CoilHeatingDXSingleSpeed.new(model,
-                                                                           model.alwaysOnDiscreteSchedule(),
-                                                                           htgCapFuncTempCurve,
-                                                                           htgCapFuncFlowFracCurve,
-                                                                           htgEirFuncTempCurve,
-                                                                           htgEirFuncFlowFracCurve,
-                                                                           htgPlrCurve)
+                                                                         model.alwaysOnDiscreteSchedule,
+                                                                         htgCapFuncTempCurve,
+                                                                         htgCapFuncFlowFracCurve,
+                                                                         htgEirFuncTempCurve,
+                                                                         htgEirFuncFlowFracCurve,
+                                                                         htgPlrCurve)
           heating_coil.setRatedCOP(3.4)
           heating_coil.setCrankcaseHeaterCapacity(200)
           heating_coil.setMaximumOutdoorDryBulbTemperatureforCrankcaseHeaterOperation(8)
@@ -1537,18 +1537,18 @@ end
           clgPlrCurve.setMaximumValueofx(1.0)
           # cooling coil
           cooling_coil = OpenStudio::Model::CoilCoolingDXSingleSpeed.new(model,
-                                                                           model.alwaysOnDiscreteSchedule(),
-                                                                           clgCapFuncTempCurve,
-                                                                           clgCapFuncFlowFracCurve,
-                                                                           clgEirFuncTempCurve,
-                                                                           clgEirFuncFlowFracCurve,
-                                                                           clgPlrCurve)
+                                                                         model.alwaysOnDiscreteSchedule,
+                                                                         clgCapFuncTempCurve,
+                                                                         clgCapFuncFlowFracCurve,
+                                                                         clgEirFuncTempCurve,
+                                                                         clgEirFuncFlowFracCurve,
+                                                                         clgPlrCurve)
           cooling_coil.setRatedCOP(OpenStudio::OptionalDouble.new(4))
           # create supplemental heating coil
-          supplemental_heating_coil = OpenStudio::Model::CoilHeatingElectric.new(model, model.alwaysOnDiscreteSchedule())
+          supplemental_heating_coil = OpenStudio::Model::CoilHeatingElectric.new(model, model.alwaysOnDiscreteSchedule)
           # construct heat pump
           heat_pump = OpenStudio::Model::ZoneHVACPackagedTerminalHeatPump.new(model,
-                                                                              model.alwaysOnDiscreteSchedule(),
+                                                                              model.alwaysOnDiscreteSchedule,
                                                                               fan,
                                                                               heating_coil,
                                                                               cooling_coil,
@@ -1559,34 +1559,34 @@ end
           heat_pump.setOutdoorAirFlowRateWhenNoCoolingorHeatingisNeeded(0)
           # add heat pump to thermal zone
           heat_pump.addToThermalZone(zone)
-        elsif options["zoneHVAC"] == "Baseboard"
+        elsif options['zoneHVAC'] == 'Baseboard'
           # create baseboard heater add add to thermal zone and hot water loop
           baseboard_coil = OpenStudio::Model::CoilHeatingWaterBaseboard.new(model)
-          baseboard_heater = OpenStudio::Model::ZoneHVACBaseboardConvectiveWater.new(model, model.alwaysOnDiscreteSchedule(), baseboard_coil)
-          baseboard_heater.addToThermalZone(zone)          
-          options["hot_water_plant"].addDemandBranchForComponent(baseboard_coil)
-        elsif options["zoneHVAC"] == "Radiant"
+          baseboard_heater = OpenStudio::Model::ZoneHVACBaseboardConvectiveWater.new(model, model.alwaysOnDiscreteSchedule, baseboard_coil)
+          baseboard_heater.addToThermalZone(zone)
+          options['hot_water_plant'].addDemandBranchForComponent(baseboard_coil)
+        elsif options['zoneHVAC'] == 'Radiant'
           # create low temperature radiant object and add to thermal zone and radiant plant loops
           # create hot water coil and attach to radiant hot water loop
-          heating_coil = OpenStudio::Model::CoilHeatingLowTempRadiantVarFlow.new(model, options["mean_radiant_heating_setpoint_schedule"])
-          options["radiant_hot_water_plant"].addDemandBranchForComponent(heating_coil)
+          heating_coil = OpenStudio::Model::CoilHeatingLowTempRadiantVarFlow.new(model, options['mean_radiant_heating_setpoint_schedule'])
+          options['radiant_hot_water_plant'].addDemandBranchForComponent(heating_coil)
           # create chilled water coil and attach to radiant chilled water loop
-          cooling_coil = OpenStudio::Model::CoilCoolingLowTempRadiantVarFlow.new(model, options["mean_radiant_cooling_setpoint_schedule"])
-          options["radiant_chilled_water_plant"].addDemandBranchForComponent(cooling_coil)
-          low_temp_radiant = OpenStudio::Model::ZoneHVACLowTempRadiantVarFlow.new(model, 
-                                                                                  model.alwaysOnDiscreteSchedule(),
+          cooling_coil = OpenStudio::Model::CoilCoolingLowTempRadiantVarFlow.new(model, options['mean_radiant_cooling_setpoint_schedule'])
+          options['radiant_chilled_water_plant'].addDemandBranchForComponent(cooling_coil)
+          low_temp_radiant = OpenStudio::Model::ZoneHVACLowTempRadiantVarFlow.new(model,
+                                                                                  model.alwaysOnDiscreteSchedule,
                                                                                   heating_coil,
                                                                                   cooling_coil)
-          low_temp_radiant.setRadiantSurfaceType("Floors")
+          low_temp_radiant.setRadiantSurfaceType('Floors')
           low_temp_radiant.setHydronicTubingInsideDiameter(0.012)
-          low_temp_radiant.setTemperatureControlType("MeanRadiantTemperature")
+          low_temp_radiant.setTemperatureControlType('MeanRadiantTemperature')
           low_temp_radiant.addToThermalZone(zone)
           # create radiant floor construction and substitute for existing floor (interior or exterior) constructions
           # create materials for radiant floor construction
           layers = []
           # ignore layer below insulation, which will depend on boundary condition
-          layers << rigid_insulation_1in = OpenStudio::Model::StandardOpaqueMaterial.new(model,"Rough",0.0254,0.02,56.06,1210)
-          layers << concrete_2in = OpenStudio::Model::StandardOpaqueMaterial.new(model,"MediumRough",0.0508,2.31,2322,832)
+          layers << rigid_insulation_1in = OpenStudio::Model::StandardOpaqueMaterial.new(model, 'Rough', 0.0254, 0.02, 56.06, 1210)
+          layers << concrete_2in = OpenStudio::Model::StandardOpaqueMaterial.new(model, 'MediumRough', 0.0508, 2.31, 2322, 832)
           layers << concrete_2in
           # create radiant floor construction from materials
           radiant_floor = OpenStudio::Model::ConstructionWithInternalSource.new(layers)
@@ -1595,72 +1595,70 @@ end
           # assign radiant construction to zone floor
           zone.spaces.each do |space|
             space.surfaces.each do |surface|
-              if surface.surfaceType == "Floor"
+              if surface.surfaceType == 'Floor'
                 surface.setConstruction(radiant_floor)
               end
             end
           end
-        elsif options["zoneHVAC"] == "DualDuct"
+        elsif options['zoneHVAC'] == 'DualDuct'
           # create baseboard heater add add to thermal zone and hot water loop
           baseboard_coil = OpenStudio::Model::CoilHeatingWaterBaseboard.new(model)
-          baseboard_heater = OpenStudio::Model::ZoneHVACBaseboardConvectiveWater.new(model, model.alwaysOnDiscreteSchedule(), baseboard_coil)
-          baseboard_heater.addToThermalZone(zone)          
-          options["hot_water_plant"].addDemandBranchForComponent(baseboard_coil)
+          baseboard_heater = OpenStudio::Model::ZoneHVACBaseboardConvectiveWater.new(model, model.alwaysOnDiscreteSchedule, baseboard_coil)
+          baseboard_heater.addToThermalZone(zone)
+          options['hot_water_plant'].addDemandBranchForComponent(baseboard_coil)
           # create fan coil (to mimic functionality of DOAS)
           # variable speed fan
-          fan = OpenStudio::Model::FanVariableVolume.new(model, model.alwaysOnDiscreteSchedule())
+          fan = OpenStudio::Model::FanVariableVolume.new(model, model.alwaysOnDiscreteSchedule)
           fan.setFanEfficiency(0.69)
-          fan.setPressureRise(75) #Pa #ML This number is a guess; zone equipment pretending to be a DOAS
-          fan.autosizeMaximumFlowRate()
+          fan.setPressureRise(75) # Pa #ML This number is a guess; zone equipment pretending to be a DOAS
+          fan.autosizeMaximumFlowRate
           fan.setFanPowerMinimumFlowFraction(0.6)
           fan.setMotorEfficiency(0.9)
           fan.setMotorInAirstreamFraction(1.0)
           # create chilled water coil and attach to chilled water loop
-          cooling_coil = OpenStudio::Model::CoilCoolingWater.new(model, model.alwaysOnDiscreteSchedule())
-          options["chilled_water_plant"].addDemandBranchForComponent(cooling_coil)
+          cooling_coil = OpenStudio::Model::CoilCoolingWater.new(model, model.alwaysOnDiscreteSchedule)
+          options['chilled_water_plant'].addDemandBranchForComponent(cooling_coil)
           cooling_coil.controllerWaterCoil.get.setMinimumActuatedFlow(0)
           # create hot water coil and attach to hot water loop
-          heating_coil = OpenStudio::Model::CoilHeatingWater.new(model, model.alwaysOnDiscreteSchedule())
-          options["hot_water_plant"].addDemandBranchForComponent(heating_coil)
+          heating_coil = OpenStudio::Model::CoilHeatingWater.new(model, model.alwaysOnDiscreteSchedule)
+          options['hot_water_plant'].addDemandBranchForComponent(heating_coil)
           heating_coil.controllerWaterCoil.get.setMinimumActuatedFlow(0)
           # construct fan coil (DOAS) and attach to thermal zone
           fan_coil_doas = OpenStudio::Model::ZoneHVACFourPipeFanCoil.new(model,
-                                                                         options["ventilation_schedule"],
+                                                                         options['ventilation_schedule'],
                                                                          fan,
                                                                          cooling_coil,
                                                                          heating_coil)
-          fan_coil_doas.setCapacityControlMethod("VariableFanVariableFlow")
+          fan_coil_doas.setCapacityControlMethod('VariableFanVariableFlow')
           fan_coil_doas.addToThermalZone(zone)
         end
       end
     end
+ end
 
-  end
-  def OsLib_HVAC_zedg_vrf.addDCV(model, runner, options)
-
-    unless options["primary_airloops"].nil?
-      options["primary_airloops"].each do |airloop|
-        if options["allHVAC"]["primary"]["fan"] == "Variable"
+  def self.addDCV(model, runner, options)
+    if options.key? 'primary_airloops'
+      options['primary_airloops'].each do |airloop|
+        if options['allHVAC']['primary']['fan'] == 'Variable'
           if airloop.airLoopHVACOutdoorAirSystem.is_initialized
             controller_mv = airloop.airLoopHVACOutdoorAirSystem.get.getControllerOutdoorAir.controllerMechanicalVentilation
             controller_mv.setDemandControlledVentilation(true)
             runner.registerInfo("Enabling demand control ventilation for #{airloop.name}")
-          end  
-        end  
+          end
+        end
       end
     end
-   
-    unless options["secondary_airloops"].nil?
-      options["secondary_airloops"].each do |airloop|
-        if options["allHVAC"]["secondary"]["fan"] == "Variable"
+
+    if options.key? 'secondary_airloops'
+      options['secondary_airloops'].each do |airloop|
+        if options['allHVAC']['secondary']['fan'] == 'Variable'
           if airloop.airLoopHVACOutdoorAirSystem.is_initialized
             controller_mv = airloop.airLoopHVACOutdoorAirSystem.get.getControllerOutdoorAir.controllerMechanicalVentilation
             controller_mv.setDemandControlledVentilation(true)
             runner.registerInfo("Enabling demand control ventilation for #{airloop.name}")
-          end  
-        end  
+          end
+        end
       end
     end
   end
-
 end
