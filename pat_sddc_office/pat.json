@@ -4406,9 +4406,9 @@
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/create_typical_building_from_model",
-      "name": "create_typical_building_from_model",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/create_typical_building_from_model",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/create_typical_doe_building_from_model",
+      "name": "create_typical_doe_building_from_model",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/create_typical_doe_building_from_model",
       "uid": "339a2e3a-273c-4494-bb50-bfe586a0647c",
       "uuid": "{339a2e3a-273c-4494-bb50-bfe586a0647c}",
       "version_id": "1082176e-fd8a-40b7-b88f-9802f25baf32",
@@ -7789,7 +7789,7 @@
       "openstudio_results": "Results",
       "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
       "view_model": "View Model",
-      "create_typical_building_from_model": "Typical 2004",
+      "create_typical_doe_building_from_model": "Typical 2004",
       "$$hashKey": "uiGrid-0JRR"
     },
     {
@@ -7822,7 +7822,7 @@
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_office_swh": "SWH",
       "view_model": "View Model",
-      "create_typical_building_from_model": "None",
+      "create_typical_doe_building_from_model": "None",
       "$$hashKey": "uiGrid-1425"
     },
     {
@@ -7855,7 +7855,7 @@
       "aedg_small_to_medium_office_roof_construction": "Roof",
       "aedg_office_swh": "SWH",
       "view_model": "View Model",
-      "create_typical_building_from_model": "None",
+      "create_typical_doe_building_from_model": "None",
       "$$hashKey": "uiGrid-1423"
     }
   ],

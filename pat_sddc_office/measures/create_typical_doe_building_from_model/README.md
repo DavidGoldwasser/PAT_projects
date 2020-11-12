@@ -1,26 +1,26 @@
-<%#= README.md.erb is used to auto-generate README.md. %>
-<%#= To manually maintain README.md throw away README.md.erb and manually edit README.md %>
+
+
 ###### (Automatically generated documentation)
 
-# <%= name %>
+# Create Typical DOE Building from Model
 
 ## Description
-<%= description %>
+Takes a model with space and stub space types, and assigns constructions, schedules, internal loads, hvac, and other loads such as exterior lights and service water heating.
 
 ## Modeler Description
-<%= modelerDescription %>
+It is important that the template argument chosen for this measure is in line with the buding types for the stub space types of the model passed in.
 
 ## Measure Type
-<%= measureType %>
+ModelMeasure
 
 [//]: # (Commenting out until it works in SDK)
 [//]: # (## Taxonomy)
-[//]: # (<%= taxonomy %>)
+[//]: # ()
 
 ___
 ## Table of Contents
 - [Measure Overview](#measure-overview)<br/>
-- [DOE and DEER Template and Buildid Type Mapping](#doe-and-deer-template-and-building-type-mapping)<br/>
+- [DOE Template Mapping](#doe-template-and-building-type-mapping)<br/>
 - [HVAC Configuration Arguments](#hvac-configuration-arguments)<br/>
 - [Exterior Lighting Arguments](#exterior-lighting-arguments)<br/>
 - [Bool Arguments to Enable/Disable Elements of This Measure](#bool-arguments-to-enabledisable-elements-of-this-measure)<br/>
@@ -33,11 +33,9 @@ ___
 
 While this measure has many arguments, they all have default values so you can start using it to get familiar with out without using the arguments. What is important is that the model passed in contains spaces with stub space types assigned. In addition to choice arguments, this measure has a number of bool arguments allowing the measure to be customized to meet your needs or to be split into two parts with other measures add in the model. You can for example use this to add constructions only, or to add everything else but leave constructions alone. An example use case for splitting this apart and adding other measures between would be to apply energy efficiency measures for new construction. The HVAC system should be added after the EE measures because an autosizing simulation is run to set the system equipment efficiencies for the selected template.
 
-## DOE and DEER Template and Building Type Mapping
 
-Note, that this particular measure has access to both DOE and DEER templates (vintages). It is important for using this measure that the template chosen is in line with the  building type(s) for the stub space types in the seed model. Below is a list of for each.
+## DOE Template and Building Type Mapping
 
-#### DOE
 - Templates:
   - DOE Ref Pre-1980
   - DOE Ref 1980 - 2004
@@ -45,7 +43,6 @@ Note, that this particular measure has access to both DOE and DEER templates (vi
   - 90.1-2007
   - 90.1-2010
   - 90.1-2013
-  - NREL ZNE Ready 2017 (not currently complete for all building types)
 - Building Types:
   - SecondarySchool
   - PrimarySchool
@@ -65,59 +62,6 @@ Note, that this particular measure has access to both DOE and DEER templates (vi
   - Outpatient
   - SuperMarket
 
-#### DEER
-- Templates:
-  - DEER Pre-1975
-  - DEER 1985
-  - DEER 1996
-  - DEER 2003
-  - DEER 2007
-  - DEER 2011
-  - DEER 2014
-  - DEER 2015
-  - DEER 2017
-  - DEER 2020
-  - DEER 2025
-  - DEER 2030
-  - DEER 2035
-  - DEER 2040
-  - DEER 2045
-  - DEER 2050
-  - DEER 2055
-  - DEER 2060
-  - DEER 2065
-  - DEER 2070
-  - DEER 2075
-- Building Types:
-  - Asm
-  - DMo
-  - ECC
-  - EPr
-  - ERC
-  - ESe
-  - EUn
-  - GHs
-  - Gro
-  - Hsp
-  - Htl
-  - MBT
-  - MFm
-  - MLI
-  - Mtl
-  - Nrs
-  - OfL
-  - OfS
-  - RFF
-  - RSD
-  - Rt3
-  - RtL
-  - RtS
-  - SCn
-  - SFm
-  - SUn
-  - WRf
-
-[//]: # (Provide link to map DEER abbreviation to full building type name)
 [//]: # (Would be nice to make these lists dynamic from the measure to they don't become outdated)
 
 ## HVAC Configuration Arguments
@@ -162,10 +106,10 @@ There are three arguments each for weekday and weekend behavior. In each case th
 - Operating hours start time
 - Operating hours duration
 
+
 ## Other Arguments
 
 - `Use Upstream Argument Values` can be left at the default value of true for most cases. This argument shows up in a number of measures, and then intent is to enable the synchronization of arguments that may be used as a variable in a parametric study across multiple measures. Generally measure ahve uqniue argument names that don't exist, but some such as `Template` are used frequently. This argument, when set to true, will use the value of `Template` from an earlier measure in the workflow, if found, in place of what is entered as the value for this measure.
-- `Climate Zone` is not used at all by this measure but is necessary for an obscure reason
 - `Unmet Hours Tolerance` is used to change the tolerance used in EnergyPlus for unmet heating and cooling hours.
 - `Clean Model of non-geometry objects` shoudl be set to false when you have a non-empty model with objects that you want to maintain. If you have split this measure in two the second instance of this should have it set to false or it will overwrite elements made by the earlier measure.
 - `Enable Daylight Savings` will change daylighting saving to true when enabled.
@@ -179,25 +123,239 @@ This measure relies on the openstudio-standards gem which is included in the Ope
 
 *(Automatically generated argument information follows)*## Arguments
 
-<% arguments.each do |argument| %>
-### <%= argument[:display_name] %>
-<%= argument[:description] %>
-**Name:** <%= argument[:name] %>,
-**Type:** <%= argument[:type] %>,
-**Units:** <%= argument[:units] %>,
-**Required:** <%= argument[:required] %>,
-**Model Dependent:** <%= argument[:model_dependent] %>
-<% end %>
 
-<% if arguments.size == 0 %>
-<%= "This measure does not have any user arguments" %>
-<% end %>
+### Target Standard
 
-<% if outputs.size > 0 %>
-## Outputs
-<% output_names = [] %>
-<% outputs.each do |output| %>
-<% output_names << output[:display_name] %>
-<% end %>
-<%= output_names.join(", ") %>
-<% end %>
+**Name:** template,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### HVAC System Type
+
+**Name:** system_type,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### HVAC System Delivery Type
+How the HVAC system delivers heating or cooling to the zone.
+**Name:** hvac_delivery_type,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### HVAC Heating Source
+The primary source of heating used by HVAC systems in the model.
+**Name:** htg_src,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### HVAC Cooling Source
+The primary source of cooling used by HVAC systems in the model.
+**Name:** clg_src,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Service Water Heating Source
+The primary source of heating used by SWH systems in the model.
+**Name:** swh_src,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Kitchen Exhaust MakeUp Air Calculation Method
+Determine logic to identify dining or cafe zones to provide makeup air to kitchen exhaust.
+**Name:** kitchen_makeup,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Exterior Lighting Zone
+Identify the Exterior Lighting Zone for the Building Site.
+**Name:** exterior_lighting_zone,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Constructions to Model
+Construction Set will be applied to entire building
+**Name:** add_constructions,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Space Type Loads to Model
+Populate existing space types in model with internal loads.
+**Name:** add_space_type_loads,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Elevators to Model
+Elevators will be add directly to space in model vs. being applied to a space type.
+**Name:** add_elevators,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Internal Mass to Model
+Adds internal mass to each space.
+**Name:** add_internal_mass,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Exterior Lights to Model
+Multiple exterior lights objects will be added for different classes of lighting such as parking and facade.
+**Name:** add_exterior_lights,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Onsite Parking Fraction
+If set to 0 no exterior lighting for parking will be added
+**Name:** onsite_parking_fraction,
+**Type:** Double,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Exhaust Fans to Model
+Depending upon building type exhaust fans can be in kitchens, restrooms or other space types
+**Name:** add_exhaust,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Service Water Heating to Model
+This will add both the supply and demand side of service water heating.
+**Name:** add_swh,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Thermostats
+Add Thermostat to model based on Space Type Standards information of spaces assigned to thermal zones.
+**Name:** add_thermostat,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add HVAC System to Model
+Add HVAC System to the model
+**Name:** add_hvac,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Refrigeration to Model
+Add refrigeration cases and walkins model
+**Name:** add_refrigeration,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Modify weekday hours of operation
+Modify the weekday hours of operation in the model.
+**Name:** modify_wkdy_op_hrs,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Weekday Operating Hours Start Time
+Enter 24 hour values with fractional values converted to minutes. e.g. 17.25 = 5:15pm. Only used if Modify weekday hours of operation is true.
+**Name:** wkdy_op_hrs_start_time,
+**Type:** Double,
+**Units:** Hours,
+**Required:** true,
+**Model Dependent:** false
+
+### Weekday Operating Hours Duration
+Length of weekday operating hours. Enter 24 hour values with fractional values converted to minutes. e.g. 17.25 = 5:15pm. Only used if Modify weekday hours of operation is true.
+**Name:** wkdy_op_hrs_duration,
+**Type:** Double,
+**Units:** Hours,
+**Required:** true,
+**Model Dependent:** false
+
+### Modify weekend hours of operation
+Modify the weekend hours of operation in the model.
+**Name:** modify_wknd_op_hrs,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Weekend Operating Hours Start Time
+Enter 24 hour values with fractional values converted to minutes. e.g. 17.25 = 5:15pm.  Only used if Modify weekend hours of operation is true.
+**Name:** wknd_op_hrs_start_time,
+**Type:** Double,
+**Units:** Hours,
+**Required:** true,
+**Model Dependent:** false
+
+### Weekend Operating Hours Duration
+Length of weekend operating hours. Enter 24 hour values with fractional values converted to minutes. e.g. 17.25 = 5:15pm.  Only used if Modify weekend hours of operation is true.
+**Name:** wknd_op_hrs_duration,
+**Type:** Double,
+**Units:** Hours,
+**Required:** true,
+**Model Dependent:** false
+
+### Unmet Hours Tolerance
+Set the thermostat setpoint tolerance for unmet hours in degrees Rankine
+**Name:** unmet_hours_tolerance,
+**Type:** Double,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Clean Model of non-geometry objects
+Only removes objects of type that are selected to be added.
+**Name:** remove_objects,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Use Upstream Argument Values
+When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.
+**Name:** use_upstream_args,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Enable Daylight Savings
+By default this will force daylight savings to be enabled. Set to false if in a location where DST is not followed, or if needed for specific use case.
+**Name:** enable_dst,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+
+
+

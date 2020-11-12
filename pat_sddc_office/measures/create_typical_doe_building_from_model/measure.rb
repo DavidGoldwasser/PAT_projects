@@ -46,14 +46,14 @@ require 'openstudio/extension/core/os_lib_model_generation.rb'
 require_relative 'resources/Model.hvac' # DLM: should this be in openstudio-standards? dfg some tests fail without it
 
 # start the measure
-class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
+class CreateTypicalDOEBuildingFromModel < OpenStudio::Measure::ModelMeasure
   # resource file modules
   include OsLib_HelperMethods
   include OsLib_ModelGeneration
 
   # human readable name
   def name
-    return 'Create Typical Building from Model'
+    return 'Create Typical DOE Building from Model'
   end
 
   # human readable description
@@ -80,7 +80,7 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     end
 
     # Make argument for template
-    template = OpenStudio::Measure::OSArgument.makeChoiceArgument('template', get_templates, true)
+    template = OpenStudio::Measure::OSArgument.makeChoiceArgument('template', get_doe_templates, true)
     template.setDisplayName('Target Standard')
     template.setDefaultValue(default_string)
     args << template
@@ -462,12 +462,6 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     enable_dst.setDefaultValue(true)
     args << enable_dst
 
-    # Argument used to make ComStock tsv workflow run correctly
-    climate_zone = OpenStudio::Measure::OSArgument.makeChoiceArgument('climate_zone', get_climate_zones(false, 'Lookup From Model'), true)
-    climate_zone.setDisplayName('Climate Zone.')
-    climate_zone.setDefaultValue('Lookup From Model')
-    args << climate_zone
-
     return args
   end
 
@@ -487,4 +481,4 @@ class CreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
 end
 
 # register the measure to be used by the application
-CreateTypicalBuildingFromModel.new.registerWithApplication
+CreateTypicalDOEBuildingFromModel.new.registerWithApplication
