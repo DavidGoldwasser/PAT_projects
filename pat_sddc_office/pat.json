@@ -5284,61 +5284,61 @@
           "type": "Choice",
           "required": true,
           "model_dependent": false,
-          "default_value": "ASHRAE 169-2006-2A",
+          "default_value": "ASHRAE 169-2013-2A",
           "choice_values": [
-            "ASHRAE 169-2006-1A",
-            "ASHRAE 169-2006-2A",
-            "ASHRAE 169-2006-2B",
-            "ASHRAE 169-2006-3A",
-            "ASHRAE 169-2006-3B",
-            "ASHRAE 169-2006-3C",
-            "ASHRAE 169-2006-4A",
-            "ASHRAE 169-2006-4B",
-            "ASHRAE 169-2006-4C",
-            "ASHRAE 169-2006-5A",
-            "ASHRAE 169-2006-5B",
-            "ASHRAE 169-2006-6A",
-            "ASHRAE 169-2006-6B",
-            "ASHRAE 169-2006-7A",
-            "ASHRAE 169-2006-8A"
+            "ASHRAE 169-2013-1A",
+            "ASHRAE 169-2013-2A",
+            "ASHRAE 169-2013-2B",
+            "ASHRAE 169-2013-3A",
+            "ASHRAE 169-2013-3B",
+            "ASHRAE 169-2013-3C",
+            "ASHRAE 169-2013-4A",
+            "ASHRAE 169-2013-4B",
+            "ASHRAE 169-2013-4C",
+            "ASHRAE 169-2013-5A",
+            "ASHRAE 169-2013-5B",
+            "ASHRAE 169-2013-6A",
+            "ASHRAE 169-2013-6B",
+            "ASHRAE 169-2013-7A",
+            "ASHRAE 169-2013-8A"
           ],
           "choice_display_names": [
-            "ASHRAE 169-2006-1A",
-            "ASHRAE 169-2006-2A",
-            "ASHRAE 169-2006-2B",
-            "ASHRAE 169-2006-3A",
-            "ASHRAE 169-2006-3B",
-            "ASHRAE 169-2006-3C",
-            "ASHRAE 169-2006-4A",
-            "ASHRAE 169-2006-4B",
-            "ASHRAE 169-2006-4C",
-            "ASHRAE 169-2006-5A",
-            "ASHRAE 169-2006-5B",
-            "ASHRAE 169-2006-6A",
-            "ASHRAE 169-2006-6B",
-            "ASHRAE 169-2006-7A",
-            "ASHRAE 169-2006-8A"
+            "ASHRAE 169-2013-1A",
+            "ASHRAE 169-2013-2A",
+            "ASHRAE 169-2013-2B",
+            "ASHRAE 169-2013-3A",
+            "ASHRAE 169-2013-3B",
+            "ASHRAE 169-2013-3C",
+            "ASHRAE 169-2013-4A",
+            "ASHRAE 169-2013-4B",
+            "ASHRAE 169-2013-4C",
+            "ASHRAE 169-2013-5A",
+            "ASHRAE 169-2013-5B",
+            "ASHRAE 169-2013-6A",
+            "ASHRAE 169-2013-6B",
+            "ASHRAE 169-2013-7A",
+            "ASHRAE 169-2013-8A"
           ],
           "$$hashKey": "uiGrid-04T1",
-          "option_1": "ASHRAE 169-2006-2A",
+          "option_1": "ASHRAE 169-2013-2A",
           "variable": true,
-          "option_2": "ASHRAE 169-2006-2A",
-          "option_3": "ASHRAE 169-2006-2B",
-          "option_4": "ASHRAE 169-2006-3A",
-          "option_5": "ASHRAE 169-2006-3B",
-          "option_6": "ASHRAE 169-2006-3C",
-          "option_7": "ASHRAE 169-2006-4A",
-          "option_8": "ASHRAE 169-2006-4B",
-          "option_9": "ASHRAE 169-2006-4C",
-          "option_10": "ASHRAE 169-2006-5A",
-          "option_11": "ASHRAE 169-2006-5B",
-          "option_12": "ASHRAE 169-2006-6A",
-          "option_13": "ASHRAE 169-2006-6B",
-          "option_14": "ASHRAE 169-2006-7A",
-          "option_15": "ASHRAE 169-2006-8A",
+          "option_2": "ASHRAE 169-2013-2A",
+          "option_3": "ASHRAE 169-2013-2B",
+          "option_4": "ASHRAE 169-2013-3A",
+          "option_5": "ASHRAE 169-2013-3B",
+          "option_6": "ASHRAE 169-2013-3C",
+          "option_7": "ASHRAE 169-2013-4A",
+          "option_8": "ASHRAE 169-2013-4B",
+          "option_9": "ASHRAE 169-2013-4C",
+          "option_10": "ASHRAE 169-2013-5A",
+          "option_11": "ASHRAE 169-2013-5B",
+          "option_12": "ASHRAE 169-2013-6A",
+          "option_13": "ASHRAE 169-2013-6B",
+          "option_14": "ASHRAE 169-2013-7A",
+          "option_15": "ASHRAE 169-2013-8A",
           "units": "",
-          "minimum": "ASHRAE 169-2006-2A",
-          "maximum": "ASHRAE 169-2006-8A",
+          "minimum": "ASHRAE 169-2013-2A",
+          "maximum": "ASHRAE 169-2013-8A",
           "mode": null
         },
         {
@@ -5428,7 +5428,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-2A"
+              "value": "ASHRAE 169-2013-2A"
             },
             {
               "name": "custom",
@@ -5455,7 +5455,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-2A"
+              "value": "ASHRAE 169-2013-2A"
             },
             {
               "name": "custom",
@@ -5482,7 +5482,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-2B"
+              "value": "ASHRAE 169-2013-2B"
             },
             {
               "name": "custom",
@@ -5509,7 +5509,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-3A"
+              "value": "ASHRAE 169-2013-3A"
             },
             {
               "name": "custom",
@@ -5536,7 +5536,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-3B"
+              "value": "ASHRAE 169-2013-3B"
             },
             {
               "name": "custom",
@@ -5563,7 +5563,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-3C"
+              "value": "ASHRAE 169-2013-3C"
             },
             {
               "name": "custom",
@@ -5590,7 +5590,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-4A"
+              "value": "ASHRAE 169-2013-4A"
             },
             {
               "name": "custom",
@@ -5617,7 +5617,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-4B"
+              "value": "ASHRAE 169-2013-4B"
             },
             {
               "name": "custom",
@@ -5644,7 +5644,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-4C"
+              "value": "ASHRAE 169-2013-4C"
             },
             {
               "name": "custom",
@@ -5671,7 +5671,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-5A"
+              "value": "ASHRAE 169-2013-5A"
             },
             {
               "name": "custom",
@@ -5698,7 +5698,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-5B"
+              "value": "ASHRAE 169-2013-5B"
             },
             {
               "name": "custom",
@@ -5725,7 +5725,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-6A"
+              "value": "ASHRAE 169-2013-6A"
             },
             {
               "name": "custom",
@@ -5752,7 +5752,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-6B"
+              "value": "ASHRAE 169-2013-6B"
             },
             {
               "name": "custom",
@@ -5779,7 +5779,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-7A"
+              "value": "ASHRAE 169-2013-7A"
             },
             {
               "name": "custom",
@@ -5806,7 +5806,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-8A"
+              "value": "ASHRAE 169-2013-8A"
             },
             {
               "name": "custom",
@@ -5827,9 +5827,9 @@
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/78db3ab6-ad89-4d66-9140-e6f1c1a2a5d0",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/view_model",
       "name": "view_model",
-      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/78db3ab6-ad89-4d66-9140-e6f1c1a2a5d0",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/pat_sddc_office/measures/view_model",
       "uid": "f4669f10-fda5-489d-8e1c-7ca3c2d40378",
       "uuid": "{f4669f10-fda5-489d-8e1c-7ca3c2d40378}",
       "version_id": "108b3c04-6ab8-473f-8aa8-0d406d4c863f",
