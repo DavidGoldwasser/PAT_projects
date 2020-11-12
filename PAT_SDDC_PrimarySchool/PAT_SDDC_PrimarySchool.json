@@ -2417,7 +2417,7 @@
       "analysis_type": null,
       "design_alternatives": [
         {
-          "name": "Baseline",
+          "name": "Typical 2007",
           "options": [
             {
               "measure_name": "change_building_location",
@@ -2584,7 +2584,7 @@
           ]
         },
         {
-          "name": "High Performance",
+          "name": "Low Energy",
           "options": [
             {
               "measure_name": "change_building_location",
@@ -2751,7 +2751,7 @@
           ]
         },
         {
-          "name": "Hgh Performance with PV",
+          "name": "Low Energy with PV",
           "options": [
             {
               "measure_name": "change_building_location",
