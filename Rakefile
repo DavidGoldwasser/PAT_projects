@@ -8,19 +8,6 @@ require 'parallel'
 
 #task default: 'tbd'
 
-# throw way the run directory and everything in it.
-def clear_run
-  puts 'Deleting run diretory and underlying contents'
-
-  # remove run directory
-  FileUtils.rm_rf('run')
-end
-
-desc 'Delete contents under run directory'
-task :clear_run do
-  clear_run
-end
-
 # saving base path to measure gems to make it easier to maintain if it changes
 def bundle_base_gem_path
   return '.bundle/install/ruby/2.5.0/bundler/gems'
@@ -102,23 +89,10 @@ end
 
 desc 'Update measures from measure gems for a single PAT project to'
 task :update_pat , [:workflow_name] do |task, args|
-  args.with_defaults(workflow_name: 'pat_sddc_office') # todo - having trouble overriding this. 
+  args.with_defaults(workflow_name: 'PAT_SDDC_PrimarySchool') # todo - having trouble overriding this. 
   workflow_name = args[:workflow_name]
   update_pat(workflow_name)
 end
-
-desc 'Setup all osw files to use bundler gems for measure paths'
-task :setup_all_osws , [:short_measures] do |task, args|
-  args.with_defaults(short_measures: false)
-  # convert string to bool
-  short_measures = args[:short_measures]
-  if short_measures == 'true' then short_measures = true end
-  if short_measures == 'false' then short_measures = false end
-  find_osws.each do |workflow_name|
-    setup_osw(workflow_name,short_measures)
-  end
-end
-
 
 desc 'setup additional measures that are not measure gems as if they were installed with bundle install'
 task :setup_non_gem_measures do
@@ -139,6 +113,5 @@ task :setup_non_gem_measures do
     # add measures
     system("svn checkout #{measure_string} #{non_gem_measures}")
   end
-
 
 end
