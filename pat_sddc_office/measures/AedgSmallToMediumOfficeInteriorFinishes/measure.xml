@@ -1,9 +1,10 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>aedg_small_to_medium_office_interior_finishes</name>
   <uid>d426daf2-995d-4c76-bec4-4b34e7ae2f38</uid>
-  <version_id>10ac99e9-d9f5-45d1-a36f-030b13ebb90d</version_id>
-  <version_modified>20180705T145959Z</version_modified>
+  <version_id>e03b2fa1-ddc0-4009-9f7f-dcb99d06be97</version_id>
+  <version_modified>20200401T014101Z</version_modified>
   <xml_checksum>1E963D9C</xml_checksum>
   <class_name>AedgSmallToMediumOfficeInteriorFinishes</class_name>
   <display_name>AedgSmallToMediumOfficeInteriorFinishes</display_name>
@@ -16,10 +17,10 @@
       <type>Choice</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
-      <default_value>*All Interior Partition Surfaces*</default_value>
+      <default_value>{f768968c-43cf-4fde-92e6-226ff35479fd}</default_value>
       <choices>
         <choice>
-          <value>{4daa4696-c671-4833-b0f6-b94c14482fd6}</value>
+          <value>{f768968c-43cf-4fde-92e6-226ff35479fd}</value>
           <display_name>*All Interior Partition Surfaces*</display_name>
         </choice>
       </choices>
@@ -43,8 +44,8 @@
       </choices>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Envelope.Opaque</tag>
   </tags>
@@ -68,24 +69,6 @@
       <checksum>61F73729</checksum>
     </file>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E5173D1E</checksum>
-    </file>
-    <file>
-      <filename>AedgSmallToMediumOfficeInteriorFinishes_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>CE0E3501</checksum>
-    </file>
-    <file>
-      <filename>LICENSE.md</filename>
-      <filetype>md</filetype>
-      <usage_type>license</usage_type>
-      <checksum>9640B6CB</checksum>
-    </file>
-    <file>
       <filename>README.md.erb</filename>
       <filetype>erb</filetype>
       <usage_type>readmeerb</usage_type>
@@ -98,33 +81,33 @@
       <checksum>326F488E</checksum>
     </file>
     <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>E0468DD6</checksum>
+    </file>
+    <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>99805712</checksum>
+    </file>
+    <file>
+      <filename>AedgSmallToMediumOfficeInteriorFinishes_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>2C1BD75B</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
+        <min_compatible>2.8.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>882FF735</checksum>
-    </file>
-    <file>
-      <filename>os_lib_constructions.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>B24DDC22</checksum>
-    </file>
-    <file>
-      <filename>os_lib_geometry.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>3D17299B</checksum>
-    </file>
-    <file>
-      <filename>os_lib_helper_methods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9CFC43FB</checksum>
+      <checksum>49FD7639</checksum>
     </file>
   </files>
 </measure>

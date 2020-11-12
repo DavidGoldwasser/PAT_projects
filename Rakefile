@@ -102,7 +102,7 @@ end
 
 desc 'Update measures from measure gems for a single PAT project to'
 task :update_pat , [:workflow_name] do |task, args|
-  args.with_defaults(workflow_name: 'PAT_SDDC_PrimarySchool')
+  args.with_defaults(workflow_name: 'pat_sddc_office') # todo - having trouble overriding this. 
   workflow_name = args[:workflow_name]
   update_pat(workflow_name)
 end
@@ -117,22 +117,6 @@ task :setup_all_osws , [:short_measures] do |task, args|
   find_osws.each do |workflow_name|
     setup_osw(workflow_name,short_measures)
   end
-end
-
-# quick way to list osw files under the workflow directory for use in rake task used for setup_all_ows
-def find_osws
-  puts "Get names of workflows in workflows directory"
-  workflow_names = []
-  workflows = Dir.entries('workflows')
-  workflows.each do |workflow|
-    # check if has lib/measures
-    workflow_path = "workflows/#{workflow}/in.osw"
-    next if ! File.exists?(workflow_path)
-    workflow_names << workflow
-  end
-  puts workflow_names
-
-  return workflow_names
 end
 
 

@@ -35,6 +35,14 @@ Details on HVAC system type in measure documentation.
 **Required:** true,
 **Model Dependent:** false
 
+### DOAS capable of demand control ventilation?
+If a DOAS system, this will make air terminals variable air volume instead of constant volume.
+**Name:** doas_dcv,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
 ### HVAC System Partition:
 Automatic Partition will separate the HVAC system by residential/non-residential and if loads and schedules are substantially different.
 **Name:** hvac_system_partition,

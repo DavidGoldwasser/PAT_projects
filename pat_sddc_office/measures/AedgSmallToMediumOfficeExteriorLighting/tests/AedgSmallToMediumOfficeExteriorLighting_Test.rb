@@ -1,5 +1,5 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -42,8 +42,6 @@ require 'minitest/autorun'
 
 class AedgSmallToMediumOfficeExteriorLighting_Test < Minitest::Test
   def test_AedgSmallToMediumOfficeExteriorLighting
-    #skip "Broken in 2.5.1, address immediately"
-
     # create an instance of the measure
     measure = AedgSmallToMediumOfficeExteriorLighting.new
 

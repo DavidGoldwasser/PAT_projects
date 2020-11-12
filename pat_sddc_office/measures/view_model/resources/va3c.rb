@@ -1,3 +1,38 @@
+# *******************************************************************************
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
+# All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# (1) Redistributions of source code must retain the above copyright notice,
+# this list of conditions and the following disclaimer.
+#
+# (2) Redistributions in binary form must reproduce the above copyright notice,
+# this list of conditions and the following disclaimer in the documentation
+# and/or other materials provided with the distribution.
+#
+# (3) Neither the name of the copyright holder nor the names of any contributors
+# may be used to endorse or promote products derived from this software without
+# specific prior written permission from the respective party.
+#
+# (4) Other than as required in clauses (1) and (2), distributions in any form
+# of modifications or other derivative works may not use the "OpenStudio"
+# trademark, "OS", "os", or any other confusingly similar designation without
+# specific prior written permission from Alliance for Sustainable Energy, LLC.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER(S) AND ANY CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER(S), ANY CONTRIBUTORS, THE
+# UNITED STATES GOVERNMENT, OR THE UNITED STATES DEPARTMENT OF ENERGY, NOR ANY OF
+# THEIR EMPLOYEES, BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+# OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# *******************************************************************************
+
 require 'openstudio'
 
 if /^1\.8/.match(RUBY_VERSION)
@@ -62,6 +97,8 @@ class VA3C
   def self.convert_model(model)
     scene = build_scene(model)
     
+    northAxis = -model.getBuilding.northAxis
+    
     boundingBox = OpenStudio::BoundingBox.new
     boundingBox.addPoint(OpenStudio::Point3d.new(0, 0, 0))
     boundingBox.addPoint(OpenStudio::Point3d.new(1, 1, 1))
@@ -94,7 +131,8 @@ class VA3C
     # build up the json hash
     result = Hash.new
     result['metadata'] = { 'version' => 4.3, 'type' => 'Object', 'generator' => 'OpenStudio', 
-                           'buildingStoryNames' => buildingStoryNames, 'boundingBox' => boundingBoxHash}
+                           'buildingStoryNames' => buildingStoryNames, 'boundingBox' => boundingBoxHash, 
+                           'northAxis' => northAxis}
     result['geometries'] = scene.geometries
     result['materials'] = scene.materials
     result['object'] = scene.object
@@ -292,11 +330,15 @@ class VA3C
 
     # get the transformation to site coordinates
     site_transformation = OpenStudio::Transformation.new
-    planar_surface_group = surface.planarSurfaceGroup
-    if not planar_surface_group.empty?
-      site_transformation = planar_surface_group.get.siteTransformation
+    building = surface.model.getBuilding
+    
+    space = surface.space
+    if space.is_initialized
+      site_transformation = building.transformation*space.get.transformation
+    else
+      site_transformation = building.transformation
     end
-
+    
     # get the vertices
     surface_vertices = surface.vertices
     t = OpenStudio::Transformation::alignFace(surface_vertices)
@@ -367,9 +409,11 @@ class VA3C
       surface_user_data.outsideBoundaryConditionObjectHandle = format_uuid(adjacent_surface.get.handle)
       
       other_site_transformation = OpenStudio::Transformation.new
-      other_group = adjacent_surface.get.planarSurfaceGroup
-      if not other_group.empty?
-        other_site_transformation = other_group.get.siteTransformation
+      other_space = adjacent_surface.get.space
+      if not other_space.empty?
+        other_site_transformation = building.transformation*other_space.get.transformation
+      else
+        other_site_transformation = building.transformation
       end
       
       other_vertices = other_site_transformation*adjacent_surface.get.vertices
@@ -502,9 +546,11 @@ class VA3C
         sub_surface_user_data.outsideBoundaryConditionObjectHandle = format_uuid(adjacent_sub_surface.get.handle)
       
         other_site_transformation = OpenStudio::Transformation.new
-        other_group = adjacent_sub_surface.get.planarSurfaceGroup
-        if not other_group.empty?
-          other_site_transformation = other_group.get.siteTransformation
+        other_space = adjacent_sub_surface.get.space
+        if not other_space.empty?
+          other_site_transformation = building.transformation*other_space.get.transformation
+        else
+          other_site_transformation = building.transformation
         end
         
         other_vertices = other_site_transformation*adjacent_sub_surface.get.vertices
@@ -562,10 +608,8 @@ class VA3C
 
     # get the transformation to site coordinates
     site_transformation = OpenStudio::Transformation.new
-    planar_surface_group = surface.planarSurfaceGroup
-    if not planar_surface_group.empty?
-      site_transformation = planar_surface_group.get.siteTransformation
-    end
+    building = surface.model.getBuilding
+    
     shading_surface_group = surface.shadingSurfaceGroup
     shading_surface_type = 'Building'
     space_name = nil
@@ -594,7 +638,15 @@ class VA3C
         if building_story.is_initialized
           building_story_name = building_story.get.name.to_s
         end
+        
+        site_transformation = building.transformation*space.transformation*shading_surface_group.get.transformation
+      elsif /Site/i.match(shading_surface_type)
+        site_transformation = shading_surface_group.get.transformation
+      else
+        site_transformation = building.transformation*shading_surface_group.get.transformation
       end
+      
+      
     end
     
     # get the vertices
@@ -703,10 +755,7 @@ class VA3C
 
     # get the transformation to site coordinates
     site_transformation = OpenStudio::Transformation.new
-    planar_surface_group = surface.planarSurfaceGroup
-    if not planar_surface_group.empty?
-      site_transformation = planar_surface_group.get.siteTransformation
-    end
+    building = surface.model.getBuilding
     interior_partition_surface_group = surface.interiorPartitionSurfaceGroup
 
     space_name = nil
@@ -734,6 +783,10 @@ class VA3C
         if building_story.is_initialized
           building_story_name = building_story.get.name.to_s
         end
+        
+        site_transformation = building.transformation*space.transformation*interior_partition_surface_group.get.transformation
+      else
+        site_transformation = building.transformation*interior_partition_surface_group.get.transformation
       end
     end
     
@@ -875,67 +928,69 @@ class VA3C
       end
   
       geometries, user_datas = make_geometries(surface)
-      geometries.each_index do |i| 
-        geometry = geometries[i]
-        user_data = user_datas[i]
-        
-        all_geometries << geometry
+      if geometries
+        geometries.each_index do |i| 
+          geometry = geometries[i]
+          user_data = user_datas[i]
+          
+          all_geometries << geometry
 
-        scene_child = SceneChild.new
-        scene_child.uuid = format_uuid(OpenStudio::createUUID) 
-        scene_child.name = user_data[:name]
-        scene_child.type = "Mesh"
-        scene_child.geometry = geometry[:uuid]
+          scene_child = SceneChild.new
+          scene_child.uuid = format_uuid(OpenStudio::createUUID) 
+          scene_child.name = user_data[:name]
+          scene_child.type = "Mesh"
+          scene_child.geometry = geometry[:uuid]
 
-        if i == 0
-          # first geometry is base surface
-          scene_child.material = material[:uuid]
-        else
-          # sub surface
-          if /Window/.match(user_data[:surfaceType]) || /Glass/.match(user_data[:surfaceType]) 
-            scene_child.material =  window_material[:uuid]
+          if i == 0
+            # first geometry is base surface
+            scene_child.material = material[:uuid]
           else
-            scene_child.material =  door_material[:uuid]
+            # sub surface
+            if /Window/.match(user_data[:surfaceType]) || /Glass/.match(user_data[:surfaceType]) 
+              scene_child.material =  window_material[:uuid]
+            else
+              scene_child.material =  door_material[:uuid]
+            end
           end
+          
+          scene_child.matrix = identity_matrix
+          scene_child.userData = user_data
+          object[:children] << scene_child.to_h
         end
-        
-        scene_child.matrix = identity_matrix
-        scene_child.userData = user_data
-        object[:children] << scene_child.to_h
       end
-      
     end
     
     # loop over all shading surfaces
     model.getShadingSurfaces.each do |surface|
   
       geometries, user_datas = make_shade_geometries(surface)
-      geometries.each_index do |i| 
-        geometry = geometries[i]
-        user_data = user_datas[i]
-        
-        material = nil
-        if /Site/.match(user_data[:surfaceType])
-          material = site_shading_material
-        elsif /Building/.match(user_data[:surfaceType]) 
-          material = building_shading_material
-        elsif /Space/.match(user_data[:surfaceType]) 
-          material = space_shading_material
-        end
-        
-        all_geometries << geometry
+      if geometries
+        geometries.each_index do |i| 
+          geometry = geometries[i]
+          user_data = user_datas[i]
+          
+          material = nil
+          if /Site/.match(user_data[:surfaceType])
+            material = site_shading_material
+          elsif /Building/.match(user_data[:surfaceType]) 
+            material = building_shading_material
+          elsif /Space/.match(user_data[:surfaceType]) 
+            material = space_shading_material
+          end
+          
+          all_geometries << geometry
 
-        scene_child = SceneChild.new
-        scene_child.uuid = format_uuid(OpenStudio::createUUID) 
-        scene_child.name = user_data[:name]
-        scene_child.type = 'Mesh'
-        scene_child.geometry = geometry[:uuid]
-        scene_child.material = material[:uuid]
-        scene_child.matrix = identity_matrix
-        scene_child.userData = user_data
-        object[:children] << scene_child.to_h
+          scene_child = SceneChild.new
+          scene_child.uuid = format_uuid(OpenStudio::createUUID) 
+          scene_child.name = user_data[:name]
+          scene_child.type = 'Mesh'
+          scene_child.geometry = geometry[:uuid]
+          scene_child.material = material[:uuid]
+          scene_child.matrix = identity_matrix
+          scene_child.userData = user_data
+          object[:children] << scene_child.to_h
+        end
       end
-      
     end    
     
     # loop over all interior partition surfaces

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -34,79 +36,220 @@
 # *******************************************************************************
 
 class NzeHvac < OpenStudio::Measure::ModelMeasure
-
   require 'openstudio-standards'
 
   def name
-    return "NZEHVAC"
+    return 'NZEHVAC'
   end
 
   # human readable description
   def description
-    return "This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads."
+    return 'This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads.'
   end
 
   # human readable description of modeling approach
   def modeler_description
-    return "HVAC system creation logic uses [openstudio-standards](https://github.com/NREL/openstudio-standards) and efficiency values are defined in the openstudio-standards Standards spreadsheet under the *NREL ZNE Ready 2017* template."
+    return 'HVAC system creation logic uses [openstudio-standards](https://github.com/NREL/openstudio-standards) and efficiency values are defined in the openstudio-standards Standards spreadsheet under the *NREL ZNE Ready 2017* template.'
   end
 
-  def report_pump_variables(model, runner, std)
-    model.getPumpVariableSpeeds.each do |pump|
-      pump_bhp = std.pump_brake_horsepower(pump)
-      pump_mhp = std.pump_motor_horsepower(pump)
-      pump_w_per_gpm = std.pump_rated_w_per_gpm(pump)
-      runner.registerInfo("#{pump.name.to_s} has brake horsepower: #{pump_bhp.round(2)}, motor_horsepower: #{pump_mhp.round(2)}, rated watts per gpm: #{pump_w_per_gpm.round(2)}")
+  def add_system_to_zones(model, runner, hvac_system_type, zones, standard,
+                          doas_dcv: false)
+    if doas_dcv
+      doas_system_type = 'DOAS with DCV'
+    else
+      doas_system_type = 'DOAS'
     end
-  end
 
-  def report_fan_variables(model, runner, std)
-    model.getFanVariableVolumes.each do |fan|
-      fan_bhp = std.fan_brake_horsepower(fan)
-      fan_mhp = std.fan_motor_horsepower(fan)
-      fan_w_per_cfm = std.fan_rated_w_per_cfm(fan)
-      runner.registerInfo("#{fan.name.to_s} has brake horsepower: #{fan_bhp.round(2)}, motor_horsepower: #{fan_mhp.round(2)}, rated watts per cfm: #{fan_w_per_cfm.round(2)}")
-    end
-  end
-
-  def add_system_to_zones(model, runner, hvac_system_type, zones, std)
     # create HVAC system
     # use methods in openstudio-standards
     # Standard.model_add_hvac_system(model, system_type, main_heat_fuel, zone_heat_fuel, cool_fuel, zones)
     # can be combination systems or individual objects - depends on the type of system
+    # todo - reenable fan_coil_capacity_control_method when major installer released with udpated standards gem from what shipped with 2.9.0
     case hvac_system_type.to_s
-    when "VAV Reheat"
-      std.model_add_hvac_system(model, 'VAV Reheat', 'NaturalGas', 'NaturalGas', 'Electricity', zones,
-                                hot_water_loop_type: "LowTemperature",
-                                chilled_water_loop_cooling_type: "AirCooled",
-                                air_loop_cooling_type: "Water")
-    when "PVAV Reheat" #NOTE: This system call is temporary until the "PVAV Reheat" bug is fixed in openstudio-standards
-      std.model_add_hvac_system(model, 'VAV Reheat', 'NaturalGas', 'NaturalGas', 'Electricity', zones,
-                                hot_water_loop_type: "LowTemperature",
-                                air_loop_cooling_type: "DX")
-    when "VRF with DOAS"
-      std.model_add_hvac_system(model, 'VRF with DOAS', 'Electricity', 'nil', 'Electricity', zones)
-    when "VRF with DOAS with DCV"
-      std.model_add_hvac_system(model, 'VRF with DOAS with DCV', 'Electricity', 'nil', 'Electricity', zones)
-    when "Ground Source Heat Pumps with DOAS"
-      std.model_add_hvac_system(model, 'Ground Source Heat Pumps with DOAS', 'Electricity', nil, 'Electricity', zones,
-                                air_loop_heating_type: "DX",
-                                air_loop_cooling_type: "DX")
-    when "Ground Source Heat Pumps with DOAS with DCV"
-      std.model_add_hvac_system(model, 'Ground Source Heat Pumps with DOAS with DCV', 'Electricity', nil, 'Electricity', zones,
-                                air_loop_heating_type: "DX",
-                                air_loop_cooling_type: "DX")
-    when "Fan Coils with DOAS"
-      std.model_add_hvac_system(model, 'Fan Coil with DOAS', 'NaturalGas', nil, 'Electricity', zones,
-                                hot_water_loop_type: "LowTemperature")
-    when "Fan Coils with DOAS with DCV"
-      std.model_add_hvac_system(model, 'Fan Coil with DOAS with DCV', 'NaturalGas', nil, 'Electricity', zones,
-                                hot_water_loop_type: "LowTemperature")
-    when "Fan Coils with ERVs"
-      std.model_add_hvac_system(model, 'Fan Coil with ERVs', 'NaturalGas', nil, 'Electricity', zones,
-                                hot_water_loop_type: "LowTemperature")
-    when "PSZ-HP"
-      std.model_add_hvac_system(model, 'PSZ-HP', 'Electricity', 'Electricity', 'Electricity', zones)
+    when 'DOAS with fan coil chiller with boiler'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     air_loop_heating_type: 'Water',
+                                     air_loop_cooling_type: 'Water')
+      standard.model_add_hvac_system(model, 'Fan Coil', ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     zone_equipment_ventilation: false)
+      # fan_coil_capacity_control_method: 'VariableFanVariableFlow')
+      chilled_water_loop = model.getPlantLoopByName('Chilled Water Loop').get
+      condenser_water_loop = model.getPlantLoopByName('Condenser Water Loop').get
+      standard.model_add_waterside_economizer(model, chilled_water_loop, condenser_water_loop,
+                                              integrated: true)
+
+    when 'DOAS with fan coil chiller with central air source heat pump'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones,
+                                     air_loop_heating_type: 'Water',
+                                     air_loop_cooling_type: 'Water')
+      standard.model_add_hvac_system(model, 'Fan Coil', ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones,
+                                     zone_equipment_ventilation: false)
+      # fan_coil_capacity_control_method: 'VariableFanVariableFlow')
+      chilled_water_loop = model.getPlantLoopByName('Chilled Water Loop').get
+      condenser_water_loop = model.getPlantLoopByName('Condenser Water Loop').get
+      standard.model_add_waterside_economizer(model, chilled_water_loop, condenser_water_loop,
+                                              integrated: true)
+
+    when 'DOAS with fan coil air-cooled chiller with boiler'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     chilled_water_loop_cooling_type: 'AirCooled',
+                                     air_loop_heating_type: 'Water',
+                                     air_loop_cooling_type: 'Water')
+      standard.model_add_hvac_system(model, 'Fan Coil', ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     chilled_water_loop_cooling_type: 'AirCooled',
+                                     zone_equipment_ventilation: false)
+    # fan_coil_capacity_control_method: 'VariableFanVariableFlow')
+
+    when 'DOAS with fan coil air-cooled chiller with central air source heat pump'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones,
+                                     chilled_water_loop_cooling_type: 'AirCooled',
+                                     air_loop_heating_type: 'Water',
+                                     air_loop_cooling_type: 'Water')
+      standard.model_add_hvac_system(model, 'Fan Coil', ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones,
+                                     chilled_water_loop_cooling_type: 'AirCooled',
+                                     zone_equipment_ventilation: false)
+    # fan_coil_capacity_control_method: 'VariableFanVariableFlow')
+
+    # ventilation provided by zone fan coil unit in fan coil systems
+    when 'Fan coil chiller with boiler'
+      standard.model_add_hvac_system(self, 'Fan Coil', ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature')
+      # fan_coil_capacity_control_method: 'VariableFanVariableFlow')
+      chilled_water_loop = model.getPlantLoopByName('Chilled Water Loop').get
+      condenser_water_loop = model.getPlantLoopByName('Condenser Water Loop').get
+      standard.model_add_waterside_economizer(model, chilled_water_loop, condenser_water_loop,
+                                              integrated: true)
+
+    when 'Fan coil chiller with central air source heat pump'
+      standard.model_add_hvac_system(self, 'Fan Coil', ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones)
+      # fan_coil_capacity_control_method: 'VariableFanVariableFlow')
+      chilled_water_loop = model.getPlantLoopByName('Chilled Water Loop').get
+      condenser_water_loop = model.getPlantLoopByName('Condenser Water Loop').get
+      standard.model_add_waterside_economizer(model, chilled_water_loop, condenser_water_loop,
+                                              integrated: true)
+
+    when 'Fan coil air-cooled chiller with boiler'
+      standard.model_add_hvac_system(self, 'Fan Coil', ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     chilled_water_loop_cooling_type: 'AirCooled')
+    # fan_coil_capacity_control_method: 'VariableFanVariableFlow')
+
+    when 'Fan coil air-cooled chiller with central air source heat pump'
+      standard.model_add_hvac_system(self, 'Fan Coil', ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones,
+                                     chilled_water_loop_cooling_type: 'AirCooled')
+    # fan_coil_capacity_control_method: 'VariableFanVariableFlow')
+
+    when 'DOAS with radiant slab chiller with boiler'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     air_loop_heating_type: 'Water',
+                                     air_loop_cooling_type: 'Water')
+      standard.model_add_hvac_system(model, 'Radiant Slab', ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature')
+      chilled_water_loop = model.getPlantLoopByName('Chilled Water Loop').get
+      condenser_water_loop = model.getPlantLoopByName('Condenser Water Loop').get
+      standard.model_add_waterside_economizer(model, chilled_water_loop, condenser_water_loop,
+                                              integrated: true)
+
+    when 'DOAS with radiant slab chiller with central air source heat pump'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones,
+                                     air_loop_heating_type: 'Water',
+                                     air_loop_cooling_type: 'Water')
+      standard.model_add_hvac_system(model, 'Radiant Slab', ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones)
+      chilled_water_loop = model.getPlantLoopByName('Chilled Water Loop').get
+      condenser_water_loop = model.getPlantLoopByName('Condenser Water Loop').get
+      standard.model_add_waterside_economizer(model, chilled_water_loop, condenser_water_loop,
+                                              integrated: true)
+
+    when 'DOAS with radiant slab air-cooled chiller with boiler'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     chilled_water_loop_cooling_type: 'AirCooled',
+                                     air_loop_heating_type: 'Water',
+                                     air_loop_cooling_type: 'Water')
+      standard.model_add_hvac_system(model, 'Radiant Slab', ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     chilled_water_loop_cooling_type: 'AirCooled')
+
+    when 'DOAS with radiant slab air-cooled chiller with central air source heat pump'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones,
+                                     chilled_water_loop_cooling_type: 'AirCooled',
+                                     air_loop_heating_type: 'Water',
+                                     air_loop_cooling_type: 'Water')
+      standard.model_add_hvac_system(model, 'Radiant Slab', ht = 'AirSourceHeatPump', znht = nil, cl = 'Electricity', zones,
+                                     chilled_water_loop_cooling_type: 'AirCooled')
+
+    when 'DOAS with VRF'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'Electricity', znht = nil, cl = 'Electricity', zones,
+                                     air_loop_heating_type: 'DX',
+                                     air_loop_cooling_type: 'DX')
+      standard.model_add_hvac_system(model, 'VRF', ht = 'Electricity', znht = nil, cl = 'Electricity', zones,
+                                     zone_equipment_ventilation: false)
+
+    when 'VRF'
+      standard.model_add_hvac_system(model, 'VRF', ht = 'Electricity', znht = nil, cl = 'Electricity', zones)
+
+    when 'DOAS with water source heat pumps cooling tower with boiler'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature')
+      standard.model_add_hvac_system(model, 'Water Source Heat Pumps', ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     heat_pump_loop_cooling_type: 'CoolingTower',
+                                     zone_equipment_ventilation: false)
+
+    when 'DOAS with water source heat pumps with ground source heat pump'
+      standard.model_add_hvac_system(model, doas_system_type, ht = 'Electricity', znht = nil, cl = 'Electricity', zones,
+                                     air_loop_heating_type: 'DX',
+                                     air_loop_cooling_type: 'DX')
+      standard.model_add_hvac_system(model, 'Ground Source Heat Pumps', ht = 'Electricity', znht = nil, cl = 'Electricity', zones,
+                                     zone_equipment_ventilation: false)
+
+    when 'Water source heat pumps cooling tower with boiler'
+      standard.model_add_hvac_system(model, 'Water Source Heat Pumps', ht = 'NaturalGas', znht = nil, cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     heat_pump_loop_cooling_type: 'CoolingTower')
+
+    when 'Water source heat pumps with ground source heat pump'
+      standard.model_add_hvac_system(model, 'Ground Source Heat Pumps', ht = 'Electricity', znht = nil, cl = 'Electricity', zones)
+
+    # PVAV systems by default use a DX coil for cooling
+    when 'PVAV with gas boiler reheat'
+      standard.model_add_hvac_system(model, 'PVAV Reheat', ht = 'NaturalGas', znht = 'NaturalGas', cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature')
+
+    when 'PVAV with central air source heat pump reheat'
+      standard.model_add_hvac_system(model, 'PVAV Reheat', ht = 'AirSourceHeatPump', znht = 'AirSourceHeatPump', cl = 'Electricity', zones)
+
+    when 'VAV chiller with gas boiler reheat'
+      standard.model_add_hvac_system(model, 'VAV Reheat', ht = 'NaturalGas', znht = 'NaturalGas', cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature')
+      chilled_water_loop = model.getPlantLoopByName('Chilled Water Loop').get
+      condenser_water_loop = model.getPlantLoopByName('Condenser Water Loop').get
+      standard.model_add_waterside_economizer(model, chilled_water_loop, condenser_water_loop,
+                                              integrated: true)
+
+    when 'VAV chiller with central air source heat pump reheat'
+      standard.model_add_hvac_system(model, 'VAV Reheat', ht = 'AirSourceHeatPump', znht = 'AirSourceHeatPump', cl = 'Electricity', zones)
+      chilled_water_loop = model.getPlantLoopByName('Chilled Water Loop').get
+      condenser_water_loop = model.getPlantLoopByName('Condenser Water Loop').get
+      standard.model_add_waterside_economizer(model, chilled_water_loop, condenser_water_loop,
+                                              integrated: true)
+
+    when 'VAV air-cooled chiller with gas boiler reheat'
+      standard.model_add_hvac_system(model, 'VAV Reheat', ht = 'NaturalGas', znht = 'NaturalGas', cl = 'Electricity', zones,
+                                     hot_water_loop_type: 'LowTemperature',
+                                     chilled_water_loop_cooling_type: 'AirCooled')
+
+    when 'VAV air-cooled chiller with central air source heat pump reheat'
+      standard.model_add_hvac_system(model, 'VAV Reheat', ht = 'AirSourceHeatPump', znht = 'AirSourceHeatPump', cl = 'Electricity', zones,
+                                     chilled_water_loop_cooling_type: 'AirCooled')
+
+    when 'PSZ-HP'
+      standard.model_add_hvac_system(self, 'PSZ-HP', ht = 'Electricity', znht = nil, cl = 'Electricity', zones)
     else
       runner.registerError("HVAC System #{hvac_system_type} not recognized")
       return false
@@ -118,71 +261,62 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
     args = OpenStudio::Measure::OSArgumentVector.new
 
     # argument to remove existing hvac system
-    remove_existing_hvac = OpenStudio::Measure::OSArgument::makeBoolArgument("remove_existing_hvac",true)
-    remove_existing_hvac.setDisplayName("Remove existing HVAC?")
+    remove_existing_hvac = OpenStudio::Measure::OSArgument.makeBoolArgument('remove_existing_hvac', true)
+    remove_existing_hvac.setDisplayName('Remove existing HVAC?')
     remove_existing_hvac.setDefaultValue(false)
     args << remove_existing_hvac
 
     # argument for HVAC system type
     hvac_system_type_choices = OpenStudio::StringVector.new
+    hvac_system_type_choices << 'DOAS with fan coil chiller with boiler'
+    hvac_system_type_choices << 'DOAS with fan coil chiller with central air source heat pump'
+    hvac_system_type_choices << 'DOAS with fan coil air-cooled chiller with boiler'
+    hvac_system_type_choices << 'DOAS with fan coil air-cooled chiller with central air source heat pump'
+    hvac_system_type_choices << 'Fan coil chiller with boiler'
+    hvac_system_type_choices << 'Fan coil chiller with central air source heat pump'
+    hvac_system_type_choices << 'Fan coil air-cooled chiller with boiler'
+    hvac_system_type_choices << 'Fan coil air-cooled chiller with central air source heat pump'
+    hvac_system_type_choices << 'DOAS with radiant slab chiller with boiler'
+    hvac_system_type_choices << 'DOAS with radiant slab chiller with central air source heat pump'
+    hvac_system_type_choices << 'DOAS with radiant slab air-cooled chiller with boiler'
+    hvac_system_type_choices << 'DOAS with radiant slab air-cooled chiller with central air source heat pump'
+    hvac_system_type_choices << 'DOAS with VRF'
+    hvac_system_type_choices << 'VRF'
+    hvac_system_type_choices << 'DOAS with water source heat pumps cooling tower with boiler'
+    hvac_system_type_choices << 'DOAS with water source heat pumps with ground source heat pump'
+    hvac_system_type_choices << 'Water source heat pumps cooling tower with boiler'
+    hvac_system_type_choices << 'Water source heat pumps with ground source heat pump'
+    hvac_system_type_choices << 'VAV chiller with gas boiler reheat'
+    hvac_system_type_choices << 'VAV chiller with central air source heat pump reheat'
+    hvac_system_type_choices << 'VAV air-cooled chiller with gas boiler reheat'
+    hvac_system_type_choices << 'VAV air-cooled chiller with central air source heat pump reheat'
+    hvac_system_type_choices << 'PVAV with gas boiler reheat'
+    hvac_system_type_choices << 'PVAV with central air source heat pump reheat'
 
-    # VAV system with air-side economizer, served by a condensing boiler and air-cooled chiller
-    hvac_system_type_choices << "VAV Reheat"
-
-    # Packaged RTU VAV system with air-side economizer, served by a condensing boiler and DX cooling
-    hvac_system_type_choices << "PVAV Reheat"
-
-    # DOAS system served by DX coils and VRF terminals served by air-cooled VRF outdoor unit
-    hvac_system_type_choices << "VRF with DOAS"
-
-    # DOAS system with DCV served by DX Coils and VRF terminals served by air-cooled VRF outdoor unit
-    hvac_system_type_choices << "VRF with DOAS with DCV"
-
-    # DOAS system served by DX coils with zone heat pumps served by a ground-source heat pump loop
-    hvac_system_type_choices << "Ground Source Heat Pumps with DOAS"
-
-    # DOAS system with DCV served by DX coils and zone heat pumps served by a ground-source heat pump loop
-    hvac_system_type_choices << "Ground Source Heat Pumps with DOAS with DCV"
-
-    # DOAS system with zone fan coils both served by a condensing boiler and water-cooled chiller with water-side economizer
-    hvac_system_type_choices << "Fan Coils with DOAS"
-
-    # DOAS system with DCV and zone fan coils both served by a condensing boiler and water-cooled chiller with water-side economizer
-    hvac_system_type_choices << "Fan Coils with DOAS with DCV"
-
-    # Zone ERVs and zone fan coils both served by a condensing boiler and water-cooled chiller with water-side economizer
-    hvac_system_type_choices << "Fan Coils with ERVs"
-
-    # FUTURE OPTIONS TO INCLUDE
-    # DOAS system with zone fan coils served by a air-source heat pump
-    #hvac_system_type_choices << "Fan Coils with DOAS, ASHP"
-
-    # DOAS system with thermally active slab served by a condensing boiler and water-cooled chiller with water-side economizer
-    #hvac_system_type_choices << "Radiant Slab with DOAS"
-
-    # DOAS system with thermally active slab served by an air-source heat pump
-    #hvac_system_type_choices << "Radiant Slab with DOAS, ASHP"
-
-    # DOAS system with chilled beams served by a condensing boiler and water-cooled chiller with water-side economizer
-    #hvac_system_type_choices << "Chilled Beams with DOAS"
-
-    hvac_system_type = OpenStudio::Measure::OSArgument::makeChoiceArgument("hvac_system_type", hvac_system_type_choices, true)
-    hvac_system_type.setDisplayName("HVAC System Type:")
-    hvac_system_type.setDescription("Details on HVAC system type in measure documentation.")
-    hvac_system_type.setDefaultValue("Fan Coils with DOAS")
+    hvac_system_type = OpenStudio::Measure::OSArgument.makeChoiceArgument('hvac_system_type', hvac_system_type_choices, true)
+    hvac_system_type.setDisplayName('HVAC System Type:')
+    hvac_system_type.setDescription('Details on HVAC system type in measure documentation.')
+    hvac_system_type.setDefaultValue('DOAS with fan coil chiller with central air source heat pump')
     args << hvac_system_type
+
+    # make the DOAS system have DCV controls
+    doas_dcv = OpenStudio::Measure::OSArgument.makeBoolArgument('doas_dcv', true)
+    doas_dcv.setDisplayName('DOAS capable of demand control ventilation?')
+    doas_dcv.setDescription('If a DOAS system, this will make air terminals variable air volume instead of constant volume.')
+    doas_dcv.setDefaultValue(false)
+    args << doas_dcv
 
     # argument for how to partition HVAC system
     hvac_system_partition_choices = OpenStudio::StringVector.new
-    hvac_system_partition_choices << "Automatic Partition"
-    hvac_system_partition_choices << "Whole Building"
-    hvac_system_partition_choices << "One System Per Building Story"
-    hvac_system_partition_choices << "One System Per Building Type"
+    hvac_system_partition_choices << 'Automatic Partition'
+    hvac_system_partition_choices << 'Whole Building'
+    hvac_system_partition_choices << 'One System Per Building Story'
+    hvac_system_partition_choices << 'One System Per Building Type'
 
-    hvac_system_partition = OpenStudio::Measure::OSArgument::makeChoiceArgument("hvac_system_partition", hvac_system_partition_choices, true)
-    hvac_system_partition.setDisplayName("HVAC System Partition:")
-    hvac_system_partition.setDescription("Automatic Partition will separate the HVAC system by residential/non-residential and if loads and schedules are substantially different.")
-    hvac_system_partition.setDefaultValue("Automatic Partition")
+    hvac_system_partition = OpenStudio::Measure::OSArgument.makeChoiceArgument('hvac_system_partition', hvac_system_partition_choices, true)
+    hvac_system_partition.setDisplayName('HVAC System Partition:')
+    hvac_system_partition.setDescription('Automatic Partition will separate the HVAC system by residential/non-residential and if loads and schedules are substantially different.')
+    hvac_system_partition.setDefaultValue('Automatic Partition')
     args << hvac_system_partition
 
     # add an argument for ventilation schedule
@@ -193,35 +327,40 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
   def run(model, runner, user_arguments)
     super(model, runner, user_arguments)
 
-    # use the built-in error checking 
-    if not runner.validateUserArguments(arguments(model), user_arguments)
+    # use the built-in error checking
+    if !runner.validateUserArguments(arguments(model), user_arguments)
       return false
     end
 
     # assign user inputs
-    remove_existing_hvac = runner.getBoolArgumentValue("remove_existing_hvac", user_arguments)
-    hvac_system_type = runner.getOptionalStringArgumentValue("hvac_system_type", user_arguments)
-    hvac_system_partition = runner.getOptionalStringArgumentValue("hvac_system_partition", user_arguments)
+    remove_existing_hvac = runner.getBoolArgumentValue('remove_existing_hvac', user_arguments)
+    hvac_system_type = runner.getOptionalStringArgumentValue('hvac_system_type', user_arguments)
+    doas_dcv = runner.getBoolArgumentValue('doas_dcv', user_arguments)
+    hvac_system_partition = runner.getOptionalStringArgumentValue('hvac_system_partition', user_arguments)
     hvac_system_partition = hvac_system_partition.to_s
 
     # standard to access methods in openstudio-standards
-    std = Standard.build("NREL ZNE Ready 2017")
+    std = Standard.build('NREL ZNE Ready 2017')
 
     # ensure standards building type is set
     unless model.getBuilding.standardsBuildingType.is_initialized
       dominant_building_type = std.model_get_standards_building_type(model)
       if dominant_building_type.nil?
         # use office building type if none in model
-        model.getBuilding.setStandardsBuildingType("Office")
+        model.getBuilding.setStandardsBuildingType('Office')
       else
         model.getBuilding.setStandardsBuildingType(dominant_building_type)
       end
     end
 
     # get the climate zone
-    climate_zone_obj = model.getClimateZones.getClimateZone("ASHRAE", 2006)
-    if climate_zone_obj.empty()
-      runner.registerError("Please assign an ASHRAE climate zone to the model before running the measure.")
+    climate_zone_obj = model.getClimateZones.getClimateZone('ASHRAE', 2006)
+    if climate_zone_obj.empty
+      climate_zone_obj = model.getClimateZones.getClimateZone('ASHRAE', 2013)
+    end
+
+    if climate_zone_obj.empty
+      runner.registerError('Please assign an ASHRAE climate zone to the model before running the measure.')
       return false
     else
       climate_zone = "ASHRAE 169-2006-#{climate_zone_obj.value}"
@@ -229,7 +368,7 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
 
     # remove existing hvac system from model
     if remove_existing_hvac
-      runner.registerInfo("Removing existing HVAC systems from the model")
+      runner.registerInfo('Removing existing HVAC systems from the model')
       std.remove_HVAC(model)
     end
 
@@ -244,7 +383,7 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
     # logic to partition thermal zones to be served by different HVAC systems
     case hvac_system_partition
 
-      when "Automatic Partition"
+      when 'Automatic Partition'
         # group zones by occupancy type (residential/nonresidential)
         # split non-dominant groups if their total area exceeds 20,000 ft2.
         sys_groups = std.model_group_zones_by_type(model, OpenStudio.convert(20000, 'ft^2', 'm^2').get)
@@ -259,32 +398,32 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
           pri_sec_zone_lists = std.model_differentiate_primary_secondary_thermal_zones(model, sys_group['zones'])
 
           # add the primary system to the primary zones
-          add_system_to_zones(model, runner, hvac_system_type, pri_sec_zone_lists['primary'], std)
+          add_system_to_zones(model, runner, hvac_system_type, pri_sec_zone_lists['primary'], std, doas_dcv: doas_dcv)
 
           # add the secondary system to the secondary zones (if any)
           if !pri_sec_zone_lists['secondary'].empty?
             runner.registerInfo("Secondary system type is #{sec_sys_type}")
-            add_system_to_zones(model, runner, sec_sys_type, pri_sec_zone_lists['secondary'], std)
+            add_system_to_zones(model, runner, sec_sys_type, pri_sec_zone_lists['secondary'], std, doas_dcv: doas_dcv)
           end
         end
 
-      when "Whole Building"
-        add_system_to_zones(model, runner, hvac_system_type, conditioned_zones, std)
+      when 'Whole Building'
+        add_system_to_zones(model, runner, hvac_system_type, conditioned_zones, std, doas_dcv: doas_dcv)
 
-      when "One System Per Building Story"
+      when 'One System Per Building Story'
         story_groups = std.model_group_zones_by_story(model, conditioned_zones)
         story_groups.each do |story_zones|
-          add_system_to_zones(model, runner, hvac_system_type, story_zones, std)
+          add_system_to_zones(model, runner, hvac_system_type, story_zones, std, doas_dcv: doas_dcv)
         end
 
-      when "One System Per Building Type"
+      when 'One System Per Building Type'
         system_groups = std.model_group_zones_by_building_type(model, 0.0)
         system_groups.each do |system_group|
-          add_system_to_zones(model, runner, hvac_system_type, system_group['zones'], std)
+          add_system_to_zones(model, runner, hvac_system_type, system_group['zones'], std, doas_dcv: doas_dcv)
         end
 
       else
-        runner.registerError("Invalid HVAC system partition choice")
+        runner.registerError('Invalid HVAC system partition choice')
         return false
     end
 
@@ -296,7 +435,7 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
 
     # check that weather file exists for a sizing run
     if !model.weatherFile.is_initialized
-      runner.registerError("Weather file not set. Cannot perform sizing run.")
+      runner.registerError('Weather file not set. Cannot perform sizing run.')
       return false
     end
 
@@ -305,37 +444,20 @@ class NzeHvac < OpenStudio::Measure::ModelMeasure
 
     # perform a sizing run to get equipment sizes for efficiency standards
     if std.model_run_sizing_run(model, "#{Dir.pwd}/SizingRun") == false
-      runner.registerError("Unable to perform sizing run for hvac system #{hvac_system_type} for this model.")
+      runner.registerError("Unable to perform sizing run for hvac system #{hvac_system_type} for this model.  Check the openstudio-standards.log in this measure for more details.")
+      log_messages_to_file("#{Dir.pwd}/openstudio-standards.log", debug = true)
       return false
     end
-
-    # report fan and pump power ratings
-    runner.registerInfo("Initial default equipment efficiencies:")
-    report_pump_variables(model, runner, std)
-    report_fan_variables(model, runner, std)
-
-    # apply hvac setting and standards from Prototype.Model.rb
-    model.getYearDescription.setDayofWeekforStartDay('Sunday')
-
-    # add economizers if multizone VAV reheat system
-    std.apply_economizers(climate_zone, model)
 
     # apply the HVAC efficiency standards
     std.model_apply_hvac_efficiency_standard(model, climate_zone)
 
     # log the build messages and errors to a file
     log_messages_to_file("#{Dir.pwd}/openstudio-standards.log", debug = true)
-    reset_log()
-
-    # report fan and pump power ratings
-    runner.registerInfo("Final equipment efficiencies:")
-    report_pump_variables(model, runner, std)
-    report_fan_variables(model, runner, std)
 
     runner.registerFinalCondition("Added system type #{hvac_system_type} to model.")
 
     return true
-
   end # end the run method
 end # end the measure
 

@@ -1,9 +1,10 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>aedg_small_to_medium_office_electric_equipment_controls</name>
   <uid>b297ea8a-d21f-416b-8b41-3dfc99b430cf</uid>
-  <version_id>01f87e1d-7578-44f9-819e-dff516edd3b4</version_id>
-  <version_modified>20180705T164206Z</version_modified>
+  <version_id>cfd8c882-f8dd-47db-99a0-eeb1217b249e</version_id>
+  <version_modified>20200401T014101Z</version_modified>
   <xml_checksum>1F21832E</xml_checksum>
   <class_name>AedgSmallToMediumOfficeElectricEquipmentControls</class_name>
   <display_name>AedgSmallToMediumOfficeElectricEquipmentControls</display_name>
@@ -19,8 +20,8 @@
       <default_value>0</default_value>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Equipment.Equipment Controls</tag>
   </tags>
@@ -44,24 +45,6 @@
       <checksum>B8BD0491</checksum>
     </file>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>64624291</checksum>
-    </file>
-    <file>
-      <filename>AedgSmallToMediumOfficeElectricEquipmentControls_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>473B77F5</checksum>
-    </file>
-    <file>
-      <filename>LICENSE.md</filename>
-      <filetype>md</filetype>
-      <usage_type>license</usage_type>
-      <checksum>9640B6CB</checksum>
-    </file>
-    <file>
       <filename>README.md.erb</filename>
       <filetype>erb</filetype>
       <usage_type>readmeerb</usage_type>
@@ -74,33 +57,33 @@
       <checksum>CE3A154A</checksum>
     </file>
     <file>
-      <filename>os_lib_helper_methods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9CFC43FB</checksum>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>E0468DD6</checksum>
     </file>
     <file>
-      <filename>os_lib_lighting_and_equipment.rb</filename>
+      <filename>AedgSmallToMediumOfficeElectricEquipmentControls_Test.rb</filename>
       <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E63C7739</checksum>
+      <usage_type>test</usage_type>
+      <checksum>66D1F434</checksum>
     </file>
     <file>
-      <filename>os_lib_schedules.rb</filename>
+      <filename>OsLib_AedgMeasures.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>5F1CEF3A</checksum>
+      <checksum>9600927D</checksum>
     </file>
     <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
+        <min_compatible>2.8.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>EDF4B283</checksum>
+      <checksum>7B59AE03</checksum>
     </file>
   </files>
 </measure>
