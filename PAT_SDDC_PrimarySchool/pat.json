@@ -7,6 +7,10 @@
   "analysis_type": "Manual",
   "cliDebug": "",
   "cliVerbose": "",
+  "downloadReports": true,
+  "downloadOSW": true,
+  "downloadOSM": true,
+  "downloadZIP": true,
   "timeoutWorkflow": 28800,
   "timeoutUploadResults": 28800,
   "timeoutInitWorker": 28800,
@@ -133,9 +137,9 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/ChangeBuildingLocation",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/ChangeBuildingLocation",
       "name": "change_building_location",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/ChangeBuildingLocation",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/ChangeBuildingLocation",
       "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
       "version_id": "ff1497c6-f1bd-40b3-b972-f4424a902b8f",
@@ -1154,13 +1158,13 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.11973293101180005,
+      "instanceId": 0.797399195516129,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-model-articulation-gem/lib/measures/create_and_assign_thermal_zones_for_unassigned_spaces",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/create_and_assign_thermal_zones_for_unassigned_spaces",
       "name": "create_and_assign_thermal_zones_for_unassigned_spaces",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-model-articulation-gem/lib/measures/create_and_assign_thermal_zones_for_unassigned_spaces",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/create_and_assign_thermal_zones_for_unassigned_spaces",
       "uid": "ddaa752e-5d40-49b2-88de-62e71697e614",
       "uuid": "{ddaa752e-5d40-49b2-88de-62e71697e614}",
       "version_id": "586d5447-8517-4960-a3c8-bacce43f147e",
@@ -1273,7 +1277,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.32082563004800924,
+      "instanceId": 0.7783840456714437,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false,
@@ -1536,16 +1540,16 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.6979931175367586,
+      "instanceId": 0.5209709932738149,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_electric_equipment",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_electric_equipment",
       "name": "zedgk_12_electric_equipment",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_electric_equipment",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_electric_equipment",
       "uid": "d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268",
       "uuid": "{d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268}",
       "version_id": "c3374ad6-5ef9-4741-908d-f6b57998d240",
@@ -1683,7 +1687,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.4517356326209194,
+      "instanceId": 0.619446650869294,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1692,9 +1696,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12ElectricEquipmentControls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12ElectricEquipmentControls",
       "name": "aedg_k_12_electric_equipment_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12ElectricEquipmentControls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12ElectricEquipmentControls",
       "uid": "285bc263-7429-4049-a0ce-f60fabf46eec",
       "uuid": "{285bc263-7429-4049-a0ce-f60fabf46eec}",
       "version_id": "d98faa47-3f28-49b2-8ab3-1bc9e5220776",
@@ -1853,13 +1857,13 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6709020240163683,
+      "instanceId": 0.948339845946953,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_interior_lighting",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_interior_lighting",
       "name": "zedgk_12_interior_lighting",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_interior_lighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_interior_lighting",
       "uid": "d3283a8e-aee1-4b9d-9217-a7a988726fb4",
       "uuid": "{d3283a8e-aee1-4b9d-9217-a7a988726fb4}",
       "version_id": "768054f7-085c-4ae6-a00b-0253029fd695",
@@ -2018,13 +2022,13 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.4042500601703156,
+      "instanceId": 0.0040218493393060495,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12InteriorLightingControls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12InteriorLightingControls",
       "name": "aedg_k_12_interior_lighting_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12InteriorLightingControls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12InteriorLightingControls",
       "uid": "9f395ee4-5f82-4ca6-8a50-cb854893827e",
       "uuid": "{9f395ee4-5f82-4ca6-8a50-cb854893827e}",
       "version_id": "4ba4ba11-e49b-42b3-84f8-abc22063233f",
@@ -2183,13 +2187,13 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9337330819413843,
+      "instanceId": 0.35506352039176625,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_exterior_wall_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_exterior_wall_construction",
       "name": "zedgk_12_exterior_wall_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_exterior_wall_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_exterior_wall_construction",
       "uid": "39d1c328-0bbb-40ee-a18c-ba977b462a11",
       "uuid": "{39d1c328-0bbb-40ee-a18c-ba977b462a11}",
       "version_id": "2c9b37f4-43ff-4c5f-9eb2-e6518e33011c",
@@ -2327,7 +2331,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.43568052009472047,
+      "instanceId": 0.4541335292879014,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -2335,9 +2339,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_roof_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_roof_construction",
       "name": "zedgk_12_roof_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_roof_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_roof_construction",
       "uid": "d322d264-5855-4b20-bd3e-3c5e5032bc05",
       "uuid": "{d322d264-5855-4b20-bd3e-3c5e5032bc05}",
       "version_id": "3efcaa84-7411-450a-b527-09bf8944c875",
@@ -2537,7 +2541,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.8089063839066908,
+      "instanceId": 0.3047541052247389,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -2545,9 +2549,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12InteriorFinishes",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12InteriorFinishes",
       "name": "aedg_k_12_interior_finishes",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12InteriorFinishes",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12InteriorFinishes",
       "uid": "9165a1f8-9cd1-4492-b20b-5257c05fc5d9",
       "uuid": "{9165a1f8-9cd1-4492-b20b-5257c05fc5d9}",
       "version_id": "b91269fc-0c8a-41a4-88c1-6012d94cef62",
@@ -2719,13 +2723,13 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.8941745172557094,
+      "instanceId": 0.02159591825152396,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_fenestration_and_daylighting_controls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_fenestration_and_daylighting_controls",
       "name": "zedgk_12_fenestration_and_daylighting_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_fenestration_and_daylighting_controls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_fenestration_and_daylighting_controls",
       "uid": "eb3bfd3d-64b6-4a9f-857d-3dd8a7becec5",
       "uuid": "{eb3bfd3d-64b6-4a9f-857d-3dd8a7becec5}",
       "version_id": "a590f5fe-eb78-4538-b2fe-3984abdae2d9",
@@ -3058,13 +3062,13 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.41602807288862786,
+      "instanceId": 0.16161923887265384,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_exterior_door_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_exterior_door_construction",
       "name": "zedgk_12_exterior_door_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_exterior_door_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_exterior_door_construction",
       "uid": "11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c",
       "uuid": "{11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c}",
       "version_id": "322f37c3-7df7-4086-aacf-149e6c59505e",
@@ -3198,16 +3202,16 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
         }
       ],
-      "instanceId": 0.4244835406348384,
+      "instanceId": 0.22651032824310535,
       "numberOfOptions": 1,
       "$$hashKey": "object:56484",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_envelope_infiltration",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_envelope_infiltration",
       "name": "zedgk_12_envelope_infiltration",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_envelope_infiltration",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_envelope_infiltration",
       "uid": "e6232b68-8c72-4986-8693-84c0fe1d00ec",
       "uuid": "{e6232b68-8c72-4986-8693-84c0fe1d00ec}",
       "version_id": "677dc885-5118-45c0-9416-899da653c1a9",
@@ -3366,13 +3370,13 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.068329569032763,
+      "instanceId": 0.7499550352814475,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_swh",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_swh",
       "name": "zedgk_12_swh",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_swh",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_swh",
       "uid": "d765082f-34fb-4b03-bd4e-e8e4a418ba2a",
       "uuid": "{d765082f-34fb-4b03-bd4e-e8e4a418ba2a}",
       "version_id": "23ca1126-09ed-4855-aa7a-557592ca914b",
@@ -3565,7 +3569,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.04287998267270754,
+      "instanceId": 0.6616517156174913,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -3573,9 +3577,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_kitchen",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_kitchen",
       "name": "zedgk_12_kitchen",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_kitchen",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_kitchen",
       "uid": "6d9f212d-e859-4857-8ee7-1670de9c2bfb",
       "uuid": "{6d9f212d-e859-4857-8ee7-1670de9c2bfb}",
       "version_id": "ad77907f-b0a5-4b5e-85df-73e479c37b08",
@@ -3768,7 +3772,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.319136691419897,
+      "instanceId": 0.03467329065322988,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -3776,9 +3780,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12ExteriorLighting",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12ExteriorLighting",
       "name": "aedg_k_12_exterior_lighting",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12ExteriorLighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12ExteriorLighting",
       "uid": "04fd62eb-3e9f-4bfc-98d8-7827b47e034a",
       "uuid": "{04fd62eb-3e9f-4bfc-98d8-7827b47e034a}",
       "version_id": "25c8db85-68d6-44ca-a17c-4f77ecfdf74a",
@@ -4271,7 +4275,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6258698740251838,
+      "instanceId": 0.4745547751124921,
       "showWarningText": false
     },
     {
@@ -4705,7 +4709,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.45494456130711236,
+      "instanceId": 0.3462959735116957,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -5142,16 +5146,16 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.8235589236157888,
+      "instanceId": 0.38397449268505435,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/add_rooftop_pv",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/add_rooftop_pv",
       "name": "add_rooftop_pv",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/add_rooftop_pv",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/add_rooftop_pv",
       "uid": "34550614-0c87-44db-9252-0ca0915b1e64",
       "uuid": "{34550614-0c87-44db-9252-0ca0915b1e64}",
       "version_id": "16fd2166-6f79-4384-a763-80b9e1edf5dd",
@@ -5492,13 +5496,13 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.45784140653739525,
+      "instanceId": 0.2668525288853256,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/SetThermostatSchedules",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/SetThermostatSchedules",
       "name": "set_thermostat_schedules",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/SetThermostatSchedules",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/SetThermostatSchedules",
       "uid": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
       "uuid": "{2978cde0-53d5-4096-bdab-11f9f6e074f1}",
       "version_id": "c08c1cff-1e5e-474c-915e-c1a3abe0c0b8",
@@ -5903,16 +5907,16 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.8436712872041485,
+      "instanceId": 0.12574639693847,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/SetThermostatSchedules",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/SetThermostatSchedules",
       "name": "set_thermostat_schedules_2",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/SetThermostatSchedules",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/SetThermostatSchedules",
       "uid": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
       "uuid": "{2978cde0-53d5-4096-bdab-11f9f6e074f1}",
       "version_id": "c08c1cff-1e5e-474c-915e-c1a3abe0c0b8",
@@ -6317,16 +6321,16 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.02531536218192043,
+      "instanceId": 0.4797595307640623,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_vrf_with_doas",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_hvac_vrf_with_doas",
       "name": "zedgvrf_with_doas",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_vrf_with_doas",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_hvac_vrf_with_doas",
       "uid": "633b8efc-7bcb-4aa0-8821-d0ee08f960db",
       "uuid": "{633b8efc-7bcb-4aa0-8821-d0ee08f960db}",
       "version_id": "efba83f0-f6d0-4384-9a99-2de393743787",
@@ -6557,16 +6561,16 @@
           "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
         }
       ],
-      "instanceId": 0.8649739397043184,
+      "instanceId": 0.5000566123162757,
       "numberOfOptions": 1,
       "$$hashKey": "object:7459",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_gshp_doas",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_hvac_gshp_doas",
       "name": "zedgk_12_hvac",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_gshp_doas",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_hvac_gshp_doas",
       "uid": "59793426-1d07-41d2-9478-d7abf1410764",
       "uuid": "{59793426-1d07-41d2-9478-d7abf1410764}",
       "version_id": "0a2a389f-488e-49fb-a3a2-b6473a6aa537",
@@ -6797,16 +6801,16 @@
           "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
         }
       ],
-      "instanceId": 0.10885354331647279,
+      "instanceId": 0.12772796954548937,
       "numberOfOptions": 1,
       "$$hashKey": "object:7458",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
       "name": "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
       "uid": "33ed4338-5e86-415f-8df0-87e32e413711",
       "uuid": "{33ed4338-5e86-415f-8df0-87e32e413711}",
       "version_id": "df5a2b03-1c24-4b76-974e-7430a3c0a65c",
@@ -7037,16 +7041,16 @@
           "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
         }
       ],
-      "instanceId": 0.8989506460753676,
+      "instanceId": 0.6458686558710391,
       "numberOfOptions": 1,
       "$$hashKey": "object:7460",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-model-articulation-gem/lib/measures/create_baseline_building",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/create_baseline_building",
       "name": "create_baseline_building",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-model-articulation-gem/lib/measures/create_baseline_building",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/create_baseline_building",
       "uid": "4de56e21-b6cd-45d9-8466-862507d228b2",
       "uuid": "{4de56e21-b6cd-45d9-8466-862507d228b2}",
       "version_id": "a96c965c-f98e-4ece-aee2-467f3a9e8902",
@@ -7288,7 +7292,7 @@
           "option_15": "ASHRAE 169-2013-8A",
           "units": "",
           "minimum": "ASHRAE 169-2013-1A",
-          "maximum": "ASHRAE 169-2013-7A",
+          "maximum": "ASHRAE 169-2013-8A",
           "mode": null
         },
         {
@@ -7357,7 +7361,7 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": true,
+      "open": false,
       "addedToProject": true,
       "date": "6/16/2020",
       "author": "",
@@ -7771,15 +7775,15 @@
           "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         }
       ],
-      "instanceId": 0.9018357541990001,
+      "instanceId": 0.4213193513667026,
       "numberOfOptions": 15,
       "$$hashKey": "object:13368",
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_insert_ground_domain_e_kusdua",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_insert_ground_domain_e_kusdua",
       "name": "zedgk_12_insert_ground_domain_basement_e_kusdua",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_insert_ground_domain_e_kusdua",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_insert_ground_domain_e_kusdua",
       "uid": "aa8123f0-4d04-4141-8a00-8a2bccf30315",
       "uuid": "{aa8123f0-4d04-4141-8a00-8a2bccf30315}",
       "version_id": "95431eb6-81ab-4e17-9f20-bbc379385dbd",
@@ -7965,13 +7969,13 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.10937960511507394,
+      "instanceId": 0.3606397176417957,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/tariff_selection_flat",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/tariff_selection_flat",
       "name": "tariff_selection_flat",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/tariff_selection_flat",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/tariff_selection_flat",
       "uid": "539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55",
       "uuid": "{539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55}",
       "version_id": "1d8b09b4-afbd-4729-ad9b-a7a09a1613e6",
@@ -8410,16 +8414,16 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.3210446978318713,
+      "instanceId": 0.3505621440919098,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/openstudio_results",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/openstudio_results",
       "name": "openstudio_results",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/openstudio_results",
       "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
       "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
       "version_id": "e6734a7d-07db-4327-8362-9e110a9683d0",
@@ -8657,7 +8661,7 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": false,
+      "open": true,
       "addedToProject": true,
       "date": "5/8/2020",
       "author": "",
@@ -8684,13 +8688,13 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.9548213779269838,
+      "instanceId": 0.7644365131161064,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/envelope_and_internal_load_breakdown",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/envelope_and_internal_load_breakdown",
       "name": "envelope_and_internal_load_breakdown",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/envelope_and_internal_load_breakdown",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/envelope_and_internal_load_breakdown",
       "uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
       "uuid": "{8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02}",
       "version_id": "7ba824c2-f08f-4c5c-bdd6-2aa1965bd3e6",
@@ -8794,9 +8798,10 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.6380205140109878,
+      "instanceId": 0.9616238438670284,
       "numberOfOptions": 1,
-      "$$hashKey": "object:57845"
+      "$$hashKey": "object:57845",
+      "outputMeasure": false
     }
   ],
   "filesToInclude": [],
@@ -8992,7 +8997,7 @@
       "id": "Baseline",
       "run": false,
       "modified": false,
-      "selected": true
+      "selected": false
     }
   ]
 }
