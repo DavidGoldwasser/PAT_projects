@@ -38,6 +38,12 @@ class SurfaceMatchingDiagnostic < OpenStudio::Ruleset::ModelUserScript
     remove_duplicate_surfaces.setDefaultValue(true)
     args << remove_duplicate_surfaces
 
+    #make an argument for match surfaces
+    remove_adiabatic = OpenStudio::Ruleset::OSArgument::makeBoolArgument("remove_adiabatic",true)
+    remove_adiabatic.setDisplayName("Make Adiabatic surfaces Outdoor prior to intersect and match")
+    remove_adiabatic.setDefaultValue(false)
+    args << remove_adiabatic
+
     #make an argument for intersect surfaces
     intersect_surfaces = OpenStudio::Ruleset::OSArgument::makeBoolArgument("intersect_surfaces",true)
     intersect_surfaces.setDisplayName("Intersect Surfaces")
@@ -51,7 +57,7 @@ class SurfaceMatchingDiagnostic < OpenStudio::Ruleset::ModelUserScript
     args << match_surfaces
 
     return args
-  end #end the arguments method
+  end
 
   #define what happens when the measure is run
   def run(model, runner, user_arguments)
@@ -61,6 +67,7 @@ class SurfaceMatchingDiagnostic < OpenStudio::Ruleset::ModelUserScript
     remove_duplicate_vertices = runner.getBoolArgumentValue("remove_duplicate_vertices",user_arguments)
     remove_collinear_vertices = runner.getBoolArgumentValue("remove_collinear_vertices",user_arguments)
     remove_duplicate_surfaces = runner.getBoolArgumentValue("remove_duplicate_surfaces",user_arguments)
+    remove_adiabatic = runner.getBoolArgumentValue("remove_adiabatic",user_arguments)
     intersect_surfaces = runner.getBoolArgumentValue("intersect_surfaces",user_arguments)
     match_surfaces = runner.getBoolArgumentValue("match_surfaces",user_arguments)
 
@@ -76,6 +83,19 @@ class SurfaceMatchingDiagnostic < OpenStudio::Ruleset::ModelUserScript
 
     #reporting initial condition of model
     runner.registerInitialCondition("The initial model has #{initialMatchedSurfaceCounter} matched surfaces.")
+
+    adiabatic_surfaces = []
+    if remove_adiabatic
+      model.getSurfaces.each do |surface|
+        if surface.outsideBoundaryCondition == "Adiabatic"
+          adiabatic_surfaces << surface
+          surface.setOutsideBoundaryCondition("Outdoors")
+        end
+      end
+    end
+    if adiabatic_surfaces.size > 0
+      runner.registerInfo("Changed #{adiabatic_surfaces.size} surfaces from adiabatic to Outdoors prior to intersect and surface match.")
+    end
 
     # removing duplicate points in a surface
     if remove_duplicate_vertices
@@ -208,9 +228,9 @@ class SurfaceMatchingDiagnostic < OpenStudio::Ruleset::ModelUserScript
 
     return true
  
-  end #end the run method
+  end
 
-end #end the measure
+end
 
 #this allows the measure to be use by the application
 SurfaceMatchingDiagnostic.new.registerWithApplication

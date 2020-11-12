@@ -78,7 +78,7 @@ def update_pat(pat_directory_name)
       #FileUtils.rm_rf("#{pat_directory_name}/measures"proj_measure)
 
       # copy new measure
-      FileUtils.copy_entry("#{gem_measures}/#{proj_measure}","#{pat_directory_name}/measures")
+      FileUtils.copy_entry("#{gem_measures}/#{proj_measure}","#{pat_directory_name}/measures/#{proj_measure}")
 
       # add to array
       updated_measures << proj_measure
