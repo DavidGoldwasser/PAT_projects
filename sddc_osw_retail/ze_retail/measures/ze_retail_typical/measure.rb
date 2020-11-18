@@ -486,8 +486,24 @@ class ZeRetailCreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
   def run(model, runner, user_arguments)
     super(model, runner, user_arguments)
 
-    # method run from os_lib_model_generation.rb
-    result = typical_building_from_model(model, runner, user_arguments)
+    temp_dir = File.expand_path('asdf', File.dirname(__FILE__))
+
+    start_dir = Dir.pwd
+    begin
+      unless Dir.exist?(temp_dir)
+        Dir.mkdir(temp_dir)
+      end
+      Dir.chdir(temp_dir)
+
+      # method run from os_lib_model_generation.rb
+      result = typical_building_from_model(model, runner, user_arguments)
+
+    ensure
+      Dir.chdir(start_dir)
+
+      # delete sizing run dir
+      # FileUtils.rm_rf(temp_dir)
+    end
 
     if result == false
       return false
