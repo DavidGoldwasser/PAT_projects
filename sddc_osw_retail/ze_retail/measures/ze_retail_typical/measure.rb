@@ -486,24 +486,22 @@ class ZeRetailCreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
   def run(model, runner, user_arguments)
     super(model, runner, user_arguments)
 
-    temp_dir = File.expand_path('asdf', File.dirname(__FILE__))
-
+    # store starting directory
     start_dir = Dir.pwd
-    begin
-      unless Dir.exist?(temp_dir)
-        Dir.mkdir(temp_dir)
-      end
-      Dir.chdir(temp_dir)
 
-      # method run from os_lib_model_generation.rb
-      result = typical_building_from_model(model, runner, user_arguments)
-
-    ensure
-      Dir.chdir(start_dir)
-
-      # delete sizing run dir
-      # FileUtils.rm_rf(temp_dir)
+    # todo - I should be able to access directory for this measure step instead of just in run
+    temp_dir = runner.workflow.absoluteRunDir.to_s + "/ze_retail_out"
+    unless Dir.exist?(temp_dir)
+      Dir.mkdir(temp_dir)
     end
+    Dir.chdir(temp_dir)
+
+    # method run from osw run directory
+    result = typical_building_from_model(model, runner, user_arguments)
+
+    # change directory back and clean up
+    Dir.chdir(start_dir)
+    FileUtils.rm_rf(temp_dir)
 
     if result == false
       return false
