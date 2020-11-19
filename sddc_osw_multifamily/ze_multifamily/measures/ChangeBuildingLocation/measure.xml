@@ -1,9 +1,10 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>change_building_location</name>
   <uid>d4db4971-f5ba-11e3-a3ac-0800200c9a66</uid>
-  <version_id>ee75726e-6dad-4da9-9f64-a40f4e79bd92</version_id>
-  <version_modified>20200229T024319Z</version_modified>
+  <version_id>99e1b02d-aed9-402c-98d7-e7ae22a920e4</version_id>
+  <version_modified>20201119T150837Z</version_modified>
   <xml_checksum>057E8D9D</xml_checksum>
   <class_name>ChangeBuildingLocation</class_name>
   <display_name>ChangeBuildingLocation</display_name>
@@ -224,8 +225,8 @@
       </choices>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Whole Building.Space Types</tag>
   </tags>
@@ -261,7 +262,7 @@
       <checksum>E8C83421</checksum>
     </file>
     <file>
-      <filename>test.osm</filename>
+      <filename>model_test.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
       <checksum>0B8479BC</checksum>
@@ -321,7 +322,7 @@
       <checksum>7C51425E</checksum>
     </file>
     <file>
-      <filename>test.osw</filename>
+      <filename>model_test.osw</filename>
       <filetype>osw</filetype>
       <usage_type>test</usage_type>
       <checksum>F5FABCCF</checksum>
@@ -369,22 +370,10 @@
       <checksum>8657DDB9</checksum>
     </file>
     <file>
-      <filename>test_with_epw.osm</filename>
+      <filename>model_test_with_epw.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
       <checksum>D1551F9A</checksum>
-    </file>
-    <file>
-      <filename>README.md</filename>
-      <filetype>md</filetype>
-      <usage_type>readme</usage_type>
-      <checksum>BCD09124</checksum>
-    </file>
-    <file>
-      <filename>stat_file.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>79F5AADA</checksum>
     </file>
     <file>
       <filename>LICENSE.md</filename>
@@ -393,33 +382,39 @@
       <checksum>E0468DD6</checksum>
     </file>
     <file>
-      <filename>os_lib_helper_methods.rb</filename>
+      <filename>stat_file.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>07B01D67</checksum>
+      <checksum>79F5AADA</checksum>
     </file>
     <file>
       <filename>epw.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>0CA3BA14</checksum>
+      <checksum>CA6053B6</checksum>
     </file>
     <file>
       <filename>change_building_location_test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>13C9910C</checksum>
+      <checksum>E1623A7E</checksum>
     </file>
     <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
+        <min_compatible>3.0.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>9831ECC1</checksum>
+      <checksum>C96B84CD</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>BCD09124</checksum>
     </file>
   </files>
 </measure>

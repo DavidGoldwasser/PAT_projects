@@ -36,6 +36,10 @@
 # Authors : Nicholas Long, David Goldwasser
 # Simple measure to load the EPW file and DDY file
 
+# load OpenStudio measure libraries from openstudio-extension gem
+require 'openstudio-extension'
+require 'openstudio/extension/core/os_lib_helper_methods'
+
 class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
   Dir[File.dirname(__FILE__) + '/resources/*.rb'].each { |file| require file }
 
@@ -210,7 +214,7 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
     weather_file.setLongitude(epw_file.lon)
     weather_file.setTimeZone(epw_file.gmt)
     weather_file.setElevation(epw_file.elevation)
-    weather_file.setString(10, "file:///#{epw_file.filename}")
+    weather_file.setString(10, epw_file.filename)
 
     weather_name = "#{epw_file.city}_#{epw_file.state}_#{epw_file.country}"
     weather_lat = epw_file.lat
@@ -313,7 +317,7 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
         /December .4. Condns DB=>MCWB/
       ]
       ddy_list.each do |ddy_name_regex|
-        if d.name.get.to_s =~ ddy_name_regex
+        if d.name.get.to_s.match?(ddy_name_regex)
           runner.registerInfo("Adding object #{d.name}")
 
           # add the object to the existing model
@@ -357,11 +361,11 @@ class ChangeBuildingLocation < OpenStudio::Measure::ModelMeasure
     # set climate zone
     climateZones.clear
     if args['climate_zone'].include?('CEC')
-      climateZones.setClimateZone('CEC', args['climate_zone'].gsub('T24-CEC', ''))
-      runner.registerInfo("Setting Climate Zone to #{climateZones.getClimateZones('CEC').first.value}")
+      climateZones.setClimateZone('CEC', args['climate_zone'].gsub('CEC T24-CEC', ''))
+      runner.registerInfo("Setting CEC Climate Zone to #{climateZones.getClimateZones('CEC').first.value}")
     else
       climateZones.setClimateZone('ASHRAE', args['climate_zone'].gsub('ASHRAE 169-2013-', ''))
-      runner.registerInfo("Setting Climate Zone to #{climateZones.getClimateZones('ASHRAE').first.value}")
+      runner.registerInfo("Setting ASHRAE Climate Zone to #{climateZones.getClimateZones('ASHRAE').first.value}")
     end
 
     # add final condition

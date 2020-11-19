@@ -317,6 +317,17 @@
       {
          "arguments" : 
          {
+            "__SKIP__" : false,
+            "cell_efficiency" : "0.1976",
+            "fraction_of_surface" : "0.50",
+            "inverter_efficiency" : "0.96"
+         },
+         "measure_dir_name" : "add_rooftop_pv",
+         "name" : "add_rooftop_pv"
+      },
+      {
+         "arguments" : 
+         {
             "__SKIP__" : false
          },
          "measure_dir_name" : "view_model",
@@ -339,5 +350,5 @@
          "name" : "envelope_and_internal_load_breakdown"
       }
    ],
-   "updated_at" : "20201119T002726Z"
+   "updated_at" : "20201119T092656Z"
 }
