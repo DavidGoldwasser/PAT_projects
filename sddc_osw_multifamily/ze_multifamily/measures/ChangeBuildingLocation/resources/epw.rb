@@ -156,12 +156,11 @@ module OpenStudio
         header_section = true
         row_count = 0
 
-        # this breaks in Ruby 2.5.x
-        CSV.foreach(@filename) do |row|
+        CSV.foreach(@filename, 'r') do |row|
           row_count += 1
 
           if header_section
-            if row[0].match?(/data.periods/i)
+            if row[0] =~ /data.periods/i
               @data_period = {
                 count: row[1].to_i,
                 records_per_hour: row[2].to_i,
@@ -190,11 +189,11 @@ module OpenStudio
             @state = row[2]
             @country = row[3]
             @data_type = row[4]
-            if @data_type.match?(/TMY3/i)
+            if @data_type =~ /TMY3/i
               @data_type = 'TMY3'
-            elsif @data_type.match?(/TMY2/i)
+            elsif @data_type =~ /TMY2/i
               @data_type = 'TMY2'
-            elsif @data_type.match?(/TMY/i)
+            elsif @data_type =~ /TMY/i
               @data_type = 'TMY'
             end
             @wmo = row[5]
