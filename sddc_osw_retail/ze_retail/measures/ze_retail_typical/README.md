@@ -2,13 +2,13 @@
 
 ###### (Automatically generated documentation)
 
-# 
+# ZE Retail Create Typical Building from Model
 
 ## Description
-
+Custom measure based on create typical building from model for use with ze retail workflow.
 
 ## Modeler Description
-
+It is important that the template argument chosen for this measure is in line with the buding types for the stub space types of the model passed in.
 
 ## Measure Type
 ModelMeasure
@@ -180,8 +180,254 @@ This measure relies on the openstudio-standards gem which is included in the Ope
 *(Automatically generated argument information follows)*## Arguments
 
 
+### Target Standard
+
+**Name:** template,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Target Standard for Space Loads
+
+**Name:** template_space_loads,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### HVAC System Type
+
+**Name:** system_type,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### HVAC System Delivery Type
+How the HVAC system delivers heating or cooling to the zone.
+**Name:** hvac_delivery_type,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### HVAC Heating Source
+The primary source of heating used by HVAC systems in the model.
+**Name:** htg_src,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### HVAC Cooling Source
+The primary source of cooling used by HVAC systems in the model.
+**Name:** clg_src,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Service Water Heating Source
+The primary source of heating used by SWH systems in the model.
+**Name:** swh_src,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Kitchen Exhaust MakeUp Air Calculation Method
+Determine logic to identify dining or cafe zones to provide makeup air to kitchen exhaust.
+**Name:** kitchen_makeup,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Exterior Lighting Zone
+Identify the Exterior Lighting Zone for the Building Site.
+**Name:** exterior_lighting_zone,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Constructions to Model
+Construction Set will be applied to entire building
+**Name:** add_constructions,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Space Type Loads to Model
+Populate existing space types in model with internal loads.
+**Name:** add_space_type_loads,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Elevators to Model
+Elevators will be add directly to space in model vs. being applied to a space type.
+**Name:** add_elevators,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Internal Mass to Model
+Adds internal mass to each space.
+**Name:** add_internal_mass,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Exterior Lights to Model
+Multiple exterior lights objects will be added for different classes of lighting such as parking and facade.
+**Name:** add_exterior_lights,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Onsite Parking Fraction
+If set to 0 no exterior lighting for parking will be added
+**Name:** onsite_parking_fraction,
+**Type:** Double,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Exhaust Fans to Model
+Depending upon building type exhaust fans can be in kitchens, restrooms or other space types
+**Name:** add_exhaust,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Service Water Heating to Model
+This will add both the supply and demand side of service water heating.
+**Name:** add_swh,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Thermostats
+Add Thermostat to model based on Space Type Standards information of spaces assigned to thermal zones.
+**Name:** add_thermostat,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add HVAC System to Model
+Add HVAC System to the model
+**Name:** add_hvac,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Add Refrigeration to Model
+Add refrigeration cases and walkins model
+**Name:** add_refrigeration,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Modify weekday hours of operation
+Modify the weekday hours of operation in the model.
+**Name:** modify_wkdy_op_hrs,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Weekday Operating Hours Start Time
+Enter 24 hour values with fractional values converted to minutes. e.g. 17.25 = 5:15pm. Only used if Modify weekday hours of operation is true.
+**Name:** wkdy_op_hrs_start_time,
+**Type:** Double,
+**Units:** Hours,
+**Required:** true,
+**Model Dependent:** false
+
+### Weekday Operating Hours Duration
+Length of weekday operating hours. Enter 24 hour values with fractional values converted to minutes. e.g. 17.25 = 5:15pm. Only used if Modify weekday hours of operation is true.
+**Name:** wkdy_op_hrs_duration,
+**Type:** Double,
+**Units:** Hours,
+**Required:** true,
+**Model Dependent:** false
+
+### Modify weekend hours of operation
+Modify the weekend hours of operation in the model.
+**Name:** modify_wknd_op_hrs,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Weekend Operating Hours Start Time
+Enter 24 hour values with fractional values converted to minutes. e.g. 17.25 = 5:15pm.  Only used if Modify weekend hours of operation is true.
+**Name:** wknd_op_hrs_start_time,
+**Type:** Double,
+**Units:** Hours,
+**Required:** true,
+**Model Dependent:** false
+
+### Weekend Operating Hours Duration
+Length of weekend operating hours. Enter 24 hour values with fractional values converted to minutes. e.g. 17.25 = 5:15pm.  Only used if Modify weekend hours of operation is true.
+**Name:** wknd_op_hrs_duration,
+**Type:** Double,
+**Units:** Hours,
+**Required:** true,
+**Model Dependent:** false
+
+### Unmet Hours Tolerance
+Set the thermostat setpoint tolerance for unmet hours in degrees Rankine
+**Name:** unmet_hours_tolerance,
+**Type:** Double,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Clean Model of non-geometry objects
+Only removes objects of type that are selected to be added.
+**Name:** remove_objects,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Use Upstream Argument Values
+When true this will look for arguments or registerValues in upstream measures that match arguments from this measure, and will use the value from the upstream measure in place of what is entered for this measure.
+**Name:** use_upstream_args,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Enable Daylight Savings
+By default this will force daylight savings to be enabled. Set to false if in a location where DST is not followed, or if needed for specific use case.
+**Name:** enable_dst,
+**Type:** Boolean,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
+
+### Climate Zone.
+
+**Name:** climate_zone,
+**Type:** Choice,
+**Units:** ,
+**Required:** true,
+**Model Dependent:** false
 
 
-This measure does not have any user arguments
 
 

@@ -92,7 +92,7 @@ class ZeRetailCreateTypicalBuildingFromModel < OpenStudio::Measure::ModelMeasure
     
     # Make an argument for lights template
     template_space_loads = OpenStudio::Measure::OSArgument.makeChoiceArgument('template_space_loads', get_templates, true)
-    template_space_loads.setDisplayName('Target Standard')
+    template_space_loads.setDisplayName('Target Standard for Space Loads')
     template_space_loads.setDefaultValue(default_string)
     args << template_space_loads
 
