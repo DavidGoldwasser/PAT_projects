@@ -30,7 +30,7 @@
             "occupants_weekday_sch" : "1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.88, 0.41, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.29, 0.55, 0.90, 0.90, 0.90, 1.00, 1.00, 1.00",
             "occupants_weekend_sch" : "1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 0.88, 0.41, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.29, 0.55, 0.90, 0.90, 0.90, 1.00, 1.00, 1.00"
          },
-         "description" : "For Number of Bedrooms enter a value for each unit in order of building unit number. The unit number is extracted from the right side of the unit name separated from the name prefix by a space. Merging of floorspace.json with the OSM will happen in this measure and not in the geometry editor tab of the OpenStudio Application.",
+         "description" : "For Number of Bedrooms enter a value for each unit in order of building unit number. The unit number is extracted from the right side of the unit name separated from the name prefix by a space. Merging of floorspace.json with the OSM will happen in this measure and should NOT be done in the geometry editor tab of the OpenStudio Application.",
          "measure_dir_name" : "ResidentialGeometryCreateFromFloorspaceJS",
          "modeler_description" : "The example floorspace.json file used for this OSW organized unit number by number of bedrooms to make the number of bedrooms argument cleaner. Building Unit 112 for example is the 12th 1 Bedroom unit. This workflow is setup to work with OpenStudio 3.0.1 but not OpenStudio 3.1.0.",
          "name" : "ResidentialGeometryCreateFromFloorspaceJS"
@@ -42,6 +42,7 @@
             "set_year" : "2019",
             "weather_file_name" : "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"
          },
+         "description" : "If the weather file argument is changed add an epw by that name to the files directory under the project folder along with a ddy and stat file that has the same name, other than the file extension.",
          "measure_dir_name" : "ChangeBuildingLocation",
          "name" : "ChangeBuildingLocation"
       },
@@ -262,7 +263,7 @@
             "projection_factor" : "1.0"
          },
          "measure_dir_name" : "AddOverhangsByProjectionFactor",
-         "name" : "AddOverhangsByProjectionFactor"
+         "name" : "South AddOverhangsByProjectionFactor"
       },
       {
          "arguments" : 
@@ -272,7 +273,7 @@
             "projection_factor" : "1.0"
          },
          "measure_dir_name" : "AddOverhangsByProjectionFactor",
-         "name" : "AddOverhangsByProjectionFactor"
+         "name" : "East AddOverhangsByProjectionFactor"
       },
       {
          "arguments" : 
@@ -282,7 +283,7 @@
             "projection_factor" : "1.0"
          },
          "measure_dir_name" : "AddOverhangsByProjectionFactor",
-         "name" : "AddOverhangsByProjectionFactor"
+         "name" : "West AddOverhangsByProjectionFactor"
       },
       {
          "arguments" : 
@@ -309,6 +310,7 @@
             "__SKIP__" : false,
             "swh_type" : "Waste Water Heat Pump 120F Supply and Electric Tank"
          },
+         "description" : "This replaces water heaters in individual units with a central water system.",
          "measure_dir_name" : "multifamily_central_wwhp",
          "name" : "multifamily_central_wwhp"
       },
@@ -337,5 +339,5 @@
          "name" : "envelope_and_internal_load_breakdown"
       }
    ],
-   "updated_at" : "20201117T221742Z"
+   "updated_at" : "20201119T002726Z"
 }

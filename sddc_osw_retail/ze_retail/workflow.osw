@@ -20,18 +20,9 @@
             "__SKIP__" : false,
             "weather_file_name" : "USA_GA_Atlanta-Hartsfield-Jackson.Intl.AP.722190_TMY3.epw"
          },
+         "description" : "If the weather file argument is changed add an epw by that name to the files directory under the project folder along with a ddy and stat file that has the same name, other than the file extension.",
          "measure_dir_name" : "ChangeBuildingLocation",
          "name" : "ChangeBuildingLocation"
-      },
-      {
-         "arguments" : 
-         {
-            "__SKIP__" : false,
-            "facade" : "North",
-            "wwr" : "0.0"
-         },
-         "measure_dir_name" : "SetWindowToWallRatioByFacade",
-         "name" : "SetWindowToWallRatioByFacade"
       },
       {
          "arguments" : 
@@ -41,7 +32,7 @@
             "wwr" : "0.3"
          },
          "measure_dir_name" : "SetWindowToWallRatioByFacade",
-         "name" : "SetWindowToWallRatioByFacade"
+         "name" : "South SetWindowToWallRatioByFacade"
       },
       {
          "arguments" : 
@@ -51,7 +42,7 @@
             "wwr" : "0.0"
          },
          "measure_dir_name" : "SetWindowToWallRatioByFacade",
-         "name" : "SetWindowToWallRatioByFacade"
+         "name" : "East SetWindowToWallRatioByFacade"
       },
       {
          "arguments" : 
@@ -61,7 +52,7 @@
             "wwr" : "0.0"
          },
          "measure_dir_name" : "SetWindowToWallRatioByFacade",
-         "name" : "SetWindowToWallRatioByFacade"
+         "name" : "West SetWindowToWallRatioByFacade"
       },
       {
          "arguments" : 
@@ -71,7 +62,7 @@
             "projection_factor" : "1.0"
          },
          "measure_dir_name" : "AddOverhangsByProjectionFactor",
-         "name" : "AddOverhangsByProjectionFactor"
+         "name" : "South AddOverhangsByProjectionFactor"
       },
       {
          "arguments" : 
@@ -81,7 +72,7 @@
             "projection_factor" : "1.0"
          },
          "measure_dir_name" : "AddOverhangsByProjectionFactor",
-         "name" : "AddOverhangsByProjectionFactor"
+         "name" : "East AddOverhangsByProjectionFactor"
       },
       {
          "arguments" : 
@@ -91,7 +82,7 @@
             "projection_factor" : "1.0"
          },
          "measure_dir_name" : "AddOverhangsByProjectionFactor",
-         "name" : "AddOverhangsByProjectionFactor"
+         "name" : "West AddOverhangsByProjectionFactor"
       },
       {
          "arguments" : 
@@ -99,6 +90,7 @@
             "__SKIP__" : false,
             "relative_building_rotation" : 0
          },
+         "description" : "Because this is placed after the window to wall ratio measures the final window to wall ratio by orientation may not reflect the pre-rotation values.",
          "measure_dir_name" : "RotateBuilding",
          "name" : "RotateBuilding"
       },
@@ -176,5 +168,5 @@
          "name" : "openstudio_results"
       }
    ],
-   "updated_at" : "20201118T054259Z"
+   "updated_at" : "20201118T231421Z"
 }

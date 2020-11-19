@@ -2734,7 +2734,7 @@ OS:SpaceType,
   Break_Room,                             !- Name
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ,                                       !- Group Rendering Name
+  {40f85b93-4019-415f-9caa-97fe38854386}, !- Group Rendering Name
   ,                                       !- Design Specification Outdoor Air Object Name
   90.1-2013,                              !- Standards Template
   Office,                                 !- Standards Building Type
@@ -2745,7 +2745,7 @@ OS:SpaceType,
   Closed_Office,                          !- Name
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ,                                       !- Group Rendering Name
+  {591999c5-9fe1-4c21-87f3-5ce088eda00f}, !- Group Rendering Name
   ,                                       !- Design Specification Outdoor Air Object Name
   90.1-2013,                              !- Standards Template
   Office,                                 !- Standards Building Type
@@ -2756,7 +2756,7 @@ OS:SpaceType,
   Conference,                             !- Name
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ,                                       !- Group Rendering Name
+  {24bb1668-cc56-47c0-a8bc-00fdf83b3e86}, !- Group Rendering Name
   ,                                       !- Design Specification Outdoor Air Object Name
   90.1-2013,                              !- Standards Template
   Office,                                 !- Standards Building Type
@@ -2767,7 +2767,7 @@ OS:SpaceType,
   Mechanical_Room,                        !- Name
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ,                                       !- Group Rendering Name
+  {f274cb18-0ba0-445d-b1c3-9b9280c287e5}, !- Group Rendering Name
   ,                                       !- Design Specification Outdoor Air Object Name
   90.1-2013,                              !- Standards Template
   Office,                                 !- Standards Building Type
@@ -2778,7 +2778,7 @@ OS:SpaceType,
   Office_Restroom,                        !- Name
   ,                                       !- Default Construction Set Name
   ,                                       !- Default Schedule Set Name
-  ,                                       !- Group Rendering Name
+  {20abab43-7a13-4598-9c14-ac0b71b588c6}, !- Group Rendering Name
   ,                                       !- Design Specification Outdoor Air Object Name
   90.1-2013,                              !- Standards Template
   Office,                                 !- Standards Building Type
@@ -2799,4 +2799,39 @@ OS:Rendering:Color,
   65,                                     !- Rendering Red Value
   105,                                    !- Rendering Green Value
   225;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {20abab43-7a13-4598-9c14-ac0b71b588c6}, !- Handle
+  Rendering Color 19,                     !- Name
+  210,                                    !- Rendering Red Value
+  30,                                     !- Rendering Green Value
+  105;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {24bb1668-cc56-47c0-a8bc-00fdf83b3e86}, !- Handle
+  Rendering Color 20,                     !- Name
+  60,                                     !- Rendering Red Value
+  113,                                    !- Rendering Green Value
+  179;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {40f85b93-4019-415f-9caa-97fe38854386}, !- Handle
+  Rendering Color 21,                     !- Name
+  176,                                    !- Rendering Red Value
+  230,                                    !- Rendering Green Value
+  224;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {591999c5-9fe1-4c21-87f3-5ce088eda00f}, !- Handle
+  Rendering Color 22,                     !- Name
+  210,                                    !- Rendering Red Value
+  140,                                    !- Rendering Green Value
+  180;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {f274cb18-0ba0-445d-b1c3-9b9280c287e5}, !- Handle
+  Rendering Color 23,                     !- Name
+  173,                                    !- Rendering Red Value
+  47,                                     !- Rendering Green Value
+  255;                                    !- Rendering Blue Value
 
