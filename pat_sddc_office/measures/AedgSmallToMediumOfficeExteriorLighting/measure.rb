@@ -1,5 +1,5 @@
 # *******************************************************************************
-# OpenStudio(R), Copyright (c) 2008-2018, Alliance for Sustainable Energy, LLC.
+# OpenStudio(R), Copyright (c) 2008-2020, Alliance for Sustainable Energy, LLC.
 # All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -42,10 +42,14 @@
 # see the URL below for access to C++ documentation on model objects (click on "model" in the main window to view model objects)
 # http://openstudio.nrel.gov/sites/openstudio.nrel.gov/files/nv_data/cpp_documentation_it/model/html/namespaces.html
 
+# load OpenStudio measure libraries from openstudio-extension gem
+require 'openstudio-extension'
+require 'openstudio/extension/core/os_lib_helper_methods'
+require 'openstudio/extension/core/os_lib_lighting_and_equipment'
+require 'openstudio/extension/core/os_lib_schedules'
+
 # load OpenStudio measure libraries
 require "#{File.dirname(__FILE__)}/resources/OsLib_AedgMeasures"
-require "#{File.dirname(__FILE__)}/resources/os_lib_helper_methods"
-require "#{File.dirname(__FILE__)}/resources/os_lib_lighting_and_equipment"
 
 # start the measure
 class AedgSmallToMediumOfficeExteriorLighting < OpenStudio::Measure::ModelMeasure
@@ -132,7 +136,7 @@ class AedgSmallToMediumOfficeExteriorLighting < OpenStudio::Measure::ModelMeasur
     costTotalExteriorLights = runner.getDoubleArgumentValue('costTotalExteriorLights', user_arguments)
 
     # check arguments for reasonableness
-    checkDoubleArguments = OsLib_HelperMethods.checkDoubleAndIntegerArguments(runner, user_arguments, 'min' => 0.0, 'max' => nil, 'min_eq_bool' => true, 'max_eq_bool' => false, 'arg_array' => ['facadeLandscapeLighting', 'parkingDrivesLighting','walkwayPlazaSpecialLighting','costTotalExteriorLights'])
+    checkDoubleArguments = OsLib_HelperMethods.checkDoubleAndIntegerArguments(runner, user_arguments, 'min' => 0.0, 'max' => nil, 'min_eq_bool' => true, 'max_eq_bool' => false, 'arg_array' => ['facadeLandscapeLighting', 'parkingDrivesLighting', 'walkwayPlazaSpecialLighting', 'costTotalExteriorLights'])
     if !checkDoubleArguments then return false end
 
     # prepare rule hash

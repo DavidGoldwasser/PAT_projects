@@ -1,24 +1,80 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>aedg_small_to_medium_office_exterior_lighting</name>
   <uid>90211a9c-de3f-458d-85c1-b40666b55f06</uid>
-  <version_id>6ce1e6bc-ad38-462c-b341-a5f7491f9f51</version_id>
-  <version_modified>20180705T172031Z</version_modified>
+  <version_id>e1071bda-409d-4525-8fc6-4fc9630a9c9f</version_id>
+  <version_modified>20200401T014102Z</version_modified>
   <xml_checksum>2DDDDD82</xml_checksum>
   <class_name>AedgSmallToMediumOfficeExteriorLighting</class_name>
   <display_name>AedgSmallToMediumOfficeExteriorLighting</display_name>
   <description>This measure will create exterior lights objects in four different categories described below. The lighting levels and controls will be based on the "How to Implement Recommendations" section in the AEDG; any existing exterior lighting will be removed. A special input is needed for this measure to define the exterior lighting zone, which further describes whether the site is urban or rural. </description>
-  <modeler_description>Provide an area or dimensions as input for each of the exterior lighting categories described below. &#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-- Facade and landscape lighting&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-- Parking lots and drives&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-- Walkways, plaza, and special features areas&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-- All other exterior lighting&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-    &#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-Lighting Zones:&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-0 - Undeveloped areas within national parks, state parks, forest land, rural areas, and other undeveloped areas as defined by the authority having jurisdiction (no lighting recommendations)&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-1 - Developed areas of national parks, state parks, forest land, and rural areas (no lighting recommendations)&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-2 - Areas predominantly consisting of residential zoning, neighborhood business districts, light industrial with limited nighttime use and residential mixed use areas&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
-3 - All other areas&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
+  <modeler_description>Provide an area or dimensions as input for each of the exterior lighting categories described below. 
+
+
+
+
+
+- Facade and landscape lighting
+
+
+
+
+
+- Parking lots and drives
+
+
+
+
+
+- Walkways, plaza, and special features areas
+
+
+
+
+
+- All other exterior lighting
+
+
+
+
+
+    
+
+
+
+
+
+Lighting Zones:
+
+
+
+
+
+0 - Undeveloped areas within national parks, state parks, forest land, rural areas, and other undeveloped areas as defined by the authority having jurisdiction (no lighting recommendations)
+
+
+
+
+
+1 - Developed areas of national parks, state parks, forest land, and rural areas (no lighting recommendations)
+
+
+
+
+
+2 - Areas predominantly consisting of residential zoning, neighborhood business districts, light industrial with limited nighttime use and residential mixed use areas
+
+
+
+
+
+3 - All other areas
+
+
+
+
+
 4 - High activity commercial districts in major metropolitan areas as designated by the local jurisdiction</modeler_description>
   <arguments>
     <argument>
@@ -94,8 +150,8 @@ Lighting Zones:&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
       <default_value>0</default_value>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Electric Lighting.Lighting Equipment</tag>
   </tags>
@@ -119,18 +175,6 @@ Lighting Zones:&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
       <checksum>852D9F96</checksum>
     </file>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E5173D1E</checksum>
-    </file>
-    <file>
-      <filename>LICENSE.md</filename>
-      <filetype>md</filetype>
-      <usage_type>license</usage_type>
-      <checksum>9640B6CB</checksum>
-    </file>
-    <file>
       <filename>README.md.erb</filename>
       <filetype>erb</filetype>
       <usage_type>readmeerb</usage_type>
@@ -143,39 +187,33 @@ Lighting Zones:&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
       <checksum>0086C49B</checksum>
     </file>
     <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>EDB45706</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>E0468DD6</checksum>
+    </file>
+    <file>
       <filename>AedgSmallToMediumOfficeExteriorLighting_Test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>D00489EA</checksum>
-    </file>
-    <file>
-      <filename>os_lib_helper_methods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9CFC43FB</checksum>
-    </file>
-    <file>
-      <filename>os_lib_lighting_and_equipment.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E63C7739</checksum>
-    </file>
-    <file>
-      <filename>os_lib_schedules.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>5F1CEF3A</checksum>
+      <checksum>B98ADCF3</checksum>
     </file>
     <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
+        <min_compatible>2.8.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>0C785DE1</checksum>
+      <checksum>3B3114F4</checksum>
     </file>
   </files>
 </measure>

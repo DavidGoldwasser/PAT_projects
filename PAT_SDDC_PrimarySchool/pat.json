@@ -1,12 +1,16 @@
 {
   "projectName": "PAT_SDDC_PrimarySchool",
   "projectDir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool",
-  "analysisName": "PAT_RaceToZero_PrimarySchool",
+  "analysisName": "PAT_SDDC_PrimarySchool",
   "seed": "ZEDG K12 Primary TSD seed.osm",
   "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
   "analysis_type": "Manual",
   "cliDebug": "",
   "cliVerbose": "",
+  "downloadReports": true,
+  "downloadOSW": true,
+  "downloadOSM": true,
+  "downloadZIP": true,
   "timeoutWorkflow": 28800,
   "timeoutUploadResults": 28800,
   "timeoutInitWorker": 28800,
@@ -133,9 +137,9 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/ChangeBuildingLocation",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/ChangeBuildingLocation",
       "name": "change_building_location",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/ChangeBuildingLocation",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/ChangeBuildingLocation",
       "uid": "d4db4971-f5ba-11e3-a3ac-0800200c9a66",
       "uuid": "{d4db4971-f5ba-11e3-a3ac-0800200c9a66}",
       "version_id": "ff1497c6-f1bd-40b3-b972-f4424a902b8f",
@@ -1154,13 +1158,13 @@
       "$$hashKey": "object:7130",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.11973293101180005,
+      "instanceId": 0.39008189098244817,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-model-articulation-gem/lib/measures/create_and_assign_thermal_zones_for_unassigned_spaces",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/create_and_assign_thermal_zones_for_unassigned_spaces",
       "name": "create_and_assign_thermal_zones_for_unassigned_spaces",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-model-articulation-gem/lib/measures/create_and_assign_thermal_zones_for_unassigned_spaces",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/create_and_assign_thermal_zones_for_unassigned_spaces",
       "uid": "ddaa752e-5d40-49b2-88de-62e71697e614",
       "uuid": "{ddaa752e-5d40-49b2-88de-62e71697e614}",
       "version_id": "586d5447-8517-4960-a3c8-bacce43f147e",
@@ -1273,7 +1277,7 @@
           "description": "Option 1 Description: If any spaces are not part of a thermal zone, then this measure will create a new thermal zone and assign it to the space."
         }
       ],
-      "instanceId": 0.32082563004800924,
+      "instanceId": 0.3520768402523933,
       "numberOfOptions": 1,
       "$$hashKey": "object:9746",
       "skip": false,
@@ -1536,16 +1540,16 @@
           "description": "Option 1 Description: This will look for surfaces in adjacent spaces with similar geometry and create thermal connections between them."
         }
       ],
-      "instanceId": 0.6979931175367586,
+      "instanceId": 0.4381523722166931,
       "numberOfOptions": 1,
       "$$hashKey": "object:9747",
       "skip": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_electric_equipment",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_electric_equipment",
       "name": "zedgk_12_electric_equipment",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_electric_equipment",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_electric_equipment",
       "uid": "d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268",
       "uuid": "{d1fc10bc-0ae1-4e1b-b1ac-67fc3923b268}",
       "version_id": "c3374ad6-5ef9-4741-908d-f6b57998d240",
@@ -1683,7 +1687,7 @@
           "description": "Option 1 Description: Customized values for ZEDG - This measure removes all existing electric equipment from spaces recognized as primary or secondary school space types. One exception is that loads assigned directly to a space whre the load definition contains \"Elev\" or \"elev\" will be left alone. New electric equipment will be added based on the 50% K12 AEDG recommendations. Kitchen equipment wont' be altered by this measure. There is a stand alone AEDG measure specifically for the kitchen."
         }
       ],
-      "instanceId": 0.4517356326209194,
+      "instanceId": 0.7936009497943384,
       "numberOfOptions": 1,
       "$$hashKey": "object:19032",
       "descOpen": false,
@@ -1692,9 +1696,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12ElectricEquipmentControls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12ElectricEquipmentControls",
       "name": "aedg_k_12_electric_equipment_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12ElectricEquipmentControls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12ElectricEquipmentControls",
       "uid": "285bc263-7429-4049-a0ce-f60fabf46eec",
       "uuid": "{285bc263-7429-4049-a0ce-f60fabf46eec}",
       "version_id": "d98faa47-3f28-49b2-8ab3-1bc9e5220776",
@@ -1853,13 +1857,13 @@
       "$$hashKey": "object:7132",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6709020240163683,
+      "instanceId": 0.970455278761547,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_interior_lighting",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_interior_lighting",
       "name": "zedgk_12_interior_lighting",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_interior_lighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_interior_lighting",
       "uid": "d3283a8e-aee1-4b9d-9217-a7a988726fb4",
       "uuid": "{d3283a8e-aee1-4b9d-9217-a7a988726fb4}",
       "version_id": "768054f7-085c-4ae6-a00b-0253029fd695",
@@ -2018,13 +2022,13 @@
       "$$hashKey": "object:7133",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.4042500601703156,
+      "instanceId": 0.06523599183165008,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12InteriorLightingControls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12InteriorLightingControls",
       "name": "aedg_k_12_interior_lighting_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12InteriorLightingControls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12InteriorLightingControls",
       "uid": "9f395ee4-5f82-4ca6-8a50-cb854893827e",
       "uuid": "{9f395ee4-5f82-4ca6-8a50-cb854893827e}",
       "version_id": "4ba4ba11-e49b-42b3-84f8-abc22063233f",
@@ -2183,13 +2187,13 @@
       "$$hashKey": "object:7134",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.9337330819413843,
+      "instanceId": 0.8856705211617237,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_exterior_wall_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_exterior_wall_construction",
       "name": "zedgk_12_exterior_wall_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_exterior_wall_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_exterior_wall_construction",
       "uid": "39d1c328-0bbb-40ee-a18c-ba977b462a11",
       "uuid": "{39d1c328-0bbb-40ee-a18c-ba977b462a11}",
       "version_id": "2c9b37f4-43ff-4c5f-9eb2-e6518e33011c",
@@ -2327,7 +2331,7 @@
           "description": "Option 1 Description: ZEDG version, currently only set for steel frame walls. This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. "
         }
       ],
-      "instanceId": 0.43568052009472047,
+      "instanceId": 0.3143666380119514,
       "numberOfOptions": 1,
       "$$hashKey": "object:42446",
       "outputMeasure": false,
@@ -2335,9 +2339,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_roof_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_roof_construction",
       "name": "zedgk_12_roof_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_roof_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_roof_construction",
       "uid": "d322d264-5855-4b20-bd3e-3c5e5032bc05",
       "uuid": "{d322d264-5855-4b20-bd3e-3c5e5032bc05}",
       "version_id": "3efcaa84-7411-450a-b527-09bf8944c875",
@@ -2537,7 +2541,7 @@
           "description": "Option 1 Description: ZEDG version, only setup for IEAD roof. This measure will modify existing roof insulation levels and Solar Reflective Index (SRI) values based on roof type and climate zone. The roof type and climate zone should be set in the model prior to using this measure. If your model uses an attic, all attic surfaces should have an \"Attic' intended surface type. For attics it doesn't matter what you put for \"Standards Construction Type\". The measure will check attic insulation where the attic is adjacent to other not attic spaces."
         }
       ],
-      "instanceId": 0.8089063839066908,
+      "instanceId": 0.6021045653454182,
       "numberOfOptions": 1,
       "$$hashKey": "object:42447",
       "outputMeasure": false,
@@ -2545,9 +2549,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12InteriorFinishes",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12InteriorFinishes",
       "name": "aedg_k_12_interior_finishes",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12InteriorFinishes",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12InteriorFinishes",
       "uid": "9165a1f8-9cd1-4492-b20b-5257c05fc5d9",
       "uuid": "{9165a1f8-9cd1-4492-b20b-5257c05fc5d9}",
       "version_id": "b91269fc-0c8a-41a4-88c1-6012d94cef62",
@@ -2719,13 +2723,13 @@
       "$$hashKey": "object:7137",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.8941745172557094,
+      "instanceId": 0.7622197280629062,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_fenestration_and_daylighting_controls",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_fenestration_and_daylighting_controls",
       "name": "zedgk_12_fenestration_and_daylighting_controls",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_fenestration_and_daylighting_controls",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_fenestration_and_daylighting_controls",
       "uid": "eb3bfd3d-64b6-4a9f-857d-3dd8a7becec5",
       "uuid": "{eb3bfd3d-64b6-4a9f-857d-3dd8a7becec5}",
       "version_id": "a590f5fe-eb78-4538-b2fe-3984abdae2d9",
@@ -3058,13 +3062,13 @@
       "$$hashKey": "object:10915",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.41602807288862786,
+      "instanceId": 0.6447458866209332,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_exterior_door_construction",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_exterior_door_construction",
       "name": "zedgk_12_exterior_door_construction",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_exterior_door_construction",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_exterior_door_construction",
       "uid": "11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c",
       "uuid": "{11c69bb4-3bea-4a7e-8a8e-fea4b5f71a1c}",
       "version_id": "322f37c3-7df7-4086-aacf-149e6c59505e",
@@ -3198,16 +3202,16 @@
           "description": "Option 1 Description: This measure is intended for use on opaque doors; if doors are glass they should be treated as windows. OpenStudio does have a unique object for overhead doors versus standard doors. This measure doesn't alter infiltration. There is a separate measure for infiltration. "
         }
       ],
-      "instanceId": 0.4244835406348384,
+      "instanceId": 0.5074781613802888,
       "numberOfOptions": 1,
       "$$hashKey": "object:56484",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_envelope_infiltration",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_envelope_infiltration",
       "name": "zedgk_12_envelope_infiltration",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_envelope_infiltration",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_envelope_infiltration",
       "uid": "e6232b68-8c72-4986-8693-84c0fe1d00ec",
       "uuid": "{e6232b68-8c72-4986-8693-84c0fe1d00ec}",
       "version_id": "677dc885-5118-45c0-9416-899da653c1a9",
@@ -3366,13 +3370,13 @@
       "$$hashKey": "object:7138",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.068329569032763,
+      "instanceId": 0.6604417783787047,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_swh",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_swh",
       "name": "zedgk_12_swh",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_swh",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_swh",
       "uid": "d765082f-34fb-4b03-bd4e-e8e4a418ba2a",
       "uuid": "{d765082f-34fb-4b03-bd4e-e8e4a418ba2a}",
       "version_id": "23ca1126-09ed-4855-aa7a-557592ca914b",
@@ -3565,7 +3569,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing swh equipment (if any) with the swh equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.04287998267270754,
+      "instanceId": 0.004958252405344865,
       "numberOfOptions": 1,
       "$$hashKey": "object:19033",
       "outputMeasure": false,
@@ -3573,9 +3577,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_kitchen",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_kitchen",
       "name": "zedgk_12_kitchen",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_kitchen",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_kitchen",
       "uid": "6d9f212d-e859-4857-8ee7-1670de9c2bfb",
       "uuid": "{6d9f212d-e859-4857-8ee7-1670de9c2bfb}",
       "version_id": "ad77907f-b0a5-4b5e-85df-73e479c37b08",
@@ -3768,7 +3772,7 @@
           "description": "Option 1 Description: Todo - update this to use electric. Measure replaces existing kitchen equipment (if any) with refrigeration, electric, and gas equipment that align with the kitchen equipment recommendations of the 50% K-12 AEDG."
         }
       ],
-      "instanceId": 0.319136691419897,
+      "instanceId": 0.10644760482770343,
       "numberOfOptions": 1,
       "$$hashKey": "object:19034",
       "outputMeasure": false,
@@ -3776,9 +3780,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12ExteriorLighting",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12ExteriorLighting",
       "name": "aedg_k_12_exterior_lighting",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/AedgK12ExteriorLighting",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/AedgK12ExteriorLighting",
       "uid": "04fd62eb-3e9f-4bfc-98d8-7827b47e034a",
       "uuid": "{04fd62eb-3e9f-4bfc-98d8-7827b47e034a}",
       "version_id": "25c8db85-68d6-44ca-a17c-4f77ecfdf74a",
@@ -4271,7 +4275,7 @@
       "$$hashKey": "object:7139",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.6258698740251838,
+      "instanceId": 0.47225360549917084,
       "showWarningText": false
     },
     {
@@ -4705,7 +4709,7 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.45494456130711236,
+      "instanceId": 0.7390113650631911,
       "numberOfOptions": 1,
       "$$hashKey": "object:66805",
       "outputMeasure": false,
@@ -5142,16 +5146,16 @@
           "description": "Option 1 Description: This measure allows you to create new electric equipment instance and assign it directly to a space in the model. It requires that the schedule and electric equipment definition already exist in the model. Additionally it has arguments for target space and multiplier"
         }
       ],
-      "instanceId": 0.8235589236157888,
+      "instanceId": 0.3570014745400434,
       "numberOfOptions": 1,
       "$$hashKey": "object:7880",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/add_rooftop_pv",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/add_rooftop_pv",
       "name": "add_rooftop_pv",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/add_rooftop_pv",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/add_rooftop_pv",
       "uid": "34550614-0c87-44db-9252-0ca0915b1e64",
       "uuid": "{34550614-0c87-44db-9252-0ca0915b1e64}",
       "version_id": "16fd2166-6f79-4384-a763-80b9e1edf5dd",
@@ -5492,13 +5496,13 @@
       "$$hashKey": "object:16984",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.45784140653739525,
+      "instanceId": 0.7212089484960251,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/SetThermostatSchedules",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/SetThermostatSchedules",
       "name": "set_thermostat_schedules",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/SetThermostatSchedules",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/SetThermostatSchedules",
       "uid": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
       "uuid": "{2978cde0-53d5-4096-bdab-11f9f6e074f1}",
       "version_id": "c08c1cff-1e5e-474c-915e-c1a3abe0c0b8",
@@ -5903,16 +5907,16 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.8436712872041485,
+      "instanceId": 0.776939695899016,
       "numberOfOptions": 1,
       "$$hashKey": "object:26289",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/SetThermostatSchedules",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/SetThermostatSchedules",
       "name": "set_thermostat_schedules_2",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/SetThermostatSchedules",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/SetThermostatSchedules",
       "uid": "2978cde0-53d5-4096-bdab-11f9f6e074f1",
       "uuid": "{2978cde0-53d5-4096-bdab-11f9f6e074f1}",
       "version_id": "c08c1cff-1e5e-474c-915e-c1a3abe0c0b8",
@@ -6317,26 +6321,26 @@
           "description": "Option 1 Description: Sets zone thermostat schedules to schedules in the same file. If a zone does not have a thermostat this measure will add one"
         }
       ],
-      "instanceId": 0.02531536218192043,
+      "instanceId": 0.8113352959104769,
       "numberOfOptions": 1,
       "$$hashKey": "object:28361",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_vrf_with_doas",
-      "name": "zedgvrf_with_doas",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_vrf_with_doas",
-      "uid": "633b8efc-7bcb-4aa0-8821-d0ee08f960db",
-      "uuid": "{633b8efc-7bcb-4aa0-8821-d0ee08f960db}",
-      "version_id": "efba83f0-f6d0-4384-9a99-2de393743787",
-      "version_uuid": "{efba83f0-f6d0-4384-9a99-2de393743787}",
-      "version_modified": "20200512T201424Z",
-      "xml_checksum": "87BA8B1E",
-      "display_name": "ZEDG VRF with DOAS",
-      "class_name": "ZEDGVRFWithDOAS",
-      "description": "Adds VRF system with multiple indoor units connected to an outdoor unit.",
-      "modeler_description": "Multiple units allows for capacity variation and simultaneous heating and cooling. Each zone in the model was served by a VRF indoor terminal unit and the DOAS. Performance curves for the outdoor terminal unit entered into the model with a resistive defrost and heat recovery. Kitchen, gym and the cafeteria were served by their own outdoor units.\n  ",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/nze_hvac",
+      "name": "nze_hvac",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/nze_hvac",
+      "uid": "f060dff2-b28d-4194-a6af-e66d88ddb33c",
+      "uuid": "{f060dff2-b28d-4194-a6af-e66d88ddb33c}",
+      "version_id": "83e77929-f391-407a-8aef-20994f5b7e37",
+      "version_uuid": "{83e77929-f391-407a-8aef-20994f5b7e37}",
+      "version_modified": "20200316T215557Z",
+      "xml_checksum": "0E5E4776",
+      "display_name": "NZEHVAC",
+      "class_name": "NzeHvac",
+      "description": "This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads.",
+      "modeler_description": "HVAC system creation logic uses [openstudio-standards](https://github.com/NREL/openstudio-standards) and efficiency values are defined in the openstudio-standards Standards spreadsheet under the *NREL ZNE Ready 2017* template.",
       "tags": "HVAC.Whole System",
       "outputs": [],
       "attributes": [
@@ -6349,179 +6353,170 @@
           "name": "Measure Type",
           "display_name": "Measure Type",
           "value": "ModelMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Apply Measure Now"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Model Articulation"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "New Construction EE"
         }
       ],
       "arguments": [
         {
           "specialRowId": "optionDelete",
-          "$$hashKey": "uiGrid-02RJ",
-          "option_1": "option_1",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": null,
-            "minimum": null,
-            "mean": null,
-            "deltaX": null,
-            "stdDev": null,
-            "default_value": null
-          }
+          "$$hashKey": "uiGrid-0C7Q",
+          "variable": false,
+          "option_1": "option_1"
         },
         {
           "specialRowId": "optionName",
           "type": "String",
-          "$$hashKey": "uiGrid-02RL",
-          "option_1": "VRF",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "",
-            "minimum": "",
-            "mean": "",
-            "deltaX": "",
-            "stdDev": "",
-            "default_value": ""
-          }
+          "$$hashKey": "uiGrid-0C7S",
+          "variable": false,
+          "option_1": "DOAS Fain Coil"
         },
         {
           "specialRowId": "optionDescription",
           "type": "String",
-          "$$hashKey": "uiGrid-02RN",
-          "option_1": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit.",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "",
-            "minimum": "",
-            "mean": "",
-            "deltaX": "",
-            "stdDev": "",
-            "default_value": ""
-          }
-        },
-        {
-          "name": "ceilingReturnPlenumSpaceType",
-          "display_name": "This space type should be part of a ceiling return air plenum.",
-          "description": "",
-          "type": "Choice",
-          "required": false,
-          "model_dependent": false,
-          "choice_values": [
-            "{7ab21736-c6b4-4ae9-ae45-e9cf93956010}",
-            "{bff39629-1021-422b-9c37-e2e332b9389b}",
-            "{f62e7d1f-63d7-4921-92ec-9651783ec8bb}",
-            "{6a19f07c-57b7-422c-8734-25352136681b}",
-            "{e8cd9cfc-693d-446a-8acc-2eacc8f3925b}",
-            "{9ed989fa-0df8-4a56-ba3e-0b3a2088c8fc}",
-            "{fb2e0e27-6d48-42d8-9988-d1ec7a7f2054}",
-            "{1d19b696-1d23-4be6-b703-36022d9180d3}",
-            "{9e245989-9976-4431-a34b-800bc4f02e3b}",
-            "{728a291c-4535-48c0-afba-44056476409f}",
-            "{e02d7f59-b45d-448c-8085-757ecbaff229}"
-          ],
-          "choice_display_names": [
-            "Gym",
-            "Bathrooms",
-            "Offices",
-            "Mech",
-            "Art_Class",
-            "Kitchen",
-            "Corridor",
-            "Lobby",
-            "Classroom",
-            "Media_Center",
-            "Cafeteria"
-          ],
-          "$$hashKey": "uiGrid-02RP",
-          "option_1": "",
+          "$$hashKey": "uiGrid-0C7U",
           "variable": false,
-          "display_name_short": "ceilingReturnPlenumSpaceType",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [
-              "Gym",
-              "Bathrooms",
-              "Offices",
-              "Mech",
-              "Art_Class",
-              "Kitchen",
-              "Corridor",
-              "Lobby",
-              "Classroom",
-              "Media_Center",
-              "Cafeteria"
-            ],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "Gym",
-            "minimum": "Gym",
-            "mean": "Gym",
-            "deltaX": "Gym",
-            "stdDev": "Gym",
-            "default_value": "Gym"
-          }
+          "option_1": "Option 1 Description: This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads."
         },
         {
-          "name": "costTotalHVACSystem",
-          "display_name": "Total Cost for HVAC System ($).",
-          "description": "",
-          "type": "Double",
-          "required": true,
-          "model_dependent": false,
-          "default_value": 0,
-          "$$hashKey": "uiGrid-02RR",
-          "option_1": 0,
-          "variable": false,
-          "display_name_short": "costTotalHVACSystem",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": 0,
-            "minimum": 0,
-            "mean": 0,
-            "deltaX": 0,
-            "stdDev": 0,
-            "default_value": 0
-          }
-        },
-        {
-          "name": "remake_schedules",
-          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
+          "name": "remove_existing_hvac",
+          "display_name": "Remove existing HVAC?",
           "description": "",
           "type": "Boolean",
           "required": true,
           "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02RT",
-          "option_1": true,
+          "default_value": false,
+          "$$hashKey": "uiGrid-0C7W",
           "variable": false,
-          "display_name_short": "remake_schedules",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": true,
-            "minimum": true,
-            "mean": true,
-            "deltaX": true,
-            "stdDev": true,
-            "default_value": true
-          }
+          "option_1": false
+        },
+        {
+          "name": "hvac_system_type",
+          "display_name": "HVAC System Type:",
+          "description": "Details on HVAC system type in measure documentation.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "DOAS with fan coil chiller with central air source heat pump",
+          "choice_values": [
+            "DOAS with fan coil chiller with boiler",
+            "DOAS with fan coil chiller with central air source heat pump",
+            "DOAS with fan coil air-cooled chiller with boiler",
+            "DOAS with fan coil air-cooled chiller with central air source heat pump",
+            "Fan coil chiller with boiler",
+            "Fan coil chiller with central air source heat pump",
+            "Fan coil air-cooled chiller with boiler",
+            "Fan coil air-cooled chiller with central air source heat pump",
+            "DOAS with radiant slab chiller with boiler",
+            "DOAS with radiant slab chiller with central air source heat pump",
+            "DOAS with radiant slab air-cooled chiller with boiler",
+            "DOAS with radiant slab air-cooled chiller with central air source heat pump",
+            "DOAS with VRF",
+            "VRF",
+            "DOAS with water source heat pumps cooling tower with boiler",
+            "DOAS with water source heat pumps with ground source heat pump",
+            "Water source heat pumps cooling tower with boiler",
+            "Water source heat pumps with ground source heat pump",
+            "VAV chiller with gas boiler reheat",
+            "VAV chiller with central air source heat pump reheat",
+            "VAV air-cooled chiller with gas boiler reheat",
+            "VAV air-cooled chiller with central air source heat pump reheat",
+            "PVAV with gas boiler reheat",
+            "PVAV with central air source heat pump reheat"
+          ],
+          "choice_display_names": [
+            "DOAS with fan coil chiller with boiler",
+            "DOAS with fan coil chiller with central air source heat pump",
+            "DOAS with fan coil air-cooled chiller with boiler",
+            "DOAS with fan coil air-cooled chiller with central air source heat pump",
+            "Fan coil chiller with boiler",
+            "Fan coil chiller with central air source heat pump",
+            "Fan coil air-cooled chiller with boiler",
+            "Fan coil air-cooled chiller with central air source heat pump",
+            "DOAS with radiant slab chiller with boiler",
+            "DOAS with radiant slab chiller with central air source heat pump",
+            "DOAS with radiant slab air-cooled chiller with boiler",
+            "DOAS with radiant slab air-cooled chiller with central air source heat pump",
+            "DOAS with VRF",
+            "VRF",
+            "DOAS with water source heat pumps cooling tower with boiler",
+            "DOAS with water source heat pumps with ground source heat pump",
+            "Water source heat pumps cooling tower with boiler",
+            "Water source heat pumps with ground source heat pump",
+            "VAV chiller with gas boiler reheat",
+            "VAV chiller with central air source heat pump reheat",
+            "VAV air-cooled chiller with gas boiler reheat",
+            "VAV air-cooled chiller with central air source heat pump reheat",
+            "PVAV with gas boiler reheat",
+            "PVAV with central air source heat pump reheat"
+          ],
+          "$$hashKey": "uiGrid-0C7Y",
+          "variable": false,
+          "option_1": "DOAS with fan coil chiller with boiler"
+        },
+        {
+          "name": "doas_dcv",
+          "display_name": "DOAS capable of demand control ventilation?",
+          "description": "If a DOAS system, this will make air terminals variable air volume instead of constant volume.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": false,
+          "$$hashKey": "uiGrid-0C80",
+          "variable": false,
+          "option_1": false
+        },
+        {
+          "name": "hvac_system_partition",
+          "display_name": "HVAC System Partition:",
+          "description": "Automatic Partition will separate the HVAC system by residential/non-residential and if loads and schedules are substantially different.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Automatic Partition",
+          "choice_values": [
+            "Automatic Partition",
+            "Whole Building",
+            "One System Per Building Story",
+            "One System Per Building Type"
+          ],
+          "choice_display_names": [
+            "Automatic Partition",
+            "Whole Building",
+            "One System Per Building Story",
+            "One System Per Building Type"
+          ],
+          "$$hashKey": "uiGrid-0C82",
+          "variable": false,
+          "option_1": "Automatic Partition"
         }
       ],
       "edit": "",
@@ -6531,7 +6526,7 @@
       "add": "",
       "open": false,
       "addedToProject": true,
-      "date": "5/12/2020",
+      "date": "3/16/2020",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
@@ -6541,512 +6536,34 @@
           "id": "option_1",
           "arguments": [
             {
-              "name": "ceilingReturnPlenumSpaceType",
-              "value": ""
+              "name": "remove_existing_hvac",
+              "value": false
             },
             {
-              "name": "costTotalHVACSystem",
-              "value": 0
+              "name": "hvac_system_type",
+              "value": "DOAS with fan coil chiller with boiler"
             },
             {
-              "name": "remake_schedules",
-              "value": true
+              "name": "doas_dcv",
+              "value": false
+            },
+            {
+              "name": "hvac_system_partition",
+              "value": "Automatic Partition"
             }
           ],
-          "name": "VRF",
-          "description": "Option 1 Description: Adds VRF system with multiple indoor units connected to an outdoor unit."
+          "name": "DOAS Fain Coil",
+          "description": "Option 1 Description: This measure replaces the existing HVAC system if any with the user selected HVAC system.  The user can select how to partition the system, applying it to the whole building, a system per building type, a system per building story, or automatically partition based on residential/non-residential occupany types and space loads."
         }
       ],
-      "instanceId": 0.8649739397043184,
+      "instanceId": 0.2632300001759269,
       "numberOfOptions": 1,
-      "$$hashKey": "object:7459",
-      "outputMeasure": false,
-      "skip": false
+      "$$hashKey": "object:34526"
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_gshp_doas",
-      "name": "zedgk_12_hvac",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_gshp_doas",
-      "uid": "59793426-1d07-41d2-9478-d7abf1410764",
-      "uuid": "{59793426-1d07-41d2-9478-d7abf1410764}",
-      "version_id": "0a2a389f-488e-49fb-a3a2-b6473a6aa537",
-      "version_uuid": "{0a2a389f-488e-49fb-a3a2-b6473a6aa537}",
-      "version_modified": "20200512T201424Z",
-      "xml_checksum": "87BA8B1E",
-      "display_name": "ZEDG K12 HVAC GSHP with DOAS",
-      "class_name": "ZEDGK12HVAC",
-      "description": "Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP.",
-      "modeler_description": "The heat pumps rejected energy to a single plant loop that was served by a 90% efficient variable-speed pump with 40 ft of head and a design loop exit temperature set point of 69.8°F. A ground heat exchanger was modeled using the EnergyPlus Runtime Language. The EnergyPlus Runtime Language program raised the temperature of the loop 10°F if the entering water temperature was lower than 60°F, and it lowered the temperature of the loop 10°F if the entering water temperature was higher than 60°F.",
-      "tags": "HVAC.Whole System",
-      "outputs": [],
-      "attributes": [
-        {
-          "name": "Uses SketchUp API",
-          "display_name": "Uses SketchUp API",
-          "value": false
-        },
-        {
-          "name": "Measure Type",
-          "display_name": "Measure Type",
-          "value": "ModelMeasure"
-        }
-      ],
-      "arguments": [
-        {
-          "specialRowId": "optionDelete",
-          "$$hashKey": "uiGrid-02R7",
-          "option_1": "option_1",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": null,
-            "minimum": null,
-            "mean": null,
-            "deltaX": null,
-            "stdDev": null,
-            "default_value": null
-          }
-        },
-        {
-          "specialRowId": "optionName",
-          "type": "String",
-          "$$hashKey": "uiGrid-02R9",
-          "option_1": "GSHP",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "",
-            "minimum": "",
-            "mean": "",
-            "deltaX": "",
-            "stdDev": "",
-            "default_value": ""
-          }
-        },
-        {
-          "specialRowId": "optionDescription",
-          "type": "String",
-          "$$hashKey": "uiGrid-02RB",
-          "option_1": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP.",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "",
-            "minimum": "",
-            "mean": "",
-            "deltaX": "",
-            "stdDev": "",
-            "default_value": ""
-          }
-        },
-        {
-          "name": "ceilingReturnPlenumSpaceType",
-          "display_name": "This space type should be part of a ceiling return air plenum.",
-          "description": "",
-          "type": "Choice",
-          "required": false,
-          "model_dependent": false,
-          "choice_values": [
-            "{7ab21736-c6b4-4ae9-ae45-e9cf93956010}",
-            "{bff39629-1021-422b-9c37-e2e332b9389b}",
-            "{f62e7d1f-63d7-4921-92ec-9651783ec8bb}",
-            "{6a19f07c-57b7-422c-8734-25352136681b}",
-            "{e8cd9cfc-693d-446a-8acc-2eacc8f3925b}",
-            "{9ed989fa-0df8-4a56-ba3e-0b3a2088c8fc}",
-            "{fb2e0e27-6d48-42d8-9988-d1ec7a7f2054}",
-            "{1d19b696-1d23-4be6-b703-36022d9180d3}",
-            "{9e245989-9976-4431-a34b-800bc4f02e3b}",
-            "{728a291c-4535-48c0-afba-44056476409f}",
-            "{e02d7f59-b45d-448c-8085-757ecbaff229}"
-          ],
-          "choice_display_names": [
-            "Gym",
-            "Bathrooms",
-            "Offices",
-            "Mech",
-            "Art_Class",
-            "Kitchen",
-            "Corridor",
-            "Lobby",
-            "Classroom",
-            "Media_Center",
-            "Cafeteria"
-          ],
-          "$$hashKey": "uiGrid-02RD",
-          "option_1": "",
-          "variable": false,
-          "display_name_short": "ceilingReturnPlenumSpaceType",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [
-              "Gym",
-              "Bathrooms",
-              "Offices",
-              "Mech",
-              "Art_Class",
-              "Kitchen",
-              "Corridor",
-              "Lobby",
-              "Classroom",
-              "Media_Center",
-              "Cafeteria"
-            ],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "Gym",
-            "minimum": "Gym",
-            "mean": "Gym",
-            "deltaX": "Gym",
-            "stdDev": "Gym",
-            "default_value": "Gym"
-          }
-        },
-        {
-          "name": "costTotalHVACSystem",
-          "display_name": "Total Cost for HVAC System ($).",
-          "description": "",
-          "type": "Double",
-          "required": true,
-          "model_dependent": false,
-          "default_value": 0,
-          "$$hashKey": "uiGrid-02RF",
-          "option_1": 0,
-          "variable": false,
-          "display_name_short": "costTotalHVACSystem",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": 0,
-            "minimum": 0,
-            "mean": 0,
-            "deltaX": 0,
-            "stdDev": 0,
-            "default_value": 0
-          }
-        },
-        {
-          "name": "remake_schedules",
-          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
-          "description": "",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02RH",
-          "option_1": true,
-          "variable": false,
-          "display_name_short": "remake_schedules",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": true,
-            "minimum": true,
-            "mean": true,
-            "deltaX": true,
-            "stdDev": true,
-            "default_value": true
-          }
-        }
-      ],
-      "edit": "",
-      "status": "",
-      "bcl_update": false,
-      "location": "my",
-      "add": "",
-      "open": false,
-      "addedToProject": true,
-      "date": "5/12/2020",
-      "author": "",
-      "type": "ModelMeasure",
-      "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 22,
-      "options": [
-        {
-          "id": "option_1",
-          "arguments": [
-            {
-              "name": "ceilingReturnPlenumSpaceType",
-              "value": ""
-            },
-            {
-              "name": "costTotalHVACSystem",
-              "value": 0
-            },
-            {
-              "name": "remake_schedules",
-              "value": true
-            }
-          ],
-          "name": "GSHP",
-          "description": "Option 1 Description: Each zone served by the DOAS (classrooms, corridors, library/media center, lobbies, mechanical rooms, offices, and restrooms) was modeled with a two-speed GSHP."
-        }
-      ],
-      "instanceId": 0.10885354331647279,
-      "numberOfOptions": 1,
-      "$$hashKey": "object:7458",
-      "outputMeasure": false,
-      "skip": false
-    },
-    {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
-      "name": "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_hvac_fan_coil_doas_air_cooled_chiller",
-      "uid": "33ed4338-5e86-415f-8df0-87e32e413711",
-      "uuid": "{33ed4338-5e86-415f-8df0-87e32e413711}",
-      "version_id": "df5a2b03-1c24-4b76-974e-7430a3c0a65c",
-      "version_uuid": "{df5a2b03-1c24-4b76-974e-7430a3c0a65c}",
-      "version_modified": "20200512T201424Z",
-      "xml_checksum": "87BA8B1E",
-      "display_name": "ZEDG K12 HVAC Fan Coil DOAS Air Cooled Chiller",
-      "class_name": "ZedgK12HvacFanCoilDoasAirCooledChiller",
-      "description": "Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  ",
-      "modeler_description": "The fan coil with DOAS system (centralized DOAS, with zone level conditioning) is applied to all space types except Cafeteria, Kitchen, Gym, and Auditorium; packaged single zone equipment is applied to those zones.  In select cases, the user is given the option to preserve existing HVAC schedules.  In other cases, new schedules are generated that align with ZEDG recommendations. Air handler with chiller, gas-fired boiler and DOAS is a widely used HVAC system in schools and was thus included in the analysis. An air-cooled chiller was preferred over a water-cooled chiller by the project committee. The main reason being the later has maintenance issues which school districts want to avoid due to shortage of funds and personnel.",
-      "tags": "HVAC.Whole System",
-      "outputs": [],
-      "attributes": [
-        {
-          "name": "Uses SketchUp API",
-          "display_name": "Uses SketchUp API",
-          "value": false
-        },
-        {
-          "name": "Measure Type",
-          "display_name": "Measure Type",
-          "value": "ModelMeasure"
-        }
-      ],
-      "arguments": [
-        {
-          "specialRowId": "optionDelete",
-          "$$hashKey": "uiGrid-02RV",
-          "option_1": "option_1",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": null,
-            "minimum": null,
-            "mean": null,
-            "deltaX": null,
-            "stdDev": null,
-            "default_value": null
-          }
-        },
-        {
-          "specialRowId": "optionName",
-          "type": "String",
-          "$$hashKey": "uiGrid-02RX",
-          "option_1": "Fan Coil DOAS Air Cooled Chiller",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "",
-            "minimum": "",
-            "mean": "",
-            "deltaX": "",
-            "stdDev": "",
-            "default_value": ""
-          }
-        },
-        {
-          "specialRowId": "optionDescription",
-          "type": "String",
-          "$$hashKey": "uiGrid-02RZ",
-          "option_1": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  ",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "",
-            "minimum": "",
-            "mean": "",
-            "deltaX": "",
-            "stdDev": "",
-            "default_value": ""
-          }
-        },
-        {
-          "name": "ceilingReturnPlenumSpaceType",
-          "display_name": "This space type should be part of a ceiling return air plenum.",
-          "description": "",
-          "type": "Choice",
-          "required": false,
-          "model_dependent": false,
-          "choice_values": [
-            "{7ab21736-c6b4-4ae9-ae45-e9cf93956010}",
-            "{bff39629-1021-422b-9c37-e2e332b9389b}",
-            "{f62e7d1f-63d7-4921-92ec-9651783ec8bb}",
-            "{6a19f07c-57b7-422c-8734-25352136681b}",
-            "{e8cd9cfc-693d-446a-8acc-2eacc8f3925b}",
-            "{9ed989fa-0df8-4a56-ba3e-0b3a2088c8fc}",
-            "{fb2e0e27-6d48-42d8-9988-d1ec7a7f2054}",
-            "{1d19b696-1d23-4be6-b703-36022d9180d3}",
-            "{9e245989-9976-4431-a34b-800bc4f02e3b}",
-            "{728a291c-4535-48c0-afba-44056476409f}",
-            "{e02d7f59-b45d-448c-8085-757ecbaff229}"
-          ],
-          "choice_display_names": [
-            "Gym",
-            "Bathrooms",
-            "Offices",
-            "Mech",
-            "Art_Class",
-            "Kitchen",
-            "Corridor",
-            "Lobby",
-            "Classroom",
-            "Media_Center",
-            "Cafeteria"
-          ],
-          "$$hashKey": "uiGrid-02S1",
-          "option_1": "",
-          "variable": false,
-          "display_name_short": "ceilingReturnPlenumSpaceType",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [
-              "Gym",
-              "Bathrooms",
-              "Offices",
-              "Mech",
-              "Art_Class",
-              "Kitchen",
-              "Corridor",
-              "Lobby",
-              "Classroom",
-              "Media_Center",
-              "Cafeteria"
-            ],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": "Gym",
-            "minimum": "Gym",
-            "mean": "Gym",
-            "deltaX": "Gym",
-            "stdDev": "Gym",
-            "default_value": "Gym"
-          }
-        },
-        {
-          "name": "costTotalHVACSystem",
-          "display_name": "Total Cost for HVAC System ($).",
-          "description": "",
-          "type": "Double",
-          "required": true,
-          "model_dependent": false,
-          "default_value": 0,
-          "$$hashKey": "uiGrid-02S3",
-          "option_1": 0,
-          "variable": false,
-          "display_name_short": "costTotalHVACSystem",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": 0,
-            "minimum": 0,
-            "mean": 0,
-            "deltaX": 0,
-            "stdDev": 0,
-            "default_value": 0
-          }
-        },
-        {
-          "name": "remake_schedules",
-          "display_name": "Apply recommended availability and ventilation schedules for air handlers?",
-          "description": "",
-          "type": "Boolean",
-          "required": true,
-          "model_dependent": false,
-          "default_value": true,
-          "$$hashKey": "uiGrid-02S5",
-          "option_1": true,
-          "variable": false,
-          "display_name_short": "remake_schedules",
-          "inputs": {
-            "relationship": null,
-            "choiceDisplayNames": [],
-            "variableSetting": "Argument",
-            "distribution": "Uniform",
-            "discreteVariables": [],
-            "maximum": true,
-            "minimum": true,
-            "mean": true,
-            "deltaX": true,
-            "stdDev": true,
-            "default_value": true
-          }
-        }
-      ],
-      "edit": "",
-      "status": "",
-      "bcl_update": false,
-      "location": "my",
-      "add": "",
-      "open": false,
-      "addedToProject": true,
-      "date": "5/12/2020",
-      "author": "",
-      "type": "ModelMeasure",
-      "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 23,
-      "options": [
-        {
-          "id": "option_1",
-          "arguments": [
-            {
-              "name": "ceilingReturnPlenumSpaceType",
-              "value": ""
-            },
-            {
-              "name": "costTotalHVACSystem",
-              "value": 0
-            },
-            {
-              "name": "remake_schedules",
-              "value": true
-            }
-          ],
-          "name": "Fan Coil DOAS Air Cooled Chiller",
-          "description": "Option 1 Description: Measure replaces existing HVAC system (if any) with a Fan Coil with DOAS HVAC with air cooled Chiller system (one DOAS per floor).  "
-        }
-      ],
-      "instanceId": 0.8989506460753676,
-      "numberOfOptions": 1,
-      "$$hashKey": "object:7460",
-      "outputMeasure": false,
-      "skip": false
-    },
-    {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-model-articulation-gem/lib/measures/create_baseline_building",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/create_baseline_building",
       "name": "create_baseline_building",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-model-articulation-gem/lib/measures/create_baseline_building",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/create_baseline_building",
       "uid": "4de56e21-b6cd-45d9-8466-862507d228b2",
       "uuid": "{4de56e21-b6cd-45d9-8466-862507d228b2}",
       "version_id": "a96c965c-f98e-4ece-aee2-467f3a9e8902",
@@ -7270,25 +6787,25 @@
             "ASHRAE 169-2013-8A"
           ],
           "$$hashKey": "uiGrid-04T1",
-          "option_1": "ASHRAE 169-2006-1A",
+          "option_1": "ASHRAE 169-2013-1A",
           "variable": true,
-          "option_2": "ASHRAE 169-2006-2A",
-          "option_3": "ASHRAE 169-2006-2B",
-          "option_4": "ASHRAE 169-2006-3A",
-          "option_5": "ASHRAE 169-2006-3B",
-          "option_6": "ASHRAE 169-2006-3C",
-          "option_7": "ASHRAE 169-2006-4A",
-          "option_8": "ASHRAE 169-2006-4B",
-          "option_9": "ASHRAE 169-2006-4C",
-          "option_10": "ASHRAE 169-2006-5A",
+          "option_2": "ASHRAE 169-2013-2A",
+          "option_3": "ASHRAE 169-2013-2B",
+          "option_4": "ASHRAE 169-2013-3A",
+          "option_5": "ASHRAE 169-2013-3B",
+          "option_6": "ASHRAE 169-2013-3C",
+          "option_7": "ASHRAE 169-2013-4A",
+          "option_8": "ASHRAE 169-2013-4B",
+          "option_9": "ASHRAE 169-2013-4C",
+          "option_10": "ASHRAE 169-2013-5A",
           "option_11": "ASHRAE 169-2013-5B",
           "option_12": "ASHRAE 169-2013-6A",
           "option_13": "ASHRAE 169-2013-6B",
           "option_14": "ASHRAE 169-2013-7A",
-          "option_15": "ASHRAE 169-2006-8A",
+          "option_15": "ASHRAE 169-2013-8A",
           "units": "",
-          "minimum": "ASHRAE 169-2006-1A",
-          "maximum": "ASHRAE 169-2013-7A",
+          "minimum": "ASHRAE 169-2013-1A",
+          "maximum": "ASHRAE 169-2013-8A",
           "mode": null
         },
         {
@@ -7357,13 +6874,13 @@
       "bcl_update": false,
       "location": "my",
       "add": "",
-      "open": true,
+      "open": false,
       "addedToProject": true,
       "date": "6/16/2020",
       "author": "",
       "type": "ModelMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 24,
+      "workflow_index": 22,
       "options": [
         {
           "id": "option_1",
@@ -7378,7 +6895,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-1A"
+              "value": "ASHRAE 169-2013-1A"
             },
             {
               "name": "custom",
@@ -7405,7 +6922,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-2A"
+              "value": "ASHRAE 169-2013-2A"
             },
             {
               "name": "custom",
@@ -7432,7 +6949,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-2B"
+              "value": "ASHRAE 169-2013-2B"
             },
             {
               "name": "custom",
@@ -7459,7 +6976,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-3A"
+              "value": "ASHRAE 169-2013-3A"
             },
             {
               "name": "custom",
@@ -7486,7 +7003,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-3B"
+              "value": "ASHRAE 169-2013-3B"
             },
             {
               "name": "custom",
@@ -7513,7 +7030,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-3C"
+              "value": "ASHRAE 169-2013-3C"
             },
             {
               "name": "custom",
@@ -7540,7 +7057,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-4A"
+              "value": "ASHRAE 169-2013-4A"
             },
             {
               "name": "custom",
@@ -7567,7 +7084,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-4B"
+              "value": "ASHRAE 169-2013-4B"
             },
             {
               "name": "custom",
@@ -7594,7 +7111,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-4C"
+              "value": "ASHRAE 169-2013-4C"
             },
             {
               "name": "custom",
@@ -7621,7 +7138,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-5A"
+              "value": "ASHRAE 169-2013-5A"
             },
             {
               "name": "custom",
@@ -7756,7 +7273,7 @@
             },
             {
               "name": "climate_zone",
-              "value": "ASHRAE 169-2006-8A"
+              "value": "ASHRAE 169-2013-8A"
             },
             {
               "name": "custom",
@@ -7771,15 +7288,15 @@
           "description": "Option 15 Description: Creates the Performance Rating Method baseline building.  For 90.1, this is the Appendix G aka LEED Baseline.  For India ECBC, this is the Appendix D Baseline.  Note: for 90.1, this model CANNOT be used for code compliance; it is not the same as the Energy Cost Budget baseline."
         }
       ],
-      "instanceId": 0.9018357541990001,
+      "instanceId": 0.330155620952042,
       "numberOfOptions": 15,
       "$$hashKey": "object:13368",
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_insert_ground_domain_e_kusdua",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_insert_ground_domain_e_kusdua",
       "name": "zedgk_12_insert_ground_domain_basement_e_kusdua",
-      "directory": "/Users/dgoldwas/Documents/GitHub/NREL/openstudio-aedg-gem/lib/measures/zedgk_12_insert_ground_domain_e_kusdua",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/zedgk_12_insert_ground_domain_e_kusdua",
       "uid": "aa8123f0-4d04-4141-8a00-8a2bccf30315",
       "uuid": "{aa8123f0-4d04-4141-8a00-8a2bccf30315}",
       "version_id": "95431eb6-81ab-4e17-9f20-bbc379385dbd",
@@ -7947,7 +7464,7 @@
       "author": "",
       "type": "EnergyPlusMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 25,
+      "workflow_index": 23,
       "options": [
         {
           "id": "option_1",
@@ -7965,13 +7482,13 @@
       "$$hashKey": "object:3237",
       "skip": false,
       "outputMeasure": false,
-      "instanceId": 0.10937960511507394,
+      "instanceId": 0.5385605798440778,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/tariff_selection_flat",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/tariff_selection_flat",
       "name": "tariff_selection_flat",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/tariff_selection_flat",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/tariff_selection_flat",
       "uid": "539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55",
       "uuid": "{539c3e8e-6c41-4f50-ac61-6cbbf1ee1b55}",
       "version_id": "1d8b09b4-afbd-4729-ad9b-a7a09a1613e6",
@@ -8364,7 +7881,7 @@
       "author": "",
       "type": "EnergyPlusMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 26,
+      "workflow_index": 24,
       "options": [
         {
           "id": "option_1",
@@ -8410,16 +7927,16 @@
           "description": "Option 1 Description: This measure sets flat rates for electricity, gas, water, district heating, and district cooling."
         }
       ],
-      "instanceId": 0.3210446978318713,
+      "instanceId": 0.0900020453413477,
       "numberOfOptions": 1,
       "$$hashKey": "object:66866",
       "outputMeasure": false,
       "skip": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/openstudio_results",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/openstudio_results",
       "name": "openstudio_results",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/openstudio_results",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/openstudio_results",
       "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
       "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
       "version_id": "e6734a7d-07db-4327-8362-9e110a9683d0",
@@ -8663,7 +8180,7 @@
       "author": "",
       "type": "ReportingMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 27,
+      "workflow_index": 25,
       "options": [
         {
           "id": "option_1",
@@ -8684,13 +8201,13 @@
         }
       ],
       "analysisOutputs": [],
-      "instanceId": 0.9548213779269838,
+      "instanceId": 0.23893936921508674,
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/envelope_and_internal_load_breakdown",
+      "measure_dir": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/envelope_and_internal_load_breakdown",
       "name": "envelope_and_internal_load_breakdown",
-      "directory": "/Users/dgoldwas/Documents/GitHub/URBANopt/openstudio-common-measures-gem/lib/measures/envelope_and_internal_load_breakdown",
+      "directory": "/Users/dgoldwas/Documents/GitHub/Personal/PAT_projects/PAT_SDDC_PrimarySchool/measures/envelope_and_internal_load_breakdown",
       "uid": "8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02",
       "uuid": "{8f0e1fbb-8bc6-46e5-b6e4-db59177e2c02}",
       "version_id": "7ba824c2-f08f-4c5c-bdd6-2aa1965bd3e6",
@@ -8785,7 +8302,7 @@
       "author": "",
       "type": "ReportingMeasure",
       "seed": "ZEDG K12 Primary TSD seed.osm",
-      "workflow_index": 28,
+      "workflow_index": 26,
       "options": [
         {
           "id": "option_1",
@@ -8794,9 +8311,10 @@
           "description": "Option 1 Description: Report provides annual and monthly views into heat gains and losses for envelope and internal loads."
         }
       ],
-      "instanceId": 0.6380205140109878,
+      "instanceId": 0.30153851620063166,
       "numberOfOptions": 1,
-      "$$hashKey": "object:57845"
+      "$$hashKey": "object:57845",
+      "outputMeasure": false
     }
   ],
   "filesToInclude": [],
@@ -8820,115 +8338,7 @@
   },
   "designAlternatives": [
     {
-      "name": "HVAC - VRF",
-      "seedModel": "ZEDG K12 Primary TSD seed.osm",
-      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-      "change_building_location": "Aurora",
-      "zedgk_12_electric_equipment": "ZEDG Elec Equip",
-      "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
-      "zedgk_12_interior_lighting": "ZEDG Int Lighting",
-      "aedg_k_12_interior_lighting_controls": "AEDG Int Lighting Controls",
-      "zedgk_12_exterior_wall_construction": "ZEDG Ext Wall",
-      "zedgk_12_roof_construction": "ZEDG Roof",
-      "aedg_k_12_interior_finishes": "AEDG Int Finishes",
-      "zedgk_12_fenestration_and_daylighting_controls": "ZEDG Fenistration with Daylighting",
-      "zedgk_12_swh": "ZEDG SWH Primary",
-      "zedgk_12_kitchen": "ZEDG Kitchen Primary",
-      "zedgk_12_envelope_infiltration": "ZEDG Envelope Infiltration",
-      "aedg_k_12_exterior_lighting": "AEDG Ext Lighting Primary",
-      "add_rooftop_pv": "Rooftop PV 75%",
-      "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
-      "openstudio_results": "Results",
-      "$$hashKey": "uiGrid-02ZV",
-      "zedgk_12_hvac": "None",
-      "zedgvrf_with_doas": "VRF",
-      "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller": "None",
-      "set_thermostat_schedules": "Thermostat Typical",
-      "set_thermostat_schedules_2": "Thermostat Gym",
-      "zedgk_12_exterior_door_construction": "ZEDG Exterior Door",
-      "add_electric_equipment_instance_to_space": "Elevators",
-      "tariff_selection_flat": "Tariff Flat",
-      "add_electric_equipment_instance_to_space_2": "Electric Kiln",
-      "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
-      "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
-      "surface_matching_diagnostic": "Surface Matching Diagnostic",
-      "create_baseline_building": "None",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
-    },
-    {
-      "name": "HVAC - GSHP",
-      "seedModel": "ZEDG K12 Primary TSD seed.osm",
-      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-      "change_building_location": "Aurora",
-      "zedgk_12_electric_equipment": "ZEDG Elec Equip",
-      "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
-      "zedgk_12_interior_lighting": "ZEDG Int Lighting",
-      "aedg_k_12_interior_lighting_controls": "AEDG Int Lighting Controls",
-      "zedgk_12_exterior_wall_construction": "ZEDG Ext Wall",
-      "zedgk_12_roof_construction": "ZEDG Roof",
-      "aedg_k_12_interior_finishes": "AEDG Int Finishes",
-      "zedgk_12_fenestration_and_daylighting_controls": "ZEDG Fenistration with Daylighting",
-      "zedgk_12_swh": "ZEDG SWH Primary",
-      "zedgk_12_kitchen": "ZEDG Kitchen Primary",
-      "zedgk_12_envelope_infiltration": "ZEDG Envelope Infiltration",
-      "aedg_k_12_exterior_lighting": "AEDG Ext Lighting Primary",
-      "add_rooftop_pv": "Rooftop PV 75%",
-      "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
-      "openstudio_results": "Results",
-      "$$hashKey": "uiGrid-031L",
-      "zedgk_12_hvac": "GSHP",
-      "zedgvrf_with_doas": "None",
-      "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller": "None",
-      "set_thermostat_schedules": "Thermostat Typical",
-      "set_thermostat_schedules_2": "Thermostat Gym",
-      "zedgk_12_exterior_door_construction": "ZEDG Exterior Door",
-      "add_electric_equipment_instance_to_space": "Elevators",
-      "tariff_selection_flat": "Tariff Flat",
-      "add_electric_equipment_instance_to_space_2": "Electric Kiln",
-      "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
-      "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
-      "surface_matching_diagnostic": "Surface Matching Diagnostic",
-      "create_baseline_building": "None",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
-    },
-    {
-      "name": "HVAC - Fan Coil Air Cooled Chiller",
-      "seedModel": "ZEDG K12 Primary TSD seed.osm",
-      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
-      "change_building_location": "Aurora",
-      "zedgk_12_electric_equipment": "ZEDG Elec Equip",
-      "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
-      "zedgk_12_interior_lighting": "ZEDG Int Lighting",
-      "aedg_k_12_interior_lighting_controls": "AEDG Int Lighting Controls",
-      "zedgk_12_exterior_wall_construction": "ZEDG Ext Wall",
-      "zedgk_12_roof_construction": "ZEDG Roof",
-      "aedg_k_12_interior_finishes": "AEDG Int Finishes",
-      "zedgk_12_fenestration_and_daylighting_controls": "ZEDG Fenistration with Daylighting",
-      "zedgk_12_swh": "ZEDG SWH Primary",
-      "zedgk_12_kitchen": "ZEDG Kitchen Primary",
-      "zedgk_12_envelope_infiltration": "ZEDG Envelope Infiltration",
-      "aedg_k_12_exterior_lighting": "AEDG Ext Lighting Primary",
-      "add_rooftop_pv": "Rooftop PV 75%",
-      "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
-      "openstudio_results": "Results",
-      "$$hashKey": "uiGrid-033B",
-      "zedgk_12_hvac": "None",
-      "zedgvrf_with_doas": "None",
-      "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller": "Fan Coil DOAS Air Cooled Chiller",
-      "set_thermostat_schedules": "Thermostat Typical",
-      "set_thermostat_schedules_2": "Thermostat Gym",
-      "zedgk_12_exterior_door_construction": "ZEDG Exterior Door",
-      "add_electric_equipment_instance_to_space": "Elevators",
-      "tariff_selection_flat": "Tariff Flat",
-      "add_electric_equipment_instance_to_space_2": "Electric Kiln",
-      "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
-      "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
-      "surface_matching_diagnostic": "Surface Matching Diagnostic",
-      "create_baseline_building": "None",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
-    },
-    {
-      "name": "Baseline",
+      "name": "Typical 2007",
       "seedModel": "ZEDG K12 Primary TSD seed.osm",
       "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
       "change_building_location": "Aurora",
@@ -8947,9 +8357,6 @@
       "add_rooftop_pv": "None",
       "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
       "openstudio_results": "Results",
-      "zedgk_12_hvac": "None",
-      "zedgvrf_with_doas": "VRF",
-      "zedg_k_12_hvac_fan_coil_doas_air_cooled_chiller": "None",
       "set_thermostat_schedules": "Thermostat Typical",
       "set_thermostat_schedules_2": "Thermostat Gym",
       "zedgk_12_exterior_door_construction": "None",
@@ -8961,38 +8368,100 @@
       "surface_matching_diagnostic": "Surface Matching Diagnostic",
       "create_baseline_building": "Baseline 5B 2007",
       "$$hashKey": "uiGrid-06B5",
-      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown"
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "nze_hvac": "DOAS Fain Coil"
+    },
+    {
+      "name": "Low Energy",
+      "seedModel": "ZEDG K12 Primary TSD seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "Aurora",
+      "zedgk_12_electric_equipment": "ZEDG Elec Equip",
+      "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
+      "zedgk_12_interior_lighting": "ZEDG Int Lighting",
+      "aedg_k_12_interior_lighting_controls": "AEDG Int Lighting Controls",
+      "zedgk_12_exterior_wall_construction": "ZEDG Ext Wall",
+      "zedgk_12_roof_construction": "ZEDG Roof",
+      "aedg_k_12_interior_finishes": "AEDG Int Finishes",
+      "zedgk_12_fenestration_and_daylighting_controls": "ZEDG Fenistration with Daylighting",
+      "zedgk_12_swh": "ZEDG SWH Primary",
+      "zedgk_12_kitchen": "ZEDG Kitchen Primary",
+      "zedgk_12_envelope_infiltration": "ZEDG Envelope Infiltration",
+      "aedg_k_12_exterior_lighting": "AEDG Ext Lighting Primary",
+      "add_rooftop_pv": "None",
+      "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
+      "openstudio_results": "Results",
+      "set_thermostat_schedules": "Thermostat Typical",
+      "set_thermostat_schedules_2": "Thermostat Gym",
+      "zedgk_12_exterior_door_construction": "ZEDG Exterior Door",
+      "add_electric_equipment_instance_to_space": "Elevators",
+      "tariff_selection_flat": "Tariff Flat",
+      "add_electric_equipment_instance_to_space_2": "Electric Kiln",
+      "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
+      "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
+      "surface_matching_diagnostic": "Surface Matching Diagnostic",
+      "create_baseline_building": "None",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "nze_hvac": "DOAS Fain Coil",
+      "$$hashKey": "uiGrid-0IIH"
+    },
+    {
+      "name": "Low Energy with PV",
+      "seedModel": "ZEDG K12 Primary TSD seed.osm",
+      "weatherFile": "USA_AK_Fairbanks.Intl.AP.702610_TMY3.epw",
+      "change_building_location": "Aurora",
+      "zedgk_12_electric_equipment": "ZEDG Elec Equip",
+      "aedg_k_12_electric_equipment_controls": "AEDG Elec Equip Controls",
+      "zedgk_12_interior_lighting": "ZEDG Int Lighting",
+      "aedg_k_12_interior_lighting_controls": "AEDG Int Lighting Controls",
+      "zedgk_12_exterior_wall_construction": "ZEDG Ext Wall",
+      "zedgk_12_roof_construction": "ZEDG Roof",
+      "aedg_k_12_interior_finishes": "AEDG Int Finishes",
+      "zedgk_12_fenestration_and_daylighting_controls": "ZEDG Fenistration with Daylighting",
+      "zedgk_12_swh": "ZEDG SWH Primary",
+      "zedgk_12_kitchen": "ZEDG Kitchen Primary",
+      "zedgk_12_envelope_infiltration": "ZEDG Envelope Infiltration",
+      "aedg_k_12_exterior_lighting": "AEDG Ext Lighting Primary",
+      "add_rooftop_pv": "Rooftop PV 75%",
+      "zedg_k12_insert_ground_domain_basement_e_kusdua": "Kusuda",
+      "openstudio_results": "Results",
+      "set_thermostat_schedules": "Thermostat Typical",
+      "set_thermostat_schedules_2": "Thermostat Gym",
+      "zedgk_12_exterior_door_construction": "ZEDG Exterior Door",
+      "add_electric_equipment_instance_to_space": "Elevators",
+      "tariff_selection_flat": "Tariff Flat",
+      "add_electric_equipment_instance_to_space_2": "Electric Kiln",
+      "zedgk_12_insert_ground_domain_basement_e_kusdua": "Kusuda",
+      "create_and_assign_thermal_zones_for_unassigned_spaces": "Create Zones",
+      "surface_matching_diagnostic": "Surface Matching Diagnostic",
+      "create_baseline_building": "None",
+      "envelope_and_internal_load_breakdown": "Envelope and Internal Load Breakdown",
+      "nze_hvac": "DOAS Fain Coil",
+      "$$hashKey": "uiGrid-0IIJ"
     }
   ],
   "analysisID": null,
   "datapoints": [
     {
-      "name": "HVAC - VRF",
-      "id": "HVAC - VRF",
+      "name": "Typical 2007",
+      "id": "Typical 2007",
       "run": false,
       "modified": false,
       "selected": false
     },
     {
-      "name": "HVAC - GSHP",
-      "id": "HVAC - GSHP",
+      "name": "Low Energy",
+      "id": "Low Energy",
       "run": false,
       "modified": false,
       "selected": false
     },
     {
-      "name": "HVAC - Fan Coil Air Cooled Chiller",
-      "id": "HVAC - Fan Coil Air Cooled Chiller",
+      "name": "Low Energy with PV",
+      "id": "Low Energy with PV",
       "run": false,
       "modified": false,
       "selected": false
-    },
-    {
-      "name": "Baseline",
-      "id": "Baseline",
-      "run": false,
-      "modified": false,
-      "selected": true
     }
   ]
 }

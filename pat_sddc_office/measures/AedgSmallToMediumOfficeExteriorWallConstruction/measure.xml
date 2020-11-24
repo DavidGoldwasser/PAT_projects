@@ -1,17 +1,34 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>aedg_small_to_medium_office_exterior_wall_construction</name>
   <uid>736836f8-1a55-47a6-96b7-9fd157be6744</uid>
-  <version_id>af8dce6a-fd09-45b8-88e2-d5893a82f8b1</version_id>
-  <version_modified>20180705T145959Z</version_modified>
+  <version_id>82e5f4f0-11d1-44c2-bc48-d49a3a715e73</version_id>
+  <version_modified>20200401T014102Z</version_modified>
   <xml_checksum>1E963D9C</xml_checksum>
   <class_name>AedgSmallToMediumOfficeExteriorWallConstruction</class_name>
   <display_name>AedgSmallToMediumOfficeExteriorWallConstruction</display_name>
   <description>This measure will modify existing exterior wall insulation levels based on construction type and climate zone. The exterior wall construction type and climate zone should be set in the model prior to using this measure. For mass and metal walls if an existing insulation layer can be found it will be increased, if not a new insulation layer will be added. For mass this will be at the exterior of the construction. For metal it will be added just behind the exterior layer. For steel and wood framed walls, insulation will be added to the exterior of the construction. </description>
-  <modeler_description>Relevant construction types:&#xd;&#xd;&#xd;&#xd;&#xd;
-- Mass&#xd;&#xd;&#xd;&#xd;&#xd;
-- Steel framed&#xd;&#xd;&#xd;&#xd;&#xd;
-- Wood framed and other&#xd;&#xd;&#xd;&#xd;&#xd;
+  <modeler_description>Relevant construction types:
+
+
+
+
+- Mass
+
+
+
+
+- Steel framed
+
+
+
+
+- Wood framed and other
+
+
+
+
 - Metal building</modeler_description>
   <arguments>
     <argument>
@@ -23,8 +40,8 @@
       <default_value>0</default_value>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Envelope.Opaque</tag>
   </tags>
@@ -48,24 +65,6 @@
       <checksum>05CB14A3</checksum>
     </file>
     <file>
-      <filename>OsLib_AedgMeasures.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>E5173D1E</checksum>
-    </file>
-    <file>
-      <filename>AedgSmallToMediumOfficeExteriorWallConstruction_Test.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>test</usage_type>
-      <checksum>8F2621FB</checksum>
-    </file>
-    <file>
-      <filename>LICENSE.md</filename>
-      <filetype>md</filetype>
-      <usage_type>license</usage_type>
-      <checksum>9640B6CB</checksum>
-    </file>
-    <file>
       <filename>README.md.erb</filename>
       <filetype>erb</filetype>
       <usage_type>readmeerb</usage_type>
@@ -78,27 +77,33 @@
       <checksum>116B6D39</checksum>
     </file>
     <file>
+      <filename>OsLib_AedgMeasures.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>EDB45706</checksum>
+    </file>
+    <file>
+      <filename>AedgSmallToMediumOfficeExteriorWallConstruction_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>436848D5</checksum>
+    </file>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>E0468DD6</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.0.0</identifier>
-        <min_compatible>2.0.0</min_compatible>
+        <min_compatible>2.8.0</min_compatible>
       </version>
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>2CE82494</checksum>
-    </file>
-    <file>
-      <filename>os_lib_constructions.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>B24DDC22</checksum>
-    </file>
-    <file>
-      <filename>os_lib_helper_methods.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9CFC43FB</checksum>
+      <checksum>EE0CB4D5</checksum>
     </file>
   </files>
 </measure>
