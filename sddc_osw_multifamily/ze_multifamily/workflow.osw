@@ -40,7 +40,7 @@
          {
             "__SKIP__" : false,
             "set_year" : "2019",
-            "weather_file_name" : "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw"
+            "weather_file_name" : "USA_CA_Los.Angeles.Intl.AP.722950_TMY3.epw"
          },
          "description" : "If the weather file argument is changed add an epw by that name to the files directory under the project folder along with a ddy and stat file that has the same name, other than the file extension.",
          "measure_dir_name" : "ChangeBuildingLocation",
@@ -285,6 +285,14 @@
          "measure_dir_name" : "AddOverhangsByProjectionFactor",
          "name" : "West AddOverhangsByProjectionFactor"
       },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "building_story": "Story 3",
+	        "multiplier_adj": "2"
+	      },
+	      "measure_dir_name": "change_zone_multiplier_by_building_story"
+	    },     
       {
          "arguments" : 
          {
@@ -319,7 +327,7 @@
          {
             "__SKIP__" : false,
             "cell_efficiency" : "0.1976",
-            "fraction_of_surface" : "0.50",
+            "fraction_of_surface" : "0.75",
             "inverter_efficiency" : "0.96"
          },
          "measure_dir_name" : "add_rooftop_pv",
@@ -333,6 +341,86 @@
          "measure_dir_name" : "view_model",
          "name" : "view_model"
       },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "InteriorLights:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "ExteriorLights:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "InteriorEquipment:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "Fans:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "Pumps:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "Heating:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "Cooling:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "HeatRecovery:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "WaterSystems:Electricity",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false,
+	        "meter_name": "ElectricityProduced:Facility",
+	        "reporting_frequency": "timestep"
+	      },
+	      "measure_dir_name": "AddMeter"
+	    },      
       {
          "arguments" : 
          {
@@ -348,7 +436,19 @@
          },
          "measure_dir_name" : "envelope_and_internal_load_breakdown",
          "name" : "envelope_and_internal_load_breakdown"
-      }
+      },
+	    {
+	      "arguments": {
+	        "__SKIP__": false
+	      },
+	      "measure_dir_name": "energy_use_by_standards_building_type"
+	    },
+	    {
+	      "arguments": {
+	        "__SKIP__": false
+	      },
+	      "measure_dir_name": "d_view_export"
+	    }      
    ],
    "updated_at" : "20201119T092656Z"
 }

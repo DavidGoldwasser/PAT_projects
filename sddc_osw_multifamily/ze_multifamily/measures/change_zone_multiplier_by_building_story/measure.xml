@@ -1,0 +1,112 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>change_zone_multiplier_by_building_story</name>
+  <uid>00cf2077-1f45-445c-916a-b560a6aacd97</uid>
+  <version_id>fddc7605-bc64-479b-b200-9c81caeb0ada</version_id>
+  <version_modified>20191220T230414Z</version_modified>
+  <xml_checksum>2AF3A68E</xml_checksum>
+  <class_name>ChangeZoneMultiplierByBuildingStory</class_name>
+  <display_name>Change Zone Multiplier by Building Story</display_name>
+  <description>This measure will loop through all spaces on user specified bulidng story and will increase the multiplier by a user suplied multiplier. Matched floor/ceiling surfaces with zones that no longer have the same boundary condition will be chagned to adiabaitc</description>
+  <modeler_description>This will not just set the multiplier to the user specified value. Instead it will take the original value and multiplier it by the user specified value. So if the user specifed value is 2.0, and a zone started with a multiplier of 3.0 it would be changed to 6.0. A zone starting at 1.0 would chagne to 2.0. If a zone contains spaces from two different stories, including the user specified story the measure will error instead of attempting to change the zone multipliers. The measure will also error if the spaces on the selected story have any roofs or floors with exterior or ground exposure.</modeler_description>
+  <arguments>
+    <argument>
+      <name>building_story</name>
+      <display_name>Choose a building story to alter zone multipliers for.</display_name>
+      <type>Choice</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+    <argument>
+      <name>multiplier_adj</name>
+      <display_name>Thermal zone multiplier adjustment</display_name>
+      <description>The existing thermal zone multiplier for zones that contain spaces on this story will be multiplied by this value.</description>
+      <type>Integer</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>2</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Form</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>CD7F5672</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>.gitkeep</filename>
+      <filetype>gitkeep</filetype>
+      <usage_type>doc</usage_type>
+      <checksum>00000000</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.9.0</identifier>
+        <min_compatible>2.9.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>A2344AE8</checksum>
+    </file>
+    <file>
+      <filename>change_zone_multiplier_by_building_story_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>3B03842B</checksum>
+    </file>
+    <file>
+      <filename>multi_story_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>25A9ED31</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>BCF5AD27</checksum>
+    </file>
+  </files>
+</measure>
